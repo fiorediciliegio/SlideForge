@@ -1,0 +1,103 @@
+{
+  "id": "19-Product Roadmap and Release Plan",
+  "version": 1,
+  "ppt_number": 19,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "orange",
+    "yellow"
+  ],
+  "name": "Product Roadmap and Release Plan",
+  "description": "Product-roadmap design with strong dark anchors, cream planning pages, colored priority markers, and structured timelines.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["strategy","technical-roadmap"],"industries":["technology"],"audiences":["employee"],"formats":["roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "奶油白、炭黑与橙黄色封面采用左侧中部超大标题，几何色块与细线与留白形成对照。"
+    },
+    {
+      "path": "images/2-context-why-now.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，一幅图表集中排布，核心判断强化对比。"
+    },
+    {
+      "path": "images/3-problem-deep-dive.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，三块卡片横向并列，核心判断收束版面。"
+    },
+    {
+      "path": "images/4-vision-outcomes.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，四块卡片组成三列网格，框架信息形成重心。"
+    },
+    {
+      "path": "images/5-product-pillars.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，六块卡片组成五列网格，产品信息拉开层级。"
+    },
+    {
+      "path": "images/6-prioritization-matrix.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，一组表格压缩信息密度，对比关系组织动线。"
+    },
+    {
+      "path": "images/7-three-phase-roadmap.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，横向时间轴串联阶段节点，日期标记强化对比。"
+    },
+    {
+      "path": "images/8-release-plan-table.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    },
+    {
+      "path": "images/9-rollout-and-risks.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，五块卡片组成两列网格，风险信息形成重心。"
+    },
+    {
+      "path": "images/10-resources-and-decisions.webp",
+      "alt": "奶油白、炭黑与橙黄色页面，四块卡片组成四列网格，指导信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页采用奶油白、炭黑与橙黄色，超大标题锚定左侧中部；几何色块与细线连接主体与边缘信息，留白保持画面张力。"
+    },
+    {
+      "path": "html/2-context-why-now.html",
+      "description": "奶油白、炭黑与橙黄色画面，标题置于左上方；三组大号数字拉开视觉节奏，一幅图表落在右侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-problem-deep-dive.html",
+      "description": "左上方标题锚定奶油白、炭黑与橙黄色画面；三块信息卡横向并列，一幅图表落在中央，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/4-vision-outcomes.html",
+      "description": "奶油白、炭黑与橙黄色作为底色，标题落在左上方；四块信息卡组成三列网格，框架模块与强调结论沿主区展开。"
+    },
+    {
+      "path": "html/5-product-pillars.html",
+      "description": "标题固定在左上方，奶油白、炭黑与橙黄色分隔主体；六块信息卡组成五列网格，功能模块与结构示意贴合卡片边界。"
+    },
+    {
+      "path": "html/6-prioritization-matrix.html",
+      "description": "奶油白、炭黑与橙黄色画面，标题置于左上方；单一大面板承载主体信息，一组表格位于右侧，对比模块与坐标标记补充层级。"
+    },
+    {
+      "path": "html/7-three-phase-roadmap.html",
+      "description": "左上方标题锚定奶油白、炭黑与橙黄色画面；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/8-release-plan-table.html",
+      "description": "奶油白、炭黑与橙黄色作为底色，标题落在左上方；横向时间轴串联阶段节点与日期标记，一组表格位于中央，阶段节点与时间标记补充层级。"
+    },
+    {
+      "path": "html/9-rollout-and-risks.html",
+      "description": "标题固定在左上方，奶油白、炭黑与橙黄色分隔主体；五块信息卡组成两列网格，分级标签、状态色与风险标记沿主区展开。"
+    },
+    {
+      "path": "html/10-resources-and-decisions.html",
+      "description": "奶油白、炭黑与橙黄色画面，标题置于左上方；四块信息卡组成四列网格，一幅图表落在左侧，说明卡、步骤标记与提示模块补充层级。"
+    }
+  ]
+}

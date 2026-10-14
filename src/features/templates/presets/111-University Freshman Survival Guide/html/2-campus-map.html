@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Campus Map — Freshman Survival Guide</title>
+<style>
+/* Sticker-collage theme — Freshman Survival Guide */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@600;700;800;900&family=Patrick+Hand&display=swap');
+
+:root{
+  --blue:#2C7BE5;        /* bright blue */
+  --blue-deep:#1B4FA6;
+  --orange:#FF7A2A;      /* bright orange */
+  --orange-soft:#FFB877;
+  --lime:#B8E438;        /* lime green */
+  --lime-deep:#7BB800;
+  --purple:#8B5CF6;      /* small purple accent */
+  --purple-deep:#5B21B6;
+  --white:#FFFFFF;
+  --cream:#FFF8E9;       /* soft warm off-white bg — not beige-luxury */
+  --paper:#FDFBF3;
+  --ink:#1F2A44;         /* deep navy ink for handwriting feel */
+  --ink-soft:#3B4A6B;
+
+  --f-display:'Fredoka', system-ui, sans-serif;
+  --f-hand:'Caveat', cursive;
+  --f-marker:'Patrick Hand', cursive;
+  --f-body:'Nunito', system-ui, sans-serif;
+}
+
+/* --- Sticker & tape utility styles (used inline in slides) --- */
+.sticker{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 6px 0 rgba(31,42,68,.12), 0 14px 30px rgba(31,42,68,.10);
+  border:3px solid var(--ink);
+}
+.tape{
+  position:absolute;
+  background:rgba(255, 224, 130, .78);
+  box-shadow:0 4px 10px rgba(0,0,0,.10);
+  transform:rotate(-6deg);
+}
+.pin{
+  width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ff6b6b, #b91c1c 70%);
+  box-shadow:0 4px 0 rgba(0,0,0,.25), inset -3px -4px 6px rgba(0,0,0,.25);
+  border:3px solid #fff;
+}
+</style>
+<style>
+  body{margin:0;padding:0;overflow:hidden;font-family:var(--f-body);}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;
+    background:#FFF8E9;
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="02 Campus Map">
+
+  <!-- Title badge (blue) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:60px;width:840px;height:130px;
+              background:var(--blue);border:5px solid var(--ink);border-radius:24px;
+              transform:rotate(-1.5deg);box-shadow:8px 8px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:70px;width:820px;height:120px;z-index:10;
+              transform:rotate(-1.5deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:32px;color:var(--lime);line-height:1;">chapter 01 ✦</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:52px;line-height:1;letter-spacing:-1px;margin-top:4px;">
+      Campus Map &amp; Must-Know Spots
+    </div>
+  </div>
+
+  <!-- Subtitle handwritten -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:960px;top:110px;width:520px;height:80px;z-index:10;
+              font-family:var(--f-marker);font-size:30px;color:var(--ink-soft);line-height:1.2;">
+    Learn these 6 places before Day 1 — you'll thank yourself.
+  </div>
+
+  <!-- MAP paper canvas -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:230px;width:1140px;height:790px;
+              background:
+                repeating-linear-gradient(0deg, rgba(44,123,229,.10) 0 1px, transparent 1px 60px),
+                repeating-linear-gradient(90deg, rgba(44,123,229,.10) 0 1px, transparent 1px 60px),
+                #FDFBF3;
+              border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:1;">
+  </div>
+
+  <!-- Map compass -->
+  <svg data-object="true" data-object-type="icon" style="position:absolute;left:1090px;top:270px;width:110px;height:110px;z-index:10;" viewBox="0 0 110 110">
+    <circle cx="55" cy="55" r="46" fill="#fff" stroke="#1F2A44" stroke-width="4"></circle>
+    <polygon points="55,15 65,55 55,50 45,55" fill="#FF7A2A" stroke="#1F2A44" stroke-width="3"></polygon>
+    <polygon points="55,95 45,55 55,60 65,55" fill="#2C7BE5" stroke="#1F2A44" stroke-width="3"></polygon>
+    <text x="55" y="12" font-family="Fredoka" font-size="14" text-anchor="middle" fill="#1F2A44" font-weight="700">N</text>
+  </svg>
+
+  <!-- Roads (SVG) -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:230px;width:1140px;height:790px;z-index:2;" viewBox="0 0 1140 790" fill="none">
+    <path d="M 60 400 Q 300 300 560 420 T 1080 380" stroke="#1F2A44" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22" opacity=".55"></path>
+    <path d="M 220 80 Q 300 350 500 500 T 900 720" stroke="#1F2A44" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22" opacity=".55"></path>
+  </svg>
+
+  <!-- PIN 1: Dorm -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:170px;top:310px;width:70px;height:70px;
+              background:var(--orange);border:4px solid var(--ink);
+              border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+              box-shadow:4px 4px 0 var(--ink);z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:180px;top:320px;width:50px;height:50px;z-index:11;
+              transform:rotate(0deg);
+              font-family:var(--f-display);font-weight:700;font-size:34px;color:#fff;
+              text-align:center;line-height:50px;">1</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:250px;top:290px;width:270px;height:80px;
+              background:#fff;border:4px solid var(--ink);border-radius:14px;
+              box-shadow:4px 4px 0 var(--ink);z-index:5;transform:rotate(-2deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:266px;top:300px;width:240px;height:60px;z-index:11;
+              transform:rotate(-2deg);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--ink);line-height:1;">🏠 Your Dorm</div>
+    <div style="font-family:var(--f-marker);font-size:22px;color:var(--ink-soft);margin-top:2px;">home base ♥</div>
+  </div>
+
+  <!-- PIN 2: Dining Hall -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:400px;width:70px;height:70px;
+              background:var(--lime);border:4px solid var(--ink);
+              border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+              box-shadow:4px 4px 0 var(--ink);z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:490px;top:410px;width:50px;height:50px;z-index:11;
+              font-family:var(--f-display);font-weight:700;font-size:34px;color:var(--ink);
+              text-align:center;line-height:50px;">2</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:560px;top:380px;width:280px;height:80px;
+              background:#fff;border:4px solid var(--ink);border-radius:14px;
+              box-shadow:4px 4px 0 var(--ink);z-index:5;transform:rotate(1.5deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:576px;top:390px;width:250px;height:60px;z-index:11;
+              transform:rotate(1.5deg);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--ink);line-height:1;">🍜 Dining Hall</div>
+    <div style="font-family:var(--f-marker);font-size:22px;color:var(--ink-soft);margin-top:2px;">fuel up 3× a day</div>
+  </div>
+
+  <!-- PIN 3: Library -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:800px;top:610px;width:70px;height:70px;
+              background:var(--blue);border:4px solid var(--ink);
+              border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+              box-shadow:4px 4px 0 var(--ink);z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:810px;top:620px;width:50px;height:50px;z-index:11;
+              font-family:var(--f-display);font-weight:700;font-size:34px;color:#fff;
+              text-align:center;line-height:50px;">3</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:880px;top:590px;width:270px;height:80px;
+              background:#fff;border:4px solid var(--ink);border-radius:14px;
+              box-shadow:4px 4px 0 var(--ink);z-index:5;transform:rotate(-1deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:896px;top:600px;width:240px;height:60px;z-index:11;
+              transform:rotate(-1deg);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--ink);line-height:1;">📚 Library</div>
+    <div style="font-family:var(--f-marker);font-size:22px;color:var(--ink-soft);margin-top:2px;">the quiet zone</div>
+  </div>
+
+  <!-- PIN 4: Health Center -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:220px;top:760px;width:70px;height:70px;
+              background:var(--purple);border:4px solid var(--ink);
+              border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+              box-shadow:4px 4px 0 var(--ink);z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:230px;top:770px;width:50px;height:50px;z-index:11;
+              font-family:var(--f-display);font-weight:700;font-size:34px;color:#fff;
+              text-align:center;line-height:50px;">4</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:300px;top:740px;width:290px;height:80px;
+              background:#fff;border:4px solid var(--ink);border-radius:14px;
+              box-shadow:4px 4px 0 var(--ink);z-index:5;transform:rotate(2deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:316px;top:750px;width:260px;height:60px;z-index:11;
+              transform:rotate(2deg);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--ink);line-height:1;">➕ Health Center</div>
+    <div style="font-family:var(--f-marker);font-size:22px;color:var(--ink-soft);margin-top:2px;">save the number!</div>
+  </div>
+
+  <!-- PIN 5: Gym -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:620px;top:840px;width:70px;height:70px;
+              background:var(--orange);border:4px solid var(--ink);
+              border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+              box-shadow:4px 4px 0 var(--ink);z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:630px;top:850px;width:50px;height:50px;z-index:11;
+              font-family:var(--f-display);font-weight:700;font-size:34px;color:#fff;
+              text-align:center;line-height:50px;">5</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:700px;top:820px;width:230px;height:80px;
+              background:#fff;border:4px solid var(--ink);border-radius:14px;
+              box-shadow:4px 4px 0 var(--ink);z-index:5;transform:rotate(-1.5deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:716px;top:830px;width:200px;height:60px;z-index:11;
+              transform:rotate(-1.5deg);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--ink);line-height:1;">💪 Rec Gym</div>
+    <div style="font-family:var(--f-marker);font-size:22px;color:var(--ink-soft);margin-top:2px;">free w/ ID</div>
+  </div>
+
+  <!-- PIN 6: Student Center -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:960px;top:840px;width:70px;height:70px;
+              background:var(--lime);border:4px solid var(--ink);
+              border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+              box-shadow:4px 4px 0 var(--ink);z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:970px;top:850px;width:50px;height:50px;z-index:11;
+              font-family:var(--f-display);font-weight:700;font-size:34px;color:var(--ink);
+              text-align:center;line-height:50px;">6</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1040px;top:820px;width:160px;height:80px;
+              background:#fff;border:4px solid var(--ink);border-radius:14px;
+              box-shadow:4px 4px 0 var(--ink);z-index:5;transform:rotate(1.5deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1052px;top:830px;width:140px;height:60px;z-index:11;
+              transform:rotate(1.5deg);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:24px;color:var(--ink);line-height:1;">☕ Union</div>
+    <div style="font-family:var(--f-marker);font-size:22px;color:var(--ink-soft);margin-top:2px;">hang out</div>
+  </div>
+
+  <!-- RIGHT SIDE — Pro tips card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1280px;top:230px;width:560px;height:460px;
+              background:var(--lime);border:5px solid var(--ink);border-radius:24px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(1.5deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1310px;top:250px;width:500px;height:420px;z-index:10;
+              transform:rotate(1.5deg);color:var(--ink);">
+    <div style="font-family:var(--f-hand);font-size:44px;line-height:1;color:var(--purple-deep);">📍 Pro tips</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:22px;line-height:1.5;margin-top:14px;">
+      • Walk the whole campus <b>before</b> classes start<br>
+      • Save building nicknames locals use<br>
+      • Screenshot your class map — offline access<br>
+      • Find <b>2 backup study spots</b>, not just the library<br>
+      • Note nearest bathroom in each building 😉
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE — App sticker -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1290px;top:730px;width:540px;height:150px;
+              background:var(--blue);border:5px solid var(--ink);border-radius:22px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-2deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1310px;top:748px;width:500px;height:120px;z-index:10;
+              transform:rotate(-2deg);color:#fff;">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:32px;line-height:1;">📱 Download NOW</div>
+    <div style="font-family:var(--f-body);font-weight:600;font-size:20px;margin-top:8px;line-height:1.35;">
+      Your campus app + Google Maps offline layer for the whole campus.
+    </div>
+  </div>
+
+  <!-- Purple sticker note -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1350px;top:910px;width:420px;height:140px;
+              background:var(--purple);border:5px solid var(--ink);border-radius:20px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(3deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 1385px; top: 937px; width: 390px; height: 120px; z-index: 10; transform: rotate(3deg) !important; color: rgb(255, 255, 255); transform-origin: center center;">
+    <div style="font-family:var(--f-hand);font-size:34px;line-height:1;">lost? just ask!</div>
+    <div style="font-family:var(--f-body);font-weight:600;font-size:20px;margin-top:4px;line-height:1.3;">
+      Upperclassmen love giving directions. Seriously — try it.
+    </div>
+  </div>
+
+  <!-- Washi tape decoration -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1200px;top:200px;width:220px;height:36px;
+              background:repeating-linear-gradient(45deg, var(--orange) 0 14px, #FFD9B8 14px 28px);
+              transform:rotate(-14deg);opacity:.85;z-index:5;">
+  </div>
+
+  <!-- Page number -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1780px;top:1020px;width:80px;height:40px;z-index:10;
+              font-family:var(--f-hand);font-size:36px;color:var(--ink-soft);">02</div>
+</div>
+
+
+</body></html>

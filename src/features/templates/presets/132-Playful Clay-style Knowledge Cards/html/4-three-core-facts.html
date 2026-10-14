@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Three core facts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Clay Knowledge Cards — shared visual identity
+   Appearance only (surfaces, texture, typography). All layout/position is
+   authored inline on each data-object so the editor keeps its coordinates.
+   Lighting: single soft light from the upper-left on every object.
+   ========================================================================== */
+
+:root{
+  --cream:#FDF6E9;
+  --cream-2:#F8EEDC;
+
+  --mint:#9DDCBF;   --mint-d:#6BC29E;  --mint-l:#C6EFDC;
+  --orange:#F3A263; --orange-d:#DD8340; --orange-l:#FBC998;
+  --lav:#C5B7EB;    --lav-d:#A492DA;   --lav-l:#DFD6F7;
+  --butter:#FAD86C; --butter-d:#EBBF3F; --butter-l:#FDEDB2;
+  --blue:#A4D2F1;   --blue-d:#79B7E2;  --blue-l:#CEE8FA;
+
+  --ink:#4A3728;
+  --ink-soft:#7C6753;
+  --ink-faint:#9C8974;
+  --white:#FFFDF7;
+}
+
+/* --- clay surfaces: soft matte volume, never glossy ---------------------- */
+.clay{
+  box-shadow:
+    inset 10px 12px 18px rgba(255,255,255,.55),
+    inset -10px -13px 20px rgba(124,86,46,.16),
+    0 22px 30px -16px rgba(124,90,50,.34);
+}
+.clay-s{
+  box-shadow:
+    inset 6px 7px 11px rgba(255,255,255,.58),
+    inset -6px -8px 13px rgba(124,86,46,.16),
+    0 13px 20px -11px rgba(124,90,50,.32);
+}
+.clay-in{
+  box-shadow:
+    inset 7px 9px 16px rgba(124,86,46,.20),
+    inset -6px -7px 12px rgba(255,255,255,.55);
+}
+
+/* protected text area: a clean, style-consistent plate under copy */
+.plate{
+  background:rgba(255,253,247,.95);
+  box-shadow:
+    inset 5px 6px 10px rgba(255,255,255,.75),
+    inset -5px -6px 11px rgba(140,105,65,.10),
+    0 16px 26px -18px rgba(124,90,50,.30);
+}
+
+/* subtle handmade matte grain — extremely low contrast */
+.grain{
+  background-image:radial-gradient(rgba(124,86,46,.055) 1px, transparent 1.7px);
+  background-size:7px 7px;
+}
+
+/* --- typography: rounded, friendly, highly legible ---------------------- */
+.t-h{
+  font-family:'Baloo 2','Trebuchet MS',sans-serif;
+  font-weight:800; color:var(--ink); margin:0; letter-spacing:-.4px;
+  text-wrap:pretty;
+}
+.t-b{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:600; color:var(--ink-soft); margin:0; text-wrap:pretty;
+}
+.t-k{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:800; color:var(--ink-faint); margin:0;
+  letter-spacing:3.4px; text-transform:uppercase;
+}
+.src{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:700; color:var(--ink-faint); margin:0;
+}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<div class="slide grain" data-screen-label="04 Three Core Facts" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FDF6E9;">
+
+  <!-- kicker + title + lead -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:74px;width:1010px;z-index:10;">
+    <p class="t-k" style="font-size:22px;">Card 04 &nbsp;·&nbsp; Three core facts</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:118px;width:1120px;z-index:10;">
+    <p class="t-h" style="font-size:56px;line-height:1.12;">Three numbers: her time, her home, her workload</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:266px;width:1000px;z-index:10;">
+    <p class="t-b" style="font-size:27px;line-height:1.45;">Each fact measures a different part of a worker bee&rsquo;s world.</p>
+  </div>
+
+  <!-- FACT 1 — tall hero panel: lifespan -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:110px;top:336px;width:700px;height:584px;border-radius:52px;background:#C6EFDC;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="image" style="position:absolute;left:360px;top:372px;width:200px;height:244px;z-index:5;">
+    <div class="clay-s" style="position:absolute;left:12px;top:0px;width:176px;height:26px;border-radius:13px;background:#DD8340;"></div>
+    <div style="position:absolute;left:20px;top:30px;width:160px;height:88px;background:#FAD86C;clip-path:polygon(0 0,100% 0,56% 100%,44% 100%);"></div>
+    <div style="position:absolute;left:20px;top:122px;width:160px;height:88px;background:#FBC998;clip-path:polygon(44% 0,56% 0,100% 100%,0 100%);"></div>
+    <div style="position:absolute;left:66px;top:172px;width:68px;height:38px;border-radius:34px 34px 8px 8px;background:#EBBF3F;"></div>
+    <div style="position:absolute;left:94px;top:126px;width:12px;height:12px;border-radius:50%;background:#EBBF3F;"></div>
+    <div class="clay-s" style="position:absolute;left:12px;top:214px;width:176px;height:26px;border-radius:13px;background:#DD8340;"></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:640px;width:620px;z-index:10;">
+    <p class="t-h" style="font-size:78px;text-align:center;line-height:82px;">6 weeks</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:736px;width:620px;z-index:10;">
+    <p class="t-k" style="font-size:22px;text-align:center;">Her summer lifespan</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:170px;top:778px;width:580px;z-index:10;">
+    <p class="t-b" style="font-size:25px;line-height:1.42;text-align:center;">A worker born in summer lives about six weeks. A bee born in autumn survives the whole winter &mdash; up to six months.</p>
+  </div>
+
+  <!-- FACT 2 — open composition (no panel): brood-nest temperature -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:886px;top:352px;width:132px;height:262px;z-index:5;">
+    <div class="clay" style="position:absolute;left:30px;top:0px;width:72px;height:196px;border-radius:36px;background:#FFFDF7;"></div>
+    <div class="clay" style="position:absolute;left:18px;top:150px;width:96px;height:96px;border-radius:50%;background:#F3A263;"></div>
+    <div style="position:absolute;left:48px;top:60px;width:36px;height:130px;border-radius:18px;background:#F3A263;"></div>
+    <div style="position:absolute;left:110px;top:44px;width:22px;height:8px;border-radius:4px;background:#C6EFDC;"></div>
+    <div style="position:absolute;left:110px;top:88px;width:22px;height:8px;border-radius:4px;background:#C6EFDC;"></div>
+    <div style="position:absolute;left:110px;top:132px;width:22px;height:8px;border-radius:4px;background:#C6EFDC;"></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1058px;top:356px;width:700px;z-index:10;">
+    <p class="t-h" style="font-size:78px;line-height:82px;">35&thinsp;&deg;C</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1058px;top:450px;width:700px;z-index:10;">
+    <p class="t-k" style="font-size:22px;">The temperature of the nursery</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1058px;top:492px;width:720px;z-index:10;">
+    <p class="t-b" style="font-size:25px;line-height:1.44;">Bees hold the brood nest near 35&thinsp;&deg;C (95&thinsp;&deg;F) all year by shivering to warm it and fanning to cool it.</p>
+  </div>
+
+  <!-- FACT 3 — wide plate: workload -->
+  <div data-object="true" data-object-type="shape" class="plate" style="position:absolute;left:880px;top:640px;width:930px;height:280px;border-radius:44px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="image" style="position:absolute;left:928px;top:686px;width:196px;height:190px;z-index:5;">
+    <div class="clay" style="position:absolute;left:20px;top:34px;width:156px;height:156px;border-radius:32px;background:#FAD86C;"></div>
+    <div class="clay-s" style="position:absolute;left:8px;top:8px;width:180px;height:34px;border-radius:17px;background:#DD8340;"></div>
+    <div style="position:absolute;left:44px;top:96px;width:108px;height:70px;border-radius:22px 22px 26px 26px;background:#EBBF3F;"></div>
+    <div class="clay-s" style="position:absolute;left:0px;top:0px;width:44px;height:44px;border-radius:50%;background:#C5B7EB;"></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1166px;top:690px;width:600px;z-index:10;">
+    <p class="t-h" style="font-size:66px;line-height:70px;">2 million</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1166px;top:772px;width:600px;z-index:10;">
+    <p class="t-k" style="font-size:22px;">Flower visits per jar</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1166px;top:814px;width:610px;z-index:10;">
+    <p class="t-b" style="font-size:25px;line-height:1.42;">One 500&thinsp;g (1&thinsp;lb) jar of honey takes about two million flower visits by the whole colony.</p>
+  </div>
+
+  <!-- chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:972px;width:700px;z-index:10;">
+    <p class="t-k" style="font-size:22px;letter-spacing:2.6px;">Inside the Beehive &nbsp;·&nbsp; Clay Knowledge Cards</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:820px;top:974px;width:880px;z-index:10;">
+    <p class="src" style="font-size:22px;text-align:right;">Sources: Penn State Extension; Stabentheiner et al.; Canadian Honey Council</p>
+  </div>
+  <div data-object="true" data-object-type="shape" class="clay-s" style="position:absolute;left:1746px;top:948px;width:70px;height:70px;border-radius:50%;background:#C5B7EB;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1754px;top:966px;width:54px;z-index:10;">
+    <p class="t-h" style="font-size:28px;text-align:center;line-height:34px;">04</p>
+  </div>
+
+</div>
+</body>
+</html>

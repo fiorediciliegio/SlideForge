@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Layering Order</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; overflow:hidden; background:#FBF6F0; font-family:'Inter',sans-serif; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="09 Layering Order" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FBF6F0;">
+
+  <!-- Header chrome -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:80px; width:1680px; height:1px; background:#1a1a1a; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:50px; width:600px; z-index:10; font-family:'Inter',sans-serif; font-size:13px; letter-spacing:0.4em; color:#1a1a1a; font-weight:500;">
+    CHAPTER SEVEN
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:50px; width:120px; z-index:10; font-family:'Inter',sans-serif; font-size:13px; letter-spacing:0.4em; color:#1a1a1a; font-weight:500; text-align:right;">
+    08 / 10
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:140px; width:1100px; z-index:10; font-family:'Cormorant Garamond',serif; font-size:88px; line-height:1.15; color:#1a1a1a; font-weight:300; letter-spacing:-0.01em;">
+    The order of <em style="color:#5C1F2B; font-weight:300;">layers</em>.
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:275px; width:820px; z-index:10; font-family:'Cormorant Garamond',serif; font-size:20px; line-height:1.6; color:#3a3a3a; font-style:italic; font-weight:400;">
+    Sequence changes the result. Thinnest formulas first, richest last — so nothing is blocked on the way in.
+  </div>
+
+  <!-- Big-number principle callout -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1300px; top:190px; width:500px; height:190px; background:#EDD9D3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:215px; width:420px; z-index:10; font-family:'Cormorant Garamond',serif; font-size:64px; line-height:1.15; color:#5C1F2B; font-weight:300; font-style:italic;">
+    Thin before thick.
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:315px; width:420px; z-index:10; font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.35em; color:#1a1a1a; font-weight:500;">
+    THE ENTIRE RULE, IN THREE WORDS
+  </div>
+
+  <!-- Seven-step flow diagram -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:120px; top:460px; width:1680px; height:330px; z-index:10; font-family:'Cormorant Garamond',serif;">
+    <div style="display:flex; align-items:stretch; gap:0; width:1680px;">
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#3A1A22;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">01</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">Cleanser</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">A clean surface, nothing stripped.</div>
+        </div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#4A2029;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">02</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">Essence</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">Watery hydration on damp skin.</div>
+        </div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#5C1F2B;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">03</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">Treatment</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">The active of the evening.</div>
+        </div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#8A4A4A;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">04</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">Serum</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">Targeted support — peptides, B3.</div>
+        </div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#B9756F;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">05</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">Eye cream</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">Optional, and gently patted.</div>
+        </div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#D9A7A0;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">06</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">Moisturizer</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">Ceramides seal the layers in.</div>
+        </div>
+      </div>
+
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="height:6px; background:#E8D6C4;"></div>
+        <div style="padding:26px 22px 0 0;">
+          <div style="font-family:'Cormorant Garamond',serif; font-size:44px; line-height:1; color:#5C1F2B; font-weight:300; font-style:italic;">07</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:26px; line-height:1.2; color:#1a1a1a; margin-top:18px;">SPF <span style="font-size:18px; color:#3a3a3a;">/ oil</span></div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; color:#3a3a3a; margin-top:12px;">SPF by day. Face oil by night.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Texture gradient scale -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:830px; width:1680px; height:14px; background:linear-gradient(90deg, #3A1A22 0%, #5C1F2B 30%, #B9756F 62%, #E8D6C4 100%); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:860px; width:600px; z-index:10; font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.35em; color:#5C1F2B; font-weight:500;">
+    WATER-LIGHT
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1200px; top:860px; width:600px; z-index:10; font-family:'Inter',sans-serif; font-size:11px; letter-spacing:0.35em; color:#5C1F2B; font-weight:500; text-align:right;">
+    OIL-RICH
+  </div>
+
+  <!-- Two footnote cards -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:920px; width:820px; height:90px; background:#F4E9DE; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:156px; top:945px; width:750px; z-index:10; font-family:'Cormorant Garamond',serif; font-size:19px; line-height:1.4; color:#1a1a1a; font-weight:400;">
+    <em style="color:#5C1F2B;">Let each layer settle.</em> &nbsp;A moment between steps is enough — skin absorbs, it doesn't race.
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:920px; width:820px; height:90px; background:#EDD9D3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1016px; top:945px; width:750px; z-index:10; font-family:'Cormorant Garamond',serif; font-size:19px; line-height:1.4; color:#1a1a1a; font-weight:400;">
+    <em style="color:#5C1F2B;">Skip freely.</em> &nbsp;Seven steps is the ceiling, not the requirement. Four done nightly beats seven done rarely.
+  </div>
+
+</div>
+</body>
+</html>

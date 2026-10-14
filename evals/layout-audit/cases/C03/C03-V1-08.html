@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 72px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.body-text { font-size: 22px; line-height: 1.5; color: #3A3D45; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { margin-top: 30px; z-index: 5; }
+.content-area { flex-grow: 1; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Custom Page Styles */
+.cards-container {
+  display: flex;
+  gap: 36px;
+  width: 100%;
+  height: 590px;
+  align-items: stretch;
+}
+.talent-card {
+  background: #F6F6F4;
+  border-top: 6px solid var(--ink);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 24px;
+  justify-content: space-between;
+}
+.talent-card.featured {
+  border: 2px solid var(--red);
+  border-top: 6px solid var(--red);
+  background: var(--paper);
+  box-shadow: 0 12px 40px rgba(208, 26, 46, 0.08);
+}
+.card-badge {
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.talent-card.featured .card-badge {
+  background: var(--red);
+}
+.portrait-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  background: #E3E4E7;
+}
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.talent-name {
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0 0 2px 0;
+}
+.talent-meta {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+.metric-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+  font-size: 16px;
+}
+.metric-label {
+  color: var(--mute);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+.metric-value {
+  color: var(--ink);
+  font-weight: 700;
+}
+.card-footer-info {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.info-block {
+  display: flex;
+  flex-direction: column;
+}
+.info-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--mute);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.info-text {
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.risk-text {
+  font-size: 14px;
+  line-height: 1.35;
+  color: #901A2E;
+  background: #FDF2F4;
+  padding: 6px 10px;
+  border-left: 3px solid var(--red);
+}
+.source-tag {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  font-size: 12px;
+  color: var(--mute);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Immediate Action List</div>
+    <h1 class="h1">The Immediate Sign List: <span class="serif-italic">High-Signal Talent Ready for Conversion</span></h1>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    <div class="cards-container">
+      
+      <!-- CARD 1: TRINITY (FEATURED) -->
+      <div class="talent-card featured">
+        <div class="card-badge">MUST SIGN NOW · #1 PICK</div>
+        <div class="portrait-wrapper">
+          <img class="portrait-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" alt="Trinity Tatum">
+        </div>
+        <div>
+          <h2 class="talent-name">Trinity Tatum</h2>
+          <div class="talent-meta">Season 8 Winner <span class="serif-italic">· WME Agency</span></div>
+          
+          <div class="metric-row">
+            <span class="metric-label">Instagram Reach</span>
+            <span class="metric-value">3.6M Followers</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Best Brand Category</span>
+            <span class="metric-value" style="color: var(--red);">Beauty Editorial</span>
+          </div>
+        </div>
+        
+        <div class="card-footer-info">
+          <div class="info-block">
+            <span class="info-label">Why She Converts</span>
+            <span class="info-text">Unmatched winner momentum combined with organic quoteable meme traction drives immediate, massive scale.</span>
+          </div>
+          <div class="risk-text">
+            <strong>Risk:</strong> High demand post-Reunion will trigger rapid rate inflation.
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: ANIYA -->
+      <div class="talent-card">
+        <div class="card-badge">RAPID REPRESENTATIONAL LIFT</div>
+        <div class="portrait-wrapper">
+          <img class="portrait-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" alt="Aniya Harvey">
+        </div>
+        <div>
+          <h2 class="talent-name">Aniya Harvey</h2>
+          <div class="talent-meta">Runner-Up <span class="serif-italic">· Gersh Signing</span></div>
+          
+          <div class="metric-row">
+            <span class="metric-label">Cross-Platform Reach</span>
+            <span class="metric-value">3.8M Total (2.1M IG)</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Best Brand Category</span>
+            <span class="metric-value">Mainstream Lifestyle</span>
+          </div>
+        </div>
+        
+        <div class="card-footer-info">
+          <div class="info-block">
+            <span class="info-label">Why She Converts</span>
+            <span class="info-text">Professional agency representation and broad, positive cross-platform appeal ensure reliable, high-quality integrations.</span>
+          </div>
+          <div class="risk-text">
+            <strong>Risk:</strong> New Gersh signing means her commercial pricing floor is rising fast.
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: KENZIE -->
+      <div class="talent-card">
+        <div class="card-badge">TOPICAL VIRAL SURGE</div>
+        <div class="portrait-wrapper">
+          <img class="portrait-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-49feabfdd7c9ed51.webp" alt="Kenzie Annis">
+        </div>
+        <div>
+          <h2 class="talent-name">Kenzie Annis</h2>
+          <div class="talent-meta">TikTok Sensation <span class="serif-italic">· Hair & Beauty</span></div>
+          
+          <div class="metric-row">
+            <span class="metric-label">Instagram Reach</span>
+            <span class="metric-value">1.1M Followers</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Best Brand Category</span>
+            <span class="metric-value">DTC Beauty & Haircare</span>
+          </div>
+        </div>
+        
+        <div class="card-footer-info">
+          <div class="info-block">
+            <span class="info-label">Why She Converts</span>
+            <span class="info-text">Highly active hair and beauty discussion on TikTok provides perfect creative hooks for product demos.</span>
+          </div>
+          <div class="risk-text">
+            <strong>Risk:</strong> TikTok view volatility requires direct API engagement verification.
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="source-tag">
+      Reunion Air Date: Aug 31, 2026 | Verified Instagram Counts &amp; Press Fetches Cutoff: Sep 4, 2026
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Pop-Culture Editorial Matrix</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [02]</div>
+  </footer>
+</div>
+</body>
+</html>

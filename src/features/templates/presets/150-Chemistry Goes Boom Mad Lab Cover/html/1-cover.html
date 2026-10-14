@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemistry Goes Boom — Mad Lab Cover</title>
+<style>
+:root {
+  --theme-bg: #0E0E13;
+  --theme-surface: #17131C;
+  --theme-ink: #FFFDF4;
+  --theme-muted: #DED4EB;
+  --theme-accent-primary: #A8FF2A;
+  --theme-accent-secondary: #8128CE;
+  --theme-accent-tertiary: #FF3CA6;
+  --theme-line: #341052;
+
+  --lab-canvas: var(--theme-bg);
+  --lab-surface: var(--theme-surface);
+  --lab-ink: var(--theme-ink);
+  --lab-muted: var(--theme-muted);
+  --lab-accent: var(--theme-accent-primary);
+  --lab-support: var(--theme-accent-secondary);
+  --lab-highlight: var(--theme-accent-tertiary);
+  --lab-line: var(--theme-line);
+  --lab-shadow: rgb(from var(--lab-ink) r g b / 0.18);
+  --lab-glow: rgb(from var(--lab-accent) r g b / 0.22);
+}
+
+:root{--black:rgb(from var(--lab-canvas) calc(r + 3) calc(g + 2) calc(b + 3));--purple:var(--lab-line);--violet:var(--lab-support);--green:var(--lab-accent);--pink:var(--lab-highlight);--white:var(--lab-ink);--display:Impact,Haettenschweiler,"Arial Black",sans-serif;--body:"Trebuchet MS",Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--lab-surface)}body{font-family:var(--body);color:var(--white)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:linear-gradient(145deg,var(--black),rgb(from var(--lab-surface) calc(r + 10) calc(g - 13) calc(b + 18)) 58%,var(--lab-canvas))}
+.tiles{position:absolute;inset:0;z-index:1;opacity:.2;background-image:linear-gradient(rgb(from var(--lab-accent) r g b / .22) 2px,transparent 2px),linear-gradient(90deg,rgb(from var(--lab-accent) r g b / .22) 2px,transparent 2px);background-size:64px 64px;transform:rotate(-3deg) scale(1.08)}
+.hazard{position:absolute;left:-80px;right:-80px;bottom:0;height:74px;z-index:13;background:repeating-linear-gradient(-48deg,var(--green) 0 42px,var(--black) 42px 84px);border-top:9px solid var(--black)}
+.glow{position:absolute;right:220px;top:170px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgb(from var(--lab-accent) r g b / .27),rgb(from var(--lab-support) r g b / .14) 42%,transparent 70%);filter:blur(12px);z-index:2}
+.header{position:absolute;left:76px;right:76px;top:45px;z-index:11;display:flex;align-items:center;justify-content:space-between;font-size:19px;font-weight:900;letter-spacing:5px;text-transform:uppercase}
+.header b{padding:11px 16px;background:var(--green);color:var(--black);box-shadow:7px 7px 0 var(--pink);transform:rotate(-2deg)}
+.title{position:absolute;left:84px;top:150px;z-index:10;width:1040px}
+.warning{display:inline-flex;align-items:center;gap:14px;padding:9px 18px;border:4px solid var(--green);background:var(--black);color:var(--green);font-size:22px;font-weight:900;letter-spacing:5px;text-transform:uppercase;transform:rotate(-1deg)}
+.warning span{font-size:35px;line-height:.7;color:var(--pink)}
+h1{margin:25px 0 0;font:178px/.76 var(--display);text-transform:uppercase;letter-spacing:-2px;color:var(--white);-webkit-text-stroke:4px var(--black);text-shadow:11px 11px 0 var(--violet)}
+h1 .boom{display:block;width:max-content;margin-top:26px;padding:3px 35px 22px;background:var(--green);color:var(--pink);border:10px solid var(--black);-webkit-text-stroke:4px var(--black);box-shadow:14px 14px 0 var(--pink);transform:rotate(2deg)}
+.deck{margin:42px 0 0 16px;width:830px;font-size:31px;font-weight:800;line-height:1.2;color:var(--lab-muted)}.deck strong{color:var(--green)}
+.lab{position:absolute;right:42px;top:150px;z-index:5;width:790px;height:790px}
+.bubble{position:absolute;border-radius:50%;background:var(--green);border:7px solid var(--black);box-shadow:0 0 18px rgb(from var(--lab-accent) r g b / .65)}.b1{left:120px;top:125px;width:72px;height:72px}.b2{left:45px;top:275px;width:40px;height:40px}.b3{right:95px;top:68px;width:53px;height:53px}.b4{right:15px;top:260px;width:88px;height:88px}.b5{left:360px;top:20px;width:34px;height:34px}.b6{left:220px;top:55px;width:48px;height:48px;background:var(--pink)}
+.flask{position:absolute;left:183px;top:172px;width:430px;height:515px}
+.neck{position:absolute;left:154px;top:0;width:122px;height:210px;background:var(--white);border:12px solid var(--black);border-top:0;clip-path:polygon(12% 0,88% 0,88% 70%,100% 100%,0 100%,12% 70%)}
+.neck:before{content:"";position:absolute;left:-15px;top:0;width:128px;height:30px;background:var(--violet);border:9px solid var(--black);border-radius:10px}
+.vessel{position:absolute;left:22px;bottom:0;width:386px;height:370px;background:var(--white);border:13px solid var(--black);border-radius:44% 44% 24% 24% / 62% 62% 23% 23%;overflow:hidden;box-shadow:14px 14px 0 var(--violet)}
+.liquid{position:absolute;left:-20px;right:-20px;bottom:-10px;height:230px;background:var(--green);border-top:13px solid var(--black);transform:rotate(-5deg)}
+.liquid:before,.liquid:after{content:"";position:absolute;border-radius:50%;background:var(--pink);border:6px solid var(--black)}.liquid:before{left:72px;top:52px;width:65px;height:65px}.liquid:after{right:64px;top:97px;width:42px;height:42px}
+.face{position:absolute;left:118px;top:210px;z-index:4;width:170px;height:76px}.eye{position:absolute;top:0;width:36px;height:45px;background:var(--black);border-radius:50%}.eye.e1{left:18px}.eye.e2{right:18px}.mouth{position:absolute;left:59px;top:55px;width:55px;height:25px;border-bottom:8px solid var(--black);border-radius:50%}
+.splash{position:absolute;left:83px;top:62px;width:268px;height:222px;background:var(--green);clip-path:polygon(45% 100%,39% 61%,13% 78%,26% 50%,0 40%,31% 29%,18% 0,49% 21%,62% 0,68% 29%,100% 20%,77% 50%,100% 69%,67% 67%,58% 100%);filter:drop-shadow(9px 9px 0 var(--black))}
+.tag{position:absolute;right:64px;bottom:116px;z-index:12;width:590px;padding:22px 27px;background:var(--pink);border:8px solid var(--black);box-shadow:11px 11px 0 var(--green);transform:rotate(-2deg);font-size:29px;font-weight:900;line-height:1.12;text-transform:uppercase;color:var(--black)}
+.tag span{color:var(--white)}
+@media(max-width:1919px),(max-height:1079px){body{min-width:1920px;min-height:1080px}}
+</style>
+</head>
+<body>
+<main class="slide" data-screen-label="05 Mad Science Lab Cover">
+  <div class="tiles" aria-hidden="true"></div><div class="glow" aria-hidden="true"></div><div class="hazard" aria-hidden="true"></div>
+  <header class="header" data-object="true" data-object-type="textbox"><b>Mad Science Lab</b><span>Experiment File / Handle With Curiosity</span></header>
+  <section class="title" data-object="true" data-object-type="textbox"><div class="warning"><span>⚠</span> Reactions in progress</div><h1>Chemistry<br>Goes <span class="boom">Boom!</span></h1><p class="deck">Mix, fizz, foam and transform — discover how atoms rearrange to make <strong>something completely new.</strong></p></section>
+  <section class="lab" data-object="true" data-object-type="image" aria-label="Bubbling chemistry flask"><div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="bubble b4"></div><div class="bubble b5"></div><div class="bubble b6"></div><div class="flask"><div class="splash"></div><div class="neck"></div><div class="vessel"><div class="liquid"></div><div class="face"><i class="eye e1"></i><i class="eye e2"></i><i class="mouth"></i></div></div></div></section>
+  <aside class="tag" data-object="true" data-object-type="textbox">Today’s mystery: <span>How can two clear liquids create a mountain of foam?</span></aside>
+</main>
+</body>
+</html>

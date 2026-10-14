@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design System &amp; Handoff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#F4EFE7;font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .ser{font-family:'Instrument Serif',serif;font-style:italic;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="08 Design System" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4EFE7;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:80px;width:900px;height:26px;z-index:10;">
+    <span class="mono" style="font-size:19px;letter-spacing:0.22em;color:#C0563C;">08 — SYSTEM &amp; HANDOFF</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:122px;width:1060px;height:150px;z-index:10;">
+    <div style="font-size:56px;font-weight:500;line-height:1.14;letter-spacing:-0.03em;color:#1C1A17;">The flow shipped once. The <span class="ser" style="font-weight:400;color:#C0563C;">system</span> ships every quarter.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1256px;top:134px;width:544px;z-index:10;">
+    <div style="font-size:23px;line-height:1.6;color:#4A443D;">I extracted the onboarding patterns into Meridian's shared library — 48 components with states, tokens and accessibility rules, adopted by three squads without my involvement.</div>
+  </div>
+
+  <!-- architecture / hierarchy diagram -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:360px;width:1050px;height:430px;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:20px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:158px;top:390px;width:974px;height:416px;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:0.14em;color:#8A817A;">LIBRARY ARCHITECTURE</div>
+    <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:center;gap:18px;background:#1C1A17;border-radius:14px;padding:15px 24px;">
+        <div class="mono" style="flex:0 0 148px;font-size:17px;letter-spacing:0.1em;color:#C0563C;">LAYER 01</div>
+        <div style="flex:0 0 200px;font-size:23px;font-weight:600;color:#FBF8F3;">Tokens</div>
+        <div style="flex:1;font-size:19px;line-height:1.45;color:#9C948A;">Colour, type scale, spacing, radius, motion — one JSON source feeding iOS, Android and web</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px;background:#EFE7DA;border-radius:14px;padding:15px 24px;">
+        <div class="mono" style="flex:0 0 148px;font-size:17px;letter-spacing:0.1em;color:#8A817A;">LAYER 02</div>
+        <div style="flex:0 0 200px;font-size:23px;font-weight:600;color:#1C1A17;">Primitives</div>
+        <div style="flex:1;font-size:19px;line-height:1.45;color:#6E655C;">Field, button, stage card, progress rail, sheet — 48 components, all states documented</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px;background:#EFE7DA;border-radius:14px;padding:15px 24px;">
+        <div class="mono" style="flex:0 0 148px;font-size:17px;letter-spacing:0.1em;color:#8A817A;">LAYER 03</div>
+        <div style="flex:0 0 200px;font-size:23px;font-weight:600;color:#1C1A17;">Patterns</div>
+        <div style="flex:1;font-size:19px;line-height:1.45;color:#6E655C;">Multi-stage form, document upload, save-and-resume, plain-language legal panel</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px;background:#EFE7DA;border-radius:14px;padding:15px 24px;">
+        <div class="mono" style="flex:0 0 148px;font-size:17px;letter-spacing:0.1em;color:#8A817A;">LAYER 04</div>
+        <div style="flex:0 0 200px;font-size:23px;font-weight:600;color:#1C1A17;">Journeys</div>
+        <div style="flex:1;font-size:19px;line-height:1.45;color:#6E655C;">Onboarding, loan application, card replacement — composed from the layers above</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tokens + a11y -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1210px;top:360px;width:590px;height:430px;z-index:10;">
+    <div style="background:#EFE7DA;border-radius:20px;padding:30px 30px;height:430px;">
+      <div class="mono" style="font-size:18px;letter-spacing:0.14em;color:#8A817A;">FOUNDATIONS</div>
+      <div style="margin-top:20px;display:flex;gap:12px;">
+        <div style="flex:1;"><div style="height:56px;border-radius:10px;background:#1C1A17;"></div><div class="mono" style="margin-top:8px;font-size:16px;color:#6E655C;">ink</div></div>
+        <div style="flex:1;"><div style="height:56px;border-radius:10px;background:#C0563C;"></div><div class="mono" style="margin-top:8px;font-size:16px;color:#6E655C;">accent</div></div>
+        <div style="flex:1;"><div style="height:56px;border-radius:10px;background:#6B7F6E;"></div><div class="mono" style="margin-top:8px;font-size:16px;color:#6E655C;">success</div></div>
+        <div style="flex:1;"><div style="height:56px;border-radius:10px;background:#F4EFE7;border:1px solid #DCD3C4;"></div><div class="mono" style="margin-top:8px;font-size:16px;color:#6E655C;">paper</div></div>
+      </div>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #DCD3C4;font-size:21px;color:#1C1A17;"><span>Type scale</span><span class="mono" style="color:#6E655C;">8 steps · 1.25×</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #DCD3C4;font-size:21px;color:#1C1A17;"><span>Spacing grid</span><span class="mono" style="color:#6E655C;">4 px base</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #DCD3C4;font-size:21px;color:#1C1A17;"><span>Contrast floor</span><span class="mono" style="color:#6E655C;">WCAG AA 4.5:1</span></div>
+        <div style="display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #DCD3C4;border-bottom:1px solid #DCD3C4;font-size:21px;color:#1C1A17;"><span>Tap target</span><span class="mono" style="color:#6E655C;">44 px minimum</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- adoption KPIs -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:820px;width:1680px;height:184px;z-index:10;">
+    <div style="display:flex;gap:22px;">
+      <div style="flex:1;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:18px;padding:22px 26px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">COMPONENTS</div>
+        <div style="margin-top:10px;font-size:46px;font-weight:600;letter-spacing:-0.03em;color:#1C1A17;">48</div>
+        <div style="margin-top:6px;font-size:20px;color:#6E655C;">documented with states</div>
+      </div>
+      <div style="flex:1;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:18px;padding:22px 26px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">ADOPTION</div>
+        <div style="margin-top:10px;font-size:46px;font-weight:600;letter-spacing:-0.03em;color:#1C1A17;">3 squads</div>
+        <div style="margin-top:6px;font-size:20px;color:#6E655C;">shipping from the library</div>
+      </div>
+      <div style="flex:1;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:18px;padding:22px 26px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">DESIGN TO DEV</div>
+        <div style="margin-top:10px;font-size:46px;font-weight:600;letter-spacing:-0.03em;color:#C0563C;">−40%</div>
+        <div style="margin-top:6px;font-size:20px;color:#6E655C;">handoff questions per sprint</div>
+      </div>
+      <div style="flex:1;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:18px;padding:22px 26px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">A11Y AUDIT</div>
+        <div style="margin-top:10px;font-size:46px;font-weight:600;letter-spacing:-0.03em;color:#6B7F6E;">AA pass</div>
+        <div style="margin-top:6px;font-size:20px;color:#6E655C;">all onboarding screens</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

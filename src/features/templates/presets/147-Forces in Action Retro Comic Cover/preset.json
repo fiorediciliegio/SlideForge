@@ -1,0 +1,147 @@
+{
+  "id": "147-Forces in Action Retro Comic Cover",
+  "version": 1,
+  "ppt_number": 147,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "yellow",
+    "red",
+    "blue",
+    "black"
+  ],
+  "name": "Forces in Action Retro Comic Cover",
+  "description": "Retro science comic cover with punchy red and blue lettering, yellow halftone fields, heavy black outlines, and action-burst graphics.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["children"],"formats":["lesson"],"primary_styles":["playful"],"visual_traits":["playful","colorful","cartoon","illustration","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Retro science comic cover with punchy red and blue lettering, yellow halftone fields, heavy black outlines, and action-burst graphics."
+    },
+    {
+      "path": "images/2-force-effects.webp",
+      "alt": "Force Effects reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-from-rest-to-motion.webp",
+      "alt": "From Rest to Motion reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-friction-by-surface.webp",
+      "alt": "Friction by Surface reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-4-rules-to-remember.webp",
+      "alt": "4 Rules to Remember reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Retro science comic cover with punchy red and blue lettering, yellow halftone fields, heavy black outlines, and action-burst graphics."
+    },
+    {
+      "path": "html/2-force-effects.html",
+      "description": "Force Effects reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-from-rest-to-motion.html",
+      "description": "From Rest to Motion reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-friction-by-surface.html",
+      "description": "Friction by Surface reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-4-rules-to-remember.html",
+      "description": "4 Rules to Remember reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "forces-primary-pop",
+      "name": "Primary Pop",
+      "swatches": [
+        "#FFF6DC",
+        "#101010",
+        "#ED2630",
+        "#168BD2"
+      ],
+      "roles": {
+        "bg": "#FFF6DC",
+        "surface": "#FFFFFF",
+        "ink": "#101010",
+        "muted": "#242424",
+        "accent_primary": "#ED2630",
+        "accent_secondary": "#168BD2",
+        "accent_tertiary": "#FFD52E",
+        "line": "#E7D9A4"
+      }
+    },
+    {
+      "id": "forces-purple-citrus",
+      "name": "Purple Citrus",
+      "swatches": [
+        "#FFFDEB",
+        "#1B1730",
+        "#8E4DE8",
+        "#22B7CF"
+      ],
+      "roles": {
+        "bg": "#FFFDEB",
+        "surface": "#FFFFFF",
+        "ink": "#1B1730",
+        "muted": "#38304F",
+        "accent_primary": "#8E4DE8",
+        "accent_secondary": "#22B7CF",
+        "accent_tertiary": "#D8E94F",
+        "line": "#E8E5B8"
+      }
+    },
+    {
+      "id": "forces-navy-tangerine",
+      "name": "Navy Tangerine",
+      "swatches": [
+        "#FFF8DF",
+        "#13223B",
+        "#E55338",
+        "#1C81C5"
+      ],
+      "roles": {
+        "bg": "#FFF8DF",
+        "surface": "#FFFFFF",
+        "ink": "#13223B",
+        "muted": "#31415A",
+        "accent_primary": "#E55338",
+        "accent_secondary": "#1C81C5",
+        "accent_tertiary": "#F5BE3B",
+        "line": "#E6D5A6"
+      }
+    },
+    {
+      "id": "forces-forest-coral",
+      "name": "Forest Coral",
+      "swatches": [
+        "#FFFBEA",
+        "#173128",
+        "#E9575A",
+        "#2C9E8F"
+      ],
+      "roles": {
+        "bg": "#FFFBEA",
+        "surface": "#FFFFFF",
+        "ink": "#173128",
+        "muted": "#344D43",
+        "accent_primary": "#E9575A",
+        "accent_secondary": "#2C9E8F",
+        "accent_tertiary": "#F2CC45",
+        "line": "#E2D8AC"
+      }
+    }
+  ]
+}

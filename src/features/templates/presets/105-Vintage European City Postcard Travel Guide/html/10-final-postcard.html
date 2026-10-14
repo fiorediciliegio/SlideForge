@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recommendations and Final Postcard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Caveat:wght@500;600;700&family=Cinzel:wght@400;600&display=swap');
+
+/* ============================================================
+   VINTAGE EUROPEAN CITY POSTCARD TRAVEL GUIDE
+   Shared visual identity — colour, paper, photo treatment,
+   ephemera language. Positioning stays inline on each slide.
+   Palette: terracotta #B5502F · cobalt #2A4E8A
+            cream #FCF6E8 · mustard #D9A227 · ink #33291F
+   Shadow direction: always down + slightly right.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; background: #241c14; }
+
+/* ---------- paper ---------- */
+.paper {
+  background-color: #F2E7D3;
+  background-image:
+    radial-gradient(ellipse 900px 620px at 18% 12%, rgba(255,253,247,.85), rgba(255,253,247,0) 62%),
+    radial-gradient(ellipse 780px 560px at 86% 88%, rgba(126,92,56,.16), rgba(126,92,56,0) 64%),
+    radial-gradient(ellipse 520px 380px at 92% 8%, rgba(181,80,47,.07), rgba(181,80,47,0) 70%),
+    repeating-linear-gradient(92deg, rgba(150,116,72,.045) 0 1px, rgba(150,116,72,0) 1px 4px),
+    repeating-linear-gradient(3deg, rgba(150,116,72,.035) 0 1px, rgba(150,116,72,0) 1px 5px);
+}
+
+/* ---------- typography ---------- */
+.disp  { font-family: 'Bodoni Moda', Didot, 'Times New Roman', serif; color: #33291F; }
+.body  { font-family: 'Crimson Pro', Georgia, serif; color: #3E3226; }
+.hw    { font-family: 'Caveat', 'Segoe Script', cursive; color: #2A4E8A; }
+.lbl   { font-family: 'Cinzel', serif; letter-spacing: .22em; text-transform: uppercase; color: #8A6A4A; }
+.cap   { font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: .07em;
+         text-transform: uppercase; color: #7A5F42; }
+.num   { font-family: 'Bodoni Moda', Didot, serif; color: #B5502F; }
+
+/* ---------- photographs ---------- */
+.ph {
+  background: #FCF6E8;
+  padding: 13px;
+  box-shadow: 0 14px 30px rgba(58,40,22,.30), 0 2px 4px rgba(58,40,22,.18);
+}
+.ph > img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(.18) saturate(.88) contrast(1.06) brightness(1.03);
+}
+.ph-thin { padding: 9px; }
+.ph-wide { padding: 13px 13px 13px; }
+.bleed > img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(.16) saturate(.9) contrast(1.05) brightness(1.02);
+}
+
+/* ---------- paper slips, cards, labels ---------- */
+.slip {
+  background: #FCF6E8;
+  border: 1px solid rgba(139,104,64,.32);
+  box-shadow: 0 10px 22px rgba(58,40,22,.20);
+}
+.slip-warm { background: #F8EFD9; }
+.slip-mustard { background: #F3DFAE; border: 1px solid rgba(160,118,44,.42); }
+.slip-cobalt { background: #2A4E8A; border: none; color: #F6EEDC; }
+.slip-terra { background: #B5502F; border: none; color: #FDF6E7; }
+.torn {
+  background: #FCF6E8;
+  box-shadow: 0 10px 22px rgba(58,40,22,.20);
+  clip-path: polygon(0 3px, 6% 0, 18% 4px, 32% 0, 47% 5px, 61% 0, 74% 4px, 88% 0, 100% 4px,
+                     100% calc(100% - 4px), 87% 100%, 72% calc(100% - 5px), 58% 100%,
+                     43% calc(100% - 4px), 27% 100%, 13% calc(100% - 5px), 0 100%);
+}
+
+/* ---------- ephemera ---------- */
+.stamp {
+  background: #FCF6E8;
+  padding: 11px;
+  -webkit-mask:
+    radial-gradient(circle 5px, #0000 96%, #000) -7px -7px / 14px 14px,
+    linear-gradient(#000 0 0) 50% / calc(100% - 14px) calc(100% - 14px) no-repeat;
+  mask:
+    radial-gradient(circle 5px, #0000 96%, #000) -7px -7px / 14px 14px,
+    linear-gradient(#000 0 0) 50% / calc(100% - 14px) calc(100% - 14px) no-repeat;
+}
+.pmark {
+  border: 3px double #2A4E8A;
+  border-radius: 50%;
+  color: #2A4E8A;
+  opacity: .68;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; line-height: 1.25;
+}
+.tick {
+  background: #F7EDD6;
+  border: 1px solid rgba(139,104,64,.45);
+  box-shadow: 0 9px 20px rgba(58,40,22,.22);
+}
+.tape {
+  background: linear-gradient(180deg, rgba(240,229,201,.90), rgba(223,206,168,.82));
+  box-shadow: 0 3px 9px rgba(58,40,22,.20);
+  border-left: 1px dashed rgba(255,255,255,.55);
+  border-right: 1px dashed rgba(255,255,255,.55);
+}
+.ring {
+  border: 6px solid rgba(122,86,48,.26);
+  border-radius: 50%;
+}
+
+/* ---------- map ---------- */
+.map {
+  background-color: #EEE0C2;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0) 32.4%, rgba(255,255,255,.60) 33.0%, rgba(120,92,58,.20) 33.3%, rgba(255,255,255,0) 33.9%),
+    linear-gradient(90deg, rgba(255,255,255,0) 65.7%, rgba(255,255,255,.60) 66.3%, rgba(120,92,58,.20) 66.6%, rgba(255,255,255,0) 67.2%),
+    linear-gradient(0deg, rgba(255,255,255,0) 48.5%, rgba(255,255,255,.50) 49.3%, rgba(120,92,58,.17) 49.7%, rgba(255,255,255,0) 50.5%),
+    radial-gradient(ellipse at 30% 25%, rgba(255,252,243,.7), rgba(255,252,243,0) 60%);
+  border: 1px solid rgba(120,92,58,.42);
+  box-shadow: 0 16px 34px rgba(58,40,22,.26), inset 0 0 70px rgba(150,116,70,.20);
+}
+
+/* ---------- surfaces ---------- */
+.filmbase {
+  background-color: #2A4E8A;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(252,246,232,.85) 0 18px, rgba(252,246,232,0) 18px 44px);
+  background-size: 100% 15px;
+  background-position: 0 6px, 0 0;
+  background-repeat: repeat-x;
+  box-shadow: 0 14px 32px rgba(58,40,22,.26);
+}
+.table-top {
+  background-color: #9E4B2C;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 25% 20%, rgba(255,214,168,.26), rgba(255,214,168,0) 65%),
+    repeating-linear-gradient(88deg, rgba(60,26,12,.16) 0 2px, rgba(60,26,12,0) 2px 9px),
+    repeating-linear-gradient(88deg, rgba(255,226,186,.07) 0 1px, rgba(255,226,186,0) 1px 26px);
+  box-shadow: inset 0 0 90px rgba(56,22,10,.34), 0 14px 30px rgba(58,40,22,.24);
+}
+.rule-terra { background: #B5502F; }
+.rule-ink { background: rgba(51,41,31,.55); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="10 Recommendations and Final Postcard" style="position:relative;width:1920px;height:1080px;overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape" class="paper" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:84px;width:900px;font-size:19px;z-index:10;">Ten &middot; Recommendations &amp; Final Postcard</div>
+
+  <div data-object="true" data-object-type="textbox" class="disp" style="position:absolute;left:88px;top:116px;width:1744px;font-size:53px;font-weight:600;line-height:1.18;z-index:10;">Come for three days, walk everywhere, book almost nothing.</div>
+
+  <div data-object="true" data-object-type="shape" class="rule-terra" style="position:absolute;left:90px;top:214px;width:1740px;height:3px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:248px;width:520px;z-index:10;">
+    <div class="lbl" style="font-size:16px;margin:0 0 4px 0;">Practical recommendations</div>
+    <div class="rule-terra" style="width:56px;height:3px;margin:0 0 22px 0;"></div>
+
+    <div style="display:flex;gap:16px;margin:0 0 26px 0;">
+      <span class="num" style="font-size:24px;font-weight:700;width:26px;flex:none;">01</span>
+      <span class="body" style="font-size:21px;line-height:1.46;"><strong>Stay inside the old core.</strong> Anywhere within [15] minutes of Market Square removes the need for transport entirely.</span>
+    </div>
+    <div style="display:flex;gap:16px;margin:0 0 26px 0;">
+      <span class="num" style="font-size:24px;font-weight:700;width:26px;flex:none;">02</span>
+      <span class="body" style="font-size:21px;line-height:1.46;"><strong>Three days is the right length.</strong> One for the loop, one for two quarters, one deliberately unplanned.</span>
+    </div>
+    <div style="display:flex;gap:16px;margin:0 0 26px 0;">
+      <span class="num" style="font-size:24px;font-weight:700;width:26px;flex:none;">03</span>
+      <span class="body" style="font-size:21px;line-height:1.46;"><strong>Shoes over itineraries.</strong> The paving is uneven everywhere and the best streets have no flat route through them.</span>
+    </div>
+    <div style="display:flex;gap:16px;">
+      <span class="num" style="font-size:24px;font-weight:700;width:26px;flex:none;">04</span>
+      <span class="body" style="font-size:21px;line-height:1.46;"><strong>Respect the closed hours.</strong> Plan interiors for the morning; treat early afternoon as rest, not lost time.</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="slip-mustard" style="position:absolute;left:90px;top:788px;width:520px;height:196px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:118px;top:812px;width:464px;z-index:10;">
+    <div class="lbl" style="font-size:14px;color:#7A5A18;margin:0 0 10px 0;">Before you go &middot; verify locally</div>
+    <div class="body" style="font-size:20px;line-height:1.46;margin:0;color:#4A3A22;">Opening hours and admission prices &middot; market days &middot; transport fares and validity &middot; entry requirements for your nationality.</div>
+  </div>
+
+  <div data-object="true" data-object-type="image" class="ph" style="position:absolute;left:648px;top:248px;width:492px;height:640px;z-index:5;">
+    <img src="../assets/closing-rooftops.jpg" alt="Old town rooftops in warm evening light">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:654px;top:902px;width:486px;z-index:10;">
+    <div class="cap" style="font-size:16px;margin:0 0 5px 0;">Plate 24 &middot; Last evening, from the terrace</div>
+    <div class="body" style="font-size:19px;font-style:italic;line-height:1.36;color:#6B5540;margin:0;">The one photograph I would keep.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1186px;top:248px;width:644px;height:504px;background:#FCF6E8;border:1px solid rgba(139,104,64,.34);box-shadow:0 18px 38px rgba(58,40,22,.28);z-index:5;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1508px;top:276px;width:2px;height:448px;background:rgba(120,92,58,.30);z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1216px;top:276px;width:270px;font-size:13px;z-index:10;">Post card &middot; [CITY]</div>
+
+  <div data-object="true" data-object-type="textbox" class="hw" style="position:absolute;left:1216px;top:314px;width:270px;font-size:29px;line-height:1.34;z-index:10;">Three days here and I never opened the map again after the first morning.<br><br>A small city that rewards repetition &mdash; the same square at four hours.</div>
+
+  <div data-object="true" data-object-type="textbox" class="hw" style="position:absolute;left:1216px;top:672px;width:270px;font-size:28px;z-index:10;">— [Your name]</div>
+
+  <div data-object="true" data-object-type="shape" class="stamp" style="position:absolute;left:1666px;top:274px;width:138px;height:158px;z-index:10;">
+    <div style="width:100%;height:100%;background:#B5502F;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <div class="lbl" style="font-size:10px;color:#F6D9A8;">Postage</div>
+      <div class="disp" style="font-size:38px;font-weight:700;color:#FDF3E0;line-height:1;margin:7px 0;">X</div>
+      <div class="lbl" style="font-size:10px;color:#F6D9A8;">[Value]</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="pmark" style="position:absolute;left:1524px;top:286px;width:124px;height:124px;transform:rotate(-7deg);z-index:10;">
+    <div class="lbl" style="font-size:10px;color:#2A4E8A;">[City]</div>
+    <div class="disp" style="font-size:18px;font-weight:600;color:#2A4E8A;margin:4px 0;">[DD.MM]</div>
+    <div class="lbl" style="font-size:9px;color:#2A4E8A;">Sent</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1540px;top:456px;width:266px;z-index:10;">
+    <div class="lbl" style="font-size:12px;margin:0 0 16px 0;">Addressed to</div>
+    <div style="height:1px;background:rgba(120,92,58,.42);margin:0 0 34px 0;"></div>
+    <div style="height:1px;background:rgba(120,92,58,.42);margin:0 0 34px 0;"></div>
+    <div style="height:1px;background:rgba(120,92,58,.42);margin:0;"></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1540px;top:664px;width:266px;font-size:12px;line-height:1.6;z-index:10;">[Recipient] &middot; [Street] &middot; [City] &middot; [Country]</div>
+
+  <div data-object="true" data-object-type="shape" class="slip-cobalt" style="position:absolute;left:1186px;top:788px;width:644px;height:196px;box-shadow:0 12px 26px rgba(58,40,22,.24);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1216px;top:814px;width:584px;z-index:10;">
+    <div class="lbl" style="font-size:15px;color:#E9C77A;margin:0 0 10px 0;">Why this city, in one line</div>
+    <div class="disp" style="font-size:29px;font-style:italic;font-weight:400;line-height:1.32;color:#FBF3E1;margin:0;">A city built at walking speed, still lived in at walking speed.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:1024px;width:700px;font-size:14px;z-index:10;">[CITY] &middot; Postcard Travel Guide &middot; End of guide</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1690px;top:1002px;width:140px;text-align:right;z-index:10;">
+    <span class="num" style="font-size:30px;font-weight:600;">10</span><span class="lbl" style="font-size:14px;">/10</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "根据品牌方向说明制作8页视觉概念提案。事实和品牌定位只使用附件；Image Research用于寻找符合要求的摄影风格参考，不得直接复制竞品视觉。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "品牌、产品与设计团队",
+        "description": "品牌、产品与设计团队"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "视觉概念对齐",
+        "description": "视觉概念对齐"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "把品牌价值转化为可执行的视觉方向与禁用项",
+        "description": "把品牌价值转化为可执行的视觉方向与禁用项"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "克制、现代、生活化",
+        "description": "克制、现代、生活化"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "品牌、产品与设计团队",
+      "description": "品牌、产品与设计团队"
+    },
+    "purpose": {
+      "label": "视觉概念对齐",
+      "description": "视觉概念对齐"
+    },
+    "desired_outcome": {
+      "label": "把品牌价值转化为可执行的视觉方向与禁用项",
+      "description": "把品牌价值转化为可执行的视觉方向与禁用项"
+    },
+    "slide_count": 8,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "克制、现代、生活化",
+      "description": "克制、现代、生活化"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

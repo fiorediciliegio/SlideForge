@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Podcast Sponsorship Media Kit — Cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE SIGNAL ROOM — Sponsorship Media Kit
+   Shared design system: type, color, surface treatments.
+   Layout/position stays inline on each data-object.
+   ============================================================ */
+
+:root{
+  /* Core palette — warm editorial "on-air" */
+  --ink:        #171310;
+  --ink-2:      #221C18;
+  --ink-3:      #2E2622;
+  --cream:      #F6F1E7;
+  --cream-2:    #EDE5D6;
+  --amber:      #E39B34;
+  --amber-deep: #A8571F;
+  --clay:       #B4472C;
+  --olive:      #6E7A55;
+
+  /* Derived */
+  --ink-70: rgba(23,19,16,.70);
+  --ink-52: rgba(23,19,16,.52);
+  --ink-40: rgba(23,19,16,.40);
+  --ink-14: rgba(23,19,16,.14);
+  --ink-07: rgba(23,19,16,.07);
+  --cr-78:  rgba(246,241,231,.78);
+  --cr-58:  rgba(246,241,231,.58);
+  --cr-40:  rgba(246,241,231,.40);
+  --cr-16:  rgba(246,241,231,.16);
+  --cr-08:  rgba(246,241,231,.08);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  font-family:'Karla','Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-light{
+  background:
+    radial-gradient(1200px 640px at 88% -12%, rgba(227,155,52,.13) 0%, rgba(227,155,52,0) 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(180,71,44,.09) 0%, rgba(180,71,44,0) 60%),
+    #F6F1E7;
+}
+.bg-dark{
+  background:
+    radial-gradient(1100px 620px at 92% -10%, rgba(227,155,52,.20) 0%, rgba(227,155,52,0) 60%),
+    radial-gradient(900px 560px at -6% 106%, rgba(180,71,44,.16) 0%, rgba(180,71,44,0) 62%),
+    #171310;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--amber-deep); margin:0;
+}
+.eyebrow.on-dark{ color:var(--amber); }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:88px; line-height:1.02; letter-spacing:-.02em;
+  color:var(--cream); margin:0;
+}
+.h2{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:56px; line-height:1.08; letter-spacing:-.018em;
+  color:var(--ink); margin:0;
+}
+.h2.on-dark{ color:var(--cream); }
+.h3{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:30px; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.h3.on-dark{ color:var(--cream); }
+.h4{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:23px; line-height:1.24; letter-spacing:-.004em;
+  color:var(--ink); margin:0;
+}
+.h4.on-dark{ color:var(--cream); }
+
+.lead{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:26px; line-height:1.52; color:var(--ink-70); margin:0;
+}
+.lead.on-dark{ color:var(--cr-78); }
+
+.body{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:20px; line-height:1.5; color:var(--ink-70); margin:0;
+}
+.body.on-dark{ color:var(--cr-78); }
+
+.micro{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-40); margin:0;
+}
+.micro.on-dark{ color:var(--cr-40); }
+
+.metric{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:66px; line-height:1; letter-spacing:-.028em;
+  color:var(--ink); margin:0; font-variant-numeric: tabular-nums;
+}
+.metric.on-dark{ color:var(--cream); }
+.metric .unit{ font-size:.46em; font-weight:700; letter-spacing:0; }
+
+.tag{
+  display:inline-block; font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px 5px; border-radius:var(--r-sm);
+  background:rgba(227,155,52,.20); color:var(--amber-deep);
+}
+.tag.on-dark{ background:rgba(227,155,52,.18); color:var(--amber); }
+
+/* ---------- Surfaces ---------- */
+.card{
+  background:#FFFDF8; border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-quiet{
+  background:rgba(23,19,16,.035); border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-dark{
+  background:rgba(246,241,231,.055); border:1px solid var(--cr-16);
+  border-radius:var(--r-md);
+}
+.card-ink{
+  background:var(--ink); border:1px solid rgba(23,19,16,1);
+  border-radius:var(--r-md);
+}
+.card-amber{
+  background:var(--amber); border:1px solid var(--amber);
+  border-radius:var(--r-md);
+}
+.rule{ background:var(--ink-14); }
+.rule-dark{ background:var(--cr-16); }
+
+/* ---------- Chart primitives ---------- */
+.bar-track{ background:var(--ink-07); border-radius:2px; overflow:hidden; }
+.bar-track-dark{ background:rgba(246,241,231,.10); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; border-radius:2px; }
+
+table.kit{ border-collapse:collapse; width:100%; }
+table.kit th{
+  font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+  text-align:left; padding:0 0 12px; border-bottom:1px solid var(--ink-14);
+}
+table.kit td{
+  font-family:'Karla',sans-serif; font-size:20px; color:var(--ink);
+  padding:15px 0; border-bottom:1px solid var(--ink-07);
+  font-variant-numeric: tabular-nums;
+}
+table.kit.on-dark th{ color:var(--cr-40); border-bottom-color:var(--cr-16); }
+table.kit.on-dark td{ color:var(--cream); border-bottom-color:rgba(246,241,231,.09); }
+</style>
+</head>
+<body>
+<div class="slide bg-dark" data-screen-label="01 Cover" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <!-- studio photograph -->
+  <img data-object="true" data-object-type="image" src="../assets/cover-band.jpg" alt="The Signal Room recording studio"
+       style="position:absolute; left:1300px; top:0px; width:620px; height:1080px; object-fit:cover; object-position:50% 50%; z-index:5;">
+
+  <img data-object="true" data-object-type="image" src="../assets/studio-guests.jpg" alt="Guests recording an episode"
+       style="position:absolute; left:940px; top:0px; width:360px; height:1080px; object-fit:cover; object-position:62% 46%; z-index:5;">
+
+  <!-- scrim blending photo into the ink field -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:880px; top:0px; width:480px; height:1080px; z-index:6;
+              background:linear-gradient(90deg,#171310 0%, rgba(23,19,16,.96) 22%, rgba(23,19,16,.58) 66%, rgba(23,19,16,0) 100%);"></div>
+
+  <!-- warm light leak over the photo -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1180px; top:0px; width:740px; height:1080px; z-index:7;
+              background:linear-gradient(200deg, rgba(227,155,52,.24) 0%, rgba(227,155,52,0) 46%);"></div>
+
+  <!-- left edge accent bar -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:0px; top:0px; width:10px; height:1080px; z-index:1; background:var(--amber);"></div>
+
+  <!-- on-air badge -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:128px; top:104px; width:334px; height:48px; z-index:10;
+              display:flex; align-items:center; gap:12px; padding:0 20px;
+              border:1px solid var(--cr-16); border-radius:4px; background:rgba(246,241,231,.05);">
+    <span style="width:9px; height:9px; border-radius:50%; background:var(--amber); display:block; flex:0 0 auto;"></span>
+    <span class="micro on-dark" style="color:var(--cr-78); font-size:14px;">On air · Season 4 · 2026</span>
+  </div>
+
+  <!-- title -->
+  <h1 class="h1" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:128px; top:242px; width:800px; height:290px; z-index:10;">Podcast<br>Sponsorship<br>Media&nbsp;Kit</h1>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:128px; top:556px; width:128px; height:6px; z-index:1; background:var(--amber); border-radius:2px;"></div>
+
+  <p class="lead on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:128px; top:600px; width:690px; z-index:10;">
+    <strong style="color:var(--cream); font-weight:600;">The Signal Room</strong> — a weekly interview show about how operators actually build things. Partnership inventory and rates for the 2026 season.</p>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:128px; top:764px; width:690px; height:1px; z-index:1; background:var(--cr-16);"></div>
+
+  <!-- headline metrics -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:128px; top:806px; width:224px; z-index:10;">
+    <p class="metric on-dark" style="font-size:52px;">142<span class="unit">K</span></p>
+    <p class="micro on-dark" style="margin-top:12px;">Downloads / episode</p>
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:376px; top:806px; width:224px; z-index:10;">
+    <p class="metric on-dark" style="font-size:52px;">78<span class="unit">%</span></p>
+    <p class="micro on-dark" style="margin-top:12px;">Average completion</p>
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:624px; top:806px; width:224px; z-index:10;">
+    <p class="metric on-dark" style="font-size:52px;">62<span class="unit">%</span></p>
+    <p class="micro on-dark" style="margin-top:12px;">Budget decision-makers</p>
+  </div>
+
+  <p class="micro on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:128px; top:962px; width:760px; z-index:10; color:var(--cr-58);">
+    thesignalroom.fm &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0f7f6e7d7b616a7d7c67667f7c4f7b676a7c6668616e637d606062216962">[email&#160;protected]</a></p>
+
+</div>
+</body>
+</html>

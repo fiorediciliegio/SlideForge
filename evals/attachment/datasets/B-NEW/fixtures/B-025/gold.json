@@ -1,0 +1,13 @@
+{
+  "case_id": "B-025",
+  "size_class": "中",
+  "target_input_tokens": 5600,
+  "estimated_outline_input_tokens": 5743,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": false,
+  "attachment_mode": "Single attachment",
+  "attachment_types": "DOCX",
+  "content_strategies": "summarized_context",
+  "evaluation_risks": "1. Exposing supplier names or prices; 2. Generalizing one confirmed delay to all suppliers; 3. Presenting air freight as approved; 4. Using stale port information; 5. Mixing internal facts and external research sources."
+}

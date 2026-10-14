@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Construction Plan & Risk Allocation</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+  /* ampersand rendered in a serif italic so it stays legible at small sizes */
+  .amp{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;font-family:'Archivo',sans-serif;">
+<div class="slide" data-screen-label="09 Construction & Risk" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1E9;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:76px;width:26px;height:3px;background:#C87A1E;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:140px;top:64px;width:900px;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:.19em;text-transform:uppercase;color:#C87A1E;">09 · Construction plan <span class="amp">&amp;</span> risk allocation</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:64px;width:524px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:.14em;color:rgba(22,33,30,0.45);">NTP Q1 2027 → COD Q3 2028</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:112px;width:1728px;z-index:10;">
+    <div style="font-size:50px;font-weight:600;color:#16211E;letter-spacing:-0.015em;line-height:1.1;">21 months to COD, with every major risk contractually placed</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:206px;width:1728px;height:1px;background:rgba(22,33,30,0.20);z-index:1;"></div>
+
+  <!-- GANTT -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:238px;width:1000px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.15em;color:rgba(22,33,30,0.55);">FIG. 9.1 — EXECUTION SCHEDULE</div>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:276px;width:1728px;height:376px;z-index:10;">
+    <svg width="1728" height="376" viewBox="0 0 1728 376" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+      <!-- timeline grid: 8 quarters, 167.5 px per quarter -->
+      <g stroke="rgba(22,33,30,0.13)" stroke-width="1">
+        <line x1="360" y1="34" x2="360" y2="318"/><line x1="528" y1="34" x2="528" y2="318"/>
+        <line x1="696" y1="34" x2="696" y2="318"/><line x1="863" y1="34" x2="863" y2="318"/>
+        <line x1="1031" y1="34" x2="1031" y2="318"/><line x1="1198" y1="34" x2="1198" y2="318"/>
+        <line x1="1366" y1="34" x2="1366" y2="318"/><line x1="1533" y1="34" x2="1533" y2="318"/>
+        <line x1="1700" y1="34" x2="1700" y2="318"/>
+      </g>
+      <g font-size="14" fill="rgba(22,33,30,0.55)" text-anchor="middle">
+        <text x="444" y="24">Q1 27</text><text x="612" y="24">Q2 27</text><text x="779" y="24">Q3 27</text><text x="947" y="24">Q4 27</text>
+        <text x="1114" y="24">Q1 28</text><text x="1282" y="24">Q2 28</text><text x="1449" y="24">Q3 28</text><text x="1616" y="24">Q4 28</text>
+      </g>
+
+      <!-- row labels -->
+      <g font-family="'Archivo',sans-serif" font-size="20" fill="#16211E">
+        <text x="0" y="66">Financial close <tspan class="amp">&amp;</tspan> NTP</text>
+        <text x="0" y="116">Civil works, roads <tspan class="amp">&amp;</tspan> foundations</text>
+        <text x="0" y="166">Turbine delivery <tspan class="amp">&amp;</tspan> erection</text>
+        <text x="0" y="216">PV racking, modules <tspan class="amp">&amp;</tspan> BESS</text>
+        <text x="0" y="266">Substation <tspan class="amp">&amp;</tspan> energisation</text>
+        <text x="0" y="316">Commissioning <tspan class="amp">&amp;</tspan> testing</text>
+      </g>
+
+      <!-- bars: no end-cap markers, uniform treatment across all rows -->
+      <g>
+        <rect x="360" y="48" width="120" height="24" fill="#C87A1E" rx="2"/>
+        <rect x="420" y="98" width="440" height="24" fill="#4A6E78" rx="2"/>
+        <rect x="700" y="148" width="600" height="24" fill="#4A6E78" rx="2"/>
+        <rect x="860" y="198" width="520" height="24" fill="#E8A94A" rx="2"/>
+        <rect x="530" y="248" width="700" height="24" fill="#6E8A56" rx="2"/>
+        <rect x="1290" y="298" width="220" height="24" fill="#16211E" rx="2"/>
+      </g>
+
+      <!-- milestone callouts as plain type, no diamonds -->
+      <g font-size="13" fill="rgba(22,33,30,0.62)" letter-spacing="0.08em">
+        <text x="492" y="65">NTP</text>
+        <text x="1242" y="265">BACKFEED ENERGISED</text>
+        <text x="1522" y="315" fill="#C87A1E" font-weight="500">COD — Q3 2028</text>
+      </g>
+
+      <!-- legend -->
+      <g font-size="15" fill="rgba(22,33,30,0.72)" font-family="'Archivo',sans-serif">
+        <rect x="0" y="348" width="30" height="14" fill="#4A6E78"/><text x="40" y="360">Wind scope</text>
+        <rect x="200" y="348" width="30" height="14" fill="#E8A94A"/><text x="240" y="360">Solar + storage scope</text>
+        <rect x="470" y="348" width="30" height="14" fill="#6E8A56"/><text x="510" y="360">Grid scope</text>
+        <rect x="680" y="348" width="30" height="14" fill="#16211E"/><text x="720" y="360">Testing</text>
+        <text x="880" y="360" fill="rgba(22,33,30,0.50)">Float: 8 weeks held against turbine delivery critical path</text>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:672px;width:1728px;height:1px;background:rgba(22,33,30,0.18);z-index:1;"></div>
+
+  <!-- risk matrix -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:690px;width:1200px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.15em;color:rgba(22,33,30,0.55);">RISK REGISTER — TOP FIVE, WITH MITIGATION <span class="amp">&amp;</span> RESIDUAL EXPOSURE</div>
+  </div>
+  <div data-object="true" data-object-type="table" style="position:absolute;left:96px;top:730px;width:1728px;z-index:10;">
+    <table style="width:1728px;border-collapse:collapse;table-layout:fixed;font-size:18px;color:#16211E;line-height:1.25;">
+      <colgroup>
+        <col style="width:344px;"><col style="width:196px;"><col style="width:572px;"><col style="width:386px;"><col style="width:230px;">
+      </colgroup>
+      <thead>
+        <tr class="mono" style="font-size:13px;letter-spacing:.13em;color:rgba(22,33,30,0.55);text-align:left;">
+          <th style="padding:0 28px 11px 0;font-weight:500;">RISK</th>
+          <th style="padding:0 28px 11px 0;font-weight:500;">GROSS</th>
+          <th style="padding:0 28px 11px 0;font-weight:500;">MITIGATION IN PLACE</th>
+          <th style="padding:0 28px 11px 0;font-weight:500;">BORNE BY</th>
+          <th style="padding:0 0 11px 0;font-weight:500;text-align:right;">RESIDUAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-top:1px solid rgba(22,33,30,0.30);">
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);font-weight:500;">Construction cost overrun</td>
+          <td class="mono" style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:#8A3B1E;">HIGH</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">Fixed-price LSTK EPC wrap + 3.0% owner contingency</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">EPC contractor</td>
+          <td class="mono" style="padding:11px 0;border-bottom:1px solid rgba(22,33,30,0.13);text-align:right;color:#4C6338;">LOW</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);font-weight:500;">Turbine delivery slip</td>
+          <td class="mono" style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:#8A3B1E;">HIGH</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">Slots reserved with 20% deposit; 8-week float; LDs</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">OEM · liquidated damages</td>
+          <td class="mono" style="padding:11px 0;border-bottom:1px solid rgba(22,33,30,0.13);text-align:right;color:#C87A1E;">MEDIUM</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);font-weight:500;">Merchant price volatility</td>
+          <td class="mono" style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:#8A3B1E;">HIGH</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">85% of year-1 revenue contracted; tail capped at 15%</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">Project · shared with lenders</td>
+          <td class="mono" style="padding:11px 0;border-bottom:1px solid rgba(22,33,30,0.13);text-align:right;color:#C87A1E;">MEDIUM</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);font-weight:500;">Curtailment <span class="amp">&amp;</span> basis risk</td>
+          <td class="mono" style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:#C87A1E;">MEDIUM</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">3.1% curtailment modelled; storage shifts off-peak</td>
+          <td style="padding:11px 28px 11px 0;border-bottom:1px solid rgba(22,33,30,0.13);color:rgba(22,33,30,0.72);">Project</td>
+          <td class="mono" style="padding:11px 0;border-bottom:1px solid rgba(22,33,30,0.13);text-align:right;color:#4C6338;">LOW</td>
+        </tr>
+        <tr>
+          <td style="padding:11px 28px 11px 0;font-weight:500;">Resource underperformance</td>
+          <td class="mono" style="padding:11px 28px 11px 0;color:#C87A1E;">MEDIUM</td>
+          <td style="padding:11px 28px 11px 0;color:rgba(22,33,30,0.72);">Debt sized to P90; 3 yrs met data; IE-verified yield</td>
+          <td style="padding:11px 28px 11px 0;color:rgba(22,33,30,0.72);">Equity</td>
+          <td class="mono" style="padding:11px 0;text-align:right;color:#4C6338;">LOW</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;background:rgba(22,33,30,0.14);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1018px;width:1300px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.13em;color:rgba(22,33,30,0.45);text-transform:uppercase;">Renewable Energy Project Investment Deck · Illustrative template data</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1664px;top:1018px;width:160px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.13em;color:#C87A1E;">09 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

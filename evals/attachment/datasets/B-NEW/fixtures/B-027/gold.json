@@ -1,0 +1,13 @@
+{
+  "case_id": "B-027",
+  "size_class": "长",
+  "target_input_tokens": 11200,
+  "estimated_outline_input_tokens": 11296,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": true,
+  "attachment_mode": "无附件",
+  "attachment_types": "无",
+  "content_strategies": "null",
+  "evaluation_risks": "1. 给出个体用药建议；2. 编造本地患病率；3. 混用不同年龄筛查建议；4. 使用不规范测量图片；5. 把项目目标写成已实现结果。"
+}

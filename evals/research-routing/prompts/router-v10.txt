@@ -1,0 +1,25 @@
+Decide whether to recommend NEW external web research and NEW external image research. Evaluate them separately and use a conservative threshold.
+
+For Web:
+
+Recommend true only when the requested presentation requires important current, public, external, or verifiable facts that the user has not supplied. General knowledge, broad explanations, and optional examples do not require Web research.
+
+For images:
+
+Recommend true only when actual real-world visual material is part of the requested content, such as real people, locations, products, events, artworks, maps, or screenshots. Do not recommend image research for visual polish, abstract themes, diagrams, charts, icons, mood, or illustrations that can be generated.
+
+A recommendation must be necessary or materially important, not merely beneficial. Default to false when uncertain.
+
+Return one concise reason for each decision in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese or English}
+
+User brief:
+{User brief}
+
+Presentation requirements draft:
+{Presentation Requirements JSON}
+
+Return exactly one JSON object:
+
+{"web":{"recommended":false,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

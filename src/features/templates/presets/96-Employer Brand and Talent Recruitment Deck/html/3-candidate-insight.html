@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Candidate insight</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F4F0E9;--white:#FFFCF7;--ink:#211D1A;--ink70:#5C544D;--ink45:#8C8278;--clay:#C25438;--moss:#3B5A46;--gold:#C9922F;--sand:#E7DFCF;--line:#D6CCBA;}
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:var(--paper);font-family:'Manrope',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+.d{font-family:'Bricolage Grotesque','Manrope',sans-serif;font-weight:600;letter-spacing:-0.025em;}
+.eb{font-weight:800;font-size:19px;letter-spacing:.2em;text-transform:uppercase;}
+p{margin:0;}
+.row{display:flex;align-items:center;gap:22px;height:60px;}
+.lbl{width:322px;font-size:24px;font-weight:600;color:var(--ink);line-height:1.2;}
+.track{flex:1;height:22px;background:var(--sand);border-radius:3px;overflow:hidden;}
+.fill{display:block;height:22px;background:var(--clay);border-radius:3px;}
+.fill.sec{background:#9C9086;}
+.val{width:78px;text-align:right;font-family:'Bricolage Grotesque','Manrope',sans-serif;font-size:28px;font-weight:600;color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="slide" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--paper);">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:52px;width:900px;z-index:10;">
+    <p class="eb" style="font-size:18px;letter-spacing:.22em;color:var(--ink45);">NOVASCALE&nbsp;&nbsp;·&nbsp;&nbsp;EMPLOYER BRAND PROGRAM</p>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:96px;width:1700px;height:2px;background:var(--line);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:146px;width:1500px;z-index:10;">
+    <p class="eb" style="font-size:20px;letter-spacing:.2em;color:var(--clay);">03&nbsp;&nbsp;/&nbsp;&nbsp;Candidate insight</p>
+    <p class="d" style="margin-top:20px;font-size:62px;line-height:1.06;color:var(--ink);">They choose the work first, the package second</p>
+  </div>
+
+  <!-- left image + caption -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:110px;top:326px;width:600px;height:400px;z-index:5;overflow:hidden;border-radius:6px;">
+    <img src="../assets/collab.jpg" alt="Two NovaScale engineers reviewing a design in the open" style="width:600px;height:400px;object-fit:cover;display:block;filter:saturate(0.92);">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:752px;width:600px;height:186px;background:var(--white);border:2px solid var(--line);border-radius:6px;padding:26px 28px;z-index:10;">
+    <p class="eb" style="font-size:17px;letter-spacing:.18em;color:var(--ink45);">Research base</p>
+    <p style="margin-top:12px;font-size:23px;line-height:1.42;color:var(--ink70);">480 survey responses, 34 candidate interviews, and exit-reason coding on 96 declined offers.</p>
+  </div>
+
+  <!-- right: ranked drivers chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:770px;top:326px;width:1040px;z-index:10;">
+    <p class="eb" style="font-size:18px;letter-spacing:.18em;color:var(--ink);">Ranked decision drivers — senior IC candidates</p>
+    <p style="margin-top:10px;font-size:20px;font-weight:600;color:var(--ink45);">Share naming the factor in their top three (n=480)</p>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:770px;top:412px;width:1040px;height:396px;z-index:10;">
+    <div class="row"><span class="lbl">Technical depth of the problem</span><span class="track"><span class="fill" style="width:74%;"></span></span><span class="val">74%</span></div>
+    <div class="row"><span class="lbl">Quality of the people around them</span><span class="track"><span class="fill" style="width:68%;"></span></span><span class="val">68%</span></div>
+    <div class="row"><span class="lbl">Autonomy and shipping speed</span><span class="track"><span class="fill" style="width:61%;"></span></span><span class="val">61%</span></div>
+    <div class="row"><span class="lbl">Visible growth path</span><span class="track"><span class="fill" style="width:54%;"></span></span><span class="val">54%</span></div>
+    <div class="row"><span class="lbl">Compensation and equity</span><span class="track"><span class="fill sec" style="width:49%;"></span></span><span class="val">49%</span></div>
+    <div class="row"><span class="lbl">Flexible location policy</span><span class="track"><span class="fill sec" style="width:37%;"></span></span><span class="val">37%</span></div>
+  </div>
+
+  <!-- implication strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:770px;top:838px;width:1040px;height:100px;background:var(--moss);border-radius:6px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:802px;top:862px;width:976px;z-index:10;">
+    <p style="font-size:27px;line-height:1.36;font-weight:600;color:#F4F0E9;">So the brand must lead with engineering substance — not perks, offices or slogans.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:966px;width:1700px;height:2px;background:var(--line);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:992px;width:1700px;z-index:10;">
+    <p style="font-size:20px;font-weight:600;color:var(--ink45);">Employer Brand &amp; Talent Recruitment — FY26<span style="float:right;font-weight:800;color:var(--clay);">03</span></p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "制作10页2025年度ESG进展简报。公司数据以附件为准；对于监管框架名称和2026年仍有效的披露要求，可以使用Web Research核对。不要把公司目标写成已完成成果。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "董事会及外部合作伙伴",
+        "description": "董事会及外部合作伙伴"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "年度ESG进展沟通",
+        "description": "年度ESG进展沟通"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "区分成果、目标、核算边界和待核对监管要求",
+        "description": "区分成果、目标、核算边界和待核对监管要求"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "透明、审慎、指标清晰",
+        "description": "透明、审慎、指标清晰"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "董事会及外部合作伙伴",
+      "description": "董事会及外部合作伙伴"
+    },
+    "purpose": {
+      "label": "年度ESG进展沟通",
+      "description": "年度ESG进展沟通"
+    },
+    "desired_outcome": {
+      "label": "区分成果、目标、核算边界和待核对监管要求",
+      "description": "区分成果、目标、核算边界和待核对监管要求"
+    },
+    "slide_count": 10,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "透明、审慎、指标清晰",
+      "description": "透明、审慎、指标清晰"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

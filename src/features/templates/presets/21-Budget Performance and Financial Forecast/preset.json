@@ -1,0 +1,103 @@
+{
+  "id": "21-Budget Performance and Financial Forecast",
+  "version": 1,
+  "ppt_number": 21,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "navy",
+    "cream",
+    "teal",
+    "orange"
+  ],
+  "name": "Budget Performance and Financial Forecast",
+  "description": "Financial planning design with navy anchors, cream analytical pages, teal charts, and compact forecast tables.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review","financial-results"],"industries":["business","finance"],"audiences":["employee"],"formats":["quarterly-report"],"primary_styles":["formal"],"visual_traits":["formal","data-dense","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深海军蓝、奶油白与青绿色主导封面，超大标题位于左侧中部，一块几何面板平衡画面。"
+    },
+    {
+      "path": "images/2-financial-overview.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，概览信息强化对比。"
+    },
+    {
+      "path": "images/3-ebitda-bridge.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，财务信息收束版面。"
+    },
+    {
+      "path": "images/4-revenue-variance.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，分析图表形成重心。"
+    },
+    {
+      "path": "images/5-cost-variance.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，分析图表拉开层级。"
+    },
+    {
+      "path": "images/6-cash-flow.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，财务信息组织动线。"
+    },
+    {
+      "path": "images/7-metrics-scorecard.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，八组大号数字形成节奏，绩效信息强化对比。"
+    },
+    {
+      "path": "images/8-risk-scenarios.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，风险信息收束版面。"
+    },
+    {
+      "path": "images/9-forecast-reforecast.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一幅图表集中排布，财务信息形成重心。"
+    },
+    {
+      "path": "images/10-cost-optimization.webp",
+      "alt": "深海军蓝、奶油白与青绿色页面，一组表格压缩信息密度，财务信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页以深海军蓝、奶油白与青绿色建立强对比，超大标题落在左侧中部；一块几何面板占据主要视区，细线和页脚信息稳定边界。"
+    },
+    {
+      "path": "html/2-financial-overview.html",
+      "description": "深海军蓝、奶油白与青绿色画面，标题置于左上方；四组大号数字拉开视觉节奏，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/3-ebitda-bridge.html",
+      "description": "左上方标题锚定深海军蓝、奶油白与青绿色画面；留白与细线分隔出清晰阅读区，一幅财务图表落在中央，金额数字、占比与变化标记补充层级。"
+    },
+    {
+      "path": "html/4-revenue-variance.html",
+      "description": "深海军蓝、奶油白与青绿色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅分析图表落在右侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/5-cost-variance.html",
+      "description": "标题固定在左上方，深海军蓝、奶油白与青绿色分隔主体；三组大号数字拉开视觉节奏，一幅分析图表落在左侧，对比图表与差异标记补充层级。"
+    },
+    {
+      "path": "html/6-cash-flow.html",
+      "description": "深海军蓝、奶油白与青绿色画面，标题置于左上方；留白与细线分隔出清晰阅读区，一幅财务图表落在左侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/7-metrics-scorecard.html",
+      "description": "左上方标题锚定深海军蓝、奶油白与青绿色画面；左右两侧以大号数字形成对照，指标数字与趋势标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/8-risk-scenarios.html",
+      "description": "深海军蓝、奶油白与青绿色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅风险图表落在左侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/9-forecast-reforecast.html",
+      "description": "标题固定在左上方，深海军蓝、奶油白与青绿色分隔主体；留白与细线分隔出清晰阅读区，一幅财务图表落在左侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/10-cost-optimization.html",
+      "description": "深海军蓝、奶油白与青绿色画面，标题置于左上方；留白与细线分隔出清晰阅读区，一组表格位于左侧，金额数字、占比与变化标记补充层级。"
+    }
+  ]
+}

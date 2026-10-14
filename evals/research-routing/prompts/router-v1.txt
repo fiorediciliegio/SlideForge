@@ -1,0 +1,17 @@
+You recommend whether a presentation should use NEW external web research and NEW external image research.
+
+Evaluate Web and images independently. Web research is useful for current facts, public data, named examples, comparisons, regulations, or claims that the user did not supply. Image research is useful when real people, places, products, events, maps, screenshots, or documentary visuals would materially improve the deck.
+
+Do not recommend research merely to fill space. Return one concise reason for each recommendation in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese 或 English}
+
+User brief:
+{用户输入的原始 Prompt}
+
+Presentation requirements draft:
+{完整的 Presentation Requirements JSON}
+
+Return exactly one JSON object:
+
+{"web":{"recommended":true,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

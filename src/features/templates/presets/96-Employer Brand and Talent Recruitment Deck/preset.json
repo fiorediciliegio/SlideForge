@@ -1,0 +1,103 @@
+{
+  "id": "96-Employer Brand and Talent Recruitment Deck",
+  "version": 1,
+  "ppt_number": 96,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "green",
+    "coral"
+  ],
+  "name": "Employer Brand and Talent Recruitment Deck",
+  "description": "Modern employer-brand deck with workplace photography, bold headings, structured cards, and clear roadmaps.",
+  "user": "Business Professionals",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["marketing-campaign"],"industries":["business"],"audiences":["employee"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖白封面左侧为粗体标题与基础信息，右侧会议照片叠加黑色引语区形成真实职场感。"
+    },
+    {
+      "path": "images/2-why-now.webp",
+      "alt": "大标题下组合正文、四块数据卡和底部深绿结论条，构成清晰问题陈述，重点关系直观明确。"
+    },
+    {
+      "path": "images/3-candidate-insight.webp",
+      "alt": "左侧团队照片与右侧偏好条形图并列，底部绿色洞察条集中收束候选人画像，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-evp-architecture.webp",
+      "alt": "顶部三条价值主张下方横排四张支柱卡，深绿页脚强调统一品牌承诺，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/5-culture-operating-system.webp",
+      "alt": "五张阶段卡沿横向排列，底部内容清单与右侧照片卡组成雇主体验流程，版面层次清晰有序。"
+    },
+    {
+      "path": "images/6-growth-and-benefits.webp",
+      "alt": "细线时间轴横跨页面，下方指标卡和深绿薪酬模块呈现成长与福利结构，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-roles-and-personas.webp",
+      "alt": "左侧角色表格与右侧三张画像卡形成左右分栏，标签色块区分人才优先级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/8-channels-and-campaign.webp",
+      "alt": "左侧漏斗条展示从触达到录用的转化，右侧五张渠道卡说明传播组合与招聘作用，信息对比清楚。"
+    },
+    {
+      "path": "images/9-metrics-dashboard.webp",
+      "alt": "四块指标卡、双线趋势图和右侧深绿总结卡组成招聘成效仪表盘，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/10-roadmap-and-ask.webp",
+      "alt": "四阶段路线图配右侧团队照片，下方决策卡和珊瑚预算卡构成明确行动页，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖白封面左侧为粗体标题与基础信息，右侧会议照片叠加黑色引语区形成真实职场感，强调色进一步突出重心。"
+    },
+    {
+      "path": "html/2-why-now.html",
+      "description": "大标题下组合正文、四块数据卡和底部深绿结论条，构成清晰问题陈述，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/3-candidate-insight.html",
+      "description": "左侧团队照片与右侧偏好条形图并列，底部绿色洞察条集中收束候选人画像，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/4-evp-architecture.html",
+      "description": "顶部三条价值主张下方横排四张支柱卡，深绿页脚强调统一品牌承诺，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/5-culture-operating-system.html",
+      "description": "暖白画布上，五张阶段卡沿横向排列，底部内容清单与右侧照片卡组成雇主体验流程，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/6-growth-and-benefits.html",
+      "description": "细线时间轴横跨页面，下方指标卡和深绿薪酬模块呈现成长与福利结构，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/7-roles-and-personas.html",
+      "description": "暖白画布上，左侧角色表格与右侧三张画像卡形成左右分栏，标签色块区分人才优先级，统一边距和重点色共同控制画面重心。"
+    },
+    {
+      "path": "html/8-channels-and-campaign.html",
+      "description": "暖米色页面左侧用五层彩色漏斗条呈现触达、互动到录用的转化，右侧五张渠道说明卡分列员工推荐、内容、活动和校园渠道。"
+    },
+    {
+      "path": "html/9-metrics-dashboard.html",
+      "description": "四块指标卡、双线趋势图和右侧深绿总结卡组成招聘成效仪表盘，规则间距、数字高亮与底部注释进一步建立清晰的数据节奏。"
+    },
+    {
+      "path": "html/10-roadmap-and-ask.html",
+      "description": "四阶段路线图配右侧团队照片，下方决策卡和珊瑚预算卡构成明确行动页，细线边框、短标签和留白共同保持清晰的图文关系。"
+    }
+  ]
+}

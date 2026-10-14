@@ -1,0 +1,13 @@
+{
+  "case_id": "B-046",
+  "size_class": "短",
+  "target_input_tokens": 1600,
+  "estimated_outline_input_tokens": 1676,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "No attachment",
+  "attachment_types": "None",
+  "content_strategies": "null",
+  "evaluation_risks": "1. Recommending an option as already selected; 2. Inventing market size or valuation; 3. Confusing product and customer concentration; 4. Attributing preferences to management; 5. Failing to define decision criteria."
+}

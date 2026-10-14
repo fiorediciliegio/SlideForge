@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>User Journey &amp; Scenarios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#F4EFE7;font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .ser{font-family:'Instrument Serif',serif;font-style:italic;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="06 Journey &amp; Users" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4EFE7;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:80px;width:900px;height:26px;z-index:10;">
+    <span class="mono" style="font-size:19px;letter-spacing:0.22em;color:#C0563C;">06 — USERS &amp; JOURNEY</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:122px;width:1000px;height:150px;z-index:10;">
+    <div style="font-size:56px;font-weight:500;line-height:1.14;letter-spacing:-0.03em;color:#1C1A17;">Who we designed for, and <span class="ser" style="font-weight:400;color:#C0563C;">where it hurt</span>.</div>
+  </div>
+
+  <!-- two personas -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1200px;top:120px;width:600px;height:246px;z-index:10;">
+    <div style="display:flex;gap:20px;">
+      <div style="flex:1;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:18px;padding:22px 22px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.12em;color:#C0563C;">PRIMARY · 64%</div>
+        <div style="margin-top:10px;font-size:25px;font-weight:600;color:#1C1A17;">Switchers, 28–45</div>
+        <div style="margin-top:9px;font-size:19px;line-height:1.5;color:#6E655C;">Already bank elsewhere. Compare three apps in one evening, decide on speed and clarity.</div>
+      </div>
+      <div style="flex:1;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:18px;padding:22px 22px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.12em;color:#6B7F6E;">SECONDARY · 22%</div>
+        <div style="margin-top:10px;font-size:25px;font-weight:600;color:#1C1A17;">Newcomers to DE</div>
+        <div style="margin-top:9px;font-size:19px;line-height:1.5;color:#6E655C;">Need an account for a rental contract. Non-native readers, unfamiliar document names.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- journey map -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:394px;width:1680px;height:420px;background:#FBF8F3;border:1px solid #E2D8C8;border-radius:20px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:158px;top:426px;width:1604px;height:356px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <div class="mono" style="font-size:18px;letter-spacing:0.14em;color:#8A817A;">EMOTIONAL JOURNEY — BASELINE VS. REDESIGN</div>
+      <div style="display:flex;gap:26px;">
+        <span class="mono" style="font-size:18px;color:#C0563C;">■ before</span>
+        <span class="mono" style="font-size:18px;color:#6B7F6E;">■ after</span>
+      </div>
+    </div>
+
+    <div style="position:relative;margin-top:22px;height:196px;">
+      <div style="position:absolute;left:0;top:0;width:100%;height:1px;background:#EFE7DA;"></div>
+      <div style="position:absolute;left:0;top:97px;width:100%;height:1px;background:#E6DCCC;"></div>
+      <div style="position:absolute;left:0;top:195px;width:100%;height:1px;background:#EFE7DA;"></div>
+      <svg width="1604" height="196" viewBox="0 0 1604 196" style="position:absolute;left:0;top:0;">
+        <polyline points="130,42 450,72 770,168 1090,150 1410,120" fill="none" stroke="#C0563C" stroke-width="4"/>
+        <polyline points="130,36 450,44 770,66 1090,52 1410,30" fill="none" stroke="#6B7F6E" stroke-width="4" stroke-dasharray="10 7"/>
+        <circle cx="130" cy="42" r="8" fill="#C0563C"/><circle cx="450" cy="72" r="8" fill="#C0563C"/><circle cx="770" cy="168" r="8" fill="#C0563C"/><circle cx="1090" cy="150" r="8" fill="#C0563C"/><circle cx="1410" cy="120" r="8" fill="#C0563C"/>
+        <circle cx="130" cy="36" r="8" fill="#6B7F6E"/><circle cx="450" cy="44" r="8" fill="#6B7F6E"/><circle cx="770" cy="66" r="8" fill="#6B7F6E"/><circle cx="1090" cy="52" r="8" fill="#6B7F6E"/><circle cx="1410" cy="30" r="8" fill="#6B7F6E"/>
+      </svg>
+      <div class="mono" style="position:absolute;left:0;top:-4px;font-size:17px;color:#8A817A;">CONFIDENT</div>
+      <div class="mono" style="position:absolute;left:0;top:172px;font:inherit;font-size:17px;color:#8A817A;">ANXIOUS</div>
+    </div>
+
+    <div style="margin-top:18px;display:flex;">
+      <div style="flex:1;padding-right:18px;">
+        <div style="font-size:22px;font-weight:600;color:#1C1A17;">Discover</div>
+        <div style="margin-top:6px;font-size:19px;line-height:1.45;color:#6E655C;">Ad or referral, opens app store</div>
+      </div>
+      <div style="flex:1;padding-right:18px;">
+        <div style="font-size:22px;font-weight:600;color:#1C1A17;">Sign up</div>
+        <div style="margin-top:6px;font-size:19px;line-height:1.45;color:#6E655C;">Email, password, first details</div>
+      </div>
+      <div style="flex:1;padding-right:18px;">
+        <div style="font-size:22px;font-weight:600;color:#C0563C;">Verify identity</div>
+        <div style="margin-top:6px;font-size:19px;line-height:1.45;color:#6E655C;">Passport hunt — the collapse point</div>
+      </div>
+      <div style="flex:1;padding-right:18px;">
+        <div style="font-size:22px;font-weight:600;color:#1C1A17;">Compliance</div>
+        <div style="margin-top:6px;font-size:19px;line-height:1.45;color:#6E655C;">Tax residency, terms, consent</div>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:22px;font-weight:600;color:#1C1A17;">First transfer</div>
+        <div style="margin-top:6px;font-size:19px;line-height:1.45;color:#6E655C;">Funds account, becomes active</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- scenario cards -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:850px;width:1680px;height:140px;z-index:10;">
+    <div style="display:flex;gap:22px;">
+      <div style="flex:1;background:#EFE7DA;border-radius:16px;padding:22px 24px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">SCENARIO A</div>
+        <div style="margin-top:8px;font-size:22px;line-height:1.4;color:#1C1A17;">Evening on the sofa, no documents in reach</div>
+      </div>
+      <div style="flex:1;background:#EFE7DA;border-radius:16px;padding:22px 24px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">SCENARIO B</div>
+        <div style="margin-top:8px;font-size:22px;line-height:1.4;color:#1C1A17;">Commute, 6 minutes and patchy signal</div>
+      </div>
+      <div style="flex:1;background:#EFE7DA;border-radius:16px;padding:22px 24px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">SCENARIO C</div>
+        <div style="margin-top:8px;font-size:22px;line-height:1.4;color:#1C1A17;">Deadline pressure — needs IBAN by Friday</div>
+      </div>
+      <div style="flex:1;background:#EFE7DA;border-radius:16px;padding:22px 24px;">
+        <div class="mono" style="font-size:17px;letter-spacing:0.1em;color:#8A817A;">SCENARIO D</div>
+        <div style="margin-top:8px;font-size:22px;line-height:1.4;color:#1C1A17;">Assisted in branch, staff on a tablet</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

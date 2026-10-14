@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   HELIO — Seed Deck Design System
+   Dark modern tech · one system across all 10 slides
+   ========================================================== */
+
+:root{
+  --bg:      #0A0C11;
+  --elev-1:  rgba(255,255,255,0.045);
+  --elev-2:  rgba(255,255,255,0.075);
+  --line:    rgba(255,255,255,0.10);
+  --line-2:  rgba(255,255,255,0.20);
+
+  --tx:      #F3F5F8;
+  --tx-2:    #A2ACBB;
+  --tx-3:    #6B7786;
+
+  --a1:      #FF6A3D;   /* primary   — ember */
+  --a2:      #5EE6C0;   /* secondary — mint  */
+  --a3:      #9B8CFF;   /* tertiary  — iris  */
+
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 8px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type ---------- */
+.dsp{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.025em; margin:0; }
+.num{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.035em; line-height:1; }
+.mono{ font-family:'JetBrains Mono', monospace; }
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:19px; font-weight:500;
+  letter-spacing:0.20em; text-transform:uppercase; color:var(--a1);
+}
+.h-title{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:60px; line-height:1.06; letter-spacing:-0.028em; margin:0; }
+.lede{ font-size:25px; line-height:1.5; color:var(--tx-2); margin:0; }
+.body{ font-size:21px; line-height:1.55; color:var(--tx-2); margin:0; }
+.lbl{ font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3); }
+.foot{ font-family:'JetBrains Mono', monospace; font-size:17px; letter-spacing:0.16em; color:#5A6472; }
+
+/* ---------- surfaces ---------- */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.014));
+  border:1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.card-flat{
+  background: rgba(255,255,255,0.032);
+  border:1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.chip{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.10em;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--tx-2);
+}
+
+/* ---------- tables ---------- */
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:500;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3);
+  text-align:left; padding:0 20px 16px 20px; border-bottom:1px solid var(--line-2);
+}
+table.grid td{
+  font-size:20px; line-height:1.42; color:var(--tx-2);
+  padding:20px; border-bottom:1px solid var(--line); vertical-align:top;
+}
+table.grid td.k{ color:var(--tx); font-weight:600; font-family:'Space Grotesk', sans-serif; font-size:22px; }
+table.grid tr:last-child td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Solution" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#0A0C11;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; z-index:1;
+       background:radial-gradient(1100px 700px at 74% 46%, rgba(94,230,192,0.13), transparent 70%), radial-gradient(700px 500px at 2% 4%, rgba(255,106,61,0.12), transparent 70%);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1px; z-index:5; background:rgba(255,255,255,0.12);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:72px; width:900px; z-index:10;">
+    <span class="eyebrow">03 &nbsp;/&nbsp; The solution</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:118px; width:780px; z-index:10;">
+    <h2 class="h-title">An agent that closes<br>the ticket, not the chat</h2>
+  </div>
+
+  <!-- left value props -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:318px; width:700px; z-index:10;">
+    <p class="lede">Helio connects to your CRM, billing and identity stack, then runs a supervised agent that takes the action a human would — inside guardrails you write in plain English.</p>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:492px; width:700px; height:444px; z-index:10; display:flex; flex-direction:column; gap:16px;">
+    <div class="card" style="flex:1; padding:24px 30px; display:flex; align-items:center; gap:26px;">
+      <span style="width:52px; height:52px; border-radius:14px; background:rgba(255,106,61,0.16); border:1px solid rgba(255,106,61,0.42); display:flex; align-items:center; justify-content:center; flex:none;">
+        <span class="mono" style="font-size:22px; color:#FF6A3D;">&#8594;</span>
+      </span>
+      <div>
+        <div class="dsp" style="font-size:26px;">Acts, with write access</div>
+        <div class="body" style="font-size:18px; padding-top:5px;">Refunds, plan changes, access resets, RMA — 140 pre&#8209;built actions.</div>
+      </div>
+    </div>
+    <div class="card" style="flex:1; padding:24px 30px; display:flex; align-items:center; gap:26px;">
+      <span style="width:52px; height:52px; border-radius:14px; background:rgba(94,230,192,0.14); border:1px solid rgba(94,230,192,0.40); display:flex; align-items:center; justify-content:center; flex:none;">
+        <span class="mono" style="font-size:22px; color:#5EE6C0;">&#10003;</span>
+      </span>
+      <div>
+        <div class="dsp" style="font-size:26px;">Governed by policy, not prompts</div>
+        <div class="body" style="font-size:18px; padding-top:5px;">Every action carries a limit, an approver and an immutable trace.</div>
+      </div>
+    </div>
+    <div class="card" style="flex:1; padding:24px 30px; display:flex; align-items:center; gap:26px;">
+      <span style="width:52px; height:52px; border-radius:14px; background:rgba(155,140,255,0.16); border:1px solid rgba(155,140,255,0.42); display:flex; align-items:center; justify-content:center; flex:none;">
+        <span class="mono" style="font-size:22px; color:#9B8CFF;">&#8635;</span>
+      </span>
+      <div>
+        <div class="dsp" style="font-size:26px;">Live in nine days</div>
+        <div class="body" style="font-size:18px; padding-top:5px;">Self&#8209;serve connectors and replay against 90 days of your own tickets.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- product mock -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:880px; top:200px; width:940px; height:736px; z-index:5; border-radius:20px; border:1px solid rgba(255,255,255,0.14); background:linear-gradient(165deg,#12161E,#0B0E14); box-shadow:0 40px 90px rgba(0,0,0,0.55); overflow:hidden;">
+    <!-- window bar -->
+    <div style="height:56px; border-bottom:1px solid rgba(255,255,255,0.09); display:flex; align-items:center; gap:12px; padding:0 24px;">
+      <span style="width:11px; height:11px; border-radius:50%; background:#FF6A3D;"></span>
+      <span style="width:11px; height:11px; border-radius:50%; background:rgba(255,255,255,0.18);"></span>
+      <span style="width:11px; height:11px; border-radius:50%; background:rgba(255,255,255,0.18);"></span>
+      <span class="mono" style="font-size:15px; color:#6B7786; padding-left:16px;">helio · resolution console</span>
+      <span class="mono" style="margin-left:auto; font-size:14px; color:#5EE6C0;">● LIVE</span>
+    </div>
+
+    <div style="padding:24px; display:flex; gap:20px; height:calc(100% - 56px);">
+      <!-- ticket -->
+      <div style="flex:1.15; display:flex; flex-direction:column; gap:16px;">
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:20px 22px;">
+          <div class="mono" style="font-size:14px; letter-spacing:0.14em; color:#6B7786;">TICKET #48210 · BILLING</div>
+          <div class="body" style="font-size:19px; color:#F3F5F8; padding-top:10px;">“You charged me twice for the July seats — please fix and confirm.”</div>
+          <div class="mono" style="font-size:14px; color:#5A6472; padding-top:12px;">NORTHWIND LOGISTICS · PRO PLAN · 42 SEATS</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:20px 22px; flex:1;">
+          <div class="mono" style="font-size:14px; letter-spacing:0.14em; color:#6B7786; padding-bottom:16px;">AGENT PLAN</div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span class="mono" style="color:#5EE6C0; font-size:17px;">01</span>
+              <span class="body" style="font-size:18px; color:#D6DCE5;">Read invoice history · <span class="mono" style="color:#5EE6C0; font-size:15px;">stripe</span></span>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span class="mono" style="color:#5EE6C0; font-size:17px;">02</span>
+              <span class="body" style="font-size:18px; color:#D6DCE5;">Confirm duplicate charge $2,940</span>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span class="mono" style="color:#FF6A3D; font-size:17px;">03</span>
+              <span class="body" style="font-size:18px; color:#D6DCE5;">Issue refund · <span class="mono" style="color:#FF6A3D; font-size:15px;">policy: &#8804;$5k auto</span></span>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <span class="mono" style="color:#9B8CFF; font-size:17px;">04</span>
+              <span class="body" style="font-size:18px; color:#D6DCE5;">Log in CRM &amp; reply to customer</span>
+            </div>
+          </div>
+          <div style="margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.09); display:flex; justify-content:space-between; align-items:center;">
+            <span class="mono" style="font-size:14px; color:#6B7786;">CONFIDENCE</span>
+            <span class="num" style="font-size:26px; color:#5EE6C0;">0.94</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- right rail -->
+      <div style="flex:0.85; display:flex; flex-direction:column; gap:16px;">
+        <div style="background:rgba(94,230,192,0.08); border:1px solid rgba(94,230,192,0.30); border-radius:14px; padding:20px 22px;">
+          <div class="mono" style="font-size:14px; letter-spacing:0.14em; color:#5EE6C0;">RESOLVED · 41s</div>
+          <div class="num" style="font-size:44px; padding-top:10px; color:#F3F5F8;">$2,940</div>
+          <div class="mono" style="font-size:14px; color:#6B7786; padding-top:8px;">REFUNDED · TRACE 9F2C</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:14px; padding:20px 22px; flex:1;">
+          <div class="mono" style="font-size:14px; letter-spacing:0.14em; color:#6B7786; padding-bottom:14px;">QUEUE TODAY</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; justify-content:space-between;"><span class="body" style="font-size:17px;">Auto&#8209;resolved</span><span class="mono" style="font-size:17px; color:#5EE6C0;">412</span></div>
+            <div style="display:flex; justify-content:space-between;"><span class="body" style="font-size:17px;">Approval pending</span><span class="mono" style="font-size:17px; color:#FF6A3D;">18</span></div>
+            <div style="display:flex; justify-content:space-between;"><span class="body" style="font-size:17px;">Human&#8209;routed</span><span class="mono" style="font-size:17px; color:#A2ACBB;">214</span></div>
+          </div>
+          <div style="display:flex; align-items:flex-end; gap:5px; height:78px; margin-top:22px;">
+            <span style="flex:1; height:40%; background:rgba(94,230,192,0.30); border-radius:2px;"></span>
+            <span style="flex:1; height:55%; background:rgba(94,230,192,0.40); border-radius:2px;"></span>
+            <span style="flex:1; height:48%; background:rgba(94,230,192,0.36); border-radius:2px;"></span>
+            <span style="flex:1; height:68%; background:rgba(94,230,192,0.52); border-radius:2px;"></span>
+            <span style="flex:1; height:80%; background:rgba(94,230,192,0.66); border-radius:2px;"></span>
+            <span style="flex:1; height:72%; background:rgba(94,230,192,0.58); border-radius:2px;"></span>
+            <span style="flex:1; height:100%; background:#5EE6C0; border-radius:2px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:996px; width:1200px; z-index:10;">
+    <span class="foot">PRODUCT UI — REPRESENTATIVE VIEW</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:996px; width:220px; z-index:10; text-align:right;">
+    <span class="foot" style="color:#F3F5F8;">04 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

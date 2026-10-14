@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MERIDIAN — Featured Films</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0B0B0E}
+  .grain{position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:220px 220px;opacity:.5;mix-blend-mode:overlay;z-index:30;pointer-events:none}
+  .display{font-family:'Bodoni Moda',serif;font-weight:900;color:#F2EAD8;letter-spacing:-.02em;line-height:.92}
+  .serif{font-family:'Cormorant Garamond',serif;color:#E8DCC0}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+
+  /* "still" cards — abstract cinematic compositions each unique */
+  .still-a{background:linear-gradient(160deg,#5C0E1B 0%,#8B2030 30%,#2A0810 100%);position:relative}
+  .still-a::before{content:"";position:absolute;left:18%;top:20%;width:64%;height:60%;background:radial-gradient(ellipse at 60% 40%,rgba(217,164,65,.55) 0%,rgba(217,164,65,.0) 70%);}
+  .still-b{background:linear-gradient(180deg,#E8DCC0 0%,#C9B98F 60%,#6B5E3F 100%);position:relative}
+  .still-b::before{content:"";position:absolute;left:0;right:0;bottom:0;height:46%;background:linear-gradient(180deg,rgba(11,11,14,0) 0%,rgba(11,11,14,.55) 100%);}
+  .still-c{background:linear-gradient(120deg,#0B2540 0%,#0B0B0E 60%,#1B0A18 100%);position:relative}
+  .still-c::before{content:"";position:absolute;left:55%;top:10%;width:30%;height:80%;background:radial-gradient(ellipse,rgba(242,234,216,.25) 0%,rgba(242,234,216,0) 70%);}
+  .still-d{background:linear-gradient(45deg,#3D2A1F 0%,#6B1518 50%,#2A0810 100%);position:relative}
+  .still-d::before{content:"";position:absolute;left:12%;top:12%;right:12%;bottom:12%;border:2px solid rgba(217,164,65,.35);}
+
+  /* subtle scanlines for film feel */
+  .still-a::after,.still-b::after,.still-c::after,.still-d::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 3px,rgba(11,11,14,.10) 3px 4px);mix-blend-mode:overlay;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- top chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:36px;width:680px;z-index:10;">
+    <span class="mono yellow" style="color:#D9A441;">M—05 · Featured Films</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:36px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#E8DCC0;">Four Standout Works · Program Highlights</span>
+  </div>
+
+  <!-- left: program index header -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:130px;width:380px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:12px;">Section</div>
+    <div class="display" style="font-size:80px;line-height:.95;">Featured<br>Films</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:340px;width:380px;z-index:10;">
+    <p class="serif" style="font-style:italic;font-size:18px;line-height:1.5;color:#E8DCC0;">Four films we will return to over the six days — not because they are the loudest, but because they linger.</p>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:520px;width:100px;height:2px;background:#D9A441;z-index:6"></div>
+
+  <!-- ============= FILM 1 — Halftones of a Stranger ============= -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:550px;width:50px;z-index:10;">
+    <span class="mono yellow" style="font-size:32px;color:#D9A441;">01</span>
+  </div>
+  <div data-object="true" data-object-type="image" class="still-a" style="position:absolute;left:150px;top:550px;width:380px;height:240px;z-index:8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:560px;width:200px;z-index:11;">
+    <span class="mono yellow" style="color:#D9A441;">F · 01</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:550px;top:555px;width:380px;z-index:10;">
+    <div class="display" style="font-size:28px;line-height:1.05;color:#F2EAD8;margin-bottom:10px;">Halftones<br>of a Stranger</div>
+    <div class="serif" style="font-size:14px;font-style:italic;color:#D9A441;margin-bottom:6px;">Dir. M. Eberhardt</div>
+    <p class="serif" style="font-size:14px;color:#E8DCC0;line-height:1.4;margin-bottom:8px;">A portrait photographer pieces together her missing father's postal archive across the former East bloc.</p>
+    <div class="mono" style="color:#E8DCC0;opacity:.85;">Austria / Hungary · 84 min · Fiction · DE/HU</div>
+  </div>
+
+  <!-- ============= FILM 2 — Terlingua ============= -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:830px;width:50px;z-index:10;">
+    <span class="mono yellow" style="font-size:32px;color:#D9A441;">02</span>
+  </div>
+  <div data-object="true" data-object-type="image" class="still-b" style="position:absolute;left:150px;top:830px;width:380px;height:160px;z-index:8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:550px;top:835px;width:380px;z-index:10;">
+    <div class="display" style="font-size:28px;line-height:1.05;color:#F2EAD8;margin-bottom:10px;">Terlingua</div>
+    <div class="serif" style="font-size:14px;font-style:italic;color:#D9A441;margin-bottom:6px;">Dir. A. Rivera-Calleja</div>
+    <p class="serif" style="font-size:14px;color:#E8DCC0;line-height:1.4;margin-bottom:8px;">A ghost town on the Rio Grande becomes a stage for three estranged sisters rehearsing a funeral.</p>
+    <div class="mono" style="color:#E8DCC0;opacity:.85;">Mexico · 96 min · Fiction · ES/EN</div>
+  </div>
+
+  <!-- ============= FILM 3 — A Map for the Disappeared ============= -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:990px;top:130px;width:50px;z-index:10;">
+    <span class="mono yellow" style="font-size:32px;color:#D9A441;">03</span>
+  </div>
+  <div data-object="true" data-object-type="image" class="still-c" style="position:absolute;left:1050px;top:130px;width:380px;height:240px;z-index:8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1050px;top:140px;width:200px;z-index:11;">
+    <span class="mono yellow" style="color:#D9A441;">F · 03</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1450px;top:135px;width:400px;z-index:10;">
+    <div class="display" style="font-size:28px;line-height:1.05;color:#F2EAD8;margin-bottom:10px;">A Map for<br>the Disappeared</div>
+    <div class="serif" style="font-size:14px;font-style:italic;color:#D9A441;margin-bottom:6px;">Dir. S. Karadağ</div>
+    <p class="serif" style="font-size:14px;color:#E8DCC0;line-height:1.4;margin-bottom:8px;">A cartographer returns to her coastal village and finds the new harbour drawn over childhood memory.</p>
+    <div class="mono" style="color:#E8DCC0;opacity:.85;">Türkiye · 78 min · Documentary · TR</div>
+  </div>
+
+  <!-- ============= FILM 4 — Drift ============= -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:990px;top:420px;width:50px;z-index:10;">
+    <span class="mono yellow" style="font-size:32px;color:#D9A441;">04</span>
+  </div>
+  <div data-object="true" data-object-type="image" class="still-d" style="position:absolute;left:1050px;top:420px;width:380px;height:240px;z-index:8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1050px;top:430px;width:200px;z-index:11;">
+    <span class="mono yellow" style="color:#D9A441;">F · 04</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1450px;top:425px;width:400px;z-index:10;">
+    <div class="display" style="font-size:28px;line-height:1.05;color:#F2EAD8;margin-bottom:10px;">Drift</div>
+    <div class="serif" style="font-size:14px;font-style:italic;color:#D9A441;margin-bottom:6px;">Dir. L. Chen · Y. Park</div>
+    <p class="serif" style="font-size:14px;color:#E8DCC0;line-height:1.4;margin-bottom:8px;">Two estranged siblings share a flat in Seoul for one season, and learn a third language between them.</p>
+    <div class="mono" style="color:#E8DCC0;opacity:.85;">South Korea · 102 min · Fiction · KO</div>
+  </div>
+
+  <!-- right side ribbon tag -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;right:90px;top:730px;width:380px;height:180px;border:1px solid #D9A441;z-index:8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:115px;top:760px;width:340px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:10px;">In Rotation</div>
+    <p class="serif" style="font-style:italic;font-size:18px;line-height:1.45;color:#E8DCC0;">Each featured title screens twice during the festival with a Q&amp;A. The remaining seven works screen in lesser-known formats — see schedule.</p>
+  </div>
+
+  <!-- bottom rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:990px;width:1740px;height:1px;background:rgba(217,164,65,.30);z-index:6"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:1010px;width:680px;z-index:10;">
+    <span class="mono" style="color:#E8DCC0;">Program Notes · Programmers: L. Ortega, R. Fontaine, J. Tam</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:1010px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#D9A441;">p. 05 / 10</span>
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "case_id": "B-031",
+  "size_class": "边界",
+  "target_input_tokens": 26500,
+  "estimated_outline_input_tokens": 26559,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": true,
+  "attachment_mode": "多附件",
+  "attachment_types": "TXT + DOCX",
+  "content_strategies": "full_context + summarized_context",
+  "evaluation_risks": "1. 把2万人估算写成官方数字；2. 编造伤亡；3. 将待评估仓库写成不可用；4. 图片没有时间地点；5. 用外部报道覆盖内部物资数据。"
+}

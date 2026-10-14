@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 80px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.body-text { font-size: 22px; line-height: 1.5; color: #3A3D45; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { margin-top: 30px; z-index: 5; }
+.content-area { flex-grow: 1; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Custom Matrix Styles */
+.talent-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 2px solid var(--ink);
+  padding: 10px 16px 10px 10px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px var(--ink);
+  transition: all 0.2s ease;
+  width: 255px;
+}
+.talent-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--red);
+}
+.talent-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1.5px solid var(--ink);
+  margin-right: 12px;
+}
+.talent-initials {
+  width: 54px;
+  height: 54px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  border: 1.5px solid var(--ink);
+  margin-right: 12px;
+}
+.talent-info {
+  display: flex;
+  flex-direction: column;
+}
+.talent-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.talent-metric {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
+  margin-top: 3px;
+}
+.talent-tag {
+  font-size: 11px;
+  color: var(--mute);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1px;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Viral Social Media Content & Strategy</div>
+    <h1 class="h1">The Talent Matrix: <span class="serif-italic">Viral Momentum vs. Brand Safety</span></h1>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    <div style="display: flex; width: 100%; height: 100%; align-items: stretch;">
+      <!-- Left Column: Editorial Commentary -->
+      <div style="width: 460px; display: flex; flex-direction: column; justify-content: space-between; padding-right: 10px;">
+        <div style="background: var(--accent); border-left: 6px solid var(--red); padding: 35px 30px; box-shadow: 6px 6px 0px var(--ink); border: 2px solid var(--ink); border-left-width: 6px;">
+          <h3 style="font-family: var(--f-sans); font-size: 32px; font-weight: 800; text-transform: uppercase; margin: 0 0 15px 0;">The Screenshot Slide</h3>
+          <p class="body-text" style="font-size: 20px; color: var(--ink); margin: 0; line-height: 1.45;">
+            Post-Reunion attention is highly volatile. We mapped the key cast on a strict Hype vs. Brand Safety axis. Trinity and Aniya are bulletproof. Melanie and Kayda offer massive virality but carry severe PR liabilities. Choose your risk profile.
+          </p>
+        </div>
+        
+        <!-- Quick Legend / Takeaway -->
+        <div style="margin-top: 30px;">
+          <p class="eyebrow" style="margin-bottom: 15px; font-size: 14px;">Strategic Playbook</p>
+          <ul style="padding-left: 20px; margin: 0; font-size: 18px; color: #3A3D45; line-height: 1.6; font-family: var(--f-sans);">
+            <li style="margin-bottom: 10px;"><strong style="color: var(--red);">SIGN NOW:</strong> Maximum ROI, lowest contract friction.</li>
+            <li style="margin-bottom: 10px;"><strong>RISKY BET:</strong> High engagement, but watch the backlash.</li>
+            <li><strong>HIGH UPSIDE:</strong> Safe, long-term lifestyle partnerships.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Column: The 2x2 Matrix -->
+      <div style="flex-grow: 1; position: relative;">
+        <div class="matrix-container" style="position: relative; width: 1180px; height: 580px; background: #FFFFFF; border: 3px solid var(--ink); box-shadow: 8px 8px 0px var(--ink); overflow: hidden; margin-left: 40px;">
+          
+          <!-- Grid Quadrant Background Colors (Subtle shading) -->
+          <!-- Top Left (Risky Bet) -->
+          <div style="position: absolute; top: 0; left: 0; width: 50%; height: 50%; background: #FFF9F9; z-index: 1;"></div>
+          <!-- Top Right (Sign Now) -->
+          <div style="position: absolute; top: 0; left: 50%; width: 50%; height: 50%; background: #F6FCF8; z-index: 1;"></div>
+          <!-- Bottom Left (Pass) -->
+          <div style="position: absolute; top: 50%; left: 0; width: 50%; height: 50%; background: #FAFAFA; z-index: 1;"></div>
+          <!-- Bottom Right (High Upside) -->
+          <div style="position: absolute; top: 50%; left: 50%; width: 50%; height: 50%; background: #F8F9FD; z-index: 1;"></div>
+
+          <!-- Axes -->
+          <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 0; border-left: 2px dashed var(--ink); z-index: 2;"></div>
+          <div style="position: absolute; top: 50%; left: 0; right: 0; height: 0; border-top: 2px dashed var(--ink); z-index: 2;"></div>
+
+          <!-- Axis Labels -->
+          <div style="position: absolute; top: 15px; left: 50%; transform: translateX(-50%); font-size: 13px; font-weight: 800; letter-spacing: 0.15em; color: var(--ink); text-transform: uppercase; z-index: 3; background: #FFF; padding: 2px 8px; border: 1px solid var(--ink);">↑ High Viral Momentum</div>
+          <div style="position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); font-size: 13px; font-weight: 800; letter-spacing: 0.15em; color: var(--mute); text-transform: uppercase; z-index: 3; background: #FFF; padding: 2px 8px; border: 1px solid var(--line);">Low Momentum ↓</div>
+          <div style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: left center; font-size: 13px; font-weight: 800; letter-spacing: 0.15em; color: var(--red); text-transform: uppercase; z-index: 3; background: #FFF; padding: 2px 8px; border: 1px solid var(--red); white-space: nowrap; margin-left: 10px;">← High Brand Risk</div>
+          <div style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: right center; font-size: 13px; font-weight: 800; letter-spacing: 0.15em; color: var(--ink); text-transform: uppercase; z-index: 3; background: #FFF; padding: 2px 8px; border: 1px solid var(--ink); white-space: nowrap; margin-right: 10px;">High Brand Safety →</div>
+
+          <!-- Corner Badges -->
+          <div style="position: absolute; top: 15px; right: 15px; background: #2E7D32; color: #FFF; padding: 6px 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; z-index: 3; border: 2px solid var(--ink); box-shadow: 2px 2px 0px var(--ink);">SIGN NOW</div>
+          <div style="position: absolute; top: 15px; left: 15px; background: var(--red); color: #FFF; padding: 6px 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; z-index: 3; border: 2px solid var(--ink); box-shadow: 2px 2px 0px var(--ink);">RISKY BET</div>
+          <div style="position: absolute; bottom: 15px; right: 15px; background: var(--ink); color: #FFF; padding: 6px 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; z-index: 3; border: 2px solid var(--ink); box-shadow: 2px 2px 0px var(--ink);">HIGH UPSIDE</div>
+          <div style="position: absolute; bottom: 15px; left: 15px; background: #F6F6F4; color: var(--mute); padding: 6px 14px; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; z-index: 3; border: 2px solid var(--line);">PASS</div>
+
+          <!-- Islander Cards -->
+          
+          <!-- Quadrant: SIGN NOW (Top Right) -->
+          <!-- Trinity Tatum -->
+          <div class="talent-card" style="left: 850px; top: 70px; z-index: 4;">
+            <img class="talent-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" alt="Trinity Tatum">
+            <div class="talent-info">
+              <span class="talent-name">Trinity Tatum</span>
+              <span class="talent-metric">3.6M IG</span>
+              <span class="talent-tag">Winner Status</span>
+            </div>
+          </div>
+
+          <!-- Aniya Harvey -->
+          <div class="talent-card" style="left: 600px; top: 160px; z-index: 4;">
+            <img class="talent-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" alt="Aniya Harvey">
+            <div class="talent-info">
+              <span class="talent-name">Aniya Harvey</span>
+              <span class="talent-metric">2.1M IG</span>
+              <span class="talent-tag">Agency Backed</span>
+            </div>
+          </div>
+
+          <!-- Quadrant: RISKY BET (Top Left) -->
+          <!-- Melanie Moreno -->
+          <div class="talent-card" style="left: 70px; top: 80px; z-index: 4;">
+            <img class="talent-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d5511d6afd971406.jpg" alt="Melanie Moreno">
+            <div class="talent-info">
+              <span class="talent-name">Melanie Moreno</span>
+              <span class="talent-metric">2.5M IG</span>
+              <span class="talent-tag">Relationship Drama</span>
+            </div>
+          </div>
+
+          <!-- Kayda Bosse -->
+          <div class="talent-card" style="left: 280px; top: 170px; z-index: 4;">
+            <div class="talent-initials">KB</div>
+            <div class="talent-info">
+              <span class="talent-name">Kayda Bosse</span>
+              <span class="talent-metric">1.7M IG</span>
+              <span class="talent-tag">Backlash Signals</span>
+            </div>
+          </div>
+
+          <!-- Quadrant: HIGH UPSIDE (Bottom Right) -->
+          <!-- Bryce Alakai -->
+          <div class="talent-card" style="left: 820px; top: 370px; z-index: 4;">
+            <img class="talent-img" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-dba968ff974d586c.webp" alt="Bryce Alakai">
+            <div class="talent-info">
+              <span class="talent-name">Bryce Alakai</span>
+              <span class="talent-metric">1.9M IG</span>
+              <span class="talent-tag">DJ / Producer</span>
+            </div>
+          </div>
+
+          <!-- Corbin Mims -->
+          <div class="talent-card" style="left: 610px; top: 430px; z-index: 4;">
+            <div class="talent-initials" style="background:#E8F0FE; color:#1A73E8;">CM</div>
+            <div class="talent-info">
+              <span class="talent-name">Corbin Mims</span>
+              <span class="talent-metric">~1.0M IG</span>
+              <span class="talent-tag">Fitness & Travel</span>
+            </div>
+          </div>
+
+          <!-- Quadrant: PASS (Bottom Left) -->
+          <!-- Sincere Rhea -->
+          <div class="talent-card" style="left: 100px; top: 380px; z-index: 4;">
+            <div class="talent-initials" style="background:#FFF0F2; color:var(--red);">SR</div>
+            <div class="talent-info">
+              <span class="talent-name">Sincere Rhea</span>
+              <span class="talent-metric">612K IG</span>
+              <span class="talent-tag">Controversy Risk</span>
+            </div>
+          </div>
+
+          <!-- Early Exits -->
+          <div class="talent-card" style="left: 310px; top: 440px; z-index: 4; width: 220px; background: #F6F6F4; border-color: var(--line); box-shadow: 4px 4px 0px var(--line);">
+            <div class="talent-initials" style="background:#E3E4E7; color:var(--mute); border-color: var(--line);">EE</div>
+            <div class="talent-info">
+              <span class="talent-name" style="color: var(--mute);">Early Exits</span>
+              <span class="talent-metric" style="color: var(--mute);">Various</span>
+              <span class="talent-tag">Low Hype / Decay</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Data: IG Profiles Fetched 2026-09-04 | Reunion Aired Aug 31, 2026</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [03]</div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "id": "35-Product Competitive Landscape Analysis",
+  "version": 1,
+  "ppt_number": 35,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "navy",
+    "blue",
+    "orange"
+  ],
+  "name": "Product Competitive Landscape Analysis",
+  "description": "Competitive-analysis design with clean white space, navy typography, blue plotting systems, and restrained orange highlights.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["industry-analysis"],"industries":["technology"],"audiences":["employee"],"formats":["research-presentation"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、海军蓝与橙蓝强调色封面，左侧中部放置超大标题，一幅图表建立视觉重心。"
+    },
+    {
+      "path": "images/2-core-problem.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，四块卡片组成四列网格，核心判断组织动线。"
+    },
+    {
+      "path": "images/3-buyer-needs.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，标题、细线与留白划分层级，人群关系强化对比。"
+    },
+    {
+      "path": "images/4-market-definition.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，一幅图表集中排布，人群信息收束版面。"
+    },
+    {
+      "path": "images/5-evaluation-framework.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，一组表格压缩信息密度，框架信息形成重心。"
+    },
+    {
+      "path": "images/6-positioning-map.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，一幅图表集中排布，对比关系拉开层级。"
+    },
+    {
+      "path": "images/7-capability-radar.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，双面板划分主体区域，产品信息组织动线。"
+    },
+    {
+      "path": "images/8-feature-pricing-experience.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，一组表格压缩信息密度，产品信息强化对比。"
+    },
+    {
+      "path": "images/9-competitor-trajectory.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，三块卡片纵向叠放，对比信息收束版面。"
+    },
+    {
+      "path": "images/10-opportunity-and-actions.webp",
+      "alt": "白色、海军蓝与橙蓝强调色页面，三块卡片纵向叠放，决策信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，白色、海军蓝与橙蓝强调色确定整体基调，左侧中部放置超大标题；一幅图表分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-core-problem.html",
+      "description": "标题固定在左上方，白色、海军蓝与橙蓝强调色分隔主体；四块信息卡横向并列，一幅图表落在右侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-buyer-needs.html",
+      "description": "白色、海军蓝与橙蓝强调色画面，标题置于左上方；留白与细线分隔出清晰阅读区，角色节点与关系模块顺着版面动线分布。"
+    },
+    {
+      "path": "html/4-market-definition.html",
+      "description": "左上方标题锚定白色、海军蓝与橙蓝强调色画面；单一大面板承载主体信息，一幅图表落在左侧，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/5-evaluation-framework.html",
+      "description": "白色、海军蓝与橙蓝强调色作为底色，标题落在左上方；单一大面板承载主体信息，一组表格位于右侧，框架模块与强调结论补充层级。"
+    },
+    {
+      "path": "html/6-positioning-map.html",
+      "description": "标题固定在左上方，白色、海军蓝与橙蓝强调色分隔主体；留白与细线分隔出清晰阅读区，一幅图表落在左侧，对比模块与坐标标记补充层级。"
+    },
+    {
+      "path": "html/7-capability-radar.html",
+      "description": "白色、海军蓝与橙蓝强调色画面，标题置于左上方；两块主面板建立清晰分区，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/8-feature-pricing-experience.html",
+      "description": "左上方标题锚定白色、海军蓝与橙蓝强调色画面；留白与细线分隔出清晰阅读区，一组表格位于中央，功能模块与结构示意补充层级。"
+    },
+    {
+      "path": "html/9-competitor-trajectory.html",
+      "description": "白色、海军蓝与橙蓝强调色作为底色，标题落在左上方；三块信息卡纵向叠放，坐标、刻度与比较标记嵌入主体模块。"
+    },
+    {
+      "path": "html/10-opportunity-and-actions.html",
+      "description": "标题固定在左上方，白色、海军蓝与橙蓝强调色分隔主体；三块信息卡纵向叠放，一幅图表落在左侧，行动卡与强调结论补充层级。"
+    }
+  ]
+}

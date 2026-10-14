@@ -1,0 +1,103 @@
+{
+  "id": "30-Executive Business Review for Customer Success",
+  "version": 1,
+  "ppt_number": 30,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "navy",
+    "blue",
+    "gray"
+  ],
+  "name": "Executive Business Review for Customer Success",
+  "description": "Polished customer-success design with white canvases, navy anchor panels, blue data accents, and orderly review grids.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["business-review","customer-success-review"],"industries":["technology"],"audiences":["client","executive"],"formats":["status-update"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、深海军蓝与商务蓝主导封面，超大标题位于右侧中部，几何色块与细线平衡画面。"
+    },
+    {
+      "path": "images/2-partnership-scope.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，左半区两组大数字，右侧两卡叠放，范围信息强化对比。"
+    },
+    {
+      "path": "images/3-adoption-dashboard.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，两幅图表集中排布，指标信息收束版面。"
+    },
+    {
+      "path": "images/4-value-realization-map.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，一组表格压缩信息密度，数据分析形成重心。"
+    },
+    {
+      "path": "images/5-embedded-workflow.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，五块卡片组成五列网格，流程关系拉开层级。"
+    },
+    {
+      "path": "images/6-coverage-matrix.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，一组表格压缩信息密度，对比关系组织动线。"
+    },
+    {
+      "path": "images/7-value-model.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，一幅图表集中排布，方案层级强化对比。"
+    },
+    {
+      "path": "images/8-proof-points.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，双面板划分主体区域，验证信息收束版面。"
+    },
+    {
+      "path": "images/9-risk-review.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，一幅图表集中排布，风险信息形成重心。"
+    },
+    {
+      "path": "images/10-renewal-plan.webp",
+      "alt": "白色、深海军蓝与商务蓝页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页以白色、深海军蓝与商务蓝建立强对比，超大标题落在右侧中部；几何色块与细线占据主要视区，细线和页脚信息稳定边界。"
+    },
+    {
+      "path": "html/2-partnership-scope.html",
+      "description": "白色、深海军蓝与商务蓝画面，标题置于左上方；左半区以两组大号数字开场，右侧纵向排列两块卡片，目标卡、范围块与关键数字顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-adoption-dashboard.html",
+      "description": "左上方标题锚定白色、深海军蓝与商务蓝画面；留白与细线分隔出清晰阅读区，两幅指标图表落在中央，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/4-value-realization-map.html",
+      "description": "白色、深海军蓝与商务蓝作为底色，标题落在左上方；单一大面板承载主体信息，一组表格位于中央，关键数字、趋势图与注释标记补充层级。"
+    },
+    {
+      "path": "html/5-embedded-workflow.html",
+      "description": "标题固定在左上方，白色、深海军蓝与商务蓝分隔主体；五块信息卡横向并列，步骤节点与连接线贴合卡片边界。"
+    },
+    {
+      "path": "html/6-coverage-matrix.html",
+      "description": "白色、深海军蓝与商务蓝画面，标题置于左上方；单一大面板承载主体信息，一组表格位于左侧，对比模块与坐标标记补充层级。"
+    },
+    {
+      "path": "html/7-value-model.html",
+      "description": "左上方标题锚定白色、深海军蓝与商务蓝画面；单一大面板承载主体信息，一幅图表落在左侧，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/8-proof-points.html",
+      "description": "白色、深海军蓝与商务蓝作为底色，标题落在左上方；两块主面板建立清晰分区，验证数字、证据卡与对照标记嵌入主体模块。"
+    },
+    {
+      "path": "html/9-risk-review.html",
+      "description": "标题固定在左上方，白色、深海军蓝与商务蓝分隔主体；单一大面板承载主体信息，一幅风险图表落在右侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/10-renewal-plan.html",
+      "description": "白色、深海军蓝与商务蓝画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记贴合卡片边界。"
+    }
+  ]
+}

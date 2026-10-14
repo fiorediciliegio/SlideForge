@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>2026年企业全域数字化升级与业务重构 - 第15页</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-h: 'Archivo', 'Helvetica Neue', sans-serif;
+    --font-b: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+    --bg-main: #173B57;
+    --bg-grad: linear-gradient(160deg, #1A4463 0%, #173B57 52%, #12314A 100%);
+    --c-accent: #1BA6A6;
+    --c-text-h: #FFFFFF;
+    --c-text-b: #EAF4F8;
+    --c-text-m: #9FB9CB;
+    --fs-title: 46px;
+    --fs-sub: 21px;
+    --fs-body: 22px;
+    --fs-caption: 18px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: var(--bg-main); }
+  .slide {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: var(--bg-grad);
+    box-sizing: border-box;
+  }
+  .grid-overlay {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(to right, rgba(242,248,252,0.045) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(242,248,252,0.035) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  .header-meta {
+    position: absolute; left: 100px; top: 70px; width: 1720px;
+    font-family: var(--font-b); font-size: var(--fs-sub); font-weight: 600;
+    letter-spacing: 0.24em; color: var(--c-accent); text-transform: uppercase;
+  }
+  .header-title {
+    position: absolute; left: 96px; top: 112px; width: 1728px;
+    font-family: var(--font-h); font-size: var(--fs-title); font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.02em; color: var(--c-text-h);
+  }
+  .footer-left {
+    position: absolute; left: 100px; bottom: 60px; width: 1200px;
+    font-family: var(--font-b); font-size: var(--fs-caption); color: var(--c-text-m);
+    letter-spacing: 0.05em;
+  }
+  .footer-right {
+    position: absolute; right: 100px; bottom: 60px; width: 200px; text-align: right;
+    font-family: var(--font-h); font-size: var(--fs-sub); font-weight: 600; color: var(--c-accent);
+  }
+  .content-area {
+    position: absolute;
+    left: 100px;
+    top: 240px;
+    width: 1720px;
+    height: 720px;
+    box-sizing: border-box;
+    font-family: var(--font-b);
+    font-size: var(--fs-body);
+    color: var(--c-text-b);
+    line-height: 1.5;
+  }
+  
+  /* 2x2 网格卡片布局 */
+  .agent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    height: 540px;
+  }
+  .agent-card {
+    background: rgba(234, 244, 248, 0.04);
+    border: 1px solid rgba(159, 185, 203, 0.2);
+    border-left: 6px solid var(--c-accent);
+    padding: 24px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+  .card-left {
+    width: 180px;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(159, 185, 203, 0.15);
+    padding-right: 15px;
+  }
+  .card-num {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--c-accent);
+    font-family: var(--font-h);
+    line-height: 1;
+  }
+  .card-tag {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-top: 10px;
+  }
+  .card-subtag {
+    font-size: 14px;
+    color: var(--c-text-m);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .card-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-title {
+    font-size: 21px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+  }
+  .card-desc {
+    font-size: 19px;
+    color: var(--c-text-b);
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .card-kpi {
+    font-size: 17px;
+    color: var(--c-accent);
+    font-weight: 600;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-kpi::before {
+    content: "●";
+    font-size: 12px;
+  }
+
+  /* 底部战略原则栏 */
+  .bottom-bar {
+    margin-top: 30px;
+    background: rgba(27, 166, 166, 0.08);
+    border: 1px solid rgba(27, 166, 166, 0.3);
+    padding: 16px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .bottom-bar strong {
+    color: var(--c-accent);
+    font-weight: 600;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  .bottom-bar p {
+    margin: 0;
+    font-size: 19px;
+    color: var(--c-text-b);
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="grid-overlay" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <div class="header-meta" data-fixed="true">03 BUSINESS TRANSFORMATION · 业务转型方案</div>
+  <div class="header-title" data-fixed="true">重构核心业务逻辑，利用 AI Agent 实现业务自动化与决策智能化</div>
+  
+  <!-- Main Content Area -->
+  <div class="content-area">
+    <div class="agent-grid">
+      
+      <!-- 营销端 -->
+      <div class="agent-card">
+        <div class="card-left">
+          <div class="card-num">01</div>
+          <div class="card-tag">营销端</div>
+          <div class="card-subtag">Marketing Agent</div>
+        </div>
+        <div class="card-right">
+          <div>
+            <div class="card-title">精准获客与全生命周期客户价值管理</div>
+            <div class="card-desc">构建基于多模态大模型的智能营销 Agent 矩阵。前端对接全网渠道，通过行为序列分析与语义理解实现用户精准画像与动态分群；中端由创意 Agent 自动生成个性化文案与多媒体素材，实现千人千面的实时触达；后端通过流失预警模型与主动关怀 Agent 提供全生命周期管理。</div>
+          </div>
+          <div class="card-kpi">落地指标：获客成本（CAC）降低 30% 以上，客户终身价值（LTV）提升 25%</div>
+        </div>
+      </div>
+
+      <!-- 生产端 -->
+      <div class="agent-card">
+        <div class="card-left">
+          <div class="card-num">02</div>
+          <div class="card-tag">生产端</div>
+          <div class="card-subtag">Production Agent</div>
+        </div>
+        <div class="card-right">
+          <div>
+            <div class="card-title">具身智能与数字孪生驱动的自动化生产</div>
+            <div class="card-desc">引入物理 AI 与具身智能控制系统，将实时生产数据与 3D 数字孪生底座深度绑定。Agent 自主监控设备运行状态、工艺参数与能耗指标，在感知到微小偏差时自动调节控制回路（闭环优化）；结合预测性维护算法，在故障发生前自主调度维修工单与备件。</div>
+          </div>
+          <div class="card-kpi">落地指标：非计划停机时间减少 45%，关键设备整体效率（OEE）提升 15%</div>
+        </div>
+      </div>
+
+      <!-- 供应链 -->
+      <div class="agent-card">
+        <div class="card-left">
+          <div class="card-num">03</div>
+          <div class="card-tag">供应链</div>
+          <div class="card-subtag">Supply Chain Agent</div>
+        </div>
+        <div class="card-right">
+          <div>
+            <div class="card-title">端到端透明化的智能调度与需求预测</div>
+            <div class="card-desc">打破传统供应链信息孤岛，构建端到端透明化的智能调度 Agent。上游深度整合多源市场需求与历史销售数据，利用大模型进行多维度需求预测；下游 Agent 自主决策最优排产计划、动态调整库存水位，并在物流异常时实时触发重调度算法，实现全链条协同。</div>
+          </div>
+          <div class="card-kpi">落地指标：供应链整体周转效率提升 35%，需求预测准确率提高至 92%</div>
+        </div>
+      </div>
+
+      <!-- 研发端 -->
+      <div class="agent-card">
+        <div class="card-left">
+          <div class="card-num">04</div>
+          <div class="card-tag">研发端</div>
+          <div class="card-subtag">R&D Agent</div>
+        </div>
+        <div class="card-right">
+          <div>
+            <div class="card-title">AI 辅助设计与知识库驱动的创新加速</div>
+            <div class="card-desc">建立基于企业私有知识库的研发辅助 Agent 系统。沉淀数十年历史设计图纸、工艺标准与专利文献，构建语义检索与知识图谱；AI Agent 辅助工程师进行结构设计优化、材料选型推荐与合规性自动审查，缩短新产品研发周期，实现从经验驱动向数据+AI驱动的创新变革。</div>
+          </div>
+          <div class="card-kpi">落地指标：新产品研发周期（TTM）缩短 40%，设计方案一次性通过率提升 30%</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 底部战略原则栏 -->
+    <div class="bottom-bar">
+      <strong>架构共识与集成原则：</strong>
+      <p>AI Agent 的引入并非替代现有 ERP/MES 等核心系统，而是作为“智能决策与自动化执行层”叠加其上，通过标准 API 向上重构业务流程，向下激活沉淀数据，实现跨系统的无缝业务流转。</p>
+    </div>
+  </div>
+  
+  <!-- Fixed Footer -->
+  <div class="footer-left" data-fixed="true">2026年企业全域数字化升级、业务重构与智能化落地全案</div>
+  <div class="footer-right" data-fixed="true">15 / 35</div>
+</div>
+</body>
+</html>

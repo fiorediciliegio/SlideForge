@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "把客服记录整理成8页客户投诉专题复盘，面向产品和客服负责人。重点识别问题类型、影响、证据边界和下一步验证，不要把少量案例推断为全部用户。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "产品与客服负责人",
+        "description": "产品与客服负责人"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "投诉专题复盘",
+        "description": "投诉专题复盘"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "结合定性案例和工单分布确定验证优先级",
+        "description": "结合定性案例和工单分布确定验证优先级"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "客观、用户导向、避免过度推断",
+        "description": "客观、用户导向、避免过度推断"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "产品与客服负责人",
+      "description": "产品与客服负责人"
+    },
+    "purpose": {
+      "label": "投诉专题复盘",
+      "description": "投诉专题复盘"
+    },
+    "desired_outcome": {
+      "label": "结合定性案例和工单分布确定验证优先级",
+      "description": "结合定性案例和工单分布确定验证优先级"
+    },
+    "slide_count": 8,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "客观、用户导向、避免过度推断",
+      "description": "客观、用户导向、避免过度推断"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

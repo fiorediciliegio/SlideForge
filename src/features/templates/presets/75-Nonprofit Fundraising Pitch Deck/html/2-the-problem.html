@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Harvest Bridge — single type scale for all 10 slides.
+   Typography only. All geometry stays inline on each data-object. */
+
+:root{
+  --ink:#14231C;
+  --body:#46564D;
+  --mute:#8A9992;
+  --green:#1B7A4F;
+  --green-d:#0F5236;
+  --green-m:#5C9E7E;
+  --line:#DCE3DE;
+  --panel:#F7F9F7;
+  --clay:#B5543A;
+}
+
+html,body{margin:0;padding:0;overflow:hidden;}
+body{
+  font-family:'Archivo',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  color:var(--ink);
+}
+
+/* --- fixed scale ------------------------------------------------ */
+.kicker{font-size:24px;line-height:1.4;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:600;}
+.title{font-family:'Source Serif 4',serif;font-size:54px;line-height:1.14;font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+.title-xl{font-family:'Source Serif 4',serif;font-size:84px;line-height:1.1;font-weight:600;letter-spacing:-.02em;color:var(--ink);}
+.lead{font-size:25px;line-height:1.45;color:var(--body);}
+.label{font-size:22px;line-height:1.32;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);font-weight:600;}
+.head{font-size:30px;line-height:1.26;font-weight:600;color:var(--ink);}
+.body{font-size:25px;line-height:1.45;color:var(--body);}
+.cap{font-size:22px;line-height:1.4;color:var(--mute);}
+
+.stat-xl{font-family:'Source Serif 4',serif;font-size:92px;line-height:1;font-weight:700;letter-spacing:-.02em;}
+.stat-lg{font-family:'Source Serif 4',serif;font-size:62px;line-height:1;font-weight:700;letter-spacing:-.02em;}
+.stat-md{font-family:'Source Serif 4',serif;font-size:44px;line-height:1;font-weight:600;}
+
+.quote{font-family:'Source Serif 4',serif;font-size:31px;line-height:1.34;color:var(--ink);}
+
+/* on-dark variants */
+.on-dark{color:#FFFFFF;}
+.on-dark-label{font-size:22px;line-height:1.32;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:600;}
+.on-dark-body{font-size:25px;line-height:1.45;color:rgba(255,255,255,.80);}
+.on-dark-head{font-size:30px;line-height:1.3;font-weight:600;color:#FFFFFF;}
+
+/* table */
+.t-head{font-size:22px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink);}
+.t-cell{font-size:26px;color:var(--body);}
+.t-key{font-size:26px;color:var(--ink);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 The Problem" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:86px;width:1000px;height:34px;z-index:10;display:flex;align-items:center;"><span class="kicker">01 · The problem</span></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:132px;width:1300px;height:124px;z-index:10;display:flex;align-items:center;"><span class="title">School lunch ends on Friday. Hunger does not.</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:282px;width:1680px;height:1px;background:#DCE3DE;z-index:1;"></div>
+
+  <!-- left: statement -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:318px;width:660px;height:250px;z-index:10;display:flex;flex-direction:column;justify-content:center;">
+    <span class="stat-xl" style="color:#1B7A4F;">1 in 4</span>
+    <span class="head" style="margin-top:20px;">children in Kern Valley live in a household that runs out of food before the month ends.</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:600px;width:660px;height:352px;z-index:10;display:flex;flex-direction:column;justify-content:center;">
+    <span style="display:flex;gap:18px;border-top:1px solid #DCE3DE;padding:20px 0;">
+      <span style="width:8px;height:8px;border-radius:50%;background:#1B7A4F;margin-top:13px;flex:0 0 auto;"></span>
+      <span class="body">Federal meal programs cover <strong style="color:#14231C;">10 of 21</strong> weekly meals — and stop at 3pm Friday.</span>
+    </span>
+    <span style="display:flex;gap:18px;border-top:1px solid #DCE3DE;padding:20px 0;">
+      <span style="width:8px;height:8px;border-radius:50%;background:#1B7A4F;margin-top:13px;flex:0 0 auto;"></span>
+      <span class="body">The nearest full-service grocery is <strong style="color:#14231C;">14 miles</strong> from the two highest-need districts.</span>
+    </span>
+    <span style="display:flex;gap:18px;border-top:1px solid #DCE3DE;padding:20px 0 0;">
+      <span style="width:8px;height:8px;border-radius:50%;background:#1B7A4F;margin-top:13px;flex:0 0 auto;"></span>
+      <span class="body">Teachers report <strong style="color:#14231C;">Monday morning</strong> as the week's worst hour for focus.</span>
+    </span>
+  </div>
+
+  <!-- right: photo + chart -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:880px;top:318px;width:920px;height:230px;z-index:5;overflow:hidden;"><img src="../assets/p02-problem.jpg" alt="Students at a school cafeteria table" style="width:920px;height:230px;object-fit:cover;display:block;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:880px;top:572px;width:920px;height:380px;background:#F7F9F7;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:880px;top:572px;width:920px;height:380px;z-index:10;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding:0 40px;">
+    <span class="label" style="display:block;">Students qualifying for free or reduced meals · by district</span>
+    <span style="display:flex;flex-direction:column;gap:8px;margin-top:22px;">
+      <span style="display:flex;align-items:center;gap:18px;height:34px;">
+        <span class="t-cell" style="width:186px;color:#14231C;font-weight:500;">Ridgeline</span>
+        <span style="flex:1;height:26px;background:#E4EAE6;position:relative;"><span style="position:absolute;left:0;top:0;height:26px;width:82%;background:#0F5236;"></span></span>
+        <span class="t-cell" style="width:74px;text-align:right;color:#14231C;font-weight:600;">82%</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:18px;height:34px;">
+        <span class="t-cell" style="width:186px;color:#14231C;font-weight:500;">Alder Creek</span>
+        <span style="flex:1;height:26px;background:#E4EAE6;position:relative;"><span style="position:absolute;left:0;top:0;height:26px;width:76%;background:#1B7A4F;"></span></span>
+        <span class="t-cell" style="width:74px;text-align:right;color:#14231C;font-weight:600;">76%</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:18px;height:34px;">
+        <span class="t-cell" style="width:186px;color:#14231C;font-weight:500;">Mesa Flats</span>
+        <span style="flex:1;height:26px;background:#E4EAE6;position:relative;"><span style="position:absolute;left:0;top:0;height:26px;width:64%;background:#1B7A4F;"></span></span>
+        <span class="t-cell" style="width:74px;text-align:right;color:#14231C;font-weight:600;">64%</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:18px;height:34px;">
+        <span class="t-cell" style="width:186px;color:#14231C;font-weight:500;">Kern Central</span>
+        <span style="flex:1;height:26px;background:#E4EAE6;position:relative;"><span style="position:absolute;left:0;top:0;height:26px;width:58%;background:#5C9E7E;"></span></span>
+        <span class="t-cell" style="width:74px;text-align:right;color:#14231C;font-weight:600;">58%</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:18px;height:34px;">
+        <span class="t-cell" style="width:186px;color:#14231C;font-weight:500;">Westbrook</span>
+        <span style="flex:1;height:26px;background:#E4EAE6;position:relative;"><span style="position:absolute;left:0;top:0;height:26px;width:41%;background:#5C9E7E;"></span></span>
+        <span class="t-cell" style="width:74px;text-align:right;color:#14231C;font-weight:600;">41%</span>
+      </span>
+      <span style="display:flex;align-items:center;gap:18px;height:34px;border-top:1px dashed #C3CFC8;padding-top:14px;margin-top:6px;">
+        <span class="t-cell" style="width:186px;color:#8A9992;font-weight:500;">State average</span>
+        <span style="flex:1;height:26px;background:#E4EAE6;position:relative;"><span style="position:absolute;left:0;top:0;height:26px;width:35%;background:#C3CFC8;"></span></span>
+        <span class="t-cell" style="width:74px;text-align:right;color:#8A9992;font-weight:600;">35%</span>
+      </span>
+    </span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1000px;width:1100px;height:34px;z-index:10;display:flex;align-items:center;"><span class="cap">Harvest Bridge · Case for Support 2026 · Illustrative sample data</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1700px;top:1000px;width:100px;height:34px;z-index:10;display:flex;align-items:center;justify-content:flex-end;"><span class="cap">02</span></div>
+
+</div>
+</body>
+</html>

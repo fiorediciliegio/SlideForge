@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Business Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   HELIO — Seed Deck Design System
+   Dark modern tech · one system across all 10 slides
+   ========================================================== */
+
+:root{
+  --bg:      #0A0C11;
+  --elev-1:  rgba(255,255,255,0.045);
+  --elev-2:  rgba(255,255,255,0.075);
+  --line:    rgba(255,255,255,0.10);
+  --line-2:  rgba(255,255,255,0.20);
+
+  --tx:      #F3F5F8;
+  --tx-2:    #A2ACBB;
+  --tx-3:    #6B7786;
+
+  --a1:      #FF6A3D;   /* primary   — ember */
+  --a2:      #5EE6C0;   /* secondary — mint  */
+  --a3:      #9B8CFF;   /* tertiary  — iris  */
+
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 8px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type ---------- */
+.dsp{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.025em; margin:0; }
+.num{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.035em; line-height:1; }
+.mono{ font-family:'JetBrains Mono', monospace; }
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:19px; font-weight:500;
+  letter-spacing:0.20em; text-transform:uppercase; color:var(--a1);
+}
+.h-title{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:60px; line-height:1.06; letter-spacing:-0.028em; margin:0; }
+.lede{ font-size:25px; line-height:1.5; color:var(--tx-2); margin:0; }
+.body{ font-size:21px; line-height:1.55; color:var(--tx-2); margin:0; }
+.lbl{ font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3); }
+.foot{ font-family:'JetBrains Mono', monospace; font-size:17px; letter-spacing:0.16em; color:#5A6472; }
+
+/* ---------- surfaces ---------- */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.014));
+  border:1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.card-flat{
+  background: rgba(255,255,255,0.032);
+  border:1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.chip{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.10em;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--tx-2);
+}
+
+/* ---------- tables ---------- */
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:500;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3);
+  text-align:left; padding:0 20px 16px 20px; border-bottom:1px solid var(--line-2);
+}
+table.grid td{
+  font-size:20px; line-height:1.42; color:var(--tx-2);
+  padding:20px; border-bottom:1px solid var(--line); vertical-align:top;
+}
+table.grid td.k{ color:var(--tx); font-weight:600; font-family:'Space Grotesk', sans-serif; font-size:22px; }
+table.grid tr:last-child td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Business Model" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#0A0C11;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; z-index:1;
+       background:radial-gradient(1000px 640px at 84% 78%, rgba(155,140,255,0.14), transparent 70%);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1px; z-index:5; background:rgba(255,255,255,0.12);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:72px; width:900px; z-index:10;">
+    <span class="eyebrow">06 &nbsp;/&nbsp; Business model</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:118px; width:1000px; z-index:10;">
+    <h2 class="h-title">Priced per resolution,<br>expanding by queue</h2>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:130px; width:530px; z-index:10;">
+    <p class="body">A platform floor keeps revenue predictable; usage on resolved tickets ties our upside directly to the value the customer can measure.</p>
+  </div>
+
+  <!-- three tier cards -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:352px; width:1120px; height:322px; z-index:10; display:flex; gap:24px;">
+    <div class="card" style="flex:1; padding:28px 30px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="mono" style="font-size:15px; letter-spacing:0.16em; color:#6B7786;">LAUNCH</div>
+        <div class="num" style="font-size:48px; padding-top:14px;">$2.5k<span style="font-size:22px; color:#6B7786;">/mo</span></div>
+      </div>
+      <div class="body" style="font-size:18px;">One queue, 3 connectors, 5k resolutions included.</div>
+      <div class="mono" style="font-size:15px; color:#5A6472;">$0.42 PER EXTRA RESOLUTION</div>
+    </div>
+    <div class="card" style="flex:1.05; padding:28px 30px; display:flex; flex-direction:column; justify-content:space-between; border-color:rgba(255,106,61,0.45); background:linear-gradient(180deg, rgba(255,106,61,0.13), rgba(255,106,61,0.02));">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="mono" style="font-size:15px; letter-spacing:0.16em; color:#FF6A3D;">SCALE</span>
+          <span class="mono" style="font-size:13px; letter-spacing:0.12em; color:#FF6A3D; border:1px solid rgba(255,106,61,0.5); border-radius:999px; padding:5px 10px;">68% OF ARR</span>
+        </div>
+        <div class="num" style="font-size:48px; padding-top:14px;">$6.8k<span style="font-size:22px; color:#6B7786;">/mo</span></div>
+      </div>
+      <div class="body" style="font-size:18px;">Unlimited queues, policy engine, 25k resolutions included.</div>
+      <div class="mono" style="font-size:15px; color:#FF6A3D;">$0.31 PER EXTRA RESOLUTION</div>
+    </div>
+    <div class="card" style="flex:1; padding:28px 30px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="mono" style="font-size:15px; letter-spacing:0.16em; color:#6B7786;">ENTERPRISE</div>
+        <div class="num" style="font-size:48px; padding-top:14px;">$18k<span style="font-size:22px; color:#6B7786;">/mo+</span></div>
+      </div>
+      <div class="body" style="font-size:18px;">Private deployment, residency controls, custom actions.</div>
+      <div class="mono" style="font-size:15px; color:#5A6472;">ANNUAL, PAID UP FRONT</div>
+    </div>
+  </div>
+
+  <!-- unit economics KPI row -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:702px; width:1120px; height:234px; z-index:10; display:flex; gap:24px;">
+    <div class="card-flat" style="flex:1; padding:26px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl" style="font-size:14px;">Gross margin</span>
+      <span class="num" style="font-size:52px; color:#5EE6C0;">79%</span>
+      <span class="mono" style="font-size:14px; color:#5A6472;">UP FROM 61% IN Q1</span>
+    </div>
+    <div class="card-flat" style="flex:1; padding:26px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl" style="font-size:14px;">CAC payback</span>
+      <span class="num" style="font-size:52px; color:#F3F5F8;">11 mo</span>
+      <span class="mono" style="font-size:14px; color:#5A6472;">BLENDED, SELF&#8209;SERVE + SALES</span>
+    </div>
+    <div class="card-flat" style="flex:1; padding:26px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl" style="font-size:14px;">LTV / CAC</span>
+      <span class="num" style="font-size:52px; color:#9B8CFF;">4.3×</span>
+      <span class="mono" style="font-size:14px; color:#5A6472;">36&#8209;MONTH HORIZON</span>
+    </div>
+    <div class="card-flat" style="flex:1; padding:26px 28px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl" style="font-size:14px;">Blended ACV</span>
+      <span class="num" style="font-size:52px; color:#F3F5F8;">$68k</span>
+      <span class="mono" style="font-size:14px; color:#5A6472;">TARGET $95K BY 2028</span>
+    </div>
+  </div>
+
+  <!-- land & expand ladder -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:1260px; top:352px; width:560px; height:584px; z-index:10;" class="card">
+    <div style="padding:34px 36px; height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="lbl">Land &amp; expand</div>
+        <div class="mono" style="font-size:15px; color:#5A6472; padding-top:8px;">MEDIAN ACCOUNT, ARR BY QUARTER</div>
+      </div>
+
+      <div style="display:flex; align-items:flex-end; gap:20px; height:250px;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <span class="num" style="font-size:22px; color:#A2ACBB;">$30k</span>
+          <span style="width:100%; height:74px; background:rgba(255,106,61,0.35); border-radius:8px 8px 0 0;"></span>
+          <span class="mono" style="font-size:14px; color:#6B7786;">Q1</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <span class="num" style="font-size:22px; color:#A2ACBB;">$48k</span>
+          <span style="width:100%; height:118px; background:rgba(255,106,61,0.55); border-radius:8px 8px 0 0;"></span>
+          <span class="mono" style="font-size:14px; color:#6B7786;">Q2</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <span class="num" style="font-size:22px; color:#F3F5F8;">$72k</span>
+          <span style="width:100%; height:170px; background:rgba(255,106,61,0.78); border-radius:8px 8px 0 0;"></span>
+          <span class="mono" style="font-size:14px; color:#6B7786;">Q3</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <span class="num" style="font-size:22px; color:#FF6A3D;">$96k</span>
+          <span style="width:100%; height:206px; background:#FF6A3D; border-radius:8px 8px 0 0;"></span>
+          <span class="mono" style="font-size:14px; color:#6B7786;">Q4</span>
+        </div>
+      </div>
+
+      <div class="card-flat" style="padding:20px 24px;">
+        <div class="body" style="font-size:19px;">Expansion path: <span style="color:#F3F5F8;">billing queue &#8594; technical support &#8594; back&#8209;office ops</span>. No new procurement cycle required.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:996px; width:1300px; z-index:10;">
+    <span class="foot">HELIO PRICING &amp; COHORT DATA, AUG 2026 (ILLUSTRATIVE SAMPLE DATA)</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:996px; width:220px; z-index:10; text-align:right;">
+    <span class="foot" style="color:#F3F5F8;">07 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

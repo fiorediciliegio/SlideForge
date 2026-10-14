@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neighbourhood Matrix</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="10 Neighbourhood Matrix" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FBF6EC;">
+
+  <!-- Masthead -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:56px; background:#1F3A93; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:18px; width:1300px; z-index:11;">
+    <div class="mono" style="color:#FBF6EC; font-size:14px; letter-spacing:0.28em; font-weight:700;">10 / THE MATRIX · EVERY NEIGHBOURHOOD, SIDE BY SIDE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:18px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#F5C518; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 10</div>
+  </div>
+
+  <!-- Chapter -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:92px; width:900px; z-index:11;">
+    <div class="mono" style="font-size:16px; letter-spacing:0.28em; color:#E63946; font-weight:700;">— CHAPTER EIGHT · THE CHEAT SHEET</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:124px; width:1150px; z-index:11;">
+    <div class="serif" style="font-size:82px; line-height:1.12; color:#1A1A1A;">Pick a <span style="color:#E63946; font-style:italic;">Neighbourhood.</span></div>
+  </div>
+
+  <!-- Header note -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:120px; width:580px; z-index:11;">
+    <div class="serif" style="font-size:23px; line-height:1.35; color:#1A1A1A; font-style:italic;">One table, six districts. Read across for the bite, the hour, and how far you'll walk for it.</div>
+  </div>
+
+  <!-- THE TABLE -->
+  <table data-object="true" data-object-type="table" style="position:absolute; left:60px; top:262px; width:1800px; border-collapse:collapse; z-index:10; font-family:'Space Grotesk', sans-serif;">
+    <thead>
+      <tr style="background:#E63946;">
+        <th style="text-align:left; padding:18px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.2em; color:#FBF6EC; font-weight:700; width:300px;">NEIGHBOURHOOD</th>
+        <th style="text-align:left; padding:18px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.2em; color:#FBF6EC; font-weight:700; width:420px;">SIGNATURE BITE</th>
+        <th style="text-align:left; padding:18px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.2em; color:#FBF6EC; font-weight:700; width:260px;">BEST TIME</th>
+        <th style="text-align:center; padding:18px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.2em; color:#FBF6EC; font-weight:700; width:160px;">PRICE</th>
+        <th style="text-align:center; padding:18px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.2em; color:#FBF6EC; font-weight:700; width:180px;">WALK</th>
+        <th style="text-align:left; padding:18px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:13px; letter-spacing:0.2em; color:#FBF6EC; font-weight:700;">EDITOR'S RATING</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#FBF6EC;">
+        <td style="padding:15px 22px; border:2px solid #1A1A1A;"><span style="font-family:'Bebas Neue', sans-serif; font-size:30px; letter-spacing:0.04em; color:#1A1A1A;">HARBOUR</span></td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'DM Serif Display', serif; font-size:24px; color:#1A1A1A;">Butter croissant</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">07:00 – 10:00</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:#6B7A3A;">$</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">4 min</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-size:22px; letter-spacing:0.14em; color:#E63946;">●●●●<span style="color:#D6CDB6;">●</span></td>
+      </tr>
+      <tr style="background:#F5EBD8;">
+        <td style="padding:15px 22px; border:2px solid #1A1A1A;"><span style="font-family:'Bebas Neue', sans-serif; font-size:30px; letter-spacing:0.04em; color:#1A1A1A;">OLD TOWN</span></td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'DM Serif Display', serif; font-size:24px; color:#1A1A1A;">Espresso &amp; cornetto</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">08:00 – 11:00</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:#6B7A3A;">$</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">6 min</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-size:22px; letter-spacing:0.14em; color:#E63946;">●●●<span style="color:#D6CDB6;">●●</span></td>
+      </tr>
+      <tr style="background:#F5C518;">
+        <td style="padding:15px 22px; border:2px solid #1A1A1A;"><span style="font-family:'Bebas Neue', sans-serif; font-size:30px; letter-spacing:0.04em; color:#1A1A1A;">MARKET DISTRICT</span></td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'DM Serif Display', serif; font-size:24px; color:#1A1A1A;">Al pastor tacos</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">12:00 – 15:00</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:#1A1A1A;">$</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">3 min</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-size:22px; letter-spacing:0.14em; color:#C1272D;">●●●●● <span style="font-family:'Caveat', cursive; font-size:24px; color:#1A1A1A;">best value</span></td>
+      </tr>
+      <tr style="background:#FBF6EC;">
+        <td style="padding:15px 22px; border:2px solid #1A1A1A;"><span style="font-family:'Bebas Neue', sans-serif; font-size:30px; letter-spacing:0.04em; color:#1A1A1A;">CANAL SIDE</span></td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'DM Serif Display', serif; font-size:24px; color:#1A1A1A;">Amatriciana pasta</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">19:00 – 22:00</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:#E63946;">$$$</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">8 min</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-size:22px; letter-spacing:0.14em; color:#E63946;">●●●●●</td>
+      </tr>
+      <tr style="background:#F5EBD8;">
+        <td style="padding:15px 22px; border:2px solid #1A1A1A;"><span style="font-family:'Bebas Neue', sans-serif; font-size:30px; letter-spacing:0.04em; color:#1A1A1A;">RIVERSIDE</span></td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'DM Serif Display', serif; font-size:24px; color:#1A1A1A;">Pistachio gelato</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">21:00 – 00:00</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:#6B7A3A;">$$</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:16px; color:#1A1A1A;">5 min</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-size:22px; letter-spacing:0.14em; color:#E63946;">●●●●<span style="color:#D6CDB6;">●</span></td>
+      </tr>
+      <tr style="background:#1F3A93;">
+        <td style="padding:15px 22px; border:2px solid #1A1A1A;"><span style="font-family:'Bebas Neue', sans-serif; font-size:30px; letter-spacing:0.04em; color:#FBF6EC;">DOWNTOWN</span></td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'DM Serif Display', serif; font-size:24px; color:#FBF6EC;">Tonkotsu ramen</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-family:'Space Mono', monospace; font-size:16px; color:#FBF6EC;">22:00 – 02:00</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:#F5C518;">$$</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; text-align:center; font-family:'Space Mono', monospace; font-size:16px; color:#FBF6EC;">7 min</td>
+        <td style="padding:15px 22px; border:2px solid #1A1A1A; font-size:22px; letter-spacing:0.14em; color:#F5C518;">●●●●<span style="color:rgba(251,246,236,0.35);">●</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== BOTTOM KEY BLOCKS ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:880px; width:520px; z-index:11;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700; border-bottom:2px solid #1A1A1A; padding-bottom:8px;">HOW WE SCORED</div>
+    <div style="font-size:16px; line-height:1.45; color:#1A1A1A; margin-top:10px;">Five dots means we went back a second time on the same day. Three means good, but you have better options.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:880px; width:460px; z-index:11;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700; border-bottom:2px solid #1A1A1A; padding-bottom:8px;">PRICE KEY</div>
+    <div style="font-size:16px; line-height:1.5; color:#1A1A1A; margin-top:10px;">
+      <b style="font-family:'Space Mono', monospace;">$</b> under 10 · <b style="font-family:'Space Mono', monospace;">$$</b> 10–25 · <b style="font-family:'Space Mono', monospace;">$$$</b> 25 and up, per person, before the second bottle.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1160px; top:876px; width:700px; height:140px; background:#6B7A3A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1188px; top:896px; width:650px; z-index:12;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#F5C518; font-weight:700;">IF YOU ONLY READ ONE ROW</div>
+    <div class="serif" style="font-size:32px; line-height:1.15; color:#FBF6EC; margin-top:6px;">Market District. Three dollars, three minutes, five dots.</div>
+  </div>
+
+</div>
+</body>
+</html>

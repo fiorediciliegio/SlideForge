@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create an 8-slide architecture decision deck for the engineering review board. Reconcile the proposal and the constraint memo. Do not invent benchmark results or imply approval has already been granted."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Engineering review board",
+        "description": "Engineering review board"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Architecture decision",
+        "description": "Architecture decision"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Clarify proposal, constraints, unknowns, pilot scope, and required decision",
+        "description": "Clarify proposal, constraints, unknowns, pilot scope, and required decision"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Technical, decision-oriented, evidence-conscious",
+        "description": "Technical, decision-oriented, evidence-conscious"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Engineering review board",
+      "description": "Engineering review board"
+    },
+    "purpose": {
+      "label": "Architecture decision",
+      "description": "Architecture decision"
+    },
+    "desired_outcome": {
+      "label": "Clarify proposal, constraints, unknowns, pilot scope, and required decision",
+      "description": "Clarify proposal, constraints, unknowns, pilot scope, and required decision"
+    },
+    "slide_count": 8,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Technical, decision-oriented, evidence-conscious",
+      "description": "Technical, decision-oriented, evidence-conscious"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

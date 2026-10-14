@@ -1,0 +1,15 @@
+dist
+node_modules
+bundle
+.build
+sea-prep
+.preview-output
+.pkg-cache
+src/app/presentation-templates/generated-registry-manifest.json
+
+# Developer-only export-only smoke test; keep it out of release sources.
+/scripts/local-export-only-smoke.py
+
+# `dist/` and `bundle/` are generated locally and intentionally remain
+# untracked. The App-level ignore rules apply the same policy to all nested
+# build outputs.

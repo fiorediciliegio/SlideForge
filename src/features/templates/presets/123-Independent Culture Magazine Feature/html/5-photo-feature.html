@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Photo Feature — Contact Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Archivo+Narrow:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#f2ede4;}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#f2ede4;font-family:'Playfair Display',serif;color:#0a0a0a;}
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:.3;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- running head -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:80px;width:1760px;height:1px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:44px;width:900px;height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Margin / Noise &nbsp; №04 &nbsp;—&nbsp; Photo Feature
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1620px;top:44px;width:220px;height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-align:right;text-transform:uppercase;z-index:10;">
+    page 05 / 06
+  </div>
+
+  <!-- oversized single word title, top -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:60px;top:110px;width:1400px;height:200px;font-family:'Playfair Display',serif;font-weight:900;font-size:220px;line-height:.9;letter-spacing:-.045em;color:#0a0a0a;z-index:10;">
+    Contact&nbsp;sheet<span style="color:#e63329;">.</span>
+  </div>
+
+  <!-- kicker -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:330px;width:1200px;height:32px;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:22px;letter-spacing:.24em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Photographs by Marta Isak &nbsp;·&nbsp; four frames, no captions asked for
+  </div>
+
+  <!-- red rule under kicker -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:378px;width:200px;height:6px;background:#e63329;z-index:5;"></div>
+
+  <!-- 4-frame grid — contact sheet style — with frame numbers -->
+  <!-- frame 01 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:420px;width:400px;height:520px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:88px;top:428px;width:384px;height:504px;overflow:hidden;z-index:5;">
+    <img src="../assets/photo-01.jpg" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.15);display:block;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:950px;width:400px;height:22px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.22em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    01 / passer, midnight
+  </div>
+
+  <!-- frame 02 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:520px;top:420px;width:400px;height:520px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:528px;top:428px;width:384px;height:504px;overflow:hidden;z-index:5;">
+    <img src="../assets/photo-02.jpg" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.15);display:block;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:520px;top:950px;width:400px;height:22px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.22em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    02 / crowd, unnamed
+  </div>
+
+  <!-- frame 03 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:960px;top:420px;width:400px;height:520px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:968px;top:428px;width:384px;height:504px;overflow:hidden;z-index:5;">
+    <img src="../assets/photo-03.jpg" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.2);display:block;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:960px;top:950px;width:400px;height:22px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.22em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    03 / kerb, three am
+  </div>
+
+  <!-- frame 04 — this one red-tinted, off-color, deliberate -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1400px;top:420px;width:400px;height:520px;background:#e63329;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:1408px;top:428px;width:384px;height:504px;overflow:hidden;z-index:5;">
+    <img src="../assets/photo-04.jpg" style="width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.2);display:block;opacity:.9;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1400px;top:950px;width:400px;height:22px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.22em;color:#e63329;text-transform:uppercase;z-index:10;">
+    04 / (mis-registered on purpose)
+  </div>
+
+  <!-- rotated photographer credit right side -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1885px;top:940px;width:520px;height:30px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.32em;color:#0a0a0a;text-transform:uppercase;transform:rotate(-90deg);transform-origin:left top;z-index:10;">
+    → M. Isak · 35mm · pushed 2 stops
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:1010px;width:1760px;height:1px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:1030px;width:900px;height:22px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Four frames, no captions asked for. — The Editors
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Representative Episodes & Brand Fit</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE SIGNAL ROOM — Sponsorship Media Kit
+   Shared design system: type, color, surface treatments.
+   Layout/position stays inline on each data-object.
+   ============================================================ */
+
+:root{
+  /* Core palette — warm editorial "on-air" */
+  --ink:        #171310;
+  --ink-2:      #221C18;
+  --ink-3:      #2E2622;
+  --cream:      #F6F1E7;
+  --cream-2:    #EDE5D6;
+  --amber:      #E39B34;
+  --amber-deep: #A8571F;
+  --clay:       #B4472C;
+  --olive:      #6E7A55;
+
+  /* Derived */
+  --ink-70: rgba(23,19,16,.70);
+  --ink-52: rgba(23,19,16,.52);
+  --ink-40: rgba(23,19,16,.40);
+  --ink-14: rgba(23,19,16,.14);
+  --ink-07: rgba(23,19,16,.07);
+  --cr-78:  rgba(246,241,231,.78);
+  --cr-58:  rgba(246,241,231,.58);
+  --cr-40:  rgba(246,241,231,.40);
+  --cr-16:  rgba(246,241,231,.16);
+  --cr-08:  rgba(246,241,231,.08);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  font-family:'Karla','Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-light{
+  background:
+    radial-gradient(1200px 640px at 88% -12%, rgba(227,155,52,.13) 0%, rgba(227,155,52,0) 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(180,71,44,.09) 0%, rgba(180,71,44,0) 60%),
+    #F6F1E7;
+}
+.bg-dark{
+  background:
+    radial-gradient(1100px 620px at 92% -10%, rgba(227,155,52,.20) 0%, rgba(227,155,52,0) 60%),
+    radial-gradient(900px 560px at -6% 106%, rgba(180,71,44,.16) 0%, rgba(180,71,44,0) 62%),
+    #171310;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--amber-deep); margin:0;
+}
+.eyebrow.on-dark{ color:var(--amber); }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:88px; line-height:1.02; letter-spacing:-.02em;
+  color:var(--cream); margin:0;
+}
+.h2{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:56px; line-height:1.08; letter-spacing:-.018em;
+  color:var(--ink); margin:0;
+}
+.h2.on-dark{ color:var(--cream); }
+.h3{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:30px; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.h3.on-dark{ color:var(--cream); }
+.h4{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:23px; line-height:1.24; letter-spacing:-.004em;
+  color:var(--ink); margin:0;
+}
+.h4.on-dark{ color:var(--cream); }
+
+.lead{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:26px; line-height:1.52; color:var(--ink-70); margin:0;
+}
+.lead.on-dark{ color:var(--cr-78); }
+
+.body{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:20px; line-height:1.5; color:var(--ink-70); margin:0;
+}
+.body.on-dark{ color:var(--cr-78); }
+
+.micro{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-40); margin:0;
+}
+.micro.on-dark{ color:var(--cr-40); }
+
+.metric{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:66px; line-height:1; letter-spacing:-.028em;
+  color:var(--ink); margin:0; font-variant-numeric: tabular-nums;
+}
+.metric.on-dark{ color:var(--cream); }
+.metric .unit{ font-size:.46em; font-weight:700; letter-spacing:0; }
+
+.tag{
+  display:inline-block; font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px 5px; border-radius:var(--r-sm);
+  background:rgba(227,155,52,.20); color:var(--amber-deep);
+}
+.tag.on-dark{ background:rgba(227,155,52,.18); color:var(--amber); }
+
+/* ---------- Surfaces ---------- */
+.card{
+  background:#FFFDF8; border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-quiet{
+  background:rgba(23,19,16,.035); border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-dark{
+  background:rgba(246,241,231,.055); border:1px solid var(--cr-16);
+  border-radius:var(--r-md);
+}
+.card-ink{
+  background:var(--ink); border:1px solid rgba(23,19,16,1);
+  border-radius:var(--r-md);
+}
+.card-amber{
+  background:var(--amber); border:1px solid var(--amber);
+  border-radius:var(--r-md);
+}
+.rule{ background:var(--ink-14); }
+.rule-dark{ background:var(--cr-16); }
+
+/* ---------- Chart primitives ---------- */
+.bar-track{ background:var(--ink-07); border-radius:2px; overflow:hidden; }
+.bar-track-dark{ background:rgba(246,241,231,.10); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; border-radius:2px; }
+
+table.kit{ border-collapse:collapse; width:100%; }
+table.kit th{
+  font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+  text-align:left; padding:0 0 12px; border-bottom:1px solid var(--ink-14);
+}
+table.kit td{
+  font-family:'Karla',sans-serif; font-size:20px; color:var(--ink);
+  padding:15px 0; border-bottom:1px solid var(--ink-07);
+  font-variant-numeric: tabular-nums;
+}
+table.kit.on-dark th{ color:var(--cr-40); border-bottom-color:var(--cr-16); }
+table.kit.on-dark td{ color:var(--cream); border-bottom-color:rgba(246,241,231,.09); }
+</style>
+</head>
+<body>
+<div class="slide bg-light" data-screen-label="06 Episodes & Brand Fit" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:0px; top:0px; width:10px; height:1080px; z-index:1; background:var(--ink);"></div>
+
+  <p class="eyebrow" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:84px; width:700px; z-index:10;">06 — Content &amp; brand fit</p>
+
+  <h2 class="h2" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:128px; width:900px; z-index:10;">What we make, and who it suits</h2>
+
+  <p class="lead" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1100px; top:136px; width:700px; z-index:10; font-size:21px;">
+    Three recurring formats, each attracting a different buying committee. Pick the strand your category actually belongs in.</p>
+
+  <!-- episode cards -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:296px; width:540px; height:428px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/two-host-table.jpg" alt="Interview episode recording"
+       style="position:absolute; left:121px; top:297px; width:538px; height:182px; object-fit:cover; object-position:50% 46%; border-radius:6px 6px 0 0; z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:510px; width:478px; z-index:10;">
+    <span class="tag">Interview · weekly</span>
+  </div>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:558px; width:478px; z-index:10; font-size:26px;">“The Rebuild”</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:602px; width:478px; z-index:10; font-size:18px;">
+    One operator walks through a system they tore down and rebuilt. Ep. 154 with Ledgerline's COO is our most-shared episode of the season.</p>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:684px; width:478px; z-index:10;">198K downloads · 81% completion</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:690px; top:296px; width:540px; height:428px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/studio-cozy.jpg" alt="Roundtable episode recording"
+       style="position:absolute; left:691px; top:297px; width:538px; height:182px; object-fit:cover; object-position:50% 40%; border-radius:6px 6px 0 0; z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:722px; top:510px; width:478px; z-index:10;">
+    <span class="tag">Roundtable · monthly</span>
+  </div>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:722px; top:558px; width:478px; z-index:10; font-size:26px;">“Three Budgets”</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:722px; top:602px; width:478px; z-index:10; font-size:18px;">
+    Three leaders compare how they spend the same line item. Naturally hospitable to tooling, finance and infrastructure sponsors.</p>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:722px; top:684px; width:478px; z-index:10;">164K downloads · 76% completion</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:296px; width:540px; height:428px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/mic-detail.jpg" alt="Field reporting episode"
+       style="position:absolute; left:1261px; top:297px; width:538px; height:182px; object-fit:cover; object-position:50% 50%; border-radius:6px 6px 0 0; z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1292px; top:510px; width:478px; z-index:10;">
+    <span class="tag">Field notes · quarterly</span>
+  </div>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:1292px; top:558px; width:478px; z-index:10; font-size:26px;">“Shop Floor”</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:1292px; top:602px; width:478px; z-index:10; font-size:18px;">
+    Recorded on site — warehouses, clinics, trading desks. Our highest-performing strand for hardware and logistics partners.</p>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:1292px; top:684px; width:478px; z-index:10;">121K downloads · 84% completion</p>
+
+  <!-- brand fit matrix -->
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:776px; width:900px; z-index:10;">Category fit — where sponsors perform best</p>
+
+  <div data-object="true" data-object-type="table"
+       style="position:absolute; left:120px; top:820px; width:1680px; height:172px; z-index:10;
+              background:rgba(23,19,16,.035); border:1px solid var(--ink-14); border-radius:6px; padding:24px 32px 18px;">
+    <table class="kit">
+      <thead>
+        <tr>
+          <th style="width:26%;">Sponsor category</th>
+          <th style="width:22%;">Best strand</th>
+          <th style="width:18%;">Typical goal</th>
+          <th style="width:18%;">Fit</th>
+          <th style="text-align:right;">Avg. CTR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-size:19px;">B2B software &amp; data tools</td>
+          <td style="font-size:19px; color:var(--ink-70);">The Rebuild</td>
+          <td style="font-size:19px; color:var(--ink-70);">Pipeline</td>
+          <td><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15px; letter-spacing:.12em; text-transform:uppercase; color:var(--amber-deep);">Strong</span></td>
+          <td style="text-align:right; font-size:19px;">3.8%</td>
+        </tr>
+        <tr>
+          <td style="font-size:19px; border-bottom:none;">Financial services &amp; infrastructure</td>
+          <td style="font-size:19px; color:var(--ink-70); border-bottom:none;">Three Budgets</td>
+          <td style="font-size:19px; color:var(--ink-70); border-bottom:none;">Consideration</td>
+          <td style="border-bottom:none;"><span style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15px; letter-spacing:.12em; text-transform:uppercase; color:var(--olive);">Good</span></td>
+          <td style="text-align:right; font-size:19px; border-bottom:none;">2.9%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1740px; top:1016px; width:60px; text-align:right; z-index:10;">06</p>
+</div>
+</body>
+</html>

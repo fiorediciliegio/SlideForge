@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design Philosophy</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* AURION E9 launch deck — shared design system
+   Dark cinematic keynote stage. Condensed grotesk display + humanist body.
+   Sharp 2px radii, 1px hairlines, amber ember accent, cool steel secondary. */
+
+:root{
+  --bg:#0A0B0D;
+  --panel:#13161A;
+  --panel-2:#181C21;
+  --line:#2A3037;
+  --line-soft:#1F242A;
+  --txt:#F3F2EF;
+  --muted:#8C949D;
+  --muted-2:#646C75;
+  --accent:#FF8A2B;
+  --accent-deep:#B9550F;
+  --accent-wash:rgba(255,138,43,0.09);
+  --cool:#79A4B8;
+  --r:2px;
+}
+
+body{margin:0;padding:0;overflow:hidden;background:var(--bg);}
+
+.d{font-family:'Barlow Condensed','Arial Narrow',Helvetica,sans-serif;}
+.b{font-family:'Barlow','Helvetica Neue',Helvetica,sans-serif;}
+
+.kicker{font-family:'Barlow',Helvetica,sans-serif;font-size:24px;font-weight:600;
+  letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);}
+.chrome{font-family:'Barlow',Helvetica,sans-serif;font-size:22px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-2);}
+.title{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;
+  color:var(--txt);line-height:1.06;letter-spacing:-0.005em;}
+.num{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;
+  color:var(--accent);line-height:0.92;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;}
+.lbl{font-family:'Barlow',Helvetica,sans-serif;font-size:23px;font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--txt);}
+.body{font-family:'Barlow',Helvetica,sans-serif;font-size:25px;font-weight:400;
+  line-height:1.5;color:var(--muted);text-wrap:pretty;}
+.foot{font-family:'Barlow',Helvetica,sans-serif;font-size:22px;font-weight:400;
+  line-height:1.4;color:var(--muted-2);}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="05 Design — exterior, cabin, philosophy" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#0A0B0D;">
+
+  <img data-object="true" data-object-type="image" src="../assets/exterior.jpg" alt="E9 exterior"
+       style="position:absolute;left:0px;top:0px;width:1060px;height:1080px;object-fit:cover;object-position:52% 56%;z-index:5;filter:saturate(0.62) contrast(1.04) brightness(0.7);">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1060px;height:1080px;z-index:6;background:linear-gradient(180deg,rgba(10,11,13,0.94) 0%,rgba(10,11,13,0.78) 26%,rgba(10,11,13,0.34) 52%,rgba(10,11,13,0.72) 78%,rgba(10,11,13,0.96) 100%);"></div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:6px;z-index:9;background:linear-gradient(90deg,#FF8A2B 0%,#B9550F 34%,#2A3037 34%,#2A3037 100%);"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:76px;top:80px;width:900px;height:36px;z-index:10;">
+    <div class="kicker">05 — Design Philosophy</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:74px;top:126px;width:820px;height:190px;z-index:10;">
+    <div class="title" style="font-size:82px;">Quiet Precision</div>
+    <div class="body" style="font-size:28px;margin-top:18px;color:#E2E0DB;">No fake vents, no theatrical creases. Every surface is earning either airflow, light or space.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:76px;top:822px;width:912px;height:1px;z-index:10;background:rgba(243,242,239,0.24);"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:76px;top:854px;width:912px;height:110px;z-index:10;">
+    <div style="display:flex;gap:0;">
+      <div style="width:304px;">
+        <div class="num" style="font-size:56px;">0.229</div>
+        <div class="chrome" style="font-size:19px;margin-top:6px;">Drag coefficient</div>
+      </div>
+      <div style="width:304px;">
+        <div class="num" style="font-size:56px;">2 950<span style="font-size:26px;color:#8C949D;"> mm</span></div>
+        <div class="chrome" style="font-size:19px;margin-top:6px;">Wheelbase</div>
+      </div>
+      <div style="width:304px;">
+        <div class="num" style="font-size:56px;">21<span style="font-size:26px;color:#8C949D;">″</span></div>
+        <div class="chrome" style="font-size:19px;margin-top:6px;">Aero wheel, flush cover</div>
+      </div>
+    </div>
+  </div>
+
+  <img data-object="true" data-object-type="image" src="../assets/cabin.jpg" alt="E9 cabin"
+       style="position:absolute;left:1112px;top:290px;width:688px;height:296px;object-fit:cover;object-position:50% 55%;z-index:5;border-radius:2px;filter:saturate(0.86) brightness(0.9);">
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1112px;top:126px;width:688px;height:130px;z-index:10;">
+    <div class="chrome" style="font-size:20px;">Interior architecture</div>
+    <div class="title" style="font-size:46px;margin-top:12px;line-height:1.14;">A lounge that still knows it is a car</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1112px;top:622px;width:334px;height:126px;z-index:1;background:#13161A;border:1px solid #2A3037;border-radius:2px;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1140px;top:648px;width:280px;height:78px;z-index:10;">
+    <div class="lbl" style="font-size:23px;letter-spacing:0.06em;">Flat floor, 3rd row</div>
+    <div class="foot" style="font-size:21px;margin-top:6px;">Fold-flat to 1 780 L cargo</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1466px;top:622px;width:334px;height:126px;z-index:1;background:#13161A;border:1px solid #2A3037;border-radius:2px;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1494px;top:648px;width:280px;height:78px;z-index:10;">
+    <div class="lbl" style="font-size:23px;letter-spacing:0.06em;">37 dB at 100 km/h</div>
+    <div class="foot" style="font-size:21px;margin-top:6px;">Laminated acoustic glass</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1112px;top:764px;width:334px;height:126px;z-index:1;background:#13161A;border:1px solid #2A3037;border-radius:2px;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1140px;top:790px;width:280px;height:78px;z-index:10;">
+    <div class="lbl" style="font-size:23px;letter-spacing:0.06em;">Recycled materials</div>
+    <div class="foot" style="font-size:21px;margin-top:6px;">64% of cabin surface area</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1466px;top:764px;width:334px;height:126px;z-index:1;background:rgba(255,138,43,0.09);border:1px solid #B9550F;border-radius:2px;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1494px;top:790px;width:280px;height:78px;z-index:10;">
+    <div class="lbl" style="font-size:23px;letter-spacing:0.06em;color:#FF8A2B;">7 physical controls</div>
+    <div class="foot" style="font-size:21px;margin-top:6px;">Retained by deliberate choice</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1112px;top:1006px;width:400px;height:34px;z-index:10;">
+    <div class="chrome" style="font-size:21px;">AURION E9 · Launch Deck</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1660px;top:1000px;width:140px;height:44px;z-index:10;text-align:right;">
+    <div class="num" style="font-size:38px;color:#646C75;">05</div>
+  </div>
+
+</div>
+</body>
+</html>

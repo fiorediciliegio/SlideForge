@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forces in Action — Retro Comic Cover</title>
+<style>
+:root {
+  --theme-bg: #FFF6DC;
+  --theme-surface: #FFFFFF;
+  --theme-ink: #101010;
+  --theme-muted: #242424;
+  --theme-accent-primary: #ED2630;
+  --theme-accent-secondary: #168BD2;
+  --theme-accent-tertiary: #FFD52E;
+  --theme-line: #E7D9A4;
+
+  --forces-canvas: var(--theme-bg);
+  --forces-surface: var(--theme-surface);
+  --forces-ink: var(--theme-ink);
+  --forces-muted: var(--theme-muted);
+  --forces-accent: var(--theme-accent-primary);
+  --forces-support: var(--theme-accent-secondary);
+  --forces-highlight: var(--theme-accent-tertiary);
+  --forces-line: var(--theme-line);
+  --forces-shadow: rgb(from var(--forces-ink) r g b / 0.18);
+  --forces-glow: rgb(from var(--forces-accent) r g b / 0.22);
+}
+
+:root{--ink:var(--forces-ink);--red:var(--forces-accent);--yellow:var(--forces-highlight);--blue:var(--forces-support);--cream:var(--forces-canvas);--white:var(--forces-surface);--display:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif;--body:"Trebuchet MS",Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--forces-muted)}body{font-family:var(--body);color:var(--ink)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--yellow);isolation:isolate}
+.dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--red) 3px,transparent 3.6px);background-size:22px 22px;opacity:.25;z-index:1}
+.burst{position:absolute;left:-110px;top:-240px;width:1530px;height:1530px;border-radius:50%;z-index:2;background:repeating-conic-gradient(from -6deg,var(--cream) 0 8deg,var(--yellow) 8deg 17deg);border:12px solid var(--ink)}
+.blue-slab{position:absolute;right:-120px;top:-80px;width:720px;height:1240px;background:var(--blue);border-left:14px solid var(--ink);transform:rotate(7deg);z-index:3}
+.mast{position:absolute;left:70px;top:54px;z-index:8;display:flex;align-items:center;gap:18px;font-size:22px;font-weight:900;letter-spacing:5px;text-transform:uppercase}
+.mast b{padding:10px 16px;background:var(--ink);color:var(--white);transform:rotate(-2deg)}
+.headline{position:absolute;left:88px;top:170px;z-index:10;width:1200px;transform:rotate(-3deg)}
+.headline .mini{display:inline-block;margin-left:15px;padding:7px 20px;background:var(--red);border:6px solid var(--ink);color:var(--white);font:31px/1 var(--display);letter-spacing:4px;box-shadow:7px 7px 0 var(--ink)}
+h1{margin:24px 0 0;font:196px/.78 var(--display);letter-spacing:1px;text-transform:uppercase;-webkit-text-stroke:5px var(--ink);color:var(--white);text-shadow:13px 13px 0 var(--ink)}
+h1 span{display:block;width:max-content;padding:0 32px 17px;background:var(--red);border:9px solid var(--ink)}
+h1 span+span{margin:34px 0 0 185px;background:var(--blue);color:var(--yellow);word-spacing:34px}
+.caption{position:absolute;left:118px;top:702px;z-index:10;width:910px;padding:22px 30px;background:var(--cream);border:8px solid var(--ink);box-shadow:11px 11px 0 var(--red);transform:rotate(1.5deg);font-size:34px;font-weight:900;line-height:1.05;text-transform:uppercase}
+.caption em{color:var(--red);font-style:normal}
+.pow{position:absolute;right:245px;top:256px;z-index:10;width:480px;height:390px;display:grid;place-items:center;filter:drop-shadow(12px 12px 0 var(--ink));transform:rotate(8deg)}
+.pow:before{content:"";position:absolute;inset:0;background:var(--yellow);border:9px solid var(--ink);clip-path:polygon(50% 0,61% 22%,80% 7%,81% 31%,100% 28%,86% 50%,100% 66%,78% 69%,79% 94%,59% 80%,48% 100%,37% 78%,16% 95%,20% 69%,0 63%,15% 47%,0 27%,22% 31%,21% 5%,40% 22%)}
+.pow strong{position:relative;z-index:2;font:122px/.75 var(--display);color:var(--red);-webkit-text-stroke:4px var(--ink);text-shadow:7px 7px 0 var(--white)}
+.ball{position:absolute;right:267px;bottom:113px;z-index:8;width:310px;height:310px;border:12px solid var(--ink);border-radius:50%;background:var(--red);box-shadow:18px 18px 0 var(--ink)}
+.ball:before{content:"";position:absolute;left:48px;top:35px;width:62px;height:94px;border-radius:50%;background:rgb(from var(--forces-surface) r g b / .55);transform:rotate(28deg)}
+.motion{position:absolute;right:530px;bottom:178px;z-index:7;width:370px;height:150px;border-top:16px solid var(--ink);border-bottom:16px solid var(--ink);transform:skewY(-9deg)}
+.motion:before{content:"";position:absolute;left:34px;top:48px;width:300px;border-top:16px solid var(--white)}
+.question{position:absolute;left:90px;bottom:64px;z-index:12;width:1120px;display:flex;align-items:center;gap:24px;padding:17px 30px;background:var(--ink);color:var(--white);border:7px solid var(--ink);box-shadow:10px 10px 0 var(--blue);font-size:30px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.question b{font:64px/.8 var(--display);color:var(--yellow)}
+.footer{position:absolute;right:64px;bottom:35px;z-index:13;color:var(--white);font-size:16px;font-weight:900;letter-spacing:4px;text-transform:uppercase}
+@media(max-width:1919px),(max-height:1079px){body{min-width:1920px;min-height:1080px}}
+</style>
+</head>
+<body>
+<main class="slide" data-screen-label="02 Retro American Comic Cover">
+  <div class="dots" aria-hidden="true"></div><div class="burst" aria-hidden="true"></div><div class="blue-slab" aria-hidden="true"></div>
+  <header class="mast" data-object="true" data-object-type="textbox"><b>Junior Science</b><span>Action Comics / Special Edition</span></header>
+  <section class="headline" data-object="true" data-object-type="textbox"><div class="mini">The invisible push &amp; pull!</div><h1><span>Forces</span><span>In&nbsp; Action</span></h1></section>
+  <div class="caption" data-object="true" data-object-type="textbox">Can you see a force? <em>No!</em><br>Can you see what it does? <em>Absolutely!</em></div>
+  <div class="pow" data-object="true" data-object-type="shape"><strong>POW!</strong></div>
+  <div class="motion" aria-hidden="true"></div><div class="ball" data-object="true" data-object-type="image" aria-label="Fast moving ball"></div>
+  <aside class="question" data-object="true" data-object-type="textbox"><b>?</b><span>What makes things start, stop and change direction?</span></aside>
+  <footer class="footer">Motion • Gravity • Friction</footer>
+</main>
+</body>
+</html>

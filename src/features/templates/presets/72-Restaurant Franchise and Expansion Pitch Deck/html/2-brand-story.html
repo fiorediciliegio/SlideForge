@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* CHAR & CO. — deck design system
+   ONE system for all 10 slides: type scale, line-heights, 40px card insets,
+   identical footer rule + page number position on every page. */
+
+*{box-sizing:border-box;}
+body{
+  margin:0;padding:0;overflow:hidden;
+  font-family:'Archivo','Helvetica Neue',Helvetica,sans-serif;
+  color:#1C1B19;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- brand ---------- */
+.serif{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;}
+.dot{display:inline-block;width:14px;height:14px;background:#C0332A;margin-right:16px;vertical-align:middle;}
+.mark{font-size:19px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;vertical-align:middle;color:#1C1B19;}
+.on-dark .mark,.mark-light{color:#FFFFFF;}
+
+/* ---------- headers ---------- */
+.eyebrow{font-size:21px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#C0332A;}
+.h1{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;
+    font-size:66px;line-height:1.14;letter-spacing:-.01em;color:#1C1B19;}
+.h1-xl{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;
+    font-size:92px;line-height:1.08;letter-spacing:-.015em;color:#1C1B19;}
+.lede{font-size:24px;line-height:1.6;color:#57524B;}
+
+/* ---------- labels & body ---------- */
+.kicker{font-size:20px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#8B857C;}
+.kicker-red{color:#C0332A;}
+.kicker-amber{color:#F0B27A;}
+.card-title{font-size:27px;line-height:1.25;font-weight:600;color:#1C1B19;}
+.card-title-s{font-size:23px;line-height:1.3;font-weight:600;color:#1C1B19;}
+.body{font-size:21px;line-height:1.55;color:#6E6A64;}
+.body-dark{font-size:21px;line-height:1.55;color:#3A3630;}
+.body-sm{font-size:19px;line-height:1.5;color:#6E6A64;}
+
+/* ---------- numerals ---------- */
+.num-xl{font-family:'Instrument Serif',Georgia,serif;font-size:78px;line-height:1;letter-spacing:-.01em;}
+.num-l{font-family:'Instrument Serif',Georgia,serif;font-size:62px;line-height:1;letter-spacing:-.01em;}
+.num-m{font-family:'Instrument Serif',Georgia,serif;font-size:46px;line-height:1;}
+.num-unit{font-size:26px;color:#6E6A64;}
+.red{color:#C0332A;}
+.tnum{font-variant-numeric:tabular-nums;}
+
+/* ---------- surfaces (inner content always inset 40px) ---------- */
+.card{background:#F7F5F2;border-radius:8px;}
+.card-outline{background:#FFFFFF;border:1px solid #E2DED7;border-radius:8px;}
+.card-red{background:#FDF6F5;border:1px solid #F0D9D6;border-radius:8px;}
+.card-dark{background:#1C1B19;border-radius:8px;}
+.rule{background:#E2DED7;}
+.rule-mid{background:#C7C1B8;}
+.rule-red{background:#C0332A;}
+
+/* ---------- footer: identical geometry on all 10 slides ---------- */
+.foot{font-size:20px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:#8B857C;}
+.pagenum{font-size:34px;font-weight:600;line-height:1;color:#1C1B19;font-variant-numeric:tabular-nums;text-align:right;}
+.pagenum .tot{font-size:24px;font-weight:500;color:#B5AEA5;}
+.pagenum-light{color:#FFFFFF;}
+.pagenum-light .tot{color:rgba(255,255,255,.62);}
+
+/* ---------- parts ---------- */
+.step-circle{width:52px;height:52px;border-radius:50%;background:#C0332A;color:#fff;
+  font-size:21px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+.step-circle-ghost{background:#FFFFFF;color:#C0332A;border:2px solid #E8CFCC;}
+.pill{display:inline-block;font-size:19px;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:600;padding:8px 16px;border-radius:4px;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 Brand Story" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:56px;width:640px;height:30px;z-index:10;">
+    <span class="dot"></span><span class="mark">Char &amp; Co.</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="eyebrow" style="position:absolute;left:100px;top:136px;width:900px;height:28px;z-index:10;">01 · Brand Story</div>
+
+  <div data-object="true" data-object-type="textbox" class="h1" style="position:absolute;left:100px;top:180px;width:1020px;height:160px;z-index:10;">One charcoal grill became<br>a repeatable format.</div>
+
+  <div data-object="true" data-object-type="textbox" class="body-dark" style="position:absolute;left:1180px;top:188px;width:640px;height:150px;z-index:10;">We started in 2019 with a single 40㎡ grill counter in Chengdu. Seven years later the recipe book, the equipment package and the four-person shift are standardised.</div>
+
+  <img data-object="true" data-object-type="image" src="../assets/grill-craft.jpg" alt="Charcoal grill craft" style="position:absolute;left:100px;top:376px;width:1720px;height:200px;object-fit:cover;object-position:center 44%;border-radius:8px;z-index:5;">
+
+  <div data-object="true" data-object-type="shape" class="rule" style="position:absolute;left:100px;top:657px;width:1720px;height:1px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:604px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">2019</div>
+    <div style="width:14px;height:14px;border-radius:50%;background:#C7C1B8;margin:18px 0 22px 0;"></div>
+    <div class="card-title-s">First grill counter</div>
+    <div class="body-sm" style="margin-top:8px;">40㎡ in Chengdu. One menu, one flame, queues by month three.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:444px;top:604px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">2021</div>
+    <div style="width:14px;height:14px;border-radius:50%;background:#C7C1B8;margin:18px 0 22px 0;"></div>
+    <div class="card-title-s">Recipe standardised</div>
+    <div class="body-sm" style="margin-top:8px;">Central marinade, 90-second grill cycle, 12-SKU core menu.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:788px;top:604px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">2023</div>
+    <div style="width:14px;height:14px;border-radius:50%;background:#C7C1B8;margin:18px 0 22px 0;"></div>
+    <div class="card-title-s">Second city</div>
+    <div class="body-sm" style="margin-top:8px;">Xi'an entry proved the format travels outside its home market.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1132px;top:604px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">2025</div>
+    <div style="width:14px;height:14px;border-radius:50%;background:#C7C1B8;margin:18px 0 22px 0;"></div>
+    <div class="card-title-s">14 stores, 3 cities</div>
+    <div class="body-sm" style="margin-top:8px;">Kitchen playbook, app ordering and supply contracts in place.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1476px;top:604px;width:344px;height:210px;z-index:10;">
+    <div class="kicker kicker-red">2026 · Now</div>
+    <div style="width:18px;height:18px;border-radius:50%;background:#C0332A;margin:16px 0 22px 0;"></div>
+    <div class="card-title-s red">Open to franchise</div>
+    <div class="body-sm" style="margin-top:8px;color:#57524B;">Raising to fund the support platform behind 95 stores.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="rule" style="position:absolute;left:100px;top:960px;width:1720px;height:1px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="foot" style="position:absolute;left:100px;top:990px;width:1200px;height:26px;z-index:10;">Restaurant Franchise &amp; Expansion Pitch Deck</div>
+
+  <div data-object="true" data-object-type="textbox" class="pagenum tnum" style="position:absolute;left:1620px;top:982px;width:200px;height:40px;z-index:10;">02<span class="tot"> / 10</span></div>
+
+</div>
+</body>
+</html>

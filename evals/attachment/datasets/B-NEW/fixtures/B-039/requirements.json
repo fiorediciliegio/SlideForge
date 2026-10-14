@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "制作7页版本发布说明，面向客户成功团队。说明新增功能、行为变化、迁移要求、已知限制和发布时间。不得承诺修复未排期的问题。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "客户成功与支持团队",
+        "description": "客户成功与支持团队"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "版本发布赋能",
+        "description": "版本发布赋能"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "准确沟通功能、适用范围、迁移和限制",
+        "description": "准确沟通功能、适用范围、迁移和限制"
+      }
+    ],
+    "slide_count": [
+      7
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "产品化、清楚、风险透明",
+        "description": "产品化、清楚、风险透明"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "客户成功与支持团队",
+      "description": "客户成功与支持团队"
+    },
+    "purpose": {
+      "label": "版本发布赋能",
+      "description": "版本发布赋能"
+    },
+    "desired_outcome": {
+      "label": "准确沟通功能、适用范围、迁移和限制",
+      "description": "准确沟通功能、适用范围、迁移和限制"
+    },
+    "slide_count": 7,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "产品化、清楚、风险透明",
+      "description": "产品化、清楚、风险透明"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

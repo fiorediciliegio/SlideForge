@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MERIDIAN — Screening Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0B0B0E}
+  .grain{position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.20 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:220px 220px;opacity:.55;mix-blend-mode:overlay;z-index:30;pointer-events:none}
+  .display{font-family:'Bodoni Moda',serif;font-weight:900;color:#F2EAD8;letter-spacing:-.02em;line-height:.92}
+  .serif{font-family:'Cormorant Garamond',serif;color:#E8DCC0}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+
+  /* Subtle column underline */
+  .col-rule{position:absolute;top:400px;height:560px;width:1px;background:rgba(217,164,65,.25);z-index:6}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- top chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:36px;width:680px;z-index:10;">
+    <span class="mono yellow" style="color:#D9A441;">M—08 · Screening Schedule</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:36px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#E8DCC0;">Sep 14 — 19 · 2026 · Paris</span>
+  </div>
+
+  <!-- Title with day nav -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:130px;width:1100px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:12px;">Timetable</div>
+    <div class="display" style="font-size:130px;line-height:.95;">Six days.<br><span style="font-style:italic;font-weight:400;">Three rooms.</span></div>
+  </div>
+
+  <!-- Right legend -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:140px;width:540px;text-align:right;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:12px;">Venues</div>
+    <div class="display" style="font-size:34px;line-height:1.1;color:#F2EAD8;margin-bottom:8px;">A — Halle aux Grains</div>
+    <div class="display" style="font-size:34px;line-height:1.1;color:#F2EAD8;margin-bottom:8px;">B — Cinéma Le Champo</div>
+    <div class="display" style="font-size:34px;line-height:1.1;color:#F2EAD8;">C — L'Atelier</div>
+  </div>
+
+  <!-- =========== TIMETABLE GRID =========== -->
+  <!-- Day headings -->
+  <!-- Day 1 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:430px;width:340px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:6px;">Mon · Sep 14</div>
+    <div class="display" style="font-size:32px;line-height:1;color:#F2EAD8;">Day 01</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:500px;width:340px;height:1px;background:rgba(217,164,65,.5);z-index:6"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:520px;width:340px;z-index:10;">
+    <div class="serif" style="font-size:15px;line-height:1.5;color:#E8DCC0;">
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">19:00 · A</span><span>F-01 · Halftones</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">21:30 · B</span><span>F-02 · Terlingua</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;"><span class="mono" style="color:#D9A441;">22:00 · C</span><span>F-03 · Map</span></div>
+    </div>
+  </div>
+
+  <!-- col-rule after day 1 -->
+  <div class="col-rule" style="left:430px;"></div>
+
+  <!-- Day 2 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:455px;top:430px;width:340px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:6px;">Tue · Sep 15</div>
+    <div class="display" style="font-size:32px;line-height:1;color:#F2EAD8;">Day 02</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:455px;top:500px;width:340px;height:1px;background:rgba(217,164,65,.5);z-index:6"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:455px;top:520px;width:340px;z-index:10;">
+    <div class="serif" style="font-size:15px;line-height:1.5;color:#E8DCC0;">
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">17:30 · B</span><span>F-04 · Drift</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">20:00 · A</span><span>F-05 · Quiet North</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;"><span class="mono" style="color:#D9A441;">22:00 · C</span><span>F-06 · Long Glass</span></div>
+    </div>
+  </div>
+
+  <div class="col-rule" style="left:795px;"></div>
+
+  <!-- Day 3 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:820px;top:430px;width:340px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:6px;">Wed · Sep 16</div>
+    <div class="display" style="font-size:32px;line-height:1;color:#F2EAD8;">Day 03</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:820px;top:500px;width:340px;height:1px;background:rgba(217,164,65,.5);z-index:6"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:820px;top:520px;width:340px;z-index:10;">
+    <div class="serif" style="font-size:15px;line-height:1.5;color:#E8DCC0;">
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">18:00 · A</span><span>F-03 · Map (re)</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">20:30 · B</span><span>F-07 · Surname</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;"><span class="mono" style="color:#D9A441;">22:00 · C</span><span>F-08 · Mother Tongue</span></div>
+    </div>
+  </div>
+
+  <div class="col-rule" style="left:1160px;"></div>
+
+  <!-- Day 4 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1185px;top:430px;width:340px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:6px;">Thu · Sep 17</div>
+    <div class="display" style="font-size:32px;line-height:1;color:#F2EAD8;">Day 04</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1185px;top:500px;width:340px;height:1px;background:rgba(217,164,65,.5);z-index:6"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1185px;top:520px;width:340px;z-index:10;">
+    <div class="serif" style="font-size:15px;line-height:1.5;color:#E8DCC0;">
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">17:00 · C</span><span>F-09 · Two Letters</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">19:30 · A</span><span>F-04 · Drift (Q&amp;A)</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;"><span class="mono" style="color:#D9A441;">22:00 · B</span><span>F-10 · Postcards</span></div>
+    </div>
+  </div>
+
+  <div class="col-rule" style="left:1525px;"></div>
+
+  <!-- Day 5 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1550px;top:430px;width:340px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:6px;">Fri · Sep 18</div>
+    <div class="display" style="font-size:32px;line-height:1;color:#F2EAD8;">Day 05</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1550px;top:500px;width:340px;height:1px;background:rgba(217,164,65,.5);z-index:6"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1550px;top:520px;width:340px;z-index:10;">
+    <div class="serif" style="font-size:15px;line-height:1.5;color:#E8DCC0;">
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">18:30 · A</span><span>F-02 · Terlingua</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;border-bottom:1px dashed rgba(217,164,65,.25)"><span class="mono" style="color:#D9A441;">21:00 · B</span><span>F-11 · Slow Crossing</span></div>
+      <div style="padding:6px 0;display:flex;justify-content:space-between;"><span class="mono" style="color:#D9A441;">22:30 · C</span><span>F-01 (re)</span></div>
+    </div>
+  </div>
+
+  <!-- bottom row — day 6 + closing + ticket -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:830px;width:1740px;height:1px;background:rgba(217,164,65,.25);z-index:6"></div>
+
+  <!-- Day 6 ribbon -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:850px;width:1040px;height:100px;background:rgba(139,32,48,.16);z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:860px;width:900px;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:6px;">Sat · Sep 19 — Day 06 · Closing Day</div>
+    <div class="serif" style="font-style:italic;font-size:17px;line-height:1.4;color:#F2EAD8;">
+      <strong style="font-style:normal;font-family:'Bodoni Moda',serif;font-weight:900;font-size:24px;color:#F2EAD8;">Awards &amp; Closing</strong> · 20:00 · Halle aux Grains — ceremony followed by encore of Jury Prize winner.
+    </div>
+  </div>
+
+  <!-- Ticket / pass block -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1180px;top:850px;width:660px;text-align:right;z-index:10;">
+    <div class="mono" style="color:#D9A441;margin-bottom:8px;">Festival Pass</div>
+    <div class="serif" style="font-style:italic;font-size:17px;line-height:1.45;color:#E8DCC0;">
+      Six-day pass · €58 · Single screening · €11 · Concessions / student / local residents · free, subject to availability.
+    </div>
+  </div>
+
+  <!-- bottom rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:990px;width:1740px;height:1px;background:rgba(217,164,65,.30);z-index:6"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:1010px;width:680px;z-index:10;">
+    <span class="mono" style="color:#E8DCC0;">Schedule subject to change · Updated daily at meridian.paris</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:1010px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#D9A441;">p. 08 / 10</span>
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

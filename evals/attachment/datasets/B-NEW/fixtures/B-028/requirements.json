@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Convert the migration guide into a 7-slide engineering enablement deck. Explain scope, prerequisites, sequence, rollback, and unsupported cases. Use only the guide."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Client and internal engineers",
+        "description": "Client and internal engineers"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "API migration enablement",
+        "description": "API migration enablement"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Enable a safe staged migration with clear unsupported cases",
+        "description": "Enable a safe staged migration with clear unsupported cases"
+      }
+    ],
+    "slide_count": [
+      7
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Technical, procedural, concise",
+        "description": "Technical, procedural, concise"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Client and internal engineers",
+      "description": "Client and internal engineers"
+    },
+    "purpose": {
+      "label": "API migration enablement",
+      "description": "API migration enablement"
+    },
+    "desired_outcome": {
+      "label": "Enable a safe staged migration with clear unsupported cases",
+      "description": "Enable a safe staged migration with clear unsupported cases"
+    },
+    "slide_count": 7,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Technical, procedural, concise",
+      "description": "Technical, procedural, concise"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

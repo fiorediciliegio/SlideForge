@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tests and diagnostic reasoning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#FCFCFA;}
+  table{border-collapse:collapse;width:100%;font-family:'IBM Plex Sans',sans-serif;}
+  th{font-family:'IBM Plex Mono',monospace;font-size:21px;letter-spacing:.09em;text-transform:uppercase;color:#1E6668;text-align:left;padding:0 12px 10px 0;border-bottom:2px solid #1E6668;font-weight:500;white-space:nowrap;}
+  td{font-size:25px;color:#22302F;padding:11px 12px 11px 0;border-bottom:1px solid #DDE4E5;vertical-align:middle;}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:24px;color:#4A5A5C;white-space:nowrap;}
+  .flag{font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Diagnostic panel" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FCFCFA;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:14px;background:#1E6668;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1010px;top:14px;width:910px;height:1066px;background:#F2F6F5;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:54px;width:700px;height:32px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:#1E6668;">03 &middot; Diagnostic panel</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:100px;width:850px;height:148px;z-index:10;font-family:'Spectral',Georgia,serif;font-weight:800;font-size:60px;line-height:1.1;letter-spacing:-.01em;color:#16211F;">Tests and diagnostic reasoning</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:258px;width:790px;height:32px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:#C74242;">Panel A &mdash; laboratory</div>
+
+  <table data-object="true" data-object-type="table" style="position:absolute;left:110px;top:302px;width:810px;z-index:10;">
+    <thead><tr><th style="width:252px;">Test</th><th style="width:172px;">Case value</th><th style="width:222px;">Reference</th><th style="width:140px;">Flag</th></tr></thead>
+    <tbody>
+      <tr><td>CRP</td><td class="mono">78 mg/L</td><td class="mono">&lt;5 mg/L</td><td class="flag" style="color:#C74242;">High</td></tr>
+      <tr><td>ESR</td><td class="mono">62 mm/h</td><td class="mono">&lt;15 mm/h</td><td class="flag" style="color:#C74242;">High</td></tr>
+      <tr><td>Haemoglobin</td><td class="mono">10.4 g/dL</td><td class="mono">13.5&ndash;17.5 g/dL</td><td class="flag" style="color:#C74242;">Low</td></tr>
+      <tr><td>Platelets</td><td class="mono">138 &times;10&sup3;/&micro;L</td><td class="mono">150&ndash;400 &times;10&sup3;/&micro;L</td><td class="flag" style="color:#C74242;">Low</td></tr>
+      <tr><td>ALT</td><td class="mono">74 U/L</td><td class="mono">7&ndash;56 U/L</td><td class="flag" style="color:#C74242;">High</td></tr>
+      <tr><td>Rheumatoid factor</td><td class="mono">Positive</td><td class="mono">Negative</td><td class="flag" style="color:#C74242;">Positive</td></tr>
+      <tr><td>White cell count</td><td class="mono">7.1 &times;10&sup3;/&micro;L</td><td class="mono">4.0&ndash;11.0 &times;10&sup3;/&micro;L</td><td class="flag" style="color:#1E6668;">Normal</td></tr>
+    </tbody>
+  </table>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:756px;width:810px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:25px;line-height:1.42;color:#5A6A6C;">Pattern to name aloud: anaemia, mild thrombocytopenia, transaminitis and autoantibody positivity with a <span style="color:#22302F;font-weight:600;">normal white cell count</span> &mdash; the chronic Q fever signature, not pyogenic sepsis.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:872px;width:810px;height:1px;background:#C3CFD0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:896px;width:810px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:#C74242;margin-bottom:10px;">Panel C &mdash; examination</div>
+    <div style="font-size:25px;line-height:1.44;color:#22302F;">Grade 2/6 early diastolic murmur at the left sternal edge &middot; splenomegaly 3&nbsp;cm &middot; no Osler nodes, splinter haemorrhages or Roth spots.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1070px;top:58px;width:790px;height:262px;background:#FFFFFF;border:2px solid #C74242;box-sizing:border-box;z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1104px;top:86px;width:722px;height:30px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:23px;letter-spacing:.12em;text-transform:uppercase;color:#C74242;">Panel B &mdash; the diagnosis-making test</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1104px;top:132px;width:404px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:26px;line-height:1.3;color:#22302F;"><i>C. burnetii</i> phase&nbsp;I IgG by immunofluorescence</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1536px;top:126px;width:290px;height:88px;z-index:10;text-align:right;font-family:'Spectral',Georgia,serif;font-weight:800;font-size:72px;line-height:1.15;color:#C74242;">1:1024</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1104px;top:216px;width:722px;height:1px;background:#E3D2D2;z-index:3;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1104px;top:234px;width:722px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:25px;line-height:1.4;color:#22302F;">Threshold <span style="font-family:'IBM Plex Mono',monospace;">&gt;1:800</span> is a <b>major microbiologic criterion</b> in Duke-ISCVID 2023. Phase&nbsp;II IgG 1:512; whole-blood PCR negative.</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1070px;top:352px;width:790px;height:32px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:#1E6668;">Panel D &mdash; imaging, read with its limits</div>
+
+  <img data-object="true" data-object-type="image" src="../assets/echo-tee.jpg" alt="Transoesophageal echocardiography of the aortic valve" style="position:absolute;left:1070px;top:400px;width:385px;height:256px;object-fit:cover;object-position:center;z-index:5;background:#0d1414;">
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1070px;top:400px;width:385px;height:256px;border:1px solid #1E6668;box-sizing:border-box;background:transparent;z-index:6;"></div>
+
+  <img data-object="true" data-object-type="image" src="../assets/pet-ct.jpg" alt="18F-FDG PET/CT fusion image of the cardiac region" style="position:absolute;left:1475px;top:400px;width:385px;height:256px;object-fit:cover;object-position:center;z-index:5;background:#0d1414;">
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1475px;top:400px;width:385px;height:256px;border:1px solid #1E6668;box-sizing:border-box;background:transparent;z-index:6;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1070px;top:674px;width:385px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:#1E6668;margin-bottom:8px;">Fig. 2 &middot; TEE</div>
+    <div style="font-size:24px;line-height:1.4;color:#4A5A5C;">Leaflet thickening, no discrete vegetation. Reference image. Vegetations are seen in only <b style="color:#C74242;">~12%</b> of Q fever cases on TTE &mdash; a normal echo excludes nothing.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1475px;top:674px;width:385px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:#1E6668;margin-bottom:8px;">Fig. 3 &middot; FDG PET/CT</div>
+    <div style="font-size:24px;line-height:1.4;color:#4A5A5C;">Now a major imaging criterion. Reference image. Native-valve sensitivity is only <b style="color:#C74242;">~22&ndash;31%</b>, so a negative scan cannot reassure.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1070px;top:928px;width:790px;height:1px;background:#C3CFD0;z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1070px;top:950px;width:790px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:22px;line-height:1.45;color:#5A6A6C;">Case values illustrative for this composite case. Ranges, titre threshold and sensitivities: Duke-ISCVID 2023 &middot; CDC/MMWR 2013 &middot; AHA 2025.</div>
+
+</div>
+</body>
+</html>

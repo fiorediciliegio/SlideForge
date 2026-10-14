@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Custom Page Layout styling */
+  .layout-grid { display: grid; grid-template-columns: 680px 1fr; gap: 88px; height: 100%; align-items: start; }
+  .left-col { display: flex; flex-direction: column; height: 580px; justify-content: space-between; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 48px; box-sizing: border-box; }
+  .right-col { display: flex; flex-direction: column; gap: 48px; height: 580px; justify-content: flex-start; }
+  
+  .card-tag { font-size: 18px; font-weight: 600; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .card-title { font-size: 34px; font-weight: 600; color: var(--dark); margin: 0 0 24px 0; }
+  .placeholder-box { border-left: 4px solid var(--primary); padding-left: 24px; margin-top: auto; }
+  .placeholder-title { font-size: 22px; font-weight: 600; color: var(--primary); margin-bottom: 12px; }
+  .placeholder-text { font-size: 20px; line-height: 1.6; color: var(--muted); margin: 0; }
+
+  .rowwrap { display: grid; grid-template-columns: 56px 1fr 180px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding-top: 28px; }
+  .rowno { font-size: 24px; font-weight: 600; color: var(--primary); }
+  .rowh { font-size: 28px; font-weight: 600; color: var(--dark); margin: 0 0 12px 0; }
+  .rowp { font-size: 20px; line-height: 1.55; color: var(--muted); margin: 0; }
+  
+  .meterlab { font-size: 16px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; text-align: right; }
+  .seg { display: flex; gap: 5px; justify-content: flex-end; }
+  .seg i { display: block; width: 24px; height: 8px; background: var(--border); }
+  .seg i.on { background: var(--primary); }
+  .seg i.mid { background: #C0842E; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <div class="content-area">
+    <div class="layout-grid">
+      <!-- Left Column: Core Challenge Placeholder Card -->
+      <div class="left-col">
+        <div>
+          <div class="card-tag ar">01 &mdash; Core Challenge</div>
+          <h2 class="card-title">核心挑战定义</h2>
+        </div>
+        <div class="placeholder-box">
+          <div class="placeholder-title">【待补充】</div>
+          <p class="placeholder-text">暂无具体环境或社会问题描述。请在此处输入您的项目所致力于解决的特定可持续发展痛点（建议 2-3 句，明确阐述核心冲突）。</p>
+        </div>
+      </div>
+      
+      <!-- Right Column: Status Quo and SDG Contribution -->
+      <div class="right-col">
+        <!-- Status Quo Analysis Row -->
+        <div class="rowwrap">
+          <div class="rowno ar">02</div>
+          <div>
+            <h3 class="rowh">现有解决方案的局限性</h3>
+            <p class="rowp"><span style="color: var(--primary); font-weight: 600;">【待补充】</span> 现有技术或业务方案在效率、成本或可扩展性（Scalability）方面存在何种局限？请在此处补充具体的行业瓶颈与痛点分析。</p>
+          </div>
+          <div>
+            <p class="meterlab">LIMITATION</p>
+            <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+          </div>
+        </div>
+
+        <!-- Urgency & SDG Row -->
+        <div class="rowwrap">
+          <div class="rowno ar">03</div>
+          <div>
+            <h3 class="rowh">解决该问题的紧迫性与 SDG 贡献</h3>
+            <p class="rowp"><span style="color: var(--primary); font-weight: 600;">【待补充】</span> 解决该痛点为何刻不容缓？项目将如何具体贡献于联合国可持续发展目标（SDGs）？请在此处补充说明其社会与环境价值。</p>
+          </div>
+          <div>
+            <p class="meterlab">URGENCY</p>
+            <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

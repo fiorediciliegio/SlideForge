@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#ffffff;}
+  .hd{font-family:'Archivo',sans-serif;}
+  .bd{font-family:'IBM Plex Sans',sans-serif;}
+  .bar{height:44px;display:flex;align-items:center;padding:0 22px;font-family:'IBM Plex Sans',sans-serif;font-size:19px;color:#ffffff;font-weight:400;white-space:nowrap;overflow:hidden;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Roadmap" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#ffffff;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:#0F4C9A;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:88px;width:1000px;z-index:10;">
+    <div class="bd" style="font-size:18px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#0F4C9A;">07 &nbsp;/&nbsp; Roadmap</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:126px;width:1180px;z-index:10;">
+    <div class="hd" style="font-size:58px;font-weight:600;line-height:1.08;letter-spacing:-0.015em;color:#0E1726;">Three waves across 24 months, each with its own exit test</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:262px;width:1680px;height:1px;background:#D9E2EF;z-index:1;"></div>
+
+  <!-- wave headers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:298px;width:1680px;z-index:10;">
+    <div style="display:flex;gap:20px;">
+      <div style="flex:1;border-top:5px solid #0F4C9A;padding-top:18px;">
+        <div class="bd" style="font-size:17px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#0F4C9A;">Wave 1 &middot; Months 1&ndash;8</div>
+        <div class="hd" style="font-size:34px;font-weight:600;color:#0E1726;margin-top:10px;">Prove and stabilise</div>
+        <div class="bd" style="font-size:19px;font-weight:300;line-height:1.5;color:#5C6A80;margin-top:10px;">Customer master live, order-to-cash automated in two regions.</div>
+      </div>
+      <div style="flex:1;border-top:5px solid #1F5FB4;padding-top:18px;">
+        <div class="bd" style="font-size:17px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#0F4C9A;">Wave 2 &middot; Months 7&ndash;16</div>
+        <div class="hd" style="font-size:34px;font-weight:600;color:#0E1726;margin-top:10px;">Scale the core</div>
+        <div class="bd" style="font-size:19px;font-weight:300;line-height:1.5;color:#5C6A80;margin-top:10px;">Forecasting and portal rolled out enterprise-wide on shared contracts.</div>
+      </div>
+      <div style="flex:1;border-top:5px solid #7FA6DC;padding-top:18px;">
+        <div class="bd" style="font-size:17px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#0F4C9A;">Wave 3 &middot; Months 15&ndash;24</div>
+        <div class="hd" style="font-size:34px;font-weight:600;color:#0E1726;margin-top:10px;">Differentiate</div>
+        <div class="bd" style="font-size:19px;font-weight:300;line-height:1.5;color:#5C6A80;margin-top:10px;">Pricing intelligence, supplier collaboration, legacy decommissioning.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- timeline grid -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:420px;top:520px;width:1380px;height:352px;background:#F8FAFD;border:1px solid #E9EEF5;z-index:1;">
+    <div style="position:absolute;left:460px;top:0;width:1px;height:352px;background:#D9E2EF;"></div>
+    <div style="position:absolute;left:920px;top:0;width:1px;height:352px;background:#D9E2EF;"></div>
+  </div>
+
+  <!-- workstream labels -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:520px;width:280px;height:352px;z-index:10;">
+    <div style="display:flex;flex-direction:column;height:100%;">
+      <div style="flex:1;display:flex;align-items:center;"><span class="hd" style="font-size:22px;font-weight:500;color:#0E1726;">Data foundation</span></div>
+      <div style="flex:1;display:flex;align-items:center;"><span class="hd" style="font-size:22px;font-weight:500;color:#0E1726;">Process automation</span></div>
+      <div style="flex:1;display:flex;align-items:center;"><span class="hd" style="font-size:22px;font-weight:500;color:#0E1726;">Integration backbone</span></div>
+      <div style="flex:1;display:flex;align-items:center;"><span class="hd" style="font-size:22px;font-weight:500;color:#0E1726;">Intelligence</span></div>
+      <div style="flex:1;display:flex;align-items:center;"><span class="hd" style="font-size:22px;font-weight:500;color:#0E1726;">Change &amp; adoption</span></div>
+    </div>
+  </div>
+
+  <!-- gantt bars -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:420px;top:520px;width:1380px;height:352px;z-index:5;">
+    <div style="display:flex;flex-direction:column;height:100%;padding:12px 0;">
+      <div style="flex:1;position:relative;">
+        <div class="bar" style="position:absolute;left:14px;top:6px;width:520px;background:#0F4C9A;">Customer &amp; product master, quality SLAs</div>
+      </div>
+      <div style="flex:1;position:relative;">
+        <div class="bar" style="position:absolute;left:180px;top:6px;width:640px;background:#1F5FB4;">Order-to-cash straight-through, then invoice matching</div>
+      </div>
+      <div style="flex:1;position:relative;">
+        <div class="bar" style="position:absolute;left:60px;top:6px;width:1180px;background:#2E7BE0;">API gateway, event backbone, 60 published contracts, legacy interface retirement</div>
+      </div>
+      <div style="flex:1;position:relative;">
+        <div class="bar" style="position:absolute;left:520px;top:6px;width:820px;background:#4E8CE4;">Forecasting, then pricing and margin guidance</div>
+      </div>
+      <div style="flex:1;position:relative;">
+        <div class="bar" style="position:absolute;left:14px;top:6px;width:1326px;background:#7FA6DC;">Product team ramp, role-based training, adoption tracking &mdash; continuous</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- milestone markers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:420px;top:894px;width:1380px;z-index:10;">
+    <div style="position:relative;height:80px;">
+      <div style="position:absolute;left:0px;top:0;width:300px;">
+        <div style="width:14px;height:14px;background:#0F4C9A;transform:rotate(45deg);"></div>
+        <div class="hd" style="font-size:20px;font-weight:500;color:#0E1726;margin-top:14px;">M8 exit test</div>
+        <div class="bd" style="font-size:17px;font-weight:300;color:#5C6A80;margin-top:4px;">$1.2M run-rate booked</div>
+      </div>
+      <div style="position:absolute;left:460px;top:0;width:300px;">
+        <div style="width:14px;height:14px;background:#0F4C9A;transform:rotate(45deg);"></div>
+        <div class="hd" style="font-size:20px;font-weight:500;color:#0E1726;margin-top:14px;">M16 exit test</div>
+        <div class="bd" style="font-size:17px;font-weight:300;color:#5C6A80;margin-top:4px;">70% of orders straight-through</div>
+      </div>
+      <div style="position:absolute;left:920px;top:0;width:340px;">
+        <div style="width:14px;height:14px;background:#0F4C9A;transform:rotate(45deg);"></div>
+        <div class="hd" style="font-size:20px;font-weight:500;color:#0E1726;margin-top:14px;">M24 exit test</div>
+        <div class="bd" style="font-size:17px;font-weight:300;color:#5C6A80;margin-top:4px;">$7.4M cumulative, 9 systems retired</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1006px;width:1200px;z-index:10;">
+    <div class="bd" style="font-size:16px;font-weight:400;color:#9AA6B8;">Waves overlap by design &middot; funding is released wave by wave, only on passing the prior exit test</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1700px;top:1006px;width:100px;z-index:10;">
+    <div class="bd" style="font-size:16px;font-weight:500;color:#9AA6B8;text-align:right;">08 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

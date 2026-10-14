@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "phase": "stage-1",
+  "case_set": "research-routing-v1",
+  "prompt_versions": ["v1", "v2", "v3", "v4", "v5", "v6", "v7", "v8", "v9", "v10"],
+  "repeats": 1,
+  "execution": {
+    "mode": "batch-testing-research-routing",
+    "requirements": "batch-generated-and-frozen-per-brief",
+    "perform_search": false,
+    "requested_model": null,
+    "temperature": null,
+    "notes": "Current llm.complete does not expose model or temperature controls. Record the actual route/model returned by Anna."
+  },
+  "selection": {
+    "shortlist_size": 3,
+    "primary_metric": "macro_f1",
+    "tie_breakers": ["exact_match_rate", "json_error_rate", "mean_total_tokens", "mean_latency_ms"]
+  }
+}

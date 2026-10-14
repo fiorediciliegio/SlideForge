@@ -1,0 +1,104 @@
+{
+  "id": "112-Graduation Memories Album",
+  "version": 1,
+  "ppt_number": 112,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "pink",
+    "sage",
+    "blue",
+    "yellow"
+  ],
+  "name": "Graduation Memories Album",
+  "description": "Soft graduation scrapbook with pastel paper, Polaroid photos, torn edges, tickets, and handwritten details.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["education"],"audiences":["students"],"formats":[],"primary_styles":["minimal","fresh"],"visual_traits":["minimal","fresh","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "撕边粉色标题带、两张倾斜拍立得和票根组成温暖的毕业相册封面，纸张层次丰富。"
+    },
+    {
+      "path": "images/2-campus-years.webp",
+      "alt": "四年校园时间线置于大幅纸张卡片中，以手写年份和胶带节点串联回忆，叙事节奏舒缓。"
+    },
+    {
+      "path": "images/3-classes-and-projects.webp",
+      "alt": "横线笔记页搭配拍立得、索引签和便签，形成课程项目剪贴簿版式，画面错落自然。"
+    },
+    {
+      "path": "images/4-friends-and-clubs.webp",
+      "alt": "一排倾斜拍立得与下方社团纸卡组合，柔和配色和手写批注富有纪念感，层次温暖。"
+    },
+    {
+      "path": "images/5-photo-wall.webp",
+      "alt": "多张照片沿悬挂绳错落排布，夹子、胶带和手写标签营造实体照片墙，视觉轻盈自然。"
+    },
+    {
+      "path": "images/6-campus-map.webp",
+      "alt": "手绘校园地图以彩色记忆图钉、图例和便签标注具有纪念意义的地点，手账感鲜明。"
+    },
+    {
+      "path": "images/7-day-in-our-life.webp",
+      "alt": "一天时间轴串联照片和手写事件卡，底部情绪曲线记录日常节奏，叙事路径清晰。"
+    },
+    {
+      "path": "images/8-soundtrack.webp",
+      "alt": "复古磁带插画与手写歌单左右呼应，票签和胶带强化青春剪贴感，怀旧氛围浓厚。"
+    },
+    {
+      "path": "images/9-then-and-now.webp",
+      "alt": "左右双栏纸张对照过去与现在，多行对比卡和手写批注形成成长档案，结构清楚。"
+    },
+    {
+      "path": "images/10-messages-and-future.webp",
+      "alt": "留言卡、火漆印章与未来轨迹线组成双区收尾页，温暖而富有仪式感，留白舒展。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖奶油纸张背景叠加撕边粉色标题横幅，两张倾斜拍立得占据主视觉，手写副标题、纸胶带、票根与细小花朵散落其间。"
+    },
+    {
+      "path": "html/2-campus-years.html",
+      "description": "大幅圆角纸张卡片承载四段纵向校园时间线，年份以手写数字突出，粉绿蓝黄节点、胶带和简短便签串联四年路径。"
+    },
+    {
+      "path": "html/3-classes-and-projects.html",
+      "description": "左侧横线笔记纸排列课程与项目条目，右侧用倾斜拍立得、彩色索引签和便签构成拼贴，衬线标题与手写注释交替出现。"
+    },
+    {
+      "path": "html/4-friends-and-clubs.html",
+      "description": "上半区横排多张略微旋转的拍立得，下半区以柔和彩色纸卡整理社团信息，胶带、手写姓名和小图标营造私人相册质感。"
+    },
+    {
+      "path": "html/5-photo-wall.html",
+      "description": "横向细绳贯穿页面，多张不同尺寸的照片由夹子悬挂并错落倾斜，手写日期、标签和纸胶带填补留白，形成实体照片墙。"
+    },
+    {
+      "path": "html/6-campus-map.html",
+      "description": "奶油纸色地图以手绘道路和建筑轮廓铺满主体，六个彩色图钉标记地点，边缘搭配图例、箭头和便签式回忆注释。"
+    },
+    {
+      "path": "html/7-day-in-our-life.html",
+      "description": "一条从早到晚的横向时间线串联多张照片与事件卡，节点使用柔和彩色圆点，底部手绘情绪曲线为日常记录增加叙事节奏。"
+    },
+    {
+      "path": "html/8-soundtrack.html",
+      "description": "左侧以大型复古磁带插画作为视觉锚点，右侧在横线纸上排列编号歌单，票签、胶带和手写说明营造青春混音带氛围。"
+    },
+    {
+      "path": "html/9-then-and-now.html",
+      "description": "左右两张大幅纸张卡片构成过去与现在的对照布局，多行对应内容以柔和彩条分隔，中部标签和手写批注强化成长对比。"
+    },
+    {
+      "path": "html/10-messages-and-future.html",
+      "description": "页面左右分为留言与未来两区，左侧堆叠手写信笺和留言卡，右侧以弧形轨迹、节点和火漆印章构成富有仪式感的收尾。"
+    }
+  ]
+}

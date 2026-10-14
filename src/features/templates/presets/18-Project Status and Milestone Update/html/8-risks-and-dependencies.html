@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risks, Dependencies and Blockers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;padding:0;overflow:hidden;background:#F5F2EC;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  .h{font-family:'Space Grotesk',sans-serif;}
+  .m{font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Risks and Dependencies" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:10px;background:#16191C;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:240px;height:10px;background:#C24D2C;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:62px;width:1200px;z-index:10;">
+    <span class="m" style="font-size:21px;letter-spacing:.2em;color:#C24D2C;font-weight:500;">08 · WHAT COULD STOP US</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:100px;width:1300px;z-index:10;">
+    <h1 class="h" style="margin:0;font-size:62px;line-height:1.18;font-weight:600;letter-spacing:-0.02em;color:#16191C;">Risks, dependencies and live blockers</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1424px;top:104px;width:400px;text-align:right;z-index:10;">
+    <span class="m" style="font-size:21px;color:#6B6660;letter-spacing:.06em;">14 risks on register<br>5 above tolerance</span>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:206px;width:1728px;height:1px;background:#DCD6CC;z-index:1;"></div>
+
+  <!-- risk matrix -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:248px;width:700px;z-index:10;">
+    <span class="m" style="font-size:19px;letter-spacing:.2em;color:#6B6660;">RISK MATRIX — POST-MITIGATION EXPOSURE</span>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:296px;width:762px;height:596px;z-index:10;">
+    <div style="position:absolute;left:0;top:0;width:762px;height:596px;background:#FFFFFF;border:1px solid #DCD6CC;border-radius:4px;"></div>
+    <!-- y axis label -->
+    <div style="position:absolute;left:14px;top:250px;width:180px;transform:rotate(-90deg);transform-origin:left top;"><span class="m" style="font-size:18px;letter-spacing:.16em;color:#6B6660;">LIKELIHOOD</span></div>
+    <!-- cells: grid 4x4 starting x=118 y=42, cell 148x110 -->
+    <!-- row 4 (very high) -->
+    <div style="position:absolute;left:56px;top:76px;width:56px;text-align:right;"><span class="m" style="font-size:17px;color:#6B6660;">HIGH</span></div>
+    <div style="position:absolute;left:118px;top:42px;width:146px;height:108px;background:#F2EDE4;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:266px;top:42px;width:146px;height:108px;background:#F5E6D8;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:414px;top:42px;width:146px;height:108px;background:#EFD3C4;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:562px;top:42px;width:146px;height:108px;background:#E5BEAC;border:1px solid #E4DFD6;"></div>
+    <!-- row 3 -->
+    <div style="position:absolute;left:36px;top:186px;width:76px;text-align:right;"><span class="m" style="font-size:17px;color:#6B6660;">MED-HIGH</span></div>
+    <div style="position:absolute;left:118px;top:152px;width:146px;height:108px;background:#F5F2EC;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:266px;top:152px;width:146px;height:108px;background:#F2EDE4;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:414px;top:152px;width:146px;height:108px;background:#F5E6D8;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:562px;top:152px;width:146px;height:108px;background:#EFD3C4;border:1px solid #E4DFD6;"></div>
+    <!-- row 2 -->
+    <div style="position:absolute;left:36px;top:296px;width:76px;text-align:right;"><span class="m" style="font-size:17px;color:#6B6660;">MED-LOW</span></div>
+    <div style="position:absolute;left:118px;top:262px;width:146px;height:108px;background:#FFFFFF;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:266px;top:262px;width:146px;height:108px;background:#F5F2EC;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:414px;top:262px;width:146px;height:108px;background:#F2EDE4;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:562px;top:262px;width:146px;height:108px;background:#F5E6D8;border:1px solid #E4DFD6;"></div>
+    <!-- row 1 -->
+    <div style="position:absolute;left:56px;top:406px;width:56px;text-align:right;"><span class="m" style="font-size:17px;color:#6B6660;">LOW</span></div>
+    <div style="position:absolute;left:118px;top:372px;width:146px;height:108px;background:#FFFFFF;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:266px;top:372px;width:146px;height:108px;background:#FFFFFF;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:414px;top:372px;width:146px;height:108px;background:#F5F2EC;border:1px solid #E4DFD6;"></div>
+    <div style="position:absolute;left:562px;top:372px;width:146px;height:108px;background:#F2EDE4;border:1px solid #E4DFD6;"></div>
+
+    <!-- x axis labels -->
+    <div style="position:absolute;left:118px;top:492px;width:146px;text-align:center;"><span class="m" style="font-size:17px;color:#6B6660;">MINOR</span></div>
+    <div style="position:absolute;left:266px;top:492px;width:146px;text-align:center;"><span class="m" style="font-size:17px;color:#6B6660;">MODERATE</span></div>
+    <div style="position:absolute;left:414px;top:492px;width:146px;text-align:center;"><span class="m" style="font-size:17px;color:#6B6660;">MAJOR</span></div>
+    <div style="position:absolute;left:562px;top:492px;width:146px;text-align:center;"><span class="m" style="font-size:17px;color:#6B6660;">SEVERE</span></div>
+    <div style="position:absolute;left:118px;top:524px;width:590px;text-align:center;"><span class="m" style="font-size:18px;letter-spacing:.16em;color:#6B6660;">IMPACT ON GO-LIVE</span></div>
+
+    <!-- markers -->
+    <!-- R1 high/severe -->
+    <div style="position:absolute;left:610px;top:70px;width:52px;height:52px;background:#B23B2E;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="h" style="font-size:24px;color:#FFFFFF;font-weight:600;">R1</span></div>
+    <!-- R2 medhigh/major -->
+    <div style="position:absolute;left:462px;top:180px;width:52px;height:52px;background:#B23B2E;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="h" style="font-size:24px;color:#FFFFFF;font-weight:600;">R2</span></div>
+    <!-- R3 high/major -->
+    <div style="position:absolute;left:498px;top:70px;width:52px;height:52px;background:#C68A1E;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="h" style="font-size:24px;color:#FFFFFF;font-weight:600;">R3</span></div>
+    <!-- R4 medhigh/severe -->
+    <div style="position:absolute;left:640px;top:190px;width:52px;height:52px;background:#C68A1E;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="h" style="font-size:24px;color:#FFFFFF;font-weight:600;">R4</span></div>
+    <!-- R5 medlow/major -->
+    <div style="position:absolute;left:452px;top:296px;width:52px;height:52px;background:#C68A1E;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="h" style="font-size:24px;color:#FFFFFF;font-weight:600;">R5</span></div>
+    <!-- lesser risks -->
+    <div style="position:absolute;left:300px;top:300px;width:40px;height:40px;background:#8C8781;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="m" style="font-size:17px;color:#FFFFFF;">+4</span></div>
+    <div style="position:absolute;left:160px;top:406px;width:40px;height:40px;background:#C0B9AD;border-radius:50%;display:flex;align-items:center;justify-content:center;"><span class="m" style="font-size:17px;color:#FFFFFF;">+5</span></div>
+
+    <!-- tolerance line -->
+    <div style="position:absolute;left:414px;top:42px;width:2px;height:438px;background:#C24D2C;"></div>
+    <div style="position:absolute;left:424px;top:448px;"><span class="m" style="font-size:16px;color:#C24D2C;">tolerance</span></div>
+  </div>
+
+  <!-- risk register -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:906px;top:248px;width:918px;z-index:10;">
+    <span class="m" style="font-size:19px;letter-spacing:.2em;color:#6B6660;">TOP FIVE RISKS — OWNER, MITIGATION, TRIGGER DATE</span>
+  </div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute;left:906px;top:290px;width:918px;z-index:10;">
+    <table style="border-collapse:collapse;width:918px;table-layout:fixed;">
+      <thead>
+        <tr>
+          <th style="width:50px;text-align:left;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">ID</span></th>
+          <th style="width:460px;text-align:left;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">RISK / MITIGATION</span></th>
+          <th style="width:160px;text-align:left;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">OWNER</span></th>
+          <th style="width:118px;text-align:left;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">TRIGGER</span></th>
+          <th style="width:130px;text-align:right;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">EXPOSURE</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="h" style="font-size:24px;font-weight:600;color:#B23B2E;">R1</span></td>
+          <td style="padding:10px 14px 10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:23px;color:#16191C;font-weight:500;">Legacy record defects block cutover</span><br><span style="font-size:19px;color:#6B6660;line-height:1.25;">Cleansing squad + rule pack; 2 contractors 25 Aug</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:22px;color:#3A3E42;">S. Rahman</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="m" style="font-size:21px;color:#B23B2E;">05 Sep</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;text-align:right;vertical-align:top;"><span class="m" style="font-size:22px;color:#16191C;">14 days<br>$180k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="h" style="font-size:24px;font-weight:600;color:#B23B2E;">R2</span></td>
+          <td style="padding:10px 14px 10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:23px;color:#16191C;font-weight:500;">Northwind Pay API v3 slips again</span><br><span style="font-size:19px;color:#6B6660;line-height:1.25;">Escalation raised; fallback adapter as plan B</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:22px;color:#3A3E42;">L. Marchetti</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="m" style="font-size:21px;color:#B23B2E;">29 Aug</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;text-align:right;vertical-align:top;"><span class="m" style="font-size:22px;color:#16191C;">9 days<br>$95k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="h" style="font-size:24px;font-weight:600;color:#C68A1E;">R3</span></td>
+          <td style="padding:10px 14px 10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:23px;color:#16191C;font-weight:500;">UAT testers not released by markets</span><br><span style="font-size:19px;color:#6B6660;line-height:1.25;">Commitment letters due from 38 market heads</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:22px;color:#3A3E42;">M. Duarte</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="m" style="font-size:21px;color:#C68A1E;">19 Sep</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;text-align:right;vertical-align:top;"><span class="m" style="font-size:22px;color:#16191C;">7 days<br>$60k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="h" style="font-size:24px;font-weight:600;color:#C68A1E;">R4</span></td>
+          <td style="padding:10px 14px 10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:23px;color:#16191C;font-weight:500;">Regulator queries on retention rules</span><br><span style="font-size:19px;color:#6B6660;line-height:1.25;">Pre-submission briefing booked, 2 regulators</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:22px;color:#3A3E42;">J. Beaumont</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="m" style="font-size:21px;color:#C68A1E;">10 Oct</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;text-align:right;vertical-align:top;"><span class="m" style="font-size:22px;color:#16191C;">12 days<br>$70k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="h" style="font-size:24px;font-weight:600;color:#C68A1E;">R5</span></td>
+          <td style="padding:10px 14px 10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:23px;color:#16191C;font-weight:500;">Shared test environment contention</span><br><span style="font-size:19px;color:#6B6660;line-height:1.25;">Dedicated slot agreed with Platform Ops, wk 35</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span style="font-size:22px;color:#3A3E42;">K. Ito</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;vertical-align:top;"><span class="m" style="font-size:21px;color:#6B6660;">26 Sep</span></td>
+          <td style="padding:10px 0;border-bottom:1px solid #DCD6CC;text-align:right;vertical-align:top;"><span class="m" style="font-size:22px;color:#16191C;">4 days<br>$25k</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- blockers strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:906px;top:796px;width:918px;height:104px;background:#16191C;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:936px;top:818px;width:400px;z-index:10;">
+    <span class="m" style="font-size:16px;letter-spacing:.14em;color:#8C8781;">BLOCKED NOW · DECISION NEEDED</span>
+    <p style="margin:6px 0 0;font-size:21px;line-height:1.2;color:#F5F2EC;">Neither is clearable by the project team.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1366px;top:818px;width:428px;z-index:10;">
+    <p style="margin:0;font-size:20px;line-height:1.4;color:#BFB9AF;"><strong style="color:#E8B450;font-weight:600;">B1</strong> Cleansing contractors — approval pending<br><strong style="color:#E8B450;font-weight:600;">B2</strong> Northwind escalation — legal sign-off</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:988px;width:1728px;height:1px;background:#DCD6CC;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1006px;width:1300px;z-index:10;">
+    <span class="m" style="font-size:19px;color:#6B6660;letter-spacing:.08em;">PROJECT ATLAS · STATUS REVIEW · PERIOD ENDING 14 AUG 2026</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1006px;width:200px;text-align:right;z-index:10;">
+    <span class="m" style="font-size:19px;color:#16191C;font-weight:500;">08 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "phase": "stage-2",
+  "case_set": "research-routing-v1",
+  "prompt_versions": ["v1", "<shortlist-prompt-1>", "<shortlist-prompt-2>"],
+  "repeats": 3,
+  "model_execution": {
+    "selection": "manual-in-local-agent-ui",
+    "requested_model": "<enter-the-model-label-you-selected>",
+    "actual_model": "recorded-from-Anna-completion-response",
+    "temperature": null,
+    "notes": "The current llm.complete bridge does not accept a model or temperature parameter. Run one batch per manually selected model and then score all extracted result JSON files together."
+  }
+}

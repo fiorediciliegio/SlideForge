@@ -1,0 +1,11 @@
+id,first_name,last_name,email,country,city,signup_date,active,score
+1,Alice,Anderson,alice0@example.com,USA,New York,2024-01-15,true,80
+2,Bob,Brown,bob1@example.com,UK,London,2024-02-15,true,86
+3,Carol,Chen,carol2@example.com,Singapore,Singapore,2024-03-15,true,63
+4,David,Diaz,david3@example.com,Mexico,Mexico City,2024-04-15,false,100
+5,Emma,Evans,emma4@example.com,Canada,Toronto,2024-05-15,true,74
+6,Frank,Fischer,frank5@example.com,Germany,Berlin,2024-06-15,true,86
+7,Grace,Garcia,grace6@example.com,Spain,Madrid,2024-07-15,true,86
+8,Henry,Hassan,henry7@example.com,Egypt,Cairo,2024-08-15,false,87
+9,Iris,Ito,iris8@example.com,Japan,Tokyo,2024-09-15,true,62
+10,Jack,Johnson,jack9@example.com,Australia,Sydney,2024-10-15,true,97

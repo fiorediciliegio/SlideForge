@@ -1,0 +1,13 @@
+{
+  "case_id": "B-006",
+  "size_class": "中",
+  "target_input_tokens": 4200,
+  "estimated_outline_input_tokens": 4259,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": true,
+  "attachment_mode": "Single attachment",
+  "attachment_types": "DOCX",
+  "content_strategies": "summarized_context",
+  "evaluation_risks": "1. Treating attendances as unique people; 2. Claiming impact or causality; 3. Presenting the 2026 expansion as funded; 4. Using image research to add facts; 5. Showing identifiable vulnerable people without a respectful visual direction."
+}

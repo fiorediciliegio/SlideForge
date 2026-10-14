@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "根据活动草案制作9页城市文化节合作提案。附件定义活动概念和内部资源；Web Research核对场地、交通、公开活动许可和同期城市活动；Image Research寻找真实街区、公共空间和相关传统工艺视觉。不得把拟邀嘉宾写成已确认。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "城市合作方与潜在赞助方",
+        "description": "城市合作方与潜在赞助方"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "文化节概念与合作提案",
+        "description": "文化节概念与合作提案"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "明确活动构成、已确认资源、研究事项和合作需求",
+        "description": "明确活动构成、已确认资源、研究事项和合作需求"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "文化感、开放、社区导向",
+        "description": "文化感、开放、社区导向"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "城市合作方与潜在赞助方",
+      "description": "城市合作方与潜在赞助方"
+    },
+    "purpose": {
+      "label": "文化节概念与合作提案",
+      "description": "文化节概念与合作提案"
+    },
+    "desired_outcome": {
+      "label": "明确活动构成、已确认资源、研究事项和合作需求",
+      "description": "明确活动构成、已确认资源、研究事项和合作需求"
+    },
+    "slide_count": 9,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "文化感、开放、社区导向",
+      "description": "文化感、开放、社区导向"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

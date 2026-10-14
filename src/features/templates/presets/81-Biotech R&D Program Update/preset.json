@@ -1,0 +1,63 @@
+{
+  "id": "81-Biotech R&D Program Update",
+  "version": 1,
+  "ppt_number": 81,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "navy",
+    "purple",
+    "cyan",
+    "green"
+  ],
+  "name": "Biotech R&D Program Update",
+  "description": "Scientific program design with deep navy fields, violet gradients, cyan data lines, and dense but disciplined research panels.",
+  "user": "Education & Research",
+  "use_case": "Reports & Analysis",
+  "industry": "Healthcare & Wellness",
+  "recommendation_profile": {"use_cases":["project-update","medical-research","research-progress"],"industries":["healthcare"],"audiences":["professional"],"formats":["status-update","research-presentation"],"primary_styles":["formal","dark"],"visual_traits":["formal","dark","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深海军蓝、紫色与青蓝色封面以左侧上方超大标题开场，一幅图片拉开层级。"
+    },
+    {
+      "path": "images/2-mechanism-hypothesis.webp",
+      "alt": "深海军蓝、紫色与青蓝色页面，双面板划分主体区域，筛选信息拉开层级。"
+    },
+    {
+      "path": "images/3-study-design-key-data.webp",
+      "alt": "深海军蓝、紫色与青蓝色页面，一幅图表集中排布，指标信息组织动线。"
+    },
+    {
+      "path": "images/4-milestones-risks-decisions.webp",
+      "alt": "深海军蓝、紫色与青蓝色页面，双面板划分主体区域，风险信息强化对比。"
+    },
+    {
+      "path": "images/5-next-stage-resources.webp",
+      "alt": "深海军蓝、紫色与青蓝色页面，一幅图表集中排布，指导信息收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，深海军蓝、紫色与青蓝色主导画面，左侧上方的超大标题形成第一视点；一幅图片与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-mechanism-hypothesis.html",
+      "description": "标题固定在左上方，深海军蓝、紫色与青蓝色分隔主体；两块主面板建立清晰分区，一幅图表落在右侧，筛选条件、候选卡与等级标记补充层级。"
+    },
+    {
+      "path": "html/3-study-design-key-data.html",
+      "description": "深海军蓝、紫色与青蓝色画面，标题置于左上方；单一大面板承载主体信息，一幅指标图表落在中央，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/4-milestones-risks-decisions.html",
+      "description": "左上方标题锚定深海军蓝、紫色与青蓝色画面；两块主面板建立清晰分区，三幅风险图表落在中央，分级标签、状态色与风险标记补充层级。"
+    },
+    {
+      "path": "html/5-next-stage-resources.html",
+      "description": "深海军蓝、紫色与青蓝色作为底色，标题落在左上方；单一大面板承载主体信息，一幅图表落在左侧，一组表格位于中央。"
+    }
+  ]
+}

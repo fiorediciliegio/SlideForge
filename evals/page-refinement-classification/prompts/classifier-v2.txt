@@ -1,0 +1,14 @@
+You classify one natural-language request to modify a single presentation page. Do not make the modification and do not inspect or use a page, HTML, workspace, or external tool.
+
+Force the request into exactly one of these three categories:
+- basic (基础修改): only a simple local change is needed, such as editing text or other content, moving or resizing an element, or changing a color/font/style;
+- regenerate (重新生成): the page needs a substantial layout or composition change, or the whole page should be regenerated;
+- network_research (网络研究): the request needs web research or image research to obtain new facts or new real-world visual assets.
+
+Pick the single category that best matches the primary intent; when any research is involved, choose network_research.
+
+User page refinement request:
+{用户输入的修改要求}
+
+Return exactly one JSON object with no Markdown and no extra fields:
+{"category":"basic|regenerate|network_research"}

@@ -1,0 +1,103 @@
+{
+  "id": "20-Team OKR Review and Next-quarter Plan",
+  "version": 1,
+  "ppt_number": 20,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "charcoal",
+    "cream",
+    "orange",
+    "green"
+  ],
+  "name": "Team OKR Review and Next-quarter Plan",
+  "description": "Team-performance design with dark summary panels, cream scorecards, orange emphasis, and disciplined action grids.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review"],"industries":["business"],"audiences":["employee"],"formats":["status-update"],"primary_styles":["formal"],"visual_traits":["formal","data-dense","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深炭灰、暖米色与橙绿色构成封面底色，左侧中部超大标题与一块几何面板前后呼应。"
+    },
+    {
+      "path": "images/2-quarter-context.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，双面板划分主体区域，核心判断拉开层级。"
+    },
+    {
+      "path": "images/3-objectives-key-results.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，四块卡片组成两列网格，范围信息组织动线。"
+    },
+    {
+      "path": "images/4-attainment-scorecard.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，六幅图表集中排布，指标信息强化对比。"
+    },
+    {
+      "path": "images/5-metric-movement.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，左半区三组大数字，右侧两卡叠放，绩效信息收束版面。"
+    },
+    {
+      "path": "images/6-achievements-impact.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，三块卡片纵向叠放，绩效信息形成重心。"
+    },
+    {
+      "path": "images/7-miss-diagnosis.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，七块卡片组成四列网格，诊断信息拉开层级。"
+    },
+    {
+      "path": "images/8-lessons-operating-changes.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，一组表格压缩信息密度，复盘信息组织动线。"
+    },
+    {
+      "path": "images/9-next-quarter-okrs.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，横向时间轴串联阶段节点，日期标记强化对比。"
+    },
+    {
+      "path": "images/10-execution-plan-and-asks.webp",
+      "alt": "深炭灰、暖米色与橙绿色页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，左侧中部以超大标题建立焦点，深炭灰、暖米色与橙绿色贯穿背景与强调元素；一块几何面板和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-quarter-context.html",
+      "description": "深炭灰、暖米色与橙绿色画面，标题置于左上方；两块主面板建立清晰分区，一组表格位于右侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-objectives-key-results.html",
+      "description": "左上方标题锚定深炭灰、暖米色与橙绿色画面；四块信息卡组成两列网格，目标卡、范围块与关键数字集中在画面中部。"
+    },
+    {
+      "path": "html/4-attainment-scorecard.html",
+      "description": "深炭灰、暖米色与橙绿色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，六幅指标图表落在右侧，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/5-metric-movement.html",
+      "description": "标题固定在左上方，深炭灰、暖米色与橙绿色分隔主体；左半区以三组大号数字开场，右侧纵向排列两块卡片，一幅图表落在左侧，指标数字与趋势标记补充层级。"
+    },
+    {
+      "path": "html/6-achievements-impact.html",
+      "description": "深炭灰、暖米色与橙绿色画面，标题置于左上方；三块信息卡纵向叠放，指标数字与趋势标记沿主区展开。"
+    },
+    {
+      "path": "html/7-miss-diagnosis.html",
+      "description": "左上方标题锚定深炭灰、暖米色与橙绿色画面；七块信息卡组成四列网格，对照模块与因果标记贴合卡片边界。"
+    },
+    {
+      "path": "html/8-lessons-operating-changes.html",
+      "description": "深炭灰、暖米色与橙绿色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一组表格位于中央，结论卡与行动标记补充层级。"
+    },
+    {
+      "path": "html/9-next-quarter-okrs.html",
+      "description": "标题固定在左上方，深炭灰、暖米色与橙绿色分隔主体；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/10-execution-plan-and-asks.html",
+      "description": "深炭灰、暖米色与橙绿色画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记嵌入主体模块。"
+    }
+  ]
+}

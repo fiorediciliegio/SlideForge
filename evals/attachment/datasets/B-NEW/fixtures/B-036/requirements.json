@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Prepare a 9-slide manufacturing quality review. Combine the defect log with the corrective-action summary. Separate observed defects, suspected causes, confirmed root causes, completed actions, and pending validation."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Plant quality and operations leadership",
+        "description": "Plant quality and operations leadership"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Quality and CAPA review",
+        "description": "Quality and CAPA review"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Connect evidence to root causes, actions, and pending validation",
+        "description": "Connect evidence to root causes, actions, and pending validation"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Operational, evidence-based, corrective",
+        "description": "Operational, evidence-based, corrective"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Plant quality and operations leadership",
+      "description": "Plant quality and operations leadership"
+    },
+    "purpose": {
+      "label": "Quality and CAPA review",
+      "description": "Quality and CAPA review"
+    },
+    "desired_outcome": {
+      "label": "Connect evidence to root causes, actions, and pending validation",
+      "description": "Connect evidence to root causes, actions, and pending validation"
+    },
+    "slide_count": 9,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Operational, evidence-based, corrective",
+      "description": "Operational, evidence-based, corrective"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

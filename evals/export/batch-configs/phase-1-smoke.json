@@ -1,0 +1,17 @@
+{
+  "mode": "export-only",
+  "name": "phase-1-smoke",
+  "case_ids": [
+    "01-english-executive-summary",
+    "02-chinese-dashboard",
+    "03-bilingual-roadmap",
+    "04-long-text-special-chars",
+    "05-font-matrix",
+    "06-complex-table",
+    "07-svg-chart-icons",
+    "08-complex-layout"
+  ],
+  "formats": ["pptx", "pdf"],
+  "repeat": 1,
+  "timeout_ms": 600000
+}

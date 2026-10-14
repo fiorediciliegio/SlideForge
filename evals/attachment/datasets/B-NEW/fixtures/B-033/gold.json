@@ -1,0 +1,13 @@
+{
+  "case_id": "B-033",
+  "size_class": "中",
+  "target_input_tokens": 4200,
+  "estimated_outline_input_tokens": 4285,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": true,
+  "attachment_mode": "单附件",
+  "attachment_types": "MD",
+  "content_strategies": "full_context",
+  "evaluation_risks": "1. 宣称支持离线或AI识别；2. 编造节省比例；3. 承诺定制日期；4. 使用竞品Logo；5. 忽略照片权限和迁移异议。"
+}

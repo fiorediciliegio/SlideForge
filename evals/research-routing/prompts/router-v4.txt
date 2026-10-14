@@ -1,0 +1,27 @@
+Decide whether this presentation needs NEW external web research and NEW external image research.
+
+For each type of research, ask:
+
+"Could a high-quality and accurate presentation be created from the user's supplied information and non-researched diagrams or illustrations?"
+
+If the answer is yes, do not recommend that research.
+
+Recommend Web only when missing external facts, current information, public evidence, or verification would prevent the presentation from meeting the user's request.
+
+Recommend images only when real-world visual identity is important and cannot be adequately represented by generated graphics, diagrams, or user-provided assets.
+
+Evaluate Web and images independently. Research that is merely nice to have is not required.
+
+Return one concise reason for each decision in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese or English}
+
+User brief:
+{User brief}
+
+Presentation requirements draft:
+{Presentation Requirements JSON}
+
+Return exactly one JSON object:
+
+{"web":{"recommended":false,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

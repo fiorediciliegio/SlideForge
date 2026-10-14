@@ -1,0 +1,103 @@
+{
+  "id": "98-Hybrid Work Policy Presentation",
+  "version": 1,
+  "ppt_number": 98,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "orange",
+    "blue"
+  ],
+  "name": "Hybrid Work Policy Presentation",
+  "description": "Calm policy presentation with forest green panels, soft cards, rule tables, and evidence dashboards.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["policy-brief"],"industries":["business"],"audiences":["employee"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深绿封面左侧为粗体政策标题，右侧半透明数字卡与柔和光晕形成克制焦点，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-background.webp",
+      "alt": "顶部四张白色指标卡配底部深绿问题带，以橙绿数字建立政策背景层级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-needs-analysis.webp",
+      "alt": "左侧六条偏好条形图与右侧三张浅蓝引语卡并列，呈现员工需求和人群差异，信息对比清楚。"
+    },
+    {
+      "path": "images/4-policy-goals-scope.webp",
+      "alt": "宽幅浅蓝承诺条下横排三张原则卡，底部深绿范围栏完成规则总览，整体卡片节奏清晰有序。"
+    },
+    {
+      "path": "images/5-location-attendance-rules.webp",
+      "alt": "五张工作日卡横向排列，下方黑白规则表用彩色标签区分地点与出勤方式，版面层次清晰有序。"
+    },
+    {
+      "path": "images/6-collaboration-norms.webp",
+      "alt": "左侧沟通渠道表与右侧深绿会议规则卡并排，下方提示卡分隔应做与禁忌，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-performance-security-support.webp",
+      "alt": "三张白色保障卡横向排列，以红绿黄顶线区分绩效、安全与支持三个主题，信息对比清楚。"
+    },
+    {
+      "path": "images/8-pilot-evidence.webp",
+      "alt": "深绿证据页以四块指标卡开场，下方折线图与白色洞察卡展示试点效果，版面层次清晰有序。"
+    },
+    {
+      "path": "images/9-faq.webp",
+      "alt": "六张白色问答卡组成两列三行网格，浅色强调框和底部提示文字保持高密度内容可读。"
+    },
+    {
+      "path": "images/10-rollout-next-steps.webp",
+      "alt": "横向时间轴串联四个发布节点，下方行动卡与深绿提示卡形成实施收尾，顺序层级清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，深绿封面左侧为粗体政策标题，右侧半透明数字卡与柔和光晕形成克制焦点，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/2-background.html",
+      "description": "顶部四张白色指标卡配底部深绿问题带，以橙绿数字建立政策背景层级，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/3-needs-analysis.html",
+      "description": "暖白页面左侧用六条彩色横向条形图比较工作偏好，右侧纵向排列三张浅蓝引语卡，分别呈现团队主管、个人贡献者和新人观点。"
+    },
+    {
+      "path": "html/4-policy-goals-scope.html",
+      "description": "宽幅浅蓝承诺条下横排三张原则卡，底部深绿范围栏完成规则总览，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/5-location-attendance-rules.html",
+      "description": "五张工作日卡横向排列，下方黑白规则表用彩色标签区分地点与出勤方式，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/6-collaboration-norms.html",
+      "description": "左侧沟通渠道表与右侧深绿会议规则卡并排，下方提示卡分隔应做与禁忌，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/7-performance-security-support.html",
+      "description": "暖白页面横排三张白色保障卡，红绿黄顶线分别标记绩效、安全和支持主题，每张卡底部再用浅色提示框补充承诺。"
+    },
+    {
+      "path": "html/8-pilot-evidence.html",
+      "description": "深绿证据页以四块指标卡开场，下方折线图与白色洞察卡展示试点效果，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/9-faq.html",
+      "description": "暖白页面以两列三行排布六张问答卡，部分答案用淡黄色强调，规则留白和底部咨询提示让高密度政策信息保持清晰。"
+    },
+    {
+      "path": "html/10-rollout-next-steps.html",
+      "description": "横向时间轴串联四个发布节点，下方行动卡与深绿提示卡形成实施收尾，细线连接、彩色节点与留白共同维持清晰的流程节奏。"
+    }
+  ]
+}

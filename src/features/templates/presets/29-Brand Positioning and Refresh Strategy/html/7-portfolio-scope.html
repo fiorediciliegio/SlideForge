@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Where the positioning has to work</title>
+<style>
+/* AURELIA — Brand Positioning & Refresh Strategy
+   Design system: white paper + single red accent, editorial consulting grid.
+   Primary: Signal Red #C8102E · Secondary: Ink #17140F, Greige #EDEAE5 */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #FFFFFF;
+  --paper-2: #F7F5F2;
+  --paper-3: #EDEAE5;
+  --ink: #17140F;
+  --ink-70: #55504A;
+  --ink-45: #8B847C;
+  --ink-25: #B9B2AA;
+  --line: #E3DED7;
+  --line-strong: #CFC8BF;
+  --red: #C8102E;
+  --red-tint: #FBEDEF;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body { margin: 0; padding: 0; overflow: hidden; background: var(--paper); }
+
+.slide-container {
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type scale ---------- */
+.eyebrow {
+  font-family: var(--sans); font-size: 17px; font-weight: 600;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-45);
+}
+.h1 { font-family: var(--serif); font-weight: 400; font-size: 104px; line-height: 1.02; letter-spacing: -0.01em; }
+.h2 { font-family: var(--serif); font-weight: 400; font-size: 58px; line-height: 1.06; letter-spacing: -0.005em; }
+.h3 { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.14; }
+.lead { font-family: var(--sans); font-size: 25px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.body { font-family: var(--sans); font-size: 21px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.body-s { font-family: var(--sans); font-size: 19px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.label { font-family: var(--sans); font-size: 16px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-45); }
+.label-red { font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
+.stat { font-family: var(--serif); font-weight: 400; font-size: 92px; line-height: 0.94; letter-spacing: -0.02em; }
+.stat-s { font-family: var(--serif); font-weight: 400; font-size: 60px; line-height: 0.96; letter-spacing: -0.02em; }
+.caption { font-family: var(--sans); font-size: 15px; font-weight: 400; line-height: 1.45; color: var(--ink-45); }
+.strong { font-weight: 600; color: var(--ink); }
+.red { color: var(--red); }
+.ital { font-style: italic; }
+
+/* ---------- primitives ---------- */
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 2px; }
+.card-fill { background: var(--paper-2); border: 1px solid var(--line); border-radius: 2px; }
+.tag {
+  display: inline-block; padding: 7px 14px; border: 1px solid var(--line-strong);
+  border-radius: 2px; font-size: 16px; font-weight: 500; letter-spacing: 0.06em;
+  color: var(--ink); background: var(--paper);
+}
+.num-marker {
+  font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--red);
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Portfolio scope" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:88px; width:900px; z-index:10;">
+    <div class="label-red">06 — Scope &amp; opportunity</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:126px; width:1120px; z-index:10;">
+    <div class="h2">Four ranges, three channels,<br>one sequenced bet</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:296px; width:1680px; height:1px; background:#CFC8BF; z-index:1;"></div>
+
+  <!-- table -->
+  <div data-object="true" data-object-type="table" style="position:absolute; left:120px; top:334px; width:1160px; z-index:10;">
+    <table style="width:100%; border-collapse:collapse; font-family:'Archivo',sans-serif;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:0 0 16px 0; font-size:16px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8B847C;">Range</th>
+          <th style="text-align:left; padding:0 0 16px 0; font-size:16px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8B847C;">Role in portfolio</th>
+          <th style="text-align:right; padding:0 0 16px 0; font-size:16px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8B847C;">Revenue</th>
+          <th style="text-align:right; padding:0 0 16px 0; font-size:16px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:#8B847C;">Refresh wave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-top:2px solid #17140F;">
+          <td style="padding:22px 0; font-size:23px; font-weight:600; color:#17140F;">Restore <span style="color:#C8102E;">·</span> Serums</td>
+          <td style="padding:22px 24px 22px 0; font-size:19px; color:#55504A;">Hero. Carries the proof story.</td>
+          <td style="padding:22px 0; font-size:23px; font-weight:600; text-align:right; color:#17140F;">38%</td>
+          <td style="padding:22px 0; text-align:right;"><span class="tag" style="border-color:#C8102E; color:#C8102E; font-weight:600;">Wave 1</span></td>
+        </tr>
+        <tr style="border-top:1px solid #E3DED7;">
+          <td style="padding:22px 0; font-size:23px; font-weight:600; color:#17140F;">Daily <span style="color:#C8102E;">·</span> Cleansers</td>
+          <td style="padding:22px 24px 22px 0; font-size:19px; color:#55504A;">Volume engine and trial entry point.</td>
+          <td style="padding:22px 0; font-size:23px; font-weight:600; text-align:right; color:#17140F;">29%</td>
+          <td style="padding:22px 0; text-align:right;"><span class="tag" style="border-color:#C8102E; color:#C8102E; font-weight:600;">Wave 1</span></td>
+        </tr>
+        <tr style="border-top:1px solid #E3DED7;">
+          <td style="padding:22px 0; font-size:23px; font-weight:600; color:#17140F;">Body <span style="color:#C8102E;">·</span> Care</td>
+          <td style="padding:22px 24px 22px 0; font-size:19px; color:#55504A;">Basket builder; refill-led margin play.</td>
+          <td style="padding:22px 0; font-size:23px; font-weight:600; text-align:right; color:#17140F;">21%</td>
+          <td style="padding:22px 0; text-align:right;"><span class="tag">Wave 2</span></td>
+        </tr>
+        <tr style="border-top:1px solid #E3DED7; border-bottom:1px solid #E3DED7;">
+          <td style="padding:22px 0; font-size:23px; font-weight:600; color:#17140F;">Ritual <span style="color:#C8102E;">·</span> Tools</td>
+          <td style="padding:22px 24px 22px 0; font-size:19px; color:#55504A;">Signature range. New territory proof.</td>
+          <td style="padding:22px 0; font-size:23px; font-weight:600; text-align:right; color:#17140F;">12%</td>
+          <td style="padding:22px 0; text-align:right;"><span class="tag">Wave 3</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="caption" style="margin-top:18px;">Share of FY26 net revenue · illustrative planning figures</div>
+  </div>
+
+  <!-- right: channel scenarios -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1340px; top:334px; width:460px; height:556px; background:#F7F5F2; border:1px solid #E3DED7; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1384px; top:370px; width:376px; z-index:10;">
+    <div class="label">Where it must land</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1384px; top:420px; width:376px; z-index:10;">
+    <div class="stat-s" style="font-size:46px;">Shelf</div>
+    <div class="body-s" style="margin-top:10px;">2.4 seconds to read the pack hierarchy from 1.5 m. Block colour and range logic must do the work.</div>
+    <div style="height:1px; background:#CFC8BF; margin:24px 0;"></div>
+    <div class="stat-s" style="font-size:46px;">Feed</div>
+    <div class="body-s" style="margin-top:10px;">Assets built vertical-first; proof claims legible at thumbnail scale without a caption.</div>
+    <div style="height:1px; background:#CFC8BF; margin:24px 0;"></div>
+    <div class="stat-s" style="font-size:46px;">Bathroom</div>
+    <div class="body-s" style="margin-top:10px;">The pack lives on a counter for 90 days. It has to look owned, not advertised.</div>
+  </div>
+
+  <!-- opportunity sizing bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:908px; width:1160px; height:1px; background:#CFC8BF; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:934px; width:1160px; z-index:10; display:flex; gap:64px; align-items:flex-start;">
+    <div>
+      <div class="stat-s red" style="font-size:44px;">$48M</div>
+      <div class="caption" style="margin-top:8px;">addressable premium segment, FY27</div>
+    </div>
+    <div>
+      <div class="stat-s" style="font-size:44px;">+4.2 pts</div>
+      <div class="caption" style="margin-top:8px;">targeted premium share gain</div>
+    </div>
+    <div>
+      <div class="stat-s" style="font-size:44px;">62</div>
+      <div class="caption" style="margin-top:8px;">SKUs in scope for redesign</div>
+    </div>
+    <div>
+      <div class="stat-s" style="font-size:44px;">3</div>
+      <div class="caption" style="margin-top:8px;">launch markets in phase one</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1580px; top:1016px; width:220px; z-index:10; text-align:right;">
+    <div class="caption">07 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

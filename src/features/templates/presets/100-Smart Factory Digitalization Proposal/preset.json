@@ -1,0 +1,103 @@
+{
+  "id": "100-Smart Factory Digitalization Proposal",
+  "version": 1,
+  "ppt_number": 100,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "teal",
+    "orange"
+  ],
+  "name": "Smart Factory Digitalization Proposal",
+  "description": "Industrial digitalization proposal with grid textures, system diagrams, process cards, and investment models.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Industrial & Infrastructure",
+  "recommendation_profile": {"use_cases":["partnership"],"industries":["infrastructure"],"audiences":["client"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "炭黑封面叠加细网格，左侧粗体标题与右侧投资数字形成工程提案式构图，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-plant-baseline.webp",
+      "alt": "顶部四张白色基线指标卡横排，中部黑色成本带汇总年度损失，底部说明文字补充现状背景。"
+    },
+    {
+      "path": "images/3-downtime-root-cause.webp",
+      "alt": "左侧横向条形图排列六类停机原因，右侧四张编号洞察卡以橙青色强调根因，信息对比清楚。"
+    },
+    {
+      "path": "images/4-target-architecture.webp",
+      "alt": "四层技术架构横向堆叠，右侧深色跨层说明栏将系统模块连接成整体，整体风格统一而鲜明。"
+    },
+    {
+      "path": "images/5-closed-loop-workflow.webp",
+      "alt": "五张白色步骤卡以折线连接，底部指标带呈现从感知到行动的闭环流程，版面层次清晰有序。"
+    },
+    {
+      "path": "images/6-use-case-map.webp",
+      "alt": "十一张用例卡组成优先级矩阵，右侧黑色价值卡集中突出首波投资范围，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-systems-and-data.webp",
+      "alt": "大型系统资产表配右侧深色技术栈卡，图标和标签建立设备数据全景，强化清晰的数据节奏。"
+    },
+    {
+      "path": "images/8-benefit-model.webp",
+      "alt": "主折线图与右侧收益数字并列，底部黑色投资带汇总数字化效益模型，强化清晰的数据节奏。"
+    },
+    {
+      "path": "images/9-roadmap-investment.webp",
+      "alt": "三张阶段投资卡横向排列，深浅底色和年度标记形成自我融资路线图，整体风格统一而鲜明。"
+    },
+    {
+      "path": "images/10-risk-governance-next-steps.webp",
+      "alt": "左侧风险治理表与右侧控制卡并列，底部黑色请求区明确资源和决策事项，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，炭黑封面叠加细网格，左侧粗体标题与右侧投资数字形成工程提案式构图，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/2-plant-baseline.html",
+      "description": "暖白页面顶部横排四张基线指标卡，中部黑色横带分列年度现状成本，标题、细线与底部说明共同构成清晰的工厂基线页。"
+    },
+    {
+      "path": "html/3-downtime-root-cause.html",
+      "description": "暖白页面左侧用横向条形图比较六类停机原因，右侧四张编号洞察卡解释根因，橙青色编码与底部结论形成明确分析层级。"
+    },
+    {
+      "path": "html/4-target-architecture.html",
+      "description": "四层技术架构横向堆叠，右侧深色跨层说明栏将系统模块连接成整体，细线连接、彩色节点与留白共同维持清晰的流程节奏。"
+    },
+    {
+      "path": "html/5-closed-loop-workflow.html",
+      "description": "五张白色步骤卡以折线连接，底部指标带呈现从感知到行动的闭环流程，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/6-use-case-map.html",
+      "description": "十一张用例卡组成优先级矩阵，右侧黑色价值卡集中突出首波投资范围，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/7-systems-and-data.html",
+      "description": "大型系统资产表配右侧深色技术栈卡，图标和标签建立设备数据全景，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/8-benefit-model.html",
+      "description": "主折线图与右侧收益数字并列，底部黑色投资带汇总数字化效益模型，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/9-roadmap-investment.html",
+      "description": "三张阶段投资卡横向排列，深浅底色和年度标记形成自我融资路线图，细线连接、彩色节点与留白共同维持清晰的流程节奏。"
+    },
+    {
+      "path": "html/10-risk-governance-next-steps.html",
+      "description": "左侧风险治理表与右侧控制卡并列，底部黑色请求区明确资源和决策事项，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "77-Public Policy Decision Briefing",
+  "version": 1,
+  "ppt_number": 77,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "navy",
+    "blue",
+    "gray"
+  ],
+  "name": "Public Policy Decision Briefing",
+  "description": "Public-policy briefing design with generous white space, navy evidence panels, blue charts, and restrained institutional typography.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["policy-brief"],"industries":["public-sector"],"audiences":["executive"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、深海军蓝与机构蓝构成封面底色，左侧中部超大标题与一块几何面板前后呼应。"
+    },
+    {
+      "path": "images/2-policy-issue.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，标题、细线与留白划分层级，现状信息拉开层级。"
+    },
+    {
+      "path": "images/3-affected-groups.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，一幅图表集中排布，人群关系组织动线。"
+    },
+    {
+      "path": "images/4-policy-options.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，四块卡片组成两列网格，选择信息强化对比。"
+    },
+    {
+      "path": "images/5-delivery-mechanism.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，四块卡片组成四列网格，流程信息收束版面。"
+    },
+    {
+      "path": "images/6-eligibility-scope.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，一幅图表集中排布，范围信息形成重心。"
+    },
+    {
+      "path": "images/7-options-matrix.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，一组表格压缩信息密度，选择信息拉开层级。"
+    },
+    {
+      "path": "images/8-cost-impact.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，一幅图表集中排布，财务信息组织动线。"
+    },
+    {
+      "path": "images/9-implementation-risks.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，标题、细线与留白划分层级，风险信息强化对比。"
+    },
+    {
+      "path": "images/10-recommendation-roadmap.webp",
+      "alt": "白色、深海军蓝与机构蓝页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，左侧中部以超大标题建立焦点，白色、深海军蓝与机构蓝贯穿背景与强调元素；一块几何面板和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-policy-issue.html",
+      "description": "白色、深海军蓝与机构蓝画面，标题置于左上方；单一大面板承载主体信息，现状模块与重点标记贴合卡片边界。"
+    },
+    {
+      "path": "html/3-affected-groups.html",
+      "description": "左上方标题锚定白色、深海军蓝与机构蓝画面；留白与细线分隔出清晰阅读区，一幅图表落在左侧，角色节点与关系模块补充层级。"
+    },
+    {
+      "path": "html/4-policy-options.html",
+      "description": "白色、深海军蓝与机构蓝作为底色，标题落在左上方；四块信息卡组成两列网格，选择矩阵与优先级标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/5-delivery-mechanism.html",
+      "description": "标题固定在左上方，白色、深海军蓝与机构蓝分隔主体；四块信息卡横向并列，步骤模块与连接关系嵌入主体模块。"
+    },
+    {
+      "path": "html/6-eligibility-scope.html",
+      "description": "白色、深海军蓝与机构蓝画面，标题置于左上方；单一大面板承载主体信息，一幅图表落在右侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/7-options-matrix.html",
+      "description": "左上方标题锚定白色、深海军蓝与机构蓝画面；留白与细线分隔出清晰阅读区，一组表格位于中央，选择矩阵与优先级标记补充层级。"
+    },
+    {
+      "path": "html/8-cost-impact.html",
+      "description": "白色、深海军蓝与机构蓝作为底色，标题落在左上方；单一大面板承载主体信息，一幅财务图表落在左侧，金额数字、占比与变化标记补充层级。"
+    },
+    {
+      "path": "html/9-implementation-risks.html",
+      "description": "标题固定在左上方，白色、深海军蓝与机构蓝分隔主体；单一大面板承载主体信息，分级标签、状态色与风险标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/10-recommendation-roadmap.html",
+      "description": "白色、深海军蓝与机构蓝画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记嵌入主体模块。"
+    }
+  ]
+}

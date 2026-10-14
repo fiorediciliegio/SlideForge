@@ -1,0 +1,55 @@
+Create an 8-slide board strategy-offsite deck using only the facts below. Revenue is $42m, with 68% from one product and 54% from the top ten customers. Three strategic options are under consideration: deepen the core product, enter an adjacent workflow, or expand geographically. No option has been selected. The board needs to agree evaluation criteria, evidence gaps, and the next 90-day workplan. Do not invent market data, valuations, or management preferences.
+
+### B-046 Supporting Record 001
+Implementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.
+
+### B-046 Supporting Record 002
+Measurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.
+
+### B-046 Supporting Record 003
+Status note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.
+
+### B-046 Supporting Record 004
+Evidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.
+
+### B-046 Supporting Record 005
+Communication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.
+
+### B-046 Supporting Record 006
+Supporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.
+
+### B-046 Supporting Record 007
+Implementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.
+
+### B-046 Supporting Record 008
+Measurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.
+
+### B-046 Supporting Record 009
+Status note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.
+
+### B-046 Supporting Record 010
+Evidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.
+
+### B-046 Supporting Record 011
+Communication log 11: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.
+
+### B-046 Supporting Record 012
+Supporting record 12: On 2025-04-13, workstream 3 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.
+
+### B-046 Supporting Record 013
+Implementation note 13: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.
+
+### B-046 Supporting Record 014
+Measurement note 14: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.
+
+### B-046 Supporting Record 015
+Status note 15: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.
+
+### B-046 Supporting Record 016
+Evidence boundary 16: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.
+
+### B-046 Supporting Record 017
+Communication log 17: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.
+
+## Document-control closing note
+This is the final section of B-046. The Outline must continue to follow the user brief and fixed Requirements, must not convert plans into completed results, must not invent unsupported causes, and must not expose original file paths.

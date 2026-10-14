@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>APS 目录清理</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header><span class="eyebrow">ANNA · PERSONAL STORAGE</span><h1>APS 目录清理</h1><p>批量清空指定目录及其子目录中的文件。</p><p id="connection" role="status">正在连接 Anna Runtime…</p></header>
+    <section>
+      <h2>1. 预览目录</h2>
+      <p>使用当前 <code>anna-app login</code> 账号的个人 APS 空间。请输入相对路径。</p>
+      <label for="directory">目标目录</label>
+      <div class="actions"><input id="directory" value="workspaces" placeholder="workspaces/ppt-20260719-143941" spellcheck="false"><button id="scan" disabled>扫描目录</button></div>
+      <p class="hint">例如：workspaces 清理全部作品文件；workspaces/ppt-20260719-143941 只清理该作品。扫描不会删除文件。</p>
+      <p id="summary">尚未扫描。</p>
+      <div class="table-wrap"><table><thead><tr><th>文件路径</th><th>大小</th></tr></thead><tbody id="files"></tbody></table></div>
+      <div class="actions"><button id="previous" class="secondary" disabled>上一页</button><span id="page"></span><button id="next" class="secondary" disabled>下一页</button></div>
+    </section>
+    <section>
+      <h2>2. 确认清空</h2>
+      <p>删除将影响账号内的真实文件，本 demo 不提供撤销。请先停止向该目录写入的生成或同步任务。</p>
+      <label for="confirmation" id="confirmation-label">扫描完成后，输入完整目录（包含末尾 /）</label>
+      <input id="confirmation" autocomplete="off" spellcheck="false" disabled>
+      <div class="actions"><button id="clear" class="danger" disabled>清空预览中的文件</button><button id="stop" class="secondary" disabled>停止</button></div>
+      <progress id="progress" value="0" max="1"></progress>
+      <p id="status" role="status" aria-live="polite">等待预览。</p>
+      <p class="hint">只删除本次预览中的文件。遇到错误立即停止；点击停止后，当前请求仍会完成。清理后请重新扫描，检查剩余或新增文件。</p>
+      <pre id="errors" hidden></pre>
+    </section>
+  </main>
+  <script src="anna-tool-ids.js" defer></script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

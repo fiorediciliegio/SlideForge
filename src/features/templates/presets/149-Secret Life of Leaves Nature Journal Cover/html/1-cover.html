@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Secret Life of Leaves — Nature Journal Cover</title>
+<style>
+:root {
+  --theme-bg: #F8F2DF;
+  --theme-surface: #FFFAF0;
+  --theme-ink: #273126;
+  --theme-muted: #786F5D;
+  --theme-accent-primary: #486A3E;
+  --theme-accent-secondary: #E0B84D;
+  --theme-accent-tertiary: #D56C38;
+  --theme-line: #D5DFBD;
+
+  --journal-canvas: var(--theme-bg);
+  --journal-surface: var(--theme-surface);
+  --journal-ink: var(--theme-ink);
+  --journal-muted: var(--theme-muted);
+  --journal-accent: var(--theme-accent-primary);
+  --journal-support: var(--theme-accent-secondary);
+  --journal-highlight: var(--theme-accent-tertiary);
+  --journal-line: var(--theme-line);
+  --journal-shadow: rgb(from var(--journal-ink) r g b / 0.18);
+  --journal-glow: rgb(from var(--journal-accent) r g b / 0.22);
+}
+
+:root{--paper:rgb(from var(--journal-canvas) calc(r - 4) calc(g - 5) calc(b - 5));--ink:var(--journal-ink);--green:var(--journal-accent);--sage:rgb(from var(--journal-muted) calc(r + 25) calc(g + 57) calc(b + 29));--orange:var(--journal-highlight);--mustard:var(--journal-support);--cream:var(--journal-surface);--display:Georgia,"Times New Roman",serif;--hand:"Comic Sans MS","Bradley Hand",cursive;--sans:"Trebuchet MS",Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--journal-muted)}body{font-family:var(--sans);color:var(--ink)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 82% 24%,rgb(from var(--journal-muted) calc(r + 25) calc(g + 57) calc(b + 29) / .22),transparent 34%),radial-gradient(ellipse at 18% 88%,rgb(from var(--journal-support) r g b / .12),transparent 38%),linear-gradient(135deg,var(--journal-canvas) 0,var(--paper) 48%,rgb(from var(--journal-canvas) calc(r - 15) calc(g - 15) calc(b - 16)) 100%)}
+.grain{position:absolute;inset:0;z-index:1;opacity:.3;background-image:repeating-linear-gradient(0deg,transparent 0 5px,rgb(from var(--journal-ink) r g b / .075) 5px 6px),repeating-linear-gradient(112deg,transparent 0 34px,rgb(from var(--journal-ink) r g b / .035) 34px 36px),radial-gradient(circle,rgb(from var(--journal-ink) r g b / .2) 1px,transparent 1.5px);background-size:auto,auto,31px 31px;mix-blend-mode:multiply}
+.margin{position:absolute;left:114px;top:0;width:4px;height:1080px;background:rgb(from var(--journal-highlight) r g b / .45);z-index:2}.rule{position:absolute;left:0;right:0;height:2px;background:rgb(from var(--journal-accent) r g b / .13);z-index:1}.r1{top:185px}.r2{top:285px}.r3{top:385px}.r4{top:485px}.r5{top:585px}.r6{top:685px}.r7{top:785px}.r8{top:885px}.r9{top:985px}
+.tape{position:absolute;z-index:12;width:230px;height:62px;background:rgb(from var(--journal-support) r g b / .68);box-shadow:0 2px 5px rgb(from var(--journal-ink) r g b / .12);transform:rotate(-4deg)}.tape.t1{right:505px;top:79px;transform:rotate(-5deg)}.tape.t2{right:235px;bottom:87px;transform:rotate(8deg)}
+.top{position:absolute;left:156px;top:68px;z-index:9;display:flex;align-items:center;gap:28px;font-size:18px;font-weight:900;letter-spacing:5px;text-transform:uppercase;color:var(--green)}
+.top b{padding:10px 18px;border:3px solid var(--green);background:var(--cream);letter-spacing:3px}
+.title{position:absolute;left:150px;top:158px;z-index:8;width:970px}
+.title .chapter{font:italic 31px/1 var(--display);color:var(--orange)}
+h1{margin:20px 0 0;font:900 126px/.87 var(--display);letter-spacing:-5px;color:var(--ink)}
+h1 em{display:block;color:var(--green);font-style:italic;font-weight:400}
+.scribble{position:absolute;left:154px;top:500px;z-index:8;width:810px;font:34px/1.25 var(--hand);transform:rotate(-2deg)}
+.scribble strong{color:var(--orange);font-size:41px}
+.field-note{position:absolute;left:146px;top:718px;z-index:9;width:880px;min-height:170px;padding:40px 42px 28px;border:3px solid var(--green);background:linear-gradient(135deg,rgb(from var(--journal-surface) r g b / .96),rgb(from var(--journal-canvas) calc(r - 7) calc(g - 4) calc(b - 6) / .9));box-shadow:10px 11px 0 rgb(from var(--journal-accent) r g b / .17);transform:none}
+.field-note:before{content:"FIELD QUESTION";position:absolute;left:28px;top:-23px;padding:9px 16px 8px;background:var(--orange);color:rgb(from var(--journal-surface) r calc(g + 5) calc(b + 15));box-shadow:5px 5px 0 rgb(from var(--journal-accent) r g b / .16);font-size:14px;font-weight:900;letter-spacing:3px}
+.field-note p{margin:0;max-width:790px;font:29px/1.28 var(--display)}
+.field-note b{display:block;margin-bottom:9px;color:var(--green);font:900 14px/1 var(--sans);letter-spacing:3px;text-transform:uppercase}
+.photo{position:absolute;right:116px;top:102px;z-index:6;width:685px;height:790px;padding:28px 28px 88px;background:var(--cream);box-shadow:12px 14px 0 rgb(from var(--journal-ink) r g b / .22);transform:rotate(3deg)}
+.scene{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 73% 18%,rgb(from var(--journal-canvas) calc(r + 7) g calc(b - 46) / .46),transparent 23%),linear-gradient(160deg,var(--journal-line) 0 38%,rgb(from var(--journal-muted) calc(r + 25) calc(g + 59) calc(b + 28)) 39% 69%,rgb(from var(--journal-accent) r calc(g - 7) calc(b - 2)) 70%)}
+.scene:after{content:"";position:absolute;inset:-20%;background:linear-gradient(118deg,transparent 24%,rgb(from var(--journal-surface) r calc(g + 5) calc(b + 15) / .16) 37%,transparent 49%);transform:rotate(-5deg);pointer-events:none}
+.sun{position:absolute;right:72px;top:58px;width:160px;height:160px;border-radius:50%;background:var(--mustard);box-shadow:0 0 0 18px rgb(from var(--journal-support) r g b / .25)}
+.stem{position:absolute;left:313px;top:152px;width:20px;height:520px;background:var(--green);border-radius:50%;transform:rotate(-8deg)}
+.leaf{position:absolute;width:245px;height:125px;background:var(--green);border-radius:100% 0 100% 0;box-shadow:inset -18px -15px 0 rgb(from var(--journal-ink) r g b / .14)}
+.leaf:after{content:"";position:absolute;left:18px;top:64px;width:205px;height:5px;background:rgb(from var(--journal-canvas) calc(r - 4) calc(g - 5) calc(b - 5) / .7);transform:rotate(-22deg);transform-origin:left center}
+.l1{left:117px;top:185px;transform:rotate(12deg)}.l2{left:321px;top:294px;transform:scaleX(-1) rotate(5deg);background:rgb(from var(--journal-accent) calc(r + 21) calc(g + 19) calc(b + 13))}.l3{left:90px;top:416px;transform:rotate(-7deg);background:rgb(from var(--journal-muted) calc(r - 9) calc(g + 31) calc(b - 5))}.l4{left:306px;top:522px;transform:scaleX(-1) rotate(-13deg)}
+.specimen{position:absolute;left:32px;bottom:26px;padding:8px 13px;background:rgb(from var(--journal-surface) r g b / .86);border:2px solid var(--green);font-size:14px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
+.photo-caption{position:absolute;left:38px;right:38px;bottom:23px;font:25px/1.1 var(--hand);text-align:center;color:var(--ink)}
+.arrow{position:absolute;right:750px;top:617px;z-index:10;width:150px;height:82px;border-top:6px solid var(--orange);border-radius:50%;transform:rotate(-18deg)}.arrow:after{content:"";position:absolute;right:-2px;top:-17px;width:24px;height:24px;border-top:6px solid var(--orange);border-right:6px solid var(--orange);transform:rotate(42deg)}
+@media(max-width:1919px),(max-height:1079px){body{min-width:1920px;min-height:1080px}}
+</style>
+</head>
+<body>
+<main class="slide" data-screen-label="04 Nature Exploration Journal Cover">
+  <div class="grain" aria-hidden="true"></div><div class="margin" aria-hidden="true"></div><div class="rule r1"></div><div class="rule r2"></div><div class="rule r3"></div><div class="rule r4"></div><div class="rule r5"></div><div class="rule r6"></div><div class="rule r7"></div><div class="rule r8"></div><div class="rule r9"></div><div class="tape t1"></div><div class="tape t2"></div>
+  <header class="top" data-object="true" data-object-type="textbox"><b>Young Naturalist</b><span>Field Journal / Botanical Study</span></header>
+  <section class="title" data-object="true" data-object-type="textbox"><div class="chapter">A photosynthesis field guide</div><h1>The Secret Life <em>of Leaves</em></h1></section>
+  <div class="scribble" data-object="true" data-object-type="textbox">A leaf looks quiet… but inside, it is running the world’s most important <strong>sun-powered kitchen!</strong></div>
+  <aside class="field-note" data-object="true" data-object-type="textbox"><p><b>Think like a botanist</b>How do sunlight, air and water become food for a plant?</p></aside>
+  <div class="arrow" aria-hidden="true"></div>
+  <figure class="photo" data-object="true" data-object-type="image"><div class="scene"><div class="sun"></div><div class="stem"></div><div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div><div class="leaf l4"></div><div class="specimen">Sunlight → Sugar</div></div><figcaption class="photo-caption">Observation: every green leaf is a tiny factory.</figcaption></figure>
+</main>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "id": "94-UX and Product Designer Portfolio",
+  "version": 1,
+  "ppt_number": 94,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "coral",
+    "green"
+  ],
+  "name": "UX and Product Designer Portfolio",
+  "description": "Editorial product-design portfolio with warm neutrals, interface mockups, research cards, and restrained charts.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["technology"],"audiences":["client","professional"],"formats":[],"primary_styles":["editorial"],"visual_traits":["editorial","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "米色封面左侧为大号作品集标题，右侧黑色竖栏承载手机样机和项目摘要，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-design-approach.webp",
+      "alt": "顶部三条设计原则配底部黑色方法论横带，衬线强调词与编号建立编辑层级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-case-context.webp",
+      "alt": "黑色案例背景卡、右侧横向漏斗图和底部指标卡共同构成问题定义页面，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-research-insights.webp",
+      "alt": "大标题下横排四张研究发现卡，右下条形图与黑色洞察条形成证据收束，版面层次清晰有序。"
+    },
+    {
+      "path": "images/5-design-process.webp",
+      "alt": "五步设计流程横向展开，底部三张黑色决策卡归纳过程中坚持的取舍原则，阅读顺序明确。"
+    },
+    {
+      "path": "images/6-journey-map.webp",
+      "alt": "中央双线用户旅程图横贯页面，顶部两张用户比例卡与底部四张情景卡补充体验差异。"
+    },
+    {
+      "path": "images/7-final-design.webp",
+      "alt": "左侧黑色标题区配中部三组手机界面，右侧文字栏总结最终设计的四项关键变化，版面层级明确。"
+    },
+    {
+      "path": "images/8-design-system.webp",
+      "alt": "左侧三层设计系统表与右侧基础规范卡并列，底部四张指标卡呈现组件规模和交付状态。"
+    },
+    {
+      "path": "images/9-business-impact.webp",
+      "alt": "顶部四张深色指标卡横排，底部折线图与右侧前后对照表共同展示业务成效，信息对比清楚。"
+    },
+    {
+      "path": "images/10-selected-work-contact.webp",
+      "alt": "米色收尾页组合三个项目缩略卡与底部黑色联系条，形成简洁作品索引，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，米色封面左侧为大号作品集标题，右侧黑色竖栏承载手机样机和项目摘要，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/2-design-approach.html",
+      "description": "顶部三条设计原则配底部黑色方法论横带，衬线强调词与编号建立编辑层级，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/3-case-context.html",
+      "description": "黑色案例背景卡、右侧横向漏斗图和底部指标卡共同构成问题定义页面，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/4-research-insights.html",
+      "description": "大标题下横排四张研究发现卡，右下条形图与黑色洞察条形成证据收束，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/5-design-process.html",
+      "description": "暖米色页面用五个节点横向展示审计、重排、原型、改写和发布流程，底部三张黑色决策卡分别总结关键设计取舍。"
+    },
+    {
+      "path": "html/6-journey-map.html",
+      "description": "暖米色页面中央以虚实双线展示改版前后用户旅程，顶部右侧两张比例卡标注用户类型，底部四张情景卡对应关键行为节点。"
+    },
+    {
+      "path": "html/7-final-design.html",
+      "description": "页面左侧以黑色标题区形成章节入口，中部横排三组手机界面展示关键流程，右侧文字栏用四条说明归纳最终设计变化。"
+    },
+    {
+      "path": "html/8-design-system.html",
+      "description": "暖米色页面左侧用三层横向表格拆解设计系统，右侧规范卡列出颜色、字号与间距，底部四张指标卡汇总组件和采用情况。"
+    },
+    {
+      "path": "html/9-business-impact.html",
+      "description": "深色页面顶部横排四张关键指标卡，底部左侧折线图展示完成率变化，右侧前后对照表比较流程、支持与成本表现。"
+    },
+    {
+      "path": "html/10-selected-work-contact.html",
+      "description": "米色收尾页组合三个项目缩略卡与底部黑色联系条，形成简洁作品索引，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "14-Quarterly Business Review",
+  "version": 1,
+  "ppt_number": 14,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "charcoal",
+    "orange",
+    "green"
+  ],
+  "name": "Quarterly Business Review",
+  "description": "Executive review design with cream dashboards, charcoal framing, orange highlights, and compact performance tables.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review","financial-results","sales-performance-review"],"industries":["business"],"audiences":["executive"],"formats":["quarterly-report"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖米色、炭灰与橙绿色封面，左侧中部放置超大标题，几何色块与细线建立视觉重心。"
+    },
+    {
+      "path": "images/2-quarter-at-a-glance.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，左侧两卡叠放，右半区两组大数字，指标信息拉开层级。"
+    },
+    {
+      "path": "images/3-objectives-key-results.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，双面板划分主体区域，范围信息组织动线。"
+    },
+    {
+      "path": "images/4-revenue-performance.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，双面板划分主体区域，财务信息强化对比。"
+    },
+    {
+      "path": "images/5-customer-growth-retention.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，两幅图表集中排布，人群信息收束版面。"
+    },
+    {
+      "path": "images/6-operating-performance.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，左半区三组大数字，右侧两卡叠放，绩效信息形成重心。"
+    },
+    {
+      "path": "images/7wins-and-drivers.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，四块卡片组成两列网格，诊断信息拉开层级。"
+    },
+    {
+      "path": "images/8-gaps-root-causes.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，顶部横排三张卡片，下方双区展开，诊断信息组织动线。"
+    },
+    {
+      "path": "images/9-risks-mitigations.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，一幅图表集中排布，风险信息强化对比。"
+    },
+    {
+      "path": "images/10-next-quarter-action-plan.webp",
+      "alt": "暖米色、炭灰与橙绿色页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖米色、炭灰与橙绿色确定整体基调，左侧中部放置超大标题；几何色块与细线分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-quarter-at-a-glance.html",
+      "description": "标题固定在左上方，暖米色、炭灰与橙绿色分隔主体；左侧纵向叠放两块卡片，右半区展开两组大号数字，摘要指标与数据图形贴合卡片边界。"
+    },
+    {
+      "path": "html/3-objectives-key-results.html",
+      "description": "暖米色、炭灰与橙绿色画面，标题置于左上方；两块主面板建立清晰分区，一组表格位于中央，目标卡、范围块与关键数字补充层级。"
+    },
+    {
+      "path": "html/4-revenue-performance.html",
+      "description": "左上方标题锚定暖米色、炭灰与橙绿色画面；两块主面板建立清晰分区，两幅财务图表落在中央，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/5-customer-growth-retention.html",
+      "description": "暖米色、炭灰与橙绿色作为底色，标题落在左上方；三块主体模块构成错落分栏，两幅图表落在中央，一组表格位于右侧。"
+    },
+    {
+      "path": "html/6-operating-performance.html",
+      "description": "标题固定在左上方，暖米色、炭灰与橙绿色分隔主体；左半区以三组大号数字开场，右侧纵向排列两块卡片，四幅图表落在中央，一组表格位于左侧。"
+    },
+    {
+      "path": "html/7wins-and-drivers.html",
+      "description": "暖米色、炭灰与橙绿色画面，标题置于左上方；四块信息卡组成两列网格，一幅图表落在左侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/8-gaps-root-causes.html",
+      "description": "左上方标题锚定暖米色、炭灰与橙绿色画面；顶部横排三张卡片，下方设置独立信息面板，对照模块与因果标记集中在画面中部。"
+    },
+    {
+      "path": "html/9-risks-mitigations.html",
+      "description": "暖米色、炭灰与橙绿色作为底色，标题落在左上方；单一大面板承载主体信息，一幅风险图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/10-next-quarter-action-plan.html",
+      "description": "标题固定在左上方，暖米色、炭灰与橙绿色分隔主体；横向时间轴串联阶段节点与日期标记，一幅图表落在中央，阶段节点与时间标记补充层级。"
+    }
+  ]
+}

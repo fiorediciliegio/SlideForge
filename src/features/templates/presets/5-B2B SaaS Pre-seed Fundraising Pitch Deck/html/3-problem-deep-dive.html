@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Where the workflow breaks</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#15181B;
+  --ink-2:#39414A;
+  --muted:#767C82;
+  --line:#D8D4CB;
+  --canvas:#F5F3EF;
+  --panel:#FFFFFF;
+  --panel-alt:#EBE8E0;
+  --accent:#B8492B;
+  --accent-soft:#F1DED6;
+  --slate:#1B2429;
+  --slate-2:#2C3A41;
+  --ok:#4C7358;
+  --warn:#9C7A22;
+}
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background:var(--canvas);
+  font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.kicker{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:21px; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+}
+.kicker-d{ color:#D98E74; }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:600;
+  font-size:62px; line-height:1.06; letter-spacing:-.02em; color:var(--ink);
+}
+.h2{ font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.2; letter-spacing:-.01em; }
+.h3{ font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; line-height:1.25; }
+.lead{ font-size:27px; line-height:1.42; color:var(--ink-2); }
+.body{ font-size:23px; line-height:1.5; color:var(--ink-2); }
+.small{ font-size:21px; line-height:1.45; color:var(--muted); }
+
+.label{
+  font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.num{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  letter-spacing:-.03em; line-height:1; color:var(--ink);
+}
+
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:4px; }
+.card-alt{ background:var(--panel-alt); border:1px solid var(--line); border-radius:4px; }
+.card-d{ background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14); border-radius:4px; }
+
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:16px 20px; border-bottom:1px solid var(--line);
+}
+table.grid td{
+  font-size:23px; color:var(--ink-2); padding:20px;
+  border-bottom:1px solid var(--line); vertical-align:middle;
+}
+table.grid td.k{ color:var(--ink); font-weight:500; }
+
+.chip{
+  display:inline-block; border:1px solid var(--line); border-radius:3px;
+  background:#fff; color:var(--ink-2);
+  font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:.04em;
+  padding:9px 14px; margin:0 8px 10px 0;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Problem Deep Dive" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F5F3EF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#B8492B; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:104px; width:1200px; z-index:10;">
+    <div class="kicker">02 · WHERE IT BREAKS</div>
+    <div class="h2" style="font-size:46px; margin-top:20px;">Five handoffs, four systems, one owner who never sleeps.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1420px; top:112px; width:360px; text-align:right; z-index:10;">
+    <div class="label">TIME PER BILLING CYCLE</div>
+    <div class="num" style="font-size:64px; margin-top:12px; color:#B8492B;">34 hrs</div>
+  </div>
+
+  <!-- persona card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:288px; width:520px; height:612px; background:#1B2429; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:184px; top:332px; width:432px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#D98E74;">PRIMARY BUYER</div>
+    <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:36px; line-height:1.15; color:#fff; margin-top:20px;">Maya R.<br>VP Finance</div>
+    <div style="height:1px; background:rgba(255,255,255,.16); margin:28px 0;"></div>
+    <div style="display:flex; flex-direction:column; gap:22px; font-size:22px; line-height:1.4; color:#B9C1C6;">
+      <div><span style="color:#6E7A81;">Team</span><br>2 AR analysts, 1 controller, no RevOps engineer</div>
+      <div><span style="color:#6E7A81;">Stack</span><br>NetSuite · Salesforce · Stripe · 4 spreadsheets</div>
+      <div><span style="color:#6E7A81;">Measured on</span><br>DSO, close speed, audit-clean revenue</div>
+      <div><span style="color:#6E7A81;">Buys when</span><br>Headcount request gets denied twice</div>
+    </div>
+  </div>
+
+  <!-- chain rows -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:720px; top:288px; width:1060px; height:612px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:316px; width:980px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:16px; border-bottom:1px solid #D8D4CB;">
+      <div class="label" style="font-size:18px;">HANDOFF</div>
+      <div class="label" style="font-size:18px;">LEAKAGE</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:26px; padding:22px 0; border-bottom:1px solid #EDEAE3;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; width:34px;">01</div>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; color:#15181B;">Closed-won → billing schedule</div>
+        <div style="font-size:20px; color:#767C82; margin-top:5px;">Rep-authored terms re-typed from the order form PDF</div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; background:#F1DED6; padding:8px 12px; border-radius:3px;">6.1 hrs</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:26px; padding:22px 0; border-bottom:1px solid #EDEAE3;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; width:34px;">02</div>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; color:#15181B;">Usage data → invoice lines</div>
+        <div style="font-size:20px; color:#767C82; margin-top:5px;">CSV exports joined by hand against tiered rate cards</div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; background:#F1DED6; padding:8px 12px; border-radius:3px;">9.5 hrs</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:26px; padding:22px 0; border-bottom:1px solid #EDEAE3;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; width:34px;">03</div>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; color:#15181B;">Invoice → approval → send</div>
+        <div style="font-size:20px; color:#767C82; margin-top:5px;">Controller review over email; 1 in 9 invoices reissued</div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; background:#F1DED6; padding:8px 12px; border-radius:3px;">4.8 hrs</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:26px; padding:22px 0; border-bottom:1px solid #EDEAE3;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; width:34px;">04</div>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; color:#15181B;">Dunning → cash application</div>
+        <div style="font-size:20px; color:#767C82; margin-top:5px;">Shared inbox chases; partial payments matched manually</div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; background:#F1DED6; padding:8px 12px; border-radius:3px;">8.2 hrs</div>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:26px; padding:22px 0 0;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; width:34px;">05</div>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; color:#15181B;">Revenue recognition → close</div>
+        <div style="font-size:20px; color:#767C82; margin-top:5px;">Deferred schedules rebuilt every quarter for the auditor</div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:20px; color:#B8492B; background:#F1DED6; padding:8px 12px; border-radius:3px;">5.4 hrs</div>
+    </div>
+  </div>
+
+  <!-- insight strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:930px; width:1640px; height:1px; background:#D8D4CB; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:952px; width:1640px; z-index:10;">
+    <div style="display:flex; gap:40px; align-items:baseline;">
+      <div class="label" style="color:#B8492B; flex:none;">INSIGHT</div>
+      <div class="body" style="flex:1;">No single tool owns the chain, so every fix becomes another spreadsheet. Finance does not want five better tools — it wants one accountable workflow.</div>
+      <div class="label" style="font-size:18px; flex:none;">03</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

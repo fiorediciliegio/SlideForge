@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Traction — Supply, Demand, Transactions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Traction dashboard" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#16130F;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;background:#16130F;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:86px;width:1400px;z-index:10;">
+    <div style="font-size:24px;font-weight:600;letter-spacing:4.5px;color:#E0A33C;">07 · TRACTION</div>
+    <div style="font-size:60px;font-weight:700;letter-spacing:-1.6px;line-height:1.08;color:#F4EFE6;margin-top:16px;">Both sides compounding, transactions faster than either</div>
+  </div>
+
+  <!-- KPI row -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:258px;width:1700px;height:172px;z-index:10;">
+    <div style="display:flex;gap:24px;">
+      <div style="flex:1;border:1px solid rgba(244,239,230,0.20);border-radius:4px;padding:22px 26px;">
+        <div style="font-size:21px;letter-spacing:2.2px;color:rgba(244,239,230,0.55);">GMV RUN-RATE</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:52px;color:#F4EFE6;line-height:1.1;margin-top:10px;">$24.0M</div>
+        <div style="font-size:22px;color:#7FB3AA;margin-top:8px;">+186% YoY</div>
+      </div>
+      <div style="flex:1;border:1px solid rgba(244,239,230,0.20);border-radius:4px;padding:22px 26px;">
+        <div style="font-size:21px;letter-spacing:2.2px;color:rgba(244,239,230,0.55);">NET REVENUE</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:52px;color:#F4EFE6;line-height:1.1;margin-top:10px;">$3.6M</div>
+        <div style="font-size:22px;color:#7FB3AA;margin-top:8px;">15.0% blended take</div>
+      </div>
+      <div style="flex:1;border:1px solid rgba(244,239,230,0.20);border-radius:4px;padding:22px 26px;">
+        <div style="font-size:21px;letter-spacing:2.2px;color:rgba(244,239,230,0.55);">SHIFTS / QUARTER</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:52px;color:#F4EFE6;line-height:1.1;margin-top:10px;">29,600</div>
+        <div style="font-size:22px;color:#7FB3AA;margin-top:8px;">94% fill rate</div>
+      </div>
+      <div style="flex:1;border:1px solid rgba(244,239,230,0.20);border-radius:4px;padding:22px 26px;">
+        <div style="font-size:21px;letter-spacing:2.2px;color:rgba(244,239,230,0.55);">ACTIVE BUYERS</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:52px;color:#F4EFE6;line-height:1.1;margin-top:10px;">412</div>
+        <div style="font-size:22px;color:#7FB3AA;margin-top:8px;">128% NRR</div>
+      </div>
+      <div style="flex:1;border:1px solid rgba(224,163,60,0.55);border-radius:4px;padding:22px 26px;background:rgba(224,163,60,0.10);">
+        <div style="font-size:21px;letter-spacing:2.2px;color:#E0A33C;">CREW REPEAT RATE</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:52px;color:#E0A33C;line-height:1.1;margin-top:10px;">81%</div>
+        <div style="font-size:22px;color:rgba(224,163,60,0.8);margin-top:8px;">2+ shifts / month</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- growth chart -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:110px;top:452px;width:1080px;height:450px;z-index:10;">
+    <svg viewBox="0 0 1080 450" width="1080" height="450" xmlns="http://www.w3.org/2000/svg">
+      <g font-family="Archivo">
+        <text x="0" y="20" font-size="23" letter-spacing="2.5" fill="rgba(244,239,230,0.6)">INDEXED GROWTH · Q1 2025 = 100</text>
+        <!-- grid -->
+        <g stroke="rgba(244,239,230,0.12)">
+          <line x1="60" y1="360" x2="1080" y2="360"/>
+          <line x1="60" y1="285" x2="1080" y2="285"/>
+          <line x1="60" y1="210" x2="1080" y2="210"/>
+          <line x1="60" y1="135" x2="1080" y2="135"/>
+          <line x1="60" y1="60" x2="1080" y2="60"/>
+        </g>
+        <g font-size="20" fill="rgba(244,239,230,0.45)">
+          <text x="0" y="366">100</text><text x="0" y="291">200</text><text x="0" y="216">300</text><text x="0" y="141">400</text><text x="0" y="66">500</text>
+        </g>
+        <!-- x labels -->
+        <g font-size="20" fill="rgba(244,239,230,0.5)">
+          <text x="60" y="392">Q1&nbsp;25</text><text x="230" y="392">Q2</text><text x="400" y="392">Q3</text><text x="570" y="392">Q4</text><text x="740" y="392">Q1&nbsp;26</text><text x="900" y="392">Q2&nbsp;26</text>
+        </g>
+        <!-- supply -->
+        <polyline points="72,360 242,330 412,296 582,255 752,212 922,168" fill="none" stroke="#7FB3AA" stroke-width="3"/>
+        <!-- demand -->
+        <polyline points="72,360 242,336 412,300 582,246 752,190 922,128" fill="none" stroke="#C4552F" stroke-width="3"/>
+        <!-- transactions -->
+        <polyline points="72,360 242,318 412,262 582,192 752,120 922,44" fill="none" stroke="#E0A33C" stroke-width="4"/>
+        <g fill="#E0A33C"><circle cx="922" cy="44" r="7"/></g>
+        <g fill="#C4552F"><circle cx="922" cy="128" r="6"/></g>
+        <g fill="#7FB3AA"><circle cx="922" cy="168" r="6"/></g>
+        <text x="946" y="52" font-size="22" font-weight="700" fill="#E0A33C">521 shifts</text>
+        <text x="946" y="136" font-size="22" font-weight="700" fill="#C4552F">410 buyers</text>
+        <text x="946" y="176" font-size="22" font-weight="700" fill="#7FB3AA">368 crew</text>
+
+        <!-- legend -->
+        <g font-size="22" fill="rgba(244,239,230,0.75)">
+          <rect x="60" y="418" width="26" height="5" fill="#7FB3AA"/><text x="98" y="428">Verified crew</text>
+          <rect x="290" y="418" width="26" height="5" fill="#C4552F"/><text x="328" y="428">Active buyers</text>
+          <rect x="530" y="418" width="26" height="5" fill="#E0A33C"/><text x="568" y="428">Shifts transacted</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- cohort retention -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1250px;top:452px;width:560px;height:472px;background:rgba(244,239,230,0.05);border:1px solid rgba(244,239,230,0.18);border-radius:4px;padding:26px 34px;z-index:10;">
+    <div style="font-size:22px;letter-spacing:2.5px;color:rgba(244,239,230,0.6);">BUYER GMV RETENTION BY COHORT</div>
+    <div style="margin-top:18px;">
+      <div style="padding:12px 0;border-bottom:1px solid rgba(244,239,230,0.14);display:flex;justify-content:space-between;align-items:baseline;">
+        <div style="font-size:25px;color:#F4EFE6;">2024 cohort · month 24</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;color:#E0A33C;">164%</div>
+      </div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(244,239,230,0.14);display:flex;justify-content:space-between;align-items:baseline;">
+        <div style="font-size:25px;color:#F4EFE6;">2025 cohort · month 12</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;color:#E0A33C;">128%</div>
+      </div>
+      <div style="padding:12px 0;border-bottom:1px solid rgba(244,239,230,0.14);display:flex;justify-content:space-between;align-items:baseline;">
+        <div style="font-size:25px;color:#F4EFE6;">Logo churn, annual</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;color:#7FB3AA;">6%</div>
+      </div>
+      <div style="padding:12px 0;display:flex;justify-content:space-between;align-items:baseline;">
+        <div style="font-size:25px;color:#F4EFE6;">Organic / referral share</div>
+        <div style="font-family:'Instrument Serif',serif;font-size:38px;color:#7FB3AA;">57%</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(244,239,230,0.22);font-size:24px;line-height:1.4;color:rgba(244,239,230,0.7);">Buyers start with one venue, then move their whole calendar onto the rail.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:966px;width:1700px;height:1px;background:rgba(244,239,230,0.18);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:986px;width:700px;z-index:10;">
+    <div style="font-size:22px;letter-spacing:4px;color:rgba(244,239,230,0.5);">STAGEHAND · SERIES A</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1560px;top:986px;width:250px;z-index:10;">
+    <div style="font-size:22px;letter-spacing:2px;color:rgba(244,239,230,0.5);text-align:right;">08 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

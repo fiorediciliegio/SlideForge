@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Static vs Current</title>
+<style>
+/* ==== COMIC BOOK DESIGN SYSTEM ==== */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bowlby+One&family=Luckiest+Guy&family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap');
+
+:root {
+  --red: #ED1C24;
+  --yellow: #FFDE17;
+  --sky: #29ABE2;
+  --white: #FFFFFF;
+  --black: #111111;
+  --paper: #FFF8E7;
+
+  --font-title: 'Bangers', 'Bowlby One', sans-serif;
+  --font-pow: 'Luckiest Guy', 'Bangers', sans-serif;
+  --font-body: 'Comic Neue', 'Comic Sans MS', sans-serif;
+  --font-hand: 'Permanent Marker', cursive;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--black);
+}
+
+/* Halftone dot pattern */
+.halftone-red {
+  background-image: radial-gradient(circle, var(--red) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-yellow {
+  background-image: radial-gradient(circle, var(--yellow) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+.halftone-black {
+  background-image: radial-gradient(circle, var(--black) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-sky {
+  background-image: radial-gradient(circle, var(--sky) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+
+/* Diagonal speed lines */
+.speedlines {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--black) 0 3px,
+    transparent 3px 22px
+  );
+}
+.speedlines-white {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--white) 0 4px,
+    transparent 4px 26px
+  );
+}
+
+/* Radial burst */
+.burst-lines {
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--black) 0deg 3deg,
+    transparent 3deg 12deg
+  );
+}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="06 Static vs Current" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFDE17;">
+
+  <!-- speed lines -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1; background: repeating-linear-gradient(-25deg, rgba(17,17,17,0.08) 0 3px, transparent 3px 26px);"></div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:36px; width:1340px; z-index:10; transform: rotate(-2deg);">
+    <div style="background:#ED1C24; border:8px solid #111; padding:12px 36px; box-shadow: 10px 10px 0 #111;">
+      <div style="font-family: var(--font-title); font-size:62px; color:#FFFFFF; letter-spacing:3px; -webkit-text-stroke:2px #111; line-height:1;">STATIC SITS STILL — CURRENT RUNS!</div>
+    </div>
+  </div>
+
+  <!-- Subtitle -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:168px; width:1560px; z-index:10;">
+    <div style="font-family: var(--font-pow); font-size:32px; color:#111; letter-spacing:1px; line-height:1.2;">Two totally different jobs — done by the very same tiny electrons.</div>
+  </div>
+
+  <!-- Page badge -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1720px; top:20px; width:140px; height:100px; z-index:11; background:#ED1C24; border:6px solid #111; transform: rotate(4deg); display:flex; align-items:center; justify-content:center;">
+    <div style="font-family: var(--font-title); font-size:56px; color:#FFDE17; letter-spacing:2px; -webkit-text-stroke:1px #111;">06</div>
+  </div>
+
+  <!-- ===== LEFT: STATIC ===== -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:60px; top:235px; width:880px; height:680px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 12px 12px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#111; color:#FFDE17; font-family: var(--font-title); font-size:36px; padding:6px 24px; letter-spacing:3px; border-right:6px solid #111; border-bottom:6px solid #111; z-index:4;">STATIC ELECTRICITY</div>
+
+    <!-- illustration -->
+    <div style="position:absolute; left:24px; top:70px; width:812px; height:250px; background:#FFF8E7; border:5px solid #111; overflow:hidden;">
+      <svg style="position:absolute; left:50%; top:12px; transform:translateX(-50%); width:420px; height:220px;" viewBox="0 0 420 220">
+        <!-- jumper / sweater shape -->
+        <path d="M120,40 L165,20 Q210,42 255,20 L300,40 L330,90 L292,110 L292,195 Q210,208 128,195 L128,110 L90,90 Z" fill="#FFDE17" stroke="#111" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M165,20 Q210,42 255,20" fill="none" stroke="#111" stroke-width="5"/>
+        <!-- parked charges sitting on it -->
+        <g font-family="Bangers, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle">
+          <circle cx="165" cy="90" r="14" fill="#29ABE2" stroke="#111" stroke-width="4"/><text x="165" y="97">−</text>
+          <circle cx="235" cy="80" r="14" fill="#29ABE2" stroke="#111" stroke-width="4"/><text x="235" y="87">−</text>
+          <circle cx="200" cy="135" r="14" fill="#29ABE2" stroke="#111" stroke-width="4"/><text x="200" y="142">−</text>
+          <circle cx="262" cy="145" r="14" fill="#29ABE2" stroke="#111" stroke-width="4"/><text x="262" y="152">−</text>
+          <circle cx="152" cy="155" r="14" fill="#29ABE2" stroke="#111" stroke-width="4"/><text x="152" y="162">−</text>
+        </g>
+        <!-- "no movement" marks -->
+        <path d="M60,120 L84,120 M60,140 L84,140" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+        <path d="M336,120 L360,120 M336,140 L360,140" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+        <!-- one bolt escaping -->
+        <path d="M300,178 L332,166 L318,190 L352,178" stroke="#ED1C24" stroke-width="7" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <div style="position:absolute; left:14px; bottom:8px; background:#111; color:#FFDE17; font-family: var(--font-pow); font-size:20px; padding:3px 12px;">CHARGES PARKED — WAITING</div>
+    </div>
+
+    <!-- attributes -->
+    <div style="position:absolute; left:24px; top:340px; width:812px; height:76px; background:#FFDE17; border:5px solid #111; box-shadow:5px 5px 0 #111; display:flex; align-items:center; gap:14px; padding:0 16px;">
+      <div style="flex:0 0 200px; font-family: var(--font-title); font-size:26px; color:#ED1C24; -webkit-text-stroke:1px #111; line-height:1;">WHERE IT LIVES</div>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:21px; color:#111; line-height:1.15;">Parked on your hair, a balloon, a sweater — no wires needed.</div>
+    </div>
+    <div style="position:absolute; left:24px; top:432px; width:812px; height:76px; background:#FFDE17; border:5px solid #111; box-shadow:5px 5px 0 #111; display:flex; align-items:center; gap:14px; padding:0 16px;">
+      <div style="flex:0 0 200px; font-family: var(--font-title); font-size:26px; color:#ED1C24; -webkit-text-stroke:1px #111; line-height:1;">HOW IT MOVES</div>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:21px; color:#111; line-height:1.15;">Sits still, piles up… then jumps ALL AT ONCE.</div>
+    </div>
+    <div style="position:absolute; left:24px; top:524px; width:812px; height:76px; background:#FFDE17; border:5px solid #111; box-shadow:5px 5px 0 #111; display:flex; align-items:center; gap:14px; padding:0 16px;">
+      <div style="flex:0 0 200px; font-family: var(--font-title); font-size:26px; color:#ED1C24; -webkit-text-stroke:1px #111; line-height:1;">WHAT YOU GET</div>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:21px; color:#111; line-height:1.15;">One quick ZAP or a stick — then it's over.</div>
+    </div>
+  </div>
+
+  <!-- ===== RIGHT: CURRENT ===== -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:980px; top:235px; width:880px; height:680px; z-index:5; background:#29ABE2; border:10px solid #111; box-shadow: 12px 12px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#111; color:#FFDE17; font-family: var(--font-title); font-size:36px; padding:6px 24px; letter-spacing:3px; border-right:6px solid #111; border-bottom:6px solid #111; z-index:4;">CURRENT ELECTRICITY</div>
+
+    <!-- illustration -->
+    <div style="position:absolute; left:24px; top:70px; width:812px; height:250px; background:#FFFFFF; border:5px solid #111; overflow:hidden;">
+      <svg style="position:absolute; left:50%; top:14px; transform:translateX(-50%); width:520px; height:215px;" viewBox="0 0 520 215">
+        <!-- circuit loop wire -->
+        <path d="M110,60 L410,60 L410,155 L110,155 Z" fill="none" stroke="#111" stroke-width="8" stroke-linejoin="round"/>
+        <!-- battery -->
+        <rect x="205" y="132" width="110" height="46" fill="#FFDE17" stroke="#111" stroke-width="6"/>
+        <text x="235" y="163" font-family="Bangers, sans-serif" font-size="28" fill="#ED1C24" stroke="#111" stroke-width="1">+</text>
+        <text x="278" y="163" font-family="Bangers, sans-serif" font-size="28" fill="#111">−</text>
+        <!-- bulb -->
+        <circle cx="260" cy="60" r="34" fill="#FFDE17" stroke="#111" stroke-width="6"/>
+        <path d="M246,66 L253,48 L260,66 L267,48 L274,66" fill="none" stroke="#111" stroke-width="4"/>
+        <rect x="246" y="90" width="28" height="14" fill="#111"/>
+        <!-- glow ticks -->
+        <path d="M260,10 L260,-2 M306,22 L316,12 M214,22 L204,12" stroke="#FFDE17" stroke-width="6" stroke-linecap="round"/>
+        <!-- marching electrons -->
+        <g font-family="Bangers, sans-serif" font-size="17" fill="#FFFFFF" text-anchor="middle">
+          <circle cx="150" cy="60" r="13" fill="#111"/><text x="150" y="66">−</text>
+          <circle cx="360" cy="60" r="13" fill="#111"/><text x="360" y="66">−</text>
+          <circle cx="410" cy="110" r="13" fill="#111"/><text x="410" y="116">−</text>
+          <circle cx="150" cy="155" r="13" fill="#111"/><text x="150" y="161">−</text>
+          <circle cx="110" cy="110" r="13" fill="#111"/><text x="110" y="116">−</text>
+        </g>
+        <!-- direction arrows on wire -->
+        <path d="M186,52 L200,60 L186,68" fill="none" stroke="#ED1C24" stroke-width="5" stroke-linecap="round"/>
+        <path d="M324,52 L338,60 L324,68" fill="none" stroke="#ED1C24" stroke-width="5" stroke-linecap="round"/>
+        <path d="M402,96 L410,110 L418,96" fill="none" stroke="#ED1C24" stroke-width="5" stroke-linecap="round"/>
+        <path d="M118,124 L110,110 L102,124" fill="none" stroke="#ED1C24" stroke-width="5" stroke-linecap="round"/>
+        <path d="M334,163 L320,155 L334,147" fill="none" stroke="#ED1C24" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div style="position:absolute; left:14px; bottom:8px; background:#111; color:#FFDE17; font-family: var(--font-pow); font-size:20px; padding:3px 12px;">CHARGES MARCHING IN A LOOP</div>
+    </div>
+
+    <!-- attributes -->
+    <div style="position:absolute; left:24px; top:340px; width:812px; height:76px; background:#FFFFFF; border:5px solid #111; box-shadow:5px 5px 0 #111; display:flex; align-items:center; gap:14px; padding:0 16px;">
+      <div style="flex:0 0 200px; font-family: var(--font-title); font-size:26px; color:#29ABE2; -webkit-text-stroke:1px #111; line-height:1;">WHERE IT LIVES</div>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:21px; color:#111; line-height:1.15;">Inside wires, batteries and plugs — it needs a path.</div>
+    </div>
+    <div style="position:absolute; left:24px; top:432px; width:812px; height:76px; background:#FFFFFF; border:5px solid #111; box-shadow:5px 5px 0 #111; display:flex; align-items:center; gap:14px; padding:0 16px;">
+      <div style="flex:0 0 200px; font-family: var(--font-title); font-size:26px; color:#29ABE2; -webkit-text-stroke:1px #111; line-height:1;">HOW IT MOVES</div>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:21px; color:#111; line-height:1.15;">Marches round and round in a steady, non-stop loop.</div>
+    </div>
+    <div style="position:absolute; left:24px; top:524px; width:812px; height:76px; background:#FFFFFF; border:5px solid #111; box-shadow:5px 5px 0 #111; display:flex; align-items:center; gap:14px; padding:0 16px;">
+      <div style="flex:0 0 200px; font-family: var(--font-title); font-size:26px; color:#29ABE2; -webkit-text-stroke:1px #111; line-height:1;">WHAT YOU GET</div>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:21px; color:#111; line-height:1.15;">Lamps, motors and screens that keep working.</div>
+    </div>
+  </div>
+
+  <!-- VS badge sitting between the panels -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:900px; top:512px; width:120px; height:120px; z-index:12; background:#ED1C24; border:8px solid #111; border-radius:50%; box-shadow: 6px 6px 0 #111; transform: rotate(-10deg); display:flex; align-items:center; justify-content:center;">
+    <div style="font-family: var(--font-pow); font-size:44px; color:#FFDE17; -webkit-text-stroke:2px #111; line-height:1;">VS</div>
+  </div>
+
+  <!-- bottom takeaway -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:940px; width:1800px; z-index:10;">
+    <div style="background:#111; border:6px solid #111; padding:12px 26px; box-shadow: 8px 8px 0 #ED1C24;">
+      <div style="font-family: var(--font-pow); font-size:32px; color:#FFDE17; letter-spacing:1px; text-align:center; line-height:1.15;">Same electrons, different job — the only question is: do they STAY PUT, or KEEP MOVING?</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

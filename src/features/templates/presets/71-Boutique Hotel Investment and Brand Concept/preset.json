@@ -1,0 +1,103 @@
+{
+  "id": "71-Boutique Hotel Investment and Brand Concept",
+  "version": 1,
+  "ppt_number": 71,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "burgundy",
+    "black",
+    "brown"
+  ],
+  "name": "Boutique Hotel Investment and Brand Concept",
+  "description": "Boutique hospitality editorial design with warm ivory space, burgundy accents, elegant serif type, and cinematic interiors.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["fundraising","strategy"],"industries":["consumer","finance","travel"],"audiences":["investor"],"formats":["pitch-deck","proposal"],"primary_styles":["formal"],"visual_traits":["formal","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖象牙白、酒红与深棕色构成封面底色，左侧中部超大标题与一幅图片前后呼应。"
+    },
+    {
+      "path": "images/2-destination-opportunity.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，一幅图表集中排布，核心判断组织动线。"
+    },
+    {
+      "path": "images/3-supply-gap-matrix.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，双面板划分主体区域，诊断信息强化对比。"
+    },
+    {
+      "path": "images/4-brand-platform.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，一幅图片构成视觉重心，产品信息收束版面。"
+    },
+    {
+      "path": "images/5-experience-concept.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，四幅图片构成视觉重心，方案信息形成重心。"
+    },
+    {
+      "path": "images/6-guest-personas.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，三块卡片横向并列，人群信息拉开层级。"
+    },
+    {
+      "path": "images/7-revenue-model.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，一幅图表集中排布，财务信息组织动线。"
+    },
+    {
+      "path": "images/8-pro-forma-validation.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，一组表格压缩信息密度，验证信息强化对比。"
+    },
+    {
+      "path": "images/9-development-roadmap.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    },
+    {
+      "path": "images/10-investment-ask.webp",
+      "alt": "暖象牙白、酒红与深棕色页面，标题、细线与留白划分层级，财务信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，左侧中部以超大标题建立焦点，暖象牙白、酒红与深棕色贯穿背景与强调元素；一幅图片和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-destination-opportunity.html",
+      "description": "暖象牙白、酒红与深棕色画面，标题置于左上方；单一大面板承载主体信息，一幅图表落在左侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-supply-gap-matrix.html",
+      "description": "左上方标题锚定暖象牙白、酒红与深棕色画面；两块主面板建立清晰分区，一组表格位于右侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/4-brand-platform.html",
+      "description": "暖象牙白、酒红与深棕色作为底色，标题落在顶部中央；留白与细线分隔出清晰阅读区，一幅图片集中于左侧，功能模块与结构示意补充层级。"
+    },
+    {
+      "path": "html/5-experience-concept.html",
+      "description": "标题固定在左上方，暖象牙白、酒红与深棕色分隔主体；留白与细线分隔出清晰阅读区，四幅图片集中于中央，功能分区与场景模块补充层级。"
+    },
+    {
+      "path": "html/6-guest-personas.html",
+      "description": "暖象牙白、酒红与深棕色画面，标题置于左上方；三块信息卡横向并列，分类标签与数据卡贴合卡片边界。"
+    },
+    {
+      "path": "html/7-revenue-model.html",
+      "description": "左上方标题锚定暖象牙白、酒红与深棕色画面；单一大面板承载主体信息，一幅财务图表落在左侧，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/8-pro-forma-validation.html",
+      "description": "暖象牙白、酒红与深棕色作为底色，标题落在左上方；单一大面板承载主体信息，一组表格位于左侧，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/9-development-roadmap.html",
+      "description": "标题固定在左上方，暖象牙白、酒红与深棕色分隔主体；横向时间轴串联阶段节点与日期标记，一组表格位于中央，阶段节点与时间标记补充层级。"
+    },
+    {
+      "path": "html/10-investment-ask.html",
+      "description": "暖象牙白、酒红与深棕色画面，标题置于左上方；单一大面板承载主体信息，关键数字与数据标记沿主区展开。"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation risks &amp; mitigations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;}
+  body{font-family:'Libre Franklin','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="09 Implementation risks &amp; mitigations" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:84px;width:1200px;z-index:10;font-size:17px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;color:#1A4C8B;">08 &middot; Risks &amp; mitigations</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:112px;width:1500px;z-index:10;font-size:46px;line-height:1.15;font-weight:700;letter-spacing:-0.6px;color:#0F1B2D;">Five risks material to the decision</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:196px;width:1728px;height:1px;z-index:1;background:#DDE5EE;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:230px;width:660px;z-index:10;font-size:18px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#1A4C8B;">Likelihood &times; impact</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:220px;top:290px;width:536px;height:536px;z-index:1;background:#F8FAFC;border:1px solid #DDE5EE;border-radius:2px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:220px;top:468px;width:536px;height:1px;z-index:5;background:#E1E9F1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:220px;top:646px;width:536px;height:1px;z-index:5;background:#E1E9F1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:398px;top:290px;width:1px;height:536px;z-index:5;background:#E1E9F1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:576px;top:290px;width:1px;height:536px;z-index:5;background:#E1E9F1;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:596px;top:310px;width:140px;height:138px;z-index:5;background:#E7EEF6;border:1px solid #C9D9EA;border-radius:2px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:290px;width:70px;height:536px;z-index:10;font-size:17px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#94A1AE;text-align:right;">
+    <div style="height:178px;display:flex;align-items:center;justify-content:flex-end;">High</div>
+    <div style="height:178px;display:flex;align-items:center;justify-content:flex-end;">Med</div>
+    <div style="height:180px;display:flex;align-items:center;justify-content:flex-end;">Low</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:220px;top:842px;width:536px;z-index:10;font-size:17px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:#94A1AE;">
+    <div style="display:flex;"><span style="width:178px;text-align:center;">Low</span><span style="width:178px;text-align:center;">Med</span><span style="width:180px;text-align:center;">High</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:220px;top:882px;width:536px;z-index:10;font-size:18px;letter-spacing:1.4px;text-transform:uppercase;color:#7C8A99;">Impact &rarr;</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:634px;top:342px;width:64px;height:64px;z-index:10;background:#1A4C8B;border-radius:34px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:634px;top:359px;width:64px;z-index:10;font-size:26px;font-weight:700;color:#FFFFFF;text-align:center;">R1</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:456px;top:376px;width:64px;height:64px;z-index:10;background:#3C6FA8;border-radius:34px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:456px;top:393px;width:64px;z-index:10;font-size:26px;font-weight:700;color:#FFFFFF;text-align:center;">R2</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:632px;top:534px;width:64px;height:64px;z-index:10;background:#3C6FA8;border-radius:34px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:632px;top:551px;width:64px;z-index:10;font-size:26px;font-weight:700;color:#FFFFFF;text-align:center;">R3</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:452px;top:594px;width:64px;height:64px;z-index:10;background:#8FAECF;border-radius:34px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:452px;top:611px;width:64px;z-index:10;font-size:26px;font-weight:700;color:#FFFFFF;text-align:center;">R4</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:276px;top:714px;width:64px;height:64px;z-index:10;background:#8FAECF;border-radius:34px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:276px;top:731px;width:64px;z-index:10;font-size:26px;font-weight:700;color:#FFFFFF;text-align:center;">R5</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:290px;width:24px;height:536px;z-index:10;font-size:18px;letter-spacing:1.4px;text-transform:uppercase;color:#7C8A99;"><span style="display:inline-block;transform:rotate(180deg);writing-mode:vertical-rl;">Likelihood &rarr;</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:844px;top:230px;width:1px;height:680px;z-index:1;background:#DDE5EE;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:908px;top:230px;width:916px;z-index:10;font-size:18px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:#1A4C8B;">Mitigation &amp; owner</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:908px;top:290px;width:916px;z-index:10;">
+    <div style="display:flex;gap:24px;align-items:flex-start;">
+      <div style="min-width:52px;font-size:22px;font-weight:700;color:#1A4C8B;padding-top:2px;">R1</div>
+      <div style="flex:1;">
+        <div style="font-size:26px;font-weight:600;color:#0F1B2D;line-height:1.25;">Provider rate inflation absorbs the subsidy</div>
+        <div style="font-size:20px;line-height:1.45;color:#55677A;margin-top:8px;">Cap reimbursement at the 75th percentile and publish quarterly rate monitoring. <span style="color:#1A4C8B;font-weight:600;">Owner: Budget Office</span></div>
+      </div>
+    </div>
+    <div style="height:1px;background:#E7ECF2;margin:22px 0;"></div>
+    <div style="display:flex;gap:24px;align-items:flex-start;">
+      <div style="min-width:52px;font-size:22px;font-weight:700;color:#1A4C8B;padding-top:2px;">R2</div>
+      <div style="flex:1;">
+        <div style="font-size:26px;font-weight:600;color:#0F1B2D;line-height:1.25;">Educator pipeline cannot staff new rooms</div>
+        <div style="font-size:20px;line-height:1.45;color:#55677A;margin-top:8px;">Fund 220 apprenticeship places with the community college before grants open. <span style="color:#1A4C8B;font-weight:600;">Owner: Workforce Board</span></div>
+      </div>
+    </div>
+    <div style="height:1px;background:#E7ECF2;margin:22px 0;"></div>
+    <div style="display:flex;gap:24px;align-items:flex-start;">
+      <div style="min-width:52px;font-size:22px;font-weight:700;color:#1A4C8B;padding-top:2px;">R3</div>
+      <div style="flex:1;">
+        <div style="font-size:26px;font-weight:600;color:#0F1B2D;line-height:1.25;">Federal CCDF match is reduced mid-cycle</div>
+        <div style="font-size:20px;line-height:1.45;color:#55677A;margin-top:8px;">Hold a 9% contingency and stage year-two grants on confirmed award letters. <span style="color:#1A4C8B;font-weight:600;">Owner: Finance</span></div>
+      </div>
+    </div>
+    <div style="height:1px;background:#E7ECF2;margin:22px 0;"></div>
+    <div style="display:flex;gap:24px;align-items:flex-start;">
+      <div style="min-width:52px;font-size:22px;font-weight:700;color:#1A4C8B;padding-top:2px;">R4</div>
+      <div style="flex:1;">
+        <div style="font-size:26px;font-weight:600;color:#0F1B2D;line-height:1.25;">Licensing throughput delays site openings</div>
+        <div style="font-size:20px;line-height:1.45;color:#55677A;margin-top:8px;">Add three inspectors and a 45-day service standard for grant-funded sites. <span style="color:#1A4C8B;font-weight:600;">Owner: Licensing</span></div>
+      </div>
+    </div>
+    <div style="height:1px;background:#E7ECF2;margin:22px 0;"></div>
+    <div style="display:flex;gap:24px;align-items:flex-start;">
+      <div style="min-width:52px;font-size:22px;font-weight:700;color:#1A4C8B;padding-top:2px;">R5</div>
+      <div style="flex:1;">
+        <div style="font-size:26px;font-weight:600;color:#0F1B2D;line-height:1.25;">Low take-up among eligible rural households</div>
+        <div style="font-size:20px;line-height:1.45;color:#55677A;margin-top:8px;">Route applications through school enrolment and library outreach in desert ZIPs. <span style="color:#1A4C8B;font-weight:600;">Owner: Community Services</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;z-index:1;background:#E7ECF2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1020px;width:1100px;z-index:10;font-size:16px;color:#94A1AE;">Public Policy Decision Briefing &middot; Office of Policy &amp; Budget &middot; Illustrative sample data</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1524px;top:1020px;width:300px;z-index:10;font-size:16px;font-weight:600;color:#1A4C8B;text-align:right;">09 / 10</div>
+
+</div>
+</body>
+</html>

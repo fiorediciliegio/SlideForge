@@ -1,0 +1,13 @@
+{
+  "case_id": "B-015",
+  "size_class": "中",
+  "target_input_tokens": 6300,
+  "estimated_outline_input_tokens": 6396,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": true,
+  "attachment_mode": "Single attachment",
+  "attachment_types": "TXT",
+  "content_strategies": "full_context",
+  "evaluation_risks": "1. Calling design partners paying customers; 2. Generalizing six shifts into an ROI claim; 3. Inventing market size; 4. Showing unrelated branded warehouses; 5. Treating a planned pilot as contracted revenue."
+}

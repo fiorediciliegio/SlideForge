@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prototype Validation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:#0E1215;font-family:'Archivo',sans-serif;}
+.mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Validation" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#0E1215;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;background-color:#0E1215;background-image:linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);background-size:80px 80px, 80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:74px;width:800px;height:28px;z-index:10;"><span class="mono" style="font-size:22px;color:#FF6A2B;">07 — Prototype validation</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:112px;width:1500px;height:80px;z-index:10;"><div style="font-size:62px;font-weight:700;line-height:1.06;color:#F1EFEA;letter-spacing:-.01em;">DV-3 has been running paid production since March</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:214px;width:1728px;height:1px;z-index:1;background:#2E383F;"></div>
+
+  <!-- KPI cards row -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:250px;width:418px;height:190px;z-index:1;background:#171D22;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:278px;width:354px;height:136px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Autonomous hours logged</div><div style="font-size:66px;font-weight:700;color:#F1EFEA;margin-top:6px;">9,840</div><div style="font-size:22px;color:#8D9AA2;">Across 3 plants, 5 units</div></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:534px;top:250px;width:418px;height:190px;z-index:1;background:#171D22;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:566px;top:278px;width:354px;height:136px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Grasp success rate</div><div style="font-size:66px;font-weight:700;color:#FF6A2B;margin-top:6px;">98.2%</div><div style="font-size:22px;color:#8D9AA2;">Mixed bins, 1.2M attempts</div></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:972px;top:250px;width:418px;height:190px;z-index:1;background:#171D22;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1004px;top:278px;width:354px;height:136px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">OEE lift at pilot cells</div><div style="font-size:66px;font-weight:700;color:#FF6A2B;margin-top:6px;">+22 pts</div><div style="font-size:22px;color:#8D9AA2;">58% → 80% spindle uptime</div></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1410px;top:250px;width:414px;height:190px;z-index:1;background:#171D22;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1442px;top:278px;width:350px;height:136px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Mean time between stops</div><div style="font-size:66px;font-weight:700;color:#F1EFEA;margin-top:6px;">61 h</div><div style="font-size:22px;color:#8D9AA2;">Target 100 h at launch</div></div>
+
+  <!-- pilot table -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:478px;width:1100px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#8D9AA2;">Paid pilot results</span></div>
+  <div data-object="true" data-object-type="table" style="position:absolute;left:96px;top:526px;width:1100px;height:390px;z-index:10;">
+    <table style="width:100%;border-collapse:collapse;font-family:'Archivo',sans-serif;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:19px;font-weight:500;color:#FF6A2B;">Site</th>
+          <th style="text-align:left;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:19px;font-weight:500;color:#FF6A2B;">Task</th>
+          <th style="text-align:right;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:19px;font-weight:500;color:#FF6A2B;">Live in</th>
+          <th style="text-align:right;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:19px;font-weight:500;color:#FF6A2B;">Uptime</th>
+          <th style="text-align:right;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:19px;font-weight:500;color:#FF6A2B;">Annual saving</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;">Kessler Precision</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#A9B4BB;">CNC load / unload</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#A9B4BB;text-align:right;">9 days</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#F1EFEA;text-align:right;">96.4%</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#FF6A2B;text-align:right;">$212k</td>
+        </tr>
+        <tr>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;">Northline Medical</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#A9B4BB;">Tray kitting + gauge</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#A9B4BB;text-align:right;">11 days</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#F1EFEA;text-align:right;">94.1%</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#FF6A2B;text-align:right;">$168k</td>
+        </tr>
+        <tr>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;">Arcform Tooling</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#A9B4BB;">Deburr cell tending</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#A9B4BB;text-align:right;">14 days</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#F1EFEA;text-align:right;">91.8%</td>
+          <td style="padding:24px 0;border-bottom:1px solid #232B31;font-size:24px;color:#FF6A2B;text-align:right;">$141k</td>
+        </tr>
+        <tr>
+          <td style="padding:24px 0;font-size:25px;color:#F1EFEA;">Halden Molding</td>
+          <td style="padding:24px 0;font-size:24px;color:#A9B4BB;">Press part removal</td>
+          <td style="padding:24px 0;font-size:24px;color:#A9B4BB;text-align:right;">12 days</td>
+          <td style="padding:24px 0;font-size:24px;color:#F1EFEA;text-align:right;">93.0%</td>
+          <td style="padding:24px 0;font-size:24px;color:#FF6A2B;text-align:right;">$127k</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- competitive matrix -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1264px;top:478px;width:560px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#8D9AA2;">Why we win</span></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1264px;top:526px;width:560px;height:390px;z-index:1;background:#141A1F;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1296px;top:550px;width:496px;height:350px;z-index:10;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div><div style="font-size:25px;font-weight:600;color:#F1EFEA;">Mobility + manipulation in one SKU</div><div style="font-size:21px;line-height:1.3;color:#8D9AA2;margin-top:3px;">Fixed-arm vendors need a cell; AMR vendors need an arm.</div></div>
+      <div><div style="font-size:25px;font-weight:600;color:#F1EFEA;">Days, not quarters, to first part</div><div style="font-size:21px;line-height:1.3;color:#8D9AA2;margin-top:3px;">9–14 days measured vs. a 4–6 month integrator norm.</div></div>
+      <div><div style="font-size:25px;font-weight:600;color:#F1EFEA;">Fleet data compounding</div><div style="font-size:21px;line-height:1.3;color:#8D9AA2;margin-top:3px;">1.2M real grasps retrain the policy every two weeks.</div></div>
+      <div><div style="font-size:25px;font-weight:600;color:#F1EFEA;">Opex pricing clears the CFO</div><div style="font-size:21px;line-height:1.3;color:#8D9AA2;margin-top:3px;">No capex committee; 14-month payback on pilots.</div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1000px;width:900px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#5D686F;">Vantiq Robotics · Seed round · Confidential</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1400px;top:1000px;width:424px;height:28px;z-index:10;text-align:right;"><span class="mono" style="font-size:21px;color:#FF6A2B;">08 / 10</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audience Insight</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#F7F2E9;}
+  .d{font-family:'Bricolage Grotesque','Manrope',sans-serif;}
+  .b{font-family:'Manrope',sans-serif;}
+  .eyebrow{font:700 20px/1.2 'Manrope',sans-serif;letter-spacing:.22em;color:#E0552F;}
+  .cardtitle{font:800 27px/1.2 'Manrope',sans-serif;color:#1A1512;}
+  .cardsub{font:600 18px/1.3 'Manrope',sans-serif;letter-spacing:.1em;color:rgba(26,21,18,.42);margin-top:6px;}
+  .foot{font:600 19px/1.2 'Manrope',sans-serif;letter-spacing:.14em;color:rgba(26,21,18,.42);}
+  .legrow{display:flex;align-items:center;gap:16px;}
+  .dot{width:16px;height:16px;border-radius:5px;flex:0 0 auto;}
+  .leglabel{font:600 23px/1.3 'Manrope',sans-serif;color:#1A1512;flex:1 1 auto;}
+  .legval{font:800 23px/1.3 'Manrope',sans-serif;color:#1A1512;flex:0 0 auto;}
+  .barrow{display:flex;align-items:center;gap:14px;}
+  .barlabel{font:600 21px/1.3 'Manrope',sans-serif;color:#1A1512;flex:0 0 186px;}
+  .bartrack{flex:1 1 auto;height:14px;border-radius:999px;background:rgba(26,21,18,.1);overflow:hidden;}
+  .barfill{height:100%;border-radius:999px;}
+  .barval{font:800 21px/1.3 'Manrope',sans-serif;color:rgba(26,21,18,.62);flex:0 0 60px;text-align:right;}
+</style>
+</head>
+<body>
+<div class="slide" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F7F2E9;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:88px;width:700px;z-index:10;">
+    <div class="eyebrow">03 · AUDIENCE PROFILE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:142px;width:1080px;z-index:10;">
+    <div class="d" style="font:800 62px/1.06 'Bricolage Grotesque',sans-serif;letter-spacing:-0.02em;color:#1A1512;">They arrive mid-project, with a cart open.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1256px;top:150px;width:568px;z-index:10;">
+    <div class="b" style="font:500 22px/1.5 'Manrope',sans-serif;color:rgba(26,21,18,.6);">Source: platform analytics, Dec 2025 – Feb 2026, plus first-party audience survey (n = 3,140).</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:274px;width:1360px;z-index:10;">
+    <div class="b" style="font:500 27px/1.5 'Manrope',sans-serif;color:rgba(26,21,18,.62);">A decision-stage audience — they watch while standing in the room they want to fix.</div>
+  </div>
+
+  <!-- CARD 1 — donut -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:356px;width:560px;height:552px;border-radius:20px;background:#FFFFFF;border:1px solid rgba(26,21,18,.1);padding:36px 40px;z-index:10;">
+    <div class="cardtitle">Age</div>
+    <div class="cardsub">SHARE OF FOLLOWERS</div>
+    <div style="display:flex;justify-content:center;margin-top:14px;">
+      <svg width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Age distribution donut chart">
+        <g transform="rotate(-90 120 120)" fill="none" stroke-width="40">
+          <circle cx="120" cy="120" r="94" stroke="#E0552F" stroke-dasharray="691.15" stroke-dashoffset="546.01"></circle>
+          <circle cx="120" cy="120" r="94" stroke="#2E4237" stroke-dasharray="691.15" stroke-dashoffset="359.40" transform="rotate(75.6 120 120)"></circle>
+          <circle cx="120" cy="120" r="94" stroke="#C9A88A" stroke-dasharray="691.15" stroke-dashoffset="539.10" transform="rotate(248.4 120 120)"></circle>
+          <circle cx="120" cy="120" r="94" stroke="#A8B7A0" stroke-dasharray="691.15" stroke-dashoffset="628.95" transform="rotate(327.6 120 120)"></circle>
+        </g>
+        <text x="120" y="112" text-anchor="middle" style="font:800 44px/1 'Bricolage Grotesque',sans-serif;fill:#1A1512;">48%</text>
+        <text x="120" y="142" text-anchor="middle" style="font:700 20px/1 'Manrope',sans-serif;fill:rgba(26,21,18,.55);">age 25–34</text>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;margin-top:22px;">
+      <div class="legrow"><span class="dot" style="background:#2E4237;"></span><span class="leglabel">25–34</span><span class="legval">48%</span></div>
+      <div class="legrow"><span class="dot" style="background:#C9A88A;"></span><span class="leglabel">35–44</span><span class="legval">22%</span></div>
+      <div class="legrow"><span class="dot" style="background:#E0552F;"></span><span class="leglabel">18–24</span><span class="legval">21%</span></div>
+      <div class="legrow"><span class="dot" style="background:#A8B7A0;"></span><span class="leglabel">45+</span><span class="legval">9%</span></div>
+    </div>
+  </div>
+
+  <!-- CARD 2 — geography bars -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:680px;top:356px;width:560px;height:552px;border-radius:20px;background:#FFFFFF;border:1px solid rgba(26,21,18,.1);padding:36px 40px;z-index:10;">
+    <div class="cardtitle">Top markets</div>
+    <div class="cardsub">SHARE OF VIEWS</div>
+    <div style="display:flex;flex-direction:column;gap:26px;margin-top:30px;">
+      <div class="barrow"><span class="barlabel">United States</span><span class="bartrack"><span class="barfill" style="width:100%;background:#E0552F;"></span></span><span class="barval">46%</span></div>
+      <div class="barrow"><span class="barlabel">Canada</span><span class="bartrack"><span class="barfill" style="width:24%;background:#2E4237;"></span></span><span class="barval">11%</span></div>
+      <div class="barrow"><span class="barlabel">United Kingdom</span><span class="bartrack"><span class="barfill" style="width:20%;background:#2E4237;"></span></span><span class="barval">9%</span></div>
+      <div class="barrow"><span class="barlabel">Australia</span><span class="bartrack"><span class="barfill" style="width:15%;background:#C9A88A;"></span></span><span class="barval">7%</span></div>
+      <div class="barrow"><span class="barlabel">Germany</span><span class="bartrack"><span class="barfill" style="width:11%;background:#C9A88A;"></span></span><span class="barval">5%</span></div>
+      <div class="barrow"><span class="barlabel">Other</span><span class="bartrack"><span class="barfill" style="width:48%;background:rgba(26,21,18,.25);"></span></span><span class="barval">22%</span></div>
+    </div>
+    <div style="margin-top:34px;padding-top:26px;border-top:1px solid rgba(26,21,18,.12);">
+      <div class="b" style="font:800 25px/1.3 'Manrope',sans-serif;color:#1A1512;">68% female · 29% male</div>
+      <div class="b" style="font:500 21px/1.45 'Manrope',sans-serif;color:rgba(26,21,18,.6);margin-top:8px;">Median household income $60K–$110K.</div>
+    </div>
+  </div>
+
+  <!-- CARD 3 — intent -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1264px;top:356px;width:560px;height:552px;border-radius:20px;background:#2E4237;padding:36px 40px;z-index:10;">
+    <div class="b" style="font:800 27px/1.2 'Manrope',sans-serif;color:#F7F2E9;">Purchase intent</div>
+    <div class="b" style="font:600 18px/1.3 'Manrope',sans-serif;letter-spacing:.1em;color:rgba(247,242,233,.5);margin-top:6px;">SELF-REPORTED, LAST 6 MONTHS</div>
+    <div style="display:flex;flex-direction:column;gap:30px;margin-top:34px;">
+      <div>
+        <div class="d" style="font:800 60px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-0.03em;color:#F7F2E9;">68%</div>
+        <div class="b" style="font:600 22px/1.4 'Manrope',sans-serif;color:rgba(247,242,233,.7);margin-top:8px;">Saved a video to shop from later</div>
+      </div>
+      <div>
+        <div class="d" style="font:800 60px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-0.03em;color:#C9A88A;">31%</div>
+        <div class="b" style="font:600 22px/1.4 'Manrope',sans-serif;color:rgba(247,242,233,.7);margin-top:8px;">Bought a product I featured</div>
+      </div>
+      <div>
+        <div class="d" style="font:800 60px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-0.03em;color:#F7F2E9;">2.4</div>
+        <div class="b" style="font:600 22px/1.4 'Manrope',sans-serif;color:rgba(247,242,233,.7);margin-top:8px;">Rooms refreshed per year, on average</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:980px;width:1728px;height:1px;background:rgba(26,21,18,.14);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1002px;width:1200px;z-index:10;">
+    <div class="foot">CREATOR BRAND PARTNERSHIP MEDIA KIT · @LENAMAKESROOM</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1524px;top:1002px;width:300px;text-align:right;z-index:10;">
+    <div class="foot">03 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

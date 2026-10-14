@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Business Model and Value Creation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ============================================================
+   New Business Opportunity Proposal — shared design system
+   Editorial business-proposal aesthetic (warm sand / ink green)
+   Only fonts + tokens live here. All layout is inline per slide.
+   ============================================================ */
+
+:root {
+  /* surfaces */
+  --sand:        #F3EEE6;   /* page background */
+  --sand-deep:   #E8E0D3;   /* alt band */
+  --card:        #FBF8F3;   /* card fill */
+  --ink:         #14201C;   /* primary text / dark panels */
+  --ink-soft:    #1B2C26;   /* dark panel alt */
+
+  /* accents */
+  --terra:       #C15A2B;   /* primary accent */
+  --terra-soft:  #EBC8B2;
+  --pine:        #1F4D3F;   /* secondary accent */
+  --pine-soft:   #BFD3C8;
+  --clay:        #A8977F;   /* tertiary / labels */
+
+  /* text */
+  --t-strong:    #14201C;
+  --t-body:      #3E4B45;
+  --t-muted:     #8A7E6B;
+  --t-invert:    #F3EEE6;
+
+  /* lines */
+  --rule:        #D8CFC0;
+  --rule-dark:   #3A4A43;
+
+  /* type */
+  --f-display: 'Archivo', 'Helvetica Neue', sans-serif;
+  --f-body:    'IBM Plex Sans', sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+
+  /* geometry */
+  --r-card: 4px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; }
+table { border-collapse: collapse; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Business model" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--sand); font-family:var(--f-body);">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:300px; background:var(--ink); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:80px; width:1080px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:19px; font-weight:600; letter-spacing:0.22em; color:var(--terra-soft);">06 · BUSINESS MODEL</div>
+    <h2 style="margin:18px 0 0 0; font-family:var(--f-display); font-weight:700; font-size:60px; line-height:1.06; letter-spacing:-0.02em; color:var(--t-invert);">A per-asset annual subscription,<br>tiered by the uptime we guarantee</h2>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:96px; width:470px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.16em; color:var(--pine-soft);">UNIT OF SALE</div>
+    <p style="margin:14px 0 0 0; font-size:22px; line-height:1.5; color:rgba(243,238,230,0.78);">One connected asset, one annual contract. Customers expand by adding assets, not by renegotiating.</p>
+  </div>
+
+  <!-- pricing tiers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:352px; width:900px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:17px; font-weight:600; letter-spacing:0.16em; color:var(--t-strong);">THREE TIERS — ANNUAL PRICE PER ASSET</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:404px; width:372px; height:330px; background:var(--card); border:1px solid var(--rule); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:156px; top:436px; width:300px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:var(--t-muted);">TIER 1 — MONITOR</div>
+    <div style="margin-top:16px; font-family:var(--f-display); font-weight:700; font-size:52px; line-height:1; color:var(--t-strong);">$1,200</div>
+    <div style="margin-top:22px; padding-top:20px; border-top:1px solid var(--rule); font-size:20px; line-height:1.55; color:var(--t-body);">
+      Sensor kit + dashboard access. No response commitment.
+    </div>
+    <div style="margin-top:20px; font-family:var(--f-mono); font-size:18px; color:var(--pine);">Gross margin 58%</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:524px; top:404px; width:372px; height:330px; background:var(--terra); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:560px; top:436px; width:300px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:rgba(255,255,255,0.82);">TIER 2 — PREDICT</span>
+      <span style="font-family:var(--f-mono); font-size:15px; color:#fff; background:rgba(0,0,0,0.22); padding:3px 9px; border-radius:3px;">TARGET</span>
+    </div>
+    <div style="margin-top:16px; font-family:var(--f-display); font-weight:700; font-size:52px; line-height:1; color:#fff;">$3,400</div>
+    <div style="margin-top:22px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.3); font-size:20px; line-height:1.55; color:rgba(255,255,255,0.92);">
+      Risk scoring, planned windows, 24-hour on-site SLA.
+    </div>
+    <div style="margin-top:20px; font-family:var(--f-mono); font-size:18px; color:#fff;">Gross margin 71%</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:928px; top:404px; width:372px; height:330px; background:var(--card); border:1px solid var(--rule); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:964px; top:436px; width:300px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:var(--t-muted);">TIER 3 — GUARANTEE</div>
+    <div style="margin-top:16px; font-family:var(--f-display); font-weight:700; font-size:52px; line-height:1; color:var(--t-strong);">$6,100</div>
+    <div style="margin-top:22px; padding-top:20px; border-top:1px solid var(--rule); font-size:20px; line-height:1.55; color:var(--t-body);">
+      Contractual uptime floor with credits if we miss it.
+    </div>
+    <div style="margin-top:20px; font-family:var(--f-mono); font-size:18px; color:var(--pine);">Gross margin 64%</div>
+  </div>
+
+  <!-- unit economics -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1348px; top:404px; width:452px; height:330px; background:var(--sand-deep); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1388px; top:436px; width:372px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:16px; font-weight:600; letter-spacing:0.16em; color:var(--t-strong);">UNIT ECONOMICS — TIER 2</div>
+    <div style="margin-top:22px; font-size:21px;">
+      <div style="display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--rule);"><span style="color:var(--t-body);">Annual contract value</span><span style="font-family:var(--f-mono); font-weight:600; color:var(--t-strong);">$3,400</span></div>
+      <div style="display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--rule);"><span style="color:var(--t-body);">Service + hosting cost</span><span style="font-family:var(--f-mono); font-weight:600; color:var(--t-strong);">$986</span></div>
+      <div style="display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--rule);"><span style="color:var(--t-body);">Acquisition cost (CAC)</span><span style="font-family:var(--f-mono); font-weight:600; color:var(--t-strong);">$2,750</span></div>
+      <div style="display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--rule);"><span style="color:var(--t-body);">Expected retention</span><span style="font-family:var(--f-mono); font-weight:600; color:var(--t-strong);">5.2 yrs</span></div>
+      <div style="display:flex; justify-content:space-between; padding:14px 0 0 0;"><span style="color:var(--t-strong); font-weight:600;">LTV / CAC</span><span style="font-family:var(--f-mono); font-weight:600; font-size:26px; color:var(--terra);">4.6×</span></div>
+    </div>
+  </div>
+
+  <!-- value creation flow -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:790px; width:900px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:17px; font-weight:600; letter-spacing:0.16em; color:var(--t-strong);">HOW VALUE COMPOUNDS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:842px; width:1680px; z-index:10;">
+    <div style="display:flex; align-items:stretch; gap:0;">
+      <div style="flex:1; background:var(--card); border:1px solid var(--rule); border-radius:var(--r-card) 0 0 var(--r-card); padding:24px 26px;">
+        <div style="font-family:var(--f-mono); font-size:16px; color:var(--terra); letter-spacing:0.12em;">01 LAND</div>
+        <div style="margin-top:10px; font-size:21px; line-height:1.42; color:var(--t-body);">Pilot 8–20 assets at one site</div>
+      </div>
+      <div style="flex:0 0 46px; display:flex; align-items:center; justify-content:center; font-family:var(--f-display); font-size:28px; font-weight:700; color:var(--terra); background:var(--card); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">→</div>
+      <div style="flex:1; background:var(--card); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 26px;">
+        <div style="font-family:var(--f-mono); font-size:16px; color:var(--terra); letter-spacing:0.12em;">02 PROVE</div>
+        <div style="margin-top:10px; font-size:21px; line-height:1.42; color:var(--t-body);">Report avoided downtime in dollars</div>
+      </div>
+      <div style="flex:0 0 46px; display:flex; align-items:center; justify-content:center; font-family:var(--f-display); font-size:28px; font-weight:700; color:var(--terra); background:var(--card); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">→</div>
+      <div style="flex:1; background:var(--card); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 26px;">
+        <div style="font-family:var(--f-mono); font-size:16px; color:var(--terra); letter-spacing:0.12em;">03 EXPAND</div>
+        <div style="margin-top:10px; font-size:21px; line-height:1.42; color:var(--t-body);">Roll out site-wide, then group-wide</div>
+      </div>
+      <div style="flex:0 0 46px; display:flex; align-items:center; justify-content:center; font-family:var(--f-display); font-size:28px; font-weight:700; color:#fff; background:var(--pine);">→</div>
+      <div style="flex:1; background:var(--pine); border-radius:0 var(--r-card) var(--r-card) 0; padding:24px 26px;">
+        <div style="font-family:var(--f-mono); font-size:16px; color:var(--pine-soft); letter-spacing:0.12em;">04 LOCK IN</div>
+        <div style="margin-top:10px; font-size:21px; line-height:1.42; color:#fff;">Uptime data becomes their reliability system of record</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1026px; width:1680px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:15px; letter-spacing:0.1em; color:var(--t-muted);">07 &nbsp;·&nbsp; NEW BUSINESS OPPORTUNITY PROPOSAL &nbsp;·&nbsp; ILLUSTRATIVE PLANNING DATA</div>
+  </div>
+
+</div>
+</body>
+</html>

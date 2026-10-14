@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Visit Us — The Hearth Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F5C04A;
+  --butter-soft:#FBE3A2;
+  --chocolate:#3B2417;
+  --choco-deep:#2A1810;
+  --cherry:#C8342B;
+  --cherry-deep:#9B241D;
+  --cream:#F4E9D4;
+  --paper:#FAF1DC;
+  --ink:#251610;
+  --moss:#3F5C3B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8DCC0;overflow:hidden;font-family:'Fraunces',serif}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--paper)}
+.slide::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='37'/><feColorMatrix values='0 0 0 0 0.20 0 0 0 0 0.14 0 0 0 0 0.08 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");opacity:0.5;z-index:1;pointer-events:none}
+
+/* Outer postcard frame — symmetric inside-out border */
+.card-outer{position:absolute;left:60px;top:60px;width:1800px;height:960px;background:var(--cream);
+  border:1.5px solid var(--chocolate);
+  box-shadow:inset 0 0 0 14px var(--paper),inset 0 0 0 15.5px var(--chocolate),inset 0 0 0 30px var(--cream);
+  z-index:2}
+
+/* Corner stamps — symmetric, all 4 corners used equally */
+.corner-stamp{position:absolute;z-index:5;background:var(--butter);border:1.5px solid var(--choco-deep);
+  font-family:'Caveat',cursive;color:var(--choco-deep);padding:6px 12px;box-shadow:3px 3px 0 var(--cherry)}
+.corner-stamp.tl{left:110px;top:96px;font-size:20px}
+.corner-stamp.tr{right:110px;top:96px;font-size:18px;background:var(--butter-soft);color:var(--cherry-deep)}
+.corner-stamp.bl{left:110px;bottom:126px;font-size:18px;background:var(--butter-soft);color:var(--cherry-deep)}
+.corner-stamp.br{right:110px;bottom:126px;background:var(--cherry);color:var(--cream);font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.4em;text-transform:uppercase}
+
+/* ZONE 1 — Centered invitation text — wide block around canvas center */
+.invite{position:absolute;left:430px;width:1060px;top:200px;z-index:6;text-align:center}
+.invite .crest{font-family:'Special Elite',monospace;font-size:13px;letter-spacing:.5em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:14px}
+.invite h2{font-family:'Fraunces',serif;font-weight:900;font-size:100px;line-height:.95;color:var(--choco-deep);letter-spacing:-.03em}
+.invite h2 em{font-family:'Caveat',cursive;font-style:normal;font-weight:700;color:var(--cherry-deep);font-size:84px;display:inline-block;margin-left:14px;transform:translateY(-6px)}
+.invite .lead{font-family:'Fraunces',serif;font-style:italic;font-size:24px;color:var(--chocolate);margin:18px auto 0;line-height:1.4;max-width:1060px}
+.invite .lead-rule{width:120px;height:2px;background:var(--cherry);margin:14px auto 0}
+
+/* ZONE 2 — Symmetric flanking cards: postcard (left) + walk-over note (right) */
+.postage-card{position:absolute;left:112px;top:176px;width:278px;background:var(--paper);border:2px dashed var(--chocolate);padding:14px 18px;z-index:5;box-shadow:5px 5px 0 var(--cherry);font-family:'Caveat',cursive;color:var(--choco-deep)}
+.postage-card .pc-t{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px;display:block}
+.postage-card .pc-m{font-size:25px;line-height:1.05;display:block}
+.postage-card .pc-s{font-size:15px;color:var(--chocolate);font-style:italic;margin-top:8px;line-height:1.3;font-family:'Fraunces',serif}
+
+.coupon{position:absolute;left:1530px;top:176px;width:278px;background:var(--butter);border:2px dashed var(--choco-deep);padding:14px 18px;z-index:5;box-shadow:5px 5px 0 var(--moss);color:var(--choco-deep)}
+.coupon .c-t{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px;display:block}
+.coupon .c-b{font-family:'Fraunces',serif;font-weight:900;font-size:27px;line-height:1.02;margin-bottom:6px}
+.coupon .c-s{font-family:'Caveat',cursive;font-size:22px;line-height:1.05;margin-bottom:4px}
+.coupon .c-r{font-family:'Special Elite',monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--moss);margin-top:6px;display:block}
+
+/* Divider — centered dashed tape below invite */
+.tape{position:absolute;left:170px;right:170px;top:430px;height:5px;background:repeating-linear-gradient(90deg,var(--cherry) 0 14px,transparent 14px 22px);z-index:5}
+.cap-band{position:absolute;left:430px;width:1060px;top:442px;text-align:center;font-family:'Caveat',cursive;color:var(--cherry-deep);font-size:24px;z-index:6;line-height:1.35}
+
+/* ZONE 3 — 4 address cards strictly symmetric.
+   Total width = 4*300 + 3*40 = 1320; canvas-relative left = (1920-1320)/2 = 300 */
+.address{position:absolute;left:300px;right:300px;top:500px;z-index:6;display:flex;gap:40px}
+.a-box{position:relative;flex:1;background:var(--paper);border:1.5px solid var(--chocolate);padding:18px;box-shadow:4px 4px 0 rgba(59,36,23,.15);min-height:200px;display:flex;flex-direction:column}
+.a-box.b{background:var(--butter-soft);box-shadow:4px 4px 0 var(--cherry)}
+.a-box.m{background:#FBF5E5;box-shadow:4px 4px 0 var(--moss)}
+.a-box.c{background:var(--cream);box-shadow:4px 4px 0 var(--chocolate)}
+
+.a-box .ico{position:absolute;top:14px;right:14px;width:30px;height:30px}
+.a-box .label{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px}
+.a-box .body{font-family:'Fraunces',serif;font-size:17px;color:var(--choco-deep);line-height:1.3;font-weight:600;flex:1}
+.a-box .body small{font-family:'Fraunces',serif;font-size:14px;color:var(--chocolate);font-weight:400;display:block;margin-top:6px;line-height:1.4}
+.a-box .scratch{font-family:'Caveat',cursive;font-size:22px;color:var(--cherry-deep);line-height:1.1;border-top:1.5px dashed var(--cherry);padding-top:6px;margin-top:8px;text-align:center}
+
+/* ZONE 4 — Sign-off + footer cluster, centered */
+.signoff{position:absolute;left:0;right:0;top:760px;z-index:6;text-align:center}
+.signoff .so{font-family:'Caveat',cursive;font-size:42px;color:var(--cherry-deep);line-height:1.1}
+.signoff .who{font-family:'Fraunces',serif;font-size:18px;color:var(--chocolate);font-style:italic;margin-top:6px}
+
+/* ZONE 5 — Chocolate bottom band */
+.bband{position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--chocolate);color:var(--cream);
+  display:flex;align-items:center;justify-content:space-between;padding:0 80px;z-index:7}
+.bband .l{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--butter-soft)}
+.bband .c{font-family:'Caveat',cursive;font-size:26px;color:var(--butter);text-align:center}
+.bband .r{font-family:'Fraunces',serif;font-weight:900;font-size:30px;color:var(--butter);text-align:right;min-width:50px}
+</style>
+</head>
+<body>
+<div class="slide">
+
+<!-- Frame -->
+<div class="card-outer"></div>
+
+<!-- Corner stamps — all 4 corners filled symmetrically -->
+<div data-object="true" data-object-type="textbox" class="corner-stamp tl">★ the green door ★</div>
+<div data-object="true" data-object-type="textbox" class="corner-stamp tr">wear a quiet smile</div>
+<div data-object="true" data-object-type="textbox" class="corner-stamp bl">leave your phone<br>in your pocket</div>
+<div data-object="true" data-object-type="textbox" class="corner-stamp br">THE END · A SHORT STORY</div>
+
+<!-- ZONE 1 — Centered invite block -->
+<div data-object="true" data-object-type="textbox" class="invite">
+  <div class="crest">★ Chapter Ten · On the Doorstep ★</div>
+  <h2>Come sit<em>awhile.</em></h2>
+  <div class="lead-rule"></div>
+  <div class="lead">We bake before sunrise, we brew at a quiet pace, and we save a stool for whoever arrives first. The Hearth Room is small on purpose — and there is always, always, a warm drink waiting.</div>
+</div>
+
+<!-- ZONE 2 — Symmetric return card (left) + coupon card (right) -->
+<div data-object="true" data-object-type="textbox" class="postage-card">
+  <span class="pc-t">★ POSTCARD ★ HANDWRITTEN ★</span>
+  <span class="pc-m">a green door,<br>second on the corner.</span>
+  <span class="pc-s">Send yourself a card.<br>Come knock it open in person.</span>
+</div>
+<div data-object="true" data-object-type="textbox" class="coupon">
+  <span class="c-t">★ WALK OVER ★</span>
+  <div class="c-b">See you<br>this week.</div>
+  <div class="c-s">Two stools · one loaf · one coffee.</div>
+  <span class="c-r">our smallest · our favourite</span>
+</div>
+
+<!-- ZONE 3 — Center-divider + centered caption -->
+<div data-object="true" data-object-type="shape" class="tape"></div>
+<div data-object="true" data-object-type="textbox" class="cap-band">… a small choice, every morning, on the same street …</div>
+
+<!-- ZONE 4 — Address boxes — 4 cards strictly centered -->
+<div data-object="true" data-object-type="textbox" class="address">
+  <div class="a-box b">
+    <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="#3B2417" stroke-width="2.4"><path d="M10 14 L30 14 L30 30 L10 30 Z"/><path d="M10 14 L20 22 L30 14"/></svg>
+    <div class="label">Address</div>
+    <div class="body">[Street Name and Number]<small>[Neighborhood]<br>[City, Postal Code]</small></div>
+    <div class="scratch">a green door,<br>second on the corner</div>
+  </div>
+  <div class="a-box m">
+    <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="#3B2417" stroke-width="2.4"><circle cx="20" cy="20" r="14"/><path d="M20 12 L20 20 L26 24"/></svg>
+    <div class="label">Hours</div>
+    <div class="body">Mon — Fri · 7:30 – 18:00<small>Sat — Sun · 8:00 – 17:00<br>Last bake one hour before close.</small></div>
+    <div class="scratch">the door goes up<br>with the bread</div>
+  </div>
+  <div class="a-box c">
+    <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="#3B2417" stroke-width="2.4"><rect x="10" y="10" width="20" height="22"/><path d="M14 18 L26 18 M14 22 L26 22 M14 26 L22 26"/></svg>
+    <div class="label">Order &amp; Reserve</div>
+    <div class="body">Walk-in always welcome<small>Whole loaves + cake boxes<br>— order by the day before.<br>No formal reservation, ever.</small></div>
+    <div class="scratch">first come,<br>first choosy</div>
+  </div>
+  <div class="a-box">
+    <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="#3B2417" stroke-width="2.4"><path d="M10 12 L30 12 L28 30 L12 30 Z"/><path d="M14 16 L26 16 M14 22 L26 22"/></svg>
+    <div class="label">Contact</div>
+    <div class="body">[hello @ the hearth room .cafe]<small>[telephone number]<br>[@ social handle]<br>—— no public Wi-Fi ——</small></div>
+    <div class="scratch">a paper-noted<br>front door</div>
+  </div>
+</div>
+
+<!-- ZONE 5 — Centered sign-off -->
+<div data-object="true" data-object-type="textbox" class="signoff">
+  <div class="so">See you at the green door.</div>
+  <div class="who">— signed in soft pencil, on the back of the menu —</div>
+</div>
+
+<!-- ZONE 6 — Bottom band, symmetric 3-segment -->
+<div class="bband">
+  <div class="l">SLIDE 10 · CLOSING &amp; VISIT<br>THE HEARTH ROOM</div>
+  <div class="c">come for a loaf,<br>stay for two cups</div>
+  <div class="r">10</div>
+</div>
+
+</div>
+
+<template data-slide-notes>This last page functions as both a warm invitation and a functional visit-and-contact card. All address, hour, and contact fields are deliberately placed inside square brackets so the operator can swap their real values in without rewriting the layout.</template>
+</body>
+</html>

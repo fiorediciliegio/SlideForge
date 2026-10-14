@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Freshly Baked Favorites — The Hearth Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F5C04A;
+  --butter-soft:#FBE3A2;
+  --chocolate:#3B2417;
+  --choco-deep:#2A1810;
+  --cherry:#C8342B;
+  --cherry-deep:#9B241D;
+  --cream:#F4E9D4;
+  --paper:#FAF1DC;
+  --ink:#251610;
+  --moss:#3F5C3B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8DCC0;overflow:hidden;font-family:'Fraunces',serif}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--paper)}
+.slide::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='14'/><feColorMatrix values='0 0 0 0 0.20 0 0 0 0 0.14 0 0 0 0 0.08 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");opacity:0.5;z-index:3;pointer-events:none}
+
+/* Top paper-wrapper band — bakery feel */
+.wrapper{position:absolute;left:80px;top:60px;right:80px;height:170px;background:var(--cream);
+  border:1.5px solid var(--chocolate);z-index:4;box-shadow:6px 6px 0 var(--cherry);
+  display:flex;align-items:center;justify-content:space-between;padding:0 40px;
+  background-image:
+    linear-gradient(180deg,transparent 0 75%,rgba(59,36,23,.18) 75% 76%,transparent 76%),
+    repeating-linear-gradient(0deg,transparent 0 6px,rgba(59,36,23,.05) 6px 7px);
+}
+.wrapper::before{content:'';position:absolute;top:0;bottom:0;left:0;width:30px;background:
+  linear-gradient(90deg,var(--cherry) 0 10px,var(--paper) 10px 20px);
+  background-size:20px 100%;border-right:1.5px solid var(--chocolate)}
+.wrapper::after{content:'';position:absolute;top:0;bottom:0;right:0;width:30px;background:
+  linear-gradient(90deg,var(--paper) 0 10px,var(--cherry) 10px 20px);
+  background-size:20px 100%;border-left:1.5px solid var(--chocolate)}
+
+.wrapper .bread-label{font-family:'Special Elite',monospace;font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px;padding-left:36px}
+.wrapper h2{font-family:'Fraunces',serif;font-weight:900;font-size:72px;line-height:.95;color:var(--choco-deep);letter-spacing:-.02em;padding-left:36px}
+.wrapper h2 em{font-family:'Caveat',cursive;color:var(--cherry-deep);font-style:normal;font-weight:700;font-size:52px;display:inline-block;margin-left:6px}
+
+/* Right price tag with strings */
+.tag{position:relative;margin-right:50px;background:var(--butter-soft);border:1.5px solid var(--choco-deep);padding:10px 16px;transform:rotate(-3deg);box-shadow:3px 3px 0 var(--chocolate)}
+.tag::before{content:'';position:absolute;top:-30px;left:50%;width:2px;height:30px;background:var(--choco-deep)}
+.tag::after{content:'';position:absolute;top:-32px;left:50%;width:14px;height:14px;border:2px solid var(--choco-deep);border-radius:50%;background:var(--cream);transform:translateX(-50%)}
+.tag .t-l{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--cherry-deep);display:block}
+.tag .t-b{font-family:'Caveat',cursive;font-size:24px;color:var(--choco-deep);display:block;margin-top:2px}
+
+/* Subhead */
+.subhead{position:absolute;left:80px;top:250px;right:80px;z-index:5;font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--chocolate);max-width:1240px;line-height:1.4}
+.subhead::before{content:'★';color:var(--cherry);margin-right:10px}
+
+/* Bakery counter panorama — fills lower area */
+.counter{position:absolute;left:80px;top:320px;right:80px;height:420px;z-index:4;
+  border:1.5px solid var(--chocolate);background:var(--cream);
+  background-image:url('../assets/bakery-counter-hero.png');background-size:cover;background-position:center;
+  box-shadow:8px 8px 0 rgba(59,36,23,.2)}
+.counter::before{content:'';position:absolute;inset:10px;border:1px dashed rgba(59,36,23,.4);pointer-events:none}
+.counter::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:30px;background:repeating-linear-gradient(45deg,var(--cherry) 0 16px,transparent 16px 32px);opacity:.4}
+
+/* Caption tag bottom-right of photo */
+.photo-cap{position:absolute;right:120px;bottom:90px;background:var(--butter);color:var(--choco-deep);padding:10px 16px;border:1.5px solid var(--choco-deep);font-family:'Caveat',cursive;font-size:22px;transform:rotate(-3deg);box-shadow:3px 3px 0 var(--cherry);z-index:6}
+
+/* Description column overlay top-left of counter */
+.note{position:absolute;left:120px;top:370px;width:280px;background:var(--cream);border:1.5px solid var(--chocolate);padding:16px 18px;z-index:6;box-shadow:5px 5px 0 var(--butter)}
+.note .n-h{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px}
+.note p{font-family:'Fraunces',serif;font-size:17px;color:var(--choco-deep);line-height:1.45}
+.note .n-f{font-family:'Caveat',cursive;font-size:22px;color:var(--cherry-deep);margin-top:8px;border-top:1px dashed var(--cherry);padding-top:6px;line-height:1.2}
+
+/* Bottom product dots */
+.basket{position:absolute;left:80px;bottom:160px;right:80px;height:110px;background:var(--chocolate);z-index:5;
+  display:flex;align-items:center;justify-content:space-around;border:1.5px solid var(--choco-deep);color:var(--cream);padding:0 30px}
+.b-item{flex:1;text-align:center;padding:0 10px;border-right:1px solid rgba(245,192,74,.3)}
+.b-item:last-child{border-right:none}
+.b-item .b-ico{display:inline-block;margin-bottom:2px}
+.b-item .b-name{font-family:'Fraunces',serif;font-weight:800;font-size:18px;color:var(--butter);line-height:1.05}
+.b-item .b-desc{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--paper);margin-top:2px}
+
+/* Bottom page num */
+.pn-corner{position:absolute;left:30px;top:1040px;z-index:7;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.35em;color:var(--chocolate);text-transform:uppercase}
+.pn-corner-r{position:absolute;right:30px;top:1040px;z-index:7;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.35em;color:var(--chocolate);text-transform:uppercase;text-align:right}
+
+/* Floating handwritten note */
+.floatnote{position:absolute;z-index:7;font-family:'Caveat',cursive;font-size:26px;color:var(--cherry-deep);line-height:1.1}
+</style>
+</head>
+<body>
+<div class="slide">
+
+<!-- paper wrapper band -->
+<div data-object="true" data-object-type="textbox" class="wrapper">
+  <div>
+    <div class="bread-label">★ Chapter Five · Bakery Counter ★</div>
+    <h2>Freshly baked <em>favorites.</em></h2>
+  </div>
+  <div class="tag">
+    <span class="t-l">Today's Tray</span>
+    <span class="t-b">bakes from 6 AM</span>
+  </div>
+</div>
+
+<!-- subhead -->
+<div data-object="true" data-object-type="textbox" class="subhead">
+Six bakes that leave the kitchen before noon — a sourdough loaf held back for sandwiches, a date-sweetened rye, the butter croissant every regular knows by name, and two seasonal smalls that rotate with the weather.
+</div>
+
+<!-- counter panorama -->
+<div class="counter"></div>
+
+<!-- note overlay -->
+<div data-object="true" data-object-type="textbox" class="note">
+  <div class="n-h">Note from the oven</div>
+  <p>The morning tray changes with the weather, the harvest, and the mood of whoever is working the dough hook that day.</p>
+  <div class="n-f">always seven items,<br>never the same seven.</div>
+</div>
+
+<!-- photo caption -->
+<div data-object="true" data-object-type="textbox" class="photo-cap" style="right:120px;bottom:30px">— photographed at 9:14 AM, last Tuesday —</div>
+
+<!-- bottom basket -->
+<div data-object="true" data-object-type="textbox" class="basket">
+  <div class="b-item">
+    <div class="b-ico"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#F5C04A" stroke-width="2.4"><ellipse cx="20" cy="22" rx="14" ry="9"/><path d="M8 22 Q20 30 32 22"/><path d="M14 18 Q16 10 20 10 Q24 10 26 18"/></svg></div>
+    <div class="b-name">Country Sourdough</div>
+    <div class="b-desc">Staple · 24hr ferment</div>
+  </div>
+  <div class="b-item">
+    <div class="b-ico"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#F5C04A" stroke-width="2.4"><path d="M6 22 Q12 6 20 22 Q28 6 34 22"/><path d="M6 22 L34 22 L30 30 L10 30 Z"/></svg></div>
+    <div class="b-name">Butter Croissant</div>
+    <div class="b-desc">Lamination · 27 folds</div>
+  </div>
+  <div class="b-item">
+    <div class="b-ico"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#F5C04A" stroke-width="2.4"><circle cx="20" cy="20" r="13" fill="none"/><circle cx="20" cy="20" r="4"/><circle cx="14" cy="14" r="1.5" fill="#F5C04A"/><circle cx="26" cy="14" r="1.5" fill="#F5C04A"/><circle cx="14" cy="26" r="1.5" fill="#F5C04A"/><circle cx="26" cy="26" r="1.5" fill="#F5C04A"/></svg></div>
+    <div class="b-name">Honey & Oat Rye</div>
+    <div class="b-desc">Date-sweetened</div>
+  </div>
+  <div class="b-item">
+    <div class="b-ico"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#F5C04A" stroke-width="2.4"><rect x="8" y="10" width="24" height="20"/><path d="M8 16 L32 16"/><path d="M14 10 L14 6 M26 10 L26 6"/></svg></div>
+    <div class="b-name">Seasonal Tart</div>
+    <div class="b-desc">Rotates weekly</div>
+  </div>
+  <div class="b-item">
+    <div class="b-ico"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#F5C04A" stroke-width="2.4"><path d="M8 14 L20 28 L32 14 L32 28 L8 28 Z"/></svg></div>
+    <div class="b-name">Marble Pound Cake</div>
+    <div class="b-desc">For the takeaway</div>
+  </div>
+  <div class="b-item">
+    <div class="b-ico"><svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#F5C04A" stroke-width="2.4"><rect x="6" y="10" width="28" height="20"/><path d="M14 10 L14 30 M26 10 L26 30"/><path d="M6 20 L34 20"/></svg></div>
+    <div class="b-name">Soft Dinner Roll</div>
+    <div class="b-desc">Sweet butter glaze</div>
+  </div>
+</div>
+
+<!-- handwritten floating annotation -->
+<div data-object="true" data-object-type="textbox" class="floatnote" style="left:660px;top:560px;background:var(--butter-soft);padding:6px 12px;border:1px dashed var(--chocolate);transform:rotate(-3deg);z-index:6">"the rye is the one I bake when I can't sleep." — kitchen log</div>
+<div data-object="true" data-object-type="textbox" class="floatnote" style="left:1380px;top:380px;transform:rotate(-6deg);background:var(--butter);padding:6px 12px;border:1px dashed var(--chocolate);z-index:6">tray # 7<br>today →</div>
+
+<div class="pn-corner">SLIDE 05 · BAKERY · Hearth Room</div>
+<div class="pn-corner-r">PAGE 05 / 10</div>
+</div>
+
+<template data-slide-notes>This page is exclusively about the bakery counter. It introduces six signature bakes grouped by feel — staple sourdough, laminated croissant, honey oat rye, a rotating seasonal tart, a marble pound cake, and a soft dinner roll — without overlapping coffee content or sourcing claims.</template>
+</body>
+</html>

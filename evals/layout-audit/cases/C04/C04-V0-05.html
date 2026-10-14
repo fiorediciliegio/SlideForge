@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --ink2: #3A3D45;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --paper2: #F6F6F4;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 80px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { margin-top: 30px; z-index: 5; }
+.content-area { flex-grow: 1; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Custom Styles for Slide 3 Matrix */
+.matrix-page-layout {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  height: 640px;
+}
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  width: 1140px;
+  height: 100%;
+}
+.quadrant {
+  background: var(--paper2);
+  border: 1px solid var(--line);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+.quadrant.sign-now {
+  background: var(--accent);
+  border: 2px solid var(--red);
+}
+.quad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.quad-title {
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.quad-tag {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mute);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.quad-body {
+  display: flex;
+  gap: 15px;
+  flex-grow: 1;
+}
+.talent-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 10px;
+  border-radius: 4px;
+  flex: 1;
+  height: 190px;
+}
+.talent-card.highlighted {
+  border-color: var(--red);
+  background: #FFFDFD;
+}
+.talent-card.no-img {
+  padding-left: 20px;
+  border-left: 5px solid var(--mute);
+}
+.talent-card.highlighted.no-img {
+  border-left: 5px solid var(--red);
+}
+.talent-img-wrapper {
+  width: 100px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.talent-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.talent-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.talent-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.talent-followers {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--mute);
+  background: var(--paper2);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.talent-followers.highlight-badge {
+  color: var(--red);
+  background: var(--accent);
+}
+.talent-text {
+  font-size: 18px;
+  color: var(--ink2);
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
+/* Sidebar Styling */
+.commentary-sidebar {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+  height: 100%;
+}
+.sidebar-header {
+  margin-bottom: 15px;
+}
+.sidebar-eyebrow {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.sidebar-title {
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: -0.02em;
+}
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.comment-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+.comment-num {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+}
+.comment-text {
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink2);
+}
+.sidebar-callout {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Viral Social Media Content & Strategy</div>
+    <h1 class="h1">The Talent Matrix: <span class="serif-italic">Viral Momentum</span> vs. Brand Safety</h1>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    <div class="matrix-page-layout">
+      <!-- Left side: The 2x2 Matrix -->
+      <div class="matrix-grid">
+        
+        <!-- Q1: RISKY BET (Top Left) -->
+        <div class="quadrant risky-bet">
+          <div class="quad-header">
+            <span class="quad-title" style="color: var(--red);">Risky Bet</span>
+            <span class="quad-tag">High Hype / PR Risk</span>
+          </div>
+          <div class="quad-body">
+            <!-- Melanie Moreno (With Image) -->
+            <div class="talent-card">
+              <div class="talent-img-wrapper">
+                <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d5511d6afd971406.jpg" class="talent-img" alt="Melanie Moreno">
+              </div>
+              <div class="talent-details">
+                <div class="talent-name">Melanie Moreno <span class="talent-followers">2.5M IG</span></div>
+                <div class="talent-text">High runway buzz and Reunion drama; elevated brand safety risk.</div>
+              </div>
+            </div>
+            <!-- Kayda Bosse (No Image) -->
+            <div class="talent-card no-img">
+              <div class="talent-details">
+                <div class="talent-name">Kayda Bosse <span class="talent-followers">1.7M IG</span></div>
+                <div class="talent-text">Massive short-term attention spikes but facing active post-Reunion backlash.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2: SIGN NOW (Top Right) -->
+        <div class="quadrant sign-now">
+          <div class="quad-header">
+            <span class="quad-title" style="color: var(--ink);">Sign Now</span>
+            <span class="quad-tag" style="color: var(--red);">High Hype / High Safety</span>
+          </div>
+          <div class="quad-body">
+            <!-- Trinity Tatum (With Image) -->
+            <div class="talent-card highlighted">
+              <div class="talent-img-wrapper">
+                <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" class="talent-img" alt="Trinity Tatum">
+              </div>
+              <div class="talent-details">
+                <div class="talent-name">Trinity Tatum <span class="talent-followers highlight-badge">3.6M IG</span></div>
+                <div class="talent-text">S8 Winner. Premium editorial appeal & unmatched native meme potential.</div>
+              </div>
+            </div>
+            <!-- Aniya Harvey (With Image) -->
+            <div class="talent-card highlighted">
+              <div class="talent-img-wrapper">
+                <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" class="talent-img" alt="Aniya Harvey">
+              </div>
+              <div class="talent-details">
+                <div class="talent-name">Aniya Harvey <span class="talent-followers highlight-badge">2.1M IG</span></div>
+                <div class="talent-text">Gersh signed. Highly reliable mainstream appeal with massive reach.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3: PASS (Bottom Left) -->
+        <div class="quadrant pass">
+          <div class="quad-header">
+            <span class="quad-title" style="color: var(--mute);">Pass</span>
+            <span class="quad-tag">Lower Hype / PR Risk</span>
+          </div>
+          <div class="quad-body">
+            <!-- Sincere Rhea (No Image) -->
+            <div class="talent-card no-img">
+              <div class="talent-details">
+                <div class="talent-name">Sincere Rhea <span class="talent-followers">612K IG</span></div>
+                <div class="talent-text">Heavy relationship controversies raise immediate safety flags.</div>
+              </div>
+            </div>
+            <!-- Early Exits (No Image) -->
+            <div class="talent-card no-img">
+              <div class="talent-details">
+                <div class="talent-name">Early Exits</div>
+                <div class="talent-text">Low post-Reunion attention; minimal long-term marketing ROI.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4: HIGH UPSIDE (Bottom Right) -->
+        <div class="quadrant high-upside">
+          <div class="quad-header">
+            <span class="quad-title" style="color: var(--ink);">High Upside</span>
+            <span class="quad-tag">Staying Power / High Safety</span>
+          </div>
+          <div class="quad-body">
+            <!-- Bryce Alakai (With Image) -->
+            <div class="talent-card">
+              <div class="talent-img-wrapper">
+                <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-dba968ff974d586c.webp" class="talent-img" alt="Bryce Alakai">
+              </div>
+              <div class="talent-details">
+                <div class="talent-name">Bryce Alakai <span class="talent-followers">1.9M IG</span></div>
+                <div class="talent-text">S8 Winner & DJ/Producer. Strong crossover lifestyle appeal.</div>
+              </div>
+            </div>
+            <!-- Corbin Mims (No Image) -->
+            <div class="talent-card no-img">
+              <div class="talent-details">
+                <div class="talent-name">Corbin Mims <span class="talent-followers">~1.0M IG</span></div>
+                <div class="talent-text">Fitness & travel focus. Steady, brand-safe lifestyle content.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right side: Commentary Sidebar -->
+      <div class="commentary-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-eyebrow">EDITORIAL TAKE</div>
+          <div class="sidebar-title">The Post-Reunion Playbook</div>
+        </div>
+        <div class="sidebar-content">
+          <div class="comment-item">
+            <div class="comment-num">01</div>
+            <div class="comment-text">
+              <strong>Obsolete Data:</strong> Post-Reunion status changed on <em>August 31, 2026</em>. Old relationship metrics are officially invalid.
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-num">02</div>
+            <div class="comment-text">
+              <strong>The Safety Split:</strong> Mainstream brands are shifting to <strong>Aniya</strong> (Gersh backed) and <strong>Trinity</strong> (WME contact) to bypass relationship drama.
+            </div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-num">03</div>
+            <div class="comment-text">
+              <strong>PR Watchlist:</strong> High-follower stars like <strong>Melanie</strong> (2.5M) carry elevated controversy risk due to on-screen narratives.
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-callout">
+          SCREENSHOT &amp; DEBATE: WHO WOULD YOU SIGN?
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Pop-Culture Editorial Matrix</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [03]</div>
+  </footer>
+</div>
+</body>
+</html>

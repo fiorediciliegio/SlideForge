@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation Roadmap &amp; Risk Controls</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Northline x Meridian — partnership deck design system
+   Type      : Archivo (headings) / IBM Plex Sans (body) / IBM Plex Mono (labels, figures)
+   Palette   : ink #14161A · graphite #2A2E35 · paper #F4F1EC · card #FFFFFF
+               rust #C25233 (Northline) · teal #27585C (Meridian) · ochre #C8922F (joint)
+   Radius 4px · hairline 1px #DDD7CD · accent bar 3px
+*/
+
+:root {
+  --ink: #14161A;
+  --graphite: #2A2E35;
+  --paper: #F4F1EC;
+  --card: #FFFFFF;
+  --rust: #C25233;
+  --teal: #27585C;
+  --ochre: #C8922F;
+  --muted: #6E737B;
+  --hair: #DDD7CD;
+}
+
+html, body { margin: 0; padding: 0; overflow: hidden; }
+</style>
+</head>
+<body style="margin:0; padding:0; overflow:hidden;">
+<div class="slide slide-container" data-screen-label="09 Roadmap & Risk" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1EC; font-family:'IBM Plex Sans',sans-serif;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:112px; top:96px; width:96px; height:4px; background:#27585C; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:128px; width:1100px; z-index:10;">
+    <p style="margin:0 0 14px 0; font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:0.2em; text-transform:uppercase; color:#6E737B;">08 &nbsp;/&nbsp; Implementation</p>
+    <h1 style="margin:0; font-family:'Archivo',sans-serif; font-weight:700; font-size:62px; line-height:1.1; letter-spacing:-0.02em; color:#14161A;">Four phases over twelve months, each with a hard exit gate</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1424px; top:150px; width:384px; z-index:10;">
+    <p style="margin:0; font-size:23px; line-height:1.62; color:#4A4F57;">Either party may stop the programme at any gate. Nothing scales until the previous phase has cleared its metric.</p>
+  </div>
+
+  <!-- timeline spine -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:112px; top:436px; width:1696px; height:2px; background:#C4BDB1; z-index:1;"></div>
+
+  <!-- phase markers -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:154px; top:418px; width:38px; height:38px; border-radius:50%; background:#C25233; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:574px; top:418px; width:38px; height:38px; border-radius:50%; background:#27585C; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:994px; top:418px; width:38px; height:38px; border-radius:50%; background:#C8922F; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1414px; top:418px; width:38px; height:38px; border-radius:50%; background:#14161A; z-index:5;"></div>
+
+  <!-- phase labels above -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:340px; width:380px; z-index:10;">
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.14em; text-transform:uppercase; color:#C25233;">Q4 2026</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:532px; top:340px; width:380px; z-index:10;">
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.14em; text-transform:uppercase; color:#27585C;">Q1 2027</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:952px; top:340px; width:380px; z-index:10;">
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.14em; text-transform:uppercase; color:#C8922F;">Q2&ndash;Q3 2027</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1372px; top:340px; width:380px; z-index:10;">
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.14em; text-transform:uppercase; color:#14161A;">Q4 2027</p>
+  </div>
+
+  <!-- phase cards -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:112px; top:496px; width:400px; height:268px; background:#FFFFFF; border-radius:4px; border:1px solid #DDD7CD; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:112px; top:496px; width:400px; height:3px; background:#C25233; border-radius:4px 4px 0 0; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:148px; top:528px; width:328px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.18; color:#14161A;">Phase 1<br>Pilot</p>
+    <p style="margin:14px 0 0 0; font-size:20px; line-height:1.5; color:#4A4F57;">8 logistics accounts, 2 blueprints, one joint delivery pod.</p>
+    <div style="height:1px; background:#DDD7CD; margin:18px 0;"></div>
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:17px; line-height:1.5; color:#C25233;">GATE &nbsp;6 of 8 live in 90 days</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:532px; top:496px; width:400px; height:268px; background:#FFFFFF; border-radius:4px; border:1px solid #DDD7CD; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:532px; top:496px; width:400px; height:3px; background:#27585C; border-radius:4px 4px 0 0; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:568px; top:528px; width:328px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.18; color:#14161A;">Phase 2<br>Enable</p>
+    <p style="margin:14px 0 0 0; font-size:20px; line-height:1.5; color:#4A4F57;">Certify 18 engineers, publish the Launchpad SKU, brief 40 resellers.</p>
+    <div style="height:1px; background:#DDD7CD; margin:18px 0;"></div>
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:17px; line-height:1.5; color:#27585C;">GATE &nbsp;$2.4M qualified pipeline</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:952px; top:496px; width:400px; height:268px; background:#FFFFFF; border-radius:4px; border:1px solid #DDD7CD; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:952px; top:496px; width:400px; height:3px; background:#C8922F; border-radius:4px 4px 0 0; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:988px; top:528px; width:328px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.18; color:#14161A;">Phase 3<br>Scale</p>
+    <p style="margin:14px 0 0 0; font-size:20px; line-height:1.5; color:#4A4F57;">Open healthcare vertical, four pods running, co-marketing launch.</p>
+    <div style="height:1px; background:#DDD7CD; margin:18px 0;"></div>
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:17px; line-height:1.5; color:#C8922F;">GATE &nbsp;55% margin held at volume</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1372px; top:496px; width:436px; height:268px; background:#14161A; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1372px; top:496px; width:436px; height:3px; background:#C8922F; border-radius:4px 4px 0 0; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1408px; top:528px; width:364px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.18; color:#FFFFFF;">Phase 4<br>Institutionalise</p>
+    <p style="margin:14px 0 0 0; font-size:20px; line-height:1.5; color:#C9CCD2;">Northline moves to reseller paper and owns renewals end to end.</p>
+    <div style="height:1px; background:#3A3E46; margin:18px 0;"></div>
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:17px; line-height:1.5; color:#C8922F;">TARGET &nbsp;$6.2M booked</p>
+  </div>
+
+  <!-- risk register -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:800px; width:900px; z-index:10;">
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:0.14em; text-transform:uppercase; color:#6E737B;">Principal risks and controls</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:112px; top:840px; width:544px; height:136px; background:#FFFFFF; border-radius:4px; border:1px solid #DDD7CD; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:112px; top:840px; width:4px; height:136px; background:#C25233; border-radius:4px 0 0 4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:148px; top:866px; width:472px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:23px; line-height:1.2; color:#14161A;">Channel conflict with direct sales</p>
+    <p style="margin:8px 0 0 0; font-size:19px; line-height:1.4; color:#6E737B;">Deal registry with a &lt;200-seat threshold, reviewed monthly.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:688px; top:840px; width:544px; height:136px; background:#FFFFFF; border-radius:4px; border:1px solid #DDD7CD; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:688px; top:840px; width:4px; height:136px; background:#27585C; border-radius:4px 0 0 4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:724px; top:866px; width:472px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:23px; line-height:1.2; color:#14161A;">Delivery capacity ceiling</p>
+    <p style="margin:8px 0 0 0; font-size:19px; line-height:1.4; color:#6E737B;">Pod hiring starts at gate 2, funded from pilot margin.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1264px; top:840px; width:544px; height:136px; background:#FFFFFF; border-radius:4px; border:1px solid #DDD7CD; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1264px; top:840px; width:4px; height:136px; background:#C8922F; border-radius:4px 0 0 4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:866px; width:472px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-weight:600; font-size:23px; line-height:1.2; color:#14161A;">Brand exposure on delivery quality</p>
+    <p style="margin:8px 0 0 0; font-size:19px; line-height:1.4; color:#6E737B;">Meridian audits every pilot account before reference use.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:1008px; width:900px; z-index:10;">
+    <p style="margin:0; font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:0.1em; color:#8C9199;">NORTHLINE &times; MERIDIAN SYSTEMS &nbsp;·&nbsp; PARTNERSHIP PROPOSAL</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1708px; top:1008px; width:100px; z-index:10;">
+    <p style="margin:0; text-align:right; font-family:'IBM Plex Mono',monospace; font-size:16px; color:#8C9199;">09</p>
+  </div>
+
+</div>
+</body>
+</html>

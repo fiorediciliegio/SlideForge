@@ -1,0 +1,13 @@
+{
+  "case_id": "B-019",
+  "size_class": "边界",
+  "target_input_tokens": 25000,
+  "estimated_outline_input_tokens": 25115,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": false,
+  "attachment_mode": "No attachment",
+  "attachment_types": "None",
+  "content_strategies": "null",
+  "evaluation_risks": "1. Using undated or mixed-year statistics; 2. Treating announced capacity as operating capacity; 3. Mixing national and regional scopes; 4. Adding decorative image directions despite disabled images; 5. Making investment recommendations without stated criteria."
+}

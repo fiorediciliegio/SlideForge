@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 74px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { margin-top: 30px; z-index: 5; }
+.content-area { flex-grow: 1; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Slide Specific Layout */
+.matrix-layout {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  align-items: stretch;
+}
+
+/* 2x2 Matrix Styling */
+.matrix-wrapper {
+  flex: 1.1;
+  position: relative;
+  padding-left: 50px;
+  padding-bottom: 40px;
+}
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 560px;
+  border: 3px solid var(--ink);
+  position: relative;
+  background: var(--paper);
+}
+
+/* Axis Labels */
+.axis-y-label {
+  position: absolute;
+  left: -150px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.axis-y-label::before, .axis-y-label::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--ink);
+}
+.axis-x-label {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.axis-x-label::before, .axis-x-label::after {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--ink);
+}
+
+/* Quadrants */
+.quadrant {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.quad-top-left {
+  border-right: 1.5px dashed var(--line);
+  border-bottom: 1.5px dashed var(--line);
+  background: #FAF9F6;
+}
+.quad-top-right {
+  border-bottom: 1.5px dashed var(--line);
+  background: var(--accent);
+  outline: 2px solid var(--red);
+  z-index: 2;
+}
+.quad-bottom-left {
+  border-right: 1.5px dashed var(--line);
+  background: #F2F2F2;
+}
+.quad-bottom-right {
+  background: #FAF9F6;
+}
+
+.quad-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+.quad-tag.sign-now { background: var(--red); color: var(--paper); }
+.quad-tag.high-upside { background: var(--ink); color: var(--paper); }
+.quad-tag.risky-bet { background: #E3E4E7; color: var(--ink); border: 1px solid var(--ink); }
+.quad-tag.pass { background: transparent; color: var(--mute); border: 1px solid var(--line); }
+
+/* Islander Badges within Matrix */
+.islander-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 6px 12px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px rgba(16, 17, 20, 0.15);
+  position: absolute;
+}
+.islander-badge.featured {
+  border: 2px solid var(--red);
+  box-shadow: 4px 4px 0px rgba(208, 26, 46, 0.2);
+}
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.avatar-placeholder {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+.badge-details {
+  display: flex;
+  flex-direction: column;
+}
+.badge-name {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.badge-meta {
+  font-size: 11px;
+  color: var(--mute);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Sidebar Details */
+.sidebar {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+}
+.sidebar-header {
+  margin-bottom: 20px;
+}
+.sidebar-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.sidebar-desc {
+  font-size: 18px;
+  color: var(--mute);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.quadrant-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.quadrant-row {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #F0F0F2;
+}
+.quadrant-row:last-child {
+  border-bottom: none;
+}
+.row-indicator {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.row-indicator.sn { background: var(--accent); color: var(--red); border: 1px solid var(--red); }
+.row-indicator.hu { background: #F6F6F4; color: var(--ink); border: 1px solid var(--ink); }
+.row-indicator.rb { background: #FFF9E6; color: #D97706; border: 1px solid #F59E0B; }
+.row-indicator.ps { background: #F3F4F6; color: var(--mute); border: 1px solid var(--line); }
+
+.row-content {
+  display: flex;
+  flex-direction: column;
+}
+.row-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.row-text {
+  font-size: 14px;
+  color: #5C606A;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+/* Timeline Warning Box */
+.timeline-box {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 16px 20px;
+  margin-top: 20px;
+  border-left: 4px solid var(--red);
+}
+.timeline-title {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.timeline-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #C1C3C7;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Viral Social Media Content & Strategy</div>
+    <h1 class="h1">The Talent Matrix: <span class="serif-italic">Viral Momentum vs. Brand Safety</span></h1>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    <div class="matrix-layout">
+      
+      <!-- Left Column: The Interactive 2x2 Matrix -->
+      <div class="matrix-wrapper">
+        <div class="axis-y-label">Brand Safety & Alignment</div>
+        <div class="axis-x-label">Viral Momentum & Hype</div>
+        
+        <div class="matrix-grid">
+          
+          <!-- Top Left: HIGH UPSIDE (Staying Power) -->
+          <div class="quadrant quad-top-left">
+            <span class="quad-tag high-upside">High Upside</span>
+            
+            <!-- Bryce Alakai -->
+            <div class="islander-badge" style="top: 60px; left: 20px;">
+              <img class="avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-dba968ff974d586c.webp" alt="Bryce Alakai">
+              <div class="badge-details">
+                <span class="badge-name">Bryce Alakai</span>
+                <span class="badge-meta">1.9M IG • DJ Background</span>
+              </div>
+            </div>
+
+            <!-- Corbin Mims -->
+            <div class="islander-badge" style="bottom: 30px; right: 20px;">
+              <div class="avatar-placeholder" style="background: #3A3D45;">CM</div>
+              <div class="badge-details">
+                <span class="badge-name">Corbin Mims</span>
+                <span class="badge-meta">~1.0M IG • Fitness/Travel</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Top Right: SIGN NOW (Winner / High Safety) -->
+          <div class="quadrant quad-top-right">
+            <span class="quad-tag sign-now">Sign Now</span>
+            
+            <!-- Trinity Tatum (Winner, Featured) -->
+            <div class="islander-badge featured" style="top: 60px; right: 20px;">
+              <img class="avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" alt="Trinity Tatum">
+              <div class="badge-details">
+                <span class="badge-name">Trinity Tatum 👑</span>
+                <span class="badge-meta">3.6M IG • Winner Status</span>
+              </div>
+            </div>
+
+            <!-- Aniya Harvey -->
+            <div class="islander-badge featured" style="bottom: 30px; left: 20px;">
+              <img class="avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" alt="Aniya Harvey">
+              <div class="badge-details">
+                <span class="badge-name">Aniya Harvey</span>
+                <span class="badge-meta">2.1M IG • Agency Backed</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bottom Left: PASS (Lower Hype) -->
+          <div class="quadrant quad-bottom-left">
+            <span class="quad-tag pass">Pass</span>
+            
+            <!-- Sincere Rhea -->
+            <div class="islander-badge" style="top: 60px; right: 20px;">
+              <div class="avatar-placeholder" style="background: #7C818B;">SR</div>
+              <div class="badge-details">
+                <span class="badge-name">Sincere Rhea</span>
+                <span class="badge-meta">612K IG • Controversy</span>
+              </div>
+            </div>
+
+            <!-- Ex-Bombshells -->
+            <div class="islander-badge" style="bottom: 30px; left: 20px;">
+              <div class="avatar-placeholder" style="background: #E3E4E7; color: var(--ink);">EX</div>
+              <div class="badge-details">
+                <span class="badge-name">Early Exits</span>
+                <span class="badge-meta">Lower Hype / Low ROI</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bottom Right: RISKY BET (PR / Backlash Risk) -->
+          <div class="quadrant quad-bottom-right">
+            <span class="quad-tag risky-bet">Risky Bet</span>
+            
+            <!-- Melanie Moreno -->
+            <div class="islander-badge" style="top: 60px; left: 20px;">
+              <img class="avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d5511d6afd971406.jpg" alt="Melanie Moreno">
+              <div class="badge-details">
+                <span class="badge-name">Melanie Moreno</span>
+                <span class="badge-meta">2.5M IG • Relationship Drama</span>
+              </div>
+            </div>
+
+            <!-- Kayda Bosse -->
+            <div class="islander-badge" style="bottom: 30px; right: 20px;">
+              <div class="avatar-placeholder" style="background: #D01A2E;">KB</div>
+              <div class="badge-details">
+                <span class="badge-name">Kayda Bosse</span>
+                <span class="badge-meta">1.7M IG • Backlash Signals</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Right Column: Quadrant Explainer & Timing Warnings -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <p class="eyebrow" style="margin-bottom: 6px;">The Screenshot Slide</p>
+          <h3 class="sidebar-title">Strategic Placements</h3>
+          <p class="sidebar-desc">How the Season 8 cast maps out for brand alignment immediately following the Reunion. Save this to debate ROI.</p>
+        </div>
+        
+        <div class="quadrant-list">
+          <!-- Row 1 -->
+          <div class="quadrant-row">
+            <span class="row-indicator sn">Sign Now</span>
+            <div class="row-content">
+              <span class="row-title">Trinity Tatum & Aniya Harvey</span>
+              <span class="row-text">Highest post-Reunion momentum with minimal brand risk. Mainstream ready.</span>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="quadrant-row">
+            <span class="row-indicator hu">High Upside</span>
+            <div class="row-content">
+              <span class="row-title">Bryce Alakai & Corbin Mims</span>
+              <span class="row-text">Durable lifestyle niches (DJing, Fitness) that outlast immediate reality TV hype.</span>
+            </div>
+          </div>
+          <!-- Row 3 -->
+          <div class="quadrant-row">
+            <span class="row-indicator rb">Risky Bet</span>
+            <div class="row-content">
+              <span class="row-title">Melanie Moreno & Kayda Bosse</span>
+              <span class="row-text">Peak attention volumes but paired with severe relationship drama or backlash signals.</span>
+            </div>
+          </div>
+          <!-- Row 4 -->
+          <div class="quadrant-row">
+            <span class="row-indicator ps">Pass</span>
+            <div class="row-content">
+              <span class="row-title">Sincere Rhea & Early Exits</span>
+              <span class="row-text">Declining engagement or active narrative controversy yields low campaign ROI.</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Timeline Box -->
+        <div class="timeline-box">
+          <div class="timeline-title">Critical Timing Warning</div>
+          <p class="timeline-text">
+            Reunion streamed August 31, 2026. Metrics verified September 4, 2026. Deal windows are highly volatile; rates expected to spike within 14 days.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Pop-Culture Editorial Matrix</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [03]</div>
+  </footer>
+</div>
+</body>
+</html>

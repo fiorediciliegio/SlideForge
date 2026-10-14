@@ -1,0 +1,103 @@
+{
+  "id": "106-Tropical Island Vacation Planner",
+  "version": 1,
+  "ppt_number": 106,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "aqua",
+    "green",
+    "orange"
+  ],
+  "name": "Tropical Island Vacation Planner",
+  "description": "Retro island planner with flat tropical illustrations, outlined cards, playful labels, and map-based routes.",
+  "user": "Creative & Personal",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["travel-guide"],"industries":["consumer","travel"],"audiences":["public"],"formats":["guide"],"primary_styles":["playful","fresh"],"visual_traits":["playful","fresh","illustration","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "封面用太阳、海浪、帆船和棕榈树构成扁平主视觉，左侧粗描边标题卡突出主题，层级鲜明。"
+    },
+    {
+      "path": "images/2-destination-theme.webp",
+      "alt": "左右分栏结合海岛圆景插画与三张偏好卡，橙青按钮强化计划工具感，主视觉层级鲜明有序。"
+    },
+    {
+      "path": "images/3-island-orientation.webp",
+      "alt": "右侧同心岛屿地图以虚线路径连接地标，左侧说明卡和图例组织空间信息，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/4-beaches-ocean.webp",
+      "alt": "海岸横截面插画贯穿页面，多张小卡沿沙滩和海面分布，形成场景式推荐，版面层次清晰有序。"
+    },
+    {
+      "path": "images/5-inland-nature.webp",
+      "alt": "三张白色自然活动卡沿山林路径排列，右下米色保护区说明卡补充注意事项，信息对比清楚。"
+    },
+    {
+      "path": "images/6-where-to-stay.webp",
+      "alt": "三种住宿建筑以连续海岸插画呈现，顶部彩色标题卡解释不同度假节奏，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-food-and-drinks.webp",
+      "alt": "青色背景中三组食物插画横排，底部三条饮食提示组成清爽的海岛菜单页，图文层级明确。"
+    },
+    {
+      "path": "images/8-daily-itinerary.webp",
+      "alt": "弯曲虚线连接四张行程卡，圆形编号与底部海岛插画构成一日路线，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/9-budget-booking.webp",
+      "alt": "左侧彩色预算条与右侧预订清单并列，底部活动卡让费用结构一目了然，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-packing-departure.webp",
+      "alt": "双栏行李清单置于粗描边手提箱框中，黄色提示卡和旅行图标活泼收尾，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，封面用太阳、海浪、帆船和棕榈树构成扁平主视觉，左侧粗描边标题卡突出主题，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/2-destination-theme.html",
+      "description": "左右分栏结合海岛圆景插画与三张偏好卡，橙青按钮强化计划工具感，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/3-island-orientation.html",
+      "description": "沙滩米色画布上，右侧同心岛屿地图以虚线路径连接地标，左侧说明卡和图例组织空间信息，强调色进一步突出重心。"
+    },
+    {
+      "path": "html/4-beaches-ocean.html",
+      "description": "沙滩米色画布上，海岸横截面插画贯穿页面，多张小卡沿沙滩和海面分布，形成场景式推荐，强调色进一步突出重心。"
+    },
+    {
+      "path": "html/5-inland-nature.html",
+      "description": "深浅绿色山林构成层叠背景，三张白色卡沿虚线路径介绍步道、瀑布和植物园，右下米色保护区说明卡补充行动提醒。"
+    },
+    {
+      "path": "html/6-where-to-stay.html",
+      "description": "沙滩米色画布上，三种住宿建筑以连续海岸插画呈现，顶部彩色标题卡解释不同度假节奏，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/7-food-and-drinks.html",
+      "description": "海水青页面中央横排水果、烤鱼和小吃三组插画，上方分栏介绍餐食场景，底部三条提示补充饮食需求、甜点和椰子水。"
+    },
+    {
+      "path": "html/8-daily-itinerary.html",
+      "description": "沙滩米色画布上，弯曲虚线连接四张行程卡，圆形编号与底部海岛插画构成一日路线，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/9-budget-booking.html",
+      "description": "沙滩米色画布上，左侧彩色预算条与右侧预订清单并列，底部活动卡让费用结构一目了然，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/10-packing-departure.html",
+      "description": "双栏行李清单置于粗描边手提箱框中，黄色提示卡和旅行图标活泼收尾，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "将管理层讲话稿整理成7页员工大会PPT，保留核心信息但避免把愿景写成已完成成果。不得增加裁员、薪酬或组织调整信息。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "全体员工",
+        "description": "全体员工"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "年度员工大会沟通",
+        "description": "年度员工大会沟通"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "解释已完成变化、下一年重点和未决事项",
+        "description": "解释已完成变化、下一年重点和未决事项"
+      }
+    ],
+    "slide_count": [
+      7
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "真诚、稳定、面向未来",
+        "description": "真诚、稳定、面向未来"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "全体员工",
+      "description": "全体员工"
+    },
+    "purpose": {
+      "label": "年度员工大会沟通",
+      "description": "年度员工大会沟通"
+    },
+    "desired_outcome": {
+      "label": "解释已完成变化、下一年重点和未决事项",
+      "description": "解释已完成变化、下一年重点和未决事项"
+    },
+    "slide_count": 7,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "真诚、稳定、面向未来",
+      "description": "真诚、稳定、面向未来"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>02 — Statement</title>
+<style>
+  :root { --ink:#f5f7ff; --silver:#c0c5d1; --ash:#4a5870; --violet:#1a0b2e; --pink:#ff2da8; --cyan:#00d4ff; }
+  html,body{margin:0;padding:0;overflow:hidden;background:#000;}
+  body{font-family:'Space Grotesk','Inter',system-ui,sans-serif;color:#fff;}
+  .display{font-family:'Space Grotesk','Archivo',sans-serif;font-weight:700;letter-spacing:-0.025em;}
+  .italic-serif{font-family:'Cormorant Garamond','EB Garamond',serif;font-style:italic;}
+  .mono{font-family:'JetBrains Mono','IBM Plex Mono',monospace;}
+  .grain::after{
+    content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg,transparent 0 2px,rgba(255,255,255,0.025) 2px 4px);
+    pointer-events:none;z-index:99;
+  }
+</style>
+</head>
+<body>
+<div class="slide grain" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:linear-gradient(140deg,#050510 0%,#14072d 60%,#050510 100%);">
+
+  <!-- Glow base -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1350px;top:-160px;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,#ff2da8 0%,transparent 60%);filter:blur(80px);opacity:0.35;z-index:1;"></div>
+
+  <!-- Huge back layer letter (clipped to safe canvas region via clipping frame) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:280px;top:0;width:300px;height:1080px;z-index:2;overflow:hidden;clip-path:inset(170px 0px 380px 0px);">
+    <div style="position:absolute;left:0;top:1080px;width:300px;height:520px;transform:rotate(-90deg);transform-origin:0 0;">
+      <div class="display" style="font-size:280px;line-height:0.85;background:linear-gradient(180deg,rgba(183,148,246,0.55) 0%,rgba(183,148,246,0.05) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;width:1080px;">PROPHECY</div>
+    </div>
+  </div>
+
+  <!-- Top eyebrow -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:90px;width:800px;z-index:10;">
+    <div class="mono" style="font-size:14px;color:#00d4ff;letter-spacing:0.4em;">02 — PERSONAL VISUAL STATEMENT</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1500px;top:90px;width:340px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:13px;color:#ff2da8;letter-spacing:0.32em;">[02/10] // PORTFOLIO_2026</div>
+  </div>
+
+  <!-- Manifesto quote — left aligned, big & editorial -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:520px;top:220px;width:1280px;z-index:10;">
+    <div class="mono" style="font-size:14px;color:#b794f6;letter-spacing:0.36em;margin-bottom:34px;">// MANIFESTO — written in 11:11 PM light ✦</div>
+    <h1 class="display" style="margin:0;font-size:88px;line-height:1.04;color:#fff;letter-spacing:-0.04em;">
+      I was <span class="italic-serif" style="color:#ff2da8;">weird online</span><br/>
+      before it was a <span class="italic-serif" style="color:#00d4ff;">career</span>.<br/>
+      I design like the screen<br/>
+      is <span style="background:linear-gradient(90deg,#ff2da8,#b794f6,#00d4ff);-webkit-background-clip:text;background-clip:text;color:transparent;">already alive</span>.
+    </h1>
+  </div>
+
+  <!-- Body manifesto -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:520px;top:680px;width:820px;z-index:10;">
+    <p style="margin:0;font-size:21px;line-height:1.55;color:#c0c5d1;">
+      Born between chatrooms, club flyers, and glitched ringtones. My work sits at the seam where <strong style="color:#f5f7ff;">early-internet romance</strong> meets <strong style="color:#f5f7ff;">editorial restraint</strong> — a system of shiny, soft, hi-velocity visuals for culture brands that want to feel like <em style="font-family:'Cormorant Garamond',serif;color:#b794f6;">a transmission, not a brochure.</em>
+    </p>
+  </div>
+
+  <!-- Right: floating influence tags -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1420px;top:520px;width:380px;z-index:10;">
+    <div class="mono" style="font-size:13px;color:#00d4ff;letter-spacing:0.32em;margin-bottom:18px;">// INFLUENCES / DNA</div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#f5f7ff;line-height:1;">— Winamp skins, 2002</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#ff2da8;line-height:1;">— Shibuya-kei flyers</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#b794f6;line-height:1;">— Cadmium neon billboards</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#00d4ff;line-height:1;">— Cyberpop romance anime</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#c0c5d1;line-height:1;">— Liquid chrome furniture</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:#ff2da8;line-height:1;">— Hand-coded blog layouts</div>
+    </div>
+  </div>
+
+  <!-- Hairline separator -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:520px;top:660px;width:1280px;height:1px;background:linear-gradient(90deg,transparent,rgba(183,148,246,0.4),transparent);z-index:6;"></div>
+
+  <!-- Bottom chrome caption bar -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:520px;top:1000px;width:1280px;z-index:10;">
+    <div class="mono" style="display:flex;justify-content:space-between;font-size:13px;color:#c0c5d1;opacity:0.7;">
+      <span style="color:#ff2da8;">[02/10]</span>
+      <span>↳ begins here</span>
+      <span>aurora.exe / statement</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

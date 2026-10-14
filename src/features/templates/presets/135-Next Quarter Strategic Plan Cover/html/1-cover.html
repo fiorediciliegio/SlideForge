@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Next Quarter Strategic Plan</title>
+<style>
+  html, body { margin:0; padding:0; overflow:hidden; }
+  .t { font-family: 'Archivo', 'Helvetica Neue', sans-serif; }
+  .b { font-family: 'IBM Plex Sans', 'Helvetica Neue', sans-serif; }
+
+:root {
+  --theme-bg: #FDFDFE;
+  --theme-surface: #F7F9FC;
+  --theme-ink: #0A2F6B;
+  --theme-muted: #3E5573;
+  --theme-accent-primary: #C8102E;
+  --theme-accent-secondary: #7889A0;
+  --theme-accent-tertiary: #FF6B7F;
+  --theme-line: #E4EAF3;
+
+  --plan-canvas: var(--theme-bg);
+  --plan-surface: var(--theme-surface);
+  --plan-ink: var(--theme-ink);
+  --plan-muted: var(--theme-muted);
+  --plan-ink-bloom: rgb(from var(--theme-ink) r g b / 0.13);
+  --plan-accent-bloom: rgb(from var(--theme-accent-primary) r g b / 0.12);
+  --plan-grid: rgb(from var(--theme-ink) r g b / 0.16);
+  --plan-ghost: rgb(from var(--theme-ink) r g b / 0.075);
+  --plan-accent: var(--theme-accent-primary);
+  --plan-accent-bright: rgb(from var(--theme-accent-primary) calc(r + 24) calc(g + 11) calc(b + 11) / 1);
+  --plan-accent-deep: rgb(from var(--theme-accent-primary) calc(r - 38) calc(g - 3) calc(b - 10) / 1);
+  --plan-secondary: var(--theme-accent-secondary);
+  --plan-tertiary: var(--theme-accent-tertiary);
+  --plan-line: var(--theme-line);
+  --plan-hero-top: rgb(from var(--theme-ink) calc(r + 7) calc(g + 13) calc(b + 23) / 1);
+  --plan-hero-mid: rgb(from var(--theme-ink) r calc(g - 5) calc(b - 13) / 1);
+  --plan-hero-bottom: rgb(from var(--theme-ink) calc(r - 3) calc(g - 18) calc(b - 41) / 1);
+  --plan-hero-shadow: rgb(from var(--theme-ink) calc(r - 3) calc(g - 18) calc(b - 41) / 0.62);
+  --plan-static-white: #FFFFFF;
+  --plan-static-black: #000000;
+}
+</style>
+<style data-external-template-fonts>
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLySOxK-vA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="01 Cover" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--plan-static-white);">
+
+  <!-- L0 base -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; background:var(--plan-canvas); z-index:1;"></div>
+
+  <!-- L1 blue radial bloom, upper right -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:820px; top:-320px; width:1300px; height:1300px; background:radial-gradient(circle at 50% 50%, var(--plan-ink-bloom) 0%, rgb(from var(--plan-ink) r g b / 0.05) 42%, rgb(from var(--plan-ink) r g b / 0) 66%); z-index:1;"></div>
+
+  <!-- L1 red radial bloom, lower left -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:-380px; top:520px; width:1100px; height:1100px; background:radial-gradient(circle at 50% 50%, var(--plan-accent-bloom) 0%, rgb(from var(--plan-accent) r g b / 0.04) 44%, rgb(from var(--plan-accent) r g b / 0) 68%); z-index:1;"></div>
+
+  <!-- L2 dot-grid texture, faded to the right -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; background-image:radial-gradient(var(--plan-grid) 1.1px, transparent 1.1px); background-size:24px 24px; -webkit-mask-image:linear-gradient(115deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0.30) 46%, rgb(0 0 0 / 0) 74%); mask-image:linear-gradient(115deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0.30) 46%, rgb(0 0 0 / 0) 74%); z-index:1;"></div>
+
+  <!-- L2 concentric rings bleeding off the lower-left edge -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:-300px; top:560px; width:760px; height:760px; border:1.5px solid var(--plan-ink-bloom); border-radius:50%; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:-190px; top:672px; width:540px; height:540px; border:1.5px solid var(--plan-accent-bloom); border-radius:50%; z-index:1;"></div>
+
+  <!-- L2 ghost display type behind the headline -->
+  <div data-object="true" data-object-type="textbox" class="t" style="position:absolute; left:104px; top:298px; width:1300px; z-index:1;">
+    <p style="margin:0; font-size:352px; font-weight:900; line-height:0.86; letter-spacing:-14px; white-space:nowrap; color:transparent; -webkit-text-stroke:2px var(--plan-ghost);">FY26</p>
+  </div>
+
+  <!-- L2 translucent angled block, top-right corner -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1560px; top:0px; width:360px; height:300px; background:linear-gradient(200deg, var(--plan-accent-bloom) 0%, rgb(from var(--plan-accent) r g b / 0.02) 70%, rgb(from var(--plan-accent) r g b / 0) 100%); clip-path:polygon(38% 0, 100% 0, 100% 100%); z-index:1;"></div>
+
+  <!-- L2 small decorative square cluster -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:246px; width:9px; height:9px; background:var(--plan-accent); z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:158px; top:246px; width:9px; height:9px; background:rgb(from var(--plan-ink) r g b / 0.55); z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:176px; top:246px; width:9px; height:9px; background:rgb(from var(--plan-ink) r g b / 0.22); z-index:1;"></div>
+
+  <!-- L3 red accent bar, brand lockup -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:92px; width:10px; height:38px; background:linear-gradient(180deg, var(--plan-accent-bright) 0%, var(--plan-accent-deep) 100%); box-shadow:0 4px 10px -3px var(--plan-accent-bloom); z-index:1;"></div>
+
+  <!-- L3 top hairline -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:188px; width:1000px; height:1px; background:linear-gradient(90deg, var(--plan-grid) 0%, var(--plan-ink-bloom) 100%); z-index:1;"></div>
+
+  <!-- brand lockup -->
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:172px; top:96px; width:660px; z-index:10;">
+    <p style="margin:0; font-size:26px; font-weight:600; letter-spacing:6px; color:var(--plan-ink);">[COMPANY LOGO]</p>
+    <p style="margin:6px 0 0 0; font-size:17px; font-weight:400; letter-spacing:3.5px; color:var(--plan-secondary);">CORPORATE STRATEGY OFFICE</p>
+  </div>
+
+  <!-- eyebrow: translucent red block -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:300px; width:716px; height:56px; background:linear-gradient(90deg, var(--plan-accent-bloom) 0%, var(--plan-accent-bloom) 100%); border-left:4px solid var(--plan-accent); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:166px; top:316px; width:680px; z-index:10;">
+    <p style="margin:0; font-size:22px; font-weight:600; letter-spacing:5px; white-space:nowrap; color:var(--plan-accent-deep);">CONFIDENTIAL &nbsp;&bull;&nbsp; INTERNAL BRIEFING</p>
+  </div>
+
+  <!-- headline -->
+  <div data-object="true" data-object-type="textbox" class="t" style="position:absolute; left:136px; top:396px; width:1120px; z-index:10;">
+    <p style="margin:0; font-size:106px; font-weight:800; line-height:1.05; letter-spacing:-1.8px; white-space:nowrap; color:var(--plan-ink); text-shadow:0 2px 18px var(--plan-ink-bloom);">NEXT QUARTER</p>
+    <p style="margin:0; font-size:106px; font-weight:800; line-height:1.05; letter-spacing:-1.8px; white-space:nowrap; color:var(--plan-ink); text-shadow:0 2px 18px var(--plan-ink-bloom);">STRATEGIC <span style="background:linear-gradient(120deg, var(--plan-accent-bright) 0%, var(--plan-accent-deep) 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:var(--plan-accent);">PLAN</span></p>
+  </div>
+
+  <!-- gradient rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:648px; width:196px; height:8px; background:linear-gradient(90deg, var(--plan-accent) 0%, var(--plan-ink) 100%); box-shadow:0 6px 14px -6px var(--plan-accent-bloom); z-index:1;"></div>
+
+  <!-- subtitle -->
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:140px; top:696px; width:1000px; z-index:10;">
+    <p style="margin:0; font-size:34px; font-weight:400; line-height:1.45; color:var(--plan-muted);">Company roadmap, operating priorities and investment focus for the coming quarter.</p>
+  </div>
+
+  <!-- elevated meta card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:820px; width:1030px; height:146px; background:linear-gradient(180deg, var(--plan-static-white) 0%, var(--plan-surface) 100%); border:1px solid var(--plan-line); box-shadow:0 22px 44px -20px var(--plan-grid); z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:820px; width:1030px; height:4px; background:linear-gradient(90deg, var(--plan-ink) 0%, var(--plan-accent) 100%); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:176px; top:856px; width:962px; display:flex; gap:34px; z-index:10;">
+    <div style="width:330px; border-left:3px solid var(--plan-ink); padding-left:18px;">
+      <p style="margin:0; font-size:15px; font-weight:600; letter-spacing:3px; white-space:nowrap; color:var(--plan-accent);">PRESENTED BY</p>
+      <p style="margin:10px 0 0 0; font-size:24px; font-weight:500; white-space:nowrap; color:var(--plan-ink);">Executive Leadership Team</p>
+    </div>
+    <div style="width:272px; border-left:3px solid var(--plan-ink); padding-left:18px;">
+      <p style="margin:0; font-size:15px; font-weight:600; letter-spacing:3px; white-space:nowrap; color:var(--plan-accent);">PLANNING CYCLE</p>
+      <p style="margin:10px 0 0 0; font-size:24px; font-weight:500; white-space:nowrap; color:var(--plan-ink);">Q4 &bull; Oct &ndash; Dec 2026</p>
+    </div>
+    <div style="width:254px; border-left:3px solid var(--plan-ink); padding-left:18px;">
+      <p style="margin:0; font-size:15px; font-weight:600; letter-spacing:3px; white-space:nowrap; color:var(--plan-accent);">AUDIENCE</p>
+      <p style="margin:10px 0 0 0; font-size:24px; font-weight:500; white-space:nowrap; color:var(--plan-ink);">All Business Units</p>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:140px; top:1002px; width:900px; z-index:10;">
+    <p style="margin:0; font-size:17px; font-weight:400; letter-spacing:2.5px; color:var(--plan-secondary);">FOR INTERNAL DISCUSSION ONLY &ndash; NOT FOR DISTRIBUTION</p>
+  </div>
+
+  <!-- right hero card: navy gradient, elevated -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1272px; top:118px; width:508px; height:848px; background:linear-gradient(160deg, var(--plan-hero-top) 0%, var(--plan-hero-mid) 52%, var(--plan-hero-bottom) 100%); box-shadow:0 40px 80px -30px var(--plan-hero-shadow); z-index:1;"></div>
+  <!-- card top accent -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1272px; top:118px; width:508px; height:7px; background:linear-gradient(90deg, var(--plan-accent-bright) 0%, var(--plan-tertiary) 100%); z-index:1;"></div>
+  <!-- card inner texture -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1272px; top:125px; width:508px; height:841px; background-image:radial-gradient(rgb(255 255 255 / 0.13) 1px, transparent 1px); background-size:22px 22px; -webkit-mask-image:linear-gradient(160deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0) 62%); mask-image:linear-gradient(160deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0) 62%); z-index:5;"></div>
+  <!-- card glow -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1272px; top:400px; width:508px; height:566px; background:radial-gradient(circle at 22% 78%, rgb(from var(--plan-accent-bright) r g b / 0.30) 0%, rgb(from var(--plan-accent-bright) r g b / 0) 62%); z-index:5;"></div>
+  <!-- decorative rings inside card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1418px; top:246px; width:432px; height:432px; border:1px solid rgb(255 255 255 / 0.62); border-radius:50%; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1488px; top:316px; width:292px; height:292px; border:1px solid rgb(255 255 255 / 0.42); border-radius:50%; z-index:5;"></div>
+
+  <!-- card label -->
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:1332px; top:186px; width:400px; z-index:10;">
+    <p style="margin:0; font-size:17px; font-weight:600; letter-spacing:4px; color:var(--plan-tertiary);">PLANNING CYCLE</p>
+  </div>
+
+  <!-- card big mark -->
+  <div data-object="true" data-object-type="textbox" class="t" style="position:absolute; left:1322px; top:238px; width:440px; z-index:10;">
+    <p style="margin:0; font-size:250px; font-weight:900; line-height:0.92; letter-spacing:-10px; color:var(--plan-static-white); text-shadow:0 18px 44px var(--plan-static-black);">Q4</p>
+  </div>
+
+  <!-- card date -->
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:1332px; top:520px; width:420px; z-index:10;">
+    <p style="margin:0; font-size:38px; font-weight:600; letter-spacing:2px; color:rgb(255 255 255 / 0.80);">OCT &ndash; DEC</p>
+    <p style="margin:8px 0 0 0; font-size:20px; font-weight:400; letter-spacing:3.5px; color:rgb(255 255 255 / 0.80);">FISCAL YEAR 2026</p>
+  </div>
+
+  <!-- card divider -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1332px; top:640px; width:388px; height:1px; background:linear-gradient(90deg, rgb(255 255 255 / 0.80) 0%, rgb(255 255 255 / 0.10) 100%); z-index:5;"></div>
+
+  <!-- card footer note -->
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:1332px; top:686px; width:400px; z-index:10;">
+    <p style="margin:0; font-size:22px; font-weight:400; line-height:1.5; color:rgb(255 255 255 / 0.80);">Approved planning horizon for all regional and functional teams.</p>
+  </div>
+
+  <!-- floating red badge overlapping the card edge -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1204px; top:786px; width:308px; height:104px; background:linear-gradient(135deg, var(--plan-accent-bright) 0%, var(--plan-accent-deep) 100%); box-shadow:0 26px 50px -18px var(--plan-accent-deep); z-index:8;"></div>
+  <div data-object="true" data-object-type="textbox" class="b" style="position:absolute; left:1232px; top:808px; width:262px; z-index:12;">
+    <p style="margin:0; font-size:15px; font-weight:600; letter-spacing:3.5px; white-space:nowrap; color:rgb(255 255 255 / 0.80);">STATUS</p>
+    <p style="margin:6px 0 0 0; font-size:26px; font-weight:600; letter-spacing:0.3px; white-space:nowrap; color:var(--plan-static-white);">Draft for Review</p>
+  </div>
+
+  <!-- bottom gradient bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:1068px; width:1920px; height:12px; background:linear-gradient(90deg, var(--plan-ink) 0%, var(--plan-hero-top) 46%, var(--plan-accent) 100%); z-index:1;"></div>
+
+</div>
+</body>
+</html>

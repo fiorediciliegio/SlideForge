@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create an 11-slide sustainability-reporting readiness deck. Internal attachments define our data readiness; Web Research should verify current reporting standards and effective dates. Do not claim compliance where evidence is incomplete."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Finance, sustainability, and audit leadership",
+        "description": "Finance, sustainability, and audit leadership"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Reporting-readiness assessment",
+        "description": "Reporting-readiness assessment"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Map verified standards to internal data and control gaps",
+        "description": "Map verified standards to internal data and control gaps"
+      }
+    ],
+    "slide_count": [
+      11
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Technical, transparent, assurance-aware",
+        "description": "Technical, transparent, assurance-aware"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Finance, sustainability, and audit leadership",
+      "description": "Finance, sustainability, and audit leadership"
+    },
+    "purpose": {
+      "label": "Reporting-readiness assessment",
+      "description": "Reporting-readiness assessment"
+    },
+    "desired_outcome": {
+      "label": "Map verified standards to internal data and control gaps",
+      "description": "Map verified standards to internal data and control gaps"
+    },
+    "slide_count": 11,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Technical, transparent, assurance-aware",
+      "description": "Technical, transparent, assurance-aware"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

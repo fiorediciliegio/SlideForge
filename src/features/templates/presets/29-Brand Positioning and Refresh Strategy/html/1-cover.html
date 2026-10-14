@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand Positioning and Refresh Strategy</title>
+<style>
+/* AURELIA — Brand Positioning & Refresh Strategy
+   Design system: white paper + single red accent, editorial consulting grid.
+   Primary: Signal Red #C8102E · Secondary: Ink #17140F, Greige #EDEAE5 */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #FFFFFF;
+  --paper-2: #F7F5F2;
+  --paper-3: #EDEAE5;
+  --ink: #17140F;
+  --ink-70: #55504A;
+  --ink-45: #8B847C;
+  --ink-25: #B9B2AA;
+  --line: #E3DED7;
+  --line-strong: #CFC8BF;
+  --red: #C8102E;
+  --red-tint: #FBEDEF;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body { margin: 0; padding: 0; overflow: hidden; background: var(--paper); }
+
+.slide-container {
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type scale ---------- */
+.eyebrow {
+  font-family: var(--sans); font-size: 17px; font-weight: 600;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-45);
+}
+.h1 { font-family: var(--serif); font-weight: 400; font-size: 104px; line-height: 1.02; letter-spacing: -0.01em; }
+.h2 { font-family: var(--serif); font-weight: 400; font-size: 58px; line-height: 1.06; letter-spacing: -0.005em; }
+.h3 { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.14; }
+.lead { font-family: var(--sans); font-size: 25px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.body { font-family: var(--sans); font-size: 21px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.body-s { font-family: var(--sans); font-size: 19px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.label { font-family: var(--sans); font-size: 16px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-45); }
+.label-red { font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
+.stat { font-family: var(--serif); font-weight: 400; font-size: 92px; line-height: 0.94; letter-spacing: -0.02em; }
+.stat-s { font-family: var(--serif); font-weight: 400; font-size: 60px; line-height: 0.96; letter-spacing: -0.02em; }
+.caption { font-family: var(--sans); font-size: 15px; font-weight: 400; line-height: 1.45; color: var(--ink-45); }
+.strong { font-weight: 600; color: var(--ink); }
+.red { color: var(--red); }
+.ital { font-style: italic; }
+
+/* ---------- primitives ---------- */
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 2px; }
+.card-fill { background: var(--paper-2); border: 1px solid var(--line); border-radius: 2px; }
+.tag {
+  display: inline-block; padding: 7px 14px; border: 1px solid var(--line-strong);
+  border-radius: 2px; font-size: 16px; font-weight: 500; letter-spacing: 0.06em;
+  color: var(--ink); background: var(--paper);
+}
+.num-marker {
+  font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--red);
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="01 Cover" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <!-- right image panel -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1160px; top:0px; width:760px; height:1080px; z-index:5; overflow:hidden;">
+    <img src="../assets/mood-product.jpg" alt="Product still life" style="width:100%; height:100%; object-fit:cover; object-position:50% 45%; display:block; filter:saturate(0.88) contrast(1.02);">
+  </div>
+
+  <!-- greige field behind text -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1160px; height:1080px; background:#FFFFFF; border-right:1px solid #E3DED7; z-index:1;"></div>
+
+  <!-- red accent rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:172px; width:96px; height:5px; background:#C8102E; z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:120px; width:860px; z-index:10;">
+    <div class="eyebrow">Brand Strategy · FY26 Cycle</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:232px; width:940px; z-index:10;">
+    <div class="h1">Brand Positioning<br>and Refresh<br><span class="ital">Strategy</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:606px; width:880px; height:1px; background:#E3DED7; z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:646px; width:830px; z-index:10;">
+    <div class="lead"><span class="strong">AURELIA</span> — repositioning a 24-year-old personal-care brand for a consumer who now buys meaning, not just formula.</div>
+  </div>
+
+  <!-- meta row -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:832px; width:900px; z-index:10; display:flex; gap:64px;">
+    <div>
+      <div class="label" style="margin-bottom:8px;">Prepared for</div>
+      <div class="body-s" style="color:#17140F;">Brand Management<br>&amp; Executive Committee</div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:8px;">Scope</div>
+      <div class="body-s" style="color:#17140F;">Positioning · Identity<br>12-month rollout</div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:8px;">Status</div>
+      <div class="body-s" style="color:#17140F;">Recommendation<br>Confidential draft</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1010px; width:700px; z-index:10;">
+    <div class="caption" style="letter-spacing:0.14em; text-transform:uppercase;">Aurelia Consumer Brands · Strategy &amp; Insight</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1160px; top:940px; width:760px; height:140px; background:linear-gradient(180deg, rgba(23,20,15,0) 0%, rgba(23,20,15,0.62) 100%); z-index:6;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1216px; top:1016px; width:640px; z-index:10;">
+    <div class="caption" style="color:#FFFFFF; letter-spacing:0.14em; text-transform:uppercase;">Moodboard reference · Ritual &amp; material</div>
+  </div>
+
+</div>
+</body>
+</html>

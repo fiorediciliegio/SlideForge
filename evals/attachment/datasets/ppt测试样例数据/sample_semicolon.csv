@@ -1,0 +1,101 @@
+id;first_name;last_name;email;country;city;signup_date;active;score
+1;Alice;Anderson;alice0@example.com;USA;New York;2024-01-15;true;88
+2;Bob;Brown;bob1@example.com;UK;London;2024-02-15;true;100
+3;Carol;Chen;carol2@example.com;Singapore;Singapore;2024-03-15;true;70
+4;David;Diaz;david3@example.com;Mexico;Mexico City;2024-04-15;false;87
+5;Emma;Evans;emma4@example.com;Canada;Toronto;2024-05-15;true;62
+6;Frank;Fischer;frank5@example.com;Germany;Berlin;2024-06-15;true;67
+7;Grace;Garcia;grace6@example.com;Spain;Madrid;2024-07-15;true;70
+8;Henry;Hassan;henry7@example.com;Egypt;Cairo;2024-08-15;false;61
+9;Iris;Ito;iris8@example.com;Japan;Tokyo;2024-09-15;true;69
+10;Jack;Johnson;jack9@example.com;Australia;Sydney;2024-10-15;true;96
+11;Alice;Anderson;alice10@example.com;USA;New York;2024-11-15;true;66
+12;Bob;Brown;bob11@example.com;UK;London;2024-12-15;false;93
+13;Carol;Chen;carol12@example.com;Singapore;Singapore;2024-01-15;true;80
+14;David;Diaz;david13@example.com;Mexico;Mexico City;2024-02-15;true;90
+15;Emma;Evans;emma14@example.com;Canada;Toronto;2024-03-15;true;84
+16;Frank;Fischer;frank15@example.com;Germany;Berlin;2024-04-15;false;89
+17;Grace;Garcia;grace16@example.com;Spain;Madrid;2024-05-15;true;73
+18;Henry;Hassan;henry17@example.com;Egypt;Cairo;2024-06-15;true;60
+19;Iris;Ito;iris18@example.com;Japan;Tokyo;2024-07-15;true;73
+20;Jack;Johnson;jack19@example.com;Australia;Sydney;2024-08-15;false;66
+21;Alice;Anderson;alice20@example.com;USA;New York;2024-09-15;true;92
+22;Bob;Brown;bob21@example.com;UK;London;2024-10-15;true;71
+23;Carol;Chen;carol22@example.com;Singapore;Singapore;2024-11-15;true;80
+24;David;Diaz;david23@example.com;Mexico;Mexico City;2024-12-15;false;78
+25;Emma;Evans;emma24@example.com;Canada;Toronto;2024-01-15;true;75
+26;Frank;Fischer;frank25@example.com;Germany;Berlin;2024-02-15;true;99
+27;Grace;Garcia;grace26@example.com;Spain;Madrid;2024-03-15;true;86
+28;Henry;Hassan;henry27@example.com;Egypt;Cairo;2024-04-15;false;60
+29;Iris;Ito;iris28@example.com;Japan;Tokyo;2024-05-15;true;64
+30;Jack;Johnson;jack29@example.com;Australia;Sydney;2024-06-15;true;65
+31;Alice;Anderson;alice30@example.com;USA;New York;2024-07-15;true;77
+32;Bob;Brown;bob31@example.com;UK;London;2024-08-15;false;91
+33;Carol;Chen;carol32@example.com;Singapore;Singapore;2024-09-15;true;80
+34;David;Diaz;david33@example.com;Mexico;Mexico City;2024-10-15;true;66
+35;Emma;Evans;emma34@example.com;Canada;Toronto;2024-11-15;true;98
+36;Frank;Fischer;frank35@example.com;Germany;Berlin;2024-12-15;false;91
+37;Grace;Garcia;grace36@example.com;Spain;Madrid;2024-01-15;true;87
+38;Henry;Hassan;henry37@example.com;Egypt;Cairo;2024-02-15;true;89
+39;Iris;Ito;iris38@example.com;Japan;Tokyo;2024-03-15;true;70
+40;Jack;Johnson;jack39@example.com;Australia;Sydney;2024-04-15;false;66
+41;Alice;Anderson;alice40@example.com;USA;New York;2024-05-15;true;62
+42;Bob;Brown;bob41@example.com;UK;London;2024-06-15;true;80
+43;Carol;Chen;carol42@example.com;Singapore;Singapore;2024-07-15;true;92
+44;David;Diaz;david43@example.com;Mexico;Mexico City;2024-08-15;false;63
+45;Emma;Evans;emma44@example.com;Canada;Toronto;2024-09-15;true;80
+46;Frank;Fischer;frank45@example.com;Germany;Berlin;2024-10-15;true;96
+47;Grace;Garcia;grace46@example.com;Spain;Madrid;2024-11-15;true;65
+48;Henry;Hassan;henry47@example.com;Egypt;Cairo;2024-12-15;false;80
+49;Iris;Ito;iris48@example.com;Japan;Tokyo;2024-01-15;true;82
+50;Jack;Johnson;jack49@example.com;Australia;Sydney;2024-02-15;true;96
+51;Alice;Anderson;alice50@example.com;USA;New York;2024-03-15;true;66
+52;Bob;Brown;bob51@example.com;UK;London;2024-04-15;false;79
+53;Carol;Chen;carol52@example.com;Singapore;Singapore;2024-05-15;true;70
+54;David;Diaz;david53@example.com;Mexico;Mexico City;2024-06-15;true;65
+55;Emma;Evans;emma54@example.com;Canada;Toronto;2024-07-15;true;85
+56;Frank;Fischer;frank55@example.com;Germany;Berlin;2024-08-15;false;98
+57;Grace;Garcia;grace56@example.com;Spain;Madrid;2024-09-15;true;89
+58;Henry;Hassan;henry57@example.com;Egypt;Cairo;2024-10-15;true;64
+59;Iris;Ito;iris58@example.com;Japan;Tokyo;2024-11-15;true;76
+60;Jack;Johnson;jack59@example.com;Australia;Sydney;2024-12-15;false;76
+61;Alice;Anderson;alice60@example.com;USA;New York;2024-01-15;true;87
+62;Bob;Brown;bob61@example.com;UK;London;2024-02-15;true;100
+63;Carol;Chen;carol62@example.com;Singapore;Singapore;2024-03-15;true;74
+64;David;Diaz;david63@example.com;Mexico;Mexico City;2024-04-15;false;84
+65;Emma;Evans;emma64@example.com;Canada;Toronto;2024-05-15;true;61
+66;Frank;Fischer;frank65@example.com;Germany;Berlin;2024-06-15;true;64
+67;Grace;Garcia;grace66@example.com;Spain;Madrid;2024-07-15;true;70
+68;Henry;Hassan;henry67@example.com;Egypt;Cairo;2024-08-15;false;83
+69;Iris;Ito;iris68@example.com;Japan;Tokyo;2024-09-15;true;100
+70;Jack;Johnson;jack69@example.com;Australia;Sydney;2024-10-15;true;91
+71;Alice;Anderson;alice70@example.com;USA;New York;2024-11-15;true;69
+72;Bob;Brown;bob71@example.com;UK;London;2024-12-15;false;99
+73;Carol;Chen;carol72@example.com;Singapore;Singapore;2024-01-15;true;69
+74;David;Diaz;david73@example.com;Mexico;Mexico City;2024-02-15;true;64
+75;Emma;Evans;emma74@example.com;Canada;Toronto;2024-03-15;true;64
+76;Frank;Fischer;frank75@example.com;Germany;Berlin;2024-04-15;false;93
+77;Grace;Garcia;grace76@example.com;Spain;Madrid;2024-05-15;true;83
+78;Henry;Hassan;henry77@example.com;Egypt;Cairo;2024-06-15;true;83
+79;Iris;Ito;iris78@example.com;Japan;Tokyo;2024-07-15;true;91
+80;Jack;Johnson;jack79@example.com;Australia;Sydney;2024-08-15;false;71
+81;Alice;Anderson;alice80@example.com;USA;New York;2024-09-15;true;99
+82;Bob;Brown;bob81@example.com;UK;London;2024-10-15;true;62
+83;Carol;Chen;carol82@example.com;Singapore;Singapore;2024-11-15;true;63
+84;David;Diaz;david83@example.com;Mexico;Mexico City;2024-12-15;false;79
+85;Emma;Evans;emma84@example.com;Canada;Toronto;2024-01-15;true;80
+86;Frank;Fischer;frank85@example.com;Germany;Berlin;2024-02-15;true;88
+87;Grace;Garcia;grace86@example.com;Spain;Madrid;2024-03-15;true;92
+88;Henry;Hassan;henry87@example.com;Egypt;Cairo;2024-04-15;false;82
+89;Iris;Ito;iris88@example.com;Japan;Tokyo;2024-05-15;true;95
+90;Jack;Johnson;jack89@example.com;Australia;Sydney;2024-06-15;true;91
+91;Alice;Anderson;alice90@example.com;USA;New York;2024-07-15;true;80
+92;Bob;Brown;bob91@example.com;UK;London;2024-08-15;false;73
+93;Carol;Chen;carol92@example.com;Singapore;Singapore;2024-09-15;true;63
+94;David;Diaz;david93@example.com;Mexico;Mexico City;2024-10-15;true;89
+95;Emma;Evans;emma94@example.com;Canada;Toronto;2024-11-15;true;72
+96;Frank;Fischer;frank95@example.com;Germany;Berlin;2024-12-15;false;67
+97;Grace;Garcia;grace96@example.com;Spain;Madrid;2024-01-15;true;90
+98;Henry;Hassan;henry97@example.com;Egypt;Cairo;2024-02-15;true;95
+99;Iris;Ito;iris98@example.com;Japan;Tokyo;2024-03-15;true;81
+100;Jack;Johnson;jack99@example.com;Australia;Sydney;2024-04-15;false;79

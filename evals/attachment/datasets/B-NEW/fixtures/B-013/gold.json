@@ -1,0 +1,13 @@
+{
+  "case_id": "B-013",
+  "size_class": "长",
+  "target_input_tokens": 17800,
+  "estimated_outline_input_tokens": 17905,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "Multiple attachments",
+  "attachment_types": "MD + TXT",
+  "content_strategies": "full_context + full_context",
+  "evaluation_risks": "1. Claiming performance gains without benchmarks; 2. Presenting budget as approved; 3. Ignoring dual-run or residency requirements; 4. Expanding the pilot beyond two event types; 5. Treating a proposal as a completed migration."
+}

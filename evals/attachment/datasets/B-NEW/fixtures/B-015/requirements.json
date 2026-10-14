@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Turn the founder notes into an 8-slide seed-investor narrative. Do not add market size, customer logos, or traction beyond the notes. Image Research is allowed only for non-branded contextual visuals of warehouse operations; product screenshots will be supplied separately."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Seed-stage investors",
+        "description": "Seed-stage investors"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Early investor narrative",
+        "description": "Early investor narrative"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Explain problem, prototype evidence, limits, and next milestone without inflating traction",
+        "description": "Explain problem, prototype evidence, limits, and next milestone without inflating traction"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Ambitious but honest",
+        "description": "Ambitious but honest"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Seed-stage investors",
+      "description": "Seed-stage investors"
+    },
+    "purpose": {
+      "label": "Early investor narrative",
+      "description": "Early investor narrative"
+    },
+    "desired_outcome": {
+      "label": "Explain problem, prototype evidence, limits, and next milestone without inflating traction",
+      "description": "Explain problem, prototype evidence, limits, and next milestone without inflating traction"
+    },
+    "slide_count": 8,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Ambitious but honest",
+      "description": "Ambitious but honest"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

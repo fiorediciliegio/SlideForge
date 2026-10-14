@@ -1,0 +1,73 @@
+{
+  "eyebrow": "Conclusion",
+  "title": "Strategic Summary: Key Takeaways",
+  "headerMetaLabel": "Horizon",
+  "headerMetaValue": "2026 - 2030",
+  "headerIcon": "shield",
+  "topCards": [
+    {
+      "indexLabel": "01",
+      "title": "Scale vs. Standard",
+      "description": "A clear dichotomy defines the economic relationship:",
+      "icon": "chart-pie",
+      "rows": [
+        {
+          "label": "China",
+          "text": "Dominates aggregate scale (~$20T GDP)"
+        },
+        {
+          "label": "Japan",
+          "text": "Leads in per-capita wealth (~2.5x)"
+        }
+      ]
+    },
+    {
+      "indexLabel": "02",
+      "title": "The Aging Race",
+      "description": "Both nations face labor shortages, but the timing differs:",
+      "icon": "users",
+      "rows": [
+        {
+          "label": "Japan",
+          "text": "Stabilizing a super-aged society"
+        },
+        {
+          "label": "China",
+          "text": "Facing rapid, steep demographic decline"
+        }
+      ]
+    },
+    {
+      "indexLabel": "03",
+      "title": "Speed vs. Stability",
+      "description": "Distinct approaches to technology deployment:",
+      "icon": "robot",
+      "rows": [
+        {
+          "label": "China",
+          "text": "Rapid piloting and scaling in AI and payments"
+        },
+        {
+          "label": "Japan",
+          "text": "Precision, robotics, and safety assurance"
+        }
+      ]
+    }
+  ],
+  "interdependenceCard": {
+    "title": "Resilient Interdependence",
+    "text": "Despite geopolitical friction (\"hot economics, cold politics\"), supply chains remain deeply integrated.",
+    "icon": "broadcast",
+    "tags": ["Electronics", "Automotive", "Machinery"]
+  },
+  "outlookCard": {
+    "title": "2030 Outlook: The Productivity Era",
+    "text": "Success for both nations hinges on the same variable: offsetting labor shrinkage with AI-driven productivity.",
+    "icon": "bolt",
+    "tags": [],
+    "kicker": "Key Differentiator: Policy Execution"
+  },
+  "sourceNote": "Summary derived from analysis of IMF, World Bank, and UN Data",
+  "confidentialityLabel": "CONFIDENTIAL",
+  "slideLabel": "SLIDE 13"
+}

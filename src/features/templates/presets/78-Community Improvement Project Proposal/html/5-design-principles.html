@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Goals &amp; Design Principles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Maple Ward Commons — proposal design system
+   Palette: white / off-white paper, ink text, single green accent + soft green tint.
+   Type: Source Serif 4 (display) + Archivo (UI/labels/data). Radius 4px. 1px rules. */
+
+:root{
+  --paper:      #FFFFFF;
+  --paper-2:    #F6F7F4;
+  --paper-3:    #EEF0EB;
+  --line:       #E2E6E1;
+  --line-2:     #C6CEC6;
+  --ink:        #131C17;
+  --ink-2:      #55615A;
+  --ink-3:      #86908A;
+  --green:      #1E7A46;
+  --green-2:    #3FA06A;
+  --green-3:    #6FBE8E;
+  --green-4:    #A8D8BC;
+  --green-5:    #D6EADE;
+  --green-soft: #E7F1EA;
+  --r: 4px;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--paper);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---- typography ---- */
+.k{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+    letter-spacing:.20em; text-transform:uppercase; color:var(--green); margin:0; }
+.d2{ font-family:'Source Serif 4',Georgia,serif; font-size:92px; font-weight:400;
+     line-height:1.10; letter-spacing:-.02em; color:var(--ink); margin:0; }
+.d1{ font-family:'Source Serif 4',Georgia,serif; font-size:76px; font-weight:400;
+     line-height:1.12; letter-spacing:-.015em; color:var(--ink); margin:0; }
+.h1{ font-family:'Source Serif 4',Georgia,serif; font-size:54px; font-weight:400;
+     line-height:1.16; letter-spacing:-.01em; color:var(--ink); margin:0; }
+.h2{ font-family:'Archivo',sans-serif; font-size:30px; font-weight:600;
+     line-height:1.30; color:var(--ink); margin:0; }
+.h3{ font-family:'Archivo',sans-serif; font-size:25px; font-weight:600;
+     line-height:1.34; color:var(--ink); margin:0; }
+.lead{ font-family:'Archivo',sans-serif; font-size:28px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.p{ font-family:'Archivo',sans-serif; font-size:24px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.sm{ font-family:'Archivo',sans-serif; font-size:22px; font-weight:400;
+     line-height:1.45; color:var(--ink-2); margin:0; }
+.lab{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+     letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.note{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:400;
+     line-height:1.4; color:var(--ink-3); margin:0; }
+.big{ font-family:'Source Serif 4',Georgia,serif; font-size:88px; font-weight:400;
+     line-height:1; letter-spacing:-.02em; color:var(--green); margin:0; }
+.quote{ font-family:'Source Serif 4',Georgia,serif; font-size:28px; font-weight:400;
+     font-style:italic; line-height:1.44; color:var(--ink); margin:0; }
+.g{ color:var(--green); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+
+/* ---- tables ---- */
+table.t{ width:100%; border-collapse:collapse; font-family:'Archivo',sans-serif; }
+table.t th{ font-size:20px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); text-align:left; padding:0 18px 14px 0; border-bottom:1px solid var(--line-2); }
+table.t td{ font-size:22px; font-weight:400; color:var(--ink-2); text-align:left;
+    padding:16px 18px 16px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+table.t td.strong{ font-weight:600; color:var(--ink); }
+table.t td.num{ font-variant-numeric:tabular-nums; font-weight:600; color:var(--ink); }
+table.t tr.last td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Goals &amp; Principles" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:100px; width:900px; z-index:10;">
+    <p class="k">05 — Goals &amp; Design Principles</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:150px; width:1080px; z-index:10;">
+    <h1 class="h1">Four principles. Each one decides something concrete on the site.</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:162px; width:500px; z-index:10;">
+    <p class="p">Principles were ratified by open vote at the 14 July resident assembly — 96 of 118 attendees in favour.</p>
+  </div>
+
+  <!-- matrix header -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:358px; width:1680px; height:1px; background:var(--line-2); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:318px; width:420px; z-index:10;">
+    <p class="lab">Principle</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:318px; width:500px; z-index:10;">
+    <p class="lab">What it commits us to</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:318px; width:548px; z-index:10;">
+    <p class="lab">Design decision on site</p>
+  </div>
+
+  <!-- row bands · descending green tints -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:366px; width:1680px; height:124px; background:#DCEBE2; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:532px; width:1680px; height:124px; background:#E5F0EA; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:698px; width:1680px; height:124px; background:#EDF5F0; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:864px; width:1680px; height:124px; background:#F4F9F6; border-radius:4px; z-index:1;"></div>
+
+  <!-- row 1 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:394px; width:420px; z-index:10;">
+    <div style="display:flex; gap:20px; align-items:flex-start;">
+      <span style="font-family:'Source Serif 4',Georgia,serif; font-size:40px; line-height:1; color:#1E7A46;">01</span>
+      <span style="font-family:'Archivo',sans-serif; font-size:27px; font-weight:600; line-height:1.26; color:#131C17;">Open to everyone,<br>every day</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:398px; width:500px; z-index:10;">
+    <p class="sm">No gate fees, no membership, no booking needed for the open ground.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:398px; width:548px; z-index:10;">
+    <p class="sm">Step-free entry on both streets · lighting to 8pm · signage in 4 languages</p>
+  </div>
+
+  <!-- row 2 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:560px; width:420px; z-index:10;">
+    <div style="display:flex; gap:20px; align-items:flex-start;">
+      <span style="font-family:'Source Serif 4',Georgia,serif; font-size:40px; line-height:1; color:#1E7A46;">02</span>
+      <span style="font-family:'Archivo',sans-serif; font-size:27px; font-weight:600; line-height:1.26; color:#131C17;">Residents hold<br>the decisions</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:564px; width:500px; z-index:10;">
+    <p class="sm">A resident majority on the stewardship board, with budget authority.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:564px; width:548px; z-index:10;">
+    <p class="sm">7 of 11 board seats elected by ward residents · quarterly open books</p>
+  </div>
+
+  <!-- row 3 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:726px; width:420px; z-index:10;">
+    <div style="display:flex; gap:20px; align-items:flex-start;">
+      <span style="font-family:'Source Serif 4',Georgia,serif; font-size:40px; line-height:1; color:#3FA06A;">03</span>
+      <span style="font-family:'Archivo',sans-serif; font-size:27px; font-weight:600; line-height:1.26; color:#131C17;">Cheap to run,<br>built to last</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:730px; width:500px; z-index:10;">
+    <p class="sm">Operating cost must be coverable without a new grant by year three.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:730px; width:548px; z-index:10;">
+    <p class="sm">Rainwater irrigation · hard-wearing surfaces · $47k/yr steady-state budget</p>
+  </div>
+
+  <!-- row 4 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:892px; width:420px; z-index:10;">
+    <div style="display:flex; gap:20px; align-items:flex-start;">
+      <span style="font-family:'Source Serif 4',Georgia,serif; font-size:40px; line-height:1; color:#3FA06A;">04</span>
+      <span style="font-family:'Archivo',sans-serif; font-size:27px; font-weight:600; line-height:1.26; color:#131C17;">Visible progress<br>within a year</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:896px; width:500px; z-index:10;">
+    <p class="sm">Something usable opens before the full build finishes.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:896px; width:548px; z-index:10;">
+    <p class="sm">Phase 1 grove and plaza open month 9, ahead of the pavilion</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:990px; width:1680px; height:1px; background:var(--line); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1014px; width:900px; z-index:10;">
+    <p class="note">Maple Ward Commons · Community Improvement Project Proposal</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:1014px; width:200px; z-index:10;">
+    <p class="note" style="text-align:right;">05 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

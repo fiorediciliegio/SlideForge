@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 72px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.body-text { font-size: 22px; line-height: 1.5; color: #3A3D45; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { position: relative; margin-top: 30px; z-index: 5; }
+.timestamp { position: absolute; right: 0; bottom: 10px; font-size: 14px; font-weight: 600; color: var(--mute); letter-spacing: 0.08em; text-transform: uppercase; }
+.content-area { flex-grow: 1; margin-top: 35px; margin-bottom: 35px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Grid and Cards Styles */
+.talent-grid {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  height: 100%;
+  align-items: stretch;
+}
+.talent-card {
+  flex: 530;
+  background: #F6F6F4;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.talent-card.featured {
+  flex: 580;
+  background: var(--paper);
+  border: 2px solid var(--red);
+  box-shadow: 0 15px 35px rgba(208, 26, 46, 0.08);
+  transform: translateY(-8px);
+}
+.featured-header {
+  background: var(--red);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  padding: 8px 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+.card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 12px;
+  letter-spacing: 0.1em;
+}
+.card-badge.primary {
+  background: var(--red);
+}
+.card-body {
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+.talent-header {
+  margin-bottom: 12px;
+}
+.talent-name {
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.talent-meta {
+  font-size: 15px;
+  color: var(--mute);
+  margin: 4px 0 0 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.stats-row {
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  margin-bottom: 14px;
+}
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.stat-val {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.stat-lbl {
+  font-size: 12px;
+  color: var(--mute);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+.info-section {
+  margin-bottom: 12px;
+}
+.info-label {
+  font-size: 12px;
+  color: var(--mute);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 0 0 4px 0;
+}
+.info-text {
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0;
+}
+.info-text.highlight {
+  font-weight: 700;
+  font-size: 19px;
+}
+.info-text.highlight.red {
+  color: var(--red);
+}
+.risk-section {
+  background: #EDEDED;
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-left: 3px solid #7C818B;
+  margin-top: auto;
+}
+.risk-section.red-bg {
+  background: var(--accent);
+  border-left: 3px solid var(--red);
+}
+.risk-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #7C818B;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+.risk-badge.red {
+  color: var(--red);
+}
+.risk-text {
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 0;
+  color: #3A3D45;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Immediate Action List</div>
+    <h1 class="h1">The Immediate Sign List: <span class="serif-italic">High-Signal Talent Ready for Conversion</span></h1>
+    <div class="timestamp">Post-Reunion Data Cutoff: Sep 4, 2026 (Reunion Aired Aug 31, 2026)</div>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    <div class="talent-grid">
+      
+      <!-- Card 1: Aniya Harvey -->
+      <div class="talent-card">
+        <div class="card-image-wrap">
+          <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" alt="Aniya Harvey">
+          <div class="card-badge">RANK 02</div>
+        </div>
+        <div class="card-body">
+          <div class="talent-header">
+            <h3 class="talent-name">Aniya Harvey</h3>
+            <p class="talent-meta">Gersh Signing &bull; Runner-Up</p>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-val">2.1M</span>
+              <span class="stat-lbl">IG Followers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">3.8M</span>
+              <span class="stat-lbl">Cross-Platform</span>
+            </div>
+          </div>
+          <div class="info-section">
+            <p class="info-label">Best Brand Category</p>
+            <p class="info-text highlight">Mainstream Lifestyle</p>
+          </div>
+          <div class="info-section">
+            <p class="info-label">Conversion Play</p>
+            <p class="info-text">Professional representation provides reliable, highly predictable cross-platform integration.</p>
+          </div>
+          <div class="risk-section">
+            <span class="risk-badge">RISK</span>
+            <p class="risk-text">Gersh signing signals a rapidly rising commercial rate floor.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Trinity Tatum (Featured #1) -->
+      <div class="talent-card featured">
+        <div class="featured-header">
+          <span>PRIMARY TARGET &bull; MUST SIGN BEFORE RATES JUMP</span>
+        </div>
+        <div class="card-image-wrap">
+          <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" alt="Trinity Tatum">
+          <div class="card-badge primary">RANK 01</div>
+        </div>
+        <div class="card-body">
+          <div class="talent-header">
+            <h3 class="talent-name">Trinity Tatum</h3>
+            <p class="talent-meta">S8 Winner &bull; WME Representation</p>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-val">3.6M</span>
+              <span class="stat-lbl">IG Followers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">High</span>
+              <span class="stat-lbl">Meme/Quote Virality</span>
+            </div>
+          </div>
+          <div class="info-section">
+            <p class="info-label">Best Brand Category</p>
+            <p class="info-text highlight red">Beauty Editorial</p>
+          </div>
+          <div class="info-section">
+            <p class="info-label">Conversion Play</p>
+            <p class="info-text">Unmatched organic memeability and high-fashion modeling profile drive massive native engagement.</p>
+          </div>
+          <div class="risk-section red-bg">
+            <span class="risk-badge red">RISK</span>
+            <p class="risk-text">Extreme short-term attention spikes will trigger immediate rate inflation.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Kenzie Annis -->
+      <div class="talent-card">
+        <div class="card-image-wrap">
+          <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-49feabfdd7c9ed51.webp" alt="Kenzie Annis">
+          <div class="card-badge">RANK 03</div>
+        </div>
+        <div class="card-body">
+          <div class="talent-header">
+            <h3 class="talent-name">Kenzie Annis</h3>
+            <p class="talent-meta">Beauty Creator &bull; S8 Breakout</p>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-val">1.1M</span>
+              <span class="stat-lbl">IG Followers</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val">Active</span>
+              <span class="stat-lbl">TikTok Momentum</span>
+            </div>
+          </div>
+          <div class="info-section">
+            <p class="info-label">Best Brand Category</p>
+            <p class="info-text highlight">DTC Beauty & Haircare</p>
+          </div>
+          <div class="info-section">
+            <p class="info-label">Conversion Play</p>
+            <p class="info-text">Specific beauty and haircare tutorial hooks on TikTok deliver high-converting DTC formats.</p>
+          </div>
+          <div class="risk-section">
+            <span class="risk-badge">RISK</span>
+            <p class="risk-text">Requires direct TikTok API verification of volatile engagement rates.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Pop-Culture Editorial Matrix</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [02]</div>
+  </footer>
+</div>
+</body>
+</html>

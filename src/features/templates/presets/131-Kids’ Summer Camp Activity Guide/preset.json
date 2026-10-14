@@ -1,0 +1,103 @@
+{
+  "id": "131-Kids’ Summer Camp Activity Guide",
+  "version": 1,
+  "ppt_number": 131,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "blue",
+    "yellow",
+    "purple",
+    "red"
+  ],
+  "name": "Kids’ Summer Camp Activity Guide",
+  "description": "Playful summer-camp guide with saturated colors, rounded type, flat illustrations, badges, and game-like modules.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["children"],"formats":["lesson"],"primary_styles":["playful"],"visual_traits":["playful","colorful","cartoon","illustration"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "皇家蓝封面以超大白黄标题和营地帐篷插画为主，亮紫底座与红色圆点增强活力，层级鲜明。"
+    },
+    {
+      "path": "images/2-camp-theme-and-mission.webp",
+      "alt": "紫色任务栏与白色角色区左右分栏，卡通狐狸徽章和红色行动条突出营地使命，层级鲜明。"
+    },
+    {
+      "path": "images/3-camp-map.webp",
+      "alt": "七张彩色营地站点卡以箭头连成路线，右侧地图图例和罗盘说明导航方式，阅读顺序明确。"
+    },
+    {
+      "path": "images/4-outdoor-adventures.webp",
+      "alt": "蓝色运动插画横贯上方，页面下半部五张活动卡以黄蓝白色块组织户外项目，信息对比清楚。"
+    },
+    {
+      "path": "images/5-nature-discovery.webp",
+      "alt": "三张自然发现卡横排在左侧，右侧紫色守护承诺卡与底部蓝色观察任务条形成行动区。"
+    },
+    {
+      "path": "images/6-crafts-and-creative-projects.webp",
+      "alt": "红黄蓝分区承载创意项目卡，剪刀画笔图标和旗帜插画营造手作课堂，主视觉层级鲜明有序。"
+    },
+    {
+      "path": "images/7-games-and-team-challenges.webp",
+      "alt": "中央圆形团队插画连接三张游戏卡，左侧队长任务卡与底部积分条补充合作机制，信息对比清楚。"
+    },
+    {
+      "path": "images/8-daily-schedule.webp",
+      "alt": "十张彩色时间卡分两行连接成一日路线，蓝色页眉和底部提示条组织营地日程，阅读顺序明确。"
+    },
+    {
+      "path": "images/9-safety-reminders.webp",
+      "alt": "红色背景上排布六张安全规则卡，黄蓝图标和紫色标题带形成醒目提醒，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-fun-checklist-and-send-off.webp",
+      "alt": "三块蓝紫红检查区组成护照式收尾，背包插画、徽章和目标清单增强参与感，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，皇家蓝封面以超大白黄标题和营地帐篷插画为主，亮紫底座与红色圆点增强活力，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/2-camp-theme-and-mission.html",
+      "description": "紫色任务栏与白色角色区左右分栏，卡通狐狸徽章和红色行动条突出营地使命，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/3-camp-map.html",
+      "description": "白色页面用七张红黄蓝紫站点卡和箭头构成营地地图，路线在两行间折返，右侧蓝色图例与黄色罗盘补充导航规则。"
+    },
+    {
+      "path": "html/4-outdoor-adventures.html",
+      "description": "皇家蓝上半区以跑跳攀爬插画建立动感，下半区分布五张活动卡，黄色、蓝色和白色模块分别介绍接力、戏水与障碍项目。"
+    },
+    {
+      "path": "html/5-nature-discovery.html",
+      "description": "暖白页面左侧横排树叶、观鸟和昆虫三张发现卡，右侧紫色守护承诺卡独立强调规则，底部蓝色任务条加入色卡和记录提示。"
+    },
+    {
+      "path": "html/6-crafts-and-creative-projects.html",
+      "description": "红黄蓝分区承载创意项目卡，剪刀画笔图标和旗帜插画营造手作课堂，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/7-games-and-team-challenges.html",
+      "description": "紫白分屏中央放置三人合作插画，右侧纵向排列三张小游戏卡，左侧红色队长任务卡和底部黄色积分条共同说明团队规则。"
+    },
+    {
+      "path": "html/8-daily-schedule.html",
+      "description": "白色页面用黄色连线串起十张彩色时间卡，上下两行按时间推进，蓝色页眉标注接送信息，底部提示条补充雨天安排。"
+    },
+    {
+      "path": "html/9-safety-reminders.html",
+      "description": "红色背景上排布六张安全规则卡，黄蓝图标和紫色标题带形成醒目提醒，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/10-fun-checklist-and-send-off.html",
+      "description": "三块蓝紫红检查区组成护照式收尾，背包插画、徽章和目标清单增强参与感，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

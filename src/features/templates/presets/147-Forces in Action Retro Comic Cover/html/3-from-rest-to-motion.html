@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>From Rest to Motion</title><style>:root{
+  --w:1920px;--h:1080px;
+  --ink:var(--theme-ink);--red:var(--theme-accent-primary);--blue:var(--theme-accent-secondary);--yellow:var(--theme-accent-tertiary);--cream:var(--theme-bg);--white:var(--theme-surface);
+  --display:'Roboto Condensed','Nimbus Sans Narrow','DejaVu Sans Condensed',sans-serif;
+  --body:'Trebuchet MS',Arial,sans-serif;
+  --border:6px;--shadow:10px;
+}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:var(--theme-muted)}body{font-family:var(--body);color:var(--ink)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--yellow);isolation:isolate}
+.dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--red) 3px,transparent 3.6px);background-size:22px 22px;opacity:.23;z-index:1}
+.burst{position:absolute;left:-110px;top:-240px;width:1530px;height:1530px;border-radius:50%;z-index:2;background:repeating-conic-gradient(from -6deg,var(--cream) 0 8deg,var(--yellow) 8deg 17deg);border:12px solid var(--ink)}
+.blue-slab{position:absolute;right:-140px;top:-85px;width:625px;height:1260px;background:var(--blue);border-left:14px solid var(--ink);transform:rotate(4.2deg);z-index:3}
+.right-dots{position:absolute;right:10px;top:4px;width:290px;height:980px;z-index:4;background-image:radial-gradient(circle,#056eab 4px,transparent 4.6px);background-size:22px 22px;opacity:.55}
+.mast{position:absolute;left:70px;top:54px;z-index:20;display:flex;align-items:center;gap:18px;font-size:20px;font-weight:900;letter-spacing:0;text-transform:uppercase}
+.mast b{min-width:250px;padding:11px 18px;background:var(--ink);color:var(--white);font-size:20px;letter-spacing:.6px}
+.mast span{font-size:19px}
+.page-no{position:absolute;right:63px;top:49px;z-index:20;color:var(--white);font-weight:900;font-size:23px;letter-spacing:4px}.page-no span{font-size:15px;margin-left:10px}
+.title{position:absolute;left:87px;top:146px;z-index:18}
+.title .mini{position:relative;display:inline-block;margin-left:10px;padding:6px 14px 7px;background:var(--red);border:5px solid var(--ink);color:var(--white);font:30px/1 var(--body);font-weight:900;font-style:italic;text-transform:uppercase;transform:rotate(1.5deg);box-shadow:8px 7px 0 var(--ink)}
+.title .row{display:flex;align-items:flex-end;margin-top:13px}
+.title .word{height:95px;display:flex;align-items:center;padding:0 50px;border:7px solid var(--ink);box-shadow:11px 11px 0 var(--ink);font:72px/.82 var(--display);font-weight:900;text-transform:uppercase;letter-spacing:1px;-webkit-text-stroke:2px var(--ink)}
+.title .word.red{background:var(--red);color:var(--white)}
+.title .word.blue{background:var(--blue);color:var(--yellow);margin-left:7px}
+.starburst{position:absolute;z-index:18;width:278px;height:250px;display:grid;place-items:center;transform:rotate(2deg)}
+.starburst:before{content:'';position:absolute;inset:0;background:var(--ink);clip-path:polygon(50% 0,58% 20%,73% 7%,75% 28%,93% 18%,87% 38%,100% 47%,84% 55%,96% 73%,75% 72%,70% 97%,56% 79%,43% 100%,36% 78%,18% 92%,22% 69%,0 67%,14% 52%,1% 40%,20% 36%,8% 17%,32% 25%)}
+.starburst:after{content:'';position:absolute;inset:0;z-index:1;background:var(--yellow);clip-path:polygon(50% 0,58% 20%,73% 7%,75% 28%,93% 18%,87% 38%,100% 47%,84% 55%,96% 73%,75% 72%,70% 97%,56% 79%,43% 100%,36% 78%,18% 92%,22% 69%,0 67%,14% 52%,1% 40%,20% 36%,8% 17%,32% 25%);transform:scale(.958);transform-origin:center}
+.starburst strong{position:relative;z-index:2;text-align:center;font:35px/1.05 var(--display);font-weight:900;color:var(--red);text-transform:uppercase;-webkit-text-stroke:1.5px var(--ink)}
+.question{position:absolute;left:73px;bottom:31px;z-index:30;width:1230px;height:82px;display:flex;align-items:center;gap:25px;padding:10px 28px;background:var(--ink);color:var(--white);box-shadow:8px 7px 0 var(--blue);font-size:24px;font-weight:900;text-transform:uppercase}
+.question b{font:59px/.8 var(--display);font-weight:900;color:var(--yellow)}
+.footer{position:absolute;right:56px;bottom:43px;z-index:30;color:var(--white);font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.2px}
+.panel{background:var(--cream);border:6px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+.card{position:relative;background:var(--cream);border:6px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+.card .band{height:59px;display:flex;align-items:center;padding-left:96px;border-bottom:5px solid var(--ink);font:29px/1 var(--display);font-weight:900;text-transform:uppercase}
+.card .band.red{background:var(--red);color:var(--white)}
+.card .band.blue{background:var(--blue);color:var(--ink)}
+.card .band.yellow{background:var(--yellow);color:var(--ink)}
+.card .num{position:absolute;left:15px;top:17px;width:70px;height:70px;border:6px solid var(--ink);border-radius:50%;display:grid;place-items:center;background:var(--red);color:var(--white);font:31px/.8 var(--display);font-weight:900;z-index:4}
+.card p{margin:28px 26px 20px;font-size:24px;line-height:1.12}
+.label-sticker{display:inline-block;padding:5px 12px 7px;background:var(--red);color:var(--white);border:5px solid var(--ink);box-shadow:7px 7px 0 var(--yellow);font-size:26px;font-weight:900;text-transform:uppercase;transform:rotate(2deg)}
+@media(max-width:1919px),(max-height:1079px){body{min-width:1920px;min-height:1080px}}
+
+
+.title .word.red{width:545px}.title .word.blue{width:590px;justify-content:center}.title{top:145px}.starburst{right:365px;top:61px}
+.timeline{position:absolute;left:118px;top:562px;z-index:15;width:1600px;height:40px;background:var(--ink);clip-path:polygon(0 42%,95% 42%,95% 18%,100% 50%,95% 82%,95% 58%,0 58%)}
+.timeline-stage{position:absolute;z-index:18;width:88px;height:88px;border:6px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:31px/.8 var(--display)}.stage1{left:236px;top:540px;background:var(--yellow)}.stage2{left:596px;top:540px;background:var(--blue);color:white}.stage3{left:956px;top:540px;background:var(--yellow)}.stage4{left:1318px;top:540px;background:var(--blue);color:white}
+.step-card{position:absolute;z-index:17;width:315px;height:160px;background:var(--cream);border:5px solid var(--ink);box-shadow:10px 10px 0 var(--red)}.step-card h3{height:50px;margin:0;padding:10px 17px;border-bottom:4px solid var(--ink);font:27px/1 var(--display);font-weight:900;text-transform:uppercase}.step-card h3.red{background:var(--red);color:white}.step-card h3.blue{background:var(--blue);color:white}.step-card p{margin:23px 17px 0;font-size:20px;line-height:1.12}
+.c1{left:124px;top:360px}.c2{left:488px;top:651px}.c3{left:851px;top:360px}.c4{left:1188px;top:651px;width:282px}
+.connector{position:absolute;z-index:16;width:5px;background:var(--ink)}.conn1{left:278px;top:515px;height:29px}.conn2{left:638px;top:625px;height:31px}.conn3{left:998px;top:515px;height:29px}.conn4{left:1360px;top:625px;height:31px}
+.outcome{position:absolute;left:1520px;top:655px;z-index:20;width:295px;height:193px;background:var(--yellow);border:6px solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:25px 24px}.outcome .kicker{font:29px/1 var(--display);font-weight:900;color:var(--red);-webkit-text-stroke:1px var(--ink);text-transform:uppercase}.outcome h2{font:31px/1 var(--display);font-weight:900;margin:16px 0 7px;text-transform:uppercase}.outcome p{font-size:17px;line-height:1.08;font-weight:900;margin:0}
+</style><style data-semantic-theme-roles>:root{--theme-bg:#FFF6DC;--theme-surface:#FFFFFF;--theme-ink:#101010;--theme-muted:#242424;--theme-accent-primary:#ED2630;--theme-accent-secondary:#168BD2;--theme-accent-tertiary:#FFD52E;--theme-line:#E7D9A4;}</style></head><body><main class="slide"><div class="dots"></div><div class="burst"></div><div class="blue-slab"></div><div class="right-dots"></div>
+<header class="mast"><b>Junior Science</b><span>Action Comics / Special Edition</span></header><div class="page-no">03 <span>/ 05</span></div>
+<section class="title"><div class="mini">How Motion Changes</div><div class="row"><div class="word red">From Rest</div><div class="word blue">To Motion</div></div></section>
+<div class="starburst"><strong>Step<br>By Step!</strong></div>
+<div class="timeline"></div>
+<div class="connector conn1"></div><div class="connector conn2"></div><div class="connector conn3"></div><div class="connector conn4"></div>
+<div class="timeline-stage stage1">01</div><div class="timeline-stage stage2">02</div><div class="timeline-stage stage3">03</div><div class="timeline-stage stage4">04</div>
+<div class="step-card c1"><h3 class="red">Apply</h3><p>A push or pull creates an unbalanced net force.</p></div>
+<div class="step-card c2"><h3 class="blue">Accelerate</h3><p>Speed changes while the net force acts in the direction of motion.</p></div>
+<div class="step-card c3"><h3 class="red">Redirect</h3><p>A force from another direction bends the path into a new direction.</p></div>
+<div class="step-card c4"><h3 class="blue">Balance</h3><p>Opposing forces can return the net force to zero and stabilize motion.</p></div>
+<aside class="outcome"><div class="kicker">Outcome</div><h2>New Motion</h2><p>The final motion depends on the size and direction of the net force.</p></aside>
+<aside class="question"><b>?</b><span>Which stage would change if the force reversed?</span></aside><footer class="footer">Motion • Gravity • Friction</footer>
+</main></body></html>

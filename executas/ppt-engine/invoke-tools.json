@@ -1,0 +1,4317 @@
+{
+  "tools": [
+    {
+      "name": "app_get_runtime_info",
+      "description": "Return lightweight identity information from the currently running ppt-engine process.",
+      "parameters": []
+    },
+    {
+      "name": "app_get_agent_resource_info",
+      "description": "Return a fresh diagnostic snapshot of the Agent host/container and ppt-engine process resources.",
+      "parameters": []
+    },
+    {
+      "name": "app_list_performance_runs",
+      "description": "List the active and historical internal Performance Runs from the global PPT root.",
+      "parameters": []
+    },
+    {
+      "name": "app_start_performance_run",
+      "description": "Start the single global internal Performance Run without requiring a title.",
+      "parameters": [
+        {
+          "name": "app_version",
+          "type": "string",
+          "required": false,
+          "description": "PPT App version snapshot."
+        },
+        {
+          "name": "environment",
+          "type": "object",
+          "required": false,
+          "description": "Bounded initial runtime environment snapshot."
+        },
+        {
+          "name": "initial_settings",
+          "type": "object",
+          "required": false,
+          "description": "Bounded initial PPT settings snapshot."
+        }
+      ]
+    },
+    {
+      "name": "app_append_performance_events",
+      "description": "Append a bounded batch of performance events to the active run's authoritative JSONL file.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Active Performance Run id."
+        },
+        {
+          "name": "events",
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "required": true,
+          "description": "One to 200 bounded performance events."
+        }
+      ]
+    },
+    {
+      "name": "app_finalize_performance_run",
+      "description": "Finalize an active Performance Run and generate its local static HTML report.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Active Performance Run id."
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "required": true,
+          "description": "Report locale: en, zh, ja, or de."
+        },
+        {
+          "name": "force",
+          "type": "boolean",
+          "required": false,
+          "description": "Interrupt unfinished measurements and continue finalization."
+        }
+      ]
+    },
+    {
+      "name": "app_regenerate_performance_report",
+      "description": "Regenerate a completed Performance Run report from its authoritative events.jsonl file.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Completed Performance Run id."
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "required": true,
+          "description": "Report locale: en, zh, ja, or de."
+        }
+      ]
+    },
+    {
+      "name": "app_abandon_performance_run",
+      "description": "Abandon the active Performance Run without generating a report.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Active Performance Run id."
+        }
+      ]
+    },
+    {
+      "name": "app_delete_performance_run",
+      "description": "Delete one completed or abandoned historical Performance Run.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Terminal Performance Run id."
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_performance_report",
+      "description": "Read a generated local Performance Report as original HTML.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Completed Performance Run id."
+        }
+      ]
+    },
+    {
+      "name": "app_materialize_performance_run",
+      "description": "Copy a completed Performance Run's authoritative files into a developer batch-test case directory.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "required": true,
+          "description": "Performance Run id."
+        },
+        {
+          "name": "destination_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute directory inside the PPT test root."
+        }
+      ]
+    },
+    {
+      "name": "app_create_batch_test_run",
+      "description": "Create an isolated developer batch test run, its case directories, and valid nested PPT Workspaces.",
+      "parameters": [
+        {
+          "name": "test_id",
+          "type": "string",
+          "required": false,
+          "description": "Optional safe test id."
+        },
+        {
+          "name": "target_stage",
+          "type": "string",
+          "required": true,
+          "description": "Terminal batch stage: requirements-confirmed, research-routing-completed, web-research-completed, outline-confirmed, image-research-completed, or pptx-exported."
+        },
+        {
+          "name": "cases",
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "required": true,
+          "description": "Expanded batch cases with brief ids and repetition numbers."
+        }
+      ]
+    },
+    {
+      "name": "app_list_batch_test_runs",
+      "description": "List persisted developer batch test runs from the PPT test root.",
+      "parameters": []
+    },
+    {
+      "name": "app_update_batch_test_case",
+      "description": "Persist one developer batch test case status and bounded result metadata.",
+      "parameters": [
+        {
+          "name": "root_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute batch test root directory."
+        },
+        {
+          "name": "case_id",
+          "type": "string",
+          "required": true,
+          "description": "Batch case id."
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "description": "pending, running, completed, failed, or cancelled."
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false,
+          "description": "Bounded error message."
+        },
+        {
+          "name": "pptx_path",
+          "type": "string",
+          "required": false,
+          "description": "Generated PPTX path."
+        },
+        {
+          "name": "template_recommendation_result",
+          "type": "object",
+          "required": false,
+          "description": "Selected visual-style preset and deterministic recommendation trace for template-recommendation-completed batches."
+        }
+      ]
+    },
+    {
+      "name": "app_update_batch_test_run",
+      "description": "Persist the overall developer batch test run status.",
+      "parameters": [
+        {
+          "name": "root_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute batch test root directory."
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "description": "queued, running, completed, partial_failure, failed, or cancelled."
+        }
+      ]
+    },
+    {
+      "name": "app_delete_batch_test_run",
+      "description": "Delete one terminal developer batch test run and all of its artifacts.",
+      "parameters": [
+        {
+          "name": "root_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute batch test root directory."
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_batch_test_bundle",
+      "description": "Create and publish a ZIP containing the complete developer batch test root through APS Files.",
+      "parameters": [
+        {
+          "name": "root_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute batch test root directory."
+        }
+      ]
+    },
+    {
+      "name": "app_list_workspaces",
+      "description": "Scan the default PPT workspace root and return a bounded canonical page of existing ppt-YYYYMMDD-HHmmss workspaces. Follow next_cursor until absent to retrieve the complete list.",
+      "parameters": [
+        {
+          "name": "limit",
+          "type": "number",
+          "description": "Optional page size from 1 to 40. Defaults to 40 so every JSON-RPC response stays safely below the local runtime line limit.",
+          "required": false
+        },
+        {
+          "name": "cursor",
+          "type": "string",
+          "description": "Optional opaque cursor returned as next_cursor by the previous page.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_defaults",
+      "description": "Read the global PPT settings used by every workspace without creating a workspace.",
+      "parameters": []
+    },
+    {
+      "name": "app_patch_workspace_defaults",
+      "description": "Patch the global PPT settings used by every existing and future workspace.",
+      "parameters": [
+        {
+          "name": "setting",
+          "type": "object",
+          "description": "Partial settings object to merge into the global setting.json.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_create_workspace",
+      "description": "Create a new PPT task workspace, initialize core JSON files, and return a bounded creation result inline.",
+      "parameters": [
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Optional project title. Defaults to the generated workspace id.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_open_workspace",
+      "description": "Open an existing PPT task workspace and initialize any missing core JSON files.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_install_workspace_authoring_kit",
+      "description": "Install the released Authoring Kit into a workspace when it is not already present.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_ensure_confirmed_outline_page_ids",
+      "description": "Assign stable opaque page ids to Confirmed Outline entries while preserving existing ids.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to a PPT workspace containing a confirmed outline.json.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_workspace_page_sources",
+      "description": "Install the Authoring Kit, create missing blank Page Sources for the Confirmed Outline, and rebuild manifest.json.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to a PPT workspace containing a confirmed outline.json.",
+          "required": true
+        },
+        {
+          "name": "reset_existing",
+          "type": "boolean",
+          "description": "Overwrite existing Page Sources from the Bootstrap when starting a newly confirmed Outline.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_visual_master_html",
+      "description": "Read the current Workspace visual-master.html.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_list_workspace_template_references",
+      "description": "List metadata for the immutable selected template HTML references without returning HTML content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_template_reference_html",
+      "description": "Read one selected template reference HTML page.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Registered html/... path from app_list_workspace_template_references.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_aesthetic_reference_selections",
+      "description": "Read persisted dominant aesthetic reference selections.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_record_workspace_aesthetic_reference_selection",
+      "description": "Persist the selected dominant template HTML reference for the visual master or one page.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "description": "visual-master or page.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Required when target is page.",
+          "required": false
+        },
+        {
+          "name": "path",
+          "type": "string",
+          "description": "Selected html/... reference path.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_style_guide",
+      "description": "Read the current non-empty Workspace Style Guide Markdown for planning and refinement.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_visual_rhythm_status",
+      "description": "Return whether visual-rhythm.md exists and is non-empty.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_visual_rhythm",
+      "description": "Read the current Visual Rhythm Markdown.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_page_visual_plan_status",
+      "description": "Return whether a page visual plan exists and is non-empty.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page identifier.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_page_visual_plan",
+      "description": "Read a page visual plan Markdown.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page identifier.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_ensure_workspace_persistent_elements_reference",
+      "description": "Create the minimal Persistent Elements Reference Bootstrap in the workspace root unless it already exists.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "reset_existing",
+          "type": "boolean",
+          "description": "Replace the current reference with Bootstrap.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_persistent_elements_status",
+      "description": "Return the existence, size, and SHA-256 fingerprint of persistent-elements.tsx.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_typecheck_workspace_persistent_elements",
+      "description": "Run the local TypeScript gate for persistent-elements.tsx.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_reconcile_workspace_page_sources",
+      "description": "Repair missing pending Page Sources from the Bootstrap and reject missing progressed Page Sources without checking the Authoring Kit directory.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_page_refinement",
+      "description": "Prepare one existing Page Source for Page Refinement without modifying the Confirmed Outline, Workspace Style Guide, or Manifest.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable target page id from the Confirmed Outline.",
+          "required": true
+        },
+        {
+          "name": "refinement_request",
+          "type": "string",
+          "description": "User Page Refinement Request.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_commit_deck_refinement",
+      "description": "Commit a prepared Deck Refinement by reconciling the Confirmed Outline, optional replacement Style Guide, Manifest, Page Sources, Page Progress, and recovery state.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "refinement_request",
+          "type": "string",
+          "description": "User Deck Refinement Request.",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Final Deck title.",
+          "required": true
+        },
+        {
+          "name": "output_language_change",
+          "type": "object",
+          "description": "Explicit output language change decision.",
+          "required": true
+        },
+        {
+          "name": "style_guide_action",
+          "type": "string",
+          "description": "preserve or regenerate.",
+          "required": true
+        },
+        {
+          "name": "operations",
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Complete ordered keep/update/add/delete operations.",
+          "required": true
+        },
+        {
+          "name": "style_guide_content",
+          "type": "string",
+          "required": false,
+          "description": "Replacement Markdown, required when style_guide_action is regenerate."
+        }
+      ]
+    },
+    {
+      "name": "app_initialize_page_progress",
+      "description": "Initialize page-progress.json from the Confirmed Outline after the Style Guide and Page Sources exist.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_style_guide_status",
+      "description": "Return whether the Workspace-owned style-guide.md exists and contains non-whitespace text.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_rebuild_workspace_deck_manifest",
+      "description": "Rebuild the minimal deck manifest from the ordered Confirmed Outline and existing Page Sources.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_page_source_fingerprint",
+      "description": "Return the SHA-256 fingerprint and size of one Workspace Page Source.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable opaque page id owned by the Confirmed Outline entry.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_commit_uploaded_source_host_upload",
+      "description": "Commit one Host Upload object into a Workspace as Workspace-owned Uploaded Source Material.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "Original display filename selected by the user.",
+          "required": true
+        },
+        {
+          "name": "mime_type",
+          "type": "string",
+          "description": "Browser-provided or inferred MIME type.",
+          "required": false
+        },
+        {
+          "name": "size_bytes",
+          "type": "number",
+          "description": "Expected uploaded file size in bytes.",
+          "required": true
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "description": "HostUploadRef returned by the Anna App Host Upload API.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_upload_uploaded_source_for_agent",
+      "description": "Upload one committed Uploaded Source Material file to Host storage (purpose image_input) so an analysis agent can inspect it. The file is resolved from the workspace index by uploaded_source_id, never from a caller-supplied path.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id from app_list_uploaded_sources.",
+          "required": true
+        },
+        {
+          "name": "operation_id",
+          "type": "string",
+          "description": "Analysis operation identifier used to correlate storage logs.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_list_style_profiles",
+      "description": "List published global Style Profiles available to PPT workspaces.",
+      "parameters": []
+    },
+    {
+      "name": "app_get_style_profile_preview",
+      "description": "Read one published Style Profile's metadata and first reference image as a Host Upload reference.",
+      "parameters": [
+        {
+          "name": "style_profile_id",
+          "type": "string",
+          "description": "Published Style Profile id from app_list_style_profiles.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_style_profile",
+      "description": "Read one published Style Profile's metadata, Markdown content, and selected reference images as Host Upload references.",
+      "parameters": [
+        {
+          "name": "style_profile_id",
+          "type": "string",
+          "description": "Published Style Profile id from app_list_style_profiles.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_style_profile_creation",
+      "description": "Create a Style Profile Creation Workspace for uploaded PPTX/image references and draft/profile.md.",
+      "parameters": [
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "Optional display name for the Style Profile being created.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_commit_style_profile_reference_host_upload",
+      "description": "Commit one Host Upload object into a Style Profile Creation Workspace as a reference file.",
+      "parameters": [
+        {
+          "name": "creation_id",
+          "type": "string",
+          "description": "Style Profile Creation Workspace id returned by app_prepare_style_profile_creation.",
+          "required": true
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "Original display filename selected by the user.",
+          "required": true
+        },
+        {
+          "name": "mime_type",
+          "type": "string",
+          "description": "Browser-provided or inferred MIME type.",
+          "required": false
+        },
+        {
+          "name": "size_bytes",
+          "type": "number",
+          "description": "Expected reference file size in bytes.",
+          "required": true
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "description": "HostUploadRef returned by the Anna App Host Upload API.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_style_profile_creation_context",
+      "description": "Read Style Profile Creation Workspace paths, manifest, and up to five selected Reference Slide Images for Agent analysis.",
+      "parameters": [
+        {
+          "name": "creation_id",
+          "type": "string",
+          "description": "Style Profile Creation Workspace id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_style_profile_draft_fingerprint",
+      "description": "Read existence and file fingerprint metadata for draft/profile.md in a Style Profile Creation Workspace.",
+      "parameters": [
+        {
+          "name": "creation_id",
+          "type": "string",
+          "description": "Style Profile Creation Workspace id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_style_profile_draft",
+      "description": "Read draft/profile.md from a Style Profile Creation Workspace.",
+      "parameters": [
+        {
+          "name": "creation_id",
+          "type": "string",
+          "description": "Style Profile Creation Workspace id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_publish_style_profile",
+      "description": "Publish a valid draft/profile.md into the global Style Profile Library and update the library index.",
+      "parameters": [
+        {
+          "name": "creation_id",
+          "type": "string",
+          "description": "Style Profile Creation Workspace id.",
+          "required": true
+        },
+        {
+          "name": "display_name",
+          "type": "string",
+          "description": "Optional final display name. Defaults to the creation workspace display name.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_select_workspace_style_profile",
+      "description": "Copy one published Style Profile markdown file into a PPT Workspace as the Selected Style Profile.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "style_profile_id",
+          "type": "string",
+          "description": "Published Style Profile id from app_list_style_profiles.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_style_profile",
+      "description": "Read the Selected Style Profile markdown text copied into a PPT Workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_clear_workspace_style_profile",
+      "description": "Clear the Selected Style Profile from a PPT Workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_rasterize_pptx_to_images",
+      "description": "Convert a PPTX file into per-slide PNG Reference Slide Images, keeping SVG diagnostics and writing rasterization-manifest.json.",
+      "parameters": [
+        {
+          "name": "pptx_path",
+          "type": "string",
+          "description": "Absolute path to the .pptx file to rasterize. The first version supports .pptx only.",
+          "required": true
+        },
+        {
+          "name": "output_dir",
+          "type": "string",
+          "description": "Absolute output directory where page-*.svg, page-*.png, and rasterization-manifest.json should be written.",
+          "required": true
+        },
+        {
+          "name": "target_height",
+          "type": "integer",
+          "description": "Optional PNG target height in pixels. Defaults to 720 while preserving the slide aspect ratio.",
+          "required": false,
+          "default": 720
+        },
+        {
+          "name": "overwrite",
+          "type": "boolean",
+          "description": "When true, overwrite generated output files for this run. Defaults to false.",
+          "required": false,
+          "default": false
+        }
+      ]
+    },
+    {
+      "name": "app_list_uploaded_sources",
+      "description": "List Workspace-owned Uploaded Source Material entries for a PPT Workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "include_removed",
+          "type": "boolean",
+          "description": "When true, include removed Uploaded Source Material entries.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_remove_uploaded_source",
+      "description": "Remove one Uploaded Source Material entry from the active set without physically deleting the stored file.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Stable uploaded-source id to remove from the active set.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_uploaded_source_analysis_workspace",
+      "description": "Prepare Uploaded Source Analysis directories and return draft/final analysis paths for a workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_record_uploaded_source_analysis_draft",
+      "description": "Record one Uploaded Source Analysis draft artifact.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "draft_type",
+          "type": "string",
+          "description": "Draft type: factual or visual.",
+          "required": true
+        },
+        {
+          "name": "draft_id",
+          "type": "string",
+          "description": "Optional draft run id.",
+          "required": false
+        },
+        {
+          "name": "draft",
+          "type": "object",
+          "description": "Draft JSON object.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_uploaded_source_analysis_draft",
+      "description": "Read one Uploaded Source Analysis draft artifact.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "draft_type",
+          "type": "string",
+          "description": "Draft type: factual or visual.",
+          "required": true
+        },
+        {
+          "name": "draft_id",
+          "type": "string",
+          "description": "Optional draft run id.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_uploaded_source_analysis_draft_fingerprint",
+      "description": "Read existence and file fingerprint metadata for one Uploaded Source Analysis draft artifact.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "draft_type",
+          "type": "string",
+          "description": "Draft type: factual or visual.",
+          "required": true
+        },
+        {
+          "name": "draft_id",
+          "type": "string",
+          "description": "Optional draft run id.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_record_uploaded_source_analysis",
+      "description": "Record final Uploaded Source Analysis produced by deterministic app code.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "analysis",
+          "type": "object",
+          "description": "Final Uploaded Source Analysis JSON object.",
+          "required": true
+        },
+        {
+          "name": "analysis_markdown",
+          "type": "string",
+          "description": "Optional internal-only Markdown rendering of the analysis, persisted alongside the JSON for downstream prompt use. Not shown to end users.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_uploaded_source_analysis",
+      "description": "Read final Uploaded Source Analysis for a workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_update_workspace_settings",
+      "description": "Compatibility wrapper that updates global PPT settings and returns the refreshed task workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "setting",
+          "type": "object",
+          "description": "Partial settings object to merge into the global setting.json.",
+          "required": true
+        },
+        {
+          "name": "persist_as_default",
+          "type": "boolean",
+          "description": "Deprecated compatibility flag. Global settings are always updated.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_patch_workspace_settings",
+      "description": "Compatibility wrapper that patches global PPT settings and returns the normalized settings result.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "setting",
+          "type": "object",
+          "description": "Partial settings object to merge into the global setting.json.",
+          "required": true
+        },
+        {
+          "name": "persist_as_default",
+          "type": "boolean",
+          "description": "Deprecated compatibility flag. Global settings are always updated.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_append_workspace_log",
+      "description": "Append one JSONL log entry under an existing PPT task workspace .log directory when diagnostic_logging_enabled is true. Otherwise return appended=false and an empty log_file without downloading or writing the entry. The preview-recovery channel always records only validated operational fields, with deduplication and bounded rotation.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "channel",
+          "type": "string",
+          "description": "Workspace log channel. Supports AI domain channels including ai-theme and ai-theme-interactions, research-web-interactions, and storage-transport.",
+          "required": true
+        },
+        {
+          "name": "entry",
+          "type": "object",
+          "description": "JSON-serializable log entry to append.",
+          "required": true
+        },
+        {
+          "name": "payload_keys",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional entry keys that may be moved to sidecar payload files when they exceed the inline payload threshold.",
+          "required": false
+        },
+        {
+          "name": "inline_payload_max_bytes",
+          "type": "number",
+          "description": "Optional max UTF-8 byte size before a payload key is moved to a sidecar file.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_write_research_test_file",
+      "description": "Write one Web Research Lab artifact under the developer research-test root.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "description": "Safe run directory id, usually a timestamp-based id.",
+          "required": true
+        },
+        {
+          "name": "file_name",
+          "type": "string",
+          "description": "One of input.json, rounds.jsonl, result.md, or meta.json.",
+          "required": true
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "description": "UTF-8 file content.",
+          "required": true
+        },
+        {
+          "name": "append",
+          "type": "boolean",
+          "description": "Append to the file instead of replacing it.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_requirements",
+      "description": "Read and validate requirements.json for an existing PPT App Workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_update_workspace_requirements",
+      "description": "Validate and write requirements.json for an existing PPT App Workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "requirements",
+          "type": "object",
+          "description": "Complete Presentation Requirements artifact with status, source, candidates, and selections.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_confirm_workspace_requirements",
+      "description": "Atomically confirm Presentation Requirements, persist the immutable template HTML reference snapshot, and reset downstream artifacts.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "requirements",
+          "type": "object",
+          "description": "Complete confirmed Presentation Requirements artifact.",
+          "required": true
+        },
+        {
+          "name": "template_snapshot",
+          "type": "object",
+          "required": false,
+          "description": "Selected template identity, descriptions and HTML pages. Provide this or user_template_id."
+        },
+        {
+          "name": "user_template_id",
+          "type": "string",
+          "required": false,
+          "description": "Personal template id matching the selected preset. Provide this or template_snapshot."
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_outline",
+      "description": "Read and normalize outline.json for an existing PPT task workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_reset_workspace_outline",
+      "description": "Reset outline.json to the empty Outline lifecycle state after Presentation Requirements Confirmation.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_save_workspace_outline_draft",
+      "description": "Validate and save a complete Outline Draft while synchronizing Presentation Requirements slide_count and the Workspace title.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "outline",
+          "type": "object",
+          "description": "Outline content with a non-empty title and ordered page_type/title/content items.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_confirm_workspace_outline",
+      "description": "Validate, save, and confirm the current Outline while synchronizing Presentation Requirements slide_count and the Workspace title.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "outline",
+          "type": "object",
+          "description": "Outline content with a non-empty title and ordered page_type/title/content items.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_update_workspace_title",
+      "description": "Update task.json title for an existing PPT task workspace and return the refreshed workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "New workspace title.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_duplicate_workspace",
+      "description": "Create an independent copy of an existing PPT task workspace from its saved artifacts, export outputs and logs; global generation-run transactions are not copied.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Optional title for the duplicated workspace. Defaults to the source title with a copy suffix.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_delete_workspace",
+      "description": "Delete the local PPT workspace after rejecting active generation runs, persist a local tombstone to block automatic cloud re-download, and retain its cloud snapshot for an explicit future restore.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_list_template_groups",
+      "description": "List builtin PPT template groups with summary metadata for legacy template discovery.",
+      "parameters": []
+    },
+    {
+      "name": "app_get_template_group",
+      "description": "Return one builtin PPT template group with layout details for the app template picker.",
+      "parameters": [
+        {
+          "name": "group_id",
+          "type": "string",
+          "description": "Template group id, such as red-finance-v3.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_select_workspace_template",
+      "description": "Select a template group for an app workspace and fork it into workspace/template.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "template_group",
+          "type": "string",
+          "description": "Builtin template group id to fork into the workspace template directory.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_template_planning_context",
+      "description": "Return the selected workspace template catalog subset used by LLM page planning.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_theme_context",
+      "description": "Return the selected workspace template theme schema, default token, README, and current workspace theme token.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_validate_workspace_theme_token",
+      "description": "Validate a candidate Workspace Theme Token against the selected template theme schema.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "token",
+          "type": "object",
+          "description": "Candidate complete Workspace Theme Token JSON object.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_record_workspace_theme_token",
+      "description": "Validate and write the Workspace Theme Token into the selected workspace template, or write the template default token as fallback.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "token",
+          "type": "object",
+          "description": "Candidate complete Workspace Theme Token JSON object. Required unless use_default is true.",
+          "required": false
+        },
+        {
+          "name": "use_default",
+          "type": "boolean",
+          "description": "When true, write the selected template default token instead of a generated token.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_page_file_fingerprints",
+      "description": "Return SHA-256 fingerprints for a target page slide TSX and data JSON under a workspace template directory.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "slide_path",
+          "type": "string",
+          "description": "Workspace-relative slide TSX path, such as ./slides/page-id.tsx.",
+          "required": true
+        },
+        {
+          "name": "data_path",
+          "type": "string",
+          "description": "Workspace-relative page data JSON path, such as ./data/page-id.json.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_page_progress",
+      "description": "Read page-progress.json for a workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_shared_research_workspace",
+      "description": "Initialize the shared web summary, image catalog, image directory, and resumable web/image research progress for a workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "reset_progress",
+          "type": "boolean",
+          "description": "Reset only the resumable research checkpoint for a new generation or refinement run.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_shared_research_context",
+      "description": "Read the complete shared web summary, image catalog, and current research checkpoint.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_patch_shared_research_progress",
+      "description": "Atomically apply one bounded batch of domain operations to the resumable web/image research checkpoint.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "operations",
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Ordered, strictly validated shared-research domain operations. Serialized tool arguments must not exceed 32 KiB.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_publish_prepared_web_research_batch",
+      "description": "Idempotently publish the prepared Web Research Batch from the checkpoint and then mark it written.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_publish_prepared_image_research_batch",
+      "description": "Idempotently publish the prepared Image Research Batch from the checkpoint and then mark it written.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_append_web_research_batch",
+      "description": "Idempotently append one complete Markdown batch to research/evidence/web-summary.md.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "markdown",
+          "type": "string",
+          "description": "Complete Research Batch Markdown block prepared by the App.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_append_image_research_batch",
+      "description": "Idempotently merge reusable imported assets from one completed image research batch into research/evidence/image-catalog.json.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "batch",
+          "type": "object",
+          "description": "Complete image research batch prepared by the App.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_shared_research_image_candidate",
+      "description": "Safely download one HTTPS image candidate into Workspace staging and validate it for later upload or import.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "operation_id",
+          "type": "string",
+          "description": "Research operation identifier used to correlate storage logs.",
+          "required": true
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "description": "Stable image candidate identifier.",
+          "required": true
+        },
+        {
+          "name": "source_url",
+          "type": "string",
+          "description": "Public HTTPS image URL returned by image search.",
+          "required": true
+        },
+        {
+          "name": "existing_file_path",
+          "type": "string",
+          "description": "Optional prior staging file to validate and reuse during recovery.",
+          "required": false
+        },
+        {
+          "name": "expected_sha256",
+          "type": "string",
+          "description": "Optional SHA-256 for the prior staging file.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_upload_shared_research_image_candidate",
+      "description": "Upload one validated local research image candidate for an image-analysis Session.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "operation_id",
+          "type": "string",
+          "description": "Research operation identifier used to correlate storage logs.",
+          "required": true
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "description": "Stable image candidate identifier.",
+          "required": true
+        },
+        {
+          "name": "local_file_path",
+          "type": "string",
+          "description": "Absolute path to the validated Workspace staging image.",
+          "required": true
+        },
+        {
+          "name": "mime_type",
+          "type": "string",
+          "description": "Validated image MIME type.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_import_shared_research_image_local",
+      "description": "Validate and import one selected staged research image into the shadow Workspace evidence image directory.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "description": "Stable image candidate identifier.",
+          "required": true
+        },
+        {
+          "name": "local_file_path",
+          "type": "string",
+          "description": "Absolute path to the validated Workspace staging image.",
+          "required": true
+        },
+        {
+          "name": "mime_type",
+          "type": "string",
+          "description": "Validated image MIME type.",
+          "required": true
+        },
+        {
+          "name": "size_bytes",
+          "type": "number",
+          "description": "Expected image byte size.",
+          "required": true
+        },
+        {
+          "name": "sha256",
+          "type": "string",
+          "description": "Expected image SHA-256.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_import_uploaded_source_image_to_research",
+      "description": "Copy one active uploaded image through Engine-owned staging and import it into the Workspace research image catalog.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active uploaded image source identifier.",
+          "required": true
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "description": "Stable catalog candidate identifier.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_copy_uploaded_source_image_to_asset",
+      "description": "Copy one classified uploaded image into the persistent Workspace uploaded-source asset catalog for PPT composition.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active uploaded image source identifier.",
+          "required": true
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "description": "Stable uploaded asset identifier.",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Visual description from the validated image Attachment Brief.",
+          "required": true
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "Why the original image should be available for PPT composition.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_cleanup_shared_research_image_staging",
+      "description": "Remove all temporary research image files after one research operation has published its final evidence.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "operation_id",
+          "type": "string",
+          "description": "Research operation identifier whose staging directory may be removed.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_record_page_progress",
+      "description": "Patch page-progress.json. When page_id is provided, patch one page entry; recovery and final_deck_render in patch update top-level recovery state.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Optional stable page id from the Confirmed Outline. Omit for deck-level recovery state updates.",
+          "required": false
+        },
+        {
+          "name": "patch",
+          "type": "object",
+          "description": "Partial page fields, plus optional top-level recovery and final_deck_render patches.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_render_workspace_page_preview",
+      "description": "Submit one workspace page render to the in-memory serial queue and return immediately; poll app_get_page_progress for the completed HTML and PNG paths.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the Confirmed Outline.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_audit_workspace_page_layout",
+      "description": "Audit a current rendered page using layout-audit. Return counts and, only for serious issues, original source HTML and a screenshot upload reference. Does not rewrite or accept the page.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute workspace path.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the confirmed outline.",
+          "required": true
+        },
+        {
+          "name": "expected_source_sha256",
+          "type": "string",
+          "description": "Source fingerprint from the completed render submission. Reject stale renders.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_upload_current_page_screenshot",
+      "description": "Upload the current page screenshot recorded in page-progress.json through Host Upload without rerendering the page.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id whose current screenshot should be uploaded.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_page_edit_context",
+      "description": "Read editable static HTML or refinement context using bounded inline, compressed or uploaded transport. Browser resources use temporary APS URLs; local HTML remains authoritative.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the Confirmed Outline.",
+          "required": true
+        },
+        {
+          "name": "purpose",
+          "type": "string",
+          "description": "editor (default) for browser resources; refinement for local HTML and screenshot attachment.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_pin_managed_font",
+      "description": "Copy a managed font family into the Workspace and return temporary APS resource URLs.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "family",
+          "type": "string",
+          "description": "Exact managed font family name from the shared font library.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_commit_managed_font_host_upload",
+      "description": "Validate a font Host Upload, replace its shared family variant, pin it to the current workspace, and return runtime font files.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "Original font filename using .ttf, .otf, .woff, or .woff2.",
+          "required": true
+        },
+        {
+          "name": "size_bytes",
+          "type": "number",
+          "description": "Expected font file size, up to 20 MiB.",
+          "required": true
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "description": "HostUploadRef containing the uploaded font file.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_save_manual_page_revision",
+      "description": "Validate and save manual HTML with local file resource references, then incrementally update the completed Deck.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the Confirmed Outline.",
+          "required": true
+        },
+        {
+          "name": "base_revision",
+          "type": "number",
+          "description": "Revision loaded by the editor for optimistic concurrency.",
+          "required": true
+        },
+        {
+          "name": "save_source",
+          "type": "string",
+          "description": "explicit, switch-confirm, exit-confirm or shortcut.",
+          "required": false
+        },
+        {
+          "name": "html",
+          "type": "string",
+          "required": true,
+          "description": "Complete original HTML document, at most 64 MiB."
+        }
+      ]
+    },
+    {
+      "name": "app_publish_workspace_snapshot",
+      "description": "Idempotently generate a snapshot zip of the authoritative Workspace sources when the source fingerprint changed; otherwise it is a no-op.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_snapshot_sync_state",
+      "description": "Read the snapshot-sync state for a Workspace, or null when no snapshot has been generated yet.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_snapshot_info",
+      "description": "Parse a generated snapshot zip and verify its integrity: read back the snapshot manifest, recompute each archived file sha256 and compare it to the manifest, and cross-check the zip sha256 against the value recorded at generation time.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "revision",
+          "type": "string",
+          "description": "Optional snapshot revision (source mtime in ms) to inspect; defaults to the latest generated snapshot.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_run_workspace_snapshot_publish_dedicated_invoke",
+      "description": "Dedicated Workspace snapshot-publication invoke. Uploads and verifies the current snapshot through the established publication queue while retaining its own host invoke context until completion.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "trigger",
+          "type": "string",
+          "description": "The frontend action that created this dedicated publication invoke.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_snapshot_publish_status",
+      "description": "Read the persisted status of the current asynchronous APS Workspace snapshot publication task.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_restore_workspace_snapshot",
+      "description": "Restore a Workspace snapshot from APS into the local Workspace while keeping the Anna invoke context alive until completion. Without an explicit revision the latest published snapshot (per the APS meta.json pointer) is used. Refuses (failed with code restore_blocked_local_changes) to overwrite a local Workspace that holds unsynchronized changes unless force:true is set.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "revision",
+          "type": "string",
+          "description": "Snapshot revision (millisecond mtime) to restore; defaults to the latest published snapshot.",
+          "required": false
+        },
+        {
+          "name": "force",
+          "type": "boolean",
+          "description": "Allow overwriting a local Workspace that has unsynchronized changes.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_snapshot_restore_status",
+      "description": "Read the persisted status of the current asynchronous APS Workspace snapshot restoration task.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_reconcile_workspace_with_cloud",
+      "description": "Reconcile a Workspace using three content fingerprints: live local L, last confirmed synchronized baseline B, and APS current snapshot R. L=R is in_sync; L=B and R differs restores the cloud version; R=B and L differs returns local_ahead and preserves/uploads local work; only a true L/B/R divergence saves a local copy then force-restores cloud. When B or R is unavailable, baseline_missing keeps local files unchanged. An empty local Workspace is restored from cloud. A semantic_validation_failed marker also keeps local files unchanged.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_list_my_work",
+      "description": "List Workspaces that have a published snapshot in APS (e.g. to reopen one after switching devices). Returns each workspace_id with its latest snapshot revision and metadata read from the APS meta.json pointer. The human-readable name lives in the snapshot's task.json and is read after restoring.",
+      "parameters": []
+    },
+    {
+      "name": "app_auto_restore_missing_workspaces",
+      "description": "Device-switch reconcile: eagerly restore only the three newest cloud Workspaces missing from the local root. Remaining cloud-only cards are deferred until opened; an opened Workspace is promoted ahead of automatic work. Restore and preview rebuild are independently queued at single concurrency. Workspaces already present locally and locally tombstoned deletions are skipped.",
+      "parameters": []
+    },
+    {
+      "name": "app_get_auto_restore_decisions",
+      "description": "Read the persisted diagnostic audit of automatic cloud restore runs. Each run records the exact cloud ordering and each Workspace decision: restored, deferred, skipped, or failed. This tool is diagnostic only and does not trigger any cloud operation.",
+      "parameters": [
+        {
+          "name": "limit",
+          "type": "number",
+          "description": "Optional number of most recent JSONL audit records to return, from 1 through 500. Defaults to 100.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_page_recovery",
+      "description": "Read an editable original or saved version and its confirmation token without changing the current page. Never accepts a thumbnail as editable content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the Confirmed Outline.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_restore_page_source_version",
+      "description": "Delete one Manual Page Revision, rerender that Page Source page, and incrementally publish it into the completed Deck when possible.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the Confirmed Outline.",
+          "required": true
+        },
+        {
+          "name": "recovery_token",
+          "type": "string",
+          "description": "Exact version token returned by app_prepare_page_recovery. Required for confirmed preview recovery.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_rendered_deck_html",
+      "description": "Read existing rendered workspace Deck metadata and verify its local HTML and screenshot artifacts without uploading page images.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "allow_partial",
+          "type": "boolean",
+          "description": "UI-only metadata: isolate missing page artifacts and mark preview_unavailable. Do not use for generation acceptance or export.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_workspace_page_preview",
+      "description": "Submit cache preparation for one current page without changing authoring progress. Returns queued, running, ready, or error; poll the returned task id before reading HTML or a thumbnail.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute Workspace path.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable current page id.",
+          "required": true
+        },
+        {
+          "name": "priority",
+          "type": "string",
+          "description": "foreground for the selected page; background for a thumbnail.",
+          "required": false
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "html for a page preview or thumbnail for a cached WebP.",
+          "required": false
+        },
+        {
+          "name": "retry",
+          "type": "boolean",
+          "description": "Retry a failed preparation for the same current input version.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_page_preview_preparation",
+      "description": "Read a submitted page preview preparation state without waiting for browser rendering.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute Workspace path.",
+          "required": true
+        },
+        {
+          "name": "task_id",
+          "type": "string",
+          "description": "Task id returned by app_prepare_workspace_page_preview.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_upload_outline_image_for_agent",
+      "description": "Upload an active original workspace image for page authoring, resolved by asset id with workspace containment validation.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute workspace path.",
+          "required": true
+        },
+        {
+          "name": "asset_id",
+          "type": "string",
+          "description": "Active image asset id.",
+          "required": true
+        },
+        {
+          "name": "operation_id",
+          "type": "string",
+          "description": "Page image attachment operation identifier.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_outline_image_preview",
+      "description": "Return a bounded thumbnail or enlarged preview of one active uploaded or searched workspace image asset.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute workspace path.",
+          "required": true
+        },
+        {
+          "name": "asset_id",
+          "type": "string",
+          "description": "Asset id from the current image catalog.",
+          "required": true
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "description": "Preview size: thumbnail (default) or large. Both use bounded inline transport.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_page_thumbnail",
+      "description": "Read or derive the current page 640-pixel WebP thumbnail. Omit page_id for the first-page cover. Return its data URL through the unified invoke transport.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute workspace path.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Page identity; omit for the first page.",
+          "required": false
+        },
+        {
+          "name": "expected_preview_fingerprint",
+          "type": "string",
+          "description": "Expected current HTML and resource fingerprint.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_page_html",
+      "description": "Read current static page HTML for browser preview, resolve local assets through durable APS files, and return original HTML and resource expiry.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute workspace path.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Page id; omit to preview the first page as a workspace cover.",
+          "required": false
+        },
+        {
+          "name": "expected_preview_fingerprint",
+          "type": "string",
+          "description": "Expected static HTML and local resource content fingerprint.",
+          "required": false
+        },
+        {
+          "name": "batch_id",
+          "type": "string",
+          "description": "Isolated regeneration candidate identity; provide both batch_id and candidate_id.",
+          "required": false
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "description": "Isolated regeneration candidate identity; provide both batch_id and candidate_id.",
+          "required": false
+        },
+        {
+          "name": "fallback_only",
+          "type": "boolean",
+          "description": "View-only recovery: try existing backups of the same official page; never accepted for candidates or export. Returned fallback metadata must be shown to the user.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_render_deck_html",
+      "description": "Submit final Deck HTML rendering to the in-memory queue and return immediately; poll app_get_page_progress.final_deck_render for completion. Review screenshots are reused separately.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_start_pptx_export",
+      "description": "Start a Workspace PPTX export job and persist page-level progress to output/pptx-export.json.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "page_numbers",
+          "type": "array",
+          "items_type": "integer",
+          "description": "Optional one-based source page range. Omit for the complete deck.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_pptx_export_status",
+      "description": "Read output/pptx-export.json for the current PPTX export job status.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_run_pptx_export",
+      "description": "Run a Workspace PPTX export and wait for its terminal result inside this invoke.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "page_numbers",
+          "type": "array",
+          "items_type": "integer",
+          "description": "Optional one-based source page range. Omit for the complete deck.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_run_export_only",
+      "description": "Run one PPTX or PDF export directly from fixed HTML inputs through the production export implementation, without content generation or LLM calls.",
+      "parameters": [
+        {
+          "name": "request_id",
+          "type": "string",
+          "description": "Stable identifier used to name this single export attempt and its output file.",
+          "required": true
+        },
+        {
+          "name": "format",
+          "type": "string",
+          "description": "Single export format. Supports pptx or pdf.",
+          "required": true
+        },
+        {
+          "name": "source_root",
+          "type": "string",
+          "description": "Absolute root directory containing the fixed Deck HTML, slide HTML files and their relative resources.",
+          "required": true
+        },
+        {
+          "name": "deck_html_file",
+          "type": "string",
+          "description": "Deck HTML path relative to source_root.",
+          "required": true
+        },
+        {
+          "name": "slide_html_files",
+          "type": "array",
+          "items_type": "string",
+          "description": "Ordered slide HTML paths relative to source_root. Required for PDF and omitted for PPTX.",
+          "required": false
+        },
+        {
+          "name": "page_numbers",
+          "type": "array",
+          "items_type": "integer",
+          "description": "Optional one-based source page numbers for PPTX export. Omit for the complete deck. The client supplies a continuous range.",
+          "required": false
+        },
+        {
+          "name": "expected_slide_count",
+          "type": "integer",
+          "description": "Expected number of slides in the fixed input.",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Optional exported presentation title. Defaults to request_id.",
+          "required": false
+        },
+        {
+          "name": "output_dir",
+          "type": "string",
+          "description": "Absolute attempt-specific directory for the exported artifact.",
+          "required": true
+        },
+        {
+          "name": "timeout_ms",
+          "type": "integer",
+          "description": "Optional conversion timeout from 1000 to 600000 milliseconds.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_start_export_artifact_publish",
+      "description": "Start or reuse the asynchronous publication of the current recorded PPTX or PDF as a user-scoped APS Files Export Artifact Mirror.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "artifact_type",
+          "type": "string",
+          "description": "Export artifact type. Supports pptx and pdf.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_export_artifact_publish_status",
+      "description": "Read the persisted status of the current asynchronous APS Files Export Artifact Mirror publication task.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "artifact_type",
+          "type": "string",
+          "description": "Export artifact type. Supports pptx and pdf.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_export_artifact_download_url",
+      "description": "Read the current APS Files Export Artifact Mirror status and mint a short-lived download URL only when the mirror is current.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "artifact_type",
+          "type": "string",
+          "description": "Export artifact type. Supports pptx and pdf.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_begin_generation_run",
+      "description": "Create a preparing shadow-Workspace transaction and return its stable run id.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the existing PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "run_kind",
+          "type": "string",
+          "description": "Generation run kind: deck-generation, page-refinement, or deck-refinement.",
+          "required": true
+        },
+        {
+          "name": "origin_page_id",
+          "type": "string",
+          "description": "Optional page id that originated the generation run.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_generation_run",
+      "description": "Create and activate the complete shadow Workspace for a preparing generation run.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "description": "Stable id of the preparing generation run.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_abandon_generation_run",
+      "description": "Atomically abandon a preparing or active generation run.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "description": "Stable id of the generation run to abandon.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_commit_generation_run",
+      "description": "Atomically publish an active shadow Workspace as the official Workspace.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "description": "Stable id of the active generation run to commit.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_cleanup_generation_run",
+      "description": "Best-effort cleanup for a committed generation run; diagnostic runs are retained.",
+      "parameters": [
+        {
+          "name": "run_id",
+          "type": "string",
+          "description": "Stable id of the generation run to clean up when it was committed.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_workspace_generation_run",
+      "description": "Return the current preparing, active, or committing generation transaction for a Workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the existing PPT workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_workspace_diagnostic_bundle",
+      "description": "Create a fresh ZIP of the complete current Workspace, overwrite its user-scoped APS Files diagnostic object, and return both the object reference the Host can download and a short-lived download URL, without persisting a mirror or URL.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_export_pdf",
+      "description": "Render the complete workspace deck or selected one-based pages into a share-ready PDF file.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "page_numbers",
+          "type": "array",
+          "items_type": "integer",
+          "description": "Optional one-based source page numbers. Omit for the complete deck.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_record_pdf_export",
+      "description": "Record the generated PDF export path in the workspace artifacts.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt-YYYYMMDD-HHmmss workspace.",
+          "required": true
+        },
+        {
+          "name": "pdf_path",
+          "type": "string",
+          "description": "Absolute path to the generated PDF file.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "listDiscoveredTemplateGroupSummaries",
+      "description": "List discovered template group summaries from builtin and optional local template roots.",
+      "parameters": [
+        {
+          "name": "include_builtin",
+          "type": "boolean",
+          "description": "Whether to include builtin template groups. Defaults to true.",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "local_roots",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional list of absolute local template root directories.",
+          "required": false
+        },
+        {
+          "name": "cwd",
+          "type": "string",
+          "description": "Optional absolute working directory used by local template discovery.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "getAllDiscoveredTemplateGroups",
+      "description": "Return all discovered template groups with full layout details from builtin and optional local roots.",
+      "parameters": [
+        {
+          "name": "include_builtin",
+          "type": "boolean",
+          "description": "Whether to include builtin template groups. Defaults to true.",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "local_roots",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional list of absolute local template root directories.",
+          "required": false
+        },
+        {
+          "name": "cwd",
+          "type": "string",
+          "description": "Optional absolute working directory used by local template discovery.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "getDiscoveredTemplateGroup",
+      "description": "Return one discovered template group with layouts from builtin and optional local roots.",
+      "parameters": [
+        {
+          "name": "group_id",
+          "type": "string",
+          "description": "Template group id to look up.",
+          "required": true
+        },
+        {
+          "name": "include_builtin",
+          "type": "boolean",
+          "description": "Whether to include builtin template groups. Defaults to true.",
+          "required": false,
+          "default": true
+        },
+        {
+          "name": "local_roots",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Optional list of absolute local template root directories.",
+          "required": false
+        },
+        {
+          "name": "cwd",
+          "type": "string",
+          "description": "Optional absolute working directory used by local template discovery.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "buildDeckHtmlFromManifest",
+      "description": "Build a deck viewer HTML and one rendered PNG image per slide from a manifest JSON file, write them to an output directory, and return the generated file paths.",
+      "parameters": [
+        {
+          "name": "manifest_path",
+          "type": "string",
+          "description": "Absolute path to a manifest JSON file.",
+          "required": true
+        },
+        {
+          "name": "cwd",
+          "type": "string",
+          "description": "Optional absolute working directory retained for compatibility.",
+          "required": false
+        },
+        {
+          "name": "output_dir",
+          "type": "string",
+          "description": "Absolute directory where the generated deck HTML and per-slide PNG images should be written.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Optional base name for generated files. Defaults to manifest.title after filename sanitization.",
+          "required": false
+        },
+        {
+          "name": "single_page",
+          "type": "boolean",
+          "description": "Whether to generate only one slide PNG image. Defaults to false.",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "page",
+          "type": "integer",
+          "description": "1-based page number to generate when single_page is true.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "forkTemplateGroup",
+      "description": "Fork a builtin template group into a target local directory with TSX slides, group.json, manifest.json, catalog.json, and data assets.",
+      "parameters": [
+        {
+          "name": "template_group",
+          "type": "string",
+          "description": "Builtin template group id to fork, such as general or red-finance.",
+          "required": true
+        },
+        {
+          "name": "out_dir",
+          "type": "string",
+          "description": "Absolute target directory for the forked template group.",
+          "required": true
+        },
+        {
+          "name": "manifest_title",
+          "type": "string",
+          "description": "Optional title to write into the generated manifest.json.",
+          "required": false
+        },
+        {
+          "name": "overwrite",
+          "type": "boolean",
+          "description": "Whether to replace a non-empty output directory. Defaults to false.",
+          "required": false,
+          "default": false
+        },
+        {
+          "name": "cwd",
+          "type": "string",
+          "description": "Optional absolute working directory retained for compatibility.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "create_task_project",
+      "description": "Create a new task project and initialize task-state files.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "description": "Optional project title."
+        },
+        {
+          "name": "initial_request",
+          "type": "string",
+          "required": false,
+          "description": "Optional seed request."
+        }
+      ]
+    },
+    {
+      "name": "open_task_project",
+      "description": "Open an existing task project and read current task-state data.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        }
+      ]
+    },
+    {
+      "name": "query_task_state",
+      "description": "Query current state, generate promote guidance docs, and return the recommended next action.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "response_mode",
+          "type": "string",
+          "required": false,
+          "description": "compact or full. Defaults to compact for PPT AI Agent context efficiency."
+        }
+      ]
+    },
+    {
+      "name": "record_requirements",
+      "description": "Persist user requirements.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "description": "merge or replace_all. Defaults to merge."
+        },
+        {
+          "name": "requirements",
+          "type": "object",
+          "required": true,
+          "description": "Requirements payload. Partial payloads are allowed in merge mode."
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "required": false,
+          "description": "Source of the requirements."
+        }
+      ]
+    },
+    {
+      "name": "record_template_selection",
+      "description": "Record the user-confirmed template group, fork it into project template/, and advance to project_forked.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "template_group",
+          "type": "string",
+          "required": true,
+          "description": "Selected template group id from listDiscoveredTemplateGroupSummaries."
+        },
+        {
+          "name": "selection_reason",
+          "type": "string",
+          "required": false,
+          "description": "Why the template group was selected."
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "required": false,
+          "description": "Source of the selection. Defaults to user."
+        }
+      ]
+    },
+    {
+      "name": "record_outline",
+      "description": "Persist the content outline.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "outline",
+          "type": "object",
+          "required": true,
+          "description": "Outline payload."
+        }
+      ]
+    },
+    {
+      "name": "start_page_iteration",
+      "description": "Select a page and begin page-level authoring.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "required": true,
+          "description": "Target page id."
+        },
+        {
+          "name": "page_number",
+          "type": "integer",
+          "required": false,
+          "description": "Optional page number."
+        }
+      ]
+    },
+    {
+      "name": "record_page_progress",
+      "description": "Persist one page progress state transition.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "required": true,
+          "description": "Target page id."
+        },
+        {
+          "name": "page_state",
+          "type": "string",
+          "required": true,
+          "description": "Page state."
+        },
+        {
+          "name": "summary",
+          "type": "string",
+          "required": true,
+          "description": "Progress summary."
+        },
+        {
+          "name": "review_notes",
+          "type": "string",
+          "required": false,
+          "description": "Review notes."
+        }
+      ]
+    },
+    {
+      "name": "record_deck_review_feedback",
+      "description": "Record deck HTML review feedback, unlock requested pages, and return to the first page fix flow.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "pages",
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "required": true,
+          "description": "Pages to revise. Each item accepts page_id, summary, and review_notes."
+        }
+      ]
+    },
+    {
+      "name": "advance_task_state",
+      "description": "Advance deck state and create a checkpoint.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "target_deck_state",
+          "type": "string",
+          "required": false,
+          "description": "Target deck state."
+        },
+        {
+          "name": "target_page_state",
+          "type": "string",
+          "required": false,
+          "description": "Target page state."
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "required": true,
+          "description": "Advance reason."
+        },
+        {
+          "name": "related_artifacts",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "required": false,
+          "description": "Related artifact paths, such as generated deck HTML."
+        },
+        {
+          "name": "related_checkpoint",
+          "type": "string",
+          "required": false,
+          "description": "Related checkpoint id."
+        }
+      ]
+    },
+    {
+      "name": "rewind_task_state",
+      "description": "Rewind to a prior checkpoint or safe deck state.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "target_state",
+          "type": "string",
+          "required": false,
+          "description": "Target deck state."
+        },
+        {
+          "name": "checkpoint_id",
+          "type": "string",
+          "required": false,
+          "description": "Checkpoint id."
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "required": true,
+          "description": "Rewind reason."
+        }
+      ]
+    },
+    {
+      "name": "branch_task_project",
+      "description": "Create a project branch from the current or specified checkpoint.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "checkpoint_id",
+          "type": "string",
+          "required": false,
+          "description": "Checkpoint id."
+        },
+        {
+          "name": "branch_name",
+          "type": "string",
+          "required": false,
+          "description": "Branch name."
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "required": true,
+          "description": "Branch reason."
+        }
+      ]
+    },
+    {
+      "name": "list_task_checkpoints",
+      "description": "List checkpoints and branches.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        },
+        {
+          "name": "include_branches",
+          "type": "boolean",
+          "required": false,
+          "description": "Whether to include branches."
+        }
+      ]
+    },
+    {
+      "name": "recover_task_project",
+      "description": "Recover a project by rebuilding missing or broken task-state files.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        }
+      ]
+    },
+    {
+      "name": "validate_task_project",
+      "description": "Validate task-state files without modifying them.",
+      "parameters": [
+        {
+          "name": "cwd",
+          "type": "string",
+          "required": false,
+          "description": "Optional absolute working directory used for file transport output."
+        },
+        {
+          "name": "project_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute project directory."
+        }
+      ]
+    },
+    {
+      "name": "app_run_uploaded_source_preflight",
+      "description": "Run fixed-code preflight parsing for every active uploaded source. PDF visual OCR is persisted and advanced through explicit continuation calls.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_continue_uploaded_source_pdf_ocr",
+      "description": "Process and persist a small OCR batch for each active PDF that is still pending. Safe to call again after interruption.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_uploaded_source_preflight_status",
+      "description": "Read persisted uploaded-source preflight results, including PDF OCR page progress.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_uploaded_source_preflight_text",
+      "description": "Read the persisted fixed-code extracted text for one active uploaded source after preflight.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id.",
+          "required": true
+        },
+        {
+          "name": "offset",
+          "type": "number",
+          "description": "Optional zero-based character offset for a paged read.",
+          "required": false
+        },
+        {
+          "name": "limit",
+          "type": "number",
+          "description": "Optional maximum number of characters to return for a paged read.",
+          "required": false
+        },
+        {
+          "name": "attachment_chunk",
+          "type": "boolean",
+          "description": "Attachment Brief only: return one bounded logical chunk (up to 300,000 characters) rather than legacy 120,000-character pages.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_get_uploaded_source_preflight_chunks",
+      "description": "Create a structural chunk plan for one active uploaded source's persisted extraction. Returns offsets and metadata only; it never returns the extracted text itself.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_ignore_uploaded_source",
+      "description": "Keep an uploaded source in the workspace but exclude it from this generation after the user explicitly confirms ignore.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Uploaded Source Material id to ignore.",
+          "required": true
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "Optional recorded ignore reason.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_attachment_brief",
+      "description": "Prepare the per-source Attachment Brief workspace paths for an active uploaded source.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_attachment_brief_draft",
+      "description": "Read the Agent-written Attachment Brief draft JSON for one active uploaded source.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_record_attachment_brief",
+      "description": "Validate and persist one Attachment Brief as JSON for an active uploaded source.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id.",
+          "required": true
+        },
+        {
+          "name": "brief",
+          "type": "object",
+          "description": "Structured Attachment Brief object.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_attachment_brief",
+      "description": "Read one persisted Attachment Brief for an active uploaded source.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "uploaded_source_id",
+          "type": "string",
+          "description": "Active Uploaded Source Material id.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_list_attachment_briefs",
+      "description": "List persisted Attachment Briefs for all active uploaded sources in a workspace.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_write_attachment_context",
+      "description": "After all Attachment Briefs are ready, persist uploaded-sources/attachment-context.json with the original user brief and structured attachment_context array.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        },
+        {
+          "name": "user_brief",
+          "type": "string",
+          "description": "Original user prompt, preserved verbatim in the context artifact.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_attachment_context",
+      "description": "Read the persisted structured uploaded attachment context for downstream generation.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to an existing ppt workspace.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_list_user_templates",
+      "description": "List personal HTML templates, unfinished drafts and preview URLs.",
+      "parameters": []
+    },
+    {
+      "name": "app_get_user_template",
+      "description": "Read a personal template and its persisted completion state.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "id",
+          "required": true
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_create_user_template",
+      "description": "Allocate a personal template draft before uploading its PPTX source.",
+      "parameters": [
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "filename",
+          "required": true
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_select_user_template_pages",
+      "description": "Render 1–6 selected original PPTX pages using pptx-svg.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "id",
+          "required": true
+        },
+        {
+          "name": "page_numbers",
+          "type": "array",
+          "description": "page numbers",
+          "required": true,
+          "items": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_save_user_template_html",
+      "description": "Persist complete master or reference HTML and generate its static preview.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "id",
+          "required": true
+        },
+        {
+          "name": "page_number",
+          "type": "integer",
+          "description": "page number",
+          "required": false
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Complete original HTML document, at most 8 MiB."
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_publish_user_template",
+      "description": "Validate and publish completed template metadata.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "id",
+          "required": true
+        },
+        {
+          "name": "metadata",
+          "type": "object",
+          "required": true,
+          "description": "Personal template metadata to publish."
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_delete_user_template",
+      "description": "Permanently delete one personal template and all of its stored artifacts.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "id",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_get_user_template_asset",
+      "description": "Get a fresh Host Upload URL for a PPTX source, reference image, preview image or imported profile asset (logo).",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "id",
+          "required": true
+        },
+        {
+          "name": "asset",
+          "type": "string",
+          "description": "source, reference, preview or profile_asset; other assets use ordinary business results.",
+          "required": true
+        },
+        {
+          "name": "page_number",
+          "type": "integer",
+          "description": "page number",
+          "required": false
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "stored asset filename under assets/, required when asset is profile_asset",
+          "required": false
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_page_regeneration",
+      "description": "Create and inspect isolated regeneration or beautification alternatives for one completed page. Beautification uses slides/ HTML and its screenshot and preserves the outline and aesthetic reference.",
+      "parameters": [
+        {
+          "name": "mode",
+          "type": "string",
+          "required": false,
+          "description": "Creation mode or latest-batch filter: regenerate (default) or beautify. Beautify ignores outline and reference_path and returns source HTML and a screenshot upload reference."
+        },
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute path to the official Workspace."
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "required": true,
+          "description": "Operation: create, get, submit, fail, or adopt."
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "required": false,
+          "description": "Stable target page identity for create or latest-batch lookup."
+        },
+        {
+          "name": "batch_id",
+          "type": "string",
+          "required": false,
+          "description": "Batch UUID for existing-batch operations."
+        },
+        {
+          "name": "candidate_id",
+          "type": "string",
+          "required": false,
+          "description": "Candidate UUID for submit, fail, or adopt."
+        },
+        {
+          "name": "count",
+          "type": "integer",
+          "required": false,
+          "description": "Number of independent candidates, from 1 through 10."
+        },
+        {
+          "name": "outline",
+          "type": "object",
+          "required": false,
+          "description": "Edited target Outline Entry for creation."
+        },
+        {
+          "name": "reference_path",
+          "type": "string",
+          "required": false,
+          "description": "Selected template reference path for this batch."
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false,
+          "description": "Generation failure detail."
+        },
+        {
+          "name": "owner_id",
+          "type": "string",
+          "required": false,
+          "description": "Frontend operation UUID, required on create and used to renew generation ownership on get."
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": false,
+          "description": "Original candidate HTML, required for submit, at most 16 MiB."
+        }
+      ]
+    },
+    {
+      "name": "app_commit_manual_page_image",
+      "description": "Validate an uploaded PNG/JPEG/WebP, persist it as a page-owned local asset and return its temporary APS display URL.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the confirmed outline.",
+          "required": true
+        },
+        {
+          "name": "size_bytes",
+          "type": "number",
+          "description": "Expected image size, at most 20 MiB.",
+          "required": true
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "description": "HostUploadRef for the image.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "app_refresh_manual_page_resources",
+      "description": "Refresh APS display URLs for allowed local editor resources without rewriting page content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute path to the PPT workspace.",
+          "required": true
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "description": "Stable page id from the confirmed outline.",
+          "required": true
+        },
+        {
+          "name": "local_urls",
+          "type": "array",
+          "description": "Workspace file URLs from the active editor resource mapping.",
+          "required": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "app_page_image_search",
+      "description": "Read or persist an independent page image search task with a workspace lease.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute workspace directory."
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "required": true,
+          "description": "get, acquire, save, heartbeat or release."
+        },
+        {
+          "name": "target_key",
+          "type": "string",
+          "required": false,
+          "description": "Stable target or draft content fingerprint."
+        },
+        {
+          "name": "owner",
+          "type": "string",
+          "required": false,
+          "description": "UUID identifying this task execution."
+        },
+        {
+          "name": "task",
+          "type": "object",
+          "required": false,
+          "description": "Immutable context and resumable task state for acquire or save."
+        }
+      ]
+    },
+    {
+      "name": "app_page_image_upload",
+      "description": "Save and describe user-uploaded page illustrations independently of uploaded source material; originals awaiting analysis can be listed and prepared for retry.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "description": "Absolute workspace path.",
+          "required": true
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "description": "commit, list_pending, prepare, or describe.",
+          "required": true
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "description": "Original image filename for commit.",
+          "required": false
+        },
+        {
+          "name": "size_bytes",
+          "type": "number",
+          "description": "Image byte size for commit, up to 25 MiB.",
+          "required": false
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "description": "Host Upload reference for commit.",
+          "required": false
+        },
+        {
+          "name": "asset_id",
+          "type": "string",
+          "description": "Stored image identity for prepare or describe.",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Visible image description, at most 400 characters, for describe.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "app_commit_workspace_style_guide",
+      "description": "Persist original workspace style guide content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Workspace absolute path."
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Original text. Transport is handled by app_invoke_transport."
+        }
+      ]
+    },
+    {
+      "name": "app_commit_workspace_visual_master_html",
+      "description": "Persist original workspace visual master html content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Workspace absolute path."
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Original text. Transport is handled by app_invoke_transport."
+        }
+      ]
+    },
+    {
+      "name": "app_commit_workspace_page_html",
+      "description": "Persist original workspace page html content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Workspace absolute path."
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Original text. Transport is handled by app_invoke_transport."
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "required": true,
+          "description": "Stable page identity."
+        }
+      ]
+    },
+    {
+      "name": "app_commit_visual_rhythm",
+      "description": "Persist original visual rhythm content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Workspace absolute path."
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Original text. Transport is handled by app_invoke_transport."
+        }
+      ]
+    },
+    {
+      "name": "app_commit_page_visual_plan",
+      "description": "Persist original page visual plan content.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Workspace absolute path."
+        },
+        {
+          "name": "content",
+          "type": "string",
+          "required": true,
+          "description": "Original text. Transport is handled by app_invoke_transport."
+        },
+        {
+          "name": "page_id",
+          "type": "string",
+          "required": true,
+          "description": "Stable page identity."
+        }
+      ]
+    },
+    {
+      "name": "app_get_user_template_html",
+      "description": "Read personal template master or one page HTML plus the two-slot previous version (null until saved twice).",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "Personal template id."
+        },
+        {
+          "name": "page_number",
+          "type": "integer",
+          "required": false,
+          "description": "Omit for the visual master; set a page number to read that page."
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "Creation run and operation correlation identifiers."
+        }
+      ]
+    },
+    {
+      "name": "app_save_user_template_source",
+      "description": "Save the uploaded PPTX into an allocated personal template draft.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "id"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "required": true,
+          "description": "filename"
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "required": true,
+          "description": "host upload"
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "diagnostic context"
+        }
+      ]
+    },
+    {
+      "name": "app_save_user_template_profile",
+      "description": "Save the confirmed design profile of a personal template draft.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "id"
+        },
+        {
+          "name": "profile",
+          "type": "object",
+          "required": true,
+          "description": "design profile"
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "diagnostic context"
+        }
+      ]
+    },
+    {
+      "name": "app_save_user_template_profile_asset",
+      "description": "Store one imported profile asset (e.g. a logo image) under the personal template's assets directory. The engine disk is the single source of truth; profile.json only records the returned metadata.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "id"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "required": true,
+          "description": "original image filename (PNG, JPEG or WebP, at most 5 MB)"
+        },
+        {
+          "name": "host_upload",
+          "type": "object",
+          "required": true,
+          "description": "host upload reference for the image file"
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "diagnostic context"
+        }
+      ]
+    },
+    {
+      "name": "app_create_image_user_template",
+      "description": "Create a personal template draft from 1-6 uploaded reference images (PNG, JPEG or WebP).",
+      "parameters": [
+        {
+          "name": "files",
+          "type": "array",
+          "required": true,
+          "description": "image files with host_upload references",
+          "items": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "diagnostic_context",
+          "type": "object",
+          "required": false,
+          "description": "diagnostic context"
+        }
+      ]
+    },
+    {
+      "name": "app_append_user_template_log",
+      "description": "Append a diagnostic record to one personal template without creating Deck files.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "id"
+        },
+        {
+          "name": "channel",
+          "type": "string",
+          "required": true,
+          "description": "channel"
+        },
+        {
+          "name": "entry",
+          "type": "object",
+          "required": true,
+          "description": "entry"
+        },
+        {
+          "name": "payload_keys",
+          "type": "array",
+          "required": false,
+          "description": "payload keys",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "app_prepare_user_template_diagnostic_bundle",
+      "description": "Archive one personal template including a stable copy of its logs and return a temporary APS download.",
+      "parameters": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "id"
+        }
+      ]
+    },
+    {
+      "name": "app_outline_image_descriptions",
+      "description": "Update optional visual descriptions of active image assets and persist attempted content identities for one generation run.",
+      "parameters": [
+        {
+          "name": "workspace_dir",
+          "type": "string",
+          "required": true,
+          "description": "Absolute workspace directory."
+        },
+        {
+          "name": "action",
+          "type": "string",
+          "required": true,
+          "description": "get_run, mark_attempted or describe."
+        },
+        {
+          "name": "run_key",
+          "type": "string",
+          "required": false,
+          "description": "Generation preparation identity for get_run or mark_attempted."
+        },
+        {
+          "name": "sha256s",
+          "type": "array",
+          "required": false,
+          "description": "Up to six content hashes for mark_attempted.",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "asset_id",
+          "type": "string",
+          "required": false,
+          "description": "Active formal image identity for describe."
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false,
+          "description": "Objective visible-image description, 1–400 characters."
+        }
+      ]
+    }
+  ]
+}

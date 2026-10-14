@@ -1,0 +1,103 @@
+{
+  "id": "22-Executive Strategy Execution Update",
+  "version": 1,
+  "ppt_number": 22,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "green",
+    "cream",
+    "orange",
+    "black"
+  ],
+  "name": "Executive Strategy Execution Update",
+  "description": "Strategy-execution design with deep green framing, warm analysis pages, orange signals, and portfolio-style diagrams.",
+  "user": "Founders & Leaders",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["project-update","strategy"],"industries":["business"],"audiences":["executive"],"formats":["status-update","roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深森林绿、暖米色与橙色封面以左侧中部超大标题开场，一幅图表拉开层级。"
+    },
+    {
+      "path": "images/2-strategic-context.webp",
+      "alt": "深森林绿、暖米色与橙色页面，三组大号数字形成节奏，核心判断收束版面。"
+    },
+    {
+      "path": "images/3-execution-diagnosis.webp",
+      "alt": "深森林绿、暖米色与橙色页面，一幅图表集中排布，诊断信息形成重心。"
+    },
+    {
+      "path": "images/4-strategy-map.webp",
+      "alt": "深森林绿、暖米色与橙色页面，标题、细线与留白划分层级，框架信息拉开层级。"
+    },
+    {
+      "path": "images/5-operating-mechanism.webp",
+      "alt": "深森林绿、暖米色与橙色页面，标题、细线与留白划分层级，流程信息组织动线。"
+    },
+    {
+      "path": "images/6-initiative-portfolio.webp",
+      "alt": "深森林绿、暖米色与橙色页面，一幅图表集中排布，组合信息强化对比。"
+    },
+    {
+      "path": "images/7-initiative-progress.webp",
+      "alt": "深森林绿、暖米色与橙色页面，一组表格压缩信息密度，组合信息收束版面。"
+    },
+    {
+      "path": "images/8-metrics-dashboard.webp",
+      "alt": "深森林绿、暖米色与橙色页面，一幅图表集中排布，指标信息形成重心。"
+    },
+    {
+      "path": "images/9-risks-and-mitigations.webp",
+      "alt": "深森林绿、暖米色与橙色页面，一幅图表集中排布，风险信息拉开层级。"
+    },
+    {
+      "path": "images/10-next-90-days.webp",
+      "alt": "深森林绿、暖米色与橙色页面，横向时间轴串联阶段节点，日期标记组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，深森林绿、暖米色与橙色主导画面，左侧中部的超大标题形成第一视点；一幅图表与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-strategic-context.html",
+      "description": "左上方标题锚定深森林绿、暖米色与橙色画面；三组大号数字拉开视觉节奏，问题陈述与强调数字嵌入主体模块。"
+    },
+    {
+      "path": "html/3-execution-diagnosis.html",
+      "description": "深森林绿、暖米色与橙色作为底色，标题落在左上方；三组大号数字拉开视觉节奏，一幅图表落在左侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/4-strategy-map.html",
+      "description": "标题固定在左上方，深森林绿、暖米色与橙色分隔主体；留白与细线分隔出清晰阅读区，框架模块与强调结论贴合卡片边界。"
+    },
+    {
+      "path": "html/5-operating-mechanism.html",
+      "description": "深森林绿、暖米色与橙色画面，标题置于左上方；留白与细线分隔出清晰阅读区，步骤模块与连接关系集中在画面中部。"
+    },
+    {
+      "path": "html/6-initiative-portfolio.html",
+      "description": "左上方标题锚定深森林绿、暖米色与橙色画面；留白与细线分隔出清晰阅读区，一幅图表落在左侧，项目卡、优先级与状态标签补充层级。"
+    },
+    {
+      "path": "html/7-initiative-progress.html",
+      "description": "深森林绿、暖米色与橙色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一组表格位于中央，项目卡、优先级与状态标签补充层级。"
+    },
+    {
+      "path": "html/8-metrics-dashboard.html",
+      "description": "标题固定在左上方，深森林绿、暖米色与橙色分隔主体；四组大号数字拉开视觉节奏，一幅指标图表落在左侧，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/9-risks-and-mitigations.html",
+      "description": "深森林绿、暖米色与橙色画面，标题置于左上方；留白与细线分隔出清晰阅读区，一幅风险图表落在右侧，分级标签、状态色与风险标记补充层级。"
+    },
+    {
+      "path": "html/10-next-90-days.html",
+      "description": "左上方标题锚定深森林绿、暖米色与橙色画面；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记集中在画面中部。"
+    }
+  ]
+}

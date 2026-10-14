@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Operating Context</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;} *{box-sizing:border-box;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Operating Context" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1EA;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; background:#F4F1EA; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:6px; background:#1A1815; z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:70px; width:900px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:3px; color:#C6522A; text-transform:uppercase;">02 — Operating context</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:112px; width:1180px; z-index:10; font-family:'Archivo',sans-serif; font-weight:600; font-size:58px; line-height:1.08; letter-spacing:-1.2px; color:#1A1815;">The core problem is a widening gap between cost and price.</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:120px; width:480px; z-index:10; font-family:'Archivo',sans-serif; font-size:22px; line-height:1.5; color:#6B665C; text-align:right;">Input costs have re-rated three quarters running. Our contract book resets annually — so recovery arrives a year late.</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:288px; width:1720px; height:1px; background:#D5CFC2; z-index:5;"></div>
+
+  <!-- chart: cost index vs price index -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:320px; width:1060px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:2.2px; color:#6B665C; text-transform:uppercase;">Indexed input cost vs. realised price · Q3 FY25 = 100</div>
+
+  <!-- plot frame -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:372px; width:1060px; height:400px; background:#EAE5DA; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:372px; width:1060px; height:400px; z-index:10;">
+    <svg width="1060" height="400" viewBox="0 0 1060 400" xmlns="http://www.w3.org/2000/svg">
+      <!-- gridlines -->
+      <g stroke="#D5CFC2" stroke-width="1">
+        <line x1="120" y1="60" x2="1010" y2="60"/>
+        <line x1="120" y1="140" x2="1010" y2="140"/>
+        <line x1="120" y1="220" x2="1010" y2="220"/>
+        <line x1="120" y1="300" x2="1010" y2="300"/>
+      </g>
+      <line x1="120" y1="340" x2="1010" y2="340" stroke="#1A1815" stroke-width="1.5"/>
+      <!-- y labels -->
+      <g font-family="IBM Plex Mono, monospace" font-size="17" fill="#6B665C">
+        <text x="104" y="66" text-anchor="end">118</text>
+        <text x="104" y="146" text-anchor="end">112</text>
+        <text x="104" y="226" text-anchor="end">106</text>
+        <text x="104" y="306" text-anchor="end">100</text>
+      </g>
+      <!-- x labels -->
+      <g font-family="IBM Plex Mono, monospace" font-size="17" fill="#6B665C" text-anchor="middle">
+        <text x="150" y="368">Q3 25</text>
+        <text x="322" y="368">Q4 25</text>
+        <text x="494" y="368">Q1 26</text>
+        <text x="666" y="368">Q2 26</text>
+        <text x="838" y="368">Q3 26</text>
+        <text x="1000" y="368">Q4 26E</text>
+      </g>
+      <!-- shaded gap -->
+      <polygon points="150,300 322,254 494,201 666,148 838,88 838,180 666,220 494,254 322,281 150,300" fill="#C6522A" opacity="0.14"/>
+      <!-- cost line -->
+      <polyline points="150,300 322,254 494,201 666,148 838,88" fill="none" stroke="#C6522A" stroke-width="4"/>
+      <polyline points="838,88 1000,72" fill="none" stroke="#C6522A" stroke-width="4" stroke-dasharray="9 7"/>
+      <!-- price line -->
+      <polyline points="150,300 322,281 494,254 666,220 838,180" fill="none" stroke="#1A1815" stroke-width="4"/>
+      <polyline points="838,180 1000,104" fill="none" stroke="#1A1815" stroke-width="4" stroke-dasharray="9 7"/>
+      <!-- points -->
+      <g fill="#C6522A">
+        <circle cx="150" cy="300" r="6"/><circle cx="322" cy="254" r="6"/><circle cx="494" cy="201" r="6"/><circle cx="666" cy="148" r="6"/><circle cx="838" cy="88" r="6"/>
+      </g>
+      <g fill="#1A1815">
+        <circle cx="150" cy="300" r="6"/><circle cx="322" cy="281" r="6"/><circle cx="494" cy="254" r="6"/><circle cx="666" cy="220" r="6"/><circle cx="838" cy="180" r="6"/>
+      </g>
+      <!-- gap callout -->
+      <line x1="880" y1="88" x2="880" y2="180" stroke="#1A1815" stroke-width="1.5"/>
+      <line x1="872" y1="88" x2="888" y2="88" stroke="#1A1815" stroke-width="1.5"/>
+      <line x1="872" y1="180" x2="888" y2="180" stroke="#1A1815" stroke-width="1.5"/>
+      <text x="898" y="128" font-family="IBM Plex Mono, monospace" font-size="20" fill="#1A1815">6.8 pts</text>
+      <text x="898" y="152" font-family="Archivo, sans-serif" font-size="17" fill="#6B665C">unrecovered</text>
+      <!-- legend -->
+      <g font-family="Archivo, sans-serif" font-size="19" fill="#1A1815">
+        <rect x="120" y="14" width="26" height="4" fill="#C6522A"/>
+        <text x="156" y="21">Input cost index</text>
+        <rect x="330" y="14" width="26" height="4" fill="#1A1815"/>
+        <text x="366" y="21">Realised price index</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- three drivers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:812px; width:1060px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:2.2px; color:#6B665C; text-transform:uppercase;">Decomposition of the 90 bps margin decline</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:852px; width:1060px; height:1px; background:#D5CFC2; z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:880px; width:320px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:46px; font-weight:500; color:#C6522A;">−70 bps</div>
+    <div style="font-size:24px; font-weight:600; margin-top:4px;">Raw material &amp; freight</div>
+    <div style="font-size:20px; color:#6B665C;">Alloy +14%, ocean freight +9%</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:460px; top:880px; width:320px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:46px; font-weight:500; color:#C6522A;">−35 bps</div>
+    <div style="font-size:24px; font-weight:600; margin-top:4px;">Labour &amp; overtime</div>
+    <div style="font-size:20px; color:#6B665C;">Fenwick plant at 94% utilisation</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:820px; top:880px; width:340px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:46px; font-weight:500; color:#2E7D5B;">+15 bps</div>
+    <div style="font-size:24px; font-weight:600; margin-top:4px;">Mix &amp; service revenue</div>
+    <div style="font-size:20px; color:#6B665C;">Aftermarket now 21% of sales</div>
+  </div>
+
+  <!-- right rail: stress points -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:320px; width:600px; height:660px; background:#1A1815; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1260px; top:352px; width:520px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:2.6px; color:#C6522A; text-transform:uppercase;">Where the pressure sits</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:394px; width:520px; height:1px; background:#3A362F; z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1260px; top:422px; width:520px; z-index:10; font-family:'Archivo',sans-serif; color:#F4F1EA;">
+    <div style="font-size:27px; font-weight:600;">Legacy contract book</div>
+    <div style="font-size:21px; color:#B8B2A4; line-height:1.4; margin-top:4px;">214 of 396 agreements still priced on FY24 index terms.</div>
+    <div style="height:8px; background:#3A362F; margin-top:14px;"><div style="width:54%; height:8px; background:#C6522A;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; color:#C6522A; margin-top:6px;">54% of revenue exposed</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1260px; top:610px; width:520px; z-index:10; font-family:'Archivo',sans-serif; color:#F4F1EA;">
+    <div style="font-size:27px; font-weight:600;">Capacity ceiling</div>
+    <div style="font-size:21px; color:#B8B2A4; line-height:1.4; margin-top:4px;">Fenwick line runs at 94% — overtime absorbs the surge.</div>
+    <div style="height:8px; background:#3A362F; margin-top:14px;"><div style="width:94%; height:8px; background:#C6522A;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; color:#C6522A; margin-top:6px;">94% utilisation</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1260px; top:798px; width:520px; z-index:10; font-family:'Archivo',sans-serif; color:#F4F1EA;">
+    <div style="font-size:27px; font-weight:600;">Cash conversion</div>
+    <div style="font-size:21px; color:#B8B2A4; line-height:1.4; margin-top:4px;">Order-to-revenue cycle stretched by 13 days this year.</div>
+    <div style="height:8px; background:#3A362F; margin-top:14px;"><div style="width:72%; height:8px; background:#C6A15A;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; color:#C6A15A; margin-top:6px;">97 days · target 84</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:1022px; width:800px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:1.8px; color:#8A8578; text-transform:uppercase;">Board Meeting Deck · Q3 FY2026</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:1022px; width:100px; z-index:10; text-align:right; font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:1.8px; color:#8A8578;">03</div>
+
+</div>
+</body>
+</html>

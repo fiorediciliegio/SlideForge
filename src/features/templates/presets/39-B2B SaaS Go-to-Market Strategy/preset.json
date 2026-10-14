@@ -1,0 +1,55 @@
+{
+  "id": "39-B2B SaaS Go-to-Market Strategy",
+  "version": 1,
+  "ppt_number": 39,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "purple",
+    "pink",
+    "orange",
+    "cream"
+  ],
+  "name": "B2B SaaS Go-to-Market Strategy",
+  "description": "Vivid go-to-market design with deep purple fields, magenta gradients, coral callouts, and bold message-led layouts.",
+  "user": "Sales & Marketing",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["strategy","market-entry"],"industries":["technology"],"audiences":["client"],"formats":["roadmap"],"primary_styles":["dark"],"visual_traits":["dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深紫色、洋红与珊瑚橙主导封面，超大标题位于左侧中部，一块几何面板平衡画面。"
+    },
+    {
+      "path": "images/2-market-wedge-icp.webp",
+      "alt": "深紫色、洋红与珊瑚橙页面，双面板划分主体区域，人群信息强化对比。"
+    },
+    {
+      "path": "images/4-acquisition-funnel.webp",
+      "alt": "深紫色、洋红与珊瑚橙页面，三组大号数字形成节奏，流程关系收束版面。"
+    },
+    {
+      "path": "images/5-ninety-day-execution.webp",
+      "alt": "深紫色、洋红与珊瑚橙页面，四块卡片组成三列网格，执行节奏形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页以深紫色、洋红与珊瑚橙建立强对比，超大标题落在左侧中部；一块几何面板占据主要视区，细线和页脚信息稳定边界。"
+    },
+    {
+      "path": "html/2-market-wedge-icp.html",
+      "description": "深紫色、洋红与珊瑚橙作为底色，标题落在左上方；两块主面板建立清晰分区，分类标签与数据卡顺着版面动线分布。"
+    },
+    {
+      "path": "html/4-acquisition-funnel.html",
+      "description": "标题固定在左上方，深紫色、洋红与珊瑚橙分隔主体；三块主体模块构成错落分栏，步骤节点与连接线嵌入主体模块。"
+    },
+    {
+      "path": "html/5-ninety-day-execution.html",
+      "description": "深紫色、洋红与珊瑚橙画面，标题置于左上方；四块信息卡组成三列网格，一组表格位于左侧，阶段节点、节奏条与行动卡补充层级。"
+    }
+  ]
+}

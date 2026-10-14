@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solution</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#15181B;
+  --ink-2:#39414A;
+  --muted:#767C82;
+  --line:#D8D4CB;
+  --canvas:#F5F3EF;
+  --panel:#FFFFFF;
+  --panel-alt:#EBE8E0;
+  --accent:#B8492B;
+  --accent-soft:#F1DED6;
+  --slate:#1B2429;
+  --slate-2:#2C3A41;
+  --ok:#4C7358;
+  --warn:#9C7A22;
+}
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background:var(--canvas);
+  font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.kicker{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:21px; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+}
+.kicker-d{ color:#D98E74; }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:600;
+  font-size:62px; line-height:1.06; letter-spacing:-.02em; color:var(--ink);
+}
+.h2{ font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.2; letter-spacing:-.01em; }
+.h3{ font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; line-height:1.25; }
+.lead{ font-size:27px; line-height:1.42; color:var(--ink-2); }
+.body{ font-size:23px; line-height:1.5; color:var(--ink-2); }
+.small{ font-size:21px; line-height:1.45; color:var(--muted); }
+
+.label{
+  font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.num{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  letter-spacing:-.03em; line-height:1; color:var(--ink);
+}
+
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:4px; }
+.card-alt{ background:var(--panel-alt); border:1px solid var(--line); border-radius:4px; }
+.card-d{ background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14); border-radius:4px; }
+
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:16px 20px; border-bottom:1px solid var(--line);
+}
+table.grid td{
+  font-size:23px; color:var(--ink-2); padding:20px;
+  border-bottom:1px solid var(--line); vertical-align:middle;
+}
+table.grid td.k{ color:var(--ink); font-weight:500; }
+
+.chip{
+  display:inline-block; border:1px solid var(--line); border-radius:3px;
+  background:#fff; color:var(--ink-2);
+  font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:.04em;
+  padding:9px 14px; margin:0 8px 10px 0;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Solution" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F5F3EF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#B8492B; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:104px; width:1000px; z-index:10;">
+    <div class="kicker">03 · THE SOLUTION</div>
+    <div class="h1" style="font-size:56px; margin-top:22px;">One workflow from contract<br>to recognised revenue.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:118px; width:540px; z-index:10;">
+    <div class="lead" style="font-size:25px;">
+      Threadline reads the signed contract, generates the billing schedule,
+      invoices on it, chases what is late, and hands the auditor a clean
+      trail — without a spreadsheet in the middle.
+    </div>
+  </div>
+
+  <!-- three pillars -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:352px; width:520px; height:388px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:184px; top:392px; width:432px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#B8492B;">PILLAR 01</div>
+    <div class="h3" style="margin-top:18px;">Contract-native billing engine</div>
+    <div class="body" style="font-size:22px; margin-top:18px;">
+      Terms are parsed once into structured entitlements — tiers, commits,
+      ramps, credits — and every downstream document inherits them.
+    </div>
+    <div style="height:1px; background:#EDEAE3; margin:24px 0 18px;"></div>
+    <div class="label" style="font-size:18px;">REPLACES 3 SPREADSHEETS</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:700px; top:352px; width:520px; height:388px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:744px; top:392px; width:432px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#B8492B;">PILLAR 02</div>
+    <div class="h3" style="margin-top:18px;">Collections that run themselves</div>
+    <div class="body" style="font-size:22px; margin-top:18px;">
+      Every open invoice gets an owner, a sequence and an escalation date.
+      Promise-to-pay data feeds a weekly cash forecast.
+    </div>
+    <div style="height:1px; background:#EDEAE3; margin:24px 0 18px;"></div>
+    <div class="label" style="font-size:18px;">REPLACES THE SHARED INBOX</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:352px; width:520px; height:388px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1304px; top:392px; width:432px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#B8492B;">PILLAR 03</div>
+    <div class="h3" style="margin-top:18px;">Audit trail as a by-product</div>
+    <div class="body" style="font-size:22px; margin-top:18px;">
+      Each amount links back to a clause, an approval and a payment.
+      Deferred revenue schedules rebuild themselves nightly.
+    </div>
+    <div style="height:1px; background:#EDEAE3; margin:24px 0 18px;"></div>
+    <div class="label" style="font-size:18px;">REPLACES CLOSE-WEEK ARCHAEOLOGY</div>
+  </div>
+
+  <!-- before / after strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:786px; width:1640px; height:172px; background:#1B2429; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:188px; top:826px; width:1544px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:48px;">
+      <div style="flex:none; width:300px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#6E7A81;">WHAT WE REPLACE</div>
+        <div style="font-size:24px; color:#B9C1C6; margin-top:12px; line-height:1.35;">4 spreadsheets · 2 point tools · 1 offshore BPO retainer</div>
+      </div>
+      <div style="width:1px; height:92px; background:rgba(255,255,255,.16); flex:none;"></div>
+      <div style="flex:1; display:flex; gap:56px;">
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:46px; color:#fff; letter-spacing:-.03em;">27 days</div>
+          <div style="font-size:21px; color:#8C979E; margin-top:8px;">DSO reduction, day 90</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:46px; color:#fff; letter-spacing:-.03em;">1.6 FTE</div>
+          <div style="font-size:21px; color:#8C979E; margin-top:8px;">Analyst capacity returned</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:46px; color:#fff; letter-spacing:-.03em;">0</div>
+          <div style="font-size:21px; color:#8C979E; margin-top:8px;">Spreadsheets in the loop</div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:46px; color:#D98E74; letter-spacing:-.03em;">6 wks</div>
+          <div style="font-size:21px; color:#8C979E; margin-top:8px;">Median time to go live</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:1006px; width:1640px; height:1px; background:#D8D4CB; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:1026px; width:900px; z-index:10;">
+    <div class="label" style="font-size:18px;">THREADLINE · PRE-SEED 2026</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1640px; top:1026px; width:140px; text-align:right; z-index:10;">
+    <div class="label" style="font-size:18px;">04</div>
+  </div>
+
+</div>
+</body>
+</html>

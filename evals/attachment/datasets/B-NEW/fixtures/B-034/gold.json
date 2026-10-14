@@ -1,0 +1,13 @@
+{
+  "case_id": "B-034",
+  "size_class": "中",
+  "target_input_tokens": 4900,
+  "estimated_outline_input_tokens": 5009,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "Single attachment",
+  "attachment_types": "DOCX",
+  "content_strategies": "summarized_context",
+  "evaluation_risks": "1. Disclosing settlement ranges; 2. Saying liability is established; 3. Reordering dates; 4. Turning a scheduled hearing into a completed event; 5. Adding legal advice or external precedent."
+}

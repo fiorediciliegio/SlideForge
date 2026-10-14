@@ -1,0 +1,103 @@
+{
+  "id": "109-Women’s Health on Campus",
+  "version": 1,
+  "ppt_number": 109,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "blue",
+    "red",
+    "yellow"
+  ],
+  "name": "Women’s Health on Campus",
+  "description": "Friendly campus health guide with inclusive illustrations, outlined cards, comic sequences, and vivid callouts.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Healthcare & Wellness",
+  "recommendation_profile": {"use_cases":["health-education","education-lesson"],"industries":["healthcare"],"audiences":["students"],"formats":["lesson"],"primary_styles":["playful"],"visual_traits":["playful","colorful","cartoon","illustration"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "奶油白封面以蓝色圆形和多元学生群像为主视觉，粗黑标题配红色底栏，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-common-concerns.webp",
+      "alt": "中央圆形背包物品插画连接左右七张关注事项卡，底部蓝色总结条横贯页面，信息对比清楚。"
+    },
+    {
+      "path": "images/3-myths-and-facts.webp",
+      "alt": "三组误区与事实卡横向排列，红蓝标题条和箭头建立清晰对照关系，版面秩序稳定而有张力。"
+    },
+    {
+      "path": "images/4-body-signals.webp",
+      "alt": "左侧人物场景插画配右侧分段症状清单，浅黄与粉色提示卡保持亲和感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/5-daily-habits.webp",
+      "alt": "中央横幅插画展示八件日常物品，上下说明卡形成规则清晰的习惯指南，重点关系直观明确。"
+    },
+    {
+      "path": "images/6-healthy-concerning-urgent.webp",
+      "alt": "三栏响应等级卡采用米黄、橙红和蓝色分级，漫画气泡突出紧急提示，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/7-campus-scenario.webp",
+      "alt": "三格校园情景漫画沿横向展开，底部红蓝建议条形成行为反馈，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/8-accessing-support.webp",
+      "alt": "编号步骤卡与右侧指示牌插画并列，蓝红色帮助区分求助流程和角色，主视觉层级鲜明有序。"
+    },
+    {
+      "path": "images/9-supporting-a-friend.webp",
+      "alt": "右上人物对话插画配下方四张建议卡，红蓝分区强调陪伴边界，整体呈现鲜明的图文节奏。"
+    },
+    {
+      "path": "images/10-key-reminders.webp",
+      "alt": "左侧三条大号行动清单与右侧红色资源栏分屏，形成醒目的课程收尾页，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，奶油白封面以蓝色圆形和多元学生群像为主视觉，粗黑标题配红色底栏，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/2-common-concerns.html",
+      "description": "奶油白页面中央以圆形背包物品插画为视觉核心，左右分布七张编号关注事项卡，底部蓝色总结条将分散信息统一收束。"
+    },
+    {
+      "path": "html/3-myths-and-facts.html",
+      "description": "三组误区与事实卡横向排列，红蓝标题条和箭头建立清晰对照关系，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/4-body-signals.html",
+      "description": "左侧人物场景插画配右侧分段症状清单，浅黄与粉色提示卡保持亲和感，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/5-daily-habits.html",
+      "description": "奶油白画布上，中央横幅插画展示八件日常物品，上下说明卡形成规则清晰的习惯指南，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/6-healthy-concerning-urgent.html",
+      "description": "三栏响应等级卡采用米黄、橙红和蓝色分级，漫画气泡突出紧急提示，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/7-campus-scenario.html",
+      "description": "三格校园情景漫画沿横向展开，底部红蓝建议条形成行为反馈，统一边距、细线分隔和强调色共同维持清晰而稳定的阅读节奏。"
+    },
+    {
+      "path": "html/8-accessing-support.html",
+      "description": "编号步骤卡与右侧指示牌插画并列，蓝红色帮助区分求助流程和角色，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/9-supporting-a-friend.html",
+      "description": "右上人物对话插画配下方四张建议卡，红蓝分区强调陪伴边界，统一边距、图片比例和强调色进一步控制画面重心与阅读节奏。"
+    },
+    {
+      "path": "html/10-key-reminders.html",
+      "description": "左侧三条大号行动清单与右侧红色资源栏分屏，形成醒目的课程收尾页，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    }
+  ]
+}

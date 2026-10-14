@@ -1,0 +1,10 @@
+{
+  "id": "01-english-executive-summary",
+  "title": "English executive summary",
+  "description": "Business summary with KPI cards, mixed text hierarchy and a compact trend chart.",
+  "deck_html_file": "01-english-executive-summary/deck.html",
+  "slide_html_files": ["01-english-executive-summary/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["english", "kpi", "cards", "chart"],
+  "manual_checks": ["No text wraps inside KPI values", "Trend line and milestone dots stay aligned", "Cards retain shadows and rounded corners"]
+}

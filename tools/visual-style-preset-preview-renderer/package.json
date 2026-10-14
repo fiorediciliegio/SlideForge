@@ -1,0 +1,20 @@
+{
+  "name": "@anna-apps/ppt-visual-style-preset-preview-renderer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Independent Chromium renderer and validator for PPT App visual style preset WebP previews.",
+  "type": "module",
+  "scripts": {
+    "render": "node ./src/cli.mjs render",
+    "convert-images": "node ./src/cli.mjs convert-images",
+    "check": "node ./src/cli.mjs check",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "puppeteer-core": "25.9.0",
+    "sharp": "0.35.4"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

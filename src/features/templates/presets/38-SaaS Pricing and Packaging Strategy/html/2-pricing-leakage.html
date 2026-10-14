@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Current pricing problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;}
+  body{font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 Current pricing problem" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#ECF8F5;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:#11B7A3;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:78px;width:640px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:500;letter-spacing:3px;color:#11B7A3;">01 &nbsp;THE PROBLEM</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:126px;width:1180px;z-index:10;">
+    <h2 style="margin:0;font-size:60px;line-height:1.14;font-weight:800;letter-spacing:-1px;color:#12263A;">Flat seat pricing leaks <span style="color:#11B7A3;">17.6%</span> of list ARR before it reaches the invoice.</h2>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1400px;top:126px;width:424px;height:196px;background:#12263A;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1428px;top:148px;width:380px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:2px;color:#11B7A3;">LEAKAGE FY25</p>
+    <p style="margin:4px 0 0 0;font-size:68px;line-height:1.1;font-weight:800;letter-spacing:-2px;color:#F2FAF8;">$7.4M</p>
+    <p style="margin:2px 0 0 0;font-size:24px;font-weight:500;white-space:nowrap;color:#9FBAC6;">$42.0M list &rarr; $34.6M realized</p>
+  </div>
+
+  <!-- left: current ladder -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:352px;width:560px;z-index:10;">
+    <p style="margin:0;font-size:30px;font-weight:700;color:#12263A;">Current ladder &mdash; and where it breaks</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:398px;width:560px;height:1px;background:#12263A;opacity:0.35;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:420px;width:560px;z-index:10;">
+    <div style="display:flex;flex-direction:column;gap:0px;">
+      <div style="padding:14px 0;border-bottom:1px solid rgba(18,38,58,0.16);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span style="font-size:32px;font-weight:700;color:#12263A;">Starter</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:32px;font-weight:600;color:#12263A;">$49</span>
+        </div>
+        <p style="margin:6px 0 0 0;font-size:24px;line-height:1.4;color:#4A6373;">No usage cap enforced &mdash; 31% of accounts run Pro-level volume on Starter.</p>
+      </div>
+      <div style="padding:14px 0;border-bottom:1px solid rgba(18,38,58,0.16);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span style="font-size:32px;font-weight:700;color:#12263A;">Pro</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:32px;font-weight:600;color:#12263A;">$99</span>
+        </div>
+        <p style="margin:6px 0 0 0;font-size:24px;line-height:1.4;color:#4A6373;">Only seat-based &mdash; heavy automation users pay the same as light ones.</p>
+      </div>
+      <div style="padding:14px 0;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+          <span style="font-size:32px;font-weight:700;color:#12263A;">Enterprise</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:32px;font-weight:600;color:#12263A;">Negotiated</span>
+        </div>
+        <p style="margin:6px 0 0 0;font-size:24px;line-height:1.4;color:#4A6373;">No floor and no rate card &mdash; median discount 23%, worst case 41%.</p>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:878px;width:560px;height:1px;background:#12263A;opacity:0.35;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:902px;width:560px;z-index:10;">
+    <p style="margin:0;font-size:27px;line-height:1.45;font-weight:600;color:#12263A;">Root cause: price metric (seats) is decoupled from the value metric (workflows executed).</p>
+  </div>
+
+  <!-- right: leakage waterfall -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:760px;top:352px;width:1064px;z-index:10;">
+    <p style="margin:0;font-size:30px;font-weight:700;color:#12263A;">Revenue leakage waterfall &mdash; FY25 contracted book</p>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:740px;top:390px;width:1100px;height:620px;z-index:10;">
+    <svg viewBox="0 0 1100 620" width="1100" height="620" style="font-family:'IBM Plex Mono',monospace;">
+      <!-- gridlines + y labels -->
+      <g stroke="#12263A" stroke-opacity="0.13">
+        <line x1="110" y1="60" x2="1080" y2="60"/>
+        <line x1="110" y1="148" x2="1080" y2="148"/>
+        <line x1="110" y1="236" x2="1080" y2="236"/>
+        <line x1="110" y1="324" x2="1080" y2="324"/>
+        <line x1="110" y1="412" x2="1080" y2="412"/>
+      </g>
+      <line x1="110" y1="500" x2="1080" y2="500" stroke="#12263A" stroke-opacity="0.55"/>
+      <g fill="#4A6373" font-size="24" text-anchor="end">
+        <text x="96" y="68">45</text>
+        <text x="96" y="156">42</text>
+        <text x="96" y="244">39</text>
+        <text x="96" y="332">36</text>
+        <text x="96" y="420">33</text>
+        <text x="96" y="508">30</text>
+      </g>
+      <text x="26" y="300" fill="#4A6373" font-size="24" transform="rotate(-90 26 300)" text-anchor="middle">ARR ($M)</text>
+
+      <!-- connectors -->
+      <g stroke="#12263A" stroke-opacity="0.35" stroke-dasharray="5 5">
+        <line x1="250" y1="148" x2="292" y2="148"/>
+        <line x1="411" y1="247.5" x2="453" y2="247.5"/>
+        <line x1="573" y1="303.5" x2="615" y2="303.5"/>
+        <line x1="735" y1="341.6" x2="777" y2="341.6"/>
+        <line x1="896" y1="365.1" x2="938" y2="365.1"/>
+      </g>
+
+      <!-- bars -->
+      <rect x="130" y="148" width="120" height="352" fill="#12263A"/>
+      <rect x="291.7" y="148" width="120" height="99.5" fill="#E4735F"/>
+      <rect x="453.3" y="247.5" width="120" height="56" fill="#E4735F"/>
+      <rect x="615" y="303.5" width="120" height="38.1" fill="#E4735F"/>
+      <rect x="776.7" y="341.6" width="120" height="23.5" fill="#E4735F"/>
+      <rect x="938.3" y="365.1" width="120" height="134.9" fill="#11B7A3"/>
+
+      <!-- value labels -->
+      <g font-size="28" font-weight="600" text-anchor="middle">
+        <text x="190" y="132" fill="#12263A">42.0</text>
+        <text x="351.7" y="132" fill="#C4523D">&minus;3.4</text>
+        <text x="513.3" y="231" fill="#C4523D">&minus;1.9</text>
+        <text x="675" y="287" fill="#C4523D">&minus;1.3</text>
+        <text x="836.7" y="325" fill="#C4523D">&minus;0.8</text>
+        <text x="998.3" y="349" fill="#0E8C7D">34.6</text>
+      </g>
+
+      <!-- category labels -->
+      <g font-family="Manrope, sans-serif" font-size="24" fill="#4A6373" text-anchor="middle">
+        <text x="190" y="536">List</text><text x="190" y="566">ARR</text>
+        <text x="351.7" y="536">Discount over</text><text x="351.7" y="566">policy</text>
+        <text x="513.3" y="536">Unbilled</text><text x="513.3" y="566">overage</text>
+        <text x="675" y="536">Seat</text><text x="675" y="566">true-down</text>
+        <text x="836.7" y="536">Legacy</text><text x="836.7" y="566">grandfathering</text>
+        <text x="998.3" y="536" fill="#0E8C7D" font-weight="700">Realized</text><text x="998.3" y="566" fill="#0E8C7D" font-weight="700">ARR</text>
+      </g>
+
+      <!-- legend / note -->
+      <g font-family="Manrope, sans-serif" font-size="24">
+        <rect x="110" y="596" width="18" height="18" fill="#E4735F"/>
+        <text x="138" y="612" fill="#4A6373">Leakage</text>
+        <rect x="272" y="596" width="18" height="18" fill="#11B7A3"/>
+        <text x="300" y="612" fill="#4A6373">Realized</text>
+        <text x="1080" y="612" fill="#4A6373" text-anchor="end">Value axis truncated at $30M &middot; illustrative model</text>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1690px;top:1032px;width:130px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:24px;text-align:right;color:#7E9AA8;">02 / 05</p>
+  </div>
+
+</div>
+</body>
+</html>

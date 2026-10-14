@@ -1,0 +1,369 @@
+{
+  "test_id": "template-recommendation-llm-combined-v1",
+  "target_stage": "template-recommendation-completed",
+  "repeat": 1,
+  "case_groups": {
+    "blind-001": "企业经营与阶段性业绩汇报",
+    "blind-002": "企业经营与阶段性业绩汇报",
+    "blind-003": "企业经营与阶段性业绩汇报",
+    "blind-004": "企业经营与阶段性业绩汇报",
+    "blind-005": "融资、投资人沟通或商业路演",
+    "blind-006": "融资、投资人沟通或商业路演",
+    "blind-007": "融资、投资人沟通或商业路演",
+    "blind-008": "融资、投资人沟通或商业路演",
+    "blind-009": "战略规划、年度计划或路线图",
+    "blind-010": "战略规划、年度计划或路线图",
+    "blind-011": "战略规划、年度计划或路线图",
+    "blind-012": "战略规划、年度计划或路线图",
+    "blind-013": "医疗、临床、健康科普或病例讨论",
+    "blind-014": "医疗、临床、健康科普或病例讨论",
+    "blind-015": "医疗、临床、健康科普或病例讨论",
+    "blind-016": "医疗、临床、健康科普或病例讨论",
+    "blind-017": "教育、课程、培训或学生内容",
+    "blind-018": "教育、课程、培训或学生内容",
+    "blind-019": "教育、课程、培训或学生内容",
+    "blind-020": "教育、课程、培训或学生内容",
+    "blind-021": "政策、公共服务或政府决策简报",
+    "blind-022": "政策、公共服务或政府决策简报",
+    "blind-023": "政策、公共服务或政府决策简报",
+    "blind-024": "政策、公共服务或政府决策简报",
+    "blind-025": "低信号/跨领域需求",
+    "blind-026": "低信号/跨领域需求",
+    "blind-027": "低信号/跨领域需求",
+    "blind-028": "低信号/跨领域需求",
+    "blind-029": "低信号/跨领域需求",
+    "blind-030": "低信号/跨领域需求",
+    "blind-031": "低信号/跨领域需求",
+    "blind-032": "低信号/跨领域需求",
+    "blind-033": "低信号/跨领域需求",
+    "blind-034": "低信号/跨领域需求",
+    "blind-035": "低信号/跨领域需求",
+    "blind-036": "低信号/跨领域需求",
+    "ml-en-01": "english",
+    "ml-en-02": "english",
+    "ml-en-03": "english",
+    "ml-en-04": "english",
+    "ml-en-05": "english",
+    "ml-en-06": "english",
+    "ml-en-07": "english",
+    "ml-en-08": "english",
+    "ml-en-09": "english",
+    "ml-en-10": "english",
+    "ml-en-11": "english",
+    "ml-en-12": "english",
+    "ml-ja-01": "japanese",
+    "ml-ja-02": "japanese",
+    "ml-ja-03": "japanese",
+    "ml-ja-04": "japanese",
+    "ml-ja-05": "japanese",
+    "ml-ja-06": "japanese",
+    "ml-ja-07": "japanese",
+    "ml-ja-08": "japanese",
+    "ml-ja-09": "japanese",
+    "ml-ja-10": "japanese",
+    "ml-ja-11": "japanese",
+    "ml-ja-12": "japanese",
+    "ml-mix-01": "mixed",
+    "ml-mix-02": "mixed",
+    "ml-mix-03": "mixed",
+    "ml-mix-04": "mixed",
+    "ml-mix-05": "mixed",
+    "ml-mix-06": "mixed",
+    "ml-mix-07": "mixed",
+    "ml-mix-08": "mixed",
+    "ml-mix-09": "mixed",
+    "ml-mix-10": "mixed",
+    "ml-mix-11": "mixed",
+    "ml-mix-12": "mixed"
+  },
+  "briefs": [
+    {
+      "id": "blind-001",
+      "brief": "做一份季度经营复盘，重点讲收入、毛利率、费用变化和各业务线完成情况，给管理层开会用。"
+    },
+    {
+      "id": "blind-002",
+      "brief": "帮我整理成一份 12 页左右的汇报，展示上半年订单增长、客户结构、重点项目进展以及下半年的主要风险。"
+    },
+    {
+      "id": "blind-003",
+      "brief": "需要给集团领导讲一下这个月的业务表现，包括销售达成率、区域排名、库存周转和几个异常指标，风格正式一些。"
+    },
+    {
+      "id": "blind-004",
+      "brief": "把我们新业务上线后的前三个月数据做成 PPT，想清楚说明用户增长、转化、成本和目前遇到的问题。"
+    },
+    {
+      "id": "blind-005",
+      "brief": "准备一份给潜在投资方看的公司介绍，讲清楚市场机会、产品模式、收入增长和这轮资金准备怎么用。"
+    },
+    {
+      "id": "blind-006",
+      "brief": "我们下周要参加创业项目路演，帮我做一个 8 分钟能讲完的 PPT，核心是痛点、解决方案、商业模式和团队优势。"
+    },
+    {
+      "id": "blind-007",
+      "brief": "想做一版面向产业基金的项目材料，重点展示行业空间、核心技术壁垒、三年财务预测和退出路径。"
+    },
+    {
+      "id": "blind-008",
+      "brief": "把目前给投资人的材料重新整理一下，突出 ARR 增长、续费率、单位经济模型和下一阶段扩张逻辑，不要太像产品宣传册。"
+    },
+    {
+      "id": "blind-009",
+      "brief": "做一份明年的公司重点工作规划，需要从当前问题讲到目标、关键举措、资源投入和季度里程碑。"
+    },
+    {
+      "id": "blind-010",
+      "brief": "帮我们把未来三年的产品发展思路画清楚，包含核心能力演进、版本节奏、目标市场和几个关键节点。"
+    },
+    {
+      "id": "blind-011",
+      "brief": "年终会上要讲下一年度怎么增长，想围绕客户拓展、渠道建设、产品升级和组织能力做一个完整方案。"
+    },
+    {
+      "id": "blind-012",
+      "brief": "需要给部门负责人说明接下来两个季度的行动安排，最好能把优先级、负责人、依赖事项和交付时间表达得很清楚。"
+    },
+    {
+      "id": "blind-013",
+      "brief": "做一份高血压健康宣教 PPT，面向社区中老年人，讲清楚危险因素、日常监测、饮食运动和什么时候需要就医。"
+    },
+    {
+      "id": "blind-014",
+      "brief": "我要在科室晨会上汇报一个复杂病例，从主诉、检查结果、鉴别诊断到治疗经过和随访情况都需要呈现。"
+    },
+    {
+      "id": "blind-015",
+      "brief": "帮我做一个面向医护人员的院感培训材料，重点包括手卫生、隔离措施、常见风险场景和处置流程。"
+    },
+    {
+      "id": "blind-016",
+      "brief": "准备一个关于儿童近视防控的科普讲座，大概 15 页，听众主要是家长，希望内容通俗但数据要可信。"
+    },
+    {
+      "id": "blind-017",
+      "brief": "给大一学生上一节人工智能入门课，做一份 30 分钟的课件，最好有概念解释、生活案例和课堂互动。"
+    },
+    {
+      "id": "blind-018",
+      "brief": "帮我整理新员工入职培训 PPT，内容包括公司基本制度、常用协作流程、信息安全和试用期注意事项。"
+    },
+    {
+      "id": "blind-019",
+      "brief": "高中地理课要讲城市化及其影响，希望做得直观一点，有案例、数据对比和最后的课堂练习。"
+    },
+    {
+      "id": "blind-020",
+      "brief": "我需要做毕业答辩 PPT，研究的是毫米波非接触生命体征监测，想突出研究背景、系统方案、实验结果和创新点。"
+    },
+    {
+      "id": "blind-021",
+      "brief": "做一份给区领导看的养老服务情况简报，包含当前覆盖人数、服务资源分布、群众反馈和下一步改进措施。"
+    },
+    {
+      "id": "blind-022",
+      "brief": "需要汇报本年度营商环境优化工作的进展，把已完成事项、企业诉求、堵点问题和后续安排讲清楚。"
+    },
+    {
+      "id": "blind-023",
+      "brief": "帮我准备一个关于老旧小区改造的决策汇报，领导主要关心资金投入、居民覆盖、实施进度和存在的协调难点。"
+    },
+    {
+      "id": "blind-024",
+      "brief": "要做一份公共交通优化方案的汇报材料，对比目前客流、线路覆盖和高峰拥堵情况，再给出几种可落地的调整方向。"
+    },
+    {
+      "id": "blind-025",
+      "brief": "帮我做一份关于我们最近这个项目的 PPT，主要给其他同事介绍一下为什么要做、目前做到哪了，还有后面准备怎么推进。"
+    },
+    {
+      "id": "blind-026",
+      "brief": "下周有个内部分享，我想讲一下最近半年接触到的一些 AI 工具和自己的使用感受，帮我整理成十几页 PPT。"
+    },
+    {
+      "id": "blind-027",
+      "brief": "帮我做个关于年轻人消费习惯变化的 PPT，我手上有一些网上找的数据和案例，想把它们串成一个完整的分享。"
+    },
+    {
+      "id": "blind-028",
+      "brief": "我要给几个合作方介绍我们正在做的这个事情，不需要讲得特别细，主要让他们快速明白背景、现在的方案和需要配合的地方。"
+    },
+    {
+      "id": "blind-029",
+      "brief": "做一份关于城市夜间生活的 PPT 吧，想讲吃饭、出行、娱乐这些方面这几年有什么变化，内容丰富一点。"
+    },
+    {
+      "id": "blind-030",
+      "brief": "我们月底有一次项目交流会，帮我把前期调研、过程中发现的问题和最后得到的一些结论整理成 PPT，控制在 15 分钟左右。"
+    },
+    {
+      "id": "blind-031",
+      "brief": "想做一个介绍新能源汽车这几年变化的 PPT，不用特别专业，主要把技术、价格、用户体验这些方面讲明白。"
+    },
+    {
+      "id": "blind-032",
+      "brief": "帮我把这次去外地考察看到的东西做成一份汇报，去了几个地方，也拍了不少照片，主要想讲哪些东西值得我们参考。"
+    },
+    {
+      "id": "blind-033",
+      "brief": "我想做个关于远程办公的分享，聊聊这几年大家工作方式的变化、好处和问题，再放几个实际例子。"
+    },
+    {
+      "id": "blind-034",
+      "brief": "下周要给一群不太了解这个项目的人讲我们的工作，帮我做个 PPT，别放太多专业术语，能让人听懂整个过程就行。"
+    },
+    {
+      "id": "blind-035",
+      "brief": "帮我整理一份关于短视频对日常生活影响的 PPT，正面和负面的东西都讲一下，最好有一些数据和具体例子。"
+    },
+    {
+      "id": "blind-036",
+      "brief": "我们最近做了一次用户访谈，想把大家提到最多的问题、几个比较典型的反馈和我们自己的想法做成一份 PPT，开会的时候一起讨论。"
+    },
+    {
+      "id": "ml-en-01",
+      "brief": "Create a 5-slide PPT for an early-stage investor meeting about a subscription-based home energy management product. Cover the customer problem, product concept, target market, business model, and next funding milestones. Keep it confident and modern, but not too corporate."
+    },
+    {
+      "id": "ml-en-02",
+      "brief": "Please make a 4-slide PPT to introduce a new reusable coffee cup line to retail partners. Include the product idea, key materials, customer profile, and launch campaign plan. I want a fresh and friendly look, and please avoid dark backgrounds."
+    },
+    {
+      "id": "ml-en-03",
+      "brief": "Build a 6-slide PPT for our department leadership meeting to explain the progress of a customer service automation project. Show the original goals, what has been completed, current adoption metrics, open issues, and priorities for the next phase."
+    },
+    {
+      "id": "ml-en-04",
+      "brief": "Create a 4-slide PPT for a university workshop that teaches first-year students how to evaluate online information sources. Cover source credibility, common misinformation patterns, a simple verification checklist, and one practice example. Make it lively and easy to scan without looking childish."
+    },
+    {
+      "id": "ml-en-05",
+      "brief": "Please prepare a 5-slide PPT for a community health seminar about improving sleep habits for office workers. Explain why sleep matters, common habits that reduce sleep quality, practical changes people can try, and when professional advice may be appropriate. Use a calm, clean visual style."
+    },
+    {
+      "id": "ml-en-06",
+      "brief": "Make a 3-slide PPT for visitors to a local heritage center introducing the history of traditional river transport in the region. Focus on how people traveled, traded, and lived around the waterways, with one final slide on what visitors can still see today."
+    },
+    {
+      "id": "ml-en-07",
+      "brief": "Create a 6-slide PPT portfolio for a junior motion designer applying to a creative studio. Include a short introduction, three selected projects, the design process, and contact information. The presentation should feel editorial and visually expressive, but not like a fashion magazine."
+    },
+    {
+      "id": "ml-en-08",
+      "brief": "Please make a 5-slide PPT for a quarterly internal strategy discussion about entering the small-business segment. Cover the opportunity, target customer needs, channel options, operational constraints, and the decisions management needs to make."
+    },
+    {
+      "id": "ml-en-09",
+      "brief": "Create a 4-slide PPT for a public library event promoting a month-long reading challenge for teenagers. Include how the challenge works, weekly activities, rewards, and how to join. Make it colorful and energetic, but do not use a childish cartoon style."
+    },
+    {
+      "id": "ml-en-10",
+      "brief": "Build a 5-slide PPT for a travel briefing about a three-day food and architecture trip in Lisbon for a small group of colleagues. Include the daily plan, neighborhood highlights, practical transport notes, and a final checklist. Keep the design light and spacious."
+    },
+    {
+      "id": "ml-en-11",
+      "brief": "Please create a 3-slide PPT for a hospital operations meeting about reducing patient waiting time in an outpatient clinic. Summarize the current workflow, the main bottlenecks found during observation, and the proposed pilot actions for the next month."
+    },
+    {
+      "id": "ml-en-12",
+      "brief": "Create a 5-slide PPT pitch for a museum partnership proposal around an interactive audio exhibition. Explain the concept, visitor journey, required spaces and technology, partnership benefits, and a suggested event timeline. Use a refined dark presentation style without making it feel like a tech startup deck."
+    },
+    {
+      "id": "ml-ja-01",
+      "brief": "地域の食品メーカー向けに、新しい冷凍惣菜ブランドの事業提案をする5ページのPPTを作ってください。市場の背景、想定顧客、商品ライン、販売チャネル、初年度の展開案をまとめたいです。落ち着いた正式な印象にしてください。"
+    },
+    {
+      "id": "ml-ja-02",
+      "brief": "社内の新入社員研修で使う4ページのPPTを作成してください。テーマは『わかりやすい業務報告の作り方』で、良い報告の構成、数字の見せ方、よくある失敗、簡単な例を入れたいです。派手すぎないデザインでお願いします。"
+    },
+    {
+      "id": "ml-ja-03",
+      "brief": "自治体の説明会で使う5ページのPPTを作ってください。公共施設の予約方法が新しくなるので、変更点、利用者へのメリット、予約手順、開始時期、問い合わせ先を住民向けにわかりやすく整理したいです。"
+    },
+    {
+      "id": "ml-ja-04",
+      "brief": "若手社員向けの健康講座として、肩こりや長時間のデスクワーク対策を説明する4ページのPPTを作ってください。原因になりやすい習慣、日常でできる対策、簡単なストレッチ、注意点を入れてください。清潔感のある明るい雰囲気が希望です。"
+    },
+    {
+      "id": "ml-ja-05",
+      "brief": "新商品の社内発表会向けに、家庭用ミニプロジェクターの特徴を紹介する6ページのPPTを作ってください。開発背景、主な機能、利用シーン、競合との違い、発売スケジュール、販促方針を入れたいです。未来感はほしいですが、黒一色の重いデザインにはしないでください。"
+    },
+    {
+      "id": "ml-ja-06",
+      "brief": "大学のゼミ発表で、都市のヒートアイランド現象を説明する5ページのPPTを作ってください。現象の仕組み、主な原因、都市生活への影響、対策事例、まとめの順で構成したいです。"
+    },
+    {
+      "id": "ml-ja-07",
+      "brief": "地方の観光協会向けに、秋の文化イベントを紹介する4ページのPPTを作成してください。イベント概要、主なプログラム、来場者向け情報、地域店舗との連携内容をまとめたいです。温かみはほしいですが、雑誌っぽくしないでください。"
+    },
+    {
+      "id": "ml-ja-08",
+      "brief": "経営会議向けに、新しい法人向けサービスの試験導入結果を共有する5ページのPPTを作ってください。導入目的、対象企業、利用状況、現場からのフィードバック、次の判断事項を整理したいです。"
+    },
+    {
+      "id": "ml-ja-09",
+      "brief": "高校生向けの授業で、宇宙探査に使われるロボットの役割を説明する3ページのPPTを作ってください。どんな環境で使われるのか、主な機能、人が直接行く場合との違いをわかりやすくまとめたいです。"
+    },
+    {
+      "id": "ml-ja-10",
+      "brief": "写真家の個展企画をギャラリーに説明するための6ページのPPTを作ってください。展示テーマ、作品構成、会場での見せ方、来場者体験、広報案、開催までの準備を入れたいです。余白を活かしたミニマルな見た目にしてください。"
+    },
+    {
+      "id": "ml-ja-11",
+      "brief": "地域のクリニックで患者向けに配信する、季節性アレルギーの基本を説明する4ページのPPTを作ってください。よくある症状、日常でできる対策、受診を考える目安、まとめを入れてください。"
+    },
+    {
+      "id": "ml-ja-12",
+      "brief": "社内プロジェクトの中間報告として、業務システム移行の進捗をまとめる5ページのPPTを作ってください。完了した作業、現在の進捗、主要リスク、利用部門への影響、次の2か月の予定を整理したいです。数字や進捗が見やすい正式なデザインにしてください。"
+    },
+    {
+      "id": "ml-mix-01",
+      "brief": "帮我做一份5页PPT，给潜在投资人介绍一个面向中小餐饮店的智能排班SaaS。重点讲 pain point、solution、商业模式、market opportunity 和未来12个月计划。整体要简洁专业，但不要那种很传统的 corporate style。"
+    },
+    {
+      "id": "ml-mix-02",
+      "brief": "需要做4页PPT给市场团队讨论新品launch campaign，是一款适合通勤人群的轻量保温杯。想讲 target audience、核心卖点、content idea 和渠道节奏，视觉上希望 fresh、bright、有一点 lifestyle 感，不要深色背景。"
+    },
+    {
+      "id": "ml-mix-03",
+      "brief": "做一份6页PPT给管理层汇报客服系统升级项目，目前已经完成第一阶段。需要包含 project objective、当前进度、关键数据、用户反馈、主要 blocker 和 next steps，先以业务信息清楚为主，不需要特别设计某种视觉风格。"
+    },
+    {
+      "id": "ml-mix-04",
+      "brief": "请做3页PPT用于社区健康活动，主题是如何减少久坐带来的身体不适。第一页讲 common problems，第二页给 practical tips，第三页做 daily checklist。希望整体清爽、有呼吸感，不要做成 fitness poster 那种很强烈的视觉。"
+    },
+    {
+      "id": "ml-mix-05",
+      "brief": "Create a 5-slide PPT for a partner meeting about our 海外渠道 expansion plan for a small consumer electronics brand. Cover current sales mix, priority regions, 渠道合作方式, operational risks, and the next two quarters of actions."
+    },
+    {
+      "id": "ml-mix-06",
+      "brief": "Please make a 4-slide PPT for an internal workshop on how to improve 跨部门协作. I want one slide on common friction points, one on meeting and ownership rules, one on a simple collaboration workflow, and one on actions teams can start next week. Keep it 极简 and practical."
+    },
+    {
+      "id": "ml-mix-07",
+      "brief": "Build a 6-slide PPT for a new skincare product launch review. The audience is the 市场部和电商团队, and the deck should cover campaign goals, audience segments, content performance, channel results, customer comments, and 下阶段优化方向. Use a clean editorial feel, but avoid too much decorative typography."
+    },
+    {
+      "id": "ml-mix-08",
+      "brief": "Create a 5-slide PPT for senior management to review a 门店数字化 pilot. Include the original business objective, what was deployed, adoption across stores, operational issues, and whether the pilot is ready for a wider rollout."
+    },
+    {
+      "id": "ml-mix-09",
+      "brief": "大学の授業で使う4ページのPPTを作ってください。テーマは食品ロスで、current situation、家庭と小売で起きる主な原因、possible solutions、学生ができるactionを説明したいです。明るくてfriendlyな雰囲気にしてください。"
+    },
+    {
+      "id": "ml-mix-10",
+      "brief": "社内向けに5ページのPPTを作りたいです。新しいcustomer onboarding processについて、現状の課題、new flow、各チームのrole、KPI、rollout scheduleを説明してください。見た目はformalでシンプルにして、startup pitch deckっぽくしないでください。"
+    },
+    {
+      "id": "ml-mix-11",
+      "brief": "観光案内イベントで使う3ページのPPTを作成してください。ある港町の歴史、local culture、歩いて回れるおすすめエリアを海外からのvisitor向けに紹介したいです。写真中心ではなく、clean editorial layoutでお願いします。"
+    },
+    {
+      "id": "ml-mix-12",
+      "brief": "クリエイター向けイベントの企画説明として6ページのPPTを作ってください。event concept、target participants、session format、speaker plan、promotion、当日のexperience designをまとめたいです。少しboldでplayfulな雰囲気にしたいですが、子ども向けには見せないでください。"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Does It Rain — Clay World Cover</title>
+<style>
+:root {
+  --theme-bg: #A9E7F5;
+  --theme-surface: #FFFDF7;
+  --theme-ink: #24466D;
+  --theme-muted: #3E87CF;
+  --theme-accent-primary: #3E87CF;
+  --theme-accent-secondary: #5CA866;
+  --theme-accent-tertiary: #FFD75C;
+  --theme-line: #D7E1E8;
+
+  --rain-canvas: var(--theme-bg);
+  --rain-surface: var(--theme-surface);
+  --rain-ink: var(--theme-ink);
+  --rain-muted: var(--theme-muted);
+  --rain-accent: var(--theme-accent-primary);
+  --rain-support: var(--theme-accent-secondary);
+  --rain-highlight: var(--theme-accent-tertiary);
+  --rain-line: var(--theme-line);
+  --rain-shadow: rgb(from var(--rain-ink) r g b / 0.18);
+  --rain-glow: rgb(from var(--rain-accent) r g b / 0.22);
+}
+
+:root{--sky:rgb(from var(--rain-canvas) calc(r - 38) calc(g - 15) calc(b - 6));--blue:var(--rain-muted);--navy:var(--rain-ink);--cream:rgb(from var(--rain-surface) r calc(g - 7) calc(b - 30));--yellow:var(--rain-highlight);--orange:rgb(from var(--rain-highlight) calc(r - 9) calc(g - 76) calc(b - 15));--coral:rgb(from var(--rain-highlight) calc(r - 13) calc(g - 114) calc(b + 15));--green:rgb(from var(--rain-support) calc(r + 26) calc(g + 14) calc(b + 5));--white:var(--rain-surface);--shadow:rgb(from var(--rain-ink) calc(r + 11) calc(g + 4) calc(b - 18) / .22);--display:"Arial Rounded MT Bold","Trebuchet MS",Arial,sans-serif;--body:"Trebuchet MS",Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:rgb(from var(--rain-canvas) calc(r + 13) calc(g - 10) calc(b - 14))}body{font-family:var(--body);color:var(--navy)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 28% 12%,rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .42),transparent 31%),radial-gradient(ellipse at 79% 45%,rgb(from var(--rain-muted) calc(r + 29) calc(g + 37) calc(b + 14) / .18),transparent 33%),linear-gradient(150deg,var(--rain-canvas) 0,rgb(from var(--rain-canvas) calc(r - 39) calc(g - 21) calc(b - 10)) 54%,rgb(from var(--rain-line) calc(r + 2) calc(g + 16) calc(b - 9)) 68%)}
+.soft-dots{position:absolute;inset:0;z-index:1;opacity:.22;background-image:radial-gradient(circle,rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .9) 0 5px,transparent 6px),radial-gradient(circle,rgb(from var(--rain-ink) r g b / .36) 0 1.2px,transparent 1.8px),repeating-linear-gradient(125deg,transparent 0 46px,rgb(from var(--rain-ink) r g b / .045) 46px 48px);background-size:68px 68px,31px 31px,auto}
+.hill{position:absolute;bottom:-160px;border-radius:50% 50% 0 0;z-index:2;box-shadow:inset 0 22px 0 rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .12)}.h1{left:-180px;width:1050px;height:440px;background:rgb(from var(--rain-support) calc(r + 36) calc(g + 31) calc(b + 21));transform:rotate(4deg)}.h2{right:-100px;width:1250px;height:520px;background:var(--rain-support);transform:rotate(-3deg)}
+.sun{position:absolute;right:95px;top:70px;z-index:2;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle at 35% 26%,rgb(from var(--rain-highlight) r calc(g + 25) calc(b + 74)) 0 7%,var(--yellow) 34%,rgb(from var(--rain-highlight) calc(r - 9) calc(g - 26) calc(b - 4)) 100%);box-shadow:inset -18px -20px 0 rgb(from var(--rain-highlight) calc(r - 9) calc(g - 76) calc(b - 15) / .18),inset 14px 12px 0 rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .18),0 15px 26px var(--shadow),0 0 42px rgb(from var(--rain-highlight) r g b / .34)}
+.sun:before{content:"";position:absolute;left:55px;top:54px;width:28px;height:39px;border-radius:50%;background:var(--navy);box-shadow:74px 0 0 var(--navy)}
+.sun:after{content:"";position:absolute;left:73px;top:105px;width:66px;height:32px;border-bottom:8px solid var(--navy);border-radius:50%}
+.header{position:absolute;left:80px;right:80px;top:54px;z-index:11;display:flex;align-items:center;justify-content:space-between;color:var(--navy);font-size:18px;font-weight:900;letter-spacing:4px;text-transform:uppercase}
+.header b{padding:12px 20px;border-radius:18px;background:var(--cream);box-shadow:0 8px 0 rgb(from var(--rain-ink) r g b / .2)}
+.copy{position:absolute;left:96px;top:154px;z-index:10;width:1060px}
+.label{display:inline-block;padding:10px 22px;border-radius:25px;background:var(--orange);color:var(--white);box-shadow:0 8px 0 rgb(from var(--rain-ink) r g b / .2);font-size:24px;font-weight:900;letter-spacing:4px;text-transform:uppercase;transform:rotate(-2deg)}
+h1{margin:31px 0 0;font:900 168px/.85 var(--display);letter-spacing:-7px;color:var(--white);text-shadow:0 10px 0 var(--blue),0 19px 0 rgb(from var(--rain-ink) r g b / .25)}
+h1 span{display:block;color:var(--yellow);text-shadow:0 10px 0 var(--orange),0 19px 0 rgb(from var(--rain-ink) r g b / .22)}
+.subtitle{width:760px;margin:42px 0 0 12px;padding:21px 28px;border:3px solid rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .62);border-radius:28px;background:rgb(from var(--rain-surface) r g b / .91);box-shadow:0 12px 0 rgb(from var(--rain-ink) r g b / .16);font-size:31px;font-weight:900;line-height:1.2}.subtitle strong{color:var(--coral)}
+.world{position:absolute;right:90px;top:233px;z-index:7;width:730px;height:670px}
+.cloud{position:absolute;left:86px;top:45px;width:500px;height:220px;border-radius:110px;background:linear-gradient(145deg,rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8)) 0,rgb(from var(--rain-surface) calc(r - 18) calc(g - 12) calc(b - 2)) 46%,var(--rain-line) 100%);box-shadow:inset -18px -24px 0 rgb(from var(--rain-line) calc(r - 14) calc(g - 9) calc(b - 4) / .78),inset 18px 16px 0 rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .44),0 15px 24px var(--shadow),0 0 38px rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .2)}
+.cloud:before,.cloud:after{content:"";position:absolute;border-radius:50%;background:rgb(from var(--rain-surface) calc(r - 10) calc(g - 5) calc(b + 3));box-shadow:inset -12px -12px 0 rgb(from var(--rain-line) calc(r + 2) calc(g + 2) calc(b + 2))}.cloud:before{left:75px;top:-75px;width:210px;height:210px}.cloud:after{right:55px;top:-35px;width:180px;height:180px}
+.cloud-face{position:absolute;left:180px;top:84px;z-index:3;width:150px;height:85px}.cloud-face i{position:absolute;top:2px;width:24px;height:35px;border-radius:50%;background:var(--navy)}.cloud-face .e1{left:10px}.cloud-face .e2{right:10px}.cloud-face b{position:absolute;left:46px;top:48px;width:58px;height:26px;border-bottom:8px solid var(--navy);border-radius:50%}
+.drop{position:absolute;width:62px;height:86px;background:var(--blue);border-radius:52% 48% 58% 42% / 63% 63% 37% 37%;clip-path:polygon(50% 0,100% 57%,92% 82%,70% 100%,33% 96%,9% 77%,0 55%);box-shadow:inset -9px -10px 0 rgb(from var(--rain-ink) r g b / .14),0 10px 12px var(--shadow)}.d1{left:150px;top:295px;transform:rotate(8deg)}.d2{left:330px;top:332px;transform:scale(.78) rotate(-7deg)}.d3{left:492px;top:270px;transform:scale(.62) rotate(6deg)}.d4{left:247px;top:465px;transform:scale(.58)}.d5{left:450px;top:490px;transform:scale(.83) rotate(-6deg)}
+.puddle{position:absolute;left:79px;bottom:20px;width:560px;height:103px;border-radius:50%;background:radial-gradient(ellipse at 48% 30%,rgb(from var(--rain-canvas) calc(r - 24) calc(g - 18) calc(b - 5)) 0 16%,rgb(from var(--rain-muted) calc(r + 39) calc(g + 39) calc(b + 12)) 44%,var(--rain-muted) 100%);box-shadow:inset 0 -16px 0 rgb(from var(--rain-ink) r g b / .12),0 13px 19px var(--shadow),0 0 28px rgb(from var(--rain-canvas) calc(r - 38) calc(g - 15) calc(b - 6) / .28)}
+.puddle:after{content:"";position:absolute;left:125px;top:27px;width:292px;height:26px;border-radius:50%;background:rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8) / .48)}
+.info{position:absolute;left:92px;bottom:73px;z-index:10;display:flex;gap:18px}.chip{width:260px;min-height:108px;padding:18px 20px;border-radius:25px;background:var(--cream);box-shadow:0 11px 0 rgb(from var(--rain-ink) r g b / .19);font-size:20px;font-weight:900;line-height:1.12}.chip b{display:block;margin-bottom:7px;color:var(--coral);font-size:14px;letter-spacing:3px;text-transform:uppercase}.chip:nth-child(2){background:var(--yellow)}.chip:nth-child(3){background:rgb(from var(--rain-surface) r calc(g + 2) calc(b + 8))}.chip:nth-child(4){background:rgb(from var(--rain-line) calc(r - 25) calc(g + 2) calc(b - 53))}
+@media(max-width:1919px),(max-height:1079px){body{min-width:1920px;min-height:1080px}}
+</style>
+</head>
+<body>
+<main class="slide" data-screen-label="06 Kids Clay World Cover">
+  <div class="soft-dots" aria-hidden="true"></div><div class="sun" data-object="true" data-object-type="shape" aria-label="Smiling sun"></div><div class="hill h1"></div><div class="hill h2"></div>
+  <header class="header" data-object="true" data-object-type="textbox"><b>Little Science Club</b><span>Weather Adventure / Water Cycle</span></header>
+  <section class="copy" data-object="true" data-object-type="textbox"><div class="label">A sky-high mystery</div><h1>Why Does<span>It Rain?</span></h1><p class="subtitle">Follow one little drop on a <strong>big journey</strong> from puddle to cloud and back again.</p></section>
+  <section class="world" data-object="true" data-object-type="image" aria-label="Friendly cloud making rain"><div class="cloud"><div class="cloud-face"><i class="e1"></i><i class="e2"></i><b></b></div></div><div class="drop d1"></div><div class="drop d2"></div><div class="drop d3"></div><div class="drop d4"></div><div class="drop d5"></div><div class="puddle"></div></section>
+  <aside class="info" data-object="true" data-object-type="textbox"><div class="chip"><b>Step 01</b>Warm water rises</div><div class="chip"><b>Step 02</b>Clouds gather</div><div class="chip"><b>Step 03</b>Drops grow</div><div class="chip"><b>Step 04</b>Rain falls!</div></aside>
+</main>
+</body>
+</html>

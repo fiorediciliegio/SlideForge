@@ -1,0 +1,13 @@
+{
+  "case_id": "B-009",
+  "size_class": "中",
+  "target_input_tokens": 4900,
+  "estimated_outline_input_tokens": 5115,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "Single attachment",
+  "attachment_types": "DOCX",
+  "content_strategies": "summarized_context",
+  "evaluation_risks": "1. Claiming clinical efficacy; 2. Using 84 rather than 79 as the endpoint denominator; 3. Saying serious adverse events were caused by the intervention; 4. Treating planned follow-up as approved; 5. Adding outside treatment advice."
+}

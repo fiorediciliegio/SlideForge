@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><title>How a Leaf Builds Sugar</title><style>:root{
+  --bg:var(--theme-bg);--surface:var(--theme-surface);--ink:var(--theme-ink);--muted:var(--theme-muted);--green:var(--theme-accent-secondary);--sage:var(--theme-line);--orange:var(--theme-accent-tertiary);--mustard:var(--theme-accent-secondary);--line:var(--theme-line);
+  --display: Georgia,"Times New Roman",serif;--hand:"Comic Neue","Comic Sans MS",cursive;--sans:"Nimbus Sans","Trebuchet MS",Arial,sans-serif;
+  --page-x:150px;--border:3px solid var(--green);
+}
+@page{size:1920px 1080px;margin:0}*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--ink)}body{font-family:var(--sans)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:
+  radial-gradient(ellipse at 82% 24%,rgba(130,156,107,.13),transparent 34%),
+  radial-gradient(ellipse at 18% 88%,rgba(224,184,77,.10),transparent 38%),
+  linear-gradient(135deg,var(--theme-bg) 0,var(--theme-bg) 48%,var(--theme-bg) 100%)}
+.grain{position:absolute;inset:0;z-index:0;opacity:.30;background-image:
+  repeating-linear-gradient(0deg,transparent 0 5px,rgba(39,49,38,.055) 5px 6px),
+  repeating-linear-gradient(112deg,transparent 0 34px,rgba(39,49,38,.025) 34px 36px),
+  radial-gradient(circle,rgba(39,49,38,.11) 1px,transparent 1.5px);background-size:auto,auto,31px 31px;mix-blend-mode:multiply}
+.margin{position:absolute;left:114px;top:0;width:4px;height:1080px;background:rgba(213,108,56,.43);z-index:1}
+.rules{position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(to bottom,transparent 0 96px,rgba(72,106,62,.12) 96px 98px,transparent 98px 100px);background-position:0 86px}
+.top{position:absolute;left:156px;top:67px;z-index:10;display:flex;align-items:center;gap:28px;width:1050px;white-space:nowrap;color:var(--green);font:900 18px/1 var(--sans);letter-spacing:5px;text-transform:uppercase}
+.top .brand{display:block;padding:11px 18px 10px;border:3px solid var(--green);background:rgba(255,250,240,.92);letter-spacing:3px;white-space:nowrap}.top .series{display:block;white-space:nowrap}
+.page-no{position:absolute;right:105px;top:78px;z-index:10;color:var(--green);font:700 19px/1 var(--sans);letter-spacing:3px}
+.chapter{font:italic 31px/1 var(--display);color:var(--orange)}
+.hero{position:absolute;left:150px;top:157px;z-index:6;right:110px}
+.hero h1{margin:18px 0 0;font:900 108px/.88 var(--display);letter-spacing:-4px;color:var(--ink)}
+.hero h1 em{font-weight:400;color:var(--green);font-style:italic}
+.hero .sub{margin-top:16px;font:36px/1.15 var(--hand);letter-spacing:.2px;color:var(--theme-ink)}
+.hero .sub strong{color:var(--orange)}
+.panel{position:relative;border:var(--border);background:linear-gradient(135deg,rgba(255,250,240,.95),rgba(248,242,223,.86));box-shadow:9px 10px 0 rgba(72,106,62,.12)}
+.ribbon{position:absolute;z-index:12;padding:10px 20px 9px;background:var(--orange);color:var(--theme-surface);box-shadow:5px 5px 0 rgba(72,106,62,.14);font:900 15px/1 var(--sans);letter-spacing:3px;text-transform:uppercase}
+.tape{position:absolute;z-index:12;width:170px;height:48px;background:rgba(224,184,77,.70);box-shadow:0 2px 5px rgba(39,49,38,.10)}
+.meta{font:900 14px/1 var(--sans);letter-spacing:4px;text-transform:uppercase;color:var(--green)}
+.hand{font-family:var(--hand)}
+.display{font-family:var(--display)}
+.footer{position:absolute;left:156px;right:105px;bottom:36px;z-index:9;display:flex;justify-content:space-between;align-items:center;color:var(--green);font:900 16px/1 var(--sans);letter-spacing:4px;text-transform:uppercase}
+.small-rule{height:2px;background:rgba(72,106,62,.22)}
+</style><style>
+.hero{top:155px}.hero h1{font-size:112px;white-space:nowrap}.hero .sub{width:1390px;margin-top:18px;font-size:34px;line-height:1.18}
+.cards{position:absolute;left:150px;right:75px;top:447px;height:350px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;z-index:5}
+.step-card{padding:31px 33px 25px;display:flex;flex-direction:column}.step-head{display:flex;align-items:center;gap:27px}.step-no{width:84px;height:84px;border:2px solid var(--green);border-radius:50%;background:linear-gradient(135deg,var(--theme-line),var(--theme-bg));display:block;text-align:center;line-height:80px;font-family:var(--sans);font-size:38px;font-weight:900;flex:none}.step-title{font:900 29px/1 var(--sans);letter-spacing:5px;color:var(--ink);text-transform:uppercase}.step-body{margin:22px 14px 0 36px;font:28px/1.27 var(--hand)}.step-body strong{color:var(--orange)}.step-tag{position:absolute;left:34px;bottom:24px;font:900 14px/1 var(--sans);letter-spacing:5px;color:var(--green);text-transform:uppercase}
+.flow{position:absolute;left:245px;right:145px;top:821px;height:61px;z-index:5}.flow-line{position:absolute;left:100px;right:100px;top:30px;height:3px;background:var(--green)}.flow-items{position:relative;height:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center}.flow-box{justify-self:center;min-width:213px;padding:12px 26px;border:2px solid var(--green);background:var(--theme-bg);text-align:center;font:900 15px/1 var(--sans);letter-spacing:4px;text-transform:uppercase;z-index:2}.dot{position:absolute;top:17px;width:31px;height:31px;border-radius:50%;border:2px solid var(--green);background:var(--mustard);z-index:3}.dot.d1{left:31.8%}.dot.d2{left:65.5%}
+.field-note{position:absolute;left:150px;right:75px;top:916px;height:113px;z-index:5;padding:39px 45px 20px}.field-note .ribbon{left:28px;top:-23px}.field-note p{margin:0;font:25px/1.2 var(--hand);white-space:nowrap}.closer{position:absolute;right:30px;top:28px;border-left:2px solid rgba(72,106,62,.35);padding:11px 0 7px 54px;width:330px;font:900 13px/1.55 var(--sans);letter-spacing:4px;text-transform:uppercase;color:var(--green)}.tape{right:58px;top:-12px;width:128px;height:40px;transform:rotate(14deg)}
+</style><style data-semantic-theme-roles>:root{--theme-bg:#F8F2DF;--theme-surface:#FFFAF0;--theme-ink:#273126;--theme-muted:#786F5D;--theme-accent-primary:#486A3E;--theme-accent-secondary:#E0B84D;--theme-accent-tertiary:#D56C38;--theme-line:#D5DFBD;}</style></head><body><main class="slide"><div class="grain"></div><div class="rules"></div><div class="margin"></div>
+<header class="top"><span class="brand">Young Naturalist</span><span class="series">Field Journal / Botanical Study</span></header><div class="page-no">02 / 05</div>
+<section class="hero"><div class="chapter">A photosynthesis field guide</div><h1>How a Leaf <em>Builds Sugar</em></h1><div class="sub">Leaves use sunlight, air and water to make food. This process is called photosynthesis,<br>and it helps plants grow and keeps life on Earth going.</div></section>
+<section class="cards">
+<div class="step-card panel"><div class="step-head"><div class="step-no">01</div><div class="step-title">Sunlight</div></div><div class="step-body">Chlorophyll in leaves captures <strong>sunlight</strong> and turns that energy into chemical energy.</div><div class="step-tag">Light powers the process.</div></div>
+<div class="step-card panel"><div class="step-head"><div class="step-no">02</div><div class="step-title">Water + Air</div></div><div class="step-body">Plants take in <strong>water</strong> through their roots and <strong>carbon dioxide</strong> from the air, combining them inside the leaf.</div><div class="step-tag">Simple ingredients. Big results.</div></div>
+<div class="step-card panel"><div class="step-head"><div class="step-no">03</div><div class="step-title">Glucose + Oxygen</div></div><div class="step-body">Using the captured energy, the leaf converts water and carbon dioxide into <strong>glucose</strong> (a sugar for food) and <strong>oxygen</strong>.</div><div class="step-tag">Food for plants. Oxygen for life.</div></div>
+</section>
+<div class="flow"><div class="flow-line"></div><div class="dot d1"></div><div class="dot d2"></div><div class="flow-items"><div class="flow-box">Sunlight</div><div class="flow-box">Water + Air</div><div class="flow-box">Glucose + Oxygen</div></div></div>
+<section class="field-note panel"><div class="ribbon">Field Note</div><p>Observation: every green leaf is a tiny factory, quietly turning sunlight, air and water into food.</p><div class="closer">Look closer.<br>Amazing things happen.</div><div class="tape"></div></section>
+</main></body></html>

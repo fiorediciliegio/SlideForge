@@ -1,0 +1,109 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+
+import {
+  applySharedResearchProgressOperations,
+  createDefaultSharedResearchProgress,
+} from "../../src/app-workspace/shared-research-progress.ts";
+
+test("shared research progress increments revision only for a material change", () => {
+  const initial = createDefaultSharedResearchProgress("2026-07-29T00:00:00.000Z");
+  const changed = applySharedResearchProgressOperations(
+    initial,
+    [{ op: "set_stage", stage: "web_decision", state: "running" }],
+    "2026-07-29T00:01:00.000Z",
+  );
+  assert.equal(changed.updated, true);
+  assert.equal(changed.revision, 1);
+
+  const repeated = applySharedResearchProgressOperations(
+    changed.progress,
+    [{ op: "set_stage", stage: "web_decision", state: "running" }],
+    "2026-07-29T00:02:00.000Z",
+  );
+  assert.equal(repeated.updated, false);
+  assert.equal(repeated.revision, 1);
+  assert.equal(repeated.updated_at, "2026-07-29T00:01:00.000Z");
+});
+
+test("shared research progress rejects backward stage transitions", () => {
+  const initial = createDefaultSharedResearchProgress();
+  const running = applySharedResearchProgressOperations(initial, [
+    { op: "set_stage", stage: "web_decision", state: "running" },
+  ]).progress;
+  const completed = applySharedResearchProgressOperations(running, [
+    { op: "set_stage", stage: "web_decision", state: "completed" },
+  ]).progress;
+  assert.throws(
+    () => applySharedResearchProgressOperations(completed, [
+      { op: "set_stage", stage: "web_decision", state: "running" },
+    ]),
+    /Invalid shared research stage transition/,
+  );
+});
+
+test("shared research completion requires prepared evidence to be published", () => {
+  const initial = createDefaultSharedResearchProgress();
+  const prepared = applySharedResearchProgressOperations(initial, [
+    { op: "set_web_prepared_batch", markdown: "## Evidence" },
+  ]).progress;
+  const terminal = structuredClone(prepared);
+  terminal.stages = Object.fromEntries(Object.keys(terminal.stages).map((stage) => [stage, "skipped"]));
+  assert.throws(
+    () => applySharedResearchProgressOperations(terminal, [{ op: "finalize_shared_research" }]),
+    /has not been published/,
+  );
+});
+
+test("shared research progress rejects unknown operations", () => {
+  assert.throws(
+    () => applySharedResearchProgressOperations(
+      createDefaultSharedResearchProgress(),
+      [{ op: "replace_everything" } as never],
+    ),
+    /Unsupported shared research progress operation/,
+  );
+});
+
+test("shared research progress upgrades v2 checkpoints that predate image prefetch", () => {
+  const legacy = createDefaultSharedResearchProgress();
+  delete (legacy.stages as Record<string, unknown>).image_prefetch;
+  const updated = applySharedResearchProgressOperations(legacy, [
+    { op: "set_stage", stage: "image_prefetch", state: "running" },
+  ]);
+  assert.equal((updated.progress.stages as Record<string, unknown>).image_prefetch, "running");
+});
+
+test("image candidate preparation cannot complete with unfinished candidates", () => {
+  const initial = createDefaultSharedResearchProgress();
+  const running = applySharedResearchProgressOperations(initial, [
+    { op: "set_stage", stage: "image_prefetch", state: "running" },
+    {
+      op: "upsert_image_candidate",
+      candidate_id: "candidate-1",
+      candidate: { candidate_id: "candidate-1", aps_fetch_status: "running" },
+    },
+  ]).progress;
+  assert.throws(
+    () => applySharedResearchProgressOperations(running, [
+      { op: "set_stage", stage: "image_prefetch", state: "completed" },
+    ]),
+    /Image candidate preparation has unfinished APS image fetches/,
+  );
+});
+
+test("image candidate preparation no longer requires a Host Upload", () => {
+  const initial = createDefaultSharedResearchProgress();
+  const running = applySharedResearchProgressOperations(initial, [
+    { op: "set_stage", stage: "image_prefetch", state: "running" },
+    {
+      op: "upsert_image_candidate",
+      candidate_id: "candidate-1",
+      candidate: { candidate_id: "candidate-1", aps_fetch_status: "completed" },
+    },
+  ]).progress;
+  const completed = applySharedResearchProgressOperations(running, [
+    { op: "set_stage", stage: "image_prefetch", state: "completed" },
+  ]);
+  assert.equal((completed.progress.stages as Record<string, unknown>).image_prefetch, "completed");
+});

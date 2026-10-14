@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Show Positioning</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE SIGNAL ROOM — Sponsorship Media Kit
+   Shared design system: type, color, surface treatments.
+   Layout/position stays inline on each data-object.
+   ============================================================ */
+
+:root{
+  /* Core palette — warm editorial "on-air" */
+  --ink:        #171310;
+  --ink-2:      #221C18;
+  --ink-3:      #2E2622;
+  --cream:      #F6F1E7;
+  --cream-2:    #EDE5D6;
+  --amber:      #E39B34;
+  --amber-deep: #A8571F;
+  --clay:       #B4472C;
+  --olive:      #6E7A55;
+
+  /* Derived */
+  --ink-70: rgba(23,19,16,.70);
+  --ink-52: rgba(23,19,16,.52);
+  --ink-40: rgba(23,19,16,.40);
+  --ink-14: rgba(23,19,16,.14);
+  --ink-07: rgba(23,19,16,.07);
+  --cr-78:  rgba(246,241,231,.78);
+  --cr-58:  rgba(246,241,231,.58);
+  --cr-40:  rgba(246,241,231,.40);
+  --cr-16:  rgba(246,241,231,.16);
+  --cr-08:  rgba(246,241,231,.08);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  font-family:'Karla','Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-light{
+  background:
+    radial-gradient(1200px 640px at 88% -12%, rgba(227,155,52,.13) 0%, rgba(227,155,52,0) 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(180,71,44,.09) 0%, rgba(180,71,44,0) 60%),
+    #F6F1E7;
+}
+.bg-dark{
+  background:
+    radial-gradient(1100px 620px at 92% -10%, rgba(227,155,52,.20) 0%, rgba(227,155,52,0) 60%),
+    radial-gradient(900px 560px at -6% 106%, rgba(180,71,44,.16) 0%, rgba(180,71,44,0) 62%),
+    #171310;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--amber-deep); margin:0;
+}
+.eyebrow.on-dark{ color:var(--amber); }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:88px; line-height:1.02; letter-spacing:-.02em;
+  color:var(--cream); margin:0;
+}
+.h2{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:56px; line-height:1.08; letter-spacing:-.018em;
+  color:var(--ink); margin:0;
+}
+.h2.on-dark{ color:var(--cream); }
+.h3{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:30px; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.h3.on-dark{ color:var(--cream); }
+.h4{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:23px; line-height:1.24; letter-spacing:-.004em;
+  color:var(--ink); margin:0;
+}
+.h4.on-dark{ color:var(--cream); }
+
+.lead{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:26px; line-height:1.52; color:var(--ink-70); margin:0;
+}
+.lead.on-dark{ color:var(--cr-78); }
+
+.body{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:20px; line-height:1.5; color:var(--ink-70); margin:0;
+}
+.body.on-dark{ color:var(--cr-78); }
+
+.micro{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-40); margin:0;
+}
+.micro.on-dark{ color:var(--cr-40); }
+
+.metric{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:66px; line-height:1; letter-spacing:-.028em;
+  color:var(--ink); margin:0; font-variant-numeric: tabular-nums;
+}
+.metric.on-dark{ color:var(--cream); }
+.metric .unit{ font-size:.46em; font-weight:700; letter-spacing:0; }
+
+.tag{
+  display:inline-block; font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px 5px; border-radius:var(--r-sm);
+  background:rgba(227,155,52,.20); color:var(--amber-deep);
+}
+.tag.on-dark{ background:rgba(227,155,52,.18); color:var(--amber); }
+
+/* ---------- Surfaces ---------- */
+.card{
+  background:#FFFDF8; border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-quiet{
+  background:rgba(23,19,16,.035); border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-dark{
+  background:rgba(246,241,231,.055); border:1px solid var(--cr-16);
+  border-radius:var(--r-md);
+}
+.card-ink{
+  background:var(--ink); border:1px solid rgba(23,19,16,1);
+  border-radius:var(--r-md);
+}
+.card-amber{
+  background:var(--amber); border:1px solid var(--amber);
+  border-radius:var(--r-md);
+}
+.rule{ background:var(--ink-14); }
+.rule-dark{ background:var(--cr-16); }
+
+/* ---------- Chart primitives ---------- */
+.bar-track{ background:var(--ink-07); border-radius:2px; overflow:hidden; }
+.bar-track-dark{ background:rgba(246,241,231,.10); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; border-radius:2px; }
+
+table.kit{ border-collapse:collapse; width:100%; }
+table.kit th{
+  font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+  text-align:left; padding:0 0 12px; border-bottom:1px solid var(--ink-14);
+}
+table.kit td{
+  font-family:'Karla',sans-serif; font-size:20px; color:var(--ink);
+  padding:15px 0; border-bottom:1px solid var(--ink-07);
+  font-variant-numeric: tabular-nums;
+}
+table.kit.on-dark th{ color:var(--cr-40); border-bottom-color:var(--cr-16); }
+table.kit.on-dark td{ color:var(--cream); border-bottom-color:rgba(246,241,231,.09); }
+</style>
+</head>
+<body>
+<div class="slide bg-light" data-screen-label="04 Show Positioning" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:0px; top:0px; width:10px; height:1080px; z-index:1; background:var(--ink);"></div>
+
+  <!-- host portrait block -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:104px; top:104px; width:520px; height:700px; z-index:1; background:var(--cream-2); border-radius:6px;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/host-portrait.jpg" alt="Host Maya Okonkwo in the studio"
+       style="position:absolute; left:120px; top:120px; width:520px; height:700px; object-fit:cover; object-position:50% 22%; border-radius:6px; z-index:5;">
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:120px; top:848px; width:520px; z-index:10;">
+    <p class="h3">Maya Okonkwo</p>
+    <p class="micro" style="margin-top:10px;">Host &amp; executive producer · ex-Head of Ops, Ledgerline</p>
+  </div>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:930px; width:520px; z-index:10; font-size:19px;">
+    Four seasons, 168 episodes, one microphone. Every read is written and voiced by Maya.</p>
+
+  <!-- right column -->
+  <p class="eyebrow" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:700px; top:120px; width:700px; z-index:10;">04 — Positioning</p>
+
+  <h2 class="h2" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:700px; top:164px; width:1080px; z-index:10;">A show built for<br>considered decisions</h2>
+
+  <p class="lead" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:700px; top:308px; width:1000px; z-index:10;">
+    The Signal Room takes one operating problem per week and works it through with the person who solved it. No hot takes, no clip-farming — which is exactly why the audience stays to the end.</p>
+
+  <!-- three pillars -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:456px; width:1100px; height:112px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:456px; width:5px; height:112px; z-index:1; background:var(--amber); border-radius:6px 0 0 6px;"></div>
+  <h4 class="h4" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:736px; top:484px; width:420px; z-index:10;">Long-form by design</h4>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1180px; top:485px; width:588px; z-index:10; font-size:19px;">
+    52-minute average runtime, 78% completion. Sponsor messages land inside sustained attention, not a scroll.</p>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:590px; width:1100px; height:112px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:590px; width:5px; height:112px; z-index:1; background:var(--clay); border-radius:6px 0 0 6px;"></div>
+  <h4 class="h4" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:736px; top:618px; width:420px; z-index:10;">Operator-only guests</h4>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1180px; top:619px; width:588px; z-index:10; font-size:19px;">
+    Practitioners with P&amp;L responsibility. Guests bring their own teams as listeners.</p>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:724px; width:1100px; height:112px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:724px; width:5px; height:112px; z-index:1; background:var(--olive); border-radius:6px 0 0 6px;"></div>
+  <h4 class="h4" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:736px; top:752px; width:420px; z-index:10;">One sponsor per episode</h4>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1180px; top:753px; width:588px; z-index:10; font-size:19px;">
+    Category exclusivity as standard. Your brand is never read next to a competitor.</p>
+
+  <!-- bottom stat band -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:700px; top:872px; width:1100px; height:104px; z-index:1; background:var(--ink); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:740px; top:898px; width:100px; z-index:10;">
+    <p class="metric on-dark" style="font-size:42px;">168</p>
+  </div>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:850px; top:906px; width:250px; z-index:10; font-size:18px;">episodes<br>published</p>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1130px; top:898px; width:1px; height:52px; z-index:1; background:var(--cr-16);"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:1180px; top:898px; width:120px; z-index:10;">
+    <p class="metric on-dark" style="font-size:42px;">4.8<span class="unit">/5</span></p>
+  </div>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1310px; top:906px; width:250px; z-index:10; font-size:18px;">listener rating<br>(3,410 reviews)</p>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1560px; top:898px; width:1px; height:52px; z-index:1; background:var(--cr-16);"></div>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1604px; top:906px; width:170px; z-index:10; font-size:18px;">Weekly,<br>every Tuesday</p>
+
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1740px; top:1006px; width:60px; text-align:right; z-index:10;">04</p>
+</div>
+</body>
+</html>

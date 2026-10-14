@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Space and Everyday Atmosphere — The Hearth Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F5C04A;
+  --butter-soft:#FBE3A2;
+  --chocolate:#3B2417;
+  --choco-deep:#2A1810;
+  --cherry:#C8342B;
+  --cherry-deep:#9B241D;
+  --cream:#F4E9D4;
+  --paper:#FAF1DC;
+  --ink:#251610;
+  --moss:#3F5C3B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8DCC0;overflow:hidden;font-family:'Fraunces',serif}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--paper)}
+.slide::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='23'/><feColorMatrix values='0 0 0 0 0.20 0 0 0 0 0.14 0 0 0 0 0.08 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");opacity:0.55;z-index:3;pointer-events:none}
+
+/* Pano image — full width */
+.pano{position:absolute;left:0;top:0;width:1920px;height:540px;z-index:2;
+  background-image:url('../assets/cafe-interior-hero.png');background-size:cover;background-position:center}
+.pano::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0 70%,rgba(244,233,212,.55) 100%);z-index:3}
+
+/* Top: small chapter chip */
+.chip{position:absolute;left:60px;top:30px;background:var(--cream);border:1.5px solid var(--chocolate);padding:6px 14px;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--cherry-deep);z-index:6;box-shadow:3px 3px 0 var(--cherry)}
+
+/* Title bar overlay bottom of image */
+.title-overlay{position:absolute;left:60px;top:380px;width:900px;z-index:6;background:var(--paper);padding:18px 28px;border:1.5px solid var(--chocolate);box-shadow:6px 6px 0 var(--cherry)}
+.title-overlay .ts{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px}
+.title-overlay h2{font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:.92;color:var(--choco-deep);letter-spacing:-.02em}
+.title-overlay h2 em{font-family:'Caveat',cursive;color:var(--cherry-deep);font-style:normal;font-weight:700;font-size:50px;display:inline-block;margin-left:6px}
+
+/* Right-side small white card over image */
+.image-note{position:absolute;right:60px;top:30px;background:var(--butter);padding:10px 18px;border:1.5px solid var(--choco-deep);transform:rotate(3deg);box-shadow:3px 3px 0 var(--chocolate);z-index:6;font-family:'Caveat',cursive;color:var(--choco-deep);font-size:22px;max-width:380px;text-align:right;line-height:1.15}
+
+/* Below image — 5 senses grid */
+.senses{position:absolute;left:60px;top:580px;right:60px;bottom:60px;z-index:5;display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.sense{position:relative;background:var(--cream);border:1.5px solid var(--chocolate);padding:22px 20px;display:flex;flex-direction:column}
+.sense.b{background:var(--butter-soft);transform:rotate(-0.6deg)}
+.sense.c{background:#FBF5E5;transform:rotate(0.5deg)}
+.sense.d{background:var(--cream);transform:rotate(-0.3deg)}
+.sense.e{background:var(--butter-soft);transform:rotate(0.4deg)}
+
+.sense .num{position:absolute;top:6px;right:10px;font-family:'Fraunces',serif;font-weight:900;font-size:46px;color:rgba(200,52,43,.4);line-height:1}
+.sense .s-ico{margin-bottom:10px}
+.sense h4{font-family:'Fraunces',serif;font-weight:900;font-size:22px;color:var(--choco-deep);line-height:1;letter-spacing:-.01em;margin-bottom:8px}
+.sense .s-key{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px}
+.sense p{font-family:'Fraunces',serif;font-size:15px;color:var(--chocolate);line-height:1.4;margin-top:4px}
+
+/* Footer band */
+.footer{position:absolute;left:60px;right:60px;bottom:0;height:46px;background:var(--chocolate);color:var(--cream);
+  display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:5}
+.footer .fl{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--butter-soft)}
+.footer .fr{font-family:'Caveat',cursive;font-size:20px;color:var(--butter)}
+.footer .pn{font-family:'Fraunces',serif;font-weight:900;font-size:24px;color:var(--butter)}
+</style>
+</head>
+<body>
+<div class="slide">
+
+<div class="pano"></div>
+
+<div class="chip">★ Chapter Seven · The Listening Room ★</div>
+
+<div class="image-note">…a corner of the cafe, mid-morning, when the second regular has just pushed the door closed behind them…</div>
+
+<div data-object="true" data-object-type="textbox" class="title-overlay">
+  <div class="ts">SPACE &amp; EVERYDAY ATMOSPHERE</div>
+  <h2>The room<em>, the morning light.</em></h2>
+</div>
+
+<div class="senses">
+
+  <div data-object="true" data-object-type="textbox" class="sense b">
+    <div class="num">01</div>
+    <div class="s-ico"><svg width="56" height="56" viewBox="0 0 70 70" fill="none" stroke="#3B2417" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="35" cy="32" r="22"/><circle cx="35" cy="32" r="12"/><path d="M20 50 L14 64 L26 58"/><path d="M50 50 L56 64 L44 58"/></svg></div>
+    <div class="s-key">A Sight</div>
+    <h4>Sun through checked curtains.</h4>
+    <p>Late-morning light slants across the marble tables, drawing long warm stripes on the wooden floor. A row of small potted plants lines the window.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sense c">
+    <div class="num">02</div>
+    <div class="s-ico"><svg width="56" height="56" viewBox="0 0 70 70" fill="none" stroke="#3B2417" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 40 Q22 24 35 24 Q48 24 56 40 L56 56 L14 56 Z"/><path d="M28 24 L28 14 M42 24 L42 14"/><path d="M30 36 L30 48 M40 36 L40 48"/></svg></div>
+    <div class="s-key">A Sound</div>
+    <h4>The slow radio at low volume.</h4>
+    <p>An old radio plays a quiet jazz record from 9 to 11 each morning. The only sound above it is the burr of the grinder and the clatter of cups being set down.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sense d">
+    <div class="num">03</div>
+    <div class="s-ico"><svg width="56" height="56" viewBox="0 0 70 70" fill="none" stroke="#3B2417" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 38 Q22 18 35 18 Q48 18 56 38 Q56 50 35 50 Q14 50 14 38 Z"/><path d="M22 24 Q26 30 30 24"/><path d="M40 24 Q44 30 48 24"/><path d="M35 8 L35 18"/></svg></div>
+    <div class="s-key">A Scent</div>
+    <h4>Warm butter meets first brew.</h4>
+    <p>The first just-out-of-the-oven boulangerie carries. Five minutes later the crema of the first espresso joins it. The room never smells of either alone.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sense e">
+    <div class="num">04</div>
+    <div class="s-ico"><svg width="56" height="56" viewBox="0 0 70 70" fill="none" stroke="#3B2417" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 24 L56 24 L52 56 Q50 62 44 62 L26 62 Q20 62 18 56 Z"/><path d="M56 30 Q66 30 66 38 Q66 46 56 46"/><path d="M28 30 L32 36 L28 42"/><path d="M36 30 L40 36 L36 42"/></svg></div>
+    <div class="s-key">A Touch</div>
+    <h4>Warm cups, soft napkins.</h4>
+    <p>Cups are heavier than they look — stoneware, never thin porcelain. Linen napkins are folded once and held with a small wooden peg.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sense b">
+    <div class="num">05</div>
+    <div class="s-ico"><svg width="56" height="56" viewBox="0 0 70 70" fill="none" stroke="#3B2417" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 50 Q14 30 35 30 Q56 30 56 50 L50 50 Q50 36 35 36 Q20 36 20 50 Z"/><path d="M25 22 L35 14 L45 22"/><path d="M30 18 L35 12 L40 18"/></svg></div>
+    <div class="s-key">A Moment</div>
+    <h4>The quiet between orders.</h4>
+    <p>A minute after the rush, a small pause. A kettle ticks. Someone laughs at a table. Outside, a bicycle bell. The room exhales for ten seconds.</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="fl">Five Senses · The Hearth Room</div>
+  <div class="fr">…stay ten minutes more than you planned.</div>
+  <div class="pn">07</div>
+</div>
+
+</div>
+
+<template data-slide-notes>This page is a sensory map of the cafe's interior — sight, sound, scent, touch, and one everyday moment. It carries no source claims; atmosphere is described as felt experience, not as verifiable facility specs.</template>
+</body>
+</html>

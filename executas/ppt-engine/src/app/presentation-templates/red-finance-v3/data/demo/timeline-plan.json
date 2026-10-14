@@ -1,0 +1,50 @@
+{
+  "title": "Timeline Plan",
+  "metaLabel": "BLUEPRINT / TIMELINE",
+  "footerText": "Business Professional | Timeline Plan",
+  "pageNumber": "07",
+  "variant": "horizontal-roadmap",
+  "density": "medium",
+  "heading": "Roadmap",
+  "subtitle": "Show evolution, implementation cadence, or milestones by phase.",
+  "phases": [
+    { "label": "01", "title": "Assess", "items": ["Identify issues", "Define scope"] },
+    { "label": "02", "title": "Design", "items": ["Design solution", "Align dependencies"] },
+    { "label": "03", "title": "Deliver", "items": ["Execute rollout", "Track outcomes"] }
+  ],
+  "milestones": [
+    {
+      "period": "2022",
+      "stage": "Start",
+      "title": "Policy kickoff",
+      "description": "Starting point for an industry shift or project kickoff.",
+      "icon": "calendar",
+      "tone": "default",
+      "tag": "start"
+    },
+    {
+      "period": "2024",
+      "stage": "Scale",
+      "title": "Operational expansion",
+      "description": "Mid-stage window for expansion, integration, or scaling.",
+      "icon": "route",
+      "tone": "accent",
+      "tag": "scale"
+    },
+    {
+      "period": "2026",
+      "stage": "Next",
+      "title": "Future state",
+      "description": "Future-state target that connects planning to recommendations.",
+      "icon": "lightbulb",
+      "tone": "future",
+      "tag": "future"
+    }
+  ],
+  "metrics": [
+    { "value": "3", "label": "phases" },
+    { "value": "6", "label": "months" },
+    { "value": "12", "label": "milestones" }
+  ],
+  "summary": "Best for plans with clear phases, cadence, and milestones."
+}

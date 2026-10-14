@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create a 9-slide donor briefing from the attached annual programme report. Use only the report for facts. Image Research may be used to locate respectful, non-identifying documentary visuals of the programme regions, but it must not introduce new programme claims."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Institutional donors",
+        "description": "Institutional donors"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Annual programme accountability briefing",
+        "description": "Annual programme accountability briefing"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Present scope, outputs, constraints, evidence limits, and proposed next steps",
+        "description": "Present scope, outputs, constraints, evidence limits, and proposed next steps"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Human, evidence-led, accountable",
+        "description": "Human, evidence-led, accountable"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Institutional donors",
+      "description": "Institutional donors"
+    },
+    "purpose": {
+      "label": "Annual programme accountability briefing",
+      "description": "Annual programme accountability briefing"
+    },
+    "desired_outcome": {
+      "label": "Present scope, outputs, constraints, evidence limits, and proposed next steps",
+      "description": "Present scope, outputs, constraints, evidence limits, and proposed next steps"
+    },
+    "slide_count": 9,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Human, evidence-led, accountable",
+      "description": "Human, evidence-led, accountable"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,11 @@
+node_modules/
+bundle/
+dist/
+screenshots/
+agent-ppt-runs/
+legacy-large-screenshot-templates/
+*.log
+.DS_Store
+.anna/
+.anna-tool-ids.cache.js
+executa.json

@@ -1,0 +1,103 @@
+{
+  "id": "28-Integrated Marketing Campaign Proposal",
+  "version": 1,
+  "ppt_number": 28,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "pink",
+    "red"
+  ],
+  "name": "Integrated Marketing Campaign Proposal",
+  "description": "Contemporary campaign design with warm white space, black editorial type, vivid pink rules, and structured channel tables.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["partnership","marketing-campaign"],"industries":["media"],"audiences":["client"],"formats":["proposal"],"primary_styles":["minimal"],"visual_traits":["minimal"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖白色、墨黑与鲜粉红主导封面，超大标题位于左侧中部，几何色块与细线平衡画面。"
+    },
+    {
+      "path": "images/2-market-context.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，一幅图表集中排布，人群信息收束版面。"
+    },
+    {
+      "path": "images/3-audience-segments.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，标题、细线与留白划分层级，人群信息形成重心。"
+    },
+    {
+      "path": "images/4-core-insight.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，标题、细线与留白划分层级，核心观点拉开层级。"
+    },
+    {
+      "path": "images/5-big-idea.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，一组表格压缩信息密度，核心观点组织动线。"
+    },
+    {
+      "path": "images/6-channel-matrix.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，一组表格压缩信息密度，对比关系强化对比。"
+    },
+    {
+      "path": "images/7-content-plan.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    },
+    {
+      "path": "images/8-kpi-forecast.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，一幅图表集中排布，财务信息形成重心。"
+    },
+    {
+      "path": "images/9-roadmap-risks.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，标题、细线与留白划分层级，风险信息拉开层级。"
+    },
+    {
+      "path": "images/10-investment-ask.webp",
+      "alt": "暖白色、墨黑与鲜粉红页面，一幅图表集中排布，财务信息组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页以暖白色、墨黑与鲜粉红建立强对比，超大标题落在左侧中部；几何色块与细线占据主要视区，细线和页脚信息稳定边界。"
+    },
+    {
+      "path": "html/2-market-context.html",
+      "description": "暖白色、墨黑与鲜粉红作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅图表落在左侧，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/3-audience-segments.html",
+      "description": "标题固定在左上方，暖白色、墨黑与鲜粉红分隔主体；单一大面板承载主体信息，分类标签与数据卡沿主区展开。"
+    },
+    {
+      "path": "html/4-core-insight.html",
+      "description": "暖白色、墨黑与鲜粉红画面，标题置于左上方；留白与细线分隔出清晰阅读区，核心观点与醒目标记贴合卡片边界。"
+    },
+    {
+      "path": "html/5-big-idea.html",
+      "description": "左上方标题锚定暖白色、墨黑与鲜粉红画面；单一大面板承载主体信息，一组表格位于右侧，核心观点与醒目标记补充层级。"
+    },
+    {
+      "path": "html/6-channel-matrix.html",
+      "description": "暖白色、墨黑与鲜粉红作为底色，标题落在左上方；单一大面板承载主体信息，一组表格位于中央，对比模块与坐标标记补充层级。"
+    },
+    {
+      "path": "html/7-content-plan.html",
+      "description": "标题固定在左上方，暖白色、墨黑与鲜粉红分隔主体；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记嵌入主体模块。"
+    },
+    {
+      "path": "html/8-kpi-forecast.html",
+      "description": "暖白色、墨黑与鲜粉红画面，标题置于左上方；单一大面板承载主体信息，一幅财务图表落在左侧，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/9-roadmap-risks.html",
+      "description": "左上方标题锚定暖白色、墨黑与鲜粉红画面；留白与细线分隔出清晰阅读区，分级标签、状态色与风险标记贴合卡片边界。"
+    },
+    {
+      "path": "html/10-investment-ask.html",
+      "description": "暖白色、墨黑与鲜粉红作为底色，标题落在左上方；单一大面板承载主体信息，一幅财务图表落在左侧，关键数字与数据标记补充层级。"
+    }
+  ]
+}

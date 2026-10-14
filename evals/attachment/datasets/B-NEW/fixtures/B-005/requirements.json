@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Turn the attached README into a 6-slide Kubernetes onboarding deck for engineers joining the infrastructure team. Use only what the README explicitly states. Architecture details, benchmark numbers, production recommendations, and security guidance not present in the attachment must be labeled as unavailable."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "New infrastructure engineers",
+        "description": "New infrastructure engineers"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Technical onboarding",
+        "description": "Technical onboarding"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Explain what Kubernetes is and where to start without adding unsupported engineering advice",
+        "description": "Explain what Kubernetes is and where to start without adding unsupported engineering advice"
+      }
+    ],
+    "slide_count": [
+      6
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Technical, concise, trustworthy",
+        "description": "Technical, concise, trustworthy"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "New infrastructure engineers",
+      "description": "New infrastructure engineers"
+    },
+    "purpose": {
+      "label": "Technical onboarding",
+      "description": "Technical onboarding"
+    },
+    "desired_outcome": {
+      "label": "Explain what Kubernetes is and where to start without adding unsupported engineering advice",
+      "description": "Explain what Kubernetes is and where to start without adding unsupported engineering advice"
+    },
+    "slide_count": 6,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Technical, concise, trustworthy",
+      "description": "Technical, concise, trustworthy"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

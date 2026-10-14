@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spring Escape — Cover</title>
+<style>
+:root {
+  --theme-bg: #EAF4FB;
+  --theme-surface: #F2F9FD;
+  --theme-ink: #123A5E;
+  --theme-muted: #5B7C98;
+  --theme-accent-primary: #3F8FD0;
+  --theme-accent-secondary: #7FD06A;
+  --theme-accent-tertiary: #FFD166;
+  --theme-line: #CFE4F5;
+
+  --travel-canvas: var(--theme-bg);
+  --travel-surface: var(--theme-surface);
+  --travel-ink: var(--theme-ink);
+  --travel-muted: var(--theme-muted);
+  --travel-accent: var(--theme-accent-primary);
+  --travel-support: var(--theme-accent-secondary);
+  --travel-highlight: var(--theme-accent-tertiary);
+  --travel-line: var(--theme-line);
+  --travel-shadow: rgb(from var(--travel-ink) r g b / 0.18);
+  --travel-glow: rgb(from var(--travel-accent) r g b / 0.22);
+}
+
+  html,body{margin:0;padding:0;overflow:hidden;background:var(--travel-canvas);}
+  *{box-sizing:border-box;}
+</style>
+<style data-external-template-fonts>
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjgn7MsNo.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7M.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjmbI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb54C-s0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPb94C-s0.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/spacegrotesk/v22/V8mDoQDjQSkFtoMM3T6r8E7mPbF4Cw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:linear-gradient(168deg,var(--travel-surface) 0%,rgb(from var(--travel-line) calc(r + 13) calc(g + 8) calc(b + 3)) 58%,var(--travel-line) 100%);font-family:'Space Grotesk',sans-serif;" data-screen-label="01 Cover">
+
+  <!-- soft blue arc field -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1020px;top:-330px;width:1180px;height:1180px;z-index:1;border-radius:50%;background:radial-gradient(circle at 34% 32%, rgb(from var(--travel-line) calc(r - 64) calc(g - 27) calc(b - 6)) 0%, rgb(from var(--travel-accent) calc(r + 36) calc(g + 31) calc(b + 20)) 46%, var(--travel-accent) 100%);opacity:0.92;"></div>
+
+  <!-- outline ring -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:838px;top:452px;width:640px;height:640px;z-index:1;border-radius:50%;border:2px solid rgb(from var(--travel-ink) calc(r + 13) calc(g + 28) calc(b + 46) / 0.28);"></div>
+
+  <!-- second outline ring -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1330px;top:600px;width:430px;height:430px;z-index:1;border-radius:50%;border:2px dashed rgb(from var(--travel-surface) calc(r + 13) calc(g + 6) calc(b + 2) / 0.55);"></div>
+
+  <!-- spring green accent disc -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1246px;top:742px;width:196px;height:196px;z-index:5;border-radius:50%;background:linear-gradient(140deg,rgb(from var(--travel-support) calc(r + 56) calc(g + 24) calc(b + 34)),var(--travel-support));"></div>
+
+  <!-- small coral dot -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1108px;top:236px;width:74px;height:74px;z-index:5;border-radius:50%;background:var(--travel-highlight);"></div>
+
+  <!-- thin horizontal rule under kicker -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:150px;top:298px;width:300px;height:3px;z-index:5;background:rgb(from var(--travel-muted) calc(r - 44) calc(g - 13) calc(b + 16));"></div>
+
+  <!-- bottom-left blue block -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:150px;top:900px;width:520px;height:96px;z-index:1;background:rgb(from var(--travel-accent) r g b / 0.12);border-left:6px solid var(--travel-accent);"></div>
+
+  <!-- kicker -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:222px;width:760px;z-index:10;">
+    <p style="margin:0;font-size:30px;font-weight:500;letter-spacing:0.34em;text-transform:uppercase;color:rgb(from var(--travel-muted) calc(r - 44) calc(g - 13) calc(b + 16));">Season 2026 &nbsp;/&nbsp; Field Notes</p>
+  </div>
+
+  <!-- headline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:146px;top:330px;width:1000px;padding-bottom:44px;z-index:10;">
+    <p style="margin:0;font-size:172px;line-height:0.92;font-weight:700;letter-spacing:-0.045em;color:var(--travel-ink);">SPRING</p>
+    <p style="margin:6px 0 0 0;font-family:'Instrument Serif',serif;font-style:italic;font-size:186px;line-height:0.9;font-weight:400;letter-spacing:-0.02em;color:var(--travel-accent);">escape</p>
+  </div>
+
+  <!-- subline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:722px;width:676px;z-index:10;">
+    <p style="margin:0;font-size:34px;line-height:1.46;font-weight:300;color:rgb(from var(--travel-ink) calc(r + 24) calc(g + 21) calc(b + 16));text-wrap:pretty;">Blue skies, longer light, and a map with nothing marked on it yet — a travel journal for the warmer half of the year.</p>
+  </div>
+
+  <!-- bottom meta -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:178px;top:924px;width:480px;z-index:10;">
+    <p style="margin:0;font-size:26px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:rgb(from var(--travel-ink) calc(r + 13) calc(g + 28) calc(b + 46));">Mar — May</p>
+    <p style="margin:8px 0 0 0;font-size:22px;letter-spacing:0.14em;text-transform:uppercase;font-weight:300;color:var(--travel-muted);">Coast · Trails · Blossom</p>
+  </div>
+
+  <!-- vertical side label -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1770px;top:404px;width:300px;z-index:10;transform:rotate(90deg);transform-origin:left top;">
+    <p style="margin:0;font-size:24px;letter-spacing:0.4em;text-transform:uppercase;font-weight:400;color:rgb(from var(--travel-surface) calc(r + 13) calc(g + 6) calc(b + 2) / 0.85);">Go Outside</p>
+  </div>
+
+  <!-- number -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:110px;width:200px;z-index:10;">
+    <p style="margin:0;font-size:26px;font-weight:700;letter-spacing:0.2em;color:var(--travel-ink);">01</p>
+  </div>
+
+</div>
+</body>
+</html>

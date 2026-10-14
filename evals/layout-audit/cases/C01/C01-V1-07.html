@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* 页面专属样式 */
+  .left-col { position: absolute; left: 0; top: 0; width: 680px; height: 644px; }
+  .right-col { position: absolute; left: 816px; top: 0; width: 912px; height: 644px; }
+  .col-divider { position: absolute; left: 748px; top: 0; width: 1px; height: 644px; background: var(--border); }
+  
+  .accent-bar { width: 72px; height: 6px; background: var(--primary); margin-bottom: 24px; }
+  .statement { font-size: 30px; font-weight: 500; line-height: 1.4; color: var(--primary); margin-bottom: 40px; }
+  
+  .challenge-card { 
+    background: var(--bg-card); 
+    border: 1px dashed var(--light); 
+    border-radius: 8px; 
+    padding: 32px; 
+    box-sizing: border-box;
+  }
+  .card-label { font-size: 16px; font-weight: 600; color: var(--primary); letter-spacing: .1em; margin-bottom: 12px; text-transform: uppercase; }
+  .card-title { font-size: 24px; font-weight: 600; color: var(--dark); margin-bottom: 12px; }
+  .card-desc { font-size: 20px; line-height: 1.5; color: var(--muted); }
+  .badge-todo { display: inline-block; background: #E2E6E3; color: var(--muted); font-size: 14px; font-weight: 600; padding: 4px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+
+  .section-subtitle { font-size: 26px; font-weight: 600; color: var(--dark); margin-bottom: 24px; }
+  
+  .row-item { display: grid; grid-template-columns: 48px 1fr 160px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding: 18px 0; }
+  .row-item:first-of-type { border-top: none; padding-top: 0; }
+  .row-no { font-size: 22px; font-weight: 600; color: var(--primary); }
+  .row-title { font-size: 22px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+  .row-desc { font-size: 19px; line-height: 1.45; color: var(--muted); }
+  
+  .indicator { text-align: right; }
+  .indicator-label { font-size: 15px; font-weight: 500; color: var(--light); text-transform: uppercase; margin-bottom: 8px; letter-spacing: .05em; }
+  .dots { display: flex; gap: 4px; justify-content: flex-end; }
+  .dots i { display: block; width: 18px; height: 6px; background: var(--border); }
+  .dots i.active { background: var(--primary); }
+  .dots i.warning { background: #C0842E; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Problem Definition">
+  <!-- 固定页眉 -->
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  
+  <!-- 标题区域 -->
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <!-- 内容区域 -->
+  <div class="content-area">
+    <!-- 左侧：核心挑战框架与待定义声明 -->
+    <div class="left-col">
+      <div class="accent-bar"></div>
+      <p class="statement">在 2024 Call for Code 挑战赛框架下，精准定义并攻克核心痛点是技术方案产生真实社会影响的前提。</p>
+      
+      <div class="challenge-card">
+        <div class="card-label ar">Focus Area</div>
+        <h3 class="card-title">核心挑战定位 <span class="badge-todo">待具体细化</span></h3>
+        <p class="card-desc">
+          由于原始申报材料中未提供具体的环境或社会问题描述，本项目方案当前聚焦于构建通用的可持续发展技术框架。团队需在后续开发中，结合具体场景（如碳追踪、资源循环或生态保护）填补细分痛点。
+        </p>
+      </div>
+    </div>
+    
+    <!-- 分割线 -->
+    <div class="col-divider"></div>
+    
+    <!-- 右侧：现状局限与解决紧迫性 -->
+    <div class="right-col">
+      <h2 class="section-subtitle">现有方案的局限性与解决紧迫性分析</h2>
+      
+      <!-- 现状分析 1 -->
+      <div class="row-item">
+        <div class="row-no ar">01</div>
+        <div>
+          <h3 class="row-title">现有方案效率存在瓶颈</h3>
+          <p class="row-desc">传统的可持续发展数据收集与处理多依赖人工或碎片化系统，响应周期长，难以满足实时决策与动态优化的需求。</p>
+        </div>
+        <div class="indicator">
+          <p class="indicator-label">局限程度</p>
+          <div class="dots"><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i></i></div>
+        </div>
+      </div>
+      
+      <!-- 现状分析 2 -->
+      <div class="row-item">
+        <div class="row-no ar">02</div>
+        <div>
+          <h3 class="row-title">缺乏可扩展性与复制能力</h3>
+          <p class="row-desc">现有工具多为高度定制化的孤立方案，缺乏标准化的技术接口，难以跨行业、跨区域进行低成本的快速推广和扩展。</p>
+        </div>
+        <div class="indicator">
+          <p class="indicator-label">局限程度</p>
+          <div class="dots"><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i></div>
+        </div>
+      </div>
+      
+      <!-- 紧迫性 -->
+      <div class="row-item">
+        <div class="row-no ar">03</div>
+        <div>
+          <h3 class="row-title">解决问题的紧迫性</h3>
+          <p class="row-desc">随着全球可持续发展目标的时点临近，粗放型管理带来的试错成本不断攀升，亟需在 2024 年通过数字技术实现突破。</p>
+        </div>
+        <div class="indicator">
+          <p class="indicator-label">紧迫指数</p>
+          <div class="dots"><i class="warning"></i><i class="warning"></i><i class="warning"></i><i class="warning"></i><i></i></div>
+        </div>
+      </div>
+      
+      <!-- 贡献 -->
+      <div class="row-item">
+        <div class="row-no ar">04</div>
+        <div>
+          <h3 class="row-title">对可持续发展目标 (SDGs) 的贡献</h3>
+          <p class="row-desc">通过技术开源与云端部署，赋能更广泛的社区，为实现联合国可持续发展目标提供可量化的技术支撑与数据透明度。</p>
+        </div>
+        <div class="indicator">
+          <p class="indicator-label">贡献潜力</p>
+          <div class="dots"><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i><i class="active"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 固定页脚 -->
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

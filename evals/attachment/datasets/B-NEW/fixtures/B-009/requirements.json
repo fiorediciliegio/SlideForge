@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Prepare an 11-slide study-readout briefing for the internal clinical team based only on the attached report. Clearly distinguish protocol design, enrolled population, observed outcomes, adverse events, limitations, and planned follow-up. Do not add external clinical recommendations."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Internal clinical development team",
+        "description": "Internal clinical development team"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Study readout",
+        "description": "Study readout"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Communicate findings and limitations without overstating evidence",
+        "description": "Communicate findings and limitations without overstating evidence"
+      }
+    ],
+    "slide_count": [
+      11
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Scientific, restrained, precise",
+        "description": "Scientific, restrained, precise"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Internal clinical development team",
+      "description": "Internal clinical development team"
+    },
+    "purpose": {
+      "label": "Study readout",
+      "description": "Study readout"
+    },
+    "desired_outcome": {
+      "label": "Communicate findings and limitations without overstating evidence",
+      "description": "Communicate findings and limitations without overstating evidence"
+    },
+    "slide_count": 11,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Scientific, restrained, precise",
+      "description": "Scientific, restrained, precise"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

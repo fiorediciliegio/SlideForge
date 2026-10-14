@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MERIDIAN — Directors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#F2EAD8}
+  .paper{position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(11,11,14,.012) 0 1px,transparent 1px 100%),linear-gradient(90deg,rgba(11,11,14,.012) 0 1px,transparent 1px 100%);background-size:48px 48px;z-index:1}
+  .grain{position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:240px 240px;opacity:.5;mix-blend-mode:multiply;z-index:30;pointer-events:none}
+  .display{font-family:'Bodoni Moda',serif;font-weight:900;color:#0B0B0E;letter-spacing:-.02em;line-height:.92}
+  .serif{font-family:'Cormorant Garamond',serif;color:#2A1F1A}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+
+  /* abstract portrait silhouettes — distinct per director */
+  .p1{background:radial-gradient(circle at 50% 38%,#8B2030 0%,#5C0E1B 30%,#2A0810 60%,#0B0B0E 100%);position:relative}
+  .p2{background:linear-gradient(170deg,#6B5E3F 0%,#C9B98F 45%,#E8DCC0 100%);position:relative}
+  .p4{background:radial-gradient(circle at 50% 35%,#1B0A18 0%,#0B2540 45%,#0B0B0E 100%);position:relative}
+  .p3{background:linear-gradient(180deg,#6B1518 0%,#3D2A1F 60%,#0B0B0E 100%);position:relative}
+  .p1::after,.p2::after,.p3::after,.p4::after{content:"";position:absolute;left:50%;top:22%;width:50%;height:38%;border-radius:50%;transform:translateX(-50%);background:rgba(11,11,14,.45);filter:blur(.4px)}
+  .p1::before,.p2::before,.p3::before,.p4::before{content:"";position:absolute;left:50%;bottom:0;width:90%;height:60%;border-radius:45% 45% 0 0;transform:translateX(-50%);background:rgba(11,11,14,.5)}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="paper"></div>
+
+  <!-- top chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:36px;width:680px;z-index:10;">
+    <span class="mono" style="color:#6B1518;">M—06 · Directors &amp; Creators</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:36px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#2A1F1A;">A Field Guide to the Artists</span>
+  </div>
+
+  <!-- left header column -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:130px;width:380px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:14px;">Voices</div>
+    <div class="display" style="font-size:104px;line-height:.92;">Hands<br>behind<br>the frame.</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:610px;width:380px;z-index:10;">
+    <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:-30px;width:60px;height:2px;background:#6B1518;z-index:6"></div>
+    <p class="serif" style="font-style:italic;font-size:18px;line-height:1.5;color:#2A1F1A;">Brief editorial profiles of four film-makers whose work defines the cross-section of voices in this year's program.</p>
+  </div>
+
+  <!-- ============ DIRECTOR 1 ============ -->
+  <div data-object="true" data-object-type="image" class="p1" style="position:absolute;left:520px;top:130px;width:260px;height:340px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:520px;top:140px;width:200px;z-index:11;">
+    <span class="mono" style="color:#D9A441;">D · 01</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:800px;top:140px;width:340px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:6px;">Hungary / Austria · Film 01</div>
+    <div class="display" style="font-size:38px;line-height:1;margin-bottom:8px;">M. Eberhardt</div>
+    <p class="serif" style="font-size:15px;font-style:italic;color:#6B1518;margin-bottom:10px;">Je n'appartiens plus ici</p>
+    <p class="serif" style="font-size:15px;line-height:1.45;color:#2A1F1A;">Trained as a documentary editor, Eberhardt turns to fiction with the patience of an archivist and the eye of someone who has held a stranger's passport.</p>
+    <div class="mono" style="color:#2A1F1A;margin-top:10px;">Approach — slow, evidentiary, hand-made 16mm.</div>
+  </div>
+
+  <!-- ============ DIRECTOR 2 ============ -->
+  <div data-object="true" data-object-type="image" class="p2" style="position:absolute;left:520px;top:490px;width:260px;height:340px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:520px;top:500px;width:200px;z-index:11;">
+    <span class="mono" style="color:#D9A441;">D · 02</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:800px;top:500px;width:340px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:6px;">Mexico · Film 02</div>
+    <div class="display" style="font-size:38px;line-height:1;margin-bottom:8px;">A. Rivera-Calleja</div>
+    <p class="serif" style="font-size:15px;font-style:italic;color:#6B1518;margin-bottom:10px;">La frontera que se canta</p>
+    <p class="serif" style="font-size:15px;line-height:1.45;color:#2A1F1A;">A former theatre director, Rivera-Calleja gathers non-professional performers from the border towns she films and writes in the second person, never in the third.</p>
+    <div class="mono" style="color:#2A1F1A;margin-top:10px;">Approach — community casting, long rehearsal.</div>
+  </div>
+
+  <!-- ============ DIRECTOR 3 ============ -->
+  <div data-object="true" data-object-type="image" class="p3" style="position:absolute;left:1210px;top:130px;width:260px;height:340px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1210px;top:140px;width:200px;z-index:11;">
+    <span class="mono" style="color:#D9A441;">D · 03</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1490px;top:140px;width:360px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:6px;">Türkiye · Film 03</div>
+    <div class="display" style="font-size:38px;line-height:1;margin-bottom:8px;">S. Karadağ</div>
+    <p class="serif" style="font-size:15px;font-style:italic;color:#6B1518;margin-bottom:10px;">A second returning</p>
+    <p class="serif" style="font-size:15px;line-height:1.45;color:#2A1F1A;">One of the first documentary directors from the Black Sea coast to map the gentrification of their own village in 4K, soundtracked by the failing gulls of the harbour.</p>
+    <div class="mono" style="color:#2A1F1A;margin-top:10px;">Approach — observed, unhurried, lyrical.</div>
+  </div>
+
+  <!-- ============ DIRECTOR 4 ============ -->
+  <div data-object="true" data-object-type="image" class="p4" style="position:absolute;left:1210px;top:490px;width:260px;height:340px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1210px;top:500px;width:200px;z-index:11;">
+    <span class="mono" style="color:#D9A441;">D · 04</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1490px;top:500px;width:360px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:6px;">South Korea · Film 04</div>
+    <div class="display" style="font-size:38px;line-height:1;margin-bottom:8px;">L. Chen · Y. Park</div>
+    <p class="serif" style="font-size:15px;font-style:italic;color:#6B1518;margin-bottom:10px;">Drift — shared authorship</p>
+    <p class="serif" style="font-size:15px;line-height:1.45;color:#2A1F1A;">A sibling duo whose first collaborative feature reframes the family apartment as a linguistic territory — a co-direction that resists the singular authorial voice.</p>
+    <div class="mono" style="color:#2A1F1A;margin-top:10px;">Approach — co-authored, dialogic, indoor.</div>
+  </div>
+
+  <!-- bottom rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:990px;width:1740px;height:1px;background:#0B0B0E;z-index:6"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:1010px;width:680px;z-index:10;">
+    <span class="mono" style="color:#2A1F1A;">Profiles compiled from interview transcripts · Festival press office</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:1010px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#6B1518;">p. 06 / 10</span>
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

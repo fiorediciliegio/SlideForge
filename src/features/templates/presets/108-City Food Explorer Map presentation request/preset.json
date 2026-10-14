@@ -1,0 +1,169 @@
+{
+  "id": "108-City Food Explorer Map presentation request",
+  "version": 1,
+  "ppt_number": 108,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "red",
+    "yellow",
+    "green",
+    "blue",
+    "black"
+  ],
+  "name": "City Food Explorer Magazine",
+  "description": "Retro food magazine with oversized serif type, hand-drawn marks, outlined cards, and lively photo collages.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["travel-guide"],"industries":["consumer"],"audiences":["public"],"formats":["guide"],"primary_styles":["editorial","playful"],"visual_traits":["playful","editorial","colorful","photographic","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "奶油白与番茄红分栏的杂志封面，以超大衬线标题、黄色贴纸和手绘标注营造复古感。"
+    },
+    {
+      "path": "images/2-city-food-map.webp",
+      "alt": "左侧窄栏搭配右侧米色网格主区，以手绘路线、彩色圆点和粗线条形成轻松的地图式构图。"
+    },
+    {
+      "path": "images/3-breakfast-coffee.webp",
+      "alt": "奶油白页面以超大衬线标题和黄色数字章建立层级，右侧错落图片配手绘箭头增强编辑感。"
+    },
+    {
+      "path": "images/4-street-food.webp",
+      "alt": "高饱和番茄红背景搭配白色粗描边卡片、大幅图片与黄色贴纸，形成热烈的杂志拼贴感。"
+    },
+    {
+      "path": "images/5-desserts-late-night.webp",
+      "alt": "钴蓝底色以奶油白、亮黄和番茄红点缀，双栏文字与四格图片拼贴形成夜间高对比。"
+    },
+    {
+      "path": "images/6-must-try.webp",
+      "alt": "奶油白页面横排五张粗描边卡片，以黄色重点卡和蓝色反白卡制造鲜明节奏。"
+    },
+    {
+      "path": "images/7-one-day-timeline.webp",
+      "alt": "奶油白页面以六张卡片沿横向时间轴上下交错，彩色节点与阴影边框建立活泼节奏。"
+    },
+    {
+      "path": "images/8-taste-dashboard.webp",
+      "alt": "暖米色仪表盘组合高饱和 KPI 卡、条形图、折线图、环形图与结论模块。"
+    },
+    {
+      "path": "images/9-street-vs-sitdown.webp",
+      "alt": "番茄红与钴蓝左右分屏，成对照片、属性条和圆形 VS 徽章形成强烈对照。"
+    },
+    {
+      "path": "images/10-neighbourhood-matrix.webp",
+      "alt": "奶油白底大型六列表格配红色表头和粗黑网格，底部三块彩色摘要卡强化层级。"
+    },
+    {
+      "path": "images/11-how-to-eat-flow.webp",
+      "alt": "橄榄绿背景横排五张白色步骤卡，以彩色编号、黑色阴影和连接箭头构成流程。"
+    },
+    {
+      "path": "images/12-flavour-architecture.webp",
+      "alt": "钴蓝背景以白色连线串联根节点、三组分支和多层叶节点，形成彩色树状架构。"
+    },
+    {
+      "path": "images/13-walking-route-map.webp",
+      "alt": "奶油白页面以横向米色地图卡为主体，手绘路线、编号节点和路段剖面上下呼应。"
+    },
+    {
+      "path": "images/14-taste-quadrants.webp",
+      "alt": "奶油白背景采用四色二乘二矩阵，粗黑分隔线与右侧深蓝说明栏形成分析版式。"
+    },
+    {
+      "path": "images/15-hunger-funnel.webp",
+      "alt": "多层彩色漏斗由上至下收束，右侧阶段说明与底部统计条构成清晰筛选路径。"
+    },
+    {
+      "path": "images/16-hero-number.webp",
+      "alt": "番茄红背景以超大奶油白数字占据左侧，黄色标签和右侧辅助信息增强冲击力。"
+    },
+    {
+      "path": "images/17-full-bleed-market.webp",
+      "alt": "全幅夜市照片配上下黑色渐变，超大白色标题、短文和引语直接叠加在画面上。"
+    },
+    {
+      "path": "images/18-bento-city-guide.webp",
+      "alt": "暖米色背景以不等宽彩色模块组成便当网格，图片、数字、地图和短句密集拼合。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，奶油色主版面与右侧番茄红色块构成非对称杂志封面，超大衬线标题占据左侧，搭配橄榄绿刊头、黄色标签、手绘线条和右侧汉堡抠图。"
+    },
+    {
+      "path": "html/2-city-food-map.html",
+      "description": "顶部黑色刊头下采用左窄右宽布局，左侧放置章节标题、导语与四色图例，右侧米色网格地图通过手绘路线、彩色编号标记、河流与罗盘组织城市动线。"
+    },
+    {
+      "path": "html/3-breakfast-coffee.html",
+      "description": "奶油色背景上以左侧大标题、黄色站点数字章、点单说明和蓝色地址条建立信息层级，右侧三张错落食物照片配手绘箭头与橄榄绿引语卡。"
+    },
+    {
+      "path": "html/4-street-food.html",
+      "description": "全幅番茄红背景承载白色超大标题，底部三张带粗边框和错色阴影的推荐卡横向排列，右侧大图、黄色贴纸与大号引语强化街头感。"
+    },
+    {
+      "path": "html/5-desserts-late-night.html",
+      "description": "钴蓝背景以奶油白、亮黄和番茄红形成夜间高对比，左侧用大标题、双栏店铺推荐和黄色信息条排版，右侧四张照片以杂志拼贴方式堆叠。"
+    },
+    {
+      "path": "html/6-must-try.html",
+      "description": "顶部红色刊头与大号衬线标题下方横排五张推荐卡，中间黄色重点卡和末端蓝色反白卡制造节奏，每张卡以照片、编号、时段和短评组成。"
+    },
+    {
+      "path": "html/7-one-day-timeline.html",
+      "description": "奶油白页面以一条横向时间轴串联六张上下交错的站点卡，彩色节点、阴影边框与底部统计带共同建立清晰节奏。"
+    },
+    {
+      "path": "html/8-taste-dashboard.html",
+      "description": "暖米色背景上以四块高饱和 KPI 卡开场，下方组合条形图、折线图、环形图、排行条与结论卡形成模块化仪表盘。"
+    },
+    {
+      "path": "html/9-street-vs-sitdown.html",
+      "description": "番茄红与钴蓝左右对半分屏，中部奶油白标题带连接两侧，成对照片、属性条与圆形 VS 徽章形成强烈对照。"
+    },
+    {
+      "path": "html/10-neighbourhood-matrix.html",
+      "description": "奶油白底的大型六列表格占据主体，红色表头、粗黑网格和底部三块彩色摘要卡构成高密度编辑式数据页。"
+    },
+    {
+      "path": "html/11-how-to-eat-flow.html",
+      "description": "橄榄绿全幅背景上横排五张白色步骤卡，彩色编号标签、黑色阴影、连接箭头与底部注释形成连续流程。"
+    },
+    {
+      "path": "html/12-flavour-architecture.html",
+      "description": "钴蓝背景上以白色连线连接根节点、三组分支和多层叶节点，黄色、红色与橄榄绿区分类别，形成树状架构图。"
+    },
+    {
+      "path": "html/13-walking-route-map.html",
+      "description": "奶油白页面中部放置横向米色地图卡，手绘路线、编号节点与底部路段剖面共同构成双层路线信息。"
+    },
+    {
+      "path": "html/14-taste-quadrants.html",
+      "description": "奶油白背景上以四色二乘二矩阵占据左侧，粗黑分隔线、象限标签与右侧深蓝说明栏形成鲜明分析版式。"
+    },
+    {
+      "path": "html/15-hunger-funnel.html",
+      "description": "奶油白背景上由上至下收束的多层彩色漏斗位于左侧，右侧对齐阶段说明行，底部彩色统计条强化结论。"
+    },
+    {
+      "path": "html/16-hero-number.html",
+      "description": "番茄红全幅背景以超大奶油白数字占据左侧，手绘环线与黄色标签叠加强调，右侧窄栏排列三组辅助信息。"
+    },
+    {
+      "path": "html/17-full-bleed-market.html",
+      "description": "全幅夜市场景照片作为背景，上下黑色渐变保证文字可读，超大白色标题、左侧短文与右侧引语直接叠加在画面上。"
+    },
+    {
+      "path": "html/18-bento-city-guide.html",
+      "description": "暖米色背景使用多行不等宽彩色模块组成便当式网格，照片、数字、地图、短句与图标密集拼合为单页总览。"
+    }
+  ]
+}

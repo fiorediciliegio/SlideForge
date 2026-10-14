@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Semester Timeline — Freshman Survival Guide</title>
+<style>
+/* Sticker-collage theme — Freshman Survival Guide */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@600;700;800;900&family=Patrick+Hand&display=swap');
+
+:root{
+  --blue:#2C7BE5;        /* bright blue */
+  --blue-deep:#1B4FA6;
+  --orange:#FF7A2A;      /* bright orange */
+  --orange-soft:#FFB877;
+  --lime:#B8E438;        /* lime green */
+  --lime-deep:#7BB800;
+  --purple:#8B5CF6;      /* small purple accent */
+  --purple-deep:#5B21B6;
+  --white:#FFFFFF;
+  --cream:#FFF8E9;       /* soft warm off-white bg — not beige-luxury */
+  --paper:#FDFBF3;
+  --ink:#1F2A44;         /* deep navy ink for handwriting feel */
+  --ink-soft:#3B4A6B;
+
+  --f-display:'Fredoka', system-ui, sans-serif;
+  --f-hand:'Caveat', cursive;
+  --f-marker:'Patrick Hand', cursive;
+  --f-body:'Nunito', system-ui, sans-serif;
+}
+
+/* --- Sticker & tape utility styles (used inline in slides) --- */
+.sticker{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 6px 0 rgba(31,42,68,.12), 0 14px 30px rgba(31,42,68,.10);
+  border:3px solid var(--ink);
+}
+.tape{
+  position:absolute;
+  background:rgba(255, 224, 130, .78);
+  box-shadow:0 4px 10px rgba(0,0,0,.10);
+  transform:rotate(-6deg);
+}
+.pin{
+  width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ff6b6b, #b91c1c 70%);
+  box-shadow:0 4px 0 rgba(0,0,0,.25), inset -3px -4px 6px rgba(0,0,0,.25);
+  border:3px solid #fff;
+}
+</style>
+<style>
+  body{margin:0;padding:0;overflow:hidden;font-family:var(--f-body);}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;
+    background:
+      radial-gradient(circle at 90% 10%, rgba(184,228,56,.24), transparent 32%),
+      radial-gradient(circle at 6% 88%, rgba(139,92,246,.18), transparent 30%),
+      #FFF8E9;
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="09 Semester Timeline">
+
+  <!-- ================= TITLE ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:80px;top:50px;width:900px;height:130px;
+              background:var(--lime);border:5px solid var(--ink);border-radius:24px;
+              transform:rotate(-1.5deg);box-shadow:8px 8px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:64px;width:870px;height:110px;z-index:10;
+              transform:rotate(-1.5deg);color:var(--ink);">
+    <div style="font-family:var(--f-hand);font-size:30px;color:var(--purple-deep);line-height:1;">chapter 08</div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:40px;line-height:1.05;letter-spacing:-1px;margin-top:6px;">
+      The Deadlines Nobody Reminds You About
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1020px;top:78px;width:620px;height:90px;z-index:10;
+              font-family:var(--f-marker);font-size:29px;color:var(--ink-soft);line-height:1.25;">
+    Week 1 was a checklist. A semester is a calendar.<br>
+    These four dates cost the most when they're missed.
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1670px;top:52px;width:180px;height:34px;
+              background:repeating-linear-gradient(45deg, var(--orange) 0 13px, #FFD9B8 13px 26px);
+              transform:rotate(-12deg);opacity:.9;z-index:5;">
+  </div>
+
+  <!-- ================= GANTT CANVAS ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:70px;top:210px;width:1780px;height:520px;
+              background:#FDFBF3;border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:1;">
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:232px;width:620px;height:64px;z-index:10;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1;">
+      A 15-week semester, load by week
+    </div>
+    <div style="font-family:var(--f-marker);font-size:21px;color:var(--ink-soft);margin-top:4px;">
+      bar length = how many weeks it occupies
+    </div>
+  </div>
+
+  <!-- Week ruler labels -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:360px;top:296px;width:1420px;height:26px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:17px;color:var(--ink-soft);
+              display:flex;justify-content:space-between;">
+    <span>W1</span><span>W3</span><span>W5</span><span>W7</span><span>W9</span><span>W11</span><span>W13</span><span>W15</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:360px;top:328px;width:1420px;height:3px;
+              background:rgba(31,42,68,.35);z-index:3;">
+  </div>
+
+  <!-- Vertical guides -->
+  <svg data-object="true" data-object-type="shape"
+       style="position:absolute;left:360px;top:331px;width:1420px;height:368px;z-index:2;"
+       viewBox="0 0 1420 368" preserveAspectRatio="none" fill="none">
+    <line x1="203" y1="0" x2="203" y2="368" stroke="#1F2A44" stroke-width="2" stroke-dasharray="6 10" opacity=".22"/>
+    <line x1="406" y1="0" x2="406" y2="368" stroke="#1F2A44" stroke-width="2" stroke-dasharray="6 10" opacity=".22"/>
+    <line x1="609" y1="0" x2="609" y2="368" stroke="#1F2A44" stroke-width="2" stroke-dasharray="6 10" opacity=".22"/>
+    <line x1="812" y1="0" x2="812" y2="368" stroke="#1F2A44" stroke-width="2" stroke-dasharray="6 10" opacity=".22"/>
+    <line x1="1015" y1="0" x2="1015" y2="368" stroke="#1F2A44" stroke-width="2" stroke-dasharray="6 10" opacity=".22"/>
+    <line x1="1218" y1="0" x2="1218" y2="368" stroke="#1F2A44" stroke-width="2" stroke-dasharray="6 10" opacity=".22"/>
+  </svg>
+
+  <!-- ROW 1 — Add/drop window -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:346px;width:250px;height:52px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:19px;color:var(--ink);line-height:1.15;">
+    Add / drop window<br><span style="font-weight:700;font-size:16px;color:var(--ink-soft);">fix your schedule free</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:360px;top:348px;width:190px;height:44px;
+              background:var(--blue);border:4px solid var(--ink);border-radius:12px;
+              box-shadow:4px 4px 0 var(--ink);z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:360px;top:348px;width:190px;height:44px;z-index:11;
+              color:#fff;text-align:center;font-family:var(--f-body);font-weight:900;
+              font-size:17px;line-height:44px;">
+    W1 – W2
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:576px;top:352px;width:560px;height:40px;z-index:10;
+              font-family:var(--f-marker);font-size:21px;color:var(--ink-soft);line-height:1.15;">
+    after this, changes cost money — or a W on your transcript
+  </div>
+
+  <!-- ROW 2 — Midterms -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:420px;width:250px;height:52px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:19px;color:var(--ink);line-height:1.15;">
+    Midterm cluster<br><span style="font-weight:700;font-size:16px;color:var(--ink-soft);">3 exams, ~9 days</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:766px;top:422px;width:290px;height:44px;
+              background:var(--orange);border:4px solid var(--ink);border-radius:12px;
+              box-shadow:4px 4px 0 var(--ink);z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:766px;top:422px;width:290px;height:44px;z-index:11;
+              color:#fff;text-align:center;font-family:var(--f-body);font-weight:900;
+              font-size:17px;line-height:44px;">
+    W6 – W8
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1082px;top:426px;width:420px;height:40px;z-index:10;
+              font-family:var(--f-marker);font-size:21px;color:var(--ink-soft);line-height:1.15;">
+    start revising in W5, not the night before
+  </div>
+
+  <!-- ROW 3 — Registration -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:494px;width:250px;height:52px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:19px;color:var(--ink);line-height:1.15;">
+    Next-term registration<br><span style="font-weight:700;font-size:16px;color:var(--ink-soft);">good classes go fast</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1157px;top:496px;width:200px;height:44px;
+              background:var(--purple);border:4px solid var(--ink);border-radius:12px;
+              box-shadow:4px 4px 0 var(--ink);z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1157px;top:496px;width:200px;height:44px;z-index:11;
+              color:#fff;text-align:center;font-family:var(--f-body);font-weight:900;
+              font-size:17px;line-height:44px;">
+    W9 – W10
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1383px;top:500px;width:400px;height:40px;z-index:10;
+              font-family:var(--f-marker);font-size:21px;color:var(--ink-soft);line-height:1.15;">
+    see your advisor in W8 — before the queue
+  </div>
+
+  <!-- ROW 4 — Finals -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:568px;width:250px;height:52px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:19px;color:var(--ink);line-height:1.15;">
+    Finals + papers<br><span style="font-weight:700;font-size:16px;color:var(--ink-soft);">everything lands at once</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1490px;top:570px;width:290px;height:44px;
+              background:var(--blue);border:4px solid var(--ink);border-radius:12px;
+              box-shadow:4px 4px 0 var(--ink);z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1490px;top:570px;width:290px;height:44px;z-index:11;
+              color:#fff;text-align:center;font-family:var(--f-body);font-weight:900;
+              font-size:17px;line-height:44px;">
+    W13 – W15
+  </div>
+
+  <!-- Peak-load callout -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:600px;top:636px;width:470px;height:60px;
+              background:#fff;border:3px solid var(--purple-deep);border-radius:14px;
+              box-shadow:4px 4px 0 var(--purple-deep);z-index:8;transform:rotate(-1.5deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:600px;top:636px;width:470px;height:60px;z-index:11;
+              transform:rotate(-1.5deg);color:var(--purple-deep);text-align:center;
+              font-family:var(--f-hand);font-size:29px;line-height:60px;">
+    W9 is the real crunch — two rows collide
+  </div>
+  <svg data-object="true" data-object-type="shape"
+       style="position:absolute;left:1080px;top:560px;width:180px;height:110px;z-index:7;"
+       viewBox="0 0 180 110" fill="none">
+    <path d="M 20 92 C 70 84, 118 58, 150 18" stroke="#8B5CF6" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M 126 24 L 154 12 L 148 40" stroke="#8B5CF6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+
+  <!-- ================= BOTTOM — 3 RULES ================= -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:70px;top:762px;width:1780px;height:44px;z-index:10;
+              font-family:var(--f-display);font-weight:700;font-size:30px;color:var(--ink);">
+    Three habits that turn this calendar into a non-event
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:70px;top:818px;width:570px;height:200px;
+              background:#fff;border:5px solid var(--ink);border-radius:20px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-0.8deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:838px;width:510px;height:165px;z-index:10;
+              transform:rotate(-0.8deg);color:var(--ink);">
+    <div style="font-family:var(--f-body);font-weight:900;font-size:44px;line-height:1;color:var(--blue);">01</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1.1;margin-top:4px;">
+      Put all four dates in your phone today
+    </div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;line-height:1.35;margin-top:8px;color:var(--ink-soft);">
+      Your registrar publishes them before term starts. One evening of setup buys a calm semester.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:675px;top:818px;width:570px;height:200px;
+              background:var(--purple);border:5px solid var(--ink);border-radius:20px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(0.8deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:705px;top:838px;width:510px;height:165px;z-index:10;
+              transform:rotate(0.8deg);color:#fff;">
+    <div style="font-family:var(--f-body);font-weight:900;font-size:44px;line-height:1;color:#FFE082;">02</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1.1;margin-top:4px;">
+      Set every reminder two weeks early
+    </div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;line-height:1.35;margin-top:8px;">
+      An alert on the day is not a reminder — it's an announcement that you're already late.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1280px;top:818px;width:570px;height:200px;
+              background:var(--lime);border:5px solid var(--ink);border-radius:20px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-0.6deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1310px;top:838px;width:510px;height:165px;z-index:10;
+              transform:rotate(-0.6deg);color:var(--ink);">
+    <div style="font-family:var(--f-body);font-weight:900;font-size:44px;line-height:1;color:var(--lime-deep);">03</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1.1;margin-top:4px;">
+      Protect the week before each bar
+    </div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;line-height:1.35;margin-top:8px;color:var(--ink-soft);">
+      Say no to new commitments in W5, W8 and W12. That's where the semester is actually won.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1780px;top:1032px;width:80px;height:40px;z-index:10;
+              font-family:var(--f-hand);font-size:32px;color:var(--ink-soft);text-align:right;">09</div>
+</div>
+</body>
+</html>

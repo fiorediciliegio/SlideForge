@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Delivery Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Harvest Bridge — single type scale for all 10 slides.
+   Typography only. All geometry stays inline on each data-object. */
+
+:root{
+  --ink:#14231C;
+  --body:#46564D;
+  --mute:#8A9992;
+  --green:#1B7A4F;
+  --green-d:#0F5236;
+  --green-m:#5C9E7E;
+  --line:#DCE3DE;
+  --panel:#F7F9F7;
+  --clay:#B5543A;
+}
+
+html,body{margin:0;padding:0;overflow:hidden;}
+body{
+  font-family:'Archivo',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  color:var(--ink);
+}
+
+/* --- fixed scale ------------------------------------------------ */
+.kicker{font-size:24px;line-height:1.4;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:600;}
+.title{font-family:'Source Serif 4',serif;font-size:54px;line-height:1.14;font-weight:600;letter-spacing:-.01em;color:var(--ink);}
+.title-xl{font-family:'Source Serif 4',serif;font-size:84px;line-height:1.1;font-weight:600;letter-spacing:-.02em;color:var(--ink);}
+.lead{font-size:25px;line-height:1.45;color:var(--body);}
+.label{font-size:22px;line-height:1.32;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);font-weight:600;}
+.head{font-size:30px;line-height:1.26;font-weight:600;color:var(--ink);}
+.body{font-size:25px;line-height:1.45;color:var(--body);}
+.cap{font-size:22px;line-height:1.4;color:var(--mute);}
+
+.stat-xl{font-family:'Source Serif 4',serif;font-size:92px;line-height:1;font-weight:700;letter-spacing:-.02em;}
+.stat-lg{font-family:'Source Serif 4',serif;font-size:62px;line-height:1;font-weight:700;letter-spacing:-.02em;}
+.stat-md{font-family:'Source Serif 4',serif;font-size:44px;line-height:1;font-weight:600;}
+
+.quote{font-family:'Source Serif 4',serif;font-size:31px;line-height:1.34;color:var(--ink);}
+
+/* on-dark variants */
+.on-dark{color:#FFFFFF;}
+.on-dark-label{font-size:22px;line-height:1.32;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:600;}
+.on-dark-body{font-size:25px;line-height:1.45;color:rgba(255,255,255,.80);}
+.on-dark-head{font-size:30px;line-height:1.3;font-weight:600;color:#FFFFFF;}
+
+/* table */
+.t-head{font-size:22px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink);}
+.t-cell{font-size:26px;color:var(--body);}
+.t-key{font-size:26px;color:var(--ink);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Delivery Model" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:86px;width:1000px;height:34px;z-index:10;display:flex;align-items:center;"><span class="kicker">04 · Delivery model</span></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:132px;width:1120px;height:124px;z-index:10;display:flex;align-items:center;"><span class="title">From donated pallet to a child's kitchen in 48 hours</span></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:132px;width:500px;height:124px;z-index:10;display:flex;align-items:center;"><span class="lead">A five-step operating chain, run by 6 staff and 140 trained volunteers.</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:282px;width:1680px;height:1px;background:#DCE3DE;z-index:1;"></div>
+
+  <!-- five-step flow -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:120px;top:318px;width:1680px;height:290px;z-index:10;">
+    <div style="display:flex;align-items:stretch;gap:0;height:290px;">
+
+      <div style="width:292px;flex:0 0 auto;background:#F7F9F7;border-top:4px solid #0F5236;padding:26px 26px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
+        <span class="label">Step 01 · Wed</span>
+        <span class="head" style="margin-top:12px;">Source</span>
+        <span class="body" style="margin-top:12px;">Grocery rescue, the regional food bank, and 3 farms deliver to the hub.</span>
+      </div>
+
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;min-width:0;">
+        <div style="width:100%;height:2px;background:#C3CFC8;position:relative;">
+          <div style="position:absolute;right:0;top:-5px;width:0;height:0;border-left:11px solid #C3CFC8;border-top:6px solid transparent;border-bottom:6px solid transparent;"></div>
+        </div>
+      </div>
+
+      <div style="width:292px;flex:0 0 auto;background:#F7F9F7;border-top:4px solid #0F5236;padding:26px 26px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
+        <span class="label">Step 02 · Thu</span>
+        <span class="head" style="margin-top:12px;">Pack</span>
+        <span class="body" style="margin-top:12px;">Volunteer shifts assemble 1,050 kits against a fixed nutrition spec.</span>
+      </div>
+
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;min-width:0;">
+        <div style="width:100%;height:2px;background:#C3CFC8;position:relative;">
+          <div style="position:absolute;right:0;top:-5px;width:0;height:0;border-left:11px solid #C3CFC8;border-top:6px solid transparent;border-bottom:6px solid transparent;"></div>
+        </div>
+      </div>
+
+      <div style="width:292px;flex:0 0 auto;background:#0F5236;border-top:4px solid #0F5236;padding:26px 26px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
+        <span class="on-dark-label">Step 03 · Fri</span>
+        <span class="on-dark-head" style="margin-top:12px;">Route</span>
+        <span class="on-dark-body" style="margin-top:12px;">Two vans cover 61 stops on a published schedule, 2–6pm.</span>
+      </div>
+
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;min-width:0;">
+        <div style="width:100%;height:2px;background:#C3CFC8;position:relative;">
+          <div style="position:absolute;right:0;top:-5px;width:0;height:0;border-left:11px solid #C3CFC8;border-top:6px solid transparent;border-bottom:6px solid transparent;"></div>
+        </div>
+      </div>
+
+      <div style="width:292px;flex:0 0 auto;background:#F7F9F7;border-top:4px solid #0F5236;padding:26px 26px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
+        <span class="label">Step 04 · Fri</span>
+        <span class="head" style="margin-top:12px;">Hand off</span>
+        <span class="body" style="margin-top:12px;">A site host greets by name, offers help, and logs the pickup.</span>
+      </div>
+
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;min-width:0;">
+        <div style="width:100%;height:2px;background:#C3CFC8;position:relative;">
+          <div style="position:absolute;right:0;top:-5px;width:0;height:0;border-left:11px solid #C3CFC8;border-top:6px solid transparent;border-bottom:6px solid transparent;"></div>
+        </div>
+      </div>
+
+      <div style="width:292px;flex:0 0 auto;background:#F7F9F7;border-top:4px solid #0F5236;padding:26px 26px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;">
+        <span class="label">Step 05 · Mon</span>
+        <span class="head" style="margin-top:12px;">Learn</span>
+        <span class="body" style="margin-top:12px;">Site counts and teacher check-ins shape next week's order.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- photo + supporting principles -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:120px;top:668px;width:700px;height:250px;z-index:5;overflow:hidden;"><img src="../assets/p05-delivery.jpg" alt="Delivery van used for the weekend route" style="width:700px;height:250px;object-fit:cover;display:block;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:880px;top:668px;width:920px;height:250px;z-index:10;display:flex;flex-direction:column;justify-content:center;">
+    <span style="display:block;border-left:3px solid #1B7A4F;padding:4px 0 4px 24px;">
+      <span class="head" style="display:block;">Trusted sites, not new buildings</span>
+      <span class="body" style="display:block;margin-top:8px;">Schools, parishes and clinics host at no cost — zero real-estate overhead.</span>
+    </span>
+    <span style="display:block;border-left:3px solid #1B7A4F;padding:4px 0 4px 24px;margin-top:24px;">
+      <span class="head" style="display:block;">One shared intake record</span>
+      <span class="body" style="display:block;margin-top:8px;">Consent-based tracking lets partners follow up without re-interviewing families.</span>
+    </span>
+    <span style="display:block;border-left:3px solid #1B7A4F;padding:4px 0 4px 24px;margin-top:24px;">
+      <span class="head" style="display:block;">Weekly cost discipline</span>
+      <span class="body" style="display:block;margin-top:8px;">Route cost per child is reviewed every Monday against a $9.40 target.</span>
+    </span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1000px;width:1100px;height:34px;z-index:10;display:flex;align-items:center;"><span class="cap">Harvest Bridge · Case for Support 2026</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1700px;top:1000px;width:100px;height:34px;z-index:10;display:flex;align-items:center;justify-content:flex-end;"><span class="cap">05</span></div>
+
+</div>
+</body>
+</html>

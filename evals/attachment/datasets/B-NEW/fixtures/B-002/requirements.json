@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "把附件完整整理成8页项目申报指南PPT，供第一次申报的高校团队使用。只使用附件内容，所有未填写的模板字段都必须明确标记为“附件未提供”。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "首次申报的高校项目团队",
+        "description": "首次申报的高校项目团队"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "解释申报流程与材料要求",
+        "description": "解释申报流程与材料要求"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "团队能按时、完整且不虚构信息地提交材料",
+        "description": "团队能按时、完整且不虚构信息地提交材料"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "清晰、规范、指南型",
+        "description": "清晰、规范、指南型"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "首次申报的高校项目团队",
+      "description": "首次申报的高校项目团队"
+    },
+    "purpose": {
+      "label": "解释申报流程与材料要求",
+      "description": "解释申报流程与材料要求"
+    },
+    "desired_outcome": {
+      "label": "团队能按时、完整且不虚构信息地提交材料",
+      "description": "团队能按时、完整且不虚构信息地提交材料"
+    },
+    "slide_count": 8,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "清晰、规范、指南型",
+      "description": "清晰、规范、指南型"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

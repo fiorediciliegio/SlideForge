@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risks, governance and the ask</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#14181C;}
+  .lbl{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+  .display{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.012em;}
+  .num{font-family:'Archivo',sans-serif;font-weight:600;font-variant-numeric:tabular-nums;}
+  table{border-collapse:collapse;width:100%;}
+  th{font-family:'IBM Plex Mono',monospace;font-size:19px;letter-spacing:.1em;text-transform:uppercase;color:#6E7378;text-align:left;padding:0 14px 11px 14px;border-bottom:2px solid #14181C;font-weight:500;}
+  td{font-size:22px;padding:11px 14px;border-bottom:1px solid #EAE5DA;vertical-align:top;line-height:1.24;}
+  .sev{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:18px;padding:5px 10px;border-radius:2px;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="10 Risks and ask" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;background-image:linear-gradient(to right,rgba(20,24,28,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(20,24,28,.045) 1px,transparent 1px);background-size:80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:60px;width:1200px;z-index:10;font-size:24px;color:#6E7378;"><span style="color:#E08A0F;">10</span> &nbsp;/&nbsp; Risks, governance &amp; the ask</div>
+
+  <div data-object="true" data-object-type="textbox" class="display" style="position:absolute;left:96px;top:100px;width:1600px;z-index:10;font-size:62px;line-height:1.06;">What could go wrong — and what we need from you</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:186px;width:1560px;z-index:10;font-size:30px;line-height:1.35;color:#5C6166;">Adoption, not technology, is the top risk. Every mitigation below has a named owner on the Plant 2 leadership team.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:250px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute;left:96px;top:280px;width:1128px;height:548px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:24px 18px;">
+    <table>
+      <thead>
+        <tr><th style="width:246px;">Risk</th><th style="width:110px;">Severity</th><th>Mitigation</th><th style="width:160px;">Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="font-weight:600;">Operators bypass the routine</td><td><span class="sev" style="background:#F0D6CE;color:#8A2E1B;">High</span></td><td>Line champions co-design the screens; andon response is a daily shift KPI</td><td class="lbl" style="font-size:19px;">Prod. Mgr</td></tr>
+        <tr><td style="font-weight:600;">Legacy press retrofit slips</td><td><span class="sev" style="background:#F3E2CB;color:#8A5209;">Med</span></td><td>16 presses split into 4 batches; first batch in the December shutdown</td><td class="lbl" style="font-size:19px;">Maint. Lead</td></tr>
+        <tr><td style="font-weight:600;">Master data blocks reporting</td><td><span class="sev" style="background:#F0D6CE;color:#8A2E1B;">High</span></td><td>Asset and part cleansing starts 6 weeks before build, with a data steward</td><td class="lbl" style="font-size:19px;">IT / Eng.</td></tr>
+        <tr><td style="font-weight:600;">OT security exposure</td><td><span class="sev" style="background:#F3E2CB;color:#8A5209;">Med</span></td><td>IEC 62443 zoning, one-way data path to IT, quarterly penetration test</td><td class="lbl" style="font-size:19px;">IT Security</td></tr>
+        <tr><td style="font-weight:600;">Benefit not seen in the P&amp;L</td><td><span class="sev" style="background:#F3E2CB;color:#8A5209;">Med</span></td><td>Controller signs each wave's baseline; savings booked into the FY budget</td><td class="lbl" style="font-size:19px;">Controller</td></tr>
+        <tr><td style="font-weight:600;border-bottom:none;">Vendor lock-in on data layer</td><td style="border-bottom:none;"><span class="sev" style="background:#DCE4E7;color:#2A414E;">Low</span></td><td style="border-bottom:none;">Open MQTT namespace and documented schema; data exportable any time</td><td class="lbl" style="font-size:19px;border-bottom:none;">Eng. Mgr</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1256px;top:280px;width:568px;height:262px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:24px 28px;">
+    <div class="lbl" style="font-size:21px;color:#6E7378;">Governance rhythm</div>
+    <div style="font-size:23px;line-height:1.26;margin-top:16px;">
+      <div style="display:flex;gap:16px;padding-bottom:13px;border-bottom:1px solid #EAE5DA;"><span class="lbl" style="font-size:19px;color:#E08A0F;width:106px;flex:none;padding-top:3px;">Daily</span><span>Loss review at shift start, 15 min</span></div>
+      <div style="display:flex;gap:16px;padding:13px 0;border-bottom:1px solid #EAE5DA;"><span class="lbl" style="font-size:19px;color:#E08A0F;width:106px;flex:none;padding-top:3px;">Weekly</span><span>Squad stand-up, blockers escalated</span></div>
+      <div style="display:flex;gap:16px;padding-top:13px;"><span class="lbl" style="font-size:19px;color:#E08A0F;width:106px;flex:none;padding-top:3px;">Monthly</span><span>Steering board: benefit vs. plan</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1256px;top:558px;width:568px;height:270px;z-index:10;background:#37505E;border-radius:2px;padding:24px 28px;">
+    <div class="lbl" style="font-size:21px;color:#C3D0D6;">Resources requested</div>
+    <div style="font-size:23px;line-height:1.26;margin-top:16px;color:#EAEFF1;">
+      <div style="display:flex;gap:16px;padding-bottom:13px;border-bottom:1px solid rgba(255,255,255,.22);"><span class="num" style="font-size:29px;color:#FFFFFF;width:80px;flex:none;">2.0</span><span>FTE plant automation engineers</span></div>
+      <div style="display:flex;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.22);"><span class="num" style="font-size:29px;color:#FFFFFF;width:80px;flex:none;">1.0</span><span>FTE data steward, tapering in Wave 2</span></div>
+      <div style="display:flex;gap:16px;padding-top:13px;"><span class="num" style="font-size:29px;color:#FFFFFF;width:80px;flex:none;">4</span><span>Shutdown windows for retrofit</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:842px;width:1728px;height:156px;z-index:10;background:#14181C;border-left:8px solid #E08A0F;border-radius:2px;padding:22px 34px;">
+    <div style="display:grid;grid-template-columns:490px 1fr 1fr 1fr;gap:34px;align-items:start;">
+      <div>
+        <div class="lbl" style="font-size:21px;color:#E08A0F;">The ask</div>
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:32px;color:#F7F4EE;margin-top:8px;line-height:1.14;">Approve $1.4M for Wave 1 by 3 October</div>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,.22);padding-left:34px;"><div class="lbl" style="font-size:20px;color:#8E979D;">Next 2 weeks</div><div style="font-size:24px;color:#DCD8D0;margin-top:9px;line-height:1.28;">Confirm gate criteria; freeze the Wave 1 machine list</div></div>
+      <div style="border-left:1px solid rgba(255,255,255,.22);padding-left:34px;"><div class="lbl" style="font-size:20px;color:#8E979D;">By 3 October</div><div style="font-size:24px;color:#DCD8D0;margin-top:9px;line-height:1.28;">Capital release signed; gateway and retrofit hardware ordered</div></div>
+      <div style="border-left:1px solid rgba(255,255,255,.22);padding-left:34px;"><div class="lbl" style="font-size:20px;color:#8E979D;">December shutdown</div><div style="font-size:24px;color:#DCD8D0;margin-top:9px;line-height:1.28;">First press batch retrofitted; live OEE on lines 1 and 3</div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1012px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:1032px;width:1200px;z-index:10;font-size:24px;color:#8A857A;">Northline Works · Plant 2 · Digitalization proposal</div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1600px;top:1032px;width:224px;z-index:10;font-size:24px;color:#8A857A;text-align:right;">10 / 10</div>
+
+</div>
+</body>
+</html>

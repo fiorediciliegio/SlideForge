@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unexpected Moments — Retro Road Trip Photo Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RETRO ROAD TRIP PHOTO JOURNAL — shared analog design system
+   One film stock, one paper, one caption logic, all 10 slides.
+   ============================================================ */
+
+*{box-sizing:border-box;}
+
+:root{
+  --cream:#EFE3CA;
+  --paper:#E7D8B9;
+  --paper-2:#DFCDA9;
+  --ink:#241C14;
+  --ink-80:rgba(36,28,20,.84);
+  --ink-65:rgba(36,28,20,.66);
+  --ink-45:rgba(36,28,20,.46);
+  --brown:#4B3626;
+  --orange:#C2551D;
+  --red:#7C2416;
+  --teal:#2C5B58;
+  --dark:#1B1610;
+  --lt:#F2E8D2;
+  --lt-80:rgba(242,232,210,.84);
+  --lt-60:rgba(242,232,210,.62);
+}
+
+body{margin:0;padding:0;overflow:hidden;background:var(--dark);}
+
+/* ---------- film grain + vignette, identical on every slide ---------- */
+.slide::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:78;
+  background:radial-gradient(120% 90% at 50% 45%,rgba(0,0,0,0) 48%,rgba(24,18,12,.30) 100%);
+}
+.slide::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:79;
+  opacity:.085;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:220px 220px;
+}
+
+/* ---------- paper ---------- */
+.paper-bg{
+  background-color:var(--cream);
+  background-image:
+    repeating-linear-gradient(94deg,rgba(120,86,48,.028) 0 2px,rgba(0,0,0,0) 2px 7px),
+    repeating-linear-gradient(2deg,rgba(120,86,48,.022) 0 1px,rgba(0,0,0,0) 1px 6px),
+    radial-gradient(70% 60% at 22% 18%,rgba(255,250,236,.55),rgba(0,0,0,0) 70%);
+}
+.dark-bg{
+  background-color:var(--dark);
+  background-image:
+    radial-gradient(80% 70% at 78% 12%,rgba(124,36,22,.30),rgba(0,0,0,0) 66%),
+    radial-gradient(60% 60% at 8% 92%,rgba(44,91,88,.26),rgba(0,0,0,0) 70%);
+}
+
+/* ---------- one film stock for every photograph ---------- */
+.ph{filter:sepia(.24) saturate(.84) contrast(1.055) brightness(1.02);}
+
+/* ---------- film frame (printed edge) ---------- */
+.fr{background:#F4EBD7;padding:12px;box-shadow:0 12px 30px rgba(20,14,8,.34);position:relative;}
+.fr>img{display:block;width:100%;height:100%;object-fit:cover;}
+.fr.dk{background:#15110C;box-shadow:0 12px 30px rgba(0,0,0,.5);}
+.fr.strip{padding:10px 10px 34px;}
+.fr.strip .sn{
+  position:absolute;left:12px;right:12px;bottom:7px;
+  font:700 19px/1 'Courier Prime',monospace;letter-spacing:.11em;
+  color:var(--ink-65);display:flex;justify-content:space-between;
+}
+.fr.strip.dk .sn{color:var(--lt-60);}
+
+/* ---------- typography ---------- */
+.kick{font:700 22px/1 'Courier Prime',monospace;letter-spacing:.30em;color:var(--orange);text-transform:uppercase;display:block;}
+.ttl{font:400 76px/.95 'Alfa Slab One',serif;color:var(--ink);margin:0;letter-spacing:-.008em;text-wrap:pretty;}
+.sub{font:600 30px/1.35 'Spectral',serif;color:var(--red);margin:0;}
+.lead{font:400 29px/1.55 'Spectral',serif;color:var(--ink-80);margin:0;}
+.bd{font:400 25px/1.6 'Spectral',serif;color:var(--ink-80);margin:0;}
+.cap{font:400 24px/1.34 'Spectral',serif;color:var(--ink-65);margin:0;}
+.stamp{font:700 21px/1.2 'Courier Prime',monospace;letter-spacing:.15em;color:var(--red);text-transform:uppercase;}
+.hand{font:600 32px/1.25 'Caveat',cursive;color:var(--teal);margin:0;}
+.foot{font:400 20px/1 'Courier Prime',monospace;letter-spacing:.17em;color:var(--ink-45);text-transform:uppercase;display:block;}
+
+/* light-on-dark variants */
+.lt-ttl{color:var(--lt);}
+.lt-lead{color:var(--lt-80);}
+.lt-bd{color:var(--lt-80);}
+.lt-cap{color:var(--lt-60);}
+.lt-foot{color:rgba(242,232,210,.55);}
+.lt-kick{color:#E4883F;}
+.lt-hand{color:#7FB2AC;}
+
+/* ---------- marks ---------- */
+.rule{background:var(--orange);height:5px;}
+.rule-th{background:var(--ink);height:2px;opacity:.28;}
+.tag{
+  display:inline-block;padding:7px 15px 6px;
+  font:700 20px/1 'Courier Prime',monospace;letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.tag-red{background:var(--red);color:var(--cream);}
+.tag-teal{background:var(--teal);color:var(--cream);}
+.tag-out{border:2px solid var(--ink-45);color:var(--ink-65);}
+
+/* note / ephemera card */
+.note{
+  background:#F3E9D2;border:1px solid rgba(75,54,38,.30);
+  box-shadow:0 10px 24px rgba(20,14,8,.26);
+}
+.note-teal{background:#E4E8DF;border:1px solid rgba(44,91,88,.35);}
+
+ul.tick{margin:0;padding:0;list-style:none;}
+ul.tick li{
+  position:relative;padding-left:34px;margin-bottom:16px;
+  font:400 25px/1.5 'Spectral',serif;color:var(--ink-80);
+}
+ul.tick li:last-child{margin-bottom:0;}
+ul.tick li::before{
+  content:'';position:absolute;left:0;top:13px;width:18px;height:3px;background:var(--orange);
+}
+ul.tick.lt li{color:var(--lt-80);}
+ul.tick.lt li::before{background:#E4883F;}
+</style>
+</head>
+<body>
+<div class="slide dark-bg" data-screen-label="08 Unexpected Moments" style="position:relative;width:1920px;height:1080px;overflow:hidden;">
+
+  <img data-object="true" data-object-type="image" class="ph" src="../assets/hero-storm-detour.jpg" alt="Desert thunderstorm sweeping across flat red-dirt country with one shaft of sunlight" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;z-index:5;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(16,12,8,.82) 0%,rgba(16,12,8,.26) 32%,rgba(16,12,8,.34) 48%,rgba(14,10,7,.93) 100%);z-index:6;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:78px;width:1140px;padding-bottom:20px;z-index:10;">
+    <span class="kick lt-kick" style="margin-bottom:14px;">Day 06 &middot; 15:20 &middot; Mile 704</span>
+    <h1 class="ttl lt-ttl" style="font-size:70px;line-height:1.02;">The Detour Was<br>the Whole Trip</h1>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:98px;top:320px;width:172px;height:5px;background:#C2551D;z-index:10;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:358px;width:700px;z-index:10;">
+    <p class="lead lt-lead" style="font-size:27px;">A wall of rain closed the pass an hour ahead of us. We turned onto an unpaved county road with no sign and no plan, and lost two hours we would not trade back.</p>
+  </div>
+
+  <div data-object="true" data-object-type="image" class="fr strip dk" style="position:absolute;left:96px;top:606px;width:544px;height:330px;z-index:5;">
+    <img class="ph" src="../assets/wall-windmill.jpg" alt="Windmills silhouetted against a burnt-orange afterglow sky over open plains" style="width:524px;height:286px;object-position:50% 34%;">
+    <span class="sn"><span>Sky went orange after the rain</span><span>088</span></span>
+  </div>
+
+  <div data-object="true" data-object-type="image" class="fr strip dk" style="position:absolute;left:670px;top:606px;width:288px;height:330px;z-index:5;">
+    <img class="ph" src="../assets/odd-mailbox.jpg" alt="Weathered rural mailbox leaning on a wooden post" style="width:268px;height:286px;object-position:50% 40%;">
+    <span class="sn"><span>Mile 704</span><span>091</span></span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1010px;top:606px;width:400px;z-index:10;">
+    <span class="tag tag-red" style="margin-bottom:20px;">Went Wrong, Went Right</span>
+    <ul class="tick lt" style="margin-top:20px;">
+      <li>Pass closed at [Canyon Station] &mdash; 62 miles added</li>
+      <li>Spare tire used on Day 06, never replaced</li>
+      <li>Slept in the car once, badly, and laughed about it</li>
+    </ul>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1462px;top:606px;width:362px;z-index:10;">
+    <div class="note" style="padding:28px 28px 26px;">
+      <span class="foot" style="margin-bottom:14px;">Unplanned Total</span>
+      <span style="font:700 62px/1 'Courier Prime',monospace;color:#7C2416;display:block;margin-bottom:8px;">+118</span>
+      <span class="cap" style="font-size:22px;display:block;margin-bottom:20px;">miles we never meant to drive</span>
+      <div class="rule-th" style="margin:0 0 18px;"></div>
+      <p class="cap" style="font-size:22px;">Best light of the trip came out of that storm, ten minutes after it passed.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:966px;width:862px;z-index:10;">
+    <p class="hand lt-hand" style="font-size:31px;">Storm took the pass. Gave us the back road instead.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1690px;top:1020px;width:120px;text-align:right;z-index:10;">
+    <span class="foot lt-foot">08 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

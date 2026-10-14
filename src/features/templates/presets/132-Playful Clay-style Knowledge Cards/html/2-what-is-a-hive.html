@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>What a hive is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Clay Knowledge Cards — shared visual identity
+   Appearance only (surfaces, texture, typography). All layout/position is
+   authored inline on each data-object so the editor keeps its coordinates.
+   Lighting: single soft light from the upper-left on every object.
+   ========================================================================== */
+
+:root{
+  --cream:#FDF6E9;
+  --cream-2:#F8EEDC;
+
+  --mint:#9DDCBF;   --mint-d:#6BC29E;  --mint-l:#C6EFDC;
+  --orange:#F3A263; --orange-d:#DD8340; --orange-l:#FBC998;
+  --lav:#C5B7EB;    --lav-d:#A492DA;   --lav-l:#DFD6F7;
+  --butter:#FAD86C; --butter-d:#EBBF3F; --butter-l:#FDEDB2;
+  --blue:#A4D2F1;   --blue-d:#79B7E2;  --blue-l:#CEE8FA;
+
+  --ink:#4A3728;
+  --ink-soft:#7C6753;
+  --ink-faint:#9C8974;
+  --white:#FFFDF7;
+}
+
+/* --- clay surfaces: soft matte volume, never glossy ---------------------- */
+.clay{
+  box-shadow:
+    inset 10px 12px 18px rgba(255,255,255,.55),
+    inset -10px -13px 20px rgba(124,86,46,.16),
+    0 22px 30px -16px rgba(124,90,50,.34);
+}
+.clay-s{
+  box-shadow:
+    inset 6px 7px 11px rgba(255,255,255,.58),
+    inset -6px -8px 13px rgba(124,86,46,.16),
+    0 13px 20px -11px rgba(124,90,50,.32);
+}
+.clay-in{
+  box-shadow:
+    inset 7px 9px 16px rgba(124,86,46,.20),
+    inset -6px -7px 12px rgba(255,255,255,.55);
+}
+
+/* protected text area: a clean, style-consistent plate under copy */
+.plate{
+  background:rgba(255,253,247,.95);
+  box-shadow:
+    inset 5px 6px 10px rgba(255,255,255,.75),
+    inset -5px -6px 11px rgba(140,105,65,.10),
+    0 16px 26px -18px rgba(124,90,50,.30);
+}
+
+/* subtle handmade matte grain — extremely low contrast */
+.grain{
+  background-image:radial-gradient(rgba(124,86,46,.055) 1px, transparent 1.7px);
+  background-size:7px 7px;
+}
+
+/* --- typography: rounded, friendly, highly legible ---------------------- */
+.t-h{
+  font-family:'Baloo 2','Trebuchet MS',sans-serif;
+  font-weight:800; color:var(--ink); margin:0; letter-spacing:-.4px;
+  text-wrap:pretty;
+}
+.t-b{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:600; color:var(--ink-soft); margin:0; text-wrap:pretty;
+}
+.t-k{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:800; color:var(--ink-faint); margin:0;
+  letter-spacing:3.4px; text-transform:uppercase;
+}
+.src{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:700; color:var(--ink-faint); margin:0;
+}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<div class="slide grain" data-screen-label="02 Topic Introduction" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FDF6E9;">
+
+  <!-- kicker -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:74px;width:640px;z-index:10;">
+    <p class="t-k" style="font-size:21px;">Card 02 &nbsp;·&nbsp; What it is</p>
+  </div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:118px;width:640px;z-index:10;">
+    <p class="t-h" style="font-size:58px;line-height:1.1;">A hive is one animal made of many bees</p>
+  </div>
+
+  <!-- definition -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:376px;width:600px;z-index:10;">
+    <p class="t-b" style="font-size:30px;line-height:1.5;">A honeybee colony is called a <strong style="color:#4A3728;">superorganism</strong>: thousands of bees behaving like the cells of a single body. Every bee is born into one of three jobs.</p>
+  </div>
+
+  <!-- the big question: protected plate -->
+  <div data-object="true" data-object-type="shape" class="plate" style="position:absolute;left:110px;top:626px;width:640px;height:238px;border-radius:36px;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" class="clay-s" style="position:absolute;left:146px;top:662px;width:20px;height:20px;border-radius:50%;background:#F3A263;z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:182px;top:654px;width:534px;z-index:10;">
+    <p class="t-k" style="font-size:19px;">The question these cards answer</p>
+    <p class="t-h" style="font-size:34px;line-height:1.26;margin-top:14px;">If no bee is in charge, how does a hive stay warm, fed and organised?</p>
+  </div>
+
+  <!-- HERO: honeycomb disc (central topic object) -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:1080px;top:170px;width:480px;height:480px;border-radius:50%;background:#9DDCBF;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:1123px;top:301px;width:314px;height:218px;z-index:5;">
+    <div class="clay-s" style="position:absolute;left:95px;top:0px;width:124px;height:108px;background:#FAD86C;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+    <div class="clay-s" style="position:absolute;left:0px;top:55px;width:124px;height:108px;background:#F3A263;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+    <div class="clay-s" style="position:absolute;left:190px;top:55px;width:124px;height:108px;background:#F3A263;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+    <div class="clay-s" style="position:absolute;left:95px;top:110px;width:124px;height:108px;background:#FDEDB2;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+    <div class="clay-s" style="position:absolute;left:0px;top:-55px;width:124px;height:108px;background:#FBC998;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+    <div class="clay-s" style="position:absolute;left:190px;top:-55px;width:124px;height:108px;background:#FDEDB2;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+    <div class="clay-s" style="position:absolute;left:95px;top:165px;width:124px;height:108px;background:#FAD86C;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1120px;top:576px;width:400px;z-index:10;">
+    <p class="t-h" style="font-size:26px;text-align:center;">ONE COLONY</p>
+  </div>
+
+  <!-- dot trails (behind pods) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1035px;top:295px;width:60px;height:30px;z-index:1;">
+    <div style="position:absolute;left:47px;top:18px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+    <div style="position:absolute;left:23px;top:9px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+    <div style="position:absolute;left:0px;top:0px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1552px;top:490px;width:62px;height:32px;z-index:1;">
+    <div style="position:absolute;left:0px;top:0px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+    <div style="position:absolute;left:24px;top:9px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+    <div style="position:absolute;left:48px;top:19px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1062px;top:620px;width:58px;height:58px;z-index:1;">
+    <div style="position:absolute;left:45px;top:0px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+    <div style="position:absolute;left:23px;top:22px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+    <div style="position:absolute;left:0px;top:44px;width:13px;height:13px;border-radius:50%;background:#DFD6F7;"></div>
+  </div>
+
+  <!-- QUEEN pod -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:826px;top:166px;width:168px;height:168px;border-radius:50%;background:#C5B7EB;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:836px;top:222px;width:148px;z-index:10;">
+    <p class="t-h" style="font-size:54px;text-align:center;line-height:56px;">1</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:780px;top:352px;width:260px;z-index:10;">
+    <p class="t-h" style="font-size:25px;text-align:center;">QUEEN</p>
+    <p class="t-b" style="font-size:22px;line-height:1.36;text-align:center;margin-top:6px;">Lays the eggs &mdash; up to about 2,000 a day</p>
+  </div>
+
+  <!-- WORKERS pod -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:1646px;top:476px;width:168px;height:168px;border-radius:50%;background:#FAD86C;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1656px;top:534px;width:148px;z-index:10;">
+    <p class="t-h" style="font-size:44px;text-align:center;line-height:52px;">60k</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1600px;top:662px;width:260px;z-index:10;">
+    <p class="t-h" style="font-size:25px;text-align:center;">WORKERS</p>
+    <p class="t-b" style="font-size:22px;line-height:1.36;text-align:center;margin-top:6px;">Females who build, clean, feed, guard and forage</p>
+  </div>
+
+  <!-- DRONES pod -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:952px;top:688px;width:168px;height:168px;border-radius:50%;background:#A4D2F1;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:962px;top:748px;width:148px;z-index:10;">
+    <p class="t-h" style="font-size:40px;text-align:center;line-height:48px;">100s</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1152px;top:706px;width:300px;z-index:10;">
+    <p class="t-h" style="font-size:25px;">DRONES</p>
+    <p class="t-b" style="font-size:22px;line-height:1.36;margin-top:6px;">Males with no sting; they mate with a queen</p>
+  </div>
+
+  <!-- chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:972px;width:700px;z-index:10;">
+    <p class="t-k" style="font-size:20px;letter-spacing:2.6px;">Inside the Beehive &nbsp;·&nbsp; Clay Knowledge Cards</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:900px;top:974px;width:800px;z-index:10;">
+    <p class="src" style="font-size:18px;text-align:right;">Sources: University of Delaware MAAREC; Penn State Extension; Dadant</p>
+  </div>
+  <div data-object="true" data-object-type="shape" class="clay-s" style="position:absolute;left:1746px;top:948px;width:70px;height:70px;border-radius:50%;background:#9DDCBF;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1754px;top:966px;width:54px;z-index:10;">
+    <p class="t-h" style="font-size:28px;text-align:center;line-height:34px;">02</p>
+  </div>
+
+</div>
+</body>
+</html>

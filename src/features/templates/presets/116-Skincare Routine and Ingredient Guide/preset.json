@@ -1,0 +1,103 @@
+{
+  "id": "116-Skincare Routine and Ingredient Guide",
+  "version": 1,
+  "ppt_number": 116,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "ivory",
+    "blush",
+    "burgundy",
+    "beige"
+  ],
+  "name": "Skincare Routine and Ingredient Guide",
+  "description": "Minimal skincare guide with soft neutrals, refined serif type, gentle photography, and elegant timelines.",
+  "user": "Creative & Personal",
+  "use_case": "Education & Training",
+  "industry": "Healthcare & Wellness",
+  "recommendation_profile": {"use_cases":["health-education"],"industries":["healthcare"],"audiences":["patient"],"formats":["guide"],"primary_styles":["minimal"],"visual_traits":["minimal","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "象牙白封面左右分栏，左侧细衬线标题与大面积留白，右侧柔光产品摄影营造高级感。"
+    },
+    {
+      "path": "images/2-skin-types.webp",
+      "alt": "左侧肌肤照片卡配右侧四块粉米色分类卡，细线标题保持轻盈编辑层级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-ingredients.webp",
+      "alt": "左侧静物摄影与右侧双栏成分清单并列，酒红编号和细衬线文字精致克制，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-routines.webp",
+      "alt": "大面积留白下方并排两张晨间与夜间卡，深酒红反白区形成明暗对照，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/5-situations.webp",
+      "alt": "四张渐深粉米色情境卡横向排列，罗马数字、细衬线标题和大面积留白形成柔和节奏。"
+    },
+    {
+      "path": "images/6-pairing-matrix.webp",
+      "alt": "中央大型配伍矩阵配右侧三张注释卡，酒红重点卡突出使用原则，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/7-weekly-rhythm.webp",
+      "alt": "环形指标和横向周计划带位于上方，下方七段色块呈现规律节奏，整体数据层级清晰有序。"
+    },
+    {
+      "path": "images/8-layering-order.webp",
+      "alt": "极简横向步骤轴贯穿页面，酒红细线连接清洁到防晒的层叠顺序，形成连续清楚的阅读动线。"
+    },
+    {
+      "path": "images/9-first-twelve-weeks.webp",
+      "alt": "四张月份卡沿细线时间轴交错排布，浅粉到酒红渐变暗示阶段变化，阅读路径清晰而有节奏。"
+    },
+    {
+      "path": "images/10-summary.webp",
+      "alt": "中央大号总结标题配四条编号原则，大面积留白形成优雅克制的结束页，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，象牙白封面左右分栏，左侧细衬线标题与大面积留白，右侧柔光产品摄影营造高级感，强调色进一步突出重心。"
+    },
+    {
+      "path": "html/2-skin-types.html",
+      "description": "左侧肌肤照片卡配右侧四块粉米色分类卡，细线标题保持轻盈编辑层级，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/3-ingredients.html",
+      "description": "左侧静物摄影与右侧双栏成分清单并列，酒红编号和细衬线文字精致克制，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/4-routines.html",
+      "description": "大面积留白下方并排两张晨间与夜间卡，深酒红反白区形成明暗对照，统一卡片间距、细线边框和强调色进一步建立清晰阅读层级。"
+    },
+    {
+      "path": "html/5-situations.html",
+      "description": "象牙白页面下半部横排四张粉米色情境卡，罗马数字和细衬线标题建立顺序，渐深色块与宽阔留白保持轻盈编辑感。"
+    },
+    {
+      "path": "html/6-pairing-matrix.html",
+      "description": "中央大型配伍矩阵配右侧三张注释卡，酒红重点卡突出使用原则，规则间距、数字高亮与底部注释进一步建立清晰的数据节奏。"
+    },
+    {
+      "path": "html/7-weekly-rhythm.html",
+      "description": "象牙白画布上，环形指标和横向周计划带位于上方，下方七段色块呈现规律节奏，页眉编号与底部注释进一步补足版面结构。"
+    },
+    {
+      "path": "html/8-layering-order.html",
+      "description": "极简横向步骤轴贯穿页面，酒红细线连接清洁到防晒的层叠顺序，统一间距、方向标记和底部注释进一步强化顺序与空间层级。"
+    },
+    {
+      "path": "html/9-first-twelve-weeks.html",
+      "description": "四张月份卡沿细线时间轴交错排布，浅粉到酒红渐变暗示阶段变化，细线连接、彩色节点与留白共同维持清晰的流程节奏。"
+    },
+    {
+      "path": "html/10-summary.html",
+      "description": "中央大号总结标题配四条编号原则，大面积留白形成优雅克制的结束页，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

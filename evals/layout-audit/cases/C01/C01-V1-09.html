@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Grid Layout for Content Area */
+  .grid-container { display: grid; grid-template-columns: 690px 1px 924px; gap: 56px; height: 100%; align-items: stretch; }
+  .col-left { display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding-right: 20px; box-sizing: border-box; }
+  .col-divider { width: 1px; background-color: var(--border); height: 100%; }
+  .col-right { display: flex; flex-direction: column; gap: 24px; height: 100%; box-sizing: border-box; }
+
+  /* List Row Styling */
+  .rowwrap { display: grid; grid-template-columns: 56px 1fr 172px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding-top: 20px; }
+  .rowno { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; color: var(--primary); letter-spacing: .04em; }
+  .rowh { font-size: 22px; font-weight: 600; line-height: 1.2; color: var(--dark); margin: 0; }
+  .rowp { font-size: 18px; line-height: 1.5; color: var(--muted); margin-top: 8px; margin-bottom: 0; }
+  .meterlab { font-size: 14px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; text-align: right; margin-top: 0; }
+  .seg { display: flex; gap: 5px; justify-content: flex-end; }
+  .seg i { display: block; width: 22px; height: 6px; background: var(--border); }
+  .seg i.on { background: var(--primary); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  <div class="content-area">
+    <div class="grid-container">
+      <!-- Left Column: Core Challenge & Urgency -->
+      <div class="col-left">
+        <div>
+          <div style="width: 72px; height: 6px; background: var(--primary); margin-bottom: 32px;"></div>
+          <p class="ar" style="font-weight: 600; font-size: 32px; line-height: 1.4; color: var(--primary); margin: 0 0 24px 0;">
+            核心挑战：
+          </p>
+          <div style="background: var(--bg-card); border: 1px dashed var(--light); padding: 24px; border-radius: 4px;">
+            <p style="font-size: 20px; line-height: 1.6; color: var(--muted); margin: 0;">
+              附件未提供具体的环境或社会问题描述。<br>
+              <span style="color: var(--primary); font-weight: 600;">[ 待补充：请在此填入您项目所针对的具体可持续发展痛点 ]</span>
+            </p>
+          </div>
+        </div>
+        <div style="margin-top: auto; padding-bottom: 20px;">
+          <h3 style="font-size: 24px; font-weight: 600; color: var(--dark); margin: 0 0 12px 0;">解决该问题的紧迫性</h3>
+          <p style="font-size: 20px; line-height: 1.6; color: var(--muted); margin: 0;">
+            随着全球气候与环境挑战加剧，延误应对将导致更为严重的生态与社会影响。本方案致力于通过科技创新，直接贡献于可持续发展目标（SDGs），填补现有技术方案的空白。
+          </p>
+        </div>
+      </div>
+
+      <!-- Vertical Divider -->
+      <div class="col-divider"></div>
+
+      <!-- Right Column: Limitations of Existing Solutions -->
+      <div class="col-right">
+        <div>
+          <h2 style="font-size: 28px; font-weight: 600; color: var(--dark); margin: 0 0 8px 0;">现有解决方案的局限性分析</h2>
+          <p style="font-size: 18px; color: var(--light); margin: 0 0 12px 0;">评估维度：效率瓶颈、可扩展性与技术融合度</p>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="rowwrap">
+          <div class="rowno">01</div>
+          <div>
+            <h3 class="rowh">效率瓶颈 (Efficiency Bottleneck)</h3>
+            <p class="rowp">传统应对方案高度依赖人工介入与碎片化系统，数据流传缓慢，无法实现实时的环境痛点响应与闭环处理。</p>
+          </div>
+          <div>
+            <p class="meterlab">严重程度</p>
+            <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="rowwrap">
+          <div class="rowno">02</div>
+          <div>
+            <h3 class="rowh">可扩展性受限 (Scalability Constraints)</h3>
+            <p class="rowp">现有本地化或定制化方案缺乏标准化的云端架构支持，难以在不同区域、不同规模的场景中快速复制与弹性扩展。</p>
+          </div>
+          <div>
+            <p class="meterlab">严重程度</p>
+            <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="rowwrap">
+          <div class="rowno">03</div>
+          <div>
+            <h3 class="rowh">技术融合度低 (Low Integration)</h3>
+            <p class="rowp">多数方案未能深度融合生成式 AI 与可信治理能力，导致数据可信度存疑，决策缺乏前瞻性与智能化支撑。</p>
+          </div>
+          <div>
+            <p class="meterlab">严重程度</p>
+            <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

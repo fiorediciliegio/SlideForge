@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Flavour Family Tree</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="12 Flavour Architecture" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#1F3A93;">
+
+  <!-- Masthead -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:56px; background:#E63946; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:18px; width:1300px; z-index:11;">
+    <div class="mono" style="color:#FBF6EC; font-size:14px; letter-spacing:0.28em; font-weight:700;">12 / THE STRUCTURE · HOW THE WHOLE CITY FITS TOGETHER</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:18px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#F5C518; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 12</div>
+  </div>
+
+  <!-- Chapter -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:88px; width:900px; z-index:11;">
+    <div class="mono" style="font-size:16px; letter-spacing:0.28em; color:#F5C518; font-weight:700;">— LAST CHAPTER · THE BIG PICTURE</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:118px; width:1150px; z-index:11;">
+    <div class="serif" style="font-size:74px; line-height:1.12; color:#FBF6EC;">The <span style="color:#F5C518; font-style:italic;">Flavour</span> Family Tree.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:114px; width:580px; z-index:11;">
+    <div class="serif" style="font-size:22px; line-height:1.35; color:#FBF6EC; font-style:italic;">Three families, eight plates, one city. Everything in this issue hangs off the tree below.</div>
+  </div>
+
+  <!-- ===== CONNECTOR LINES ===== -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:4; pointer-events:none;" viewBox="0 0 1920 1080">
+    <!-- root down to bus -->
+    <path d="M 960 352 L 960 408" stroke="#FBF6EC" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- horizontal bus -->
+    <path d="M 380 408 L 1540 408" stroke="#FBF6EC" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- bus down into each branch -->
+    <path d="M 380 408 L 380 468" stroke="#FBF6EC" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 960 408 L 960 468" stroke="#FBF6EC" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 1540 408 L 1540 468" stroke="#FBF6EC" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- BRANCH 1 rail + ticks -->
+    <path d="M 220 578 L 220 762" stroke="#F5C518" stroke-width="3" fill="none" stroke-dasharray="8 7"/>
+    <path d="M 220 668 L 260 668" stroke="#F5C518" stroke-width="3" fill="none"/>
+    <path d="M 220 762 L 260 762" stroke="#F5C518" stroke-width="3" fill="none"/>
+
+    <!-- BRANCH 2 rail + ticks -->
+    <path d="M 800 578 L 800 856" stroke="#E63946" stroke-width="3" fill="none" stroke-dasharray="8 7"/>
+    <path d="M 800 668 L 840 668" stroke="#E63946" stroke-width="3" fill="none"/>
+    <path d="M 800 762 L 840 762" stroke="#E63946" stroke-width="3" fill="none"/>
+    <path d="M 800 856 L 840 856" stroke="#E63946" stroke-width="3" fill="none"/>
+
+    <!-- BRANCH 3 rail + ticks -->
+    <path d="M 1380 578 L 1380 762" stroke="#FBF6EC" stroke-width="3" fill="none" stroke-dasharray="8 7"/>
+    <path d="M 1380 668 L 1420 668" stroke="#FBF6EC" stroke-width="3" fill="none"/>
+    <path d="M 1380 762 L 1420 762" stroke="#FBF6EC" stroke-width="3" fill="none"/>
+  </svg>
+
+  <!-- ===== ROOT NODE ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:242px; width:400px; z-index:10;">
+    <div style="background:#F5C518; border:4px solid #1A1A1A; padding:18px 24px; text-align:center; box-shadow:0 8px 0 #1A1A1A;">
+      <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700;">THE WHOLE ROUTE</div>
+      <div class="serif" style="font-size:38px; line-height:1.05; color:#1A1A1A; margin-top:4px;">The City's Plate</div>
+    </div>
+  </div>
+
+  <!-- ===== BRANCH NODES ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:180px; top:468px; width:400px; z-index:10;">
+    <div style="background:#FBF6EC; border:4px solid #1A1A1A; padding:14px 22px; box-shadow:0 6px 0 #1A1A1A;">
+      <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#6B7A3A; font-weight:700;">FAMILY 01 · 07:00 – 11:00</div>
+      <div class="serif" style="font-size:34px; line-height:1.05; color:#1A1A1A; margin-top:4px;">Morning</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:468px; width:400px; z-index:10;">
+    <div style="background:#E63946; border:4px solid #1A1A1A; padding:14px 22px; box-shadow:0 6px 0 #1A1A1A;">
+      <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#F5C518; font-weight:700;">FAMILY 02 · 12:00 – 22:00</div>
+      <div class="serif" style="font-size:34px; line-height:1.05; color:#FBF6EC; margin-top:4px;">Street &amp; Table</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:468px; width:400px; z-index:10;">
+    <div style="background:#6B7A3A; border:4px solid #1A1A1A; padding:14px 22px; box-shadow:0 6px 0 #1A1A1A;">
+      <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#F5C518; font-weight:700;">FAMILY 03 · 21:00 – 02:00</div>
+      <div class="serif" style="font-size:34px; line-height:1.05; color:#FBF6EC; margin-top:4px;">After Dark</div>
+    </div>
+  </div>
+
+  <!-- ===== LEAF NODES · FAMILY 1 ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:260px; top:634px; width:340px; z-index:10;">
+    <div style="background:rgba(251,246,236,0.12); border-left:6px solid #F5C518; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#FBF6EC;">Butter croissant</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#F5C518; margin-top:4px;">SUNRISE CAFÉ · $</div>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:260px; top:728px; width:340px; z-index:10;">
+    <div style="background:rgba(251,246,236,0.12); border-left:6px solid #F5C518; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#FBF6EC;">Flat white ×2</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#F5C518; margin-top:4px;">ESPRESSO BAR · $</div>
+    </div>
+  </div>
+
+  <!-- ===== LEAF NODES · FAMILY 2 ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:840px; top:634px; width:340px; z-index:10;">
+    <div style="background:rgba(251,246,236,0.12); border-left:6px solid #E63946; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#FBF6EC;">Al pastor tacos</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#F5C518; margin-top:4px;">TACO ALLEY · $</div>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:840px; top:728px; width:340px; z-index:10;">
+    <div style="background:rgba(251,246,236,0.12); border-left:6px solid #E63946; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#FBF6EC;">Market grazing</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#F5C518; margin-top:4px;">OLD MARKET HALL · $$</div>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:840px; top:822px; width:340px; z-index:10;">
+    <div style="background:#F5C518; border-left:6px solid #1A1A1A; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#1A1A1A;">Amatriciana pasta</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#C1272D; margin-top:4px; font-weight:700;">TRATTORIA ROSA · $$$ · TOP PICK</div>
+    </div>
+  </div>
+
+  <!-- ===== LEAF NODES · FAMILY 3 ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1420px; top:634px; width:340px; z-index:10;">
+    <div style="background:rgba(251,246,236,0.12); border-left:6px solid #FBF6EC; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#FBF6EC;">Pistachio gelato</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#F5C518; margin-top:4px;">GELATO ROSSA · $$</div>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1420px; top:728px; width:340px; z-index:10;">
+    <div style="background:rgba(251,246,236,0.12); border-left:6px solid #FBF6EC; padding:12px 18px;">
+      <div class="serif" style="font-size:25px; line-height:1.1; color:#FBF6EC;">Tonkotsu ramen</div>
+      <div class="mono" style="font-size:11px; letter-spacing:0.2em; color:#F5C518; margin-top:4px;">NEON NOODLE · $$</div>
+    </div>
+  </div>
+
+  <!-- Hand annotation -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1420px; top:830px; width:400px; z-index:11;">
+    <div class="hand" style="font-size:32px; color:#F5C518; line-height:1.15;">start at the top,<br>end at the bottom right</div>
+  </div>
+
+  <!-- ===== SIGN-OFF ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:952px; width:1800px; height:3px; background:#FBF6EC; z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:976px; width:1100px; z-index:11;">
+    <div class="serif" style="font-size:40px; line-height:1.1; color:#FBF6EC;">Eight plates. One map. <span style="color:#F5C518; font-style:italic;">Go get hungry.</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:996px; width:560px; z-index:11; text-align:right;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.26em; color:#FBF6EC; font-weight:700;">END OF ISSUE Nº 07 · APPETITE MAGAZINE</div>
+  </div>
+
+</div>
+</body>
+</html>

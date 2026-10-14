@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q4 2026 Strategic Business Plan</title>
+<style>
+:root {
+  --theme-bg: #071A33;
+  --theme-surface: #0B2547;
+  --theme-ink: #E8EEF6;
+  --theme-muted: #9EB4CE;
+  --theme-accent-primary: #DA1330;
+  --theme-accent-secondary: #16406E;
+  --theme-accent-tertiary: #FF5C72;
+  --theme-line: #27517D;
+
+  --strategy-canvas: var(--theme-bg);
+  --strategy-surface: var(--theme-surface);
+  --strategy-ink: var(--theme-ink);
+  --strategy-muted: var(--theme-muted);
+  --strategy-accent: var(--theme-accent-primary);
+  --strategy-support: var(--theme-accent-secondary);
+  --strategy-highlight: var(--theme-accent-tertiary);
+  --strategy-line: var(--theme-line);
+  --strategy-shadow: rgb(from var(--strategy-ink) r g b / 0.18);
+  --strategy-glow: rgb(from var(--strategy-accent) r g b / 0.22);
+}
+
+  html,body{margin:0;padding:0;overflow:hidden;background:var(--strategy-canvas);}
+  .t-display{font-family:'Archivo',sans-serif;}
+  .t-mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* Frosted-glass numeral: the glyph itself is the glass, not a plate behind it.
+     Fill = diffused milky version of the red field it sits on (what frosted glass
+     actually does to a backdrop), plus a bright edge and a cast shadow for thickness. */
+  .glass-numeral{
+    color:transparent;
+    -webkit-background-clip:text;
+    background-clip:text;
+    background-image:linear-gradient(158deg,
+      rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.96) 0%,
+      rgb(from var(--strategy-ink) calc(r + 23) calc(g - 4) calc(b - 8) / 0.82) 17%,
+      rgb(from var(--strategy-ink) calc(r + 23) calc(g - 52) calc(b - 47) / 0.54) 36%,
+      rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.90) 54%,
+      rgb(from var(--strategy-ink) calc(r + 23) calc(g - 70) calc(b - 62) / 0.46) 73%,
+      rgb(from var(--strategy-ink) calc(r + 23) calc(g - 12) calc(b - 13) / 0.74) 100%);
+    -webkit-text-stroke:2.5px rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.52);
+    filter:
+      drop-shadow(0 1px 0 rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.55))
+      drop-shadow(0 20px 38px rgb(from var(--strategy-canvas) calc(r + 45) calc(g - 23) calc(b - 39) / 0.45));
+  }
+</style>
+<style data-external-template-fonts>
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLySOxK-vA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iAq129k.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iEq129k.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl1FgtIU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgtIU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl9FgtIU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl5FgtIU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--strategy-canvas);">
+
+  <!-- ===== LAYER 1 — BACKGROUND ===== -->
+
+  <!-- base navy field: three-stop diagonal -->
+  <div data-object="true" data-object-type="shape" data-screen-label="01 Cover"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;
+              background:linear-gradient(112deg,rgb(from var(--strategy-canvas) calc(r - 3) calc(g - 10) calc(b - 20)) 0%,var(--strategy-surface) 52%,var(--strategy-support) 100%);"></div>
+
+  <!-- radial lift behind the title block: pulls the eye left, adds depth to flat navy -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;
+              background:radial-gradient(78% 68% at 24% 40%,rgb(from var(--strategy-line) calc(r - 2) calc(g + 11) calc(b + 27) / 0.55) 0%,rgb(from var(--strategy-line) calc(r - 2) calc(g + 11) calc(b + 27) / 0.22) 42%,rgb(from var(--strategy-line) calc(r - 2) calc(g + 11) calc(b + 27) / 0) 72%);"></div>
+
+  <!-- vertical rule texture, gradient-masked so it dissolves downward instead of ending flat -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;opacity:0.13;
+              background:repeating-linear-gradient(90deg,rgb(from var(--strategy-ink) r g b / 0.5) 0px,rgb(from var(--strategy-ink) r g b / 0.5) 1px,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 1px,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 120px);
+              -webkit-mask-image:linear-gradient(196deg,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 1) 0%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0.7) 40%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 82%);
+              mask-image:linear-gradient(196deg,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 1) 0%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0.7) 40%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 82%);"></div>
+
+  <!-- TEXTURE A — dot grid, navy side only; masked away from the title for legibility -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;opacity:0.30;
+              background:radial-gradient(rgb(from var(--strategy-ink) calc(r - 42) calc(g - 24) calc(b - 6) / 0.55) 1.4px,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 1.5px);
+              background-size:26px 26px;
+              clip-path:polygon(0px 0px, 1370px 0px, 1210px 1080px, 0px 1080px);
+              -webkit-mask-image:radial-gradient(64% 56% at 26% 44%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 0%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0.45) 58%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 1) 100%);
+              mask-image:radial-gradient(64% 56% at 26% 44%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 0%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0.45) 58%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 1) 100%);"></div>
+
+  <!-- diagonal red block: linear base + radial hotspot behind the numeral -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;
+              background:
+                radial-gradient(62% 46% at 82% 28%,rgb(from var(--strategy-highlight) r calc(g - 18) calc(b - 16) / 0.85) 0%,rgb(from var(--strategy-highlight) r calc(g - 18) calc(b - 16) / 0) 68%),
+                linear-gradient(168deg,rgb(from var(--strategy-accent) calc(r + 6) calc(g + 5) calc(b + 4)) 0%,rgb(from var(--strategy-accent) calc(r - 26) calc(g - 5) calc(b - 8)) 44%,rgb(from var(--strategy-accent) calc(r - 96) calc(g - 11) calc(b - 24)) 100%);
+              clip-path:polygon(1370px 0px, 1920px 0px, 1920px 1080px, 1210px 1080px);"></div>
+
+  <!-- TEXTURE B — fine hatch inside the red block, ruled parallel to the diagonal edge -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;opacity:0.16;
+              background:repeating-linear-gradient(82deg,rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.6) 0px,rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.6) 1px,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 1px,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 9px);
+              clip-path:polygon(1370px 0px, 1920px 0px, 1920px 1080px, 1210px 1080px);
+              -webkit-mask-image:radial-gradient(58% 44% at 80% 30%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 0%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0.5) 54%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 1) 100%);
+              mask-image:radial-gradient(58% 44% at 80% 30%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0) 0%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 0.5) 54%,rgb(from var(--strategy-canvas) calc(r - 7) calc(g - 26) calc(b - 51) / 1) 100%);"></div>
+
+  <!-- thin navy echo stripe along the diagonal -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;opacity:0.5;
+              background:rgb(from var(--strategy-canvas) calc(r - 1) calc(g - 5) calc(b - 10));
+              clip-path:polygon(1348px 0px, 1358px 0px, 1198px 1080px, 1188px 1080px);"></div>
+
+  <!-- red edge bar, left: gradient echoes the red block's vertical falloff -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:14px;height:1080px;z-index:1;
+              background:linear-gradient(180deg,rgb(from var(--strategy-accent) calc(r + 6) calc(g + 5) calc(b + 4)) 0%,rgb(from var(--strategy-accent) calc(r - 26) calc(g - 5) calc(b - 8)) 46%,rgb(from var(--strategy-accent) calc(r - 96) calc(g - 11) calc(b - 24)) 100%);"></div>
+
+  <!-- bottom vignette: seats the footer meta row, stops it floating -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:780px;width:1920px;height:300px;z-index:2;
+              background:linear-gradient(180deg,rgb(from var(--strategy-canvas) calc(r - 3) calc(g - 10) calc(b - 20) / 0) 0%,rgb(from var(--strategy-canvas) calc(r - 3) calc(g - 10) calc(b - 20) / 0.42) 62%,rgb(from var(--strategy-canvas) calc(r - 3) calc(g - 10) calc(b - 20) / 0.68) 100%);"></div>
+
+  <!-- TEXTURE C — film grain across the whole canvas: unifies navy + red, kills banding -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:3;opacity:0.07;
+              background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27g%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.9%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27260%27%20height%3D%27260%27%20filter%3D%27url%28%23g%29%27%2F%3E%3C%2Fsvg%3E');
+              background-repeat:repeat;"></div>
+
+  <!-- ===== LAYER 2 — PRIMARY VISUAL ===== -->
+
+  <!-- oversized quarter numeral, rendered as frosted glass -->
+  <div data-object="true" data-object-type="textbox" class="t-display glass-numeral"
+       style="position:absolute;left:1385px;top:196px;width:500px;height:368px;z-index:10;
+              font-size:340px;font-weight:800;line-height:1.02;letter-spacing:-12px;">Q4</div>
+
+  <!-- ===== LAYER 3 — STRUCTURE ===== -->
+  <!-- ONE structural line: gradient so it emerges and dissolves instead of ending in hard stubs -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:140px;top:660px;width:1780px;height:1px;z-index:5;
+              background:linear-gradient(90deg,rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0) 0%,rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.34) 12%,rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.34) 88%,rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0) 100%);"></div>
+
+  <!-- accent rule under title -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:142px;top:706px;width:176px;height:9px;z-index:5;
+              background:linear-gradient(90deg,rgb(from var(--strategy-highlight) r calc(g - 18) calc(b - 16)) 0%,var(--strategy-accent) 62%,rgb(from var(--strategy-accent) calc(r - 50) calc(g - 5) calc(b - 12)) 100%);"></div>
+
+  <!-- ===== LAYER 3 — TYPE ===== -->
+
+  <!-- brand lockup -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:140px;top:94px;width:48px;height:48px;z-index:5;
+              background:var(--strategy-accent);box-shadow:11px 11px 0 0 rgb(from var(--strategy-ink) r g b / 0.13);"></div>
+  <div data-object="true" data-object-type="textbox" class="t-display"
+       style="position:absolute;left:210px;top:100px;width:600px;height:40px;z-index:10;
+              font-size:27px;font-weight:700;letter-spacing:5px;color:var(--strategy-ink);">[COMPANY NAME]</div>
+
+  <!-- eyebrow -->
+  <div data-object="true" data-object-type="textbox" class="t-mono"
+       style="position:absolute;left:142px;top:322px;width:900px;height:32px;z-index:10;
+              font-size:23px;font-weight:500;letter-spacing:6px;color:var(--strategy-highlight);">QUARTERLY BUSINESS PLAN</div>
+
+  <!-- main title -->
+  <div data-object="true" data-object-type="textbox" class="t-display"
+       style="position:absolute;left:136px;top:376px;width:1120px;z-index:10;
+              font-size:112px;font-weight:800;line-height:1.11;letter-spacing:-3px;color:rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9));">Strategic<br>Business Plan</div>
+
+  <!-- subtitle -->
+  <div data-object="true" data-object-type="textbox" class="t-display"
+       style="position:absolute;left:140px;top:748px;width:940px;z-index:10;
+              font-size:32px;font-weight:400;line-height:1.5;color:var(--strategy-muted);">Priorities, growth targets and the execution<br>roadmap for the quarter ahead.</div>
+
+  <!-- period, inside red block -->
+  <div data-object="true" data-object-type="textbox" class="t-mono"
+       style="position:absolute;left:1390px;top:690px;width:440px;height:34px;z-index:10;
+              font-size:25px;font-weight:500;letter-spacing:5px;color:rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9));">OCT &mdash; DEC 2026</div>
+
+  <!-- meta: prepared by -->
+  <div data-object="true" data-object-type="textbox" class="t-mono"
+       style="position:absolute;left:140px;top:938px;width:400px;height:26px;z-index:10;
+              font-size:18px;font-weight:500;letter-spacing:3px;color:var(--strategy-highlight);">PREPARED BY</div>
+  <div data-object="true" data-object-type="textbox" class="t-display"
+       style="position:absolute;left:140px;top:970px;width:400px;height:36px;z-index:10;
+              font-size:27px;font-weight:600;color:rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9));">Corporate Strategy Office</div>
+
+  <!-- meta: classification -->
+  <div data-object="true" data-object-type="textbox" class="t-mono"
+       style="position:absolute;left:620px;top:938px;width:420px;height:26px;z-index:10;
+              font-size:18px;font-weight:500;letter-spacing:3px;color:var(--strategy-highlight);">CLASSIFICATION</div>
+  <div data-object="true" data-object-type="textbox" class="t-display"
+       style="position:absolute;left:620px;top:970px;width:420px;height:36px;z-index:10;
+              font-size:27px;font-weight:600;color:rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9));">Confidential &mdash; Leadership</div>
+
+  <!-- page mark, inside red block -->
+  <div data-object="true" data-object-type="textbox" class="t-mono"
+       style="position:absolute;left:1390px;top:966px;width:440px;height:28px;z-index:10;
+              font-size:18px;font-weight:500;letter-spacing:4px;color:rgb(from var(--strategy-ink) calc(r + 23) calc(g + 17) calc(b + 9) / 0.9);">01</div>
+
+</div>
+</body>
+</html>

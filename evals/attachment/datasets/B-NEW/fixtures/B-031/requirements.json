@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "制作10页台风灾后响应管理简报。内部附件用于说明已知损失、资源和行动；Web Research核对官方天气、交通与公共通知；Image Research只使用有时间地点信息的灾情或基础设施照片。不得传播未证实伤亡数字。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "应急响应管理层及合作方",
+        "description": "应急响应管理层及合作方"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "灾后响应态势与行动协调",
+        "description": "灾后响应态势与行动协调"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "区分内部已知事实、未核实信息、官方更新和待决行动",
+        "description": "区分内部已知事实、未核实信息、官方更新和待决行动"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "紧迫、清晰、尊重事实",
+        "description": "紧迫、清晰、尊重事实"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "应急响应管理层及合作方",
+      "description": "应急响应管理层及合作方"
+    },
+    "purpose": {
+      "label": "灾后响应态势与行动协调",
+      "description": "灾后响应态势与行动协调"
+    },
+    "desired_outcome": {
+      "label": "区分内部已知事实、未核实信息、官方更新和待决行动",
+      "description": "区分内部已知事实、未核实信息、官方更新和待决行动"
+    },
+    "slide_count": 10,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "紧迫、清晰、尊重事实",
+      "description": "紧迫、清晰、尊重事实"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Prepare a 10-slide supply-chain disruption briefing. Use the internal memo for our exposure and current mitigation actions; use Web Research for current port conditions, carrier notices, and regulatory changes. Do not reveal supplier names."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Operations leadership",
+        "description": "Operations leadership"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Supply-risk decision briefing",
+        "description": "Supply-risk decision briefing"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Combine internal exposure with verified external conditions and identify decisions",
+        "description": "Combine internal exposure with verified external conditions and identify decisions"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Urgent, factual, option-oriented",
+        "description": "Urgent, factual, option-oriented"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Operations leadership",
+      "description": "Operations leadership"
+    },
+    "purpose": {
+      "label": "Supply-risk decision briefing",
+      "description": "Supply-risk decision briefing"
+    },
+    "desired_outcome": {
+      "label": "Combine internal exposure with verified external conditions and identify decisions",
+      "description": "Combine internal exposure with verified external conditions and identify decisions"
+    },
+    "slide_count": 10,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Urgent, factual, option-oriented",
+      "description": "Urgent, factual, option-oriented"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Thank You!",
+  "urlLabel": "www.example.com",
+  "contactItems": [
+    {
+      "icon": "email",
+      "label": "contact@example.com",
+      "tone": "comparison"
+    },
+    {
+      "icon": "phone",
+      "label": "+1-555-000-0000",
+      "tone": "comparison"
+    }
+  ],
+  "footerNote": "China vs Japan | Closing",
+  "accentTone": "comparison",
+  "showDecorations": true
+}

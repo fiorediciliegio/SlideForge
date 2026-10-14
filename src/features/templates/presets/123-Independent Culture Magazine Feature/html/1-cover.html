@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Cover — MARGIN / NOISE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&amp;family=Archivo+Narrow:wght@400;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#f2ede4;}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#f2ede4;font-family:'Playfair Display',serif;color:#0a0a0a;}
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:.28;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- top rule + running head -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:80px;width:1760px;height:2px;background:#0a0a0a;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:38px;width:900px;height:32px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.28em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Issue №04 &nbsp;·&nbsp; Vol. XXVII &nbsp;·&nbsp; Autumn / Winter &nbsp;·&nbsp; Printed in three colours
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1420px;top:38px;width:420px;height:32px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.28em;color:#0a0a0a;text-transform:uppercase;text-align:right;z-index:10;">
+    £ 12  ·  € 14  ·  ¥ 1800  ·  UNBOUND
+  </div>
+
+  <!-- oversized masthead — bleeds off both edges -->
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 0px; top: 127.106px; width: 1980px; height: 340px; font-family: &quot;Playfair Display&quot;, serif; font-weight: 900; font-size: 440px; line-height: 0.82; letter-spacing: -0.045em; color: rgb(10, 10, 10); z-index: 10; transform: none !important;">
+    MARGIN
+  </div>
+
+  <!-- red slash / divider between the two words -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1150px;top:210px;width:8px;height:260px;background:#e63329;transform:rotate(14deg);transform-origin:top left;z-index:5;"></div>
+
+  <!-- second word, italic, red, deliberately misaligned lower -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:470px;width:1980px;height:340px;font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:440px;line-height:.82;letter-spacing:-.05em;color:#e63329;z-index:10;">
+    noise.
+  </div>
+
+  <!-- editorial slug, rotated, sits like a magazine spine -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:-60px;top:600px;width:520px;height:40px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.35em;color:#0a0a0a;text-transform:uppercase;transform:rotate(-90deg);transform-origin:left top;z-index:10;">
+    A Quarterly For The Under-Documented →
+  </div>
+
+  <!-- big folio numeral, treated as art -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1490px;top:800px;width:400px;height:280px;font-family:'Playfair Display',serif;font-weight:900;font-style:italic;font-size:340px;line-height:.9;color:#0a0a0a;text-align:right;z-index:10;">
+    04
+  </div>
+
+  <!-- feature dek block, left aligned -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:870px;width:900px;height:60px;font-family:'Archivo Narrow',sans-serif;font-weight:700;font-size:34px;letter-spacing:.02em;color:#0a0a0a;text-transform:uppercase;line-height:1.05;z-index:10;">
+    A feature on what happens<br>when the page refuses to behave.
+  </div>
+
+  <!-- red block accent behind cover-story tag -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:130px;top:990px;width:206px;height:38px;background:#e63329;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:143px;top:998px;width:190px;height:22px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.32em;color:#f2ede4;text-transform:uppercase;z-index:10;">
+    Cover Story →
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:360px;top:996px;width:900px;height:28px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Six pages on independent culture, printed on the margin.
+  </div>
+
+  <!-- bottom folio bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:1050px;width:1760px;height:1px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1580px;top:1015px;width:260px;height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-align:right;text-transform:uppercase;z-index:10;">
+    fold · staple · read
+  </div>
+
+  <div class="grain"></div>
+</div>
+
+
+</body></html>

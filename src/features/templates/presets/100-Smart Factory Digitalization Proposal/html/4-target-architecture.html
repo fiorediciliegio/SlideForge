@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Target architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#14181C;}
+  .lbl{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+  .display{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.012em;}
+  .chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:24px;padding:9px 16px;border:1px solid #D8D2C5;background:#F8F6F1;margin:0 10px 10px 0;}
+  .layername{font-family:'Archivo',sans-serif;font-weight:600;font-size:34px;line-height:1.1;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="04 Target architecture" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;background-image:linear-gradient(to right,rgba(20,24,28,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(20,24,28,.045) 1px,transparent 1px);background-size:80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:60px;width:1200px;z-index:10;font-size:24px;color:#6E7378;"><span style="color:#E08A0F;">04</span> &nbsp;/&nbsp; Solution overview</div>
+
+  <div data-object="true" data-object-type="textbox" class="display" style="position:absolute;left:96px;top:100px;width:1500px;z-index:10;font-size:62px;line-height:1.06;">One data spine, four layers, no rip-and-replace</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:186px;width:1400px;z-index:10;font-size:30px;line-height:1.35;color:#5C6166;">Existing PLCs, ERP and CMMS stay. We add the missing middle: a signal layer and a shared data model.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:256px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:300px;width:1440px;height:145px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:22px 28px;">
+    <div style="display:flex;gap:28px;align-items:flex-start;">
+      <div style="width:300px;flex:none;">
+        <div class="lbl" style="font-size:20px;color:#E08A0F;">Layer 04</div>
+        <div class="layername" style="margin-top:6px;">Operate &amp; decide</div>
+      </div>
+      <div style="flex:1;padding-left:28px;border-left:1px solid #EAE5DA;">
+        <span class="chip">Line dashboards ×12</span><span class="chip">Andon &amp; escalation</span><span class="chip">PdM work queue</span><span class="chip">Digital work instructions</span><span class="chip">Plan vs actual</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:461px;width:1440px;height:145px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:22px 28px;">
+    <div style="display:flex;gap:28px;align-items:flex-start;">
+      <div style="width:300px;flex:none;">
+        <div class="lbl" style="font-size:20px;color:#E08A0F;">Layer 03</div>
+        <div class="layername" style="margin-top:6px;">Data &amp; models</div>
+      </div>
+      <div style="flex:1;padding-left:28px;border-left:1px solid #EAE5DA;">
+        <span class="chip">Time-series historian</span><span class="chip">Asset &amp; part master</span><span class="chip">Quality data model</span><span class="chip">OEE / loss engine</span><span class="chip">Anomaly models</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:622px;width:1440px;height:145px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:22px 28px;">
+    <div style="display:flex;gap:28px;align-items:flex-start;">
+      <div style="width:300px;flex:none;">
+        <div class="lbl" style="font-size:20px;color:#E08A0F;">Layer 02</div>
+        <div class="layername" style="margin-top:6px;">Connect &amp; collect</div>
+      </div>
+      <div style="flex:1;padding-left:28px;border-left:1px solid #EAE5DA;">
+        <span class="chip">4 edge gateways</span><span class="chip">MQTT unified namespace</span><span class="chip">Segmented OT network</span><span class="chip">Store-and-forward buffer</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:783px;width:1440px;height:145px;z-index:10;background:#14181C;border-radius:2px;padding:22px 28px;">
+    <div style="display:flex;gap:28px;align-items:flex-start;">
+      <div style="width:300px;flex:none;">
+        <div class="lbl" style="font-size:20px;color:#E08A0F;">Layer 01</div>
+        <div class="layername" style="margin-top:6px;color:#F7F4EE;">Edge &amp; assets</div>
+      </div>
+      <div style="flex:1;padding-left:28px;border-left:1px solid rgba(255,255,255,.22);">
+        <span class="chip" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:#F0EDE6;">38 CNC · OPC UA</span><span class="chip" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:#F0EDE6;">16 legacy presses · retrofit IO</span><span class="chip" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:#F0EDE6;">8 vision stations</span><span class="chip" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:#F0EDE6;">Energy submeters</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1568px;top:300px;width:256px;height:628px;z-index:10;background:#37505E;border-radius:2px;padding:26px 24px;">
+    <div class="lbl" style="font-size:21px;color:#C3D0D6;">Cross-cutting</div>
+    <div style="margin-top:26px;">
+      <div style="padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.22);">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:28px;color:#FFFFFF;">OT/IT security</div>
+        <div style="font-size:23px;color:#D3DDE1;margin-top:8px;line-height:1.3;">IEC 62443 zones, no direct cloud path from the floor</div>
+      </div>
+      <div style="padding:22px 0;border-bottom:1px solid rgba(255,255,255,.22);">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:28px;color:#FFFFFF;">Master data</div>
+        <div style="font-size:23px;color:#D3DDE1;margin-top:8px;line-height:1.3;">One asset ID and one part ID across all systems</div>
+      </div>
+      <div style="padding-top:22px;">
+        <div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:28px;color:#FFFFFF;">Adoption</div>
+        <div style="font-size:23px;color:#D3DDE1;margin-top:8px;line-height:1.3;">Operator champions on every line, trained before go-live</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:992px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:1012px;width:1200px;z-index:10;font-size:24px;color:#8A857A;">Northline Works · Plant 2 · Digitalization proposal</div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1600px;top:1012px;width:224px;z-index:10;font-size:24px;color:#8A857A;text-align:right;">04 / 10</div>
+
+</div>
+</body>
+</html>

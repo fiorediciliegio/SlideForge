@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Light Changes the Rate of Photosynthesis</title><style>:root{
+  --bg:var(--theme-bg);--surface:var(--theme-surface);--ink:var(--theme-ink);--muted:var(--theme-muted);--green:var(--theme-accent-secondary);--sage:var(--theme-line);--orange:var(--theme-accent-tertiary);--mustard:var(--theme-accent-secondary);--line:var(--theme-line);
+  --display: Georgia,"Times New Roman",serif;--hand:"Comic Neue","Comic Sans MS",cursive;--sans:"Nimbus Sans","Trebuchet MS",Arial,sans-serif;
+  --page-x:150px;--border:3px solid var(--green);
+}
+@page{size:1920px 1080px;margin:0}*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--ink)}body{font-family:var(--sans)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:
+  radial-gradient(ellipse at 82% 24%,rgba(130,156,107,.13),transparent 34%),
+  radial-gradient(ellipse at 18% 88%,rgba(224,184,77,.10),transparent 38%),
+  linear-gradient(135deg,var(--theme-bg) 0,var(--theme-bg) 48%,var(--theme-bg) 100%)}
+.grain{position:absolute;inset:0;z-index:0;opacity:.30;background-image:
+  repeating-linear-gradient(0deg,transparent 0 5px,rgba(39,49,38,.055) 5px 6px),
+  repeating-linear-gradient(112deg,transparent 0 34px,rgba(39,49,38,.025) 34px 36px),
+  radial-gradient(circle,rgba(39,49,38,.11) 1px,transparent 1.5px);background-size:auto,auto,31px 31px;mix-blend-mode:multiply}
+.margin{position:absolute;left:114px;top:0;width:4px;height:1080px;background:rgba(213,108,56,.43);z-index:1}
+.rules{position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(to bottom,transparent 0 96px,rgba(72,106,62,.12) 96px 98px,transparent 98px 100px);background-position:0 86px}
+.top{position:absolute;left:156px;top:67px;z-index:10;display:flex;align-items:center;gap:28px;width:1050px;white-space:nowrap;color:var(--green);font:900 18px/1 var(--sans);letter-spacing:5px;text-transform:uppercase}
+.top .brand{display:block;padding:11px 18px 10px;border:3px solid var(--green);background:rgba(255,250,240,.92);letter-spacing:3px;white-space:nowrap}.top .series{display:block;white-space:nowrap}
+.page-no{position:absolute;right:105px;top:78px;z-index:10;color:var(--green);font:700 19px/1 var(--sans);letter-spacing:3px}
+.chapter{font:italic 31px/1 var(--display);color:var(--orange)}
+.hero{position:absolute;left:150px;top:157px;z-index:6;right:110px}
+.hero h1{margin:18px 0 0;font:900 108px/.88 var(--display);letter-spacing:-4px;color:var(--ink)}
+.hero h1 em{font-weight:400;color:var(--green);font-style:italic}
+.hero .sub{margin-top:16px;font:36px/1.15 var(--hand);letter-spacing:.2px;color:var(--theme-ink)}
+.hero .sub strong{color:var(--orange)}
+.panel{position:relative;border:var(--border);background:linear-gradient(135deg,rgba(255,250,240,.95),rgba(248,242,223,.86));box-shadow:9px 10px 0 rgba(72,106,62,.12)}
+.ribbon{position:absolute;z-index:12;padding:10px 20px 9px;background:var(--orange);color:var(--theme-surface);box-shadow:5px 5px 0 rgba(72,106,62,.14);font:900 15px/1 var(--sans);letter-spacing:3px;text-transform:uppercase}
+.tape{position:absolute;z-index:12;width:170px;height:48px;background:rgba(224,184,77,.70);box-shadow:0 2px 5px rgba(39,49,38,.10)}
+.meta{font:900 14px/1 var(--sans);letter-spacing:4px;text-transform:uppercase;color:var(--green)}
+.hand{font-family:var(--hand)}
+.display{font-family:var(--display)}
+.footer{position:absolute;left:156px;right:105px;bottom:36px;z-index:9;display:flex;justify-content:space-between;align-items:center;color:var(--green);font:900 16px/1 var(--sans);letter-spacing:4px;text-transform:uppercase}
+.small-rule{height:2px;background:rgba(72,106,62,.22)}
+</style><style>
+.hero{top:154px;right:70px}.hero h1{font-size:89px;line-height:.95;white-space:nowrap;letter-spacing:-3px}.hero .sub{margin-top:12px;font-size:34px}.hero .sub strong{font-size:36px}.top-tape{right:455px;top:100px;transform:rotate(-6deg);width:174px;height:49px}
+.chart{position:absolute;left:145px;top:395px;width:1050px;height:602px;padding:34px 35px 30px;z-index:4}.chart .ribbon{left:28px;top:-22px}.chart-head{text-align:center}.chart-head h2{margin:0;font:900 20px/1 var(--sans);letter-spacing:5px;text-transform:uppercase}.chart-head p{margin:11px 0 0;font:900 13px/1 var(--sans);letter-spacing:5px;color:var(--green);text-transform:uppercase}.plot{position:absolute;left:122px;right:70px;top:112px;bottom:88px}.grid{position:absolute;left:0;right:0;top:0;bottom:0;background:repeating-linear-gradient(to top,transparent 0 78px,rgba(72,106,62,.16) 78px 80px)}.y-axis{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green)}.x-axis{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--green)}.y-labels{position:absolute;left:-74px;top:-9px;bottom:-9px;width:55px;display:flex;flex-direction:column;justify-content:space-between;text-align:right;font:18px/1 var(--sans)}.y-title{position:absolute;left:-145px;top:150px;transform:rotate(-90deg);transform-origin:center;font:900 15px/1 var(--sans);letter-spacing:4px;text-transform:uppercase}.bars{position:absolute;left:30px;right:30px;bottom:0;top:0;display:grid;grid-template-columns:repeat(5,1fr);gap:54px;align-items:end}.bar-wrap{position:relative;height:100%;display:flex;align-items:flex-end;justify-content:center}.bar{width:112px;background:linear-gradient(var(--theme-line),var(--theme-muted));border-top:1px solid rgba(72,106,62,.12)}.bar.dark{background:linear-gradient(var(--theme-accent-primary),var(--theme-accent-primary))}.bar-value{position:absolute;bottom:calc(var(--h) + 10px);font:900 24px/1 var(--display);color:var(--green)}.bar-label{position:absolute;bottom:-49px;white-space:nowrap;font:17px/1 var(--sans);letter-spacing:1px;text-transform:uppercase}.x-title{position:absolute;left:50%;bottom:-77px;transform:translateX(-50%);font:900 16px/1 var(--sans);letter-spacing:5px;text-transform:uppercase}.ann{position:absolute;color:var(--orange);font:italic 19px/1 var(--hand)}.ann.a1{left:176px;bottom:197px}.ann.a1:after{content:"";position:absolute;left:57px;top:27px;width:4px;height:68px;background:var(--orange);transform:rotate(-16deg);transform-origin:top}.ann.a1:before{content:"";position:absolute;left:76px;top:83px;width:16px;height:16px;border-radius:50%;background:var(--orange)}.ann.a2{right:8px;top:11px}.ann.a2:after{content:"";position:absolute;right:48px;top:30px;width:4px;height:62px;background:var(--orange);transform:rotate(34deg);transform-origin:top}.ann.a2:before{content:"";position:absolute;right:82px;top:80px;width:16px;height:16px;border-radius:50%;background:var(--orange)}
+.kpis{position:absolute;left:1216px;right:68px;top:397px;height:321px;display:grid;grid-template-columns:1fr 1fr;gap:21px;z-index:4}.kpi{padding:28px 25px;text-align:center;background:linear-gradient(135deg,rgba(228,235,207,.86),rgba(248,242,223,.85))}.kpi h3{margin:0 0 18px;padding-bottom:15px;border-bottom:2px solid rgba(72,106,62,.15);font:900 14px/1 var(--sans);letter-spacing:4px;text-transform:uppercase}.kpi .big{margin:8px 0 7px;font:900 104px/.9 var(--display);color:var(--theme-accent-tertiary)}.kpi .desc{font:29px/1.05 var(--hand)}
+.take{position:absolute;left:1216px;right:68px;top:755px;height:242px;padding:37px 35px;z-index:4}.take .ribbon{left:24px;top:-22px}.take p{margin:0 0 26px;font:28px/1.17 var(--hand)}.take .tape{right:21px;bottom:-23px;width:160px;height:47px;transform:rotate(-5deg)}
+</style><style data-semantic-theme-roles>:root{--theme-bg:#F8F2DF;--theme-surface:#FFFAF0;--theme-ink:#273126;--theme-muted:#786F5D;--theme-accent-primary:#486A3E;--theme-accent-secondary:#E0B84D;--theme-accent-tertiary:#D56C38;--theme-line:#D5DFBD;}</style></head><body><main class="slide"><div class="grain"></div><div class="rules"></div><div class="margin"></div><div class="tape top-tape"></div>
+<header class="top"><span class="brand">Young Naturalist</span><span class="series">Field Journal / Botanical Study</span></header><div class="page-no">04 / 05</div>
+<section class="hero"><div class="chapter">A photosynthesis data insight</div><h1>Light Changes the Rate <em>of Photosynthesis</em></h1><div class="sub">As light increases, plants make more food — until the rate begins to <strong>level off.</strong></div></section>
+<section class="chart panel"><div class="ribbon">Data Insight</div><div class="chart-head"><h2>Relative Photosynthesis Rate</h2><p>Higher values mean more sugar made</p></div><div class="plot"><div class="grid"></div><div class="y-axis"></div><div class="x-axis"></div><div class="y-labels"><span>100</span><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span></div><div class="y-title">Relative Output</div><div class="bars">
+<div class="bar-wrap" style="--h:18%"><div class="bar-value">18</div><div class="bar" style="height:18%"></div><div class="bar-label">Low</div></div>
+<div class="bar-wrap" style="--h:34%"><div class="bar-value">34</div><div class="bar dark" style="height:34%"></div><div class="bar-label">25%</div></div>
+<div class="bar-wrap" style="--h:56%"><div class="bar-value">56</div><div class="bar" style="height:56%"></div><div class="bar-label">50%</div></div>
+<div class="bar-wrap" style="--h:72%"><div class="bar-value">72</div><div class="bar dark" style="height:72%"></div><div class="bar-label">75%</div></div>
+<div class="bar-wrap" style="--h:78%"><div class="bar-value">78</div><div class="bar" style="height:78%"></div><div class="bar-label">Full Light</div></div>
+</div><div class="x-title">Light Level</div><div class="ann a1">rapid gain</div><div class="ann a2">near saturation</div></div></section>
+<section class="kpis"><div class="kpi panel"><h3>Key Finding</h3><div class="big">4.3×</div><div class="desc">higher rate from<br>low to full light</div></div><div class="kpi panel"><h3>Full Light Output</h3><div class="big">78</div><div class="desc">relative output<br>at full light</div></div></section>
+<section class="take panel"><div class="ribbon">Takeaway</div><p>More light increases the rate of photosynthesis, but the gain slows at high light.</p><p>Other factors, such as CO₂, water or temperature, can become limiting.</p><div class="tape"></div></section>
+</main></body></html>

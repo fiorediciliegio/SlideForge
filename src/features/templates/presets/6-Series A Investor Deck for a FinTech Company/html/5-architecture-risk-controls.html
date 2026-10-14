@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Architecture &amp; Risk Controls</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Architecture" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F7F9;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:#0B1B2B;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:62px;width:900px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.24em;color:#3E8AC7;">05 &nbsp;·&nbsp; TECHNOLOGY &amp; RISK CONTROLS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:96px;width:1520px;z-index:10;">
+    <div style="font-size:50px;font-weight:600;color:#0B1B2B;line-height:1.2;letter-spacing:-0.012em;">A decision cannot leave the platform without its evidence</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:178px;width:1180px;z-index:10;">
+    <div style="font-size:22px;font-weight:300;line-height:1.5;color:#4A5F73;">Four layers, with control gates enforced between each one — the architecture is the compliance story.</div>
+  </div>
+
+  <!-- architecture stack (left 1160px) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:268px;width:1160px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#0B1B2B;">PLATFORM ARCHITECTURE</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:308px;width:1160px;height:132px;background:#FFFFFF;border:1px solid #DCE3EA;border-left:4px solid #7FB2DC;border-radius:2px;z-index:1;">
+    <div style="padding:20px 28px;display:flex;gap:28px;align-items:center;">
+      <div style="width:150px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#8496A6;">LAYER 4</div>
+        <div style="font-size:23px;font-weight:600;color:#0B1B2B;margin-top:6px;line-height:1.2;">Experience</div>
+      </div>
+      <div style="flex:1;display:flex;gap:12px;">
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Borrower portal</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">White-labelled intake</div>
+        </div>
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Analyst workbench</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Exception queues</div>
+        </div>
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Risk console</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Portfolio &amp; testing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:452px;width:1160px;height:132px;background:#FFFFFF;border:1px solid #DCE3EA;border-left:4px solid #3E8AC7;border-radius:2px;z-index:1;">
+    <div style="padding:20px 28px;display:flex;gap:28px;align-items:center;">
+      <div style="width:150px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#8496A6;">LAYER 3</div>
+        <div style="font-size:23px;font-weight:600;color:#0B1B2B;margin-top:6px;line-height:1.2;">Decision</div>
+      </div>
+      <div style="flex:1;display:flex;gap:12px;">
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Policy engine</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Versioned rules</div>
+        </div>
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Scorecards</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Interpretable models</div>
+        </div>
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Reason codes</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Adverse-action ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:596px;width:1160px;height:132px;background:#FFFFFF;border:1px solid #DCE3EA;border-left:4px solid #215180;border-radius:2px;z-index:1;">
+    <div style="padding:20px 28px;display:flex;gap:28px;align-items:center;">
+      <div style="width:150px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#8496A6;">LAYER 2</div>
+        <div style="font-size:23px;font-weight:600;color:#0B1B2B;margin-top:6px;line-height:1.2;">Data</div>
+      </div>
+      <div style="flex:1;display:flex;gap:12px;">
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Document parsing</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">340+ formats</div>
+        </div>
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Entity resolution</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Beneficial ownership</div>
+        </div>
+        <div style="flex:1;background:#F1F5F9;border:1px solid #E1E8EF;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#0B1B2B;">Feature store</div>
+          <div style="font-size:14px;color:#6B7F92;margin-top:5px;">Point-in-time correct</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:740px;width:1160px;height:132px;background:#0B1B2B;border:1px solid #0B1B2B;border-left:4px solid #B5791F;border-radius:2px;z-index:1;">
+    <div style="padding:20px 28px;display:flex;gap:28px;align-items:center;">
+      <div style="width:150px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">LAYER 1</div>
+        <div style="font-size:23px;font-weight:600;color:#FFFFFF;margin-top:6px;line-height:1.2;">Ledger of record</div>
+      </div>
+      <div style="flex:1;display:flex;gap:12px;">
+        <div style="flex:1;background:#14283D;border:1px solid #23415F;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#FFFFFF;">Immutable audit log</div>
+          <div style="font-size:14px;color:#8FA6BA;margin-top:5px;">Append-only, hashed</div>
+        </div>
+        <div style="flex:1;background:#14283D;border:1px solid #23415F;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#FFFFFF;">Lineage graph</div>
+          <div style="font-size:14px;color:#8FA6BA;margin-top:5px;">Input → decision path</div>
+        </div>
+        <div style="flex:1;background:#14283D;border:1px solid #23415F;padding:14px 16px;border-radius:2px;">
+          <div style="font-size:17px;font-weight:500;color:#FFFFFF;">Retention &amp; residency</div>
+          <div style="font-size:14px;color:#8FA6BA;margin-top:5px;">Region-pinned storage</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- right rail: control gates -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1304px;top:268px;width:520px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#0B1B2B;">CONTROL GATES</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1304px;top:308px;width:520px;height:564px;background:#FFFFFF;border:1px solid #DCE3EA;border-radius:2px;z-index:1;">
+    <div style="padding:22px 28px;">
+      <div style="padding-bottom:13px;border-bottom:1px solid #E6EBF0;">
+        <div style="display:flex;gap:14px;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3E8AC7;">G1</span>
+          <span style="font-size:20px;font-weight:600;color:#0B1B2B;">Model governance</span>
+        </div>
+        <div style="font-size:16px;color:#4A5F73;line-height:1.4;margin-top:7px;">No scorecard reaches production without documented development, validation, and an approved owner.</div>
+      </div>
+      <div style="padding:13px 0;border-bottom:1px solid #E6EBF0;">
+        <div style="display:flex;gap:14px;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3E8AC7;">G2</span>
+          <span style="font-size:20px;font-weight:600;color:#0B1B2B;">Fair-lending testing</span>
+        </div>
+        <div style="font-size:16px;color:#4A5F73;line-height:1.4;margin-top:7px;">Disparity metrics computed on every policy version before release, and monthly in production.</div>
+      </div>
+      <div style="padding:13px 0;border-bottom:1px solid #E6EBF0;">
+        <div style="display:flex;gap:14px;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3E8AC7;">G3</span>
+          <span style="font-size:20px;font-weight:600;color:#0B1B2B;">Segregation of duties</span>
+        </div>
+        <div style="font-size:16px;color:#4A5F73;line-height:1.4;margin-top:7px;">Policy author, approver, and deployer are enforced as three distinct roles.</div>
+      </div>
+      <div style="padding:13px 0;border-bottom:1px solid #E6EBF0;">
+        <div style="display:flex;gap:14px;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3E8AC7;">G4</span>
+          <span style="font-size:20px;font-weight:600;color:#0B1B2B;">Drift &amp; override monitoring</span>
+        </div>
+        <div style="font-size:16px;color:#4A5F73;line-height:1.4;margin-top:7px;">Population shift and manual-override rates alert the risk console daily.</div>
+      </div>
+      <div style="padding-top:13px;">
+        <div style="display:flex;gap:14px;align-items:baseline;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#3E8AC7;">G5</span>
+          <span style="font-size:20px;font-weight:600;color:#0B1B2B;">Examiner export</span>
+        </div>
+        <div style="font-size:16px;color:#4A5F73;line-height:1.4;margin-top:7px;">Any application reproducible end-to-end, including the policy version in force that day.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;background:#DCE3EA;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1018px;width:1728px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#8496A6;">
+      <span>CADENCE · SERIES A · CONFIDENTIAL</span><span>05 / 10</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gap Root Cause</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box}body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Gap Root Cause" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2ED">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:8px;background:#B3543B;z-index:1"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:8px;width:660px;height:1072px;background:#EDE7DC;z-index:1"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:112px;top:76px;width:520px;height:34px;z-index:10">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;letter-spacing:0.18em;color:#B3543B">04 &nbsp;/&nbsp; ROOT-CAUSE ANALYSIS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:112px;top:130px;width:470px;height:230px;z-index:10">
+    <div style="font-family:'Archivo',sans-serif;font-size:58px;font-weight:700;line-height:1.12;letter-spacing:-0.01em;color:#16191F">Why response time slipped</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:112px;top:378px;width:100px;height:5px;background:#B3543B;z-index:5"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:112px;top:424px;width:470px;z-index:10">
+    <div style="font-size:28px;line-height:1.45;color:#3D434D">The SLA breach is not a productivity problem. Agents handled 8% more tickets each. The queue simply arrived faster than staffed capacity — and three quarters of the added wait traces to just two causes.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:112px;top:722px;width:470px;height:216px;background:#1E232C;border-radius:4px;z-index:1"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:148px;top:752px;width:398px;z-index:10">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:21px;letter-spacing:0.12em;color:#D08A6F">WHAT THE DATA RULES OUT</div>
+    <div style="font-size:25px;line-height:1.45;color:#E4E0D8;margin-top:14px">Tickets per agent per day rose from 24.6 to 26.6 and CSAT held at 4.51. Neither effort nor skill is the constraint.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:756px;top:130px;width:1052px;height:40px;z-index:10">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:21px;letter-spacing:0.12em;color:#7C8492">CONTRIBUTION TO THE 41-MINUTE SLA GAP</div>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:756px;top:196px;width:1052px;height:520px;z-index:10">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-size:29px;font-weight:600;color:#16191F">Billing-migration ticket spike</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;color:#B3543B">18 min &nbsp;·&nbsp; 44%</div>
+        </div>
+        <div style="height:26px;background:#E3DCD1;margin-top:10px"><div style="width:44%;height:26px;background:#B3543B"></div></div>
+        <div style="font-size:23px;color:#6B7280;margin-top:8px">6,400 unplanned tickets from the payments platform cutover in week 2</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-size:29px;font-weight:600;color:#16191F">Two vacancies unfilled</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;color:#B3543B">13 min &nbsp;·&nbsp; 32%</div>
+        </div>
+        <div style="height:26px;background:#E3DCD1;margin-top:10px"><div style="width:32%;height:26px;background:#C4694E"></div></div>
+        <div style="font-size:23px;color:#6B7280;margin-top:8px">Tier-2 roles open for 9 and 11 weeks — 320 agent-hours lost</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-size:29px;font-weight:600;color:#16191F">Routing misassignment</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;color:#5F6774">6 min &nbsp;·&nbsp; 15%</div>
+        </div>
+        <div style="height:26px;background:#E3DCD1;margin-top:10px"><div style="width:15%;height:26px;background:#C08A2E"></div></div>
+        <div style="font-size:23px;color:#6B7280;margin-top:8px">11% of tickets reassigned at least once before first reply</div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-size:29px;font-weight:600;color:#16191F">Other &amp; seasonal noise</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:27px;font-weight:600;color:#5F6774">4 min &nbsp;·&nbsp; 9%</div>
+        </div>
+        <div style="height:26px;background:#E3DCD1;margin-top:10px"><div style="width:9%;height:26px;background:#A8A093"></div></div>
+        <div style="font-size:23px;color:#6B7280;margin-top:8px">Holiday coverage gaps and two short tooling outages</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:756px;top:750px;width:1052px;height:200px;background:#FFFFFF;border:1px solid #DED8CE;border-left:6px solid #3F7A5F;border-radius:4px;z-index:1"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:800px;top:778px;width:964px;z-index:10">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:21px;letter-spacing:0.12em;color:#3F7A5F">IMPLICATION FOR AUGUST</div>
+    <div style="font-size:29px;line-height:1.4;color:#16191F;margin-top:12px">76% of the gap is addressable this month: the migration backlog clears by 8 Aug and two approved offers start 11 Aug. Routing fixes need engineering time we do not yet hold.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:112px;top:1000px;width:1400px;height:32px;z-index:10">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:0.10em;color:#8C8577">DECOMPOSITION FROM QUEUE-WAIT ATTRIBUTION MODEL · ILLUSTRATIVE SAMPLE DATA</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1748px;top:996px;width:60px;height:40px;z-index:10">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;color:#16191F;text-align:right">04</div>
+  </div>
+
+</div>
+</body>
+</html>

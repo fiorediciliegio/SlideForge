@@ -1,0 +1,102 @@
+{
+  "id": "123-Independent Culture Magazine Feature",
+  "version": 1,
+  "ppt_number": 123,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "red"
+  ],
+  "name": "Independent Culture Magazine Feature",
+  "description": "Independent culture magazine with oversized serif type, narrow labels, fine grids, and raw print details.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["media"],"audiences":["public"],"formats":["guide"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic","high-contrast","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖灰纸底以超大黑色衬线刊名、红色斜杠和边缘批注构成独立杂志封面，气质冷峻。"
+    },
+    {
+      "path": "images/2-editorial-statement.webp",
+      "alt": "多栏正文、超大红色引语框与细线页眉组成克制而锐利的社论版式，留白张弛有度。"
+    },
+    {
+      "path": "images/3-phenomenon.webp",
+      "alt": "黑白人物图、红色大色块、超大姓名与数据注脚构成专题人物页，编辑张力强烈。"
+    },
+    {
+      "path": "images/4-perspectives.webp",
+      "alt": "多组引语以衬线、窄体和等宽字错落排布，红线与编号建立编辑节奏，层次富于变化。"
+    },
+    {
+      "path": "images/5-photo-feature.webp",
+      "alt": "四格黑白接触印样网格配红色覆印画面和底部摄影注释，质感冷峻，印刷气息浓厚。"
+    },
+    {
+      "path": "images/6-anatomy-of-an-issue.webp",
+      "alt": "六条不同宽度的栏目比例带与编号注释构成杂志内容结构图，网格秩序严谨。"
+    },
+    {
+      "path": "images/7-cost-of-a-copy.webp",
+      "alt": "封面价格与真实成本以纵向堆叠柱、红黑数字和细网格形成成本分析，版式克制。"
+    },
+    {
+      "path": "images/8-where-it-lands.webp",
+      "alt": "渠道矩阵与横向分布带按红黑层级排列，像杂志内页的数据专题，信息密度均衡。"
+    },
+    {
+      "path": "images/9-what-could-kill-it.webp",
+      "alt": "风险矩阵以红色标记、坐标轴和边缘批注呈现，版式冷静而紧张，分析感鲜明。"
+    },
+    {
+      "path": "images/10-closing-essay.webp",
+      "alt": "超大 END 字样、窄栏文章与底部版权信息组成极简杂志收尾页，留白大胆克制。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖灰纸色背景上以超大黑色衬线刊名占据主体，细长红色斜杠切入画面，页码、期号与等宽边缘批注模拟独立刊物封面。"
+    },
+    {
+      "path": "html/2-editorial-statement.html",
+      "description": "细线页眉下方采用多栏长文排版，左侧衬线正文与右侧超大红色引语框形成比例反差，等宽注脚沿边缘补充编辑感。"
+    },
+    {
+      "path": "html/3-phenomenon.html",
+      "description": "黑白人物或现象图像与大面积编辑红色块并置，超大姓名跨越网格，窄体标签、数据数字和图注构成高张力专题版式。"
+    },
+    {
+      "path": "html/4-perspectives.html",
+      "description": "多组引语采用超大衬线、窄体标题和等宽来源三种层级错落排布，红色编号、细线与留白切分不同声音。"
+    },
+    {
+      "path": "html/5-photo-feature.html",
+      "description": "四格黑白接触印样以粗细不一的网格排列，其中一格叠加红色覆印效果，底部连续图注与边码强化摄影专题质感。"
+    },
+    {
+      "path": "html/6-anatomy-of-an-issue.html",
+      "description": "六条横向比例带按不同宽度纵向堆叠，黑、红与纸色区分栏目类型，左侧编号和右侧等宽注释构成结构化杂志解剖图。"
+    },
+    {
+      "path": "html/7-cost-of-a-copy.html",
+      "description": "封面价格以超大数字形成左侧视觉锚点，右侧用红黑堆叠柱拆分真实成本，细网格、短横线和等宽说明保持财务专题的编辑克制。"
+    },
+    {
+      "path": "html/8-where-it-lands.html",
+      "description": "页面主体以渠道矩阵和多条横向分布带组织落点，红色重点格与黑色标签交替出现，边缘注释和细分隔线维持印刷杂志秩序。"
+    },
+    {
+      "path": "html/9-what-could-kill-it.html",
+      "description": "大型二维风险矩阵占据页面主体，红色圆点和标签沿坐标轴分布，右侧窄栏说明与页边等宽批注制造冷静而紧张的分析版式。"
+    },
+    {
+      "path": "html/10-closing-essay.html",
+      "description": "超大黑色 END 字样横跨上半区，下方以窄栏衬线文章、红色细线和留白完成收束，底部等宽版权栏模拟杂志封底内页。"
+    }
+  ]
+}

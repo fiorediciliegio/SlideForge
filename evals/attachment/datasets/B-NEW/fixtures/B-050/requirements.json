@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create an 8-slide executive-profile deck for a newly appointed nonprofit chief executive. The attachment contains approved biography facts. Use Web Research only to verify current public appointments and recent official statements; use Image Research for licensed official portraits and documentary images of the organizations mentioned. Do not include private family information or infer political views."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Staff, partners, and external stakeholders",
+        "description": "Staff, partners, and external stakeholders"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Executive introduction",
+        "description": "Executive introduction"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Present verified experience, leadership themes, appointment timing, and public roles respectfully",
+        "description": "Present verified experience, leadership themes, appointment timing, and public roles respectfully"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Authoritative, human, restrained",
+        "description": "Authoritative, human, restrained"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Staff, partners, and external stakeholders",
+      "description": "Staff, partners, and external stakeholders"
+    },
+    "purpose": {
+      "label": "Executive introduction",
+      "description": "Executive introduction"
+    },
+    "desired_outcome": {
+      "label": "Present verified experience, leadership themes, appointment timing, and public roles respectfully",
+      "description": "Present verified experience, leadership themes, appointment timing, and public roles respectfully"
+    },
+    "slide_count": 8,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Authoritative, human, restrained",
+      "description": "Authoritative, human, restrained"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

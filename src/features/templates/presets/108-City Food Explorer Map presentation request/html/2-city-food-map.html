@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>City Food Map</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="02 City Food Map" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FBF6EC;">
+
+  <!-- Top masthead rail -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:56px; background:#1A1A1A; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:18px; width:1200px; z-index:11;">
+    <div class="mono" style="color:#FBF6EC; font-size:14px; letter-spacing:0.28em; font-weight:700;">02 / THE CITY MAP · FOLLOW THE ROUTE · APPETITE MAG.</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:18px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#F5C518; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 02</div>
+  </div>
+
+  <!-- Left column: title & legend -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:100px; width:520px; z-index:11;">
+    <div class="mono" style="font-size:16px; letter-spacing:0.28em; color:#E63946; font-weight:700;">— CHAPTER ONE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:140px; width:580px; z-index:11;">
+    <div class="serif" style="font-size:92px; line-height:1.0; color:#1A1A1A;">The<br><span style="color:#E63946; font-style:italic;">Whole</span><br>Delicious<br>Grid.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:640px; width:520px; z-index:11;">
+    <div class="serif" style="font-size:22px; line-height:1.45; color:#1A1A1A; font-style:italic;">Six neighbourhoods, one route. Start at the harbour with a flat white, wind through the market, land at a night-noodle stall by 11pm.</div>
+  </div>
+
+  <!-- Legend title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:790px; width:520px; z-index:11;">
+    <div class="mono" style="font-size:14px; letter-spacing:0.28em; color:#1A1A1A; font-weight:700; border-bottom:2px solid #1A1A1A; padding-bottom:8px;">MAP LEGEND</div>
+  </div>
+
+  <!-- Legend items (one textbox for the group) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:830px; width:560px; z-index:11;">
+    <div style="display:grid; grid-template-columns:36px 1fr; row-gap:14px; column-gap:14px; align-items:center; font-family:'Space Grotesk', sans-serif; font-size:18px; color:#1A1A1A;">
+      <div style="width:26px; height:26px; border-radius:50%; background:#F5C518; border:2px solid #1A1A1A;"></div><div><b>Breakfast &amp; Coffee</b> — harbour + old town</div>
+      <div style="width:26px; height:26px; border-radius:50%; background:#E63946; border:2px solid #1A1A1A;"></div><div><b>Street Food</b> — market district</div>
+      <div style="width:26px; height:26px; border-radius:50%; background:#6B7A3A; border:2px solid #1A1A1A;"></div><div><b>Local Restaurants</b> — canal side</div>
+      <div style="width:26px; height:26px; border-radius:50%; background:#1F3A93; border:2px solid #1A1A1A;"></div><div><b>Desserts &amp; Late Night</b> — after dark</div>
+    </div>
+  </div>
+
+  <!-- Right column: the map card -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:100px; width:1200px; height:920px; background:#F5EBD8; border:3px solid #1A1A1A; z-index:3;"></div>
+
+  <!-- Grid pattern -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:100px; width:1200px; height:920px; z-index:4; pointer-events:none;" viewBox="0 0 1200 920" preserveAspectRatio="none">
+    <defs>
+      <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="20" cy="20" r="1.2" fill="#C1B79A"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="920" fill="url(#dots)"/>
+    <!-- Faint city blocks -->
+    <rect x="80" y="80" width="240" height="180" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="360" y="120" width="300" height="220" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="720" y="80" width="360" height="260" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="120" y="380" width="380" height="200" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="560" y="440" width="260" height="220" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="880" y="440" width="200" height="180" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="220" y="640" width="320" height="200" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <rect x="620" y="700" width="440" height="160" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="4 6"/>
+    <!-- Wavy river -->
+    <path d="M 0 500 Q 200 460, 400 490 T 800 470 T 1200 510" stroke="#1F3A93" stroke-width="14" fill="none" opacity="0.35" stroke-linecap="round"/>
+    <path d="M 0 500 Q 200 460, 400 490 T 800 470 T 1200 510" stroke="#1F3A93" stroke-width="4" fill="none" stroke-dasharray="10 8" stroke-linecap="round"/>
+  </svg>
+
+  <!-- The hand-drawn tomato route -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:100px; width:1200px; height:920px; z-index:6; pointer-events:none;" viewBox="0 0 1200 920">
+    <path d="M 180 210 Q 300 190, 380 260 Q 460 320, 560 260 Q 680 200, 820 260 Q 920 310, 900 420 Q 880 520, 760 560 Q 640 600, 560 700 Q 500 780, 380 760 Q 260 740, 260 620 Q 260 500, 380 480" stroke="#E63946" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="16 10"/>
+  </svg>
+
+  <!-- Map pin labels container: each pin is its own data-object -->
+  <!-- Pin 1: Breakfast (yellow) -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:820px; top:280px; width:60px; height:60px; z-index:8;">
+    <div style="width:60px; height:60px; border-radius:50%; background:#F5C518; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:32px; color:#1A1A1A;">1</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:820px; top:350px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:28px; color:#1A1A1A; line-height:1;">Sunrise Café</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">HARBOUR · 07:30</div>
+  </div>
+
+  <!-- Pin 2: Coffee (yellow) -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:1080px; top:230px; width:60px; height:60px; z-index:8;">
+    <div style="width:60px; height:60px; border-radius:50%; background:#F5C518; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:32px; color:#1A1A1A;">2</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1155px; top:240px; width:200px; z-index:9;">
+    <div class="hand" style="font-size:28px; color:#1A1A1A; line-height:1;">Espresso Bar</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">OLD TOWN · 09:00</div>
+  </div>
+
+  <!-- Pin 3: Street food (tomato) -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:1220px; top:400px; width:60px; height:60px; z-index:8;">
+    <div style="width:60px; height:60px; border-radius:50%; background:#E63946; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:32px; color:#FBF6EC;">3</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:470px; width:220px; z-index:9; text-align:right;">
+    <div class="hand" style="font-size:28px; color:#1A1A1A; line-height:1;">Taco Alley</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">MARKET · 13:30</div>
+  </div>
+
+  <!-- Pin 4: Local (olive) -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:1130px; top:600px; width:60px; height:60px; z-index:8;">
+    <div style="width:60px; height:60px; border-radius:50%; background:#6B7A3A; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:32px; color:#FBF6EC;">4</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:670px; width:200px; z-index:9; text-align:right;">
+    <div class="hand" style="font-size:28px; color:#1A1A1A; line-height:1;">Trattoria Rosa</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">CANAL · 19:00</div>
+  </div>
+
+  <!-- Pin 5: Late-night (cobalt) -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:920px; top:790px; width:60px; height:60px; z-index:8;">
+    <div style="width:60px; height:60px; border-radius:50%; background:#1F3A93; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:32px; color:#FBF6EC;">5</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:770px; top:860px; width:200px; z-index:9; text-align:right;">
+    <div class="hand" style="font-size:28px; color:#1A1A1A; line-height:1;">Neon Noodle</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">DOWNTOWN · 23:00</div>
+  </div>
+
+  <!-- Pin 6: Dessert (cobalt) -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:770px; top:700px; width:60px; height:60px; z-index:8;">
+    <div style="width:60px; height:60px; border-radius:50%; background:#1F3A93; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:32px; color:#FBF6EC;">6</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:610px; top:715px; width:150px; z-index:9; text-align:right;">
+    <div class="hand" style="font-size:28px; color:#1A1A1A; line-height:1;">Gelato Bar</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">RIVERSIDE · 22:00</div>
+  </div>
+
+  <!-- Compass -->
+  <svg data-object="true" data-object-type="icon" style="position:absolute; left:1740px; top:920px; width:88px; height:88px; z-index:10;" viewBox="0 0 88 88">
+    <circle cx="44" cy="44" r="40" fill="#FBF6EC" stroke="#1A1A1A" stroke-width="3"/>
+    <path d="M 44 10 L 50 44 L 44 78 L 38 44 Z" fill="#1F3A93"/>
+    <path d="M 10 44 L 44 38 L 78 44 L 44 50 Z" fill="#E63946"/>
+    <circle cx="44" cy="44" r="3" fill="#1A1A1A"/>
+    <text x="44" y="9" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" font-weight="700" fill="#1A1A1A">N</text>
+  </svg>
+
+  <!-- Scale -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:700px; top:960px; width:280px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="height:8px; width:120px; background:linear-gradient(to right, #1A1A1A 50%, #FBF6EC 50%); border:2px solid #1A1A1A;"></div>
+      <div class="mono" style="font-size:12px; letter-spacing:0.15em; font-weight:700;">500 M</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

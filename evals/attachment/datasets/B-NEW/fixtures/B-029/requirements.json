@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "制作9页2026年度部门预算申请，面向预算委员会。说明业务需求、费用构成、不同方案、风险和审批事项。数字以财务附件为准，业务说明用于解释范围，不得虚构收益。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "预算委员会",
+        "description": "预算委员会"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "年度预算申请",
+        "description": "年度预算申请"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "比较方案范围、成本、风险和所需审批",
+        "description": "比较方案范围、成本、风险和所需审批"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "务实、财务清晰、决策导向",
+        "description": "务实、财务清晰、决策导向"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "预算委员会",
+      "description": "预算委员会"
+    },
+    "purpose": {
+      "label": "年度预算申请",
+      "description": "年度预算申请"
+    },
+    "desired_outcome": {
+      "label": "比较方案范围、成本、风险和所需审批",
+      "description": "比较方案范围、成本、风险和所需审批"
+    },
+    "slide_count": 9,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "务实、财务清晰、决策导向",
+      "description": "务实、财务清晰、决策导向"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

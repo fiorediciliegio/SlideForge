@@ -1,0 +1,103 @@
+{
+  "id": "104-Anime-inspired Japan Travel Guide",
+  "version": 1,
+  "ppt_number": 104,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "pink",
+    "blue",
+    "yellow"
+  ],
+  "name": "Anime-inspired Japan Travel Guide",
+  "description": "Pastel anime travel guide with watercolor scenes, rounded cards, colorful routes, and airy spacing.",
+  "user": "Creative & Personal",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["travel-guide"],"industries":["consumer","travel"],"audiences":["public"],"formats":["guide"],"primary_styles":["playful"],"visual_traits":["playful","cartoon","illustration","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色封面以樱花车站插画为主视觉，左侧粗体标题和粉黄标签营造轻小说感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-route-overview.webp",
+      "alt": "横向旅行路线轴贯穿页面，四个城市节点配彩色胶囊卡和底部提示条，整体风格统一而鲜明。"
+    },
+    {
+      "path": "images/3-tokyo-arrival.webp",
+      "alt": "左侧大幅东京街景插画占据半页，右侧分段文字与粉色标签组织抵达提示，图文层级明确。"
+    },
+    {
+      "path": "images/4-tokyo-neighborhoods.webp",
+      "alt": "三张粉蓝黄圆角推荐卡横排，图标和短清单构成轻松的街区选择界面，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/5-kyoto-heritage.webp",
+      "alt": "全幅寺庙樱花插画配底部三栏说明，白色标题卡漂浮在画面左上方，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/6-kyoto-quiet-moments.webp",
+      "alt": "大面积留白上用蓝色河流时间线连接四个静谧地点，圆点节点保持轻盈节奏，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/7-food-everyday-flavors.webp",
+      "alt": "右侧餐馆人物插画占据主体，左侧分段文字与底部四张风味卡介绍日常饮食，信息对比清楚。"
+    },
+    {
+      "path": "images/8-shopping-creative-finds.webp",
+      "alt": "五张白色购物卡横排，粉色章节标题与黄色预算提示卡形成明快层级，整体风格统一而鲜明。"
+    },
+    {
+      "path": "images/9-itinerary-photo-journey.webp",
+      "alt": "六日路线以横向时间轴展开，每日节点附拍摄时段，底部两条蓝色提示卡收束，阅读顺序明确。"
+    },
+    {
+      "path": "images/10-practical-tips-departure.webp",
+      "alt": "左侧实用清单配右侧车站插画，黄色提醒卡和粉色边线完成温柔收尾，主视觉层级鲜明有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，白色封面以樱花车站插画为主视觉，左侧粗体标题和粉黄标签营造轻小说感，统一边距和重点色共同控制画面重心。"
+    },
+    {
+      "path": "html/2-route-overview.html",
+      "description": "柔白画布上，横向旅行路线轴贯穿页面，四个城市节点配彩色胶囊卡和底部提示条，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/3-tokyo-arrival.html",
+      "description": "柔白页面左侧以东京街景插画建立主视觉，右侧将抵达提示分段排列，粉色标签、细线和底部首小时提示卡形成清晰导览层级。"
+    },
+    {
+      "path": "html/4-tokyo-neighborhoods.html",
+      "description": "三张粉蓝黄圆角推荐卡横排，图标和短清单构成轻松的街区选择界面，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/5-kyoto-heritage.html",
+      "description": "全幅寺庙樱花插画配底部三栏说明，白色标题卡漂浮在画面左上方，辅助标签、细线标注与留白共同强化主视觉和图文层级。"
+    },
+    {
+      "path": "html/6-kyoto-quiet-moments.html",
+      "description": "大面积留白上用蓝色河流时间线连接四个静谧地点，圆点节点保持轻盈节奏，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/7-food-everyday-flavors.html",
+      "description": "柔白页面右侧使用餐馆人物插画，左侧按段落组织用餐建议，底部四张白色风味卡横排，粉色标签清晰突出日常主题。"
+    },
+    {
+      "path": "html/8-shopping-creative-finds.html",
+      "description": "五张白色购物卡横排，粉色章节标题与黄色预算提示卡形成明快层级，规则对齐、编号标签和留白让多模块信息保持稳定视觉节奏。"
+    },
+    {
+      "path": "html/9-itinerary-photo-journey.html",
+      "description": "柔白页面用六个彩色节点串联每日路线，每个节点下方标注拍摄窗口，底部两条浅蓝提示卡分别说明行程节奏和拍摄礼仪。"
+    },
+    {
+      "path": "html/10-practical-tips-departure.html",
+      "description": "左侧实用清单配右侧车站插画，黄色提醒卡和粉色边线完成温柔收尾，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Convert the migration guide into a 7-slide engineering enablement deck. Explain scope, prerequisites, sequence, rollback, and unsupported cases. Use only the guide.

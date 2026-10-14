@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cost structure and unit economics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; overflow:hidden; }
+  svg text { font-family:'Archivo', sans-serif; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Cost structure and unit economics" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F3EFE6;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:58px; width:1000px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; letter-spacing:0.2em; color:#B57942; text-transform:uppercase;">04 &nbsp;·&nbsp; Cost structure &amp; unit economics</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:102px; width:1080px; z-index:10;">
+    <p style="margin:0; font-family:'Newsreader',serif; font-size:58px; font-weight:400; line-height:1.1; letter-spacing:-0.01em; color:#14100C;">A cleared transaction contributes 38%.<br>Verification is the cost that must automate.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1310px; top:96px; width:510px; height:152px; background:#234E3F; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1346px; top:120px; width:440px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-size:19px; font-weight:700; letter-spacing:0.15em; color:#D9B98F;">ILLUSTRATIVE ASSUMPTION SET</p>
+    <p style="margin:10px 0 0 0; font-family:'Archivo',sans-serif; font-size:22px; font-weight:400; line-height:1.4; color:#E6E1D5;">All values on this slide are modelled inputs for design debate — no observed results are represented.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:284px; width:1720px; height:1px; background:rgba(35,78,63,0.22); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:314px; width:1000px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-size:21px; font-weight:700; letter-spacing:0.14em; color:#B57942;">UNIT-ECONOMICS WATERFALL — PER CLEARED TRANSACTION, USD</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:358px; width:1080px; height:470px; z-index:1;">
+    <svg width="1080" height="470" viewBox="0 0 1080 470" xmlns="http://www.w3.org/2000/svg">
+      <!-- gridlines: y = 400 is 0, scale 1 USD = 0.85px, max 420 -->
+      <line x1="72" y1="400" x2="1080" y2="400" stroke="#234E3F" stroke-width="1.5"></line>
+      <line x1="72" y1="315" x2="1080" y2="315" stroke="rgba(35,78,63,0.16)" stroke-width="1"></line>
+      <line x1="72" y1="230" x2="1080" y2="230" stroke="rgba(35,78,63,0.16)" stroke-width="1"></line>
+      <line x1="72" y1="145" x2="1080" y2="145" stroke="rgba(35,78,63,0.16)" stroke-width="1"></line>
+      <line x1="72" y1="60" x2="1080" y2="60" stroke="rgba(35,78,63,0.16)" stroke-width="1"></line>
+      <text x="60" y="406" text-anchor="end" font-size="19" font-weight="500" fill="#3A352E">0</text>
+      <text x="60" y="321" text-anchor="end" font-size="19" font-weight="500" fill="#3A352E">100</text>
+      <text x="60" y="236" text-anchor="end" font-size="19" font-weight="500" fill="#3A352E">200</text>
+      <text x="60" y="151" text-anchor="end" font-size="19" font-weight="500" fill="#3A352E">300</text>
+      <text x="60" y="66" text-anchor="end" font-size="19" font-weight="500" fill="#3A352E">400</text>
+
+      <!-- 1: gross revenue 420 -> bar from 400 up to 43 -->
+      <rect x="96" y="43" width="132" height="357" fill="#234E3F"></rect>
+      <text x="162" y="26" text-anchor="middle" font-size="26" font-weight="700" fill="#234E3F">420</text>
+      <text x="162" y="430" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">Platform</text>
+      <text x="162" y="454" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">revenue</text>
+
+      <!-- 2: payment & escrow -34 : from 43 down to 72 -->
+      <rect x="264" y="43" width="132" height="29" fill="#B57942"></rect>
+      <line x1="228" y1="43" x2="264" y2="43" stroke="#3A352E" stroke-width="1" stroke-dasharray="4 4"></line>
+      <text x="330" y="26" text-anchor="middle" font-size="24" font-weight="700" fill="#96612F">−34</text>
+      <text x="330" y="430" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">Payments</text>
+      <text x="330" y="454" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">&amp; escrow</text>
+
+      <!-- 3: verification -88 : from 72 down to 147 -->
+      <rect x="432" y="72" width="132" height="75" fill="#B57942"></rect>
+      <line x1="396" y1="72" x2="432" y2="72" stroke="#3A352E" stroke-width="1" stroke-dasharray="4 4"></line>
+      <text x="498" y="56" text-anchor="middle" font-size="24" font-weight="700" fill="#96612F">−88</text>
+      <text x="498" y="430" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">Verification</text>
+      <text x="498" y="454" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">(part manual)</text>
+
+      <!-- 4: support & dispute -52 : from 147 down to 191 -->
+      <rect x="600" y="147" width="132" height="44" fill="#B57942"></rect>
+      <line x1="564" y1="147" x2="600" y2="147" stroke="#3A352E" stroke-width="1" stroke-dasharray="4 4"></line>
+      <text x="666" y="132" text-anchor="middle" font-size="24" font-weight="700" fill="#96612F">−52</text>
+      <text x="666" y="430" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">Support</text>
+      <text x="666" y="454" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">&amp; disputes</text>
+
+      <!-- 5: hosting & data -85 : from 191 down to 263 -->
+      <rect x="768" y="191" width="132" height="72" fill="#B57942"></rect>
+      <line x1="732" y1="191" x2="768" y2="191" stroke="#3A352E" stroke-width="1" stroke-dasharray="4 4"></line>
+      <text x="834" y="176" text-anchor="middle" font-size="24" font-weight="700" fill="#96612F">−85</text>
+      <text x="834" y="430" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">Hosting</text>
+      <text x="834" y="454" text-anchor="middle" font-size="20" font-weight="600" fill="#14100C">&amp; data cost</text>
+
+      <!-- 6: contribution 161 : from 400 up to 263 -->
+      <rect x="936" y="263" width="132" height="137" fill="#234E3F"></rect>
+      <line x1="900" y1="263" x2="936" y2="263" stroke="#3A352E" stroke-width="1" stroke-dasharray="4 4"></line>
+      <text x="1002" y="246" text-anchor="middle" font-size="26" font-weight="700" fill="#234E3F">161</text>
+      <text x="1002" y="430" text-anchor="middle" font-size="20" font-weight="700" fill="#14100C">Contribution</text>
+      <text x="1002" y="454" text-anchor="middle" font-size="20" font-weight="700" fill="#14100C">38% margin</text>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:846px; width:1080px; height:1px; background:rgba(35,78,63,0.22); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:874px; width:1080px; z-index:10;">
+    <p style="margin:0 0 12px 0; font-family:'Archivo',sans-serif; font-size:21px; font-weight:700; letter-spacing:0.14em; color:#B57942;">ANNOTATED ASSUMPTIONS</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 40px;">
+      <p style="margin:0; font-family:'Archivo',sans-serif; font-size:22px; font-weight:400; line-height:1.42; color:#2A2620;"><strong style="font-weight:700;">Basket $6,000, take rate 7%.</strong> Revenue per transaction is a function of basket size, so mid-market baskets are the design target.</p>
+      <p style="margin:0; font-family:'Archivo',sans-serif; font-size:22px; font-weight:400; line-height:1.42; color:#2A2620;"><strong style="font-weight:700;">Verification is 55% manual today.</strong> Automating review to 20% manual moves contribution from 38% to roughly 49% with no price change.</p>
+      <p style="margin:0; font-family:'Archivo',sans-serif; font-size:22px; font-weight:400; line-height:1.42; color:#2A2620;"><strong style="font-weight:700;">Payments are a pass-through floor.</strong> Escrow and card cost scales with value cleared and will not improve until volume earns rate cards.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1250px; top:314px; width:570px; height:500px; background:#FFFFFF; border:2px solid #234E3F; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:344px; width:490px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-size:21px; font-weight:700; letter-spacing:0.14em; color:#B57942;">BREAK-EVEN SCALE</p>
+    <p style="margin:10px 0 0 0; font-family:'Archivo',sans-serif; font-size:24px; font-weight:400; line-height:1.4; color:#2A2620;">Fixed base of $310k per month must be covered by contribution.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1290px; top:472px; width:490px; height:216px; z-index:5;">
+    <svg width="490" height="216" viewBox="0 0 490 216" xmlns="http://www.w3.org/2000/svg">
+      <!-- axes -->
+      <line x1="56" y1="176" x2="480" y2="176" stroke="#234E3F" stroke-width="1.5"></line>
+      <line x1="56" y1="8" x2="56" y2="176" stroke="#234E3F" stroke-width="1.5"></line>
+      <!-- fixed cost line -->
+      <line x1="56" y1="76" x2="480" y2="76" stroke="#3A352E" stroke-width="2" stroke-dasharray="8 6"></line>
+      <text x="60" y="66" font-size="18" font-weight="600" fill="#3A352E">fixed $310k / mo</text>
+      <!-- contribution line -->
+      <line x1="56" y1="176" x2="440" y2="20" stroke="#B57942" stroke-width="3"></line>
+      <!-- crossing point at y=76 -->
+      <circle cx="302" cy="76" r="7" fill="#234E3F"></circle>
+      <line x1="302" y1="76" x2="302" y2="176" stroke="#234E3F" stroke-width="1.5" stroke-dasharray="4 4"></line>
+      <text x="302" y="198" text-anchor="middle" font-size="19" font-weight="700" fill="#234E3F">1,930 tx / mo</text>
+      <text x="46" y="14" text-anchor="end" font-size="17" font-weight="500" fill="#3A352E">$</text>
+      <text x="466" y="198" text-anchor="end" font-size="17" font-weight="500" fill="#3A352E">volume</text>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:702px; width:490px; z-index:10;">
+    <p style="margin:0; font-family:'Archivo',sans-serif; font-size:23px; font-weight:600; line-height:1.4; color:#234E3F;">Break-even ≈ 1,930 cleared transactions per month, or $11.6m of value cleared. Automating verification pulls that to ≈ 1,490.</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "id": "38-SaaS Pricing and Packaging Strategy",
+  "version": 1,
+  "ppt_number": 38,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "navy",
+    "teal",
+    "white",
+    "green"
+  ],
+  "name": "SaaS Pricing and Packaging Strategy",
+  "description": "Modern pricing-strategy design alternating navy hero panels with bright analytical pages, teal gradients, and crisp charts.",
+  "user": "Founders & Leaders",
+  "use_case": "Reports & Analysis",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["strategy"],"industries":["technology"],"audiences":["executive"],"formats":["roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深海军蓝、青绿与白色封面以左侧中部超大标题开场，三块几何面板拉开层级。"
+    },
+    {
+      "path": "images/2-pricing-leakage.webp",
+      "alt": "深海军蓝、青绿与白色页面，一幅图表集中排布，方案层级拉开层级。"
+    },
+    {
+      "path": "images/3-willingness-to-pay.webp",
+      "alt": "深海军蓝、青绿与白色页面，两幅图表集中排布，数据分析组织动线。"
+    },
+    {
+      "path": "images/4-recommended-packages.webp",
+      "alt": "深海军蓝、青绿与白色页面，一组表格压缩信息密度，决策信息强化对比。"
+    },
+    {
+      "path": "images/5-impact-and-rollout.webp",
+      "alt": "深海军蓝、青绿与白色页面，两幅图表集中排布，绩效信息收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，深海军蓝、青绿与白色主导画面，左侧中部的超大标题形成第一视点；三块几何面板与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-pricing-leakage.html",
+      "description": "左上方标题锚定深海军蓝、青绿与白色画面；留白与细线分隔出清晰阅读区，一幅图表落在右侧，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/3-willingness-to-pay.html",
+      "description": "深海军蓝、青绿与白色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，两幅分析图表落在中央，关键数字、趋势图与注释标记补充层级。"
+    },
+    {
+      "path": "html/4-recommended-packages.html",
+      "description": "标题固定在左上方，深海军蓝、青绿与白色分隔主体；单一大面板承载主体信息，一组表格位于中央，行动卡与强调结论补充层级。"
+    },
+    {
+      "path": "html/5-impact-and-rollout.html",
+      "description": "深海军蓝、青绿与白色画面，标题置于左上方；留白与细线分隔出清晰阅读区，两幅图表落在左侧，指标数字与趋势标记补充层级。"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "129-Family Recipes and Cooking Stories",
+  "version": 1,
+  "ppt_number": 129,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "red",
+    "green",
+    "blue",
+    "yellow"
+  ],
+  "name": "Family Recipes and Cooking Stories",
+  "description": "Family recipe scrapbook with grid paper, taped photos, handwritten notes, timelines, and warm food photography.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["consumer"],"audiences":["public"],"formats":["guide"],"primary_styles":["fresh"],"visual_traits":["fresh","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "撕边奶油纸标题与右侧大幅拍立得组成温暖的家庭食谱手账封面，纸张层次自然。"
+    },
+    {
+      "path": "images/2-family-kitchen.webp",
+      "alt": "厨房照片、横线故事纸和家庭最爱便签拼贴出温暖的记忆页面，手账气息浓厚。"
+    },
+    {
+      "path": "images/3-breakfast-recipe.webp",
+      "alt": "配方横线卡与早餐大图左右分栏，红绿标签和手写箭头清晰引导，版面亲切易读。"
+    },
+    {
+      "path": "images/4-main-course-steps.webp",
+      "alt": "六张编号步骤卡配食材小图和手写提示，像翻开的家庭菜谱，流程清晰轻快。"
+    },
+    {
+      "path": "images/5-desserts-holidays.webp",
+      "alt": "红色格纹纸上排列三张甜点卡与照片，节日标签营造复古厨房氛围，画面温馨活泼。"
+    },
+    {
+      "path": "images/6-favorite-recipes.webp",
+      "alt": "双栏食谱清单与右侧重点菜谱卡并置，彩色索引签增强手账感，层次丰富有序。"
+    },
+    {
+      "path": "images/7-kitchen-year.webp",
+      "alt": "四季时间线串联粉彩食物卡和手写月份，呈现厨房一年的节奏，色彩温暖自然。"
+    },
+    {
+      "path": "images/8-by-the-numbers.webp",
+      "alt": "超大数字、条形图和环形图以红绿蓝组合成食谱主题数据页，信息层级鲜明。"
+    },
+    {
+      "path": "images/9-then-and-now.webp",
+      "alt": "祖母做法与现代做法左右对照，中间圆形标记和底部色带强化变化，对比清晰温暖。"
+    },
+    {
+      "path": "images/10-pass-it-on.webp",
+      "alt": "三步传承流程、手写清单与右侧拍立得构成温暖的食谱收尾页，叙事完整柔和。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，奶油纸色背景上左侧放置撕边标题纸和大号衬线字，右侧倾斜大幅拍立得作为主视觉，红蓝黄贴纸与手写餐具涂鸦散落周围。"
+    },
+    {
+      "path": "html/2-family-kitchen.html",
+      "description": "厨房照片与横线故事纸构成左右拼贴，手写标题、家庭最爱便签、纸胶带和小型餐具图标叠加其上，呈现温暖旧食谱本质感。"
+    },
+    {
+      "path": "html/3-breakfast-recipe.html",
+      "description": "左侧横线食谱卡分区排列配料和做法，右侧大幅早餐照片配红绿索引标签，手写箭头、胶带和小贴纸引导阅读。"
+    },
+    {
+      "path": "html/4-main-course-steps.html",
+      "description": "六张编号步骤卡沿规则网格排列，每张卡结合食材小图、短说明和手写提示，粗描边、阴影与彩色标签模拟翻页菜谱。"
+    },
+    {
+      "path": "html/5-desserts-holidays.html",
+      "description": "红色格纹纸覆盖页面背景，三张奶油白甜点卡横向排列并嵌入照片，手写节日标签、胶带和圆形贴纸营造复古厨房氛围。"
+    },
+    {
+      "path": "html/6-favorite-recipes.html",
+      "description": "左侧双栏清单以横线纸和编号索引整理菜名，右侧堆叠两张重点食谱卡，红绿蓝标签和手写批注制造收藏册层次。"
+    },
+    {
+      "path": "html/7-kitchen-year.html",
+      "description": "一条横向季节时间线串联春夏秋冬四张食物卡，月份与食材采用手写标注，粉彩背景纸和细小涂鸦呈现家庭厨房年历。"
+    },
+    {
+      "path": "html/8-by-the-numbers.html",
+      "description": "左侧超大数字作为视觉锚点，右侧组合横向条形图、环形图和重点统计卡，番茄红、深绿与钴蓝形成复古食谱信息图。"
+    },
+    {
+      "path": "html/9-then-and-now.html",
+      "description": "左右两张大卡分别呈现祖母做法与现代做法，中间圆形对比标记连接双方，多行对应条目和底部彩色色带强化时代变化。"
+    },
+    {
+      "path": "html/10-pass-it-on.html",
+      "description": "左侧以三步流程和手写清单组织传承行动，连接箭头贯穿彩色节点，右侧大幅拍立得与纸胶带形成温暖书挡式收尾。"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "42-Early-stage Investment Analysis Memo Deck",
+  "version": 1,
+  "ppt_number": 42,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "navy",
+    "blue",
+    "yellow",
+    "white"
+  ],
+  "name": "Early-stage Investment Analysis Memo Deck",
+  "description": "Investment-memo design with deep navy framing, bright analytical pages, blue charts, and selective yellow evidence markers.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["industry-analysis"],"industries":["business","finance"],"audiences":["investor"],"formats":["research-presentation"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深海军蓝、亮蓝与明黄封面以左侧中部超大标题开场，一幅图表拉开层级。"
+    },
+    {
+      "path": "images/2-investment-conclusion.webp",
+      "alt": "深海军蓝、亮蓝与明黄页面，一组表格压缩信息密度，财务信息强化对比。"
+    },
+    {
+      "path": "images/3-market-product-moat.webp",
+      "alt": "深海军蓝、亮蓝与明黄页面，三幅图表集中排布，人群信息收束版面。"
+    },
+    {
+      "path": "images/4-team-model-returns.webp",
+      "alt": "深海军蓝、亮蓝与明黄页面，一幅图表集中排布，人物卡形成重心。"
+    },
+    {
+      "path": "images/5-risks-gates-next-steps.webp",
+      "alt": "深海军蓝、亮蓝与明黄页面，一幅图表集中排布，风险信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，深海军蓝、亮蓝与明黄主导画面，左侧中部的超大标题形成第一视点；一幅图表与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-investment-conclusion.html",
+      "description": "标题固定在左上方，深海军蓝、亮蓝与明黄分隔主体；三块主体模块构成错落分栏，一组表格位于右侧，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/3-market-product-moat.html",
+      "description": "深海军蓝、亮蓝与明黄画面，标题置于左上方；单一大面板承载主体信息，三幅图表落在中央，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/4-team-model-returns.html",
+      "description": "左上方标题锚定深海军蓝、亮蓝与明黄画面；三块主体模块构成错落分栏，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/5-risks-gates-next-steps.html",
+      "description": "深海军蓝、亮蓝与明黄作为底色，标题落在左上方；单一大面板承载主体信息，一幅风险图表落在右侧，一组表格位于左侧。"
+    }
+  ]
+}

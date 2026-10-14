@@ -1,0 +1,10 @@
+{
+  "id": "06-complex-table",
+  "title": "复杂表格与合并单元格",
+  "description": "跨行跨列、长文本、状态胶囊、迷你图和复杂边框。",
+  "deck_html_file": "06-complex-table/deck.html",
+  "slide_html_files": ["06-complex-table/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["table", "rowspan", "colspan", "borders", "long-text"],
+  "manual_checks": ["合并单元格结构保持", "表头与内容列对齐", "长文本不越过单元格边界"]
+}

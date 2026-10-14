@@ -1,0 +1,63 @@
+{
+  "id": "the-2026-world-cup",
+  "version": 1,
+  "ppt_number": 1,
+  "score": 9.2,
+  "theme": "dark",
+  "color": [
+    "blue",
+    "red",
+    "yellow",
+    "white"
+  ],
+  "name": "2026 World Cup Editorial Visual",
+  "description": "High-impact sports editorial design with oversized numbers, grid textures, angular blocks, and dense information cards.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["media"],"audiences":["public"],"formats":["guide"],"primary_styles":["formal","dark"],"visual_traits":["formal","dark","colorful","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/cover.webp",
+      "alt": "海军蓝与鲜红斜切构图的世界杯封面，以超大 2026 数字和关键赛程信息形成强烈视觉冲击。"
+    },
+    {
+      "path": "images/overview.webp",
+      "alt": "左侧深蓝章节栏配右侧米白信息区，使用三张事件卡和底部深蓝关键数字带概览赛事。"
+    },
+    {
+      "path": "images/format-highlights.webp",
+      "alt": "深蓝网格背景上的三张半透明数字卡和横向四步赛制流程，右上红色斜切装饰增强动势。"
+    },
+    {
+      "path": "images/host-cities.webp",
+      "alt": "深蓝页眉与米白主体组成的高密度城市清单，右侧用深蓝和红色分区强调墨西哥与加拿大。"
+    },
+    {
+      "path": "images/key-numbers.webp",
+      "alt": "深蓝渐变网格页面，左侧纵向排列三组超大关键数字，右侧鲜红面板承载亚洲球队矩阵与中国队提示。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/cover.html",
+      "description": "封面页，海军蓝与赛事红以巨大斜切面分割画布，超大 2026 数字横跨主视觉，辅以金黄强调、细网格和底部关键日期信息。"
+    },
+    {
+      "path": "html/overview.html",
+      "description": "左侧约三分之一深蓝章节栏使用超大章节号和纵排标题，右侧米白区域通过三张白色卡片与底部深蓝数据带组织概览信息。"
+    },
+    {
+      "path": "html/format-highlights.html",
+      "description": "全幅深蓝网格背景上以三列半透明大数字卡呈现重点，底部紫红渐变横带组织四步流程，右上红色斜切块制造运动感。"
+    },
+    {
+      "path": "html/host-cities.html",
+      "description": "深蓝通栏页眉下方采用米白底的非对称信息仪表盘，左侧大面积城市清单，右侧深蓝与红色国家模块形成清晰分组。"
+    },
+    {
+      "path": "html/key-numbers.html",
+      "description": "深蓝到紫色渐变网格背景，左侧三层横向数字条突出超大指标，右侧高饱和红色大面板包含九宫格矩阵和底部重点提示。"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 80px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.body-text { font-size: 22px; line-height: 1.5; color: #3A3D45; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { margin-top: 30px; z-index: 5; }
+.content-area { flex-grow: 1; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Custom Matrix Styles */
+.matrix-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+}
+
+.matrix-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 30px;
+}
+
+.axis-y-label {
+  position: absolute;
+  left: -110px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--mute);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.axis-x-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--mute);
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+}
+
+.quadrant {
+  background: #F6F6F4;
+  border: 1px solid var(--line);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.q-sign-now {
+  border: 3px solid var(--ink);
+  background: #FFFFFF;
+}
+
+.q-sign-now::before {
+  content: 'RECOMMENDED BUY';
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--red);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.q-risky {
+  background: var(--accent);
+  border-color: #F5D2D6;
+}
+
+.q-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(16, 17, 20, 0.1);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.q-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.q-sign-now .q-title {
+  color: var(--red);
+}
+
+.q-desc {
+  font-size: 13px;
+  color: var(--mute);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.islanders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.islander-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.islander-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.islander-avatar-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  background: #E3E4E7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--mute);
+  font-weight: 800;
+}
+
+.islander-info {
+  flex: 1;
+}
+
+.islander-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.islander-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.islander-followers {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.islander-detail {
+  font-size: 15px;
+  color: #555;
+  margin-top: 2px;
+  line-height: 1.3;
+}
+
+/* Right Sidebar */
+.matrix-right {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-title {
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.sidebar-desc {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #3A3D45;
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #F6F6F4;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.meta-label {
+  color: var(--mute);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  color: var(--ink);
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Viral Social Media Content & Strategy</div>
+    <h1 class="h1">The Talent Matrix: <span class="serif-italic">Viral Momentum vs. Brand Safety</span></h1>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    <div class="matrix-container">
+      
+      <!-- Left Column: 2x2 Matrix -->
+      <div class="matrix-left">
+        <div class="axis-y-label">◀ Low Momentum ——— Viral Momentum ——— High Momentum ▶</div>
+        
+        <div class="matrix-grid">
+          
+          <!-- Top Left: Risky Bet -->
+          <div class="quadrant q-risky">
+            <div class="q-header">
+              <span class="q-title" style="color: var(--red);">Risky Bet</span>
+              <span class="q-desc">High Attention / PR Risk</span>
+            </div>
+            <div class="islanders-list">
+              <div class="islander-row">
+                <img class="islander-avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d5511d6afd971406.jpg" alt="Melanie Moreno">
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Melanie Moreno</span>
+                    <span class="islander-followers">2.5M IG</span>
+                  </div>
+                  <div class="islander-detail">Polarized reunion drama & runway profile</div>
+                </div>
+              </div>
+              <div class="islander-row">
+                <div class="islander-avatar-placeholder">KB</div>
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Kayda Bosse</span>
+                    <span class="islander-followers">1.7M IG</span>
+                  </div>
+                  <div class="islander-detail">Post-Reunion backlash & negative sentiment spikes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Top Right: Sign Now -->
+          <div class="quadrant q-sign-now">
+            <div class="q-header">
+              <span class="q-title">Sign Now</span>
+              <span class="q-desc">High Viral / High Safety</span>
+            </div>
+            <div class="islanders-list">
+              <div class="islander-row">
+                <img class="islander-avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" alt="Trinity Tatum">
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Trinity Tatum</span>
+                    <span class="islander-followers">3.6M IG</span>
+                  </div>
+                  <div class="islander-detail">S8 Winner, massive organic viral quote traction</div>
+                </div>
+              </div>
+              <div class="islander-row">
+                <img class="islander-avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" alt="Aniya Harvey">
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Aniya Harvey</span>
+                    <span class="islander-followers">2.1M IG</span>
+                  </div>
+                  <div class="islander-detail">Gersh Agency backed, clean mainstream appeal</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bottom Left: Pass -->
+          <div class="quadrant">
+            <div class="q-header">
+              <span class="q-title">Pass</span>
+              <span class="q-desc">Lower Hype / Low Fit</span>
+            </div>
+            <div class="islanders-list">
+              <div class="islander-row">
+                <div class="islander-avatar-placeholder">SR</div>
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Sincere Rhea</span>
+                    <span class="islander-followers">612K IG</span>
+                  </div>
+                  <div class="islander-detail">Relationship controversy & toxic narrative flags</div>
+                </div>
+              </div>
+              <div class="islander-row">
+                <div class="islander-avatar-placeholder">EB</div>
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Early Exits</span>
+                    <span class="islander-followers">Various</span>
+                  </div>
+                  <div class="islander-detail">Rapid post-show attention decay & low visibility</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bottom Right: High Upside -->
+          <div class="quadrant">
+            <div class="q-header">
+              <span class="q-title">High Upside</span>
+              <span class="q-desc">Staying Power / Safe</span>
+            </div>
+            <div class="islanders-list">
+              <div class="islander-row">
+                <img class="islander-avatar" src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-dba968ff974d586c.webp" alt="Bryce Alakai">
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Bryce Alakai</span>
+                    <span class="islander-followers">1.9M IG</span>
+                  </div>
+                  <div class="islander-detail">UTA signed, producer & DJ crossover potential</div>
+                </div>
+              </div>
+              <div class="islander-row">
+                <div class="islander-avatar-placeholder">CM</div>
+                <div class="islander-info">
+                  <div class="islander-meta">
+                    <span class="islander-name">Corbin Mims</span>
+                    <span class="islander-followers">1.0M IG</span>
+                  </div>
+                  <div class="islander-detail">Stable fitness & travel-focused audience niche</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="axis-x-label">◀ Volatile / Risk ——— Brand Safety ——— Stable / Safe ▶</div>
+      </div>
+      
+      <!-- Right Column: Sidebar -->
+      <div class="matrix-right">
+        <div class="sidebar-top">
+          <div class="sidebar-title">The Screenshot Slide</div>
+          <div class="sidebar-desc">
+            Post-Reunion attention is highly volatile. While drama-fueled Islanders command massive immediate impressions, brand safety dictates the final $500K split. This matrix maps the cast's commercial viability as of Sept 4, 2026.
+          </div>
+        </div>
+        
+        <div class="sidebar-bottom">
+          <div class="meta-item">
+            <span class="meta-label">Reunion Broadcast</span>
+            <span class="meta-value">Aug 31, 2026</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Data Cutoff</span>
+            <span class="meta-value">Sept 4, 2026</span>
+          </div>
+          <div class="meta-item" style="flex-direction: column; gap: 4px;">
+            <span class="meta-label">Primary Sources</span>
+            <span class="meta-value" style="font-size: 13px; line-height: 1.4; color: var(--mute);">Verified Instagram profiles, Peacock Reunion coverage, Cosmopolitan & Deadline announcements.</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Pop-Culture Editorial Matrix</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [03]</div>
+  </footer>
+</div>
+</body>
+</html>

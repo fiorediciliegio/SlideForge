@@ -1,0 +1,46 @@
+{
+  "title": "KPI Summary",
+  "metaLabel": "BLUEPRINT / KPI",
+  "footerText": "Business Professional | KPI Summary",
+  "pageNumber": "08",
+  "variant": "hero-kpi-grid",
+  "density": "high",
+  "heading": "Key metrics",
+  "subtitle": "For operating metrics, target breakdowns, reviews, and status snapshots.",
+  "headlineTitle": "Core performance",
+  "leftLabel": "Current",
+  "rightLabel": "Target",
+  "leftValue": "84",
+  "rightValue": "90",
+  "leftShare": 84,
+  "rightShare": 90,
+  "metrics": [
+    { "value": "84%", "label": "Completion" },
+    { "value": "12", "label": "Open items" },
+    { "value": "3", "label": "Critical risks" },
+    { "value": "7", "label": "Weeks left" }
+  ],
+  "statusCards": [
+    {
+      "title": "Execution progress",
+      "progress": 84,
+      "status": "On track against current plan",
+      "icon": "route"
+    },
+    {
+      "title": "Risk coverage",
+      "progress": 72,
+      "status": "Critical risks under review",
+      "icon": "shield"
+    },
+    {
+      "title": "Target readiness",
+      "progress": 90,
+      "status": "Close to target threshold",
+      "icon": "wallet"
+    }
+  ],
+  "insights": [
+    "Numbers are the anchor; commentary should explain drivers and next actions."
+  ]
+}

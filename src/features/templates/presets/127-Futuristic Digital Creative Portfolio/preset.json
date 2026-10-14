@@ -1,0 +1,103 @@
+{
+  "id": "127-Futuristic Digital Creative Portfolio",
+  "version": 1,
+  "ppt_number": 127,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "purple",
+    "magenta",
+    "cyan"
+  ],
+  "name": "Futuristic Digital Creative Portfolio",
+  "description": "Futuristic digital portfolio with metallic forms, neon gradients, scanning lines, and interface-like project grids.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["media"],"audiences":["client","professional"],"formats":[],"primary_styles":["dark"],"visual_traits":["dark","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/01-cover.webp",
+      "alt": "黑紫渐变封面以金属液态球体为主视觉，左侧超大白字与洋红斜体营造未来感，层级鲜明。"
+    },
+    {
+      "path": "images/02-statement.webp",
+      "alt": "巨型竖排字母与中央宣言文字叠加，青紫渐变背景和细小元数据模拟数字档案，层级鲜明。"
+    },
+    {
+      "path": "images/03-universe.webp",
+      "alt": "八张深色风格卡组成两行网格，洋红、青色标题与右上数字共同建立未来视觉索引，信息对比清楚。"
+    },
+    {
+      "path": "images/04-projects.webp",
+      "alt": "两行项目缩略图网格配右侧品牌说明，洋红与青色标签强化数字作品集感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/05-case-study.webp",
+      "alt": "中央巨大金属球体承载项目名称，右侧项目摘要与底部指标形成未来发布海报，层级鲜明。"
+    },
+    {
+      "path": "images/06-experiments.webp",
+      "alt": "多张实验缩略卡组成密集档案墙，霓虹色样与右侧代码式说明并置，整体卡片节奏清晰有序。"
+    },
+    {
+      "path": "images/07-process.webp",
+      "alt": "五个发光节点沿横向时间轴排列，底部阶段说明将创作流程可视化，阅读路径清晰而有节奏。"
+    },
+    {
+      "path": "images/08-gallery.webp",
+      "alt": "不等宽作品图块拼成画廊墙，中心大幅液态渐变图形成强烈视觉焦点，整体风格统一而鲜明。"
+    },
+    {
+      "path": "images/09-capabilities.webp",
+      "alt": "双栏能力清单配右侧紫色标签卡，细线表格和霓虹文字呈现技术档案感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-contact.webp",
+      "alt": "左侧金属球体海报与右侧超大联系标题并列，洋红卡片和信息表完成收尾，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/01-cover.html",
+      "description": "封面页，黑紫渐变封面以金属液态球体为主视觉，左侧超大白字与洋红斜体营造未来感，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/02-statement.html",
+      "description": "巨型竖排字母与中央宣言文字叠加，青紫渐变背景和细小元数据模拟数字档案，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/03-universe.html",
+      "description": "深黑页面顶部使用超大白色标题，下方八张风格卡按两行四列排列，洋红和青色关键词配右上数字形成清晰的创意索引。"
+    },
+    {
+      "path": "html/04-projects.html",
+      "description": "两行项目缩略图网格配右侧品牌说明，洋红与青色标签强化数字作品集感，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/05-case-study.html",
+      "description": "中央巨大金属球体承载项目名称，右侧项目摘要与底部指标形成未来发布海报，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/06-experiments.html",
+      "description": "深黑画布上，多张实验缩略卡组成密集档案墙，霓虹色样与右侧代码式说明并置，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/07-process.html",
+      "description": "深黑画布上，五个发光节点沿横向时间轴排列，底部阶段说明将创作流程可视化，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/08-gallery.html",
+      "description": "不等宽作品图块拼成画廊墙，中心大幅液态渐变图形成强烈视觉焦点，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/09-capabilities.html",
+      "description": "双栏能力清单配右侧紫色标签卡，细线表格和霓虹文字呈现技术档案感，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/10-contact.html",
+      "description": "左侧金属球体海报与右侧超大联系标题并列，洋红卡片和信息表完成收尾，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

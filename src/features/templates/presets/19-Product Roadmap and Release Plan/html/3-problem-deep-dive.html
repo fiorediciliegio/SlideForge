@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Problem deep dive — where the workflow breaks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;padding:0;overflow:hidden;background:#F6F4F0;-webkit-font-smoothing:antialiased;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Problem deep dive" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F6F4F0;font-family:'IBM Plex Sans',sans-serif;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:52px;width:56px;height:4px;background:#E0552B;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:988px;width:1728px;height:1px;background:#DFD9D0;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:596px;width:1728px;height:1px;background:#DFD9D0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:76px;width:900px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:2.2px;text-transform:uppercase;color:#E0552B;z-index:10;">02 · Problem analysis</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:108px;width:1400px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:54px;line-height:1.12;letter-spacing:-1.2px;color:#15171C;z-index:10;">Where the workflow breaks — and for whom</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:196px;width:1728px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:#8B8D95;z-index:10;">Activation funnel · 1,860 new accounts · Jun–Aug 2026</div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:242px;width:1728px;height:328px;z-index:10;">
+    <div style="display:grid;grid-template-columns:260px 1116px 160px 120px;gap:24px;align-items:center;height:56px;margin-bottom:12px;">
+      <div style="font-size:20px;color:#15171C;">Signed up</div>
+      <div><div style="height:34px;width:100%;background:#15171C;border-radius:2px;"></div></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#15171C;">100%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#A0A2AA;">1,860</div>
+    </div>
+    <div style="display:grid;grid-template-columns:260px 1116px 160px 120px;gap:24px;align-items:center;height:56px;margin-bottom:12px;">
+      <div style="font-size:20px;color:#15171C;">Data source connected</div>
+      <div><div style="height:34px;width:71%;background:#2F6F63;border-radius:2px;"></div></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#15171C;">71%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#E0552B;">−29 pts</div>
+    </div>
+    <div style="display:grid;grid-template-columns:260px 1116px 160px 120px;gap:24px;align-items:center;height:56px;margin-bottom:12px;">
+      <div style="font-size:20px;color:#15171C;">First workflow live</div>
+      <div><div style="height:34px;width:48%;background:#E0552B;border-radius:2px;"></div></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#15171C;">48%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#E0552B;">−23 pts</div>
+    </div>
+    <div style="display:grid;grid-template-columns:260px 1116px 160px 120px;gap:24px;align-items:center;height:56px;margin-bottom:12px;">
+      <div style="font-size:20px;color:#15171C;">Team invited (3+ seats)</div>
+      <div><div style="height:34px;width:33%;background:#D9A521;border-radius:2px;"></div></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#15171C;">33%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#E0552B;">−15 pts</div>
+    </div>
+    <div style="display:grid;grid-template-columns:260px 1116px 160px 120px;gap:24px;align-items:center;height:56px;">
+      <div style="font-size:20px;color:#15171C;">Weekly active at day 30</div>
+      <div><div style="height:34px;width:26%;background:#C9C2B7;border-radius:2px;"></div></div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#15171C;">26%</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#E0552B;">−7 pts</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:632px;width:528px;height:292px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:126px;top:662px;width:468px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#E0552B;">Primary · Ops manager</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;color:#15171C;margin-top:14px;line-height:1.2;">Rebuilds the same handoff in three tools</div>
+    <div style="font-size:19px;line-height:1.5;color:#6C6F78;margin-top:14px;">Owns the process, has no way to encode it. Every exception becomes a Slack thread.</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#15171C;margin-top:20px;">34 manual handoffs / week</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:696px;top:632px;width:528px;height:292px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:726px;top:662px;width:468px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#2F6F63;">Gatekeeper · IT admin</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;color:#15171C;margin-top:14px;line-height:1.2;">Blocks rollout without an audit trail</div>
+    <div style="font-size:19px;line-height:1.5;color:#6C6F78;margin-top:14px;">Needs approval history, role scoping and export before workflows touch customer data.</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#15171C;margin-top:20px;">41% of stalls wait on security</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1296px;top:632px;width:528px;height:292px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1326px;top:662px;width:468px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#D9A521;">Influencer · CS lead</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;color:#15171C;margin-top:14px;line-height:1.2;">Cannot see whether a run succeeded</div>
+    <div style="font-size:19px;line-height:1.5;color:#6C6F78;margin-top:14px;">Finds broken automations from customer complaints, not from the product.</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:18px;color:#15171C;margin-top:20px;">2.4 days to detect a break</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1004px;width:900px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8B8D95;z-index:10;">Atlas Ops Cloud · Product Roadmap &amp; Release Plan</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1004px;width:200px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8B8D95;z-index:10;">03 / 10</div>
+
+</div>
+</body>
+</html>

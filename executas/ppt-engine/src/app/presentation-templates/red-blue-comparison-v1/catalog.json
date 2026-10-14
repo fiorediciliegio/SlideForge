@@ -1,0 +1,329 @@
+{
+  "group_id": "red-blue-comparison-v1",
+  "catalog_type": "tsx-first",
+  "version": 11,
+  "source_theme": {
+    "folder": ".tmp/Template/红蓝主题",
+    "theme_json": ".tmp/Template/红蓝主题/red-blue.json",
+    "page_count": 26,
+    "layout_distribution": {
+      "CoverSlide": 2,
+      "AgendaSlide": 1,
+      "ContentSlide": 22,
+      "ThankyouSlide": 1
+    },
+    "dominant_elements": ["CardGrid", "Chart", "NumberCallout", "Timeline", "TextBlock"]
+  },
+  "purpose": "Help the PPT AI Agent choose copyable TSX blueprints for Red Blue Comparison decks, then derive final pages into slides/*.tsx and edit implementation directly.",
+  "implemented_page_type_coverage": {
+    "cover": ["cover-comparison"],
+    "agenda": ["topic-overview"],
+    "content": [
+      "economy-size-growth",
+      "economic-structure",
+      "demographics-snapshot",
+      "aging-dependency",
+      "population-trend",
+      "technology-innovation-kpis",
+      "evidence-image-table"
+    ],
+    "chart": ["economy-size-growth", "aging-dependency", "population-trend", "technology-innovation-kpis"],
+    "image": ["evidence-image-table"],
+    "table": ["evidence-image-table"],
+    "comparison": [
+      "economic-structure",
+      "demographics-snapshot",
+      "economy-size-growth",
+      "aging-dependency",
+      "population-trend",
+      "technology-innovation-kpis",
+      "evidence-image-table"
+    ],
+    "timeline": ["historical-milestones-timeline"],
+    "closing": ["closing-contact"]
+  },
+  "directory_roles": {
+    "components": {
+      "path": "./components",
+      "role": "Reusable cross-slide visual components for the red-blue comparison system."
+    },
+    "blueprints": {
+      "path": "./blueprints",
+      "role": "Copyable TSX blueprint pages. Start here when selecting a page structure."
+    },
+    "slides": {
+      "path": "./slides",
+      "role": "Final registered slide entries. group.json.layouts and manifest.json source.path must only reference this directory."
+    },
+    "data": {
+      "path": "./data",
+      "role": "Demo or deck content data. JSON carries content only, not page structure decisions."
+    },
+    "theme": {
+      "path": "./theme",
+      "role": "Shared color, typography, and visual token definitions."
+    }
+  },
+  "blueprints": [
+    {
+      "id": "cover-comparison",
+      "name": "Cover Comparison",
+      "blueprint_source": "./blueprints/CoverComparison.tsx",
+      "example_slide": "./slides/CoverComparison.tsx",
+      "layout_family": "cover",
+      "visual_pattern": "centered comparison title + comparison connector/separator + topic scope line + sideA/sideB entity legend + soft circular decorations",
+      "content_intents": ["opening", "comparison-frame", "entity-positioning"],
+      "suitable_for": ["comparison deck cover", "country comparison opening", "market benchmark opening", "executive briefing opening"],
+      "avoid_for": ["body analysis", "dense charts", "timeline", "large card grid"]
+    },
+    {
+      "id": "topic-overview",
+      "name": "Topic Overview",
+      "blueprint_source": "./blueprints/TopicOverview.tsx",
+      "example_slide": "./slides/TopicOverview.tsx",
+      "layout_family": "agenda-card-grid",
+      "visual_pattern": "left-aligned title block + subtitle + 3x2 numbered icon cards + soft sideA/sideB/comparison background circles",
+      "content_intents": ["agenda", "overview", "topic-map", "comparison-dimensions"],
+      "suitable_for": [
+        "six-topic agenda",
+        "comparison pillars",
+        "chapter overview",
+        "analysis dimension map",
+        "executive briefing table of contents"
+      ],
+      "avoid_for": ["detailed chart analysis", "long narrative", "large comparison matrix", "timeline"]
+    },
+    {
+      "id": "economy-size-growth",
+      "name": "Economy Size Growth",
+      "blueprint_source": "./blueprints/EconomySizeGrowth.tsx",
+      "example_slide": "./slides/EconomySizeGrowth.tsx",
+      "layout_family": "chart-with-metric-cards",
+      "visual_pattern": "left primary vertical comparison bar chart + right stacked rank and bar metric cards + soft sideA/sideB/comparison circular decorations",
+      "content_intents": ["quantitative-comparison", "market-scale", "growth-analysis", "benchmark-metrics"],
+      "suitable_for": [
+        "economic size comparison",
+        "market scale benchmark",
+        "two-entity growth analysis",
+        "chart plus supporting metric cards",
+        "executive quantitative summary"
+      ],
+      "avoid_for": ["agenda", "long narrative", "large matrix", "timeline", "more than three compared entities"]
+    },
+    {
+      "id": "economic-structure",
+      "name": "Economic Structure",
+      "blueprint_source": "./blueprints/EconomicStructure.tsx",
+      "example_slide": "./slides/EconomicStructure.tsx",
+      "layout_family": "comparison-card-grid",
+      "visual_pattern": "two side-by-side entity cards + screenshot-safe donut charts + center share callouts + legends + concise analysis boxes",
+      "content_intents": ["part-to-whole", "sector-breakdown", "composition-comparison", "entity-structure"],
+      "suitable_for": [
+        "sector structure comparison",
+        "GDP composition",
+        "market share breakdown",
+        "portfolio composition",
+        "two-entity part-to-whole comparison"
+      ],
+      "avoid_for": ["time-series chart", "long narrative", "large matrix", "more than two primary entity cards"]
+    },
+    {
+      "id": "demographics-snapshot",
+      "name": "Demographics Snapshot",
+      "blueprint_source": "./blueprints/DemographicsSnapshot.tsx",
+      "example_slide": "./slides/DemographicsSnapshot.tsx",
+      "layout_family": "entity-snapshot-cards",
+      "visual_pattern": "two side-by-side entity cards + top sideA/sideB accent rail + large hero metric + status indicator + compact KPI rows",
+      "content_intents": ["demographics", "population-snapshot", "entity-profile", "kpi-comparison"],
+      "suitable_for": [
+        "population comparison",
+        "audience scale snapshot",
+        "country demographic benchmark",
+        "two-entity profile cards",
+        "primary metric plus supporting KPIs"
+      ],
+      "avoid_for": ["time-series trend", "dense tables", "long narrative", "more than two primary entity cards"]
+    },
+    {
+      "id": "aging-dependency",
+      "name": "Aging Dependency",
+      "blueprint_source": "./blueprints/AgingDependency.tsx",
+      "example_slide": "./slides/AgingDependency.tsx",
+      "layout_family": "stacked-composition-with-insights",
+      "visual_pattern": "left primary 100% stacked horizontal composition chart + right elderly-share metric callouts + comparison conclusion card + soft circular decorations",
+      "content_intents": ["demographic-composition", "age-structure", "dependency-risk", "part-to-whole-comparison"],
+      "suitable_for": [
+        "age structure comparison",
+        "dependency ratio narrative",
+        "percentage composition benchmark",
+        "two to four entity part-to-whole comparison",
+        "chart plus concise executive takeaway"
+      ],
+      "avoid_for": ["time-series trend", "absolute-volume chart", "dense table", "long policy narrative", "more than five composition segments"]
+    },
+    {
+      "id": "population-trend",
+      "name": "Population Trend",
+      "blueprint_source": "./blueprints/PopulationTrend.tsx",
+      "example_slide": "./slides/PopulationTrend.tsx",
+      "layout_family": "dual-axis-projection-trend",
+      "visual_pattern": "left primary dual-axis line chart with historical and projected segments + source note + right vertical insight cards with semantic accent rails",
+      "content_intents": ["time-series", "projection", "population-trend", "forecast-comparison", "turning-point-analysis"],
+      "suitable_for": [
+        "population trajectory comparison",
+        "historical plus forecast trend",
+        "two-entity time-series benchmark",
+        "trend chart with inflection callouts",
+        "chart plus executive implication cards"
+      ],
+      "avoid_for": [
+        "non-time-series comparison",
+        "composition breakdown",
+        "dense multi-chart dashboard",
+        "more than three line series",
+        "large comparison matrix"
+      ]
+    },
+    {
+      "id": "technology-innovation-kpis",
+      "name": "Technology Innovation KPIs",
+      "blueprint_source": "./blueprints/TechnologyInnovationKpis.tsx",
+      "example_slide": "./slides/TechnologyInnovationKpis.tsx",
+      "layout_family": "radar-kpi-sidebar",
+      "visual_pattern": "left primary radar ecosystem profile with entity legend + source note + right strategic insight card and compact two-entity KPI rows",
+      "content_intents": ["innovation-benchmark", "capability-comparison", "technology-ecosystem", "kpi-evidence"],
+      "suitable_for": [
+        "technology and innovation capability benchmark",
+        "multi-dimension two-entity score comparison",
+        "innovation ecosystem profile",
+        "radar chart with supporting KPI evidence",
+        "executive capability assessment"
+      ],
+      "avoid_for": [
+        "time-series trend",
+        "more than two compared entities",
+        "large matrix",
+        "single-metric comparison",
+        "long narrative without quantitative dimensions"
+      ]
+    },
+    {
+      "id": "evidence-image-table",
+      "name": "Evidence Image Table",
+      "blueprint_source": "./blueprints/EvidenceImageTable.tsx",
+      "example_slide": "./slides/EvidenceImageTable.tsx",
+      "layout_family": "image-table-evidence",
+      "visual_pattern": "left primary image showcase with caption and source + right compact comparison table with semantic emphasis cells + concise evidence note",
+      "content_intents": ["visual-evidence", "image-analysis", "structured-comparison", "case-observation"],
+      "suitable_for": [
+        "one image with structured interpretation",
+        "visual evidence comparison",
+        "product or asset screenshot analysis",
+        "field observation summary",
+        "case visual plus compact table"
+      ],
+      "avoid_for": [
+        "multiple unrelated images",
+        "large dense tables",
+        "chart-first quantitative analysis",
+        "long narrative explanation",
+        "more than one primary visual asset"
+      ]
+    },
+    {
+      "id": "historical-milestones-timeline",
+      "name": "Historical Milestones Timeline",
+      "blueprint_source": "./blueprints/HistoricalMilestonesTimeline.tsx",
+      "example_slide": "./slides/HistoricalMilestonesTimeline.tsx",
+      "layout_family": "alternating-horizontal-timeline",
+      "visual_pattern": "centered title + soft comparison horizontal axis + alternating milestone text blocks + rounded date pills + comparison diamond markers + soft circular decorations",
+      "content_intents": ["timeline", "history", "milestones", "sequence", "relationship-evolution"],
+      "suitable_for": [
+        "historical milestone summary",
+        "relationship evolution timeline",
+        "policy or market development sequence",
+        "strategic roadmap with three to six phases",
+        "executive chronology overview"
+      ],
+      "avoid_for": [
+        "dense chronology with many events",
+        "more than six milestones",
+        "quantitative time-series chart",
+        "large comparison matrix",
+        "long narrative history"
+      ]
+    },
+    {
+      "id": "closing-contact",
+      "name": "Closing Contact",
+      "blueprint_source": "./blueprints/ClosingContact.tsx",
+      "example_slide": "./slides/ClosingContact.tsx",
+      "layout_family": "closing-contact",
+      "visual_pattern": "large centered thank-you title + comparison URL pill + contact panel + soft comparison circular decorations",
+      "content_intents": ["closing", "thank-you", "contact", "final-page"],
+      "suitable_for": [
+        "clean thank-you final slide",
+        "contact information",
+        "follow-up URL and email",
+        "low-density final page",
+        "presentation close"
+      ],
+      "avoid_for": [
+        "analytical conclusion",
+        "next-step action plan",
+        "dense recommendations",
+        "chart or table content",
+        "section transition"
+      ]
+    }
+  ],
+  "selection_guide": [
+    {
+      "when": "The page is an opening slide with two compared entities and a short scope list.",
+      "choose": "cover-comparison"
+    },
+    {
+      "when": "The page introduces four to six sections, pillars, or comparison dimensions.",
+      "choose": "topic-overview"
+    },
+    {
+      "when": "The page compares absolute scale or benchmark metrics with one primary bar chart.",
+      "choose": "economy-size-growth"
+    },
+    {
+      "when": "The page compares part-to-whole composition for exactly two entities.",
+      "choose": "economic-structure for donut composition, aging-dependency for horizontal stacked composition"
+    },
+    {
+      "when": "The page compares two entity profiles with one hero number and compact KPIs.",
+      "choose": "demographics-snapshot"
+    },
+    {
+      "when": "The page compares historical and projected trajectories over time.",
+      "choose": "population-trend"
+    },
+    {
+      "when": "The page compares two entities across multiple capability dimensions and needs a radar chart plus KPI sidebar.",
+      "choose": "technology-innovation-kpis"
+    },
+    {
+      "when": "The page needs one primary image, map, photo, screenshot, or visual asset plus a compact editable comparison table.",
+      "choose": "evidence-image-table"
+    },
+    {
+      "when": "The page needs a concise chronological arc with three to six key milestones.",
+      "choose": "historical-milestones-timeline"
+    },
+    {
+      "when": "The page is the final thank-you/contact slide and should stay low density.",
+      "choose": "closing-contact"
+    }
+  ],
+  "agent_workflow_notes": [
+    "Read catalog.json first and choose the blueprint closest to the page intent.",
+    "Copy or derive the selected blueprint into slides/*.tsx before adapting it.",
+    "group.json.layouts and manifest.json source.path must only reference slides/*.tsx.",
+    "Do not paste source HTML into TSX; extract reusable components and page blueprints.",
+    "Use data/*.json for content replacement only; change slides/*.tsx for structure, spacing, and component composition."
+  ]
+}

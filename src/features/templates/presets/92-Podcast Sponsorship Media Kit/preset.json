@@ -1,0 +1,103 @@
+{
+  "id": "92-Podcast Sponsorship Media Kit",
+  "version": 1,
+  "ppt_number": 92,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "amber",
+    "gray"
+  ],
+  "name": "Podcast Sponsorship Media Kit",
+  "description": "Warm editorial media-kit design with studio photography, bold typography, and structured performance cards.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["marketing-campaign"],"industries":["media"],"audiences":["client"],"formats":["proposal"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "黑色封面左右分栏，左侧粗体标题与关键数字，右侧录音棚照片形成真实质感，层级鲜明。"
+    },
+    {
+      "path": "images/2-background-attention-economy.webp",
+      "alt": "炭黑双栏页面以大标题和说明文字开场，右侧深灰卡用横向条形图强调占比，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-audience-profile-reach.webp",
+      "alt": "奶油白仪表盘以四块指标卡开场，下方组合进度条、环形图和排行表，强化清晰的数据节奏。"
+    },
+    {
+      "path": "images/4-positioning-pillars.webp",
+      "alt": "左侧大幅主持人肖像与右侧三条横向价值卡并列，底部黑色数据带压稳版面，版面层次清晰有序。"
+    },
+    {
+      "path": "images/5-episode-anatomy.webp",
+      "alt": "暗色页面以横向音频时间轴为核心，底部五张阶段卡和琥珀重点卡形成流程，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/6-representative-episodes-brand-fit.webp",
+      "alt": "三张节目照片卡横排在上方，下方用浅色表格归纳受众与品牌适配信息，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-sponsorship-formats.webp",
+      "alt": "五张等宽白色合作形式卡横排，下方两块宽幅说明卡构成整洁模块化布局，版面层次清晰有序。"
+    },
+    {
+      "path": "images/8-proof-campaign-results.webp",
+      "alt": "炭黑数据页组合顶部大指标、琥珀核心卡、柱状图和深色引语卡，层级强烈，版面层次清晰有序。"
+    },
+    {
+      "path": "images/9-packages-rollout.webp",
+      "alt": "三栏定价卡采用白黑白节奏，中间深色推荐方案与底部时间轴突出转化路径，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/10-reporting-next-steps.webp",
+      "alt": "暗色收尾页以行动卡片矩阵配右侧人物肖像，琥珀横条集中强调下一步，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，黑色封面左右分栏，左侧粗体标题与关键数字，右侧录音棚照片形成真实质感，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/2-background-attention-economy.html",
+      "description": "炭黑双栏页面以大标题和说明文字开场，右侧深灰卡用横向条形图强调占比，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/3-audience-profile-reach.html",
+      "description": "奶油白仪表盘以四块指标卡开场，下方组合进度条、环形图和排行表，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/4-positioning-pillars.html",
+      "description": "左侧大幅主持人肖像与右侧三条横向价值卡并列，底部黑色数据带压稳版面，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/5-episode-anatomy.html",
+      "description": "暗色页面以横向音频时间轴为核心，底部五张阶段卡和琥珀重点卡形成流程，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/6-representative-episodes-brand-fit.html",
+      "description": "三张节目照片卡横排在上方，下方用浅色表格归纳受众与品牌适配信息，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/7-sponsorship-formats.html",
+      "description": "五张等宽白色合作形式卡横排，下方两块宽幅说明卡构成整洁模块化布局，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/8-proof-campaign-results.html",
+      "description": "炭黑数据页组合顶部大指标、琥珀核心卡、柱状图和深色引语卡，层级强烈，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/9-packages-rollout.html",
+      "description": "三栏定价卡采用白黑白节奏，中间深色推荐方案与底部时间轴突出转化路径，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/10-reporting-next-steps.html",
+      "description": "暗色收尾页以行动卡片矩阵配右侧人物肖像，琥珀横条集中强调下一步，细线边框、短标签和留白共同保持清晰的图文关系。"
+    }
+  ]
+}

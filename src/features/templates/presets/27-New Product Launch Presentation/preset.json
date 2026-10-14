@@ -1,0 +1,103 @@
+{
+  "id": "27-New Product Launch Presentation",
+  "version": 1,
+  "ppt_number": 27,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "blue",
+    "black",
+    "gray"
+  ],
+  "name": "New Product Launch Presentation",
+  "description": "Minimal product-launch design with bright white canvases, electric-blue accents, bold typography, and precise launch metrics.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["product-launch"],"industries":["consumer"],"audiences":["client"],"formats":["proposal"],"primary_styles":["minimal"],"visual_traits":["minimal"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "亮白色、电光蓝与黑色封面以左侧中部超大标题开场，一幅图片拉开层级。"
+    },
+    {
+      "path": "images/2-market-shift.webp",
+      "alt": "亮白色、电光蓝与黑色页面，三组大号数字形成节奏，人群信息组织动线。"
+    },
+    {
+      "path": "images/3-audience-insight.webp",
+      "alt": "亮白色、电光蓝与黑色页面，一幅图表集中排布，核心观点强化对比。"
+    },
+    {
+      "path": "images/4-positioning.webp",
+      "alt": "亮白色、电光蓝与黑色页面，双面板划分主体区域，对比关系收束版面。"
+    },
+    {
+      "path": "images/5-feature-experience.webp",
+      "alt": "亮白色、电光蓝与黑色页面，一幅图表集中排布，产品信息形成重心。"
+    },
+    {
+      "path": "images/6-segments-scenarios.webp",
+      "alt": "亮白色、电光蓝与黑色页面，一组表格压缩信息密度，财务信息拉开层级。"
+    },
+    {
+      "path": "images/7-gtm-cadence.webp",
+      "alt": "亮白色、电光蓝与黑色页面，两幅图表集中排布，执行节奏组织动线。"
+    },
+    {
+      "path": "images/8-validation-proof.webp",
+      "alt": "亮白色、电光蓝与黑色页面，左半区两组大数字，右侧两卡叠放，验证信息强化对比。"
+    },
+    {
+      "path": "images/9-pricing-channels.webp",
+      "alt": "亮白色、电光蓝与黑色页面，左半区两组大数字，右侧两卡叠放，传播信息收束版面。"
+    },
+    {
+      "path": "images/10-runway-ask.webp",
+      "alt": "亮白色、电光蓝与黑色页面，四块卡片组成两列网格，决策信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，亮白色、电光蓝与黑色主导画面，左侧中部的超大标题形成第一视点；一幅图片与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-market-shift.html",
+      "description": "左上方标题锚定亮白色、电光蓝与黑色画面；单一大面板承载主体信息，分类标签与数据卡集中在画面中部。"
+    },
+    {
+      "path": "html/3-audience-insight.html",
+      "description": "亮白色、电光蓝与黑色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅图表落在中央，核心观点与醒目标记补充层级。"
+    },
+    {
+      "path": "html/4-positioning.html",
+      "description": "标题固定在顶部中央，亮白色、电光蓝与黑色分隔主体；两块主面板建立清晰分区，一幅图片集中于左侧，对比模块与坐标标记补充层级。"
+    },
+    {
+      "path": "html/5-feature-experience.html",
+      "description": "亮白色、电光蓝与黑色画面，标题置于左上方；四组大号数字拉开视觉节奏，一幅图表落在中央，功能模块与结构示意补充层级。"
+    },
+    {
+      "path": "html/6-segments-scenarios.html",
+      "description": "左上方标题锚定亮白色、电光蓝与黑色画面；留白与细线分隔出清晰阅读区，一组表格位于中央，金额数字、占比与变化标记补充层级。"
+    },
+    {
+      "path": "html/7-gtm-cadence.html",
+      "description": "亮白色、电光蓝与黑色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，两幅图表落在中央，阶段节点、节奏条与行动卡补充层级。"
+    },
+    {
+      "path": "html/8-validation-proof.html",
+      "description": "标题固定在左上方，亮白色、电光蓝与黑色分隔主体；左半区以两组大号数字开场，右侧纵向排列两块卡片，一幅图表落在左侧，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/9-pricing-channels.html",
+      "description": "亮白色、电光蓝与黑色画面，标题置于左上方；左半区以两组大号数字开场，右侧纵向排列两块卡片，一幅图表落在左侧，品牌元素与传播模块补充层级。"
+    },
+    {
+      "path": "html/10-runway-ask.html",
+      "description": "左上方标题锚定亮白色、电光蓝与黑色画面；四块信息卡组成两列网格，行动卡与强调结论沿主区展开。"
+    }
+  ]
+}

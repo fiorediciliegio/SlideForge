@@ -1,0 +1,147 @@
+{
+  "id": "141-Lightweight AI Brand Glass Cover",
+  "version": 1,
+  "ppt_number": 141,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "white",
+    "purple",
+    "blue",
+    "mint"
+  ],
+  "name": "Lightweight AI Brand Glass Cover",
+  "description": "AI brand cover with translucent rounded glass panels, soft iridescent gradients, spacious typography, and a right-side principles column.",
+  "user": "Business Professionals",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["marketing-campaign"],"industries":["technology"],"audiences":["employee"],"formats":["proposal"],"primary_styles":["minimal"],"visual_traits":["minimal","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "AI brand cover with translucent rounded glass panels, soft iridescent gradients, spacious typography, and a right-side principles column."
+    },
+    {
+      "path": "images/2-brand-system.webp",
+      "alt": "02 — Brand System reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-brand-system.webp",
+      "alt": "03 — Brand System reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-brand-system.webp",
+      "alt": "04 — Brand System reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-brand-system.webp",
+      "alt": "05 — Brand System reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "AI brand cover with translucent rounded glass panels, soft iridescent gradients, spacious typography, and a right-side principles column."
+    },
+    {
+      "path": "html/2-brand-system.html",
+      "description": "02 — Brand System reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-brand-system.html",
+      "description": "03 — Brand System reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-brand-system.html",
+      "description": "04 — Brand System reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-brand-system.html",
+      "description": "05 — Brand System reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "glass-lavender-glass",
+      "name": "Lavender Glass",
+      "swatches": [
+        "#F7F8FF",
+        "#15142C",
+        "#5A8DFF",
+        "#8B6CFF"
+      ],
+      "roles": {
+        "bg": "#F7F8FF",
+        "surface": "#FFFFFF",
+        "ink": "#15142C",
+        "muted": "#6B5CD6",
+        "accent_primary": "#5A8DFF",
+        "accent_secondary": "#8B6CFF",
+        "accent_tertiary": "#6FE6DC",
+        "line": "#E3E6FF"
+      }
+    },
+    {
+      "id": "glass-midnight-aqua",
+      "name": "Midnight Aqua",
+      "swatches": [
+        "#EFF7FF",
+        "#12213D",
+        "#1698D4",
+        "#5864C6"
+      ],
+      "roles": {
+        "bg": "#EFF7FF",
+        "surface": "#FFFFFF",
+        "ink": "#12213D",
+        "muted": "#58759B",
+        "accent_primary": "#1698D4",
+        "accent_secondary": "#5864C6",
+        "accent_tertiary": "#5ADBD1",
+        "line": "#D5E8F3"
+      }
+    },
+    {
+      "id": "glass-orchid-citrus",
+      "name": "Orchid Citrus",
+      "swatches": [
+        "#FCF6FF",
+        "#3C2458",
+        "#B05AD8",
+        "#7C6BE4"
+      ],
+      "roles": {
+        "bg": "#FCF6FF",
+        "surface": "#FFFFFF",
+        "ink": "#3C2458",
+        "muted": "#7E6393",
+        "accent_primary": "#B05AD8",
+        "accent_secondary": "#7C6BE4",
+        "accent_tertiary": "#C7D757",
+        "line": "#EADCF2"
+      }
+    },
+    {
+      "id": "glass-ember-glass",
+      "name": "Ember Glass",
+      "swatches": [
+        "#FFF8F2",
+        "#4D2C22",
+        "#D86D48",
+        "#C98972"
+      ],
+      "roles": {
+        "bg": "#FFF8F2",
+        "surface": "#FFFFFF",
+        "ink": "#4D2C22",
+        "muted": "#8A6254",
+        "accent_primary": "#D86D48",
+        "accent_secondary": "#C98972",
+        "accent_tertiary": "#E7B65B",
+        "line": "#F0DED1"
+      }
+    }
+  ]
+}

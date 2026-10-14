@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Optimization Method and Model</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ============================================================
+   LOGISTICS NETWORK OPTIMIZATION — DESIGN SYSTEM
+   Paper: #F5F2EB   Ink: #16211D   Teal: #1E5B4F   Clay: #C0562A
+   Display: Archivo · Body: IBM Plex Sans · Data: IBM Plex Mono
+   Radius: 2px · Rules: 1px #D6D0C2
+   ============================================================ */
+
+:root{
+  --ink:#16211D;
+  --ink2:#3A4744;
+  --muted:#77837E;
+  --paper:#F5F2EB;
+  --paper2:#ECE7DC;
+  --line:#D6D0C2;
+  --teal:#1E5B4F;
+  --teal2:#2F7F6D;
+  --clay:#C0562A;
+  --amber:#E0A03C;
+  --sand:#D9C69F;
+  --dmuted:#9FAAA5;
+  --dline:#33423D;
+}
+
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:#F5F2EB;
+     -webkit-font-smoothing:antialiased;}
+
+/* --- typography ------------------------------------------------ */
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:400;
+         letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;
+     letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.h1{font-family:'Archivo',sans-serif;font-weight:600;font-size:58px;line-height:1.04;
+    letter-spacing:-.015em;color:var(--ink);margin:0;}
+.h2{font-family:'Archivo',sans-serif;font-weight:600;font-size:36px;line-height:1.12;
+    letter-spacing:-.01em;color:var(--ink);margin:0;}
+.h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:28px;line-height:1.2;
+    color:var(--ink);margin:0;}
+.lead{font-family:'IBM Plex Sans',sans-serif;font-size:28px;font-weight:400;
+      line-height:1.42;color:var(--ink2);margin:0;}
+.body{font-family:'IBM Plex Sans',sans-serif;font-size:24px;font-weight:400;
+      line-height:1.45;color:var(--ink2);margin:0;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.num{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.02em;
+     line-height:.92;color:var(--teal);}
+.num-clay{color:var(--clay);}
+.strong{font-weight:600;color:var(--ink);}
+
+/* --- on dark ---------------------------------------------------- */
+.dk .h1,.dk .h2,.dk .h3{color:var(--paper);}
+.dk .lead,.dk .body{color:#CFD6D2;}
+.dk .eyebrow,.dk .lbl{color:var(--dmuted);}
+.dk .num{color:var(--amber);}
+.dk .strong{color:var(--paper);}
+
+/* --- surfaces --------------------------------------------------- */
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:2px;}
+.panel{background:var(--paper2);border-radius:2px;}
+.rule{background:var(--line);}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:19px;
+     letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:2px;
+     background:#E3EAE6;color:var(--teal);}
+
+/* --- table ------------------------------------------------------ */
+table{border-collapse:collapse;width:100%;}
+th{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:500;
+   letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+   text-align:left;padding:0 0 14px 0;border-bottom:1px solid var(--line);}
+td{font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:var(--ink2);
+   padding:18px 0;border-bottom:1px solid var(--line);vertical-align:middle;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="06 Optimization Method" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2EB;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:70px;width:900px;z-index:10;">
+    <div class="eyebrow">05 &nbsp;/&nbsp; Method &amp; Model</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:112px;width:1180px;z-index:10;">
+    <h2 class="h1">How the network was solved,<br>not guessed.</h2>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1360px;top:118px;width:450px;z-index:10;">
+    <p class="body" style="font-size:22px;text-align:right;">A mixed-integer optimisation over 14 months of order data, 6,140 ship-to points and 38 candidate sites — 42 scenarios run to convergence.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:274px;width:1700px;height:1px;background:#D6D0C2;z-index:1;"></div>
+
+  <!-- pipeline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:312px;width:900px;z-index:10;">
+    <div class="lbl">Modelling pipeline</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:398px;width:1700px;height:2px;background:#D6D0C2;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:388px;width:22px;height:22px;background:#1E5B4F;border-radius:11px;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:534px;top:388px;width:22px;height:22px;background:#1E5B4F;border-radius:11px;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:958px;top:388px;width:22px;height:22px;background:#1E5B4F;border-radius:11px;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1382px;top:388px;width:22px;height:22px;background:#C0562A;border-radius:11px;z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1788px;top:388px;width:22px;height:22px;background:#C0562A;border-radius:11px;z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:442px;width:380px;z-index:10;">
+    <div class="mono" style="font-size:21px;color:#77837E;letter-spacing:.1em;">STEP 01</div>
+    <div class="h3" style="font-size:27px;margin-top:12px;">Data foundation</div>
+    <p class="body" style="font-size:22px;margin-top:10px;">Order lines, freight invoices, site P&amp;L and lane rates reconciled to a single cost-to-serve ledger.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:534px;top:442px;width:380px;z-index:10;">
+    <div class="mono" style="font-size:21px;color:#77837E;letter-spacing:.1em;">STEP 02</div>
+    <div class="h3" style="font-size:27px;margin-top:12px;">Baseline calibration</div>
+    <p class="body" style="font-size:22px;margin-top:10px;">Model reproduced FY25 actual spend within 1.8% before any scenario was trusted.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:958px;top:442px;width:380px;z-index:10;">
+    <div class="mono" style="font-size:21px;color:#77837E;letter-spacing:.1em;">STEP 03</div>
+    <div class="h3" style="font-size:27px;margin-top:12px;">Greenfield &amp; scenarios</div>
+    <p class="body" style="font-size:22px;margin-top:10px;">Unconstrained optimum first, then 42 feasible variants across node count and service tiers.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1382px;top:442px;width:380px;z-index:10;">
+    <div class="mono" style="font-size:21px;color:#C0562A;letter-spacing:.1em;">STEP 04</div>
+    <div class="h3" style="font-size:27px;margin-top:12px;">Stress &amp; select</div>
+    <p class="body" style="font-size:22px;margin-top:10px;">Winners re-run against fuel, wage, demand and peak shocks; one recommended design carried forward.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:672px;width:1700px;height:1px;background:#D6D0C2;z-index:1;"></div>
+
+  <!-- objective / constraints / levers -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:712px;width:548px;height:236px;background:#ECE7DC;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:748px;width:468px;z-index:10;">
+    <div class="lbl" style="color:#1E5B4F;">Objective function</div>
+    <p class="body" style="font-size:23px;margin-top:16px;">Minimise total landed cost — linehaul + last mile + handling + inventory carrying + facility fixed cost — over a 5-year horizon.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:686px;top:712px;width:548px;height:236px;background:#ECE7DC;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:726px;top:748px;width:468px;z-index:10;">
+    <div class="lbl" style="color:#1E5B4F;">Hard constraints</div>
+    <p class="body" style="font-size:23px;margin-top:16px;">Segment service windows held at promise; site capacity ≤ 85% design; no more than two closures per quarter.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1262px;top:712px;width:548px;height:236px;background:#16211D;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1302px;top:748px;width:468px;z-index:10;">
+    <div class="lbl" style="color:#E0A03C;">Model confidence</div>
+    <div class="num" style="font-size:60px;color:#E0A03C;margin-top:14px;">±1.8%</div>
+    <p class="body" style="font-size:22px;color:#CFD6D2;margin-top:12px;">Baseline reproduction error against audited FY25 freight and site costs.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:996px;width:1200px;z-index:10;">
+    <div class="mono" style="font-size:20px;letter-spacing:.08em;color:#77837E;text-transform:uppercase;">Logistics Network Optimization Strategy</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1610px;top:996px;width:200px;z-index:10;">
+    <div class="mono" style="font-size:20px;letter-spacing:.08em;color:#77837E;text-align:right;">06 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

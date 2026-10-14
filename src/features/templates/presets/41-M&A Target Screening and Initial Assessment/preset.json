@@ -1,0 +1,63 @@
+{
+  "id": "41-M&A Target Screening and Initial Assessment",
+  "version": 1,
+  "ppt_number": 41,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "burgundy",
+    "gold",
+    "cream"
+  ],
+  "name": "M&A Target Screening and Initial Assessment",
+  "description": "Premium M&A design with black and burgundy fields, muted gold data points, fine grids, and rigorous screening tables.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["industry-analysis"],"industries":["business"],"audiences":["executive"],"formats":["research-presentation"],"primary_styles":["formal","dark"],"visual_traits":["formal","dark","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "黑色、酒红与哑金色封面，左侧中部放置超大标题，一块几何面板建立视觉重心。"
+    },
+    {
+      "path": "images/2-thesis-and-screening-criteria.webp",
+      "alt": "黑色、酒红与哑金色页面，一组表格压缩信息密度，筛选信息组织动线。"
+    },
+    {
+      "path": "images/3-candidate-pool-first-screen.webp",
+      "alt": "黑色、酒红与哑金色页面，一幅图表集中排布，筛选信息强化对比。"
+    },
+    {
+      "path": "images/4-priority-target-comparison.webp",
+      "alt": "黑色、酒红与哑金色页面，双面板划分主体区域，选择信息收束版面。"
+    },
+    {
+      "path": "images/5-recommendation-next-steps.webp",
+      "alt": "黑色、酒红与哑金色页面，横向时间轴串联阶段节点，日期标记形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，黑色、酒红与哑金色确定整体基调，左侧中部放置超大标题；一块几何面板分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-thesis-and-screening-criteria.html",
+      "description": "左上方标题锚定黑色、酒红与哑金色画面；单一大面板承载主体信息，一组表格位于右侧，筛选条件、候选卡与等级标记补充层级。"
+    },
+    {
+      "path": "html/3-candidate-pool-first-screen.html",
+      "description": "黑色、酒红与哑金色作为底色，标题落在左上方；三块主体模块构成错落分栏，一幅图表落在左侧，筛选条件、候选卡与等级标记补充层级。"
+    },
+    {
+      "path": "html/4-priority-target-comparison.html",
+      "description": "标题固定在左上方，黑色、酒红与哑金色分隔主体；两块主面板建立清晰分区，一幅图表落在右侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/5-recommendation-next-steps.html",
+      "description": "黑色、酒红与哑金色画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记沿主区展开。"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   HELIO — Seed Deck Design System
+   Dark modern tech · one system across all 10 slides
+   ========================================================== */
+
+:root{
+  --bg:      #0A0C11;
+  --elev-1:  rgba(255,255,255,0.045);
+  --elev-2:  rgba(255,255,255,0.075);
+  --line:    rgba(255,255,255,0.10);
+  --line-2:  rgba(255,255,255,0.20);
+
+  --tx:      #F3F5F8;
+  --tx-2:    #A2ACBB;
+  --tx-3:    #6B7786;
+
+  --a1:      #FF6A3D;   /* primary   — ember */
+  --a2:      #5EE6C0;   /* secondary — mint  */
+  --a3:      #9B8CFF;   /* tertiary  — iris  */
+
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 8px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type ---------- */
+.dsp{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.025em; margin:0; }
+.num{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.035em; line-height:1; }
+.mono{ font-family:'JetBrains Mono', monospace; }
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:19px; font-weight:500;
+  letter-spacing:0.20em; text-transform:uppercase; color:var(--a1);
+}
+.h-title{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:60px; line-height:1.06; letter-spacing:-0.028em; margin:0; }
+.lede{ font-size:25px; line-height:1.5; color:var(--tx-2); margin:0; }
+.body{ font-size:21px; line-height:1.55; color:var(--tx-2); margin:0; }
+.lbl{ font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3); }
+.foot{ font-family:'JetBrains Mono', monospace; font-size:17px; letter-spacing:0.16em; color:#5A6472; }
+
+/* ---------- surfaces ---------- */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.014));
+  border:1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.card-flat{
+  background: rgba(255,255,255,0.032);
+  border:1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.chip{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.10em;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--tx-2);
+}
+
+/* ---------- tables ---------- */
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:500;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3);
+  text-align:left; padding:0 20px 16px 20px; border-bottom:1px solid var(--line-2);
+}
+table.grid td{
+  font-size:20px; line-height:1.42; color:var(--tx-2);
+  padding:20px; border-bottom:1px solid var(--line); vertical-align:top;
+}
+table.grid td.k{ color:var(--tx); font-weight:600; font-family:'Space Grotesk', sans-serif; font-size:22px; }
+table.grid tr:last-child td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 The Problem" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#0A0C11;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; z-index:1;
+       background:radial-gradient(1000px 520px at 88% 6%, rgba(255,106,61,0.14), transparent 70%);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1px; z-index:5; background:rgba(255,255,255,0.12);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:72px; width:900px; z-index:10;">
+    <span class="eyebrow">01 &nbsp;/&nbsp; The problem</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:118px; width:1100px; z-index:10;">
+    <h2 class="h-title">Support scales by headcount,<br>not by software</h2>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:132px; width:580px; z-index:10;">
+    <p class="body">A 400&#8209;person SaaS company adds one support hire for every ~$1.1M of new ARR. Every product launch makes the queue worse, and the tooling on the market automates deflection — not resolution.</p>
+  </div>
+
+  <!-- big numbers -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:340px; width:1720px; height:262px; z-index:10; display:flex; gap:28px;">
+    <div class="card" style="flex:1; padding:34px 36px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl">Cost per resolved ticket</span>
+      <div>
+        <span class="num" style="font-size:88px; color:#FF6A3D;">$11.40</span>
+        <div class="mono" style="font-size:16px; color:#6B7786; padding-top:12px;">FULLY LOADED, TIER&#8209;1 QUEUE</div>
+      </div>
+      <span class="body" style="font-size:19px;">Rising 7% a year as wages outpace ticket volume gains.</span>
+    </div>
+    <div class="card" style="flex:1; padding:34px 36px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl">Agent time on repeat work</span>
+      <div>
+        <span class="num" style="font-size:88px; color:#F3F5F8;">58%</span>
+        <div class="mono" style="font-size:16px; color:#6B7786; padding-top:12px;">OF ALL HANDLED CONTACTS</div>
+      </div>
+      <span class="body" style="font-size:19px;">Billing, access, status and returns — same five shapes, forever.</span>
+    </div>
+    <div class="card" style="flex:1; padding:34px 36px; display:flex; flex-direction:column; justify-content:space-between;">
+      <span class="lbl">Annual tier&#8209;1 attrition</span>
+      <div>
+        <span class="num" style="font-size:88px; color:#9B8CFF;">42%</span>
+        <div class="mono" style="font-size:16px; color:#6B7786; padding-top:12px;">MID&#8209;MARKET AVERAGE</div>
+      </div>
+      <span class="body" style="font-size:19px;">Every exit resets 6 weeks of product knowledge.</span>
+    </div>
+  </div>
+
+  <!-- where the hour goes -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:640px; width:1090px; height:298px; z-index:10;" class="card">
+    <div style="padding:30px 36px 26px 36px; height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <span class="lbl">Where a support hour actually goes</span>
+        <span class="mono" style="font-size:15px; color:#5A6472;">MINUTES PER HOUR</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:15px;">
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span class="body" style="width:290px; font-size:19px; color:#F3F5F8;">Looking up account context</span>
+          <span style="flex:1; height:16px; background:rgba(255,255,255,0.06); border-radius:8px; overflow:hidden;"><span style="display:block; width:38%; height:100%; background:#FF6A3D; border-radius:8px;"></span></span>
+          <span class="num" style="width:66px; font-size:26px; text-align:right;">23</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span class="body" style="width:290px; font-size:19px; color:#F3F5F8;">Updating internal systems</span>
+          <span style="flex:1; height:16px; background:rgba(255,255,255,0.06); border-radius:8px; overflow:hidden;"><span style="display:block; width:28%; height:100%; background:rgba(255,106,61,0.72); border-radius:8px;"></span></span>
+          <span class="num" style="width:66px; font-size:26px; text-align:right;">17</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span class="body" style="width:290px; font-size:19px; color:#F3F5F8;">Escalating &amp; waiting</span>
+          <span style="flex:1; height:16px; background:rgba(255,255,255,0.06); border-radius:8px; overflow:hidden;"><span style="display:block; width:20%; height:100%; background:rgba(255,106,61,0.48); border-radius:8px;"></span></span>
+          <span class="num" style="width:66px; font-size:26px; text-align:right;">12</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span class="body" style="width:290px; font-size:19px; color:#5EE6C0;">Actually solving the problem</span>
+          <span style="flex:1; height:16px; background:rgba(255,255,255,0.06); border-radius:8px; overflow:hidden;"><span style="display:block; width:13%; height:100%; background:#5EE6C0; border-radius:8px;"></span></span>
+          <span class="num" style="width:66px; font-size:26px; text-align:right; color:#5EE6C0;">8</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- pull quote -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1230px; top:640px; width:590px; height:298px; z-index:1; border-radius:20px; border:1px solid rgba(255,106,61,0.32); background:linear-gradient(160deg, rgba(255,106,61,0.13), rgba(255,106,61,0.02));"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1272px; top:678px; width:508px; z-index:10;">
+    <p class="dsp" style="font-size:30px; line-height:1.34; color:#F3F5F8; font-weight:500;">“We bought a chatbot. It deflected 20% of tickets and my team still grew from 14 to 22 people last year.”</p>
+    <p class="mono" style="font-size:15px; letter-spacing:0.12em; color:#FF6A3D; padding-top:20px; margin:0;">VP SUPPORT · 600&#8209;SEAT FINTECH · DISCOVERY CALL</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:996px; width:1200px; z-index:10;">
+    <span class="foot">SOURCE: HELIO DISCOVERY PROGRAM — 61 SUPPORT LEADERS (ILLUSTRATIVE SAMPLE DATA)</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:996px; width:220px; z-index:10; text-align:right;">
+    <span class="foot" style="color:#F3F5F8;">02 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

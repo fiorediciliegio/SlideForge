@@ -1,0 +1,13 @@
+{
+  "case_id": "B-029",
+  "size_class": "长",
+  "target_input_tokens": 13400,
+  "estimated_outline_input_tokens": 13463,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "多附件",
+  "attachment_types": "MD + DOCX",
+  "content_strategies": "full_context + summarized_context",
+  "evaluation_risks": "1. 将申请额写成已批准预算；2. 编造节省或ROI；3. 把方案A/B费用混合；4. 增加附件没有的人员编制；5. 忽略法务依赖。"
+}

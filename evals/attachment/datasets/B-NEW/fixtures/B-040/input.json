@@ -1,0 +1,95 @@
+{
+  "case_id": "B-040",
+  "brief_id": "B-040",
+  "brief": "Create an 8-slide fundraising-campaign concept from the attached creative brief. Use Image Research for authentic community, workshop, and local-landscape references. Do not add beneficiary numbers, funding totals, or claims not present in the brief.",
+  "repetition": 1,
+  "total_repetitions": 3,
+  "provided_requirements": {
+    "version": 1,
+    "status": "confirmed",
+    "source": {
+      "brief": "Create an 8-slide fundraising-campaign concept from the attached creative brief. Use Image Research for authentic community, workshop, and local-landscape references. Do not add beneficiary numbers, funding totals, or claims not present in the brief."
+    },
+    "candidates": {
+      "audience": [
+        {
+          "label": "Local donors and community partners",
+          "description": "Local donors and community partners"
+        }
+      ],
+      "purpose": [
+        {
+          "label": "Fundraising campaign concept",
+          "description": "Fundraising campaign concept"
+        }
+      ],
+      "desired_outcome": [
+        {
+          "label": "Translate an unfunded programme concept into a respectful narrative and visual direction",
+          "description": "Translate an unfunded programme concept into a respectful narrative and visual direction"
+        }
+      ],
+      "slide_count": [
+        8
+      ],
+      "output_language": [
+        "English"
+      ],
+      "visual_tone": [
+        {
+          "label": "Warm, practical, community-owned",
+          "description": "Warm, practical, community-owned"
+        }
+      ]
+    },
+    "selections": {
+      "audience": {
+        "label": "Local donors and community partners",
+        "description": "Local donors and community partners"
+      },
+      "purpose": {
+        "label": "Fundraising campaign concept",
+        "description": "Fundraising campaign concept"
+      },
+      "desired_outcome": {
+        "label": "Translate an unfunded programme concept into a respectful narrative and visual direction",
+        "description": "Translate an unfunded programme concept into a respectful narrative and visual direction"
+      },
+      "slide_count": 8,
+      "output_language": "English",
+      "visual_tone": {
+        "label": "Warm, practical, community-owned",
+        "description": "Warm, practical, community-owned"
+      },
+      "visual_style_preset": null
+    },
+    "research": {
+      "web": {
+        "recommended": false,
+        "reason": "Disabled by the fixed evaluation Requirements.",
+        "enabled": false
+      },
+      "images": {
+        "recommended": true,
+        "reason": "Enabled by the fixed evaluation Requirements.",
+        "enabled": true
+      }
+    },
+    "updated_at": "2026-08-28T00:00:00.000Z",
+    "confirmed_at": "2026-08-28T00:00:00.000Z"
+  },
+  "provided_uploaded_source_analysis_context": [
+    {
+      "source_id": "b-040-source-1",
+      "filename": "campaign-brief.txt",
+      "content_strategy": "full_context",
+      "original_reading_method": "document_read",
+      "content": "The campaign supports a community repair workshop that teaches residents to maintain bicycles and household items. The initial fundraising goal is to equip two workbenches, purchase shared tools, and fund six months of weekend sessions. No final monetary target has been approved. The campaign should emphasize practical skills, reuse, neighbour-to-neighbour learning, and local ownership. Avoid pity-based imagery, staged cheque handovers, and claims about jobs created.\n\n### B-040 Supporting Record 001\nImplementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.\n\n### B-040 Supporting Record 002\nMeasurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.\n\n### B-040 Supporting Record 003\nStatus note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.\n\n### B-040 Supporting Record 004\nEvidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.\n\n### B-040 Supporting Record 005\nCommunication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.\n\n### B-040 Supporting Record 006\nSupporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.\n\n### B-040 Supporting Record 007\nImplementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.\n\n### B-040 Supporting Record 008\nMeasurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.\n\n### B-040 Supporting Record 009\nStatus note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.\n\n### B-040 Supporting Record 010\nEvidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.\n\n## Document-control closing note\nThis is the final section of B-040. The Outline must continue to follow the user brief and fixed Requirements, must not convert plans into completed results, must not invent unsupported causes, and must not expose original file paths.",
+      "key_facts": [],
+      "must_include": [],
+      "must_avoid": [],
+      "gaps": [],
+      "unread_content": []
+    }
+  ]
+}

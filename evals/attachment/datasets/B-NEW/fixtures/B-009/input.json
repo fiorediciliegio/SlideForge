@@ -1,0 +1,249 @@
+{
+  "case_id": "B-009",
+  "brief_id": "B-009",
+  "brief": "Prepare an 11-slide study-readout briefing for the internal clinical team based only on the attached report. Clearly distinguish protocol design, enrolled population, observed outcomes, adverse events, limitations, and planned follow-up. Do not add external clinical recommendations.",
+  "repetition": 1,
+  "total_repetitions": 3,
+  "provided_requirements": {
+    "version": 1,
+    "status": "confirmed",
+    "source": {
+      "brief": "Prepare an 11-slide study-readout briefing for the internal clinical team based only on the attached report. Clearly distinguish protocol design, enrolled population, observed outcomes, adverse events, limitations, and planned follow-up. Do not add external clinical recommendations."
+    },
+    "candidates": {
+      "audience": [
+        {
+          "label": "Internal clinical development team",
+          "description": "Internal clinical development team"
+        }
+      ],
+      "purpose": [
+        {
+          "label": "Study readout",
+          "description": "Study readout"
+        }
+      ],
+      "desired_outcome": [
+        {
+          "label": "Communicate findings and limitations without overstating evidence",
+          "description": "Communicate findings and limitations without overstating evidence"
+        }
+      ],
+      "slide_count": [
+        11
+      ],
+      "output_language": [
+        "English"
+      ],
+      "visual_tone": [
+        {
+          "label": "Scientific, restrained, precise",
+          "description": "Scientific, restrained, precise"
+        }
+      ]
+    },
+    "selections": {
+      "audience": {
+        "label": "Internal clinical development team",
+        "description": "Internal clinical development team"
+      },
+      "purpose": {
+        "label": "Study readout",
+        "description": "Study readout"
+      },
+      "desired_outcome": {
+        "label": "Communicate findings and limitations without overstating evidence",
+        "description": "Communicate findings and limitations without overstating evidence"
+      },
+      "slide_count": 11,
+      "output_language": "English",
+      "visual_tone": {
+        "label": "Scientific, restrained, precise",
+        "description": "Scientific, restrained, precise"
+      },
+      "visual_style_preset": null
+    },
+    "research": {
+      "web": {
+        "recommended": false,
+        "reason": "Disabled by the fixed evaluation Requirements.",
+        "enabled": false
+      },
+      "images": {
+        "recommended": false,
+        "reason": "Disabled by the fixed evaluation Requirements.",
+        "enabled": false
+      }
+    },
+    "updated_at": "2026-08-28T00:00:00.000Z",
+    "confirmed_at": "2026-08-28T00:00:00.000Z"
+  },
+  "provided_uploaded_source_analysis_context": [
+    {
+      "source_id": "b-009-source-1",
+      "filename": "study-report.docx",
+      "content_strategy": "summarized_context",
+      "original_reading_method": "document_read",
+      "main_message": "This was a single-arm feasibility study at three sites with 84 enrolled participants; 79 completed the week-12 visit. The primary operational endpoint was completion of scheduled remote check-ins, achieved by 68 of 79 completers.",
+      "relationship_to_task": "This fixed attachment summary is supplied to the Outline stage as user-provided evidence.",
+      "key_facts": [
+        {
+          "evidence_id": "b-009-evidence-base",
+          "fact": "This was a single-arm feasibility study at three sites with 84 enrolled participants; 79 completed the week-12 visit. The primary operational endpoint was completion of scheduled remote check-ins, achieved by 68 of 79 completers. The report records six serious adverse events, all assessed by investigators as unrelated to the digital intervention. The study was not powered to establish clinical efficacy and had no control group. Exploratory symptom scores improved from baseline, but the report states that causality cannot be inferred. A larger controlled study is planned, pending funding and ethics approval.",
+          "source_label": "study-report.docx",
+          "excerpt": "This was a single-arm feasibility study at three sites with 84 enrolled participants; 79 completed the week-12 visit. The primary operational endpoint was completion of scheduled remote check-ins, achieved by 68 of 79 completers. The report records six serious adverse events, all assessed by investigators as unrelated to the digital intervention. The study was not powered to establish clinical efficacy and had no control group. Exploratory symptom scores improved from baseline, but the report states that causality cannot be inferred. A larger controlled study is planned, pending funding and ethics approval."
+        },
+        {
+          "evidence_id": "b-009-support-1",
+          "fact": "Implementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "study-report.docx supporting record 1",
+          "excerpt": "### B-009 Supporting Record 001\nImplementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-009-support-2",
+          "fact": "Measurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "study-report.docx supporting record 2",
+          "excerpt": "### B-009 Supporting Record 002\nMeasurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-009-support-3",
+          "fact": "Status note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "study-report.docx supporting record 3",
+          "excerpt": "### B-009 Supporting Record 003\nStatus note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-009-support-4",
+          "fact": "Evidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "study-report.docx supporting record 4",
+          "excerpt": "### B-009 Supporting Record 004\nEvidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        },
+        {
+          "evidence_id": "b-009-support-5",
+          "fact": "Communication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.",
+          "source_label": "study-report.docx supporting record 5",
+          "excerpt": "### B-009 Supporting Record 005\nCommunication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision."
+        },
+        {
+          "evidence_id": "b-009-support-6",
+          "fact": "Supporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.",
+          "source_label": "study-report.docx supporting record 6",
+          "excerpt": "### B-009 Supporting Record 006\nSupporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier."
+        },
+        {
+          "evidence_id": "b-009-support-7",
+          "fact": "Implementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "study-report.docx supporting record 7",
+          "excerpt": "### B-009 Supporting Record 007\nImplementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-009-support-8",
+          "fact": "Measurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "study-report.docx supporting record 8",
+          "excerpt": "### B-009 Supporting Record 008\nMeasurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-009-support-9",
+          "fact": "Status note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "study-report.docx supporting record 9",
+          "excerpt": "### B-009 Supporting Record 009\nStatus note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-009-support-10",
+          "fact": "Evidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "study-report.docx supporting record 10",
+          "excerpt": "### B-009 Supporting Record 010\nEvidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        },
+        {
+          "evidence_id": "b-009-support-11",
+          "fact": "Communication log 11: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.",
+          "source_label": "study-report.docx supporting record 11",
+          "excerpt": "### B-009 Supporting Record 011\nCommunication log 11: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision."
+        },
+        {
+          "evidence_id": "b-009-support-12",
+          "fact": "Supporting record 12: On 2025-04-13, workstream 3 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.",
+          "source_label": "study-report.docx supporting record 12",
+          "excerpt": "### B-009 Supporting Record 012\nSupporting record 12: On 2025-04-13, workstream 3 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier."
+        },
+        {
+          "evidence_id": "b-009-support-13",
+          "fact": "Implementation note 13: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "study-report.docx supporting record 13",
+          "excerpt": "### B-009 Supporting Record 013\nImplementation note 13: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-009-support-14",
+          "fact": "Measurement note 14: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "study-report.docx supporting record 14",
+          "excerpt": "### B-009 Supporting Record 014\nMeasurement note 14: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-009-support-15",
+          "fact": "Status note 15: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "study-report.docx supporting record 15",
+          "excerpt": "### B-009 Supporting Record 015\nStatus note 15: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-009-support-16",
+          "fact": "Evidence boundary 16: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "study-report.docx supporting record 16",
+          "excerpt": "### B-009 Supporting Record 016\nEvidence boundary 16: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        },
+        {
+          "evidence_id": "b-009-support-17",
+          "fact": "Communication log 17: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.",
+          "source_label": "study-report.docx supporting record 17",
+          "excerpt": "### B-009 Supporting Record 017\nCommunication log 17: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision."
+        },
+        {
+          "evidence_id": "b-009-support-18",
+          "fact": "Supporting record 18: On 2025-01-19, workstream 4 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.",
+          "source_label": "study-report.docx supporting record 18",
+          "excerpt": "### B-009 Supporting Record 018\nSupporting record 18: On 2025-01-19, workstream 4 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier."
+        },
+        {
+          "evidence_id": "b-009-support-19",
+          "fact": "Implementation note 19: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "study-report.docx supporting record 19",
+          "excerpt": "### B-009 Supporting Record 019\nImplementation note 19: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-009-support-20",
+          "fact": "Measurement note 20: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "study-report.docx supporting record 20",
+          "excerpt": "### B-009 Supporting Record 020\nMeasurement note 20: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-009-support-21",
+          "fact": "Status note 21: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "study-report.docx supporting record 21",
+          "excerpt": "### B-009 Supporting Record 021\nStatus note 21: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-009-support-22",
+          "fact": "Evidence boundary 22: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "study-report.docx supporting record 22",
+          "excerpt": "### B-009 Supporting Record 022\nEvidence boundary 22: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        },
+        {
+          "evidence_id": "b-009-support-23",
+          "fact": "Communication log 23: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.",
+          "source_label": "study-report.docx supporting record 23",
+          "excerpt": "### B-009 Supporting Record 023\nCommunication log 23: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision."
+        },
+        {
+          "evidence_id": "b-009-support-24",
+          "fact": "Supporting record 24: On 2025-07-25, workstream 5 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.",
+          "source_label": "study-report.docx supporting record 24",
+          "excerpt": "### B-009 Supporting Record 024\nSupporting record 24: On 2025-07-25, workstream 5 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier."
+        }
+      ],
+      "must_include": [],
+      "must_avoid": [
+        "This is the final section of B-009. The Outline must continue to follow the user brief and fixed Requirements, must not convert plans into completed results, must not invent unsupported causes, and must not expose original file paths."
+      ],
+      "gaps": [],
+      "unread_content": []
+    }
+  ]
+}

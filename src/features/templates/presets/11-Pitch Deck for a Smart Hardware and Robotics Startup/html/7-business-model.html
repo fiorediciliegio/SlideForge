@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Business Model &amp; Unit Economics</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:#0E1215;font-family:'Archivo',sans-serif;}
+.mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Business model" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#0E1215;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;background-color:#0E1215;background-image:linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);background-size:80px 80px, 80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:74px;width:800px;height:28px;z-index:10;"><span class="mono" style="font-size:22px;color:#FF6A2B;">06 — Business model &amp; BOM economics</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:112px;width:1400px;height:80px;z-index:10;"><div style="font-size:62px;font-weight:700;line-height:1.06;color:#F1EFEA;letter-spacing:-.01em;">Robot-as-a-Service on hardware margin</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:214px;width:1728px;height:1px;z-index:1;background:#2E383F;"></div>
+
+  <!-- KPI strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:250px;width:1728px;height:148px;z-index:1;background:#141A1F;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:136px;top:282px;width:380px;height:88px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Price / robot / year</div><div style="font-size:54px;font-weight:700;color:#F1EFEA;margin-top:4px;">$74,000</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:552px;top:282px;width:1px;height:88px;z-index:2;background:#2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:592px;top:282px;width:380px;height:88px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Landed BOM at 500 units</div><div style="font-size:54px;font-weight:700;color:#F1EFEA;margin-top:4px;">$38,600</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1008px;top:282px;width:1px;height:88px;z-index:2;background:#2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1048px;top:282px;width:380px;height:88px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Gross margin at scale</div><div style="font-size:54px;font-weight:700;color:#FF6A2B;margin-top:4px;">61%</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1464px;top:282px;width:1px;height:88px;z-index:2;background:#2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1504px;top:282px;width:300px;height:88px;z-index:10;"><div class="mono" style="font-size:20px;color:#5D686F;">Customer payback</div><div style="font-size:54px;font-weight:700;color:#F1EFEA;margin-top:4px;">14 mo</div></div>
+
+  <!-- BOM breakdown -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:434px;width:820px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#8D9AA2;">BOM structure — 500-unit run</span></div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:484px;width:820px;height:300px;z-index:10;">
+    <div style="display:flex;height:44px;width:100%;">
+      <div style="width:31%;background:#FF6A2B;"></div>
+      <div style="width:22%;background:#D4551D;"></div>
+      <div style="width:17%;background:#7C868D;"></div>
+      <div style="width:16%;background:#4A555D;"></div>
+      <div style="width:14%;background:#2B333A;"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;margin-top:26px;">
+      <div style="display:flex;align-items:center;gap:16px;"><span style="width:16px;height:16px;background:#FF6A2B;display:inline-block;"></span><span style="flex:1;font-size:24px;color:#F1EFEA;">Actuators &amp; harmonic drives</span><span class="mono" style="font-size:22px;color:#A9B4BB;">$11,900</span><span class="mono" style="width:70px;text-align:right;font-size:22px;color:#F1EFEA;">31%</span></div>
+      <div style="display:flex;align-items:center;gap:16px;"><span style="width:16px;height:16px;background:#D4551D;display:inline-block;"></span><span style="flex:1;font-size:24px;color:#F1EFEA;">Mobile base, battery &amp; chassis</span><span class="mono" style="font-size:22px;color:#A9B4BB;">$8,500</span><span class="mono" style="width:70px;text-align:right;font-size:22px;color:#F1EFEA;">22%</span></div>
+      <div style="display:flex;align-items:center;gap:16px;"><span style="width:16px;height:16px;background:#7C868D;display:inline-block;"></span><span style="flex:1;font-size:24px;color:#F1EFEA;">Compute &amp; sensing stack</span><span class="mono" style="font-size:22px;color:#A9B4BB;">$6,600</span><span class="mono" style="width:70px;text-align:right;font-size:22px;color:#F1EFEA;">17%</span></div>
+      <div style="display:flex;align-items:center;gap:16px;"><span style="width:16px;height:16px;background:#4A555D;display:inline-block;"></span><span style="flex:1;font-size:24px;color:#F1EFEA;">Gripper &amp; end effector</span><span class="mono" style="font-size:22px;color:#A9B4BB;">$6,200</span><span class="mono" style="width:70px;text-align:right;font-size:22px;color:#F1EFEA;">16%</span></div>
+      <div style="display:flex;align-items:center;gap:16px;"><span style="width:16px;height:16px;background:#2B333A;display:inline-block;"></span><span style="flex:1;font-size:24px;color:#F1EFEA;">Assembly, test &amp; freight</span><span class="mono" style="font-size:22px;color:#A9B4BB;">$5,400</span><span class="mono" style="width:70px;text-align:right;font-size:22px;color:#F1EFEA;">14%</span></div>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:816px;width:820px;height:96px;z-index:10;"><div style="font-size:26px;line-height:1.38;color:#8D9AA2;">Dual-sourced actuators and an in-house harmonic drive take BOM to <span style="color:#FF6A2B;">$29,400</span> at 2,000 units — the single largest margin lever.</div></div>
+
+  <!-- revenue construction -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1004px;top:434px;width:820px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#8D9AA2;">Revenue construction per deployment</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1004px;top:484px;width:820px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1036px;top:508px;width:756px;height:96px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:30px;font-weight:600;color:#F1EFEA;">RaaS subscription</span><span class="mono" style="font-size:24px;color:#FF6A2B;">$5,600 / mo</span></div>
+    <div style="font-size:23px;color:#8D9AA2;margin-top:8px;">36-month term, robot + Fleet OS + service SLA. Opex line, no capex approval.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1004px;top:634px;width:820px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1036px;top:658px;width:756px;height:96px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:30px;font-weight:600;color:#F1EFEA;">Deployment &amp; teach-in</span><span class="mono" style="font-size:24px;color:#FF6A2B;">$9,000 once</span></div>
+    <div style="font-size:23px;color:#8D9AA2;margin-top:8px;">Two-day onsite commissioning, cell mapping and operator certification.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1004px;top:784px;width:820px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1036px;top:808px;width:756px;height:96px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;"><span style="font-size:30px;font-weight:600;color:#F1EFEA;">Gripper &amp; skill packs</span><span class="mono" style="font-size:24px;color:#FF6A2B;">$6,800 / yr</span></div>
+    <div style="font-size:23px;color:#8D9AA2;margin-top:8px;">Task-specific tooling and new part families — attaches on 68% of accounts.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1000px;width:900px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#5D686F;">Vantiq Robotics · Seed round · Confidential</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1400px;top:1000px;width:424px;height:28px;z-index:10;text-align:right;"><span class="mono" style="font-size:21px;color:#FF6A2B;">07 / 10</span></div>
+</div>
+</body>
+</html>

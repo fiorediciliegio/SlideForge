@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* 页面专属高级排版样式 */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 660px 1px 924px;
+    gap: 71px;
+    height: 100%;
+  }
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 16px;
+  }
+  .accent-bar {
+    width: 72px;
+    height: 6px;
+    background: var(--primary);
+    margin-bottom: 30px;
+  }
+  .hero-text {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--primary);
+    margin-bottom: 24px;
+  }
+  .desc-text {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 18px;
+    color: var(--muted);
+    font-weight: 500;
+    width: fit-content;
+  }
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #C0842E; /* 警告色表示待补充 */
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  .divider {
+    background: var(--border);
+    height: 100%;
+  }
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+  }
+  .section-header {
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 6px 0;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    color: var(--light);
+    margin: 0;
+  }
+  .matrix-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .matrix-item {
+    display: grid;
+    grid-template-columns: 48px 1fr 140px;
+    gap: 20px;
+    align-items: start;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .item-no {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary);
+    font-family: 'Archivo', sans-serif;
+  }
+  .item-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tag-placeholder {
+    font-size: 15px;
+    color: #C0842E;
+    background: #FFFDF0;
+    border: 1px solid #F3E5C8;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .item-desc {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+  }
+  .item-status {
+    text-align: right;
+  }
+  .status-label {
+    font-size: 16px;
+    color: var(--light);
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .seg {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+  }
+  .seg i {
+    display: block;
+    width: 16px;
+    height: 6px;
+    background: var(--border);
+  }
+  .seg i.off {
+    background: #C0842E; /* 待补充状态色 */
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  <div class="content-area">
+    <div class="content-grid">
+      <div class="left-col">
+        <div class="accent-bar"></div>
+        <div class="hero-text">
+          明确定义可持续发展痛点，是构建 2024 Call for Code 获奖技术方案的起点。
+        </div>
+        <div class="desc-text">
+          根据大赛官方指南，参赛团队必须精准识别一个真实世界中未被妥善解决的课题。由于当前项目使用官方 README 模板初始化，具体的问题定义与场景数据仍处于待填充状态。
+        </div>
+        <div class="status-badge">
+          <span class="badge-dot"></span> 状态提示：等待项目团队导入真实业务数据与场景
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="right-col">
+        <div class="section-header">
+          <h2 class="section-title">核心问题定义矩阵</h2>
+          <p class="section-subtitle">请替换项目 README 中的占位内容以完成官方提交</p>
+        </div>
+        
+        <div class="matrix-list">
+          <!-- Item 1 -->
+          <div class="matrix-item">
+            <div class="item-no">01</div>
+            <div>
+              <h3 class="item-title">核心挑战 <span class="tag-placeholder">待补充 / TO BE DEFINED</span></h3>
+              <p class="item-desc">需在此处描述方案所针对的具体环境或社会问题，并明确标注对应的数据时间、统计区间或受影响的地理区域。</p>
+            </div>
+            <div class="item-status">
+              <p class="status-label">定义状态</p>
+              <div class="seg"><i class="off"></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="matrix-item">
+            <div class="item-no">02</div>
+            <div>
+              <h3 class="item-title">现状分析 <span class="tag-placeholder">待补充 / TO BE DEFINED</span></h3>
+              <p class="item-desc">深入分析现有解决方案在运行效率、部署成本或可扩展性（Scalability）方面的局限性，论证引入全新技术方案的必要性。</p>
+            </div>
+            <div class="item-status">
+              <p class="status-label">定义状态</p>
+              <div class="seg"><i class="off"></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="matrix-item">
+            <div class="item-no">03</div>
+            <div>
+              <h3 class="item-title">紧迫性与贡献 <span class="tag-placeholder">待补充 / TO BE DEFINED</span></h3>
+              <p class="item-desc">阐述解决该问题的行业紧迫性，以及本方案对联合国可持续发展目标（SDGs）的具体可衡量贡献路径。</p>
+            </div>
+            <div class="item-status">
+              <p class="status-label">定义状态</p>
+              <div class="seg"><i class="off"></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future &nbsp;·&nbsp; 数据统计区间：待补充</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

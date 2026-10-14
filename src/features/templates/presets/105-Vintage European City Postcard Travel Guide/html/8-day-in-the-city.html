@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A Day in the City</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Caveat:wght@500;600;700&family=Cinzel:wght@400;600&display=swap');
+
+/* ============================================================
+   VINTAGE EUROPEAN CITY POSTCARD TRAVEL GUIDE
+   Shared visual identity — colour, paper, photo treatment,
+   ephemera language. Positioning stays inline on each slide.
+   Palette: terracotta #B5502F · cobalt #2A4E8A
+            cream #FCF6E8 · mustard #D9A227 · ink #33291F
+   Shadow direction: always down + slightly right.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; background: #241c14; }
+
+/* ---------- paper ---------- */
+.paper {
+  background-color: #F2E7D3;
+  background-image:
+    radial-gradient(ellipse 900px 620px at 18% 12%, rgba(255,253,247,.85), rgba(255,253,247,0) 62%),
+    radial-gradient(ellipse 780px 560px at 86% 88%, rgba(126,92,56,.16), rgba(126,92,56,0) 64%),
+    radial-gradient(ellipse 520px 380px at 92% 8%, rgba(181,80,47,.07), rgba(181,80,47,0) 70%),
+    repeating-linear-gradient(92deg, rgba(150,116,72,.045) 0 1px, rgba(150,116,72,0) 1px 4px),
+    repeating-linear-gradient(3deg, rgba(150,116,72,.035) 0 1px, rgba(150,116,72,0) 1px 5px);
+}
+
+/* ---------- typography ---------- */
+.disp  { font-family: 'Bodoni Moda', Didot, 'Times New Roman', serif; color: #33291F; }
+.body  { font-family: 'Crimson Pro', Georgia, serif; color: #3E3226; }
+.hw    { font-family: 'Caveat', 'Segoe Script', cursive; color: #2A4E8A; }
+.lbl   { font-family: 'Cinzel', serif; letter-spacing: .22em; text-transform: uppercase; color: #8A6A4A; }
+.cap   { font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: .07em;
+         text-transform: uppercase; color: #7A5F42; }
+.num   { font-family: 'Bodoni Moda', Didot, serif; color: #B5502F; }
+
+/* ---------- photographs ---------- */
+.ph {
+  background: #FCF6E8;
+  padding: 13px;
+  box-shadow: 0 14px 30px rgba(58,40,22,.30), 0 2px 4px rgba(58,40,22,.18);
+}
+.ph > img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(.18) saturate(.88) contrast(1.06) brightness(1.03);
+}
+.ph-thin { padding: 9px; }
+.ph-wide { padding: 13px 13px 13px; }
+.bleed > img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(.16) saturate(.9) contrast(1.05) brightness(1.02);
+}
+
+/* ---------- paper slips, cards, labels ---------- */
+.slip {
+  background: #FCF6E8;
+  border: 1px solid rgba(139,104,64,.32);
+  box-shadow: 0 10px 22px rgba(58,40,22,.20);
+}
+.slip-warm { background: #F8EFD9; }
+.slip-mustard { background: #F3DFAE; border: 1px solid rgba(160,118,44,.42); }
+.slip-cobalt { background: #2A4E8A; border: none; color: #F6EEDC; }
+.slip-terra { background: #B5502F; border: none; color: #FDF6E7; }
+.torn {
+  background: #FCF6E8;
+  box-shadow: 0 10px 22px rgba(58,40,22,.20);
+  clip-path: polygon(0 3px, 6% 0, 18% 4px, 32% 0, 47% 5px, 61% 0, 74% 4px, 88% 0, 100% 4px,
+                     100% calc(100% - 4px), 87% 100%, 72% calc(100% - 5px), 58% 100%,
+                     43% calc(100% - 4px), 27% 100%, 13% calc(100% - 5px), 0 100%);
+}
+
+/* ---------- ephemera ---------- */
+.stamp {
+  background: #FCF6E8;
+  padding: 11px;
+  -webkit-mask:
+    radial-gradient(circle 5px, #0000 96%, #000) -7px -7px / 14px 14px,
+    linear-gradient(#000 0 0) 50% / calc(100% - 14px) calc(100% - 14px) no-repeat;
+  mask:
+    radial-gradient(circle 5px, #0000 96%, #000) -7px -7px / 14px 14px,
+    linear-gradient(#000 0 0) 50% / calc(100% - 14px) calc(100% - 14px) no-repeat;
+}
+.pmark {
+  border: 3px double #2A4E8A;
+  border-radius: 50%;
+  color: #2A4E8A;
+  opacity: .68;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; line-height: 1.25;
+}
+.tick {
+  background: #F7EDD6;
+  border: 1px solid rgba(139,104,64,.45);
+  box-shadow: 0 9px 20px rgba(58,40,22,.22);
+}
+.tape {
+  background: linear-gradient(180deg, rgba(240,229,201,.90), rgba(223,206,168,.82));
+  box-shadow: 0 3px 9px rgba(58,40,22,.20);
+  border-left: 1px dashed rgba(255,255,255,.55);
+  border-right: 1px dashed rgba(255,255,255,.55);
+}
+.ring {
+  border: 6px solid rgba(122,86,48,.26);
+  border-radius: 50%;
+}
+
+/* ---------- map ---------- */
+.map {
+  background-color: #EEE0C2;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0) 32.4%, rgba(255,255,255,.60) 33.0%, rgba(120,92,58,.20) 33.3%, rgba(255,255,255,0) 33.9%),
+    linear-gradient(90deg, rgba(255,255,255,0) 65.7%, rgba(255,255,255,.60) 66.3%, rgba(120,92,58,.20) 66.6%, rgba(255,255,255,0) 67.2%),
+    linear-gradient(0deg, rgba(255,255,255,0) 48.5%, rgba(255,255,255,.50) 49.3%, rgba(120,92,58,.17) 49.7%, rgba(255,255,255,0) 50.5%),
+    radial-gradient(ellipse at 30% 25%, rgba(255,252,243,.7), rgba(255,252,243,0) 60%);
+  border: 1px solid rgba(120,92,58,.42);
+  box-shadow: 0 16px 34px rgba(58,40,22,.26), inset 0 0 70px rgba(150,116,70,.20);
+}
+
+/* ---------- surfaces ---------- */
+.filmbase {
+  background-color: #2A4E8A;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(252,246,232,.85) 0 18px, rgba(252,246,232,0) 18px 44px);
+  background-size: 100% 15px;
+  background-position: 0 6px, 0 0;
+  background-repeat: repeat-x;
+  box-shadow: 0 14px 32px rgba(58,40,22,.26);
+}
+.table-top {
+  background-color: #9E4B2C;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 25% 20%, rgba(255,214,168,.26), rgba(255,214,168,0) 65%),
+    repeating-linear-gradient(88deg, rgba(60,26,12,.16) 0 2px, rgba(60,26,12,0) 2px 9px),
+    repeating-linear-gradient(88deg, rgba(255,226,186,.07) 0 1px, rgba(255,226,186,0) 1px 26px);
+  box-shadow: inset 0 0 90px rgba(56,22,10,.34), 0 14px 30px rgba(58,40,22,.24);
+}
+.rule-terra { background: #B5502F; }
+.rule-ink { background: rgba(51,41,31,.55); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="08 A Day in the City" style="position:relative;width:1920px;height:1080px;overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape" class="paper" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:84px;width:900px;font-size:19px;z-index:10;">Eight &middot; A Day in the City</div>
+
+  <div data-object="true" data-object-type="textbox" class="disp" style="position:absolute;left:88px;top:116px;width:1500px;font-size:53px;font-weight:600;line-height:1.18;z-index:10;">One unhurried day: eight stops, two long pauses, no taxis.</div>
+
+  <div data-object="true" data-object-type="shape" class="rule-terra" style="position:absolute;left:90px;top:206px;width:1740px;height:3px;z-index:1;"></div>
+
+  <!-- column headers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:236px;width:550px;z-index:10;">
+    <div class="lbl" style="font-size:16px;color:#B5502F;margin:0 0 7px 0;">Morning &rarr; lunch</div>
+    <div class="rule-ink" style="width:550px;height:1px;opacity:.45;"></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:680px;top:236px;width:550px;z-index:10;">
+    <div class="lbl" style="font-size:16px;color:#B5502F;margin:0 0 7px 0;">Afternoon &rarr; evening</div>
+    <div class="rule-ink" style="width:550px;height:1px;opacity:.45;"></div>
+  </div>
+
+  <!-- dashed spines -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:104px;top:296px;width:3px;height:456px;background:repeating-linear-gradient(180deg,#B5502F 0 10px,rgba(181,80,47,0) 10px 19px);z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:694px;top:296px;width:3px;height:456px;background:repeating-linear-gradient(180deg,#B5502F 0 10px,rgba(181,80,47,0) 10px 19px);z-index:1;"></div>
+
+  <!-- column one -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:292px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#B5502F;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#B5502F;">07:30</span>
+        <span class="lbl" style="font-size:14px;">Coffee, standing</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Bar on the corner by the station side. Ten minutes, no seat, no plan yet.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:406px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#B5502F;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#B5502F;">08:15</span>
+        <span class="lbl" style="font-size:14px;">Market, while it works</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Walk the produce rows before the crowd arrives. Buy fruit to carry.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:520px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#B5502F;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#B5502F;">09:45</span>
+        <span class="lbl" style="font-size:14px;">Cathedral Hill</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Interior first, façade after. Allow [60] minutes and a slow climb up.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:634px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#2A4E8A;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#2A4E8A;">12:30</span>
+        <span class="lbl" style="font-size:14px;color:#2A4E8A;">Long lunch &middot; pause</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Sit down properly for [90] minutes. Most doors are shut anyway.</div>
+    </div>
+  </div>
+
+  <!-- column two -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:680px;top:292px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#B5502F;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#B5502F;">14:30</span>
+        <span class="lbl" style="font-size:14px;">Old Trades Lane</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Workshops reopen mid-afternoon. Wander here rather than plan.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:680px;top:406px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#2A4E8A;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#2A4E8A;">16:30</span>
+        <span class="lbl" style="font-size:14px;color:#2A4E8A;">Upper Steps &middot; pause</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Climb slowly, sit at the top, eat the fruit from this morning.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:680px;top:520px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#B5502F;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#B5502F;">18:00</span>
+        <span class="lbl" style="font-size:14px;">Riverside, downhill</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">[20] minutes along the water while the light turns warm.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:680px;top:634px;width:550px;display:flex;gap:0;z-index:10;">
+    <div style="width:32px;flex:none;padding-top:13px;"><div style="width:13px;height:13px;border-radius:50%;background:#B5502F;margin-left:8px;"></div></div>
+    <div style="flex:1;">
+      <div style="display:flex;align-items:baseline;gap:16px;margin:0 0 5px 0;">
+        <span class="disp" style="font-size:32px;font-weight:700;color:#B5502F;">19:30</span>
+        <span class="lbl" style="font-size:14px;">Dinner, Awning Corner</span>
+      </div>
+      <div class="body" style="font-size:20px;line-height:1.4;margin:0;">Outside if the evening allows. Walk home through the core.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="slip-cobalt" style="position:absolute;left:90px;top:800px;width:1140px;height:150px;box-shadow:0 12px 26px rgba(58,40,22,.24);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:118px;top:822px;width:1084px;z-index:10;">
+    <div class="lbl" style="font-size:15px;color:#E9C77A;margin:0 0 12px 0;">Pacing notes</div>
+    <div style="display:flex;gap:44px;">
+      <div class="body" style="font-size:20px;line-height:1.44;color:#FAF3E2;flex:1;margin:0;">Walking total: about [7] km, all of it on stone.<br>Two seated pauses, both deliberately long.</div>
+      <div class="body" style="font-size:20px;line-height:1.44;color:#FAF3E2;flex:1;margin:0;">Nothing booked before [09:30] or after [19:30].<br>Times are a rhythm, not a timetable.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="image" class="ph" style="position:absolute;left:1240px;top:254px;width:590px;height:336px;z-index:5;">
+    <img src="../assets/arrival-tram.jpg" alt="Tram climbing a narrow street between old houses">
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1246px;top:606px;width:584px;z-index:10;">
+    <div class="cap" style="font-size:16px;margin:0 0 5px 0;">Plate 19 &middot; The [line N] tram, [Station Side]</div>
+    <div class="body" style="font-size:20px;font-style:italic;line-height:1.36;color:#6B5540;margin:0;">The only ride of the day, and only because of the hill.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="tick" style="position:absolute;left:1240px;top:690px;width:400px;height:100px;z-index:5;display:flex;overflow:hidden;">
+    <div style="width:78px;background:#B5502F;display:flex;align-items:center;justify-content:center;">
+      <div class="lbl" style="font-size:11px;color:#F7DFB4;writing-mode:vertical-rl;">Transit</div>
+    </div>
+    <div style="flex:1;padding:14px 18px;">
+      <div class="lbl" style="font-size:12px;margin:0 0 6px 0;">Day ticket</div>
+      <div class="body" style="font-size:19px;line-height:1.28;margin:0;">Zone [N] &middot; [price]<br>Valid [DD MON], all lines</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="hw" style="position:absolute;left:1246px;top:816px;width:584px;font-size:33px;line-height:1.3;z-index:10;">Walked all of it. Slept extremely well.</div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1246px;top:906px;width:520px;font-size:14px;line-height:1.55;color:#9A7B58;z-index:10;">Bracketed distances, prices and hours are placeholders &middot; confirm locally</div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:1014px;width:700px;font-size:14px;z-index:10;">[CITY] &middot; Postcard Travel Guide</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1690px;top:1002px;width:140px;text-align:right;z-index:10;">
+    <span class="num" style="font-size:30px;font-weight:600;">08</span><span class="lbl" style="font-size:14px;">/10</span>
+  </div>
+
+</div>
+</body>
+</html>

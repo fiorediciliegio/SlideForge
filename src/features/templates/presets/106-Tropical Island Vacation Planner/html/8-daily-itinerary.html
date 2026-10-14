@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Relaxed Daily Itinerary</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow+Condensed:wght@500;600;700&family=Karla:wght@400;500;700&display=swap');
+
+:root{
+  /* sky + sun */
+  --sky:#FFE3B0;
+  --sun:#FFC63B;
+  --sun-soft:#FFE08A;
+  /* water */
+  --aqua:#16B8C8;
+  --aqua-mid:#7FDDE4;
+  --aqua-soft:#C7EFF1;
+  --aqua-deep:#0C6E7D;
+  /* accents */
+  --coral:#F2612C;
+  --coral-deep:#C9410F;
+  /* paper */
+  --cream:#FFF6E6;
+  --paper:#FCE7C8;
+  --sand:#F6DFAE;
+  --sand-line:#EBC98D;
+  /* greens + ink */
+  --green:#14563E;
+  --green-mid:#2C8A5B;
+  --ink:#123039;
+
+  --display:'Alfa Slab One',Georgia,serif;
+  --label:'Barlow Condensed','Arial Narrow',sans-serif;
+  --body:'Karla',Helvetica,sans-serif;
+}
+
+/* printed-paper texture: sits above illustration, below all text */
+.tex{
+  background-image:radial-gradient(rgba(18,48,57,.13) 1px, rgba(0,0,0,0) 1.2px);
+  background-size:6px 6px;
+  opacity:.45;
+  pointer-events:none;
+}
+
+p{margin:0;}
+</style>
+<style>body{margin:0;padding:0;overflow:hidden;}</style>
+</head>
+<body>
+<div class="slide" data-screen-label="08 Relaxed Daily Itinerary" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFE3B0;">
+
+  <!-- RICHER JOURNEY SCENE -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;">
+    <svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <g id="frondJ"><path d="M0,0 C-34,-24 -84,-30 -134,-12 C-90,10 -40,18 0,5 Z"/></g>
+        <g id="palmJ">
+          <path d="M-10,0 C-6,-74 4,-158 28,-244 L52,-236 C28,-154 18,-74 14,0 Z" fill="#0F4A35"/>
+          <g transform="translate(40,-240)" fill="#14563E">
+            <use href="#frondJ" transform="rotate(-6)"/>
+            <use href="#frondJ" transform="rotate(30)"/>
+            <use href="#frondJ" transform="rotate(64)"/>
+            <use href="#frondJ" transform="rotate(-44) scale(-1,1)"/>
+            <use href="#frondJ" transform="rotate(10) scale(-1,1)"/>
+          </g>
+        </g>
+      </defs>
+
+      <rect x="0" y="0" width="1920" height="1080" fill="#FFE3B0"/>
+
+      <!-- sunburst behind top-right -->
+      <g transform="translate(1836 214)" fill="#FFD263" opacity=".45">
+        <polygon points="0,0 -22,-520 22,-520" transform="rotate(150)"/>
+        <polygon points="0,0 -22,-520 22,-520" transform="rotate(170)"/>
+        <polygon points="0,0 -22,-520 22,-520" transform="rotate(190)"/>
+        <polygon points="0,0 -22,-520 22,-520" transform="rotate(210)"/>
+        <polygon points="0,0 -22,-520 22,-520" transform="rotate(230)"/>
+      </g>
+      <circle cx="1836" cy="214" r="120" fill="#FFC63B" opacity=".55"/>
+
+      <!-- sea band + layered surf -->
+      <path d="M0,846 C420,798 900,898 1360,846 C1620,816 1800,838 1920,824 L1920,1080 L0,1080 Z" fill="#C7EFF1"/>
+      <path d="M0,916 C400,876 880,960 1340,918 C1600,894 1800,912 1920,900 L1920,1080 L0,1080 Z" fill="#9EE6EA" opacity=".75"/>
+      <path d="M0,996 C440,962 940,1020 1420,992 C1660,978 1820,990 1920,982 L1920,1080 L0,1080 Z" fill="#7FDDE4" opacity=".6"/>
+      <g stroke="#FFF6E6" stroke-width="6" fill="none" opacity=".9">
+        <path d="M300,880 q26,-12 52,0 t52,0 t52,0"/>
+        <path d="M960,940 q26,-12 52,0 t52,0 t52,0"/>
+        <path d="M1420,884 q26,-12 52,0 t52,0 t52,0"/>
+        <path d="M620,1006 q26,-12 52,0 t52,0 t52,0"/>
+      </g>
+
+      <!-- the winding route ribbon -->
+      <path d="M150,392 C450,300 560,516 848,462 C1140,408 1180,668 1462,632 C1668,606 1760,730 1794,812"
+            fill="none" stroke="#FFF6E6" stroke-width="26" stroke-linecap="round"/>
+      <path d="M150,392 C450,300 560,516 848,462 C1140,408 1180,668 1462,632 C1668,606 1760,730 1794,812"
+            fill="none" stroke="#F2612C" stroke-width="8" stroke-dasharray="24 20" stroke-linecap="round"/>
+
+      <!-- route waypoint dots -->
+      <g fill="#FFF6E6" stroke="#C9410F" stroke-width="5">
+        <circle cx="500" cy="392" r="11"/>
+        <circle cx="1010" cy="470" r="11"/>
+        <circle cx="1620" cy="668" r="11"/>
+      </g>
+
+      <!-- palm cluster, bottom left -->
+      <g transform="translate(150 1080) scale(1.05)"><use href="#palmJ"/></g>
+      <g transform="translate(62 1058) scale(0.78)"><use href="#palmJ"/></g>
+
+      <!-- sailboat on the water, centre-left -->
+      <g transform="translate(468 924)">
+        <path d="M0,-8 L0,-92 L52,-8 Z" fill="#FFF6E6" stroke="#123039" stroke-width="4"/>
+        <path d="M-8,-8 L-8,-68 L-46,-8 Z" fill="#F2612C" stroke="#123039" stroke-width="4"/>
+        <path d="M-66,-2 L70,-2 L48,24 L-46,24 Z" fill="#123039"/>
+      </g>
+
+      <!-- life ring on the water, clear of the effort key -->
+      <g transform="translate(578 1006)">
+        <circle cx="0" cy="0" r="26" fill="none" stroke="#F2612C" stroke-width="10"/>
+        <circle cx="0" cy="0" r="26" fill="none" stroke="#FFF6E6" stroke-width="10" stroke-dasharray="14 14"/>
+      </g>
+
+      <!-- birds: kept in the empty band below the title, clear of all lettering -->
+      <g stroke="#123039" stroke-width="6" fill="none" opacity=".5">
+        <path d="M846,250 q24,-20 48,0 q24,-20 48,0"/>
+        <path d="M966,208 q18,-15 36,0 q18,-15 36,0"/>
+      </g>
+
+      <!-- fruit drink motif, mid-bottom -->
+      <g transform="translate(980 872)">
+        <path d="M-26,-30 L26,-30 L16,42 L-16,42 Z" fill="#FFF6E6" stroke="#123039" stroke-width="5"/>
+        <path d="M-21,-16 L21,-16 L14,32 L-14,32 Z" fill="#F2612C"/>
+        <path d="M10,-30 L36,-66" stroke="#14563E" stroke-width="6"/>
+        <circle cx="-22" cy="-40" r="13" fill="#FFC63B" stroke="#123039" stroke-width="4"/>
+      </g>
+
+      <!-- luggage + sunglasses, bottom right -->
+      <g transform="translate(1742 1024)">
+        <rect x="-48" y="-58" width="96" height="70" rx="10" fill="#0C6E7D" stroke="#123039" stroke-width="5"/>
+        <rect x="-48" y="-32" width="96" height="12" fill="#FFC63B"/>
+        <path d="M-16,-58 L-16,-74 L16,-74 L16,-58" fill="none" stroke="#123039" stroke-width="5"/>
+      </g>
+      <g transform="translate(1592 1040)" stroke="#123039" stroke-width="6" fill="#16B8C8">
+        <rect x="-72" y="-20" width="60" height="40" rx="15"/>
+        <rect x="12" y="-20" width="60" height="40" rx="15"/>
+        <path d="M-12,-6 L12,-6" fill="none"/>
+      </g>
+
+      <!-- shells on the sand edge -->
+      <g fill="#C9410F" opacity=".6">
+        <path d="M786,1036 l12,-24 l12,24 l26,5 l-19,18 l5,26 l-24,-13 l-24,13 l5,-26 l-19,-18 Z"/>
+        <path d="M1290,1046 a22,17 0 1,0 44,0 z"/>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="tex" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:6;"></div>
+
+  <!-- HEADER -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:64px;width:1100px;z-index:10;">
+    <p style="font-family:var(--label);font-weight:700;font-size:25px;letter-spacing:6px;color:#C9410F;">08 · RELAXED DAILY ITINERARY</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:102px;width:1080px;z-index:10;">
+    <p style="font-family:var(--display);font-size:52px;line-height:1.36;color:#14563E;">One outing a day, then nothing</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1230px;top:64px;width:480px;height:150px;z-index:5;background:#FFF6E6;border:6px solid #14563E;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1260px;top:88px;width:420px;z-index:10;">
+    <p style="font-family:var(--label);font-weight:700;font-size:22px;letter-spacing:4px;color:#0C6E7D;">PACING RULE</p>
+    <p style="font-family:var(--body);font-size:20px;line-height:1.35;color:#123039;margin-top:6px;">Nothing scheduled between 12:00 and 15:00. Times are intentions, not bookings.</p>
+  </div>
+
+  <!-- ===== DAY 1 — card 250 → 570 ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:310px;width:96px;height:96px;z-index:10;background:#F2612C;border:6px solid #FFF6E6;border-radius:50%;box-shadow:0 0 0 4px #14563E;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:310px;width:108px;height:108px;z-index:10;">
+    <div style="display:flex;width:108px;height:108px;align-items:center;justify-content:center;">
+      <p style="font-family:var(--display);font-size:34px;line-height:1;color:#FFF6E6;">1</p>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:242px;top:250px;width:452px;height:320px;z-index:5;background:#FFF6E6;border:6px solid #14563E;box-shadow:12px 12px 0 rgba(18,48,57,.13);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:248px;top:256px;width:452px;height:14px;z-index:5;background:#F2612C;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:272px;top:292px;width:396px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20,6 L20,17 L31,17 Z" fill="#FFF6E6" stroke="#123039" stroke-width="3"/>
+        <path d="M17,8 L17,17 L6,17 Z" fill="#F2612C" stroke="#123039" stroke-width="3"/>
+        <path d="M4,21 L36,21 L30,32 L10,32 Z" fill="#0C6E7D" stroke="#123039" stroke-width="3"/>
+      </svg>
+      <p style="font-family:var(--label);font-weight:700;font-size:25px;letter-spacing:3px;color:#C9410F;">DAY 1 · ARRIVE &amp; SETTLE</p>
+    </div>
+    <div style="font-family:var(--body);font-size:19px;line-height:1.45;color:#123039;margin-top:10px;">
+      <p><strong>PM</strong> — Ferry arrival, transfer to your stay, unpack.</p>
+      <p><strong>Late PM</strong> — Short walk to the nearest sand, feet in the water only.</p>
+      <p><strong>Evening</strong> — Simple meal near the room, early night.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:12px;">
+      <span style="width:14px;height:14px;flex:none;background:#2C8A5B;border-radius:50%;"></span>
+      <p style="font-family:var(--label);font-weight:700;font-size:19px;letter-spacing:2px;color:#14563E;">EASY · TRANSFER [XX] MIN — CONFIRM LOCALLY</p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 2 — card 530 → 850 ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:734px;top:422px;width:96px;height:96px;z-index:10;background:#16B8C8;border:6px solid #FFF6E6;border-radius:50%;box-shadow:0 0 0 4px #14563E;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:734px;top:422px;width:108px;height:108px;z-index:10;">
+    <div style="display:flex;width:108px;height:108px;align-items:center;justify-content:center;">
+      <p style="font-family:var(--display);font-size:34px;line-height:1;color:#FFF6E6;">2</p>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:734px;top:530px;width:452px;height:320px;z-index:5;background:#FFF6E6;border:6px solid #14563E;box-shadow:12px 12px 0 rgba(18,48,57,.13);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:740px;top:536px;width:452px;height:14px;z-index:5;background:#16B8C8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:764px;top:572px;width:396px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7,15 a13,11 0 0 1 26,0 l0,7 a13,13 0 0 1 -26,0 Z" fill="#7FDDE4" stroke="#123039" stroke-width="3"/>
+        <path d="M20,31 L20,36" stroke="#123039" stroke-width="3"/>
+        <path d="M31,20 L36,20 L36,34" fill="none" stroke="#F2612C" stroke-width="3"/>
+      </svg>
+      <p style="font-family:var(--label);font-weight:700;font-size:25px;letter-spacing:3px;color:#0C6E7D;">DAY 2 · WATER DAY</p>
+    </div>
+    <div style="font-family:var(--body);font-size:19px;line-height:1.45;color:#123039;margin-top:10px;">
+      <p><strong>07:30</strong> — Calm-cove swim before the heat.</p>
+      <p><strong>10:00</strong> — Guided reef snorkel trip.</p>
+      <p><strong>12:00–15:00</strong> — Lunch, shade, nap.</p>
+      <p><strong>17:30</strong> — Harbour dinner, sunset from the sand.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:12px;">
+      <span style="width:14px;height:14px;flex:none;background:#F2612C;border-radius:50%;"></span>
+      <p style="font-family:var(--label);font-weight:700;font-size:19px;letter-spacing:2px;color:#C9410F;">ACTIVE · BOOK THE BOAT ON DAY 1</p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 3 — card 250 → 570 ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1214px;top:310px;width:96px;height:96px;z-index:10;background:#14563E;border:6px solid #FFF6E6;border-radius:50%;box-shadow:0 0 0 4px #14563E;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1214px;top:310px;width:108px;height:108px;z-index:10;">
+    <div style="display:flex;width:108px;height:108px;align-items:center;justify-content:center;">
+      <p style="font-family:var(--display);font-size:34px;line-height:1;color:#FFF6E6;">3</p>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1358px;top:250px;width:452px;height:320px;z-index:5;background:#FFF6E6;border:6px solid #14563E;box-shadow:12px 12px 0 rgba(18,48,57,.13);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1364px;top:256px;width:452px;height:14px;z-index:5;background:#14563E;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1388px;top:292px;width:396px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2,32 L14,14 L24,32 Z" fill="#2C8A5B" stroke="#123039" stroke-width="3"/>
+        <path d="M16,32 L28,10 L38,32 Z" fill="#14563E" stroke="#123039" stroke-width="3"/>
+        <path d="M20,32 L38,32" stroke="#7FDDE4" stroke-width="4"/>
+      </svg>
+      <p style="font-family:var(--label);font-weight:700;font-size:25px;letter-spacing:3px;color:#14563E;">DAY 3 · GREEN DAY</p>
+    </div>
+    <div style="font-family:var(--body);font-size:19px;line-height:1.45;color:#123039;margin-top:10px;">
+      <p><strong>06:45</strong> — Ridge trail while it is cool.</p>
+      <p><strong>09:30</strong> — Freshwater falls swim, slow breakfast after.</p>
+      <p><strong>Midday</strong> — Back to the room; no plans.</p>
+      <p><strong>16:30</strong> — Garden paths, then market dessert walk.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:12px;">
+      <span style="width:14px;height:14px;flex:none;background:#FFC63B;border-radius:50%;"></span>
+      <p style="font-family:var(--label);font-weight:700;font-size:19px;letter-spacing:2px;color:#14563E;">MODERATE · WATER + SHOES YOU CAN WET</p>
+    </div>
+  </div>
+
+  <!-- ===== DAY 4 — card 690 → 1010 ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1214px;top:750px;width:96px;height:96px;z-index:10;background:#F2612C;border:6px solid #FFF6E6;border-radius:50%;box-shadow:0 0 0 4px #14563E;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1214px;top:750px;width:108px;height:108px;z-index:10;">
+    <div style="display:flex;width:108px;height:108px;align-items:center;justify-content:center;">
+      <p style="font-family:var(--display);font-size:34px;line-height:1;color:#FFF6E6;">4</p>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1358px;top:690px;width:452px;height:320px;z-index:5;background:#FFC63B;border:6px solid #14563E;box-shadow:12px 12px 0 rgba(18,48,57,.13);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1364px;top:696px;width:452px;height:14px;z-index:5;background:#C9410F;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1388px;top:732px;width:396px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="13" width="28" height="22" rx="4" fill="#FFF6E6" stroke="#123039" stroke-width="3"/>
+        <path d="M6,22 L34,22" stroke="#0C6E7D" stroke-width="4"/>
+        <path d="M15,13 L15,7 L25,7 L25,13" fill="none" stroke="#123039" stroke-width="3"/>
+      </svg>
+      <p style="font-family:var(--label);font-weight:700;font-size:25px;letter-spacing:3px;color:#123039;">DAY 4 · SLOW &amp; DEPART</p>
+    </div>
+    <div style="font-family:var(--body);font-size:19px;line-height:1.45;color:#123039;margin-top:10px;">
+      <p><strong>AM</strong> — Last swim, pack with time to spare.</p>
+      <p><strong>Midday</strong> — Fruit lunch, check out, leave for the pier early.</p>
+      <p><strong>Buffer</strong> — Add one spare hour before onward travel.</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:12px;">
+      <span style="width:14px;height:14px;flex:none;background:#14563E;border-radius:50%;"></span>
+      <p style="font-family:var(--label);font-weight:700;font-size:19px;letter-spacing:2px;color:#14563E;">EASY · AVOID A TIGHT ONWARD CONNECTION</p>
+    </div>
+  </div>
+
+  <!-- ===== EXTEND NOTE — 866 → 1016 ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:242px;top:866px;width:640px;height:150px;z-index:5;background:#FFF6E6;border-left:14px solid #16B8C8;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:282px;top:890px;width:568px;z-index:10;">
+    <p style="font-family:var(--label);font-weight:700;font-size:23px;letter-spacing:4px;color:#0C6E7D;">STAYING LONGER?</p>
+    <p style="font-family:var(--body);font-size:20px;line-height:1.4;color:#123039;margin-top:6px;">Repeat the Day 2 shape for extra days and swap in the paddle-and-sail morning or a second beach — keep one empty day per week.</p>
+  </div>
+
+  <!-- effort key -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:938px;top:890px;width:250px;z-index:10;">
+    <p style="font-family:var(--label);font-weight:700;font-size:20px;letter-spacing:3px;color:#0C6E7D;">EFFORT KEY</p>
+    <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;font-family:var(--label);font-weight:600;font-size:19px;letter-spacing:1px;color:#123039;">
+      <div style="display:flex;align-items:center;gap:10px;"><span style="width:13px;height:13px;flex:none;background:#2C8A5B;border-radius:50%;"></span><span>Easy</span></div>
+      <div style="display:flex;align-items:center;gap:10px;"><span style="width:13px;height:13px;flex:none;background:#FFC63B;border-radius:50%;"></span><span>Moderate</span></div>
+      <div style="display:flex;align-items:center;gap:10px;"><span style="width:13px;height:13px;flex:none;background:#F2612C;border-radius:50%;"></span><span>Active</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1732px;top:64px;width:68px;height:68px;z-index:5;background:#FFF6E6;border:5px solid #14563E;border-radius:50%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1732px;top:64px;width:78px;height:78px;z-index:10;">
+    <div style="display:flex;width:78px;height:78px;align-items:center;justify-content:center;">
+      <p style="font-family:var(--display);font-size:27px;line-height:1;color:#14563E;">08</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

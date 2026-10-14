@@ -1,0 +1,11 @@
+id,first_name,last_name,email,country,signup_date,active
+1,Alice,Anderson,alice@example.com,USA,2024-01-15,true
+2,Bob,Brown,bob@example.com,UK,2024-02-20,true
+3,Carol,Chen,carol@example.com,Singapore,2024-03-10,true
+4,David,Diaz,david@example.com,Mexico,2024-03-22,false
+5,Emma,Evans,emma@example.com,Canada,2024-04-01,true
+6,Frank,Fischer,frank@example.com,Germany,2024-04-15,true
+7,Grace,Garcia,grace@example.com,Spain,2024-05-03,true
+8,Henry,Hassan,henry@example.com,Egypt,2024-05-18,false
+9,Iris,Ito,iris@example.com,Japan,2024-06-04,true
+10,Jack,Johnson,jack@example.com,Australia,2024-06-21,true

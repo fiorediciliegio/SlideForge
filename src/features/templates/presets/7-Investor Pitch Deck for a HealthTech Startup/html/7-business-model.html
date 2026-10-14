@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Per-patient subscription funded by existing codes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#F5F3EF;}
+  table{border-collapse:collapse;width:100%;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Business model" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F3EF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:0px;width:72px;height:10px;background:#C4573C;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:84px;width:900px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.2em;text-transform:uppercase;color:#17475A;">07 &mdash; Business model</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:122px;width:1500px;z-index:10;font-family:'Archivo',sans-serif;font-size:56px;font-weight:600;line-height:1.12;letter-spacing:-0.01em;color:#10222F;">Subscription revenue the hospital already bills for</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:206px;width:1440px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:30px;font-weight:400;line-height:1.4;color:#4A6070;">Hospitals pay a per-enrolled-patient monthly fee and recover it from remote-monitoring reimbursement plus avoided readmissions.</div>
+
+  <!-- unit economics table -->
+  <div data-object="true" data-object-type="table" style="position:absolute;left:96px;top:296px;width:1016px;height:436px;z-index:10;background:#FFFFFF;border:1px solid #E0DAD1;border-radius:4px;padding:28px 32px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:#17475A;">Unit economics per enrolled patient-month</div>
+    <table style="margin-top:22px;font-family:'IBM Plex Sans',sans-serif;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:0 0 14px 0;font-size:24px;font-weight:600;color:#7E8C96;border-bottom:2px solid #17475A;">Line item</th>
+          <th style="text-align:right;padding:0 0 14px 0;font-size:24px;font-weight:600;color:#7E8C96;border-bottom:2px solid #17475A;">Standard</th>
+          <th style="text-align:right;padding:0 0 14px 0;font-size:24px;font-weight:600;color:#7E8C96;border-bottom:2px solid #17475A;">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:17px 0;font-size:27px;color:#22394A;border-bottom:1px solid #EDE9E3;">Platform &amp; nurse pod fee</td>
+          <td style="padding:17px 0;font-size:27px;color:#22394A;text-align:right;border-bottom:1px solid #EDE9E3;font-family:'IBM Plex Mono',monospace;">$310</td>
+          <td style="padding:17px 0;font-size:27px;color:#22394A;text-align:right;border-bottom:1px solid #EDE9E3;font-family:'IBM Plex Mono',monospace;">$265</td>
+        </tr>
+        <tr>
+          <td style="padding:17px 0;font-size:27px;color:#22394A;border-bottom:1px solid #EDE9E3;">Device kit &amp; connectivity</td>
+          <td style="padding:17px 0;font-size:27px;color:#4A6070;text-align:right;border-bottom:1px solid #EDE9E3;font-family:'IBM Plex Mono',monospace;">&minus;$41</td>
+          <td style="padding:17px 0;font-size:27px;color:#4A6070;text-align:right;border-bottom:1px solid #EDE9E3;font-family:'IBM Plex Mono',monospace;">&minus;$38</td>
+        </tr>
+        <tr>
+          <td style="padding:17px 0;font-size:27px;color:#22394A;border-bottom:1px solid #EDE9E3;">Clinical staffing cost</td>
+          <td style="padding:17px 0;font-size:27px;color:#4A6070;text-align:right;border-bottom:1px solid #EDE9E3;font-family:'IBM Plex Mono',monospace;">&minus;$79</td>
+          <td style="padding:17px 0;font-size:27px;color:#4A6070;text-align:right;border-bottom:1px solid #EDE9E3;font-family:'IBM Plex Mono',monospace;">&minus;$71</td>
+        </tr>
+        <tr>
+          <td style="padding:17px 0;font-size:27px;font-weight:600;color:#10222F;">Contribution margin</td>
+          <td style="padding:17px 0;font-size:27px;font-weight:600;color:#10222F;text-align:right;font-family:'IBM Plex Mono',monospace;">61%</td>
+          <td style="padding:17px 0;font-size:27px;font-weight:600;color:#C4573C;text-align:right;font-family:'IBM Plex Mono',monospace;">59%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ROI stack for the hospital -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:1160px;top:296px;width:664px;height:436px;z-index:10;background:#17475A;border-radius:4px;padding:28px 34px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:#8FB6C4;">Hospital ROI per 100 enrolled</div>
+    <div style="margin-top:26px;display:flex;flex-direction:column;gap:20px;">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Sans',sans-serif;font-size:26px;color:#DCE6EB;"><span>Reimbursement captured</span><span style="font-family:'Archivo',sans-serif;font-weight:700;color:#FFFFFF;">+$142K</span></div>
+        <div style="margin-top:10px;height:16px;background:#22394A;border-radius:2px;"><div style="width:74%;height:16px;background:#7FD4C1;border-radius:2px;"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Sans',sans-serif;font-size:26px;color:#DCE6EB;"><span>Readmissions avoided (8.3 pts)</span><span style="font-family:'Archivo',sans-serif;font-weight:700;color:#FFFFFF;">+$132K</span></div>
+        <div style="margin-top:10px;height:16px;background:#22394A;border-radius:2px;"><div style="width:69%;height:16px;background:#7FD4C1;border-radius:2px;"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Sans',sans-serif;font-size:26px;color:#DCE6EB;"><span>Cadence subscription</span><span style="font-family:'Archivo',sans-serif;font-weight:700;color:#E0A292;">&minus;$96K</span></div>
+        <div style="margin-top:10px;height:16px;background:#22394A;border-radius:2px;"><div style="width:50%;height:16px;background:#C4573C;border-radius:2px;"></div></div>
+      </div>
+    </div>
+    <div style="margin-top:28px;padding-top:22px;border-top:1px solid #2E6377;display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'IBM Plex Sans',sans-serif;font-size:27px;color:#DCE6EB;">Net benefit &middot; payback</span>
+      <span style="font-family:'Archivo',sans-serif;font-size:40px;font-weight:700;color:#7FD4C1;">$178K &middot; 5.1 mo</span>
+    </div>
+  </div>
+
+  <!-- go to market path -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:756px;width:1728px;height:186px;z-index:10;background:#FFFFFF;border:1px solid #E0DAD1;border-radius:4px;padding:26px 34px;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:#17475A;">Commercialization path</div>
+    <div style="margin-top:22px;display:flex;align-items:center;gap:18px;">
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif;font-size:28px;font-weight:600;color:#10222F;">1 &middot; Paid pilot</div>
+        <div style="margin-top:8px;font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:#4A6070;">One line, 120 patients, 90 days</div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9AFA0" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif;font-size:28px;font-weight:600;color:#10222F;">2 &middot; System contract</div>
+        <div style="margin-top:8px;font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:#4A6070;">3-year term, all HF discharges</div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9AFA0" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif;font-size:28px;font-weight:600;color:#10222F;">3 &middot; Service-line growth</div>
+        <div style="margin-top:8px;font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:#4A6070;">Cardiac surgery, COPD, CKD</div>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9AFA0" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+      <div style="flex:1;">
+        <div style="font-family:'Archivo',sans-serif;font-size:28px;font-weight:600;color:#C4573C;">4 &middot; Payer risk share</div>
+        <div style="margin-top:8px;font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:#4A6070;">Outcome-linked from 2029</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:988px;width:1728px;height:1px;background:#E0DAD1;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1006px;width:900px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.12em;color:#7E8C96;">CADENCE HEALTH &middot; SERIES A &middot; CONFIDENTIAL</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1500px;top:1006px;width:324px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:24px;letter-spacing:.12em;color:#7E8C96;text-align:right;">07 / 10</div>
+
+</div>
+</body>
+</html>

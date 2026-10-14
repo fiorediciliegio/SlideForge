@@ -1,0 +1,11 @@
+{
+  "name": "batch-writer-executa",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Dev-only Node stdio Executa that writes batch session-test output to an absolute local directory.",
+  "type": "module",
+  "main": "plugin.js",
+  "scripts": {
+    "start": "node plugin.js"
+  }
+}

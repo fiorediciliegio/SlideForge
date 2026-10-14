@@ -1,0 +1,63 @@
+{
+  "id": "80-Pharmaceutical Product Launch Strategy Deck",
+  "version": 1,
+  "ppt_number": 80,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "burgundy",
+    "gold",
+    "black"
+  ],
+  "name": "Pharmaceutical Product Launch Strategy Deck",
+  "description": "Premium pharmaceutical design with warm cream space, burgundy panels, muted gold accents, and evidence-led editorial graphics.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Healthcare & Wellness",
+  "recommendation_profile": {"use_cases":["strategy","product-launch"],"industries":["healthcare"],"audiences":["client"],"formats":["roadmap","proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖奶油色、酒红与哑金色封面，左侧中部放置超大标题，几何色块与细线建立视觉重心。"
+    },
+    {
+      "path": "images/2-disease-area-unmet-need.webp",
+      "alt": "暖奶油色、酒红与哑金色页面，一幅图表集中排布，人群关系收束版面。"
+    },
+    {
+      "path": "images/3-positioning-clinical-value.webp",
+      "alt": "暖奶油色、酒红与哑金色页面，两幅图表集中排布，临床信息形成重心。"
+    },
+    {
+      "path": "images/4-targets-launch-orchestration.webp",
+      "alt": "暖奶油色、酒红与哑金色页面，标题、细线与留白划分层级，执行节奏拉开层级。"
+    },
+    {
+      "path": "images/5-timeline-kpis-compliance.webp",
+      "alt": "暖奶油色、酒红与哑金色页面，横向时间轴串联阶段节点，日期标记组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖奶油色、酒红与哑金色确定整体基调，左侧中部放置超大标题；几何色块与细线分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-disease-area-unmet-need.html",
+      "description": "标题固定在左上方，暖奶油色、酒红与哑金色分隔主体；单一大面板承载主体信息，一幅图表落在中央，角色节点与关系模块补充层级。"
+    },
+    {
+      "path": "html/3-positioning-clinical-value.html",
+      "description": "暖奶油色、酒红与哑金色画面，标题置于左上方；留白与细线分隔出清晰阅读区，两幅图表落在中央，医学图示、诊断标签与数据块补充层级。"
+    },
+    {
+      "path": "html/4-targets-launch-orchestration.html",
+      "description": "左上方标题锚定暖奶油色、酒红与哑金色画面；留白与细线分隔出清晰阅读区，阶段节点、节奏条与行动卡贴合卡片边界。"
+    },
+    {
+      "path": "html/5-timeline-kpis-compliance.html",
+      "description": "暖奶油色、酒红与哑金色作为底色，标题落在左上方；横向时间轴串联阶段节点与日期标记，两幅图表落在中央，阶段节点与时间标记补充层级。"
+    }
+  ]
+}

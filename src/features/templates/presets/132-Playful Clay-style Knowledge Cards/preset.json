@@ -1,0 +1,103 @@
+{
+  "id": "132-Playful Clay-style Knowledge Cards",
+  "version": 1,
+  "ppt_number": 132,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "mint",
+    "lavender",
+    "yellow"
+  ],
+  "name": "Playful Clay-style Knowledge Cards",
+  "description": "Playful clay-style learning cards with soft 3D icons, rounded panels, large numbers, and simple diagrams.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["children"],"formats":["lesson"],"primary_styles":["playful","minimal"],"visual_traits":["playful","minimal","cartoon","illustration","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "奶油白封面以薄荷圆形和黏土蜜蜂为主视觉，左侧粗圆标题配黄色编号章，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-what-is-a-hive.webp",
+      "alt": "中央蜂巢黏土模型配两侧大数字和说明卡，薄荷与淡紫圆块强化知识层级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-why-bees-matter.webp",
+      "alt": "顶部两组大数字卡配底部花果授粉流程，彩色黏土图标形成直观因果链，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-three-core-facts.webp",
+      "alt": "左侧大型沙漏知识卡与右侧温度和数量卡并列，软阴影营造玩具质感，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/5-hive-building-blocks.webp",
+      "alt": "四层彩色黏土积木垂直堆叠，左右标注线解释蜂巢组成和功能，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/6-nectar-to-honey.webp",
+      "alt": "五步圆形黏土图标沿横向排列，顶部比例卡展示花蜜转化过程，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/7-waggle-dance-example.webp",
+      "alt": "左侧黏土插画演示蜜蜂舞蹈路线，右侧两张说明卡分别解释角度方向和飞行距离，阅读顺序明确。"
+    },
+    {
+      "path": "images/8-myths-vs-facts.webp",
+      "alt": "左侧三条迷思文字与右侧三张彩色事实卡一一对应，形成清晰的真假对照页，信息对比清楚。"
+    },
+    {
+      "path": "images/9-spot-and-help-bees.webp",
+      "alt": "三张蜂类识别卡横向排列，底部橙色实地任务条引导观察并记录访花行为，信息对比清楚。"
+    },
+    {
+      "path": "images/10-quiz-and-takeaway.webp",
+      "alt": "左侧薄荷测验卡配右侧淡紫蜂蜜罐图标，答案条和总结文字完成课程收尾，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，奶油白封面以薄荷圆形和黏土蜜蜂为主视觉，左侧粗圆标题配黄色编号章，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/2-what-is-a-hive.html",
+      "description": "中央蜂巢黏土模型配两侧大数字和说明卡，薄荷与淡紫圆块强化知识层级，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/3-why-bees-matter.html",
+      "description": "顶部两组大数字卡配底部花果授粉流程，彩色黏土图标形成直观因果链，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/4-three-core-facts.html",
+      "description": "柔奶油白画布上，左侧大型沙漏知识卡与右侧温度和数量卡并列，软阴影营造玩具质感，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/5-hive-building-blocks.html",
+      "description": "柔奶油白画布上，四层彩色黏土积木垂直堆叠，左右标注线解释蜂巢组成和功能，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/6-nectar-to-honey.html",
+      "description": "柔奶油白画布上，五步圆形黏土图标沿横向排列，顶部比例卡展示花蜜转化过程，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/7-waggle-dance-example.html",
+      "description": "柔奶油白页面左侧用蜂巢、花朵和虚线路径演示摇摆舞，右侧上下两张说明卡分别解释舞蹈角度与路线长度，细线与留白保持清晰层级。"
+    },
+    {
+      "path": "html/8-myths-vs-facts.html",
+      "description": "柔奶油白页面左侧纵向列出三条迷思，右侧用薄荷、淡紫和浅蓝三张事实卡逐项回应，黏土图标让对照关系更直观。"
+    },
+    {
+      "path": "html/9-spot-and-help-bees.html",
+      "description": "柔奶油白页面横排蜜蜂、熊蜂和黄蜂三张识别卡，彩色底板区分类别，底部橙色任务条横贯页面并给出户外观察行动。"
+    },
+    {
+      "path": "html/10-quiz-and-takeaway.html",
+      "description": "左侧薄荷测验卡配右侧淡紫蜂蜜罐图标，答案条和总结文字完成课程收尾，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

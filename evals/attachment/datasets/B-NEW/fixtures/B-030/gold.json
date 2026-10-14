@@ -1,0 +1,13 @@
+{
+  "case_id": "B-030",
+  "size_class": "中",
+  "target_input_tokens": 3500,
+  "estimated_outline_input_tokens": 3591,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": true,
+  "attachment_mode": "Single attachment",
+  "attachment_types": "DOCX",
+  "content_strategies": "summarized_context",
+  "evaluation_risks": "1. Saying all 12 systems were completed; 2. Presenting monitoring estimates as independent impact proof; 3. Hiding land-access delays; 4. Treating 50 committees as funded; 5. Using identifiable beneficiary images."
+}

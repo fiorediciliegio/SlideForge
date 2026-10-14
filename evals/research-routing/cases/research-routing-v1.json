@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case_id": "case-001",
+      "source_row": 1,
+      "brief": "按照这个内容来做PPT：《Hi Calder, Thanks a lot for the detailed investigation and for flagging this — this is very helpful. Could you please share the full request/response payloads and the corresponding timestamps for a few of the failed calls?... Best, Kate》",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-002",
+      "source_row": 2,
+      "brief": "Create a 10-slide presentation explaining the key principles of effective team communication for new managers.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-003",
+      "source_row": 3,
+      "brief": "Build a deck on the current state of the humanoid robotics industry in 2026, including the leading companies, recent funding rounds, major product launches, and market outlook.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-004",
+      "source_row": 4,
+      "brief": "Make a presentation about Apple’s latest product launches and explain how they compare with Samsung’s current flagship devices.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-005",
+      "source_row": 5,
+      "brief": "Turn the following notes into a clean investor update deck. Revenue grew 18% QoQ, churn improved from 4.2% to 3.5%, enterprise pipeline is $8.4M, and the new onboarding flow launches next month.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-006",
+      "source_row": 6,
+      "brief": "Nike brand history — make it visual and engaging.",
+      "expected": {
+        "web": false,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-007",
+      "source_row": 7,
+      "brief": "做一份关于生成式 AI 是怎么工作的 PPT，面向完全不懂技术的人，多用图示，少用文字。",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-008",
+      "source_row": 8,
+      "brief": "Put together a deck on why GLP-1 drugs are reshaping the obesity treatment market. Use the most recent market data, major players, sales figures, and regulatory developments.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-009",
+      "source_row": 9,
+      "brief": "Japan trip presentation. Tokyo, Kyoto, Osaka, food, temples, cherry blossoms, cool places. Make it beautiful.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-010",
+      "source_row": 10,
+      "brief": "We need a deck for tomorrow’s leadership meeting about our pricing strategy. Something around value-based pricing, packaging, discount discipline, and how sales should communicate price increases. Not sure exactly how to structure it.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-011",
+      "source_row": 11,
+      "brief": "Create a board meeting deck based on the following internal updates: Q2 revenue was $12.4M, gross margin improved to 68%, enterprise sales were below plan, we hired a new VP of Sales, and the product team is delaying the analytics launch by six weeks. Please highlight the key risks and decisions needed.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-012",
+      "source_row": 12,
+      "brief": "按照以下内容做一份董事会 PPT。Page 1 是封面图，主题为「螣龙安科 2026 H1 董事会」。后续页面包括：H1 核心经营结论、收入利润和现金情况、Anna 用户及 Hackathon 数据、Anna OS 产品和商业模式、Codex / Claude Code / Genspark / Manus / n8n / Dify / Gamma 等全球同类产品对比、各类 App 商业化测算、2026 H2 增长规划、第二届全球 Hackathon、关键里程碑和融资计划。具体数据、表格和页面内容如下：〔后附完整 page 1–11 内容〕",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-013",
+      "source_row": 13,
+      "brief": "2026 AI agents landscape. 8 slides. Make it VC-style.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-014",
+      "source_row": 14,
+      "brief": "Create a visually stunning presentation about cybersecurity. Dark theme, hackers, networks, glowing code, futuristic feel.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-015",
+      "source_row": 15,
+      "brief": "Here are our customer interview notes from 25 users. Turn them into a deck showing the top pain points, recurring themes, representative quotes, and product opportunities.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-016",
+      "source_row": 16,
+      "brief": "Who are the top 10 AI coding startups right now? Make a deck with funding, founders, traction, and what makes each company different.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-017",
+      "source_row": 17,
+      "brief": "Create a presentation on the history of the Coca-Cola bottle, using real photos of how the bottle design changed over time.",
+      "expected": {
+        "web": false,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-018",
+      "source_row": 18,
+      "brief": "Tesla strategy presentation.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-019",
+      "source_row": 19,
+      "brief": "Tesla strategy presentation — focus on its current pricing, product lineup, China performance, margins, and competitive pressure in 2026.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-020",
+      "source_row": 20,
+      "brief": "帮我把下面的年度战略材料整理成一份董事会 PPT，要高级一点、有科技感，最好每页都有一些视觉表达。材料里包括今年的收入、利润、现金流情况，新 AI 产品的用户数据，几个主要竞争对手的比较，未来半年的商业化目标、海外增长计划和融资安排。请帮我重新组织一下逻辑，让董事会能快速看懂重点。〔后附完整材料〕",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-021",
+      "source_row": 21,
+      "brief": "Create a deck explaining how SpaceX reusable rockets work. Use simple diagrams for launch, stage separation, landing, and reuse.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-022",
+      "source_row": 22,
+      "brief": "Create a deck about SpaceX’s major launches over the past 12 months, including Starship milestones, launch dates, outcomes, and photos from the missions.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-023",
+      "source_row": 23,
+      "brief": "I pasted the full earnings release below. Make an analyst-style deck summarizing revenue, margins, guidance, segment performance, and management commentary.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-024",
+      "source_row": 24,
+      "brief": "Make me a presentation on OpenAI.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-025",
+      "source_row": 25,
+      "brief": "Make me a presentation on OpenAI’s position in the AI market today, including its latest products, major competitors, partnerships, business model, and recent strategic developments. Use product and company visuals where useful.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-026",
+      "source_row": 26,
+      "brief": "Turn this 30-page strategy memo into a concise 12-slide board deck. Keep the core argument, simplify the language, and surface the most important decisions.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-027",
+      "source_row": 27,
+      "brief": "Create a deck on the global data center boom and show which regions are adding the most capacity in 2026. Include hyperscaler investments and power constraints.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-028",
+      "source_row": 28,
+      "brief": "The evolution of iPhone design from 2007 to today. Make it image-heavy and show the actual devices across generations.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-029",
+      "source_row": 29,
+      "brief": "Explain the evolution of smartphone design from physical keyboards to full-screen devices. Use clean illustrations and timelines.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-030",
+      "source_row": 30,
+      "brief": "Here’s our Q3 pipeline export. Please make a sales review deck by region, rep, stage, average deal size, win probability, and top risks.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-031",
+      "source_row": 31,
+      "brief": "Make a 6-slide deck on how subscription businesses should think about CAC, LTV, churn, retention, and payback period.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-032",
+      "source_row": 32,
+      "brief": "What are the fastest-growing consumer AI apps this month? Build a deck showing rankings, growth, use cases, and monetization.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-033",
+      "source_row": 33,
+      "brief": "做一个关于故宫建筑美学的 PPT，多放真实建筑照片，重点讲中轴线、屋顶、色彩和空间秩序。",
+      "expected": {
+        "web": false,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-034",
+      "source_row": 34,
+      "brief": "做一份关于中国传统建筑空间秩序的教学 PPT，用示意图解释中轴、院落、主次关系。",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-035",
+      "source_row": 35,
+      "brief": "I’ve pasted three competitor websites and my notes below. Make a comparison deck covering positioning, pricing, target users, strengths, and weaknesses based on this material.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-036",
+      "source_row": 36,
+      "brief": "Compare Notion, Coda, Airtable, and ClickUp as they exist today. Include current pricing, AI features, target users, and major product differences.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-037",
+      "source_row": 37,
+      "brief": "Make a visual moodboard-style presentation for a luxury hotel brand: quiet, warm, minimal, Japanese-inspired, natural materials, soft lighting.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-038",
+      "source_row": 38,
+      "brief": "Make a moodboard for Aman Tokyo using real images of the hotel, rooms, lobby, views, and dining spaces.",
+      "expected": {
+        "web": false,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-039",
+      "source_row": 39,
+      "brief": "Create a presentation from this meeting transcript. Organize it into decisions made, unresolved questions, owners, deadlines, and next steps.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-040",
+      "source_row": 40,
+      "brief": "Create a presentation on the biggest cybersecurity incidents of 2026 so far, what happened, who was affected, and the lessons for enterprise security teams.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-041",
+      "source_row": 41,
+      "brief": "Make a presentation about the CrowdStrike outage and use screenshots or photos from the actual incident to show its real-world impact.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-042",
+      "source_row": 42,
+      "brief": "Explain what an API is in 5 slides for nontechnical executives. Use analogies and diagrams.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-043",
+      "source_row": 43,
+      "brief": "Create an investor deck from the following startup description: AI assistant for dentists, $80k MRR, 12% MoM growth, 70 clinics, 91% gross retention, raising $3M. Make it compelling.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-044",
+      "source_row": 44,
+      "brief": "We’re raising $3M for an AI assistant for dentists. Build an investor deck and add market size, competitor landscape, industry growth, and recent comparable funding rounds.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-045",
+      "source_row": 45,
+      "brief": "Create a deck about Paris fashion week trends.",
+      "expected": {
+        "web": true,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-046",
+      "source_row": 46,
+      "brief": "Create a deck explaining the basic principles of fashion trend forecasting.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-047",
+      "source_row": 47,
+      "brief": "Please turn the content below into a polished company introduction deck. It mentions our offices in New York, Singapore, and London, 400 employees, Fortune 500 customers, and a 2026 expansion plan.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-048",
+      "source_row": 48,
+      "brief": "Create a company introduction deck for Stripe, including what it offers today, key products, customers, competitors, recent strategic moves, and geographic expansion.",
+      "expected": {
+        "web": true,
+        "images": false
+      }
+    },
+    {
+      "case_id": "case-049",
+      "source_row": 49,
+      "brief": "Build a presentation about famous works by Van Gogh. I want each section to show the actual painting being discussed.",
+      "expected": {
+        "web": false,
+        "images": true
+      }
+    },
+    {
+      "case_id": "case-050",
+      "source_row": 50,
+      "brief": "Explain Impressionism to high school students: what changed, why it mattered, and how to recognize the style. Use simple visual explanations.",
+      "expected": {
+        "web": false,
+        "images": false
+      }
+    }
+  ]
+}

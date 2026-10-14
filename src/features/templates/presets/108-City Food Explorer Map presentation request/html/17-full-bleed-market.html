@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Market at Night</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="17 Full-Bleed Market" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#1A1A1A;">
+
+  <!-- FULL-BLEED IMAGE -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; z-index:5;">
+    <img src="../assets/night-market.jpg" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+
+  <!-- Bottom gradient scrim for legibility -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:440px; width:1920px; height:640px; background:linear-gradient(to bottom, rgba(26,26,26,0) 0%, rgba(26,26,26,0.72) 46%, rgba(26,26,26,0.94) 100%); z-index:6;"></div>
+
+  <!-- Top scrim for masthead legibility -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:240px; background:linear-gradient(to bottom, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0) 100%); z-index:6;"></div>
+
+  <!-- Masthead (transparent over image) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:34px; width:1300px; z-index:11;">
+    <div class="mono" style="color:#FBF6EC; font-size:14px; letter-spacing:0.28em; font-weight:700;">17 / APPENDIX E · ONE PICTURE, THE WHOLE FEELING</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:34px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#F5C518; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 17</div>
+  </div>
+
+  <!-- Thin rule under masthead -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:70px; width:1800px; height:2px; background:rgba(251,246,236,0.45); z-index:11;"></div>
+
+  <!-- Yellow sticker top-left -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:110px; width:290px; z-index:12; transform:rotate(-4deg);">
+    <div style="background:#F5C518; padding:12px 20px; border:3px solid #1A1A1A; box-shadow:0 6px 0 #1A1A1A; text-align:center;">
+      <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#1A1A1A; font-weight:700;">SHOT AT</div>
+      <div class="serif" style="font-size:32px; color:#1A1A1A; line-height:1;">20:14</div>
+    </div>
+  </div>
+
+  <!-- Editorial caption block bottom-left -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:614px; width:180px; z-index:11;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.3em; color:#F5C518; font-weight:700;">FIELD NOTE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:648px; width:1180px; z-index:11;">
+    <div class="serif" style="font-size:104px; line-height:1.04; color:#FBF6EC;">The market<br>at <span style="color:#F5C518; font-style:italic;">nightfall.</span></div>
+  </div>
+
+  <!-- Left accent bar + body copy -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:892px; width:6px; height:120px; background:#E63946; z-index:11;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:88px; top:892px; width:660px; z-index:11;">
+    <div style="font-size:20px; line-height:1.5; color:#FBF6EC; opacity:0.95;">This is the hour the whole issue was built around. Fryers on, lanterns lit, and every stall competing for the same walk-past. Come hungry, bring cash, and let the queues decide for you.</div>
+  </div>
+
+  <!-- Right side pull quote -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:640px; width:560px; z-index:11; text-align:right;">
+    <div class="serif" style="font-size:46px; line-height:1.14; color:#FBF6EC; font-style:italic;">“If you only get one evening in this city, spend it here.”</div>
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#F5C518; font-weight:700; margin-top:16px;">— THE APPETITE DESK</div>
+  </div>
+
+  <!-- Bottom-right metadata -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:936px; width:560px; z-index:11; text-align:right;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#FBF6EC; font-weight:700; line-height:1.8;">OLD MARKET DISTRICT · STOP 03 ON THE MAP<br>OPEN NIGHTLY UNTIL 23:00 · CASH ONLY</div>
+  </div>
+
+  <!-- Hand annotation over image -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:300px; width:480px; z-index:12; text-align:right;">
+    <div class="hand" style="font-size:42px; color:#F5C518; line-height:1.1;">follow the smell of<br>charcoal and lime</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Performance Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;} *{box-sizing:border-box;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Performance Dashboard" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F4F1EA;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; background:#F4F1EA; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:6px; background:#1A1815; z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:70px; width:900px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:18px; letter-spacing:3px; color:#C6522A; text-transform:uppercase;">07 — Financial &amp; operating scorecard</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:112px; width:1180px; z-index:10; font-family:'Archivo',sans-serif; font-weight:600; font-size:58px; line-height:1.08; letter-spacing:-1.2px; color:#1A1815;">Evidence the plan is already working</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:120px; width:480px; z-index:10; font-family:'Archivo',sans-serif; font-size:22px; line-height:1.5; color:#6B665C; text-align:right;">Eight quarters of revenue with margin overlay, plus the four operating measures the board tracks against covenant and plan.</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:288px; width:1720px; height:1px; background:#D5CFC2; z-index:5;"></div>
+
+  <!-- combo chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:320px; width:1100px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:2.2px; color:#6B665C; text-transform:uppercase;">Quarterly revenue ($M, bars) vs. EBITDA margin (%, line)</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:368px; width:1130px; height:428px; background:#EAE5DA; z-index:1;"></div>
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:368px; width:1130px; height:428px; z-index:10;">
+    <svg width="1130" height="428" viewBox="0 0 1130 428" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#D5CFC2" stroke-width="1">
+        <line x1="96" y1="70" x2="1060" y2="70"/>
+        <line x1="96" y1="150" x2="1060" y2="150"/>
+        <line x1="96" y1="230" x2="1060" y2="230"/>
+        <line x1="96" y1="310" x2="1060" y2="310"/>
+      </g>
+      <line x1="96" y1="356" x2="1060" y2="356" stroke="#1A1815" stroke-width="1.5"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="16" fill="#6B665C">
+        <text x="84" y="76" text-anchor="end">440</text>
+        <text x="84" y="156" text-anchor="end">400</text>
+        <text x="84" y="236" text-anchor="end">360</text>
+        <text x="84" y="316" text-anchor="end">320</text>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="16" fill="#C6522A" text-anchor="start">
+        <text x="1072" y="76">21%</text>
+        <text x="1072" y="156">20%</text>
+        <text x="1072" y="236">19%</text>
+        <text x="1072" y="316">18%</text>
+      </g>
+      <!-- bars: 8 quarters -->
+      <g fill="#B8B2A4">
+        <rect x="120" y="286" width="84" height="70"/>
+        <rect x="240" y="262" width="84" height="94"/>
+        <rect x="360" y="240" width="84" height="116"/>
+        <rect x="480" y="214" width="84" height="142"/>
+        <rect x="600" y="186" width="84" height="170"/>
+        <rect x="720" y="162" width="84" height="194"/>
+      </g>
+      <rect x="840" y="140" width="84" height="216" fill="#1A1815"/>
+      <rect x="960" y="112" width="84" height="244" fill="#1A1815" opacity="0.28"/>
+      <!-- bar value labels -->
+      <g font-family="IBM Plex Mono, monospace" font-size="16" fill="#1A1815" text-anchor="middle">
+        <text x="162" y="278">341</text>
+        <text x="282" y="254">353</text>
+        <text x="402" y="232">364</text>
+        <text x="522" y="206">377</text>
+        <text x="642" y="178">391</text>
+        <text x="762" y="154">403</text>
+        <text x="882" y="132">413</text>
+        <text x="1002" y="104">427E</text>
+      </g>
+      <!-- x labels -->
+      <g font-family="IBM Plex Mono, monospace" font-size="16" fill="#6B665C" text-anchor="middle">
+        <text x="162" y="382">Q4 24</text>
+        <text x="282" y="382">Q1 25</text>
+        <text x="402" y="382">Q2 25</text>
+        <text x="522" y="382">Q3 25</text>
+        <text x="642" y="382">Q4 25</text>
+        <text x="762" y="382">Q1 26</text>
+        <text x="882" y="382">Q2 26</text>
+        <text x="1002" y="382">Q3 26</text>
+      </g>
+      <!-- margin line: 19.4 19.8 20.1 20.3 20.0 19.6 19.1 18.2 -->
+      <polyline points="162,198 282,166 402,142 522,126 642,150 762,182 882,222 1002,294" fill="none" stroke="#C6522A" stroke-width="4"/>
+      <g fill="#F4F1EA" stroke="#C6522A" stroke-width="3">
+        <circle cx="162" cy="198" r="6"/><circle cx="282" cy="166" r="6"/><circle cx="402" cy="142" r="6"/><circle cx="522" cy="126" r="6"/>
+        <circle cx="642" cy="150" r="6"/><circle cx="762" cy="182" r="6"/><circle cx="882" cy="222" r="6"/><circle cx="1002" cy="294" r="6"/>
+      </g>
+      <text x="1002" y="326" font-family="IBM Plex Mono, monospace" font-size="18" fill="#C6522A" text-anchor="middle">18.2%</text>
+      <!-- legend -->
+      <g font-family="Archivo, sans-serif" font-size="18" fill="#1A1815">
+        <rect x="96" y="16" width="22" height="14" fill="#1A1815"/>
+        <text x="128" y="29">Revenue</text>
+        <rect x="252" y="21" width="24" height="4" fill="#C6522A"/>
+        <text x="288" y="29">EBITDA margin</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- narrative under chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:824px; width:1130px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="display:flex; gap:40px;">
+      <span style="width:340px;"><span style="font-size:25px; font-weight:600;">Top line compounding</span><br><span style="font-size:20px; color:#6B665C; line-height:1.45;">Eight consecutive quarters of sequential revenue growth, 11.4% YoY.</span></span>
+      <span style="width:340px;"><span style="font-size:25px; font-weight:600;">Margin inflected in Q1</span><br><span style="font-size:20px; color:#6B665C; line-height:1.45;">Peak of 20.3% in Q3 FY25; the decline begins with the alloy re-rating.</span></span>
+      <span style="width:340px;"><span style="font-size:25px; font-weight:600;">Q4 guidance held</span><br><span style="font-size:20px; color:#6B665C; line-height:1.45;">$427M on existing backlog — no new-order assumption required.</span></span>
+    </div>
+  </div>
+
+  <!-- right KPI rail -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:320px; width:530px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:17px; letter-spacing:2.2px; color:#6B665C; text-transform:uppercase;">Board watchlist metrics</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1290px; top:368px; width:530px; height:148px; background:#EAE5DA; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1322px; top:392px; width:470px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-size:25px; font-weight:600;">Net leverage</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:40px; font-weight:500;">1.9x</span>
+    </div>
+    <div style="height:8px; background:#D5CFC2; margin-top:14px;"><div style="width:63%; height:8px; background:#2E7D5B;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; color:#6B665C; margin-top:8px;">Covenant 3.0x · headroom $240M</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1290px; top:532px; width:530px; height:148px; background:#EAE5DA; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1322px; top:556px; width:470px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-size:25px; font-weight:600;">Backlog coverage</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:40px; font-weight:500;">1.7x</span>
+    </div>
+    <div style="height:8px; background:#D5CFC2; margin-top:14px;"><div style="width:85%; height:8px; background:#2E7D5B;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; color:#6B665C; margin-top:8px;">$688M · target 1.5x</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1290px; top:696px; width:530px; height:148px; background:#EAE5DA; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1322px; top:720px; width:470px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-size:25px; font-weight:600;">Cash conversion</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:40px; font-weight:500;">97d</span>
+    </div>
+    <div style="height:8px; background:#D5CFC2; margin-top:14px;"><div style="width:72%; height:8px; background:#C6A15A;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; color:#6B665C; margin-top:8px;">Target 84d · 13 days adverse</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1290px; top:860px; width:530px; height:148px; background:#EAE5DA; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1322px; top:884px; width:470px; z-index:10; font-family:'Archivo',sans-serif; color:#1A1815;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-size:25px; font-weight:600;">Customer retention</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:40px; font-weight:500;">96.4%</span>
+    </div>
+    <div style="height:8px; background:#D5CFC2; margin-top:14px;"><div style="width:96%; height:8px; background:#2E7D5B;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:18px; color:#6B665C; margin-top:8px;">Pre-repricing baseline · floor 94%</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:1032px; width:800px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:1.8px; color:#8A8578; text-transform:uppercase;">Board Meeting Deck · Q3 FY2026</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:1032px; width:100px; z-index:10; text-align:right; font-family:'IBM Plex Mono',monospace; font-size:16px; letter-spacing:1.8px; color:#8A8578;">08</div>
+
+</div>
+</body>
+</html>

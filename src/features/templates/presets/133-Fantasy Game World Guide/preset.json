@@ -1,0 +1,103 @@
+{
+  "id": "133-Fantasy Game World Guide",
+  "version": 1,
+  "ppt_number": 133,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "parchment",
+    "brown",
+    "burgundy",
+    "gold"
+  ],
+  "name": "Fantasy Game World Guide",
+  "description": "Epic fantasy atlas with parchment textures, illustrated maps, heraldic emblems, and archival editorial layouts.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["media"],"audiences":["public"],"formats":["guide"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暗棕封面以火山城堡全景为主视觉，金色衬线标题和细框营造史诗古籍感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-world-map.webp",
+      "alt": "大型手绘世界地图占据左侧，右侧阅读说明栏与地点标签形成探险图鉴，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/3-chronicle.webp",
+      "alt": "左侧历史场景画与右侧两张事件卡并列，底部四段纪年轴清晰串联帝国兴衰，阅读顺序明确。"
+    },
+    {
+      "path": "images/4-regions.webp",
+      "alt": "四张地域风景卡横向排列，顶部标签和底部短文组成连续世界地理档案，版面层次清晰有序。"
+    },
+    {
+      "path": "images/5-peoples.webp",
+      "alt": "左侧酒红引言栏配右侧横向三组民族插画，下方三栏文字分别介绍族群文化，图文层级明确。"
+    },
+    {
+      "path": "images/6-characters.webp",
+      "alt": "深棕页面横排五张角色档案卡，剪影肖像和金色姓名形成神秘阵容，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/7-factions.webp",
+      "alt": "四枚纹章围绕中央酒红盟约卡排列，虚线连接展示阵营权力关系，形成连续清楚的阅读动线。"
+    },
+    {
+      "path": "images/8-magic-relics-creatures.webp",
+      "alt": "三张古物与生物插画卡横排，羊皮纸纹理和小标题构成魔法百科页，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/9-adventure-paths.webp",
+      "alt": "大型手绘冒险路线图占据左侧，右侧三条任务说明形成探索路径，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/10-story-hooks.webp",
+      "alt": "上半页四张未解问题卡分列，下半页遗迹照片与大号邀请语组成悬念式故事钩子，信息对比清楚。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暗棕封面以火山城堡全景为主视觉，金色衬线标题和细框营造史诗古籍感，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/2-world-map.html",
+      "description": "旧羊皮纸画布上，大型手绘世界地图占据左侧，右侧阅读说明栏与地点标签形成探险图鉴，统一边距和重点色共同控制画面重心。"
+    },
+    {
+      "path": "html/3-chronicle.html",
+      "description": "旧羊皮纸页面左上放置历史场景画，右侧两张浅色与酒红事件卡形成对照，底部四段纪年轴按年代清晰串联帝国兴衰。"
+    },
+    {
+      "path": "html/4-regions.html",
+      "description": "旧羊皮纸画布上，四张地域风景卡横向排列，顶部标签和底部短文组成连续世界地理档案，统一边距和重点色共同控制画面重心。"
+    },
+    {
+      "path": "html/5-peoples.html",
+      "description": "旧羊皮纸页面左侧以酒红引言栏建立章节入口，右侧一条横向古籍插画展示三组族群，下方三栏说明对应介绍文化特征。"
+    },
+    {
+      "path": "html/6-characters.html",
+      "description": "深棕页面横排五张角色档案卡，剪影肖像和金色姓名形成神秘阵容，辅助标签、细线标注与留白共同强化主视觉和图文层级。"
+    },
+    {
+      "path": "html/7-factions.html",
+      "description": "四枚纹章围绕中央酒红盟约卡排列，虚线连接展示阵营权力关系，统一间距、方向标记和底部注释进一步强化顺序与空间层级。"
+    },
+    {
+      "path": "html/8-magic-relics-creatures.html",
+      "description": "旧羊皮纸画布上，三张古物与生物插画卡横排，羊皮纸纹理和小标题构成魔法百科页，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/9-adventure-paths.html",
+      "description": "旧羊皮纸画布上，大型手绘冒险路线图占据左侧，右侧三条任务说明形成探索路径，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/10-story-hooks.html",
+      "description": "旧羊皮纸页面上半部以一张酒红卡和三张浅色卡列出四个未解问题，下半部全幅遗迹照片叠加大号邀请语，形成悬念式收尾。"
+    }
+  ]
+}

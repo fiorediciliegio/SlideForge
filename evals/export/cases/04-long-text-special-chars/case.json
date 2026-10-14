@@ -1,0 +1,10 @@
+{
+  "id": "04-long-text-special-chars",
+  "title": "长文本、多级列表与特殊字符",
+  "description": "密集中文段落、多级列表、数学符号、货币、引号和不同换行边界。",
+  "deck_html_file": "04-long-text-special-chars/deck.html",
+  "slide_html_files": ["04-long-text-special-chars/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["long-text", "lists", "special-characters", "chinese"],
+  "manual_checks": ["段落没有溢出卡片", "项目符号缩进层级正确", "特殊字符全部保留"]
+}

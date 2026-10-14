@@ -1,0 +1,104 @@
+{
+  "id": "114-Cute Japanese-style Language Learning Lesson",
+  "version": 1,
+  "ppt_number": 114,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "pink",
+    "mint",
+    "lavender",
+    "yellow"
+  ],
+  "name": "Cute Japanese-Style Language Learning Lesson",
+  "description": "Cute Japanese-style lesson with pastel cards, rounded typography, soft patterns, and friendly animal illustrations.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["students"],"formats":["lesson"],"primary_styles":["playful","minimal"],"visual_traits":["playful","minimal","cartoon","illustration","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "奶油白渐变背景配粉彩圆角图形、星光和可爱徽章的日系课程封面，氛围柔和轻盈。"
+    },
+    {
+      "path": "images/2-learning-goals.webp",
+      "alt": "三张粉绿紫圆角目标卡与微笑云朵插画组成柔和的课堂导览页，层级清晰可爱。"
+    },
+    {
+      "path": "images/3-core-vocabulary.webp",
+      "alt": "多张粉彩词汇卡配寿司等手绘图标，圆角边框和分类胶囊清晰活泼，分组一目了然。"
+    },
+    {
+      "path": "images/4-sentence-patterns.webp",
+      "alt": "句型卡片按色彩分组排列，右上兔子插画与手写副标题增添可爱感，画面亲切柔和。"
+    },
+    {
+      "path": "images/5-conversation-scenario.webp",
+      "alt": "兔子角色与对话气泡左右互动，粉彩场景标签营造轻松会话练习，互动关系明确。"
+    },
+    {
+      "path": "images/6-review-game.webp",
+      "alt": "词卡、挑战区和星级徽章组成三栏游戏版式，色彩柔和且引导明确，节奏轻快。"
+    },
+    {
+      "path": "images/7-kana-starter.webp",
+      "alt": "假名练习格、描写箭头与动物插画组合，像可爱的书写练习册，版面清爽易读。"
+    },
+    {
+      "path": "images/8-practice-plan.webp",
+      "alt": "粉彩日程卡与步骤节点构成练习计划，圆形页码和便签式提示贯穿页面，路径连贯。"
+    },
+    {
+      "path": "images/9-lesson-dashboard.webp",
+      "alt": "粉彩数据卡、进度条与环形图组合成柔和圆润的学习仪表盘，信息层级清楚。"
+    },
+    {
+      "path": "images/10-learning-path.webp",
+      "alt": "顶部进度条与阶段路线卡贯穿页面，粉绿紫节点形成可爱的成长路径，节奏舒展。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，奶油白背景叠加粉、薄荷绿、薰衣草紫和浅黄的柔光渐变，中央圆润大标题配点阵、星光、漂浮几何图形和波浪徽章。"
+    },
+    {
+      "path": "html/2-learning-goals.html",
+      "description": "顶部圆形页码与圆润标题建立统一导航，下方横排三张粉绿紫软边目标卡，右上微笑云朵与淡彩光晕营造轻松课堂感。"
+    },
+    {
+      "path": "html/3-core-vocabulary.html",
+      "description": "多张等宽粉彩词汇卡按规则网格排列，每张卡结合手绘物品、日文词形和圆角描边，顶部分类胶囊补充分组导航。"
+    },
+    {
+      "path": "html/4-sentence-patterns.html",
+      "description": "句型内容以不同粉彩圆角卡片分组排列，主次文字通过圆润粗体与手写体区分，右上兔子插画和柔光背景增加亲和力。"
+    },
+    {
+      "path": "html/5-conversation-scenario.html",
+      "description": "左右两只可爱角色以对话气泡形成互动场景，中部按阅读顺序排列会话卡，顶部胶囊标签与粉彩边框明确练习情境。"
+    },
+    {
+      "path": "html/6-review-game.html",
+      "description": "三栏游戏化布局组合词语卡、匹配挑战和答题区，字母圆章、星级徽章与粉绿紫软边卡片共同建立清晰操作节奏。"
+    },
+    {
+      "path": "html/7-kana-starter.html",
+      "description": "大幅练习区使用方格纸与描写箭头展示假名结构，旁侧搭配发音卡和动物插画，绿色页码圆章与淡紫光晕保持柔和层次。"
+    },
+    {
+      "path": "html/8-practice-plan.html",
+      "description": "多张粉彩日程卡按步骤路线依次展开，圆形节点和虚线连接形成学习节奏，手写副标题与便签提示强化练习册气质。"
+    },
+    {
+      "path": "html/9-lesson-dashboard.html",
+      "description": "圆角数据卡、横向进度条、环形图和小型状态徽章按模块网格组合，粉绿紫黄分别编码不同指标，整体轻量且友好。"
+    },
+    {
+      "path": "html/10-learning-path.html",
+      "description": "顶部横向进度条划分学习阶段，下方以多张粉彩路线卡和节点组织成长路径，圆形页码、状态胶囊与柔光背景完成收尾。"
+    }
+  ]
+}

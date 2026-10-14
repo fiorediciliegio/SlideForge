@@ -1,0 +1,103 @@
+{
+  "id": "4-Seed Pitch Deck for an AI SaaS Startup",
+  "version": 1,
+  "ppt_number": 4,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "orange",
+    "teal",
+    "purple"
+  ],
+  "name": "Seed Pitch Deck for an AI SaaS Startup",
+  "description": "Dark technology editorial design with oversized metrics, translucent panels, fine grids, and vivid neon accents.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["fundraising","early-stage-pitch"],"industries":["technology"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["dark"],"visual_traits":["dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "炭黑、亮橙与青绿色封面以左侧中部超大标题开场，一幅图表拉开层级。"
+    },
+    {
+      "path": "images/2-problem-cost.webp",
+      "alt": "炭黑、亮橙与青绿色页面，两幅图表集中排布，核心判断形成重心。"
+    },
+    {
+      "path": "images/3-problem-analysis.webp",
+      "alt": "炭黑、亮橙与青绿色页面，两幅图表集中排布，分析图表拉开层级。"
+    },
+    {
+      "path": "images/4-solution-overview.webp",
+      "alt": "炭黑、亮橙与青绿色页面，一幅图片构成视觉重心，概览信息组织动线。"
+    },
+    {
+      "path": "images/5-how-it-works.webp",
+      "alt": "炭黑、亮橙与青绿色页面，两幅图表集中排布，流程信息强化对比。"
+    },
+    {
+      "path": "images/6-market-opportunity.webp",
+      "alt": "炭黑、亮橙与青绿色页面，三幅图表集中排布，人群信息收束版面。"
+    },
+    {
+      "path": "images/7-business-model.webp",
+      "alt": "炭黑、亮橙与青绿色页面，三幅图表集中排布，方案层级形成重心。"
+    },
+    {
+      "path": "images/8-traction.webp",
+      "alt": "炭黑、亮橙与青绿色页面，三幅图表集中排布，绩效信息拉开层级。"
+    },
+    {
+      "path": "images/9-roadmap-risks.webp",
+      "alt": "炭黑、亮橙与青绿色页面，一幅图表集中排布，风险信息组织动线。"
+    },
+    {
+      "path": "images/10-team-and-ask.webp",
+      "alt": "炭黑、亮橙与青绿色页面，四幅图表集中排布，人物卡强化对比。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，炭黑、亮橙与青绿色主导画面，左侧中部的超大标题形成第一视点；一幅图表与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-problem-cost.html",
+      "description": "标题固定在左上方，炭黑、亮橙与青绿色分隔主体；单一大面板承载主体信息，两幅图表落在左侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-problem-analysis.html",
+      "description": "炭黑、亮橙与青绿色画面，标题置于左上方；留白与细线分隔出清晰阅读区，两幅分析图表落在中央，对比图表与差异标记补充层级。"
+    },
+    {
+      "path": "html/4-solution-overview.html",
+      "description": "左上方标题锚定炭黑、亮橙与青绿色画面；留白与细线分隔出清晰阅读区，一幅图片集中于右侧，一幅图表落在左侧。"
+    },
+    {
+      "path": "html/5-how-it-works.html",
+      "description": "炭黑、亮橙与青绿色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，两幅图表落在中央，步骤模块与连接关系补充层级。"
+    },
+    {
+      "path": "html/6-market-opportunity.html",
+      "description": "标题固定在左上方，炭黑、亮橙与青绿色分隔主体；留白与细线分隔出清晰阅读区，三幅图表落在右侧，一组表格位于中央。"
+    },
+    {
+      "path": "html/7-business-model.html",
+      "description": "炭黑、亮橙与青绿色画面，标题置于左上方；留白与细线分隔出清晰阅读区，三幅图表落在中央，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/8-traction.html",
+      "description": "左上方标题锚定炭黑、亮橙与青绿色画面；留白与细线分隔出清晰阅读区，三幅图表落在右侧，指标数字与趋势标记补充层级。"
+    },
+    {
+      "path": "html/9-roadmap-risks.html",
+      "description": "炭黑、亮橙与青绿色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅风险图表落在中央，一组表格位于中央。"
+    },
+    {
+      "path": "html/10-team-and-ask.html",
+      "description": "标题固定在左上方，炭黑、亮橙与青绿色分隔主体；单一大面板承载主体信息，四幅图表落在中央，人物信息与职责标签补充层级。"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Go-to-market cadence</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURA Pods Pro — FY26 Launch Deck
+   Design system: White + Blue accent (single primary, two secondaries)
+   Type: Manrope (display/UI) + IBM Plex Mono (labels, numbers)
+   Radius 4px · hairline 1px · no gradients · no glow
+   ============================================================ */
+
+:root{
+  --ink:      #0F1B2D;   /* primary text            */
+  --ink-2:    #5B6B82;   /* secondary text          */
+  --ink-3:    #93A1B5;   /* tertiary / chrome text  */
+  --line:     #E4E9F0;   /* hairline                */
+  --line-2:   #F0F3F8;   /* faint hairline          */
+  --blue:     #1A56DB;   /* PRIMARY accent          */
+  --blue-ink: #123FA0;   /* accent, pressed         */
+  --blue-soft:#EDF2FE;   /* accent wash             */
+  --wash:     #F6F8FB;   /* neutral surface         */
+  --white:    #FFFFFF;
+
+  --r: 4px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--white);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---------- type roles (typography only; layout stays inline) ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--blue); margin:0;
+}
+.h1{ font-family:'Manrope',sans-serif; font-weight:800; font-size:58px;
+     line-height:1.12; letter-spacing:-.022em; color:var(--ink); margin:0; }
+.h1-xl{ font-family:'Manrope',sans-serif; font-weight:800; font-size:112px;
+     line-height:1.0; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.h2{ font-family:'Manrope',sans-serif; font-weight:700; font-size:34px;
+     line-height:1.25; letter-spacing:-.012em; color:var(--ink); margin:0; }
+.h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:25px;
+     line-height:1.3; color:var(--ink); margin:0; }
+.lead{ font-family:'Manrope',sans-serif; font-weight:500; font-size:29px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.body{ font-family:'Manrope',sans-serif; font-weight:500; font-size:23px;
+     line-height:1.55; color:var(--ink-2); margin:0; }
+.small{ font-family:'Manrope',sans-serif; font-weight:500; font-size:20px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.stat{ font-family:'Manrope',sans-serif; font-weight:800; font-size:88px;
+     line-height:.95; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.stat-sm{ font-family:'Manrope',sans-serif; font-weight:800; font-size:60px;
+     line-height:1; letter-spacing:-.03em; color:var(--ink); margin:0; }
+
+.mono{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:18px;
+     letter-spacing:.04em; color:var(--ink-2); margin:0; }
+.tag{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.tag-b{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin:0; }
+.idx{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:17px;
+     letter-spacing:.1em; color:var(--blue); margin:0; }
+.foot{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:15px;
+     letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+
+.accent{ color:var(--blue); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 GTM cadence" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:96px;width:900px;z-index:10;">
+    <p class="eyebrow">06 &nbsp;/&nbsp; Go-to-market</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:150px;width:1100px;z-index:10;">
+    <h1 class="h1">Four beats from tease to scale.</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:158px;width:500px;z-index:10;">
+    <p class="body">A 14-week campaign built around one reveal moment, with paid weight held back until reviews land in week 8.</p>
+  </div>
+
+  <!-- timeline -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:120px;top:352px;width:1680px;height:470px;z-index:10;">
+    <svg width="1680" height="470" viewBox="0 0 1680 470" xmlns="http://www.w3.org/2000/svg">
+      <!-- spine -->
+      <line x1="0" y1="150" x2="1680" y2="150" stroke="#E4E9F0" stroke-width="2"/>
+      <!-- active segment -->
+      <line x1="0" y1="150" x2="1680" y2="150" stroke="#1A56DB" stroke-width="2"/>
+
+      <g font-family="'Manrope',sans-serif">
+        <!-- PHASE 1 -->
+        <text x="0" y="52" font-family="'IBM Plex Mono',monospace" font-size="16" letter-spacing="1.8" fill="#93A1B5">WEEK 1–4</text>
+        <text x="0" y="104" font-size="29" font-weight="700" fill="#0F1B2D">Tease</text>
+        <circle cx="14" cy="150" r="12" fill="#FFFFFF" stroke="#1A56DB" stroke-width="3"/>
+        <text x="0" y="222" font-size="21" font-weight="500" fill="#5B6B82">Silent teaser film</text>
+        <text x="0" y="254" font-size="21" font-weight="500" fill="#5B6B82">Creator seeding, 40 units</text>
+        <text x="0" y="286" font-size="21" font-weight="500" fill="#5B6B82">Waitlist page live</text>
+        <rect x="0" y="322" width="330" height="1" fill="#E4E9F0"/>
+        <text x="0" y="360" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#1A56DB">GOAL</text>
+        <text x="0" y="396" font-size="25" font-weight="800" fill="#0F1B2D">120K waitlist sign-ups</text>
+
+        <!-- PHASE 2 -->
+        <text x="450" y="52" font-family="'IBM Plex Mono',monospace" font-size="16" letter-spacing="1.8" fill="#93A1B5">WEEK 5–6</text>
+        <text x="450" y="104" font-size="29" font-weight="700" fill="#0F1B2D">Reveal</text>
+        <circle cx="464" cy="150" r="16" fill="#1A56DB"/>
+        <text x="450" y="222" font-size="21" font-weight="500" fill="#5B6B82">Launch stream, Sep 18</text>
+        <text x="450" y="254" font-size="21" font-weight="500" fill="#5B6B82">Press embargo lifts</text>
+        <text x="450" y="286" font-size="21" font-weight="500" fill="#5B6B82">Pre-order opens</text>
+        <rect x="450" y="322" width="330" height="1" fill="#E4E9F0"/>
+        <text x="450" y="360" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#1A56DB">GOAL</text>
+        <text x="450" y="396" font-size="25" font-weight="800" fill="#0F1B2D">45K pre-orders</text>
+
+        <!-- PHASE 3 -->
+        <text x="900" y="52" font-family="'IBM Plex Mono',monospace" font-size="16" letter-spacing="1.8" fill="#93A1B5">WEEK 7–10</text>
+        <text x="900" y="104" font-size="29" font-weight="700" fill="#0F1B2D">Prove</text>
+        <circle cx="914" cy="150" r="12" fill="#FFFFFF" stroke="#1A56DB" stroke-width="3"/>
+        <text x="900" y="222" font-size="21" font-weight="500" fill="#5B6B82">Reviewer programme</text>
+        <text x="900" y="254" font-size="21" font-weight="500" fill="#5B6B82">Retail demo bars live</text>
+        <text x="900" y="286" font-size="21" font-weight="500" fill="#5B6B82">Paid media at full weight</text>
+        <rect x="900" y="322" width="330" height="1" fill="#E4E9F0"/>
+        <text x="900" y="360" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#1A56DB">GOAL</text>
+        <text x="900" y="396" font-size="25" font-weight="800" fill="#0F1B2D">4.5★ avg. review score</text>
+
+        <!-- PHASE 4 -->
+        <text x="1350" y="52" font-family="'IBM Plex Mono',monospace" font-size="16" letter-spacing="1.8" fill="#93A1B5">WEEK 11–14</text>
+        <text x="1350" y="104" font-size="29" font-weight="700" fill="#0F1B2D">Scale</text>
+        <circle cx="1364" cy="150" r="12" fill="#FFFFFF" stroke="#1A56DB" stroke-width="3"/>
+        <text x="1350" y="222" font-size="21" font-weight="500" fill="#5B6B82">Carrier &amp; telco bundles</text>
+        <text x="1350" y="254" font-size="21" font-weight="500" fill="#5B6B82">Holiday retail push</text>
+        <text x="1350" y="286" font-size="21" font-weight="500" fill="#5B6B82">Colour drop: Graphite</text>
+        <rect x="1350" y="322" width="330" height="1" fill="#E4E9F0"/>
+        <text x="1350" y="360" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#1A56DB">GOAL</text>
+        <text x="1350" y="396" font-size="25" font-weight="800" fill="#0F1B2D">310K units sell-through</text>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:862px;width:1680px;height:1px;background:var(--line);z-index:1;"></div>
+
+  <!-- channel weighting -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:894px;width:400px;z-index:10;">
+    <p class="tag">Media mix at reveal</p>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:520px;top:888px;width:1280px;height:88px;z-index:10;">
+    <svg width="1280" height="88" viewBox="0 0 1280 88" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0"    y="0" width="470" height="26" rx="2" fill="#1A56DB"/>
+      <rect x="478"  y="0" width="330" height="26" rx="2" fill="#5B8DEF"/>
+      <rect x="816"  y="0" width="250" height="26" rx="2" fill="#A8C1F5"/>
+      <rect x="1074" y="0" width="206" height="26" rx="2" fill="#E4E9F0"/>
+      <g font-family="'Manrope',sans-serif" font-size="20" font-weight="700" fill="#0F1B2D">
+        <text x="0"    y="62">Creator &amp; social</text>
+        <text x="478"  y="62">Retail demo</text>
+        <text x="816"  y="62">Owned &amp; CRM</text>
+        <text x="1074" y="62">Press &amp; PR</text>
+      </g>
+      <g font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">
+        <text x="0"    y="86">37%</text>
+        <text x="478"  y="86">26%</text>
+        <text x="816"  y="86">21%</text>
+        <text x="1074" y="86">16%</text>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1002px;width:1100px;z-index:10;">
+    <p class="foot">AURA Pods Pro — FY26 launch &nbsp;·&nbsp; Illustrative sample data</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1002px;width:140px;z-index:10;text-align:right;">
+    <p class="foot">07 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

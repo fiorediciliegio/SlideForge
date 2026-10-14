@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Taste Quadrants</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="14 Taste Quadrants" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FBF6EC;">
+
+  <!-- Masthead -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:56px; background:#E63946; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:18px; width:1300px; z-index:11;">
+    <div class="mono" style="color:#FBF6EC; font-size:14px; letter-spacing:0.28em; font-weight:700;">14 / APPENDIX B · TIME SPENT AGAINST MEMORY MADE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:18px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#F5C518; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 14</div>
+  </div>
+
+  <!-- Chapter -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:88px; width:900px; z-index:11;">
+    <div class="mono" style="font-size:16px; letter-spacing:0.28em; color:#E63946; font-weight:700;">— APPENDIX B · THE 2×2</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:118px; width:1120px; z-index:11;">
+    <div class="serif" style="font-size:70px; line-height:1.15; color:#1A1A1A;">Worth <span style="color:#E63946; font-style:italic;">Your</span> Time?</div>
+  </div>
+
+  <!-- Y axis top label -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:236px; width:700px; z-index:11;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700;">↑ STILL TALKING ABOUT IT A MONTH LATER</div>
+  </div>
+
+  <!-- ===== QUADRANT TILES ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:268px; width:550px; height:350px; background:#F5C518; border:3px solid #1A1A1A; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:670px; top:268px; width:550px; height:350px; background:#F5EBD8; border:3px solid #1A1A1A; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:618px; width:550px; height:350px; background:#FBF6EC; border:3px solid #1A1A1A; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:670px; top:618px; width:550px; height:350px; background:#F5EBD8; border:3px solid #1A1A1A; z-index:1;"></div>
+
+  <!-- Quadrant titles -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:142px; top:286px; width:400px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#C1272D; font-weight:700;">QUADRANT I</div>
+    <div class="serif" style="font-size:34px; line-height:1.05; color:#1A1A1A;">Quick Wins ★</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:692px; top:286px; width:400px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#6B7A3A; font-weight:700;">QUADRANT II</div>
+    <div class="serif" style="font-size:34px; line-height:1.05; color:#1A1A1A;">Worth the Wait</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:142px; top:636px; width:400px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#6B7A3A; font-weight:700;">QUADRANT III</div>
+    <div class="serif" style="font-size:34px; line-height:1.05; color:#1A1A1A;">Only If Passing</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:692px; top:636px; width:400px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#6B7A3A; font-weight:700;">QUADRANT IV</div>
+    <div class="serif" style="font-size:34px; line-height:1.05; color:#1A1A1A;">We Cut These</div>
+  </div>
+
+  <!-- Plotted dots -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:289px; top:349px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#C1272D; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:318px; top:346px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Al pastor tacos</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:439px; top:459px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#C1272D; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:468px; top:456px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Butter croissant</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:239px; top:529px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#C1272D; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:268px; top:526px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Flat white</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:889px; top:369px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#6B7A3A; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:918px; top:366px; width:230px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Amatriciana pasta</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:789px; top:419px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#6B7A3A; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:818px; top:416px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Tonkotsu ramen</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:729px; top:509px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#6B7A3A; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:758px; top:506px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Market grazing</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:369px; top:689px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#1F3A93; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:398px; top:686px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Pistachio gelato</div>
+  </div>
+
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:289px; top:819px; width:22px; height:22px; z-index:9;">
+    <div style="width:22px; height:22px; border-radius:50%; background:#1F3A93; border:3px solid #1A1A1A;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:318px; top:816px; width:200px; z-index:11;">
+    <div class="serif" style="font-size:25px; line-height:1; color:#1A1A1A;">Hotel breakfast</div>
+  </div>
+
+  <!-- Empty-quadrant note -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:700px; top:790px; width:480px; z-index:11;">
+    <div class="hand" style="font-size:34px; color:#C1272D; line-height:1.15;">nothing survived<br>this corner —<br>and that's the point</div>
+  </div>
+
+  <!-- Axis lines -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:268px; width:1100px; height:700px; z-index:7; pointer-events:none;" viewBox="0 0 1100 700">
+    <line x1="550" y1="0" x2="550" y2="700" stroke="#1A1A1A" stroke-width="3"/>
+    <line x1="0" y1="350" x2="1100" y2="350" stroke="#1A1A1A" stroke-width="3"/>
+  </svg>
+
+  <!-- Axis bottom labels -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:980px; width:520px; z-index:11;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700;">← FIVE MINUTES</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:700px; top:980px; width:520px; z-index:11; text-align:right;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700;">TWO HOURS AT THE TABLE →</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1014px; width:1100px; z-index:11; text-align:center;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.3em; color:#6B7A3A; font-weight:700;">TIME THE DISH ASKS OF YOU</div>
+  </div>
+
+  <!-- ===== RIGHT SIDEBAR ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:236px; width:580px; z-index:11;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700; border-bottom:2px solid #1A1A1A; padding-bottom:8px;">HOW TO READ THIS</div>
+    <div class="serif" style="font-size:23px; line-height:1.4; color:#1A1A1A; font-style:italic; margin-top:12px;">Up means it stayed with us. Right means it wanted your whole evening. The best food in this city sits top-left — big memory, small commitment.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:432px; width:580px; height:210px; background:#F5C518; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1308px; top:452px; width:524px; z-index:12;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#C1272D; font-weight:700;">TAKEAWAY 01</div>
+    <div class="serif" style="font-size:34px; line-height:1.12; color:#1A1A1A; margin-top:6px;">Three of our five favourites took under ten minutes.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:668px; width:580px; height:210px; background:#1F3A93; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1308px; top:688px; width:524px; z-index:12;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.26em; color:#F5C518; font-weight:700;">TAKEAWAY 02</div>
+    <div class="serif" style="font-size:34px; line-height:1.12; color:#FBF6EC; margin-top:6px;">Book exactly one long dinner. Never two.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:912px; width:580px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.22em; color:#6B7A3A; font-weight:700; line-height:1.7;">PLOTTED FROM OUR OWN TASTING LOG · EIGHT DISHES · TWO EDITORS · ONE ROUTE</div>
+  </div>
+
+</div>
+</body>
+</html>

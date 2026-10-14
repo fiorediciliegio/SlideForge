@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Time Budget — Freshman Survival Guide</title>
+<style>
+/* Sticker-collage theme — Freshman Survival Guide */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@600;700;800;900&family=Patrick+Hand&display=swap');
+
+:root{
+  --blue:#2C7BE5;        /* bright blue */
+  --blue-deep:#1B4FA6;
+  --orange:#FF7A2A;      /* bright orange */
+  --orange-soft:#FFB877;
+  --lime:#B8E438;        /* lime green */
+  --lime-deep:#7BB800;
+  --purple:#8B5CF6;      /* small purple accent */
+  --purple-deep:#5B21B6;
+  --white:#FFFFFF;
+  --cream:#FFF8E9;       /* soft warm off-white bg — not beige-luxury */
+  --paper:#FDFBF3;
+  --ink:#1F2A44;         /* deep navy ink for handwriting feel */
+  --ink-soft:#3B4A6B;
+
+  --f-display:'Fredoka', system-ui, sans-serif;
+  --f-hand:'Caveat', cursive;
+  --f-marker:'Patrick Hand', cursive;
+  --f-body:'Nunito', system-ui, sans-serif;
+}
+
+/* --- Sticker & tape utility styles (used inline in slides) --- */
+.sticker{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 6px 0 rgba(31,42,68,.12), 0 14px 30px rgba(31,42,68,.10);
+  border:3px solid var(--ink);
+}
+.tape{
+  position:absolute;
+  background:rgba(255, 224, 130, .78);
+  box-shadow:0 4px 10px rgba(0,0,0,.10);
+  transform:rotate(-6deg);
+}
+.pin{
+  width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ff6b6b, #b91c1c 70%);
+  box-shadow:0 4px 0 rgba(0,0,0,.25), inset -3px -4px 6px rgba(0,0,0,.25);
+  border:3px solid #fff;
+}
+</style>
+<style>
+  body{margin:0;padding:0;overflow:hidden;font-family:var(--f-body);}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;
+    background:
+      radial-gradient(circle at 92% 12%, rgba(255,122,42,.24), transparent 32%),
+      radial-gradient(circle at 6% 90%, rgba(184,228,56,.26), transparent 32%),
+      #FFF8E9;
+  }
+  .hr{width:33px;height:33px;border:2px solid #1F2A44;border-radius:5px;display:block;box-sizing:border-box;}
+  .sl{background:#2C7BE5}
+  .cl{background:#FF7A2A}
+  .st{background:#B8E438}
+  .ad{background:#8B5CF6}
+  .fr{background:#FFFFFF}
+  .rowlab{width:60px;text-align:right;font-family:'Caveat',cursive;font-size:28px;color:#3B4A6B;}
+  .swb{display:inline-block;width:22px;height:22px;border:3px solid #1F2A44;border-radius:5px;vertical-align:-4px;margin-right:8px;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="07 Time Budget">
+
+  <!-- ================= TITLE ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:80px;top:50px;width:880px;height:130px;
+              background:var(--orange);border:5px solid var(--ink);border-radius:24px;
+              transform:rotate(-1.5deg);box-shadow:8px 8px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:60px;width:860px;height:120px;z-index:10;
+              transform:rotate(-1.5deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:32px;color:var(--lime);line-height:1;">chapter 06 ⏳</div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:44px;line-height:1;letter-spacing:-1px;margin-top:6px;">
+      Where Your 168 Hours Actually Go
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1000px;top:78px;width:600px;height:90px;z-index:10;
+              font-family:var(--f-marker);font-size:29px;color:var(--ink-soft);line-height:1.25;">
+    Class takes 15 hours. Sleep takes 56.<br>
+    The 46 left over are the ones that decide your semester.
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1650px;top:52px;width:200px;height:34px;
+              background:repeating-linear-gradient(45deg, var(--purple) 0 13px, #D9CFF9 13px 26px);
+              transform:rotate(-11deg);opacity:.9;z-index:5;">
+  </div>
+
+  <!-- ================= PANEL A — WAFFLE CALENDAR ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:70px;top:210px;width:1120px;height:500px;
+              background:#FDFBF3;border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:1;">
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:238px;width:1000px;height:70px;z-index:10;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:32px;line-height:1;">
+      One week = 168 squares
+    </div>
+    <div style="font-family:var(--f-marker);font-size:24px;color:var(--ink-soft);margin-top:6px;">
+      1 square = 1 hour · each row is one day · typical full-time schedule
+    </div>
+  </div>
+
+  <!-- Waffle grid: 7 rows × 24 hours -->
+  <div data-object="true" data-object-type="chart"
+       style="position:absolute;left:100px;top:320px;width:1020px;height:273px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px;">
+      <span class="rowlab">Mon</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px;">
+      <span class="rowlab">Tue</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px;">
+      <span class="rowlab">Wed</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px;">
+      <span class="rowlab">Thu</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px;">
+      <span class="rowlab">Fri</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr cl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px;">
+      <span class="rowlab">Sat</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;">
+      <span class="rowlab">Sun</span>
+      <i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr sl"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr st"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr ad"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i><i class="hr fr"></i>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:622px;width:1060px;height:60px;z-index:10;
+              font-family:var(--f-body);font-weight:700;font-size:21px;color:var(--ink);line-height:1.6;">
+    <span class="swb" style="background:#2C7BE5;"></span>Sleep 56h
+    &nbsp;&nbsp;<span class="swb" style="background:#FF7A2A;"></span>Class 15h
+    &nbsp;&nbsp;<span class="swb" style="background:#B8E438;"></span>Study 30h
+    &nbsp;&nbsp;<span class="swb" style="background:#8B5CF6;"></span>Eat · commute · laundry 21h
+    &nbsp;&nbsp;<span class="swb" style="background:#FFFFFF;"></span>Yours 46h
+  </div>
+
+  <!-- ================= PANEL B — THE 46 HOURS ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1230px;top:210px;width:620px;height:500px;
+              background:var(--blue);border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;transform:rotate(1deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1262px;top:238px;width:560px;height:120px;z-index:10;
+              transform:rotate(1deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:36px;line-height:1;color:#FFE082;">the part nobody plans</div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:112px;line-height:1;margin-top:2px;">
+      46<span style="font-size:44px;"> hrs</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1262px;top:388px;width:560px;height:300px;z-index:10;
+              transform:rotate(1deg);color:#fff;">
+    <div style="font-family:var(--f-body);font-weight:700;font-size:23px;line-height:1.45;">
+      That is <b style="color:var(--lime);">more free time than a full-time job</b> — and it disappears
+      by accident, in 20-minute pieces.
+    </div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:21px;line-height:1.7;margin-top:16px;
+                border-top:3px dashed rgba(255,255,255,.55);padding-top:14px;">
+      What 46 hours can hold in one week:<br>
+      🎨 2 clubs — 5h &nbsp;&nbsp; 💪 Gym 4× — 5h<br>
+      💼 Campus job — 10h &nbsp;&nbsp; 🍜 People — 12h<br>
+      <span style="color:#FFE082;">…and 14 hours still unspent.</span>
+    </div>
+  </div>
+
+  <!-- ================= BOTTOM — DRIFT vs INTENT ================= -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:70px;top:742px;width:1780px;height:46px;z-index:10;
+              font-family:var(--f-display);font-weight:700;font-size:30px;color:var(--ink);">
+    Same 46 hours, two different semesters 👇
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:70px;top:800px;width:780px;height:220px;
+              background:#fff;border:5px solid var(--ink);border-radius:20px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-0.8deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:818px;width:720px;height:190px;z-index:10;
+              transform:rotate(-0.8deg);color:var(--ink);">
+    <div style="font-family:var(--f-hand);font-size:34px;line-height:1;color:var(--ink-soft);">drift mode 😵‍💫</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:20px;line-height:1.5;margin-top:8px;color:var(--ink-soft);">
+      Wake up, check phone for 40 min · "I'll study after lunch" · study with 6 tabs open ·
+      realise it's 11pm · panic-read one chapter · sleep at 2am · repeat.
+    </div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:22px;margin-top:10px;color:#B8451D;">
+      Felt busy all week. Finished nothing.
+    </div>
+  </div>
+
+  <svg data-object="true" data-object-type="shape"
+       style="position:absolute;left:880px;top:850px;width:160px;height:110px;z-index:6;"
+       viewBox="0 0 160 110" fill="none">
+    <path d="M 15 55 L 120 55" stroke="#8B5CF6" stroke-width="9" stroke-linecap="round"/>
+    <path d="M 100 32 L 132 55 L 100 78" stroke="#8B5CF6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1070px;top:800px;width:780px;height:220px;
+              background:var(--lime);border:5px solid var(--ink);border-radius:20px;
+              box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(0.8deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1100px;top:818px;width:720px;height:190px;z-index:10;
+              transform:rotate(0.8deg);color:var(--ink);">
+    <div style="font-family:var(--f-hand);font-size:34px;line-height:1;color:var(--purple-deep);">intent mode 🎯</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:20px;line-height:1.5;margin-top:8px;">
+      Three <b>90-minute blocks</b> booked in the calendar like classes · phone in a drawer ·
+      done by 6pm · evenings genuinely free.
+    </div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:22px;margin-top:10px;color:var(--purple-deep);">
+      Same hours. Finished the week ahead.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1780px;top:1030px;width:80px;height:40px;z-index:10;
+              font-family:var(--f-hand);font-size:32px;color:var(--ink-soft);text-align:right;">07</div>
+</div>
+</body>
+</html>

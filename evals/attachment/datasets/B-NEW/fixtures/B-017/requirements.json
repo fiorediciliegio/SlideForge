@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Prepare a 10-slide public-policy consultation briefing. The attachments define our organization's position; use Web Research to verify the final enacted text, implementation dates, and official consultation statistics. Separate our recommendations from government decisions."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Policy leadership and external-affairs team",
+        "description": "Policy leadership and external-affairs team"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Post-consultation policy briefing",
+        "description": "Post-consultation policy briefing"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Compare organizational positions with verified final policy",
+        "description": "Compare organizational positions with verified final policy"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Precise, nonpartisan, legally cautious",
+        "description": "Precise, nonpartisan, legally cautious"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Policy leadership and external-affairs team",
+      "description": "Policy leadership and external-affairs team"
+    },
+    "purpose": {
+      "label": "Post-consultation policy briefing",
+      "description": "Post-consultation policy briefing"
+    },
+    "desired_outcome": {
+      "label": "Compare organizational positions with verified final policy",
+      "description": "Compare organizational positions with verified final policy"
+    },
+    "slide_count": 10,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Precise, nonpartisan, legally cautious",
+      "description": "Precise, nonpartisan, legally cautious"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

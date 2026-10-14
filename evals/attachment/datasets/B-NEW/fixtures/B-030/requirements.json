@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create a 9-slide donor briefing from the attached programme summary. Use only attachment facts. Image Research may locate respectful, geographically accurate landscape and service-delivery visuals, but not identifiable beneficiaries."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Programme donors",
+        "description": "Programme donors"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Implementation and funding update",
+        "description": "Implementation and funding update"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Show completed work, work in progress, monitoring limits, and next-year funding need",
+        "description": "Show completed work, work in progress, monitoring limits, and next-year funding need"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Accountable, place-based, human",
+        "description": "Accountable, place-based, human"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Programme donors",
+      "description": "Programme donors"
+    },
+    "purpose": {
+      "label": "Implementation and funding update",
+      "description": "Implementation and funding update"
+    },
+    "desired_outcome": {
+      "label": "Show completed work, work in progress, monitoring limits, and next-year funding need",
+      "description": "Show completed work, work in progress, monitoring limits, and next-year funding need"
+    },
+    "slide_count": 9,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Accountable, place-based, human",
+      "description": "Accountable, place-based, human"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

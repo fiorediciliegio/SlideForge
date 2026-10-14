@@ -1,0 +1,230 @@
+export interface TemplateRenderThemeInput {
+  logo_url?: string | null;
+  company_name?: string | null;
+  colors?: Record<string, string> | null;
+  fonts?: {
+    body?: {
+      name?: string | null;
+      url?: string | null;
+    } | null;
+  } | null;
+  data?: {
+    colors?: Record<string, string> | null;
+    fonts?: {
+      textFont?: {
+        name?: string | null;
+        url?: string | null;
+      } | null;
+    } | null;
+  } | null;
+}
+
+export interface RenderSlideHtmlInput {
+  template_group: string;
+  layout_id: string;
+  slide_data: Record<string, unknown>;
+  theme?: TemplateRenderThemeInput | null;
+  speaker_note?: string | null;
+  title?: string | null;
+}
+
+export interface BuildDeckHtmlSlideInput {
+  html: string;
+  speaker_note?: string | null;
+}
+
+export interface BuildDeckHtmlInput {
+  slides: BuildDeckHtmlSlideInput[];
+  title?: string | null;
+  runtimeBundle?: string | null;
+  tailwindRuntimeBundle?: string | null;
+}
+
+export interface BuildStandaloneDeckHtmlSlideInput {
+  html: string;
+  speaker_note?: string | null;
+}
+
+export interface BuildStandaloneDeckHtmlInput {
+  slides: BuildStandaloneDeckHtmlSlideInput[];
+  title?: string | null;
+  runtimeBundle?: string | null;
+  tailwindRuntimeBundle?: string | null;
+}
+
+export interface LegacyBuiltinDeckManifestSlideSource {
+  type: "builtin";
+  template_group: string;
+  layout_id: string;
+}
+
+export interface LegacyLocalDeckManifestSlideSource {
+  type: "local";
+  path: string;
+}
+
+export type LegacyDeckManifestSlideSource =
+  | LegacyBuiltinDeckManifestSlideSource
+  | LegacyLocalDeckManifestSlideSource;
+
+export interface LegacyDeckManifestSlideInput {
+  id: string;
+  source: LegacyDeckManifestSlideSource;
+  data?: Record<string, unknown> | null;
+  data_path?: string | null;
+  title?: string | null;
+  speaker_note?: string | null;
+  theme?: TemplateRenderThemeInput | null;
+}
+
+export interface LegacyDeckManifestInput {
+  title?: string | null;
+  theme?: TemplateRenderThemeInput | null;
+  slides: LegacyDeckManifestSlideInput[];
+}
+
+export interface DeckManifestSlideInput {
+  id: string;
+  source: string;
+}
+
+export interface DeckManifestInput {
+  aspect_ratio?: import("../slide-format.js").SlideAspectRatio;
+  title: string;
+  slides: DeckManifestSlideInput[];
+}
+
+export interface BuildDeckHtmlFromManifestInput {
+  manifestPath: string;
+  outputDir: string;
+  name?: string | null;
+  singlePage?: boolean | null;
+  page?: number | null;
+  cwd?: string | null;
+}
+
+export interface BuildDeckHtmlFromManifestFileOutput {
+  fileName: string;
+  outputPath: string;
+  slideId?: string;
+  layoutId?: string;
+  kind?: "image";
+  mimeType?: "image/png";
+}
+
+export interface BuildDeckHtmlFromManifestResult {
+  deckHtml: string;
+  deckFileName: string;
+  deckOutputPath: string;
+  outputDir: string;
+  deckGenerated: boolean;
+  singlePage: boolean;
+  page: number | null;
+  slideFiles: BuildDeckHtmlFromManifestFileOutput[];
+  slideCount: number;
+  title: string;
+  manifestPath: string;
+}
+
+export interface BuildDeckPageScreenshotFromManifestInput {
+  /** App previews persist HTML only; explicit raster consumers opt into screenshots. */
+  screenshot?: boolean;
+  /** Reuse the managed browser after reopening the persisted snapshot. */
+  onStaticSlideReady?: import("./browser-artifacts.js").StaticSlideReady;
+  manifestPath: string;
+  outputDir: string;
+  page: number;
+  name?: string | null;
+  cwd?: string | null;
+  htmlOutputDir?: string | null;
+}
+
+export interface BuildDeckPageScreenshotFromManifestResult {
+  manifestPath: string;
+  outputDir: string;
+  htmlOutputDir: string;
+  slideId: string;
+  layoutId: string;
+  title: string;
+  htmlFileName: string;
+  htmlPath: string;
+  screenshotFileName: string;
+  screenshotPath: string;
+  page: number;
+  slideCount: number;
+}
+
+export interface BuildDeckHtmlPagesFromManifestSlideOutput {
+  slideId: string;
+  layoutId: string;
+  title: string;
+  fileName: string;
+  outputPath: string;
+  speakerNote: string;
+}
+
+export interface BuildDeckHtmlPagesFromManifestResult {
+  outputDir: string;
+  slides: BuildDeckHtmlPagesFromManifestSlideOutput[];
+  slideCount: number;
+  title: string;
+  manifestPath: string;
+}
+
+export interface BuildDeckHtmlPagesAndScreenshotsFromManifestSlideOutput {
+  slideId: string;
+  layoutId: string;
+  title: string;
+  htmlFileName: string;
+  htmlPath: string;
+  screenshotFileName: string;
+  screenshotPath: string;
+  speakerNote: string;
+}
+
+export interface BuildDeckHtmlPagesAndScreenshotsFromManifestResult {
+  outputDir: string;
+  deckHtmlPath: string;
+  slides: BuildDeckHtmlPagesAndScreenshotsFromManifestSlideOutput[];
+  slideCount: number;
+  title: string;
+  manifestPath: string;
+}
+
+export interface BuildDeckHtmlSnapshotFromManifestSlideOutput {
+  slideId: string;
+  layoutId: string;
+  title: string;
+  speakerNote: string;
+}
+
+export interface BuildDeckHtmlSnapshotFromManifestResult {
+  outputDir: string;
+  deckHtmlPath: string;
+  slides: BuildDeckHtmlSnapshotFromManifestSlideOutput[];
+  slideCount: number;
+  title: string;
+  manifestPath: string;
+}
+
+export interface BrowserRenderTheme {
+  logoUrl: string | null;
+  companyName: string | null;
+  colors: Record<string, string>;
+  variables?: Record<string, string>;
+  fontName: string | null;
+  fontUrl: string | null;
+}
+
+export interface BrowserRenderContext {
+  aspect_ratio?: import("../slide-format.js").SlideAspectRatio;
+  templateGroup: string;
+  layoutId: string;
+  runtimeLayoutId?: string;
+  slideData: Record<string, unknown>;
+  speakerNote: string;
+  title: string;
+  theme: BrowserRenderTheme;
+  pageNumber?: number;
+  totalPages?: number;
+}

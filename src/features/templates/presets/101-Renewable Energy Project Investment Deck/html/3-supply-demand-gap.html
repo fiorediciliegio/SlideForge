@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Structural Gap</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;font-family:'Archivo',sans-serif;">
+<div class="slide" data-screen-label="03 Demand Gap" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#16211E;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:76px;width:26px;height:3px;background:#C87A1E;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:140px;top:64px;width:900px;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:.19em;text-transform:uppercase;color:#C87A1E;">03 · The problem worth financing</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:64px;width:524px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:.14em;color:rgba(244,241,233,0.45);">ERCOT WEST LOAD ZONE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:110px;width:1620px;z-index:10;">
+    <div style="font-size:50px;font-weight:600;color:#F4F1E9;letter-spacing:-0.015em;line-height:1.1;">West Texas load is compounding at 6.4% — firm supply is not following it</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:206px;width:1728px;height:1px;background:rgba(244,241,233,0.20);z-index:1;"></div>
+
+  <!-- LEFT: chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:238px;width:1080px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.15em;color:rgba(244,241,233,0.55);">FIG. 3.1 — ZONAL PEAK DEMAND VS. AVAILABLE CAPACITY (GW)</div>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:278px;width:1080px;height:600px;z-index:10;">
+    <svg width="1080" height="600" viewBox="0 0 1080 600" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono',monospace">
+      <g stroke="rgba(244,241,233,0.12)" stroke-width="1">
+        <line x1="76" y1="40" x2="1040" y2="40"/><line x1="76" y1="130" x2="1040" y2="130"/>
+        <line x1="76" y1="220" x2="1040" y2="220"/><line x1="76" y1="310" x2="1040" y2="310"/>
+        <line x1="76" y1="400" x2="1040" y2="400"/>
+      </g>
+      <line x1="76" y1="490" x2="1040" y2="490" stroke="rgba(244,241,233,0.45)" stroke-width="1.2"/>
+      <g font-size="14" fill="rgba(244,241,233,0.55)" text-anchor="end">
+        <text x="62" y="45">25</text><text x="62" y="135">20</text><text x="62" y="225">15</text><text x="62" y="315">10</text><text x="62" y="405">5</text><text x="62" y="495">0</text>
+      </g>
+
+      <!-- demand bars: value px height = GW*18 -->
+      <g fill="rgba(244,241,233,0.30)">
+        <rect x="104" y="292" width="58" height="198"/>
+        <rect x="240" y="274" width="58" height="216"/>
+        <rect x="376" y="238" width="58" height="252"/>
+        <rect x="512" y="202" width="58" height="288"/>
+      </g>
+      <g fill="#C87A1E">
+        <rect x="648" y="166" width="58" height="324"/>
+        <rect x="784" y="112" width="58" height="378"/>
+        <rect x="920" y="58" width="58" height="432"/>
+      </g>
+      <g font-size="17" fill="#F4F1E9" text-anchor="middle" font-weight="500">
+        <text x="133" y="278">11.0</text><text x="269" y="260">12.0</text><text x="405" y="224">14.0</text><text x="541" y="188">16.0</text>
+        <text x="677" y="152">18.0</text><text x="813" y="98">21.0</text><text x="949" y="44">24.0</text>
+      </g>
+      <g font-size="14" fill="rgba(244,241,233,0.55)" text-anchor="middle">
+        <text x="133" y="516">2021</text><text x="269" y="516">2022</text><text x="405" y="516">2023</text><text x="541" y="516">2024</text>
+        <text x="677" y="516">2026E</text><text x="813" y="516">2028E</text><text x="949" y="516">2030E</text>
+      </g>
+
+      <!-- firm capacity line -->
+      <path d="M133 310 L269 302 L405 292 L541 286 L677 278 L813 272 L949 268"
+            fill="none" stroke="#8FB3BC" stroke-width="3" stroke-linejoin="round"/>
+      <g fill="#8FB3BC">
+        <circle cx="133" cy="310" r="5"/><circle cx="269" cy="302" r="5"/><circle cx="405" cy="292" r="5"/>
+        <circle cx="541" cy="286" r="5"/><circle cx="677" cy="278" r="5"/><circle cx="813" cy="272" r="5"/><circle cx="949" cy="268" r="5"/>
+      </g>
+
+      <!-- gap bracket -->
+      <path d="M1000 268 L1016 268 L1016 58 L1000 58" fill="none" stroke="#C87A1E" stroke-width="1.4"/>
+      <text x="1030" y="150" font-size="14" fill="#C87A1E" letter-spacing="0.10em" transform="rotate(90 1030 150)" text-anchor="middle">GAP 11.7 GW</text>
+
+      <g font-size="15" fill="rgba(244,241,233,0.75)">
+        <rect x="96" y="552" width="34" height="14" fill="rgba(244,241,233,0.30)"/><text x="142" y="564">Actual peak</text>
+        <rect x="300" y="552" width="34" height="14" fill="#C87A1E"/><text x="346" y="564">Forecast peak</text>
+        <line x1="540" y1="559" x2="580" y2="559" stroke="#8FB3BC" stroke-width="3"/><text x="592" y="564">Firm dispatchable capacity in zone</text>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1216px;top:238px;width:1px;height:646px;background:rgba(244,241,233,0.18);z-index:1;"></div>
+
+  <!-- RIGHT: three driver cards -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1260px;top:238px;width:564px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.15em;color:rgba(244,241,233,0.55);">WHAT IS DRIVING IT</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1260px;top:282px;width:564px;height:186px;background:rgba(244,241,233,0.05);border:1px solid rgba(244,241,233,0.14);border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1290px;top:306px;width:504px;z-index:10;">
+    <div class="mono" style="font-size:14px;letter-spacing:.15em;color:#E8A94A;">DRIVER 01 · OILFIELD ELECTRIFICATION</div>
+    <div style="font-size:42px;font-weight:600;color:#F4F1E9;line-height:1;margin-top:14px;">+3.1 GW</div>
+    <div style="font-size:21px;line-height:1.4;color:rgba(244,241,233,0.72);margin-top:12px;">Permian operators converting gas-driven compression and frac fleets to grid power.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1260px;top:486px;width:564px;height:186px;background:rgba(244,241,233,0.05);border:1px solid rgba(244,241,233,0.14);border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1290px;top:510px;width:504px;z-index:10;">
+    <div class="mono" style="font-size:14px;letter-spacing:.15em;color:#E8A94A;">DRIVER 02 · DATA CENTRE INTERCONNECT</div>
+    <div style="font-size:42px;font-weight:600;color:#F4F1E9;line-height:1;margin-top:14px;">+2.4 GW</div>
+    <div style="font-size:21px;line-height:1.4;color:rgba(244,241,233,0.72);margin-top:12px;">Four large-load requests in the queue within 60 miles of our point of interconnection.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1260px;top:690px;width:564px;height:194px;background:rgba(244,241,233,0.05);border:1px solid rgba(244,241,233,0.14);border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1290px;top:714px;width:504px;z-index:10;">
+    <div class="mono" style="font-size:14px;letter-spacing:.15em;color:#E8A94A;">DRIVER 03 · THERMAL RETIREMENT</div>
+    <div style="font-size:42px;font-weight:600;color:#F4F1E9;line-height:1;margin-top:14px;">−1.8 GW</div>
+    <div style="font-size:21px;line-height:1.4;color:rgba(244,241,233,0.72);margin-top:12px;">Announced coal and legacy gas-steam retirements inside the zone through 2030.</div>
+  </div>
+
+  <!-- insight line -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:908px;width:6px;height:74px;background:#C87A1E;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:126px;top:910px;width:1698px;z-index:10;">
+    <div style="font-size:27px;line-height:1.35;color:#F4F1E9;font-weight:500;">The scarce product is not energy — it is <span style="color:#E8A94A;">firm, shapeable energy delivered into the evening peak</span> at a contracted price.<br>That is exactly what a wind-plus-solar-plus-storage hybrid is built to produce.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;background:rgba(244,241,233,0.14);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1018px;width:1300px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.13em;color:rgba(244,241,233,0.45);text-transform:uppercase;">Renewable Energy Project Investment Deck · Illustrative template data</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1664px;top:1018px;width:160px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.13em;color:#C87A1E;">03 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

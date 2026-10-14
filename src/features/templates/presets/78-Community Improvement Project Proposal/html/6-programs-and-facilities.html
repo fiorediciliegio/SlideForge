@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Activities, Facilities &amp; Service Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Maple Ward Commons — proposal design system
+   Palette: white / off-white paper, ink text, single green accent + soft green tint.
+   Type: Source Serif 4 (display) + Archivo (UI/labels/data). Radius 4px. 1px rules. */
+
+:root{
+  --paper:      #FFFFFF;
+  --paper-2:    #F6F7F4;
+  --paper-3:    #EEF0EB;
+  --line:       #E2E6E1;
+  --line-2:     #C6CEC6;
+  --ink:        #131C17;
+  --ink-2:      #55615A;
+  --ink-3:      #86908A;
+  --green:      #1E7A46;
+  --green-2:    #3FA06A;
+  --green-3:    #6FBE8E;
+  --green-4:    #A8D8BC;
+  --green-5:    #D6EADE;
+  --green-soft: #E7F1EA;
+  --r: 4px;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--paper);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---- typography ---- */
+.k{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+    letter-spacing:.20em; text-transform:uppercase; color:var(--green); margin:0; }
+.d2{ font-family:'Source Serif 4',Georgia,serif; font-size:92px; font-weight:400;
+     line-height:1.10; letter-spacing:-.02em; color:var(--ink); margin:0; }
+.d1{ font-family:'Source Serif 4',Georgia,serif; font-size:76px; font-weight:400;
+     line-height:1.12; letter-spacing:-.015em; color:var(--ink); margin:0; }
+.h1{ font-family:'Source Serif 4',Georgia,serif; font-size:54px; font-weight:400;
+     line-height:1.16; letter-spacing:-.01em; color:var(--ink); margin:0; }
+.h2{ font-family:'Archivo',sans-serif; font-size:30px; font-weight:600;
+     line-height:1.30; color:var(--ink); margin:0; }
+.h3{ font-family:'Archivo',sans-serif; font-size:25px; font-weight:600;
+     line-height:1.34; color:var(--ink); margin:0; }
+.lead{ font-family:'Archivo',sans-serif; font-size:28px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.p{ font-family:'Archivo',sans-serif; font-size:24px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.sm{ font-family:'Archivo',sans-serif; font-size:22px; font-weight:400;
+     line-height:1.45; color:var(--ink-2); margin:0; }
+.lab{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+     letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.note{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:400;
+     line-height:1.4; color:var(--ink-3); margin:0; }
+.big{ font-family:'Source Serif 4',Georgia,serif; font-size:88px; font-weight:400;
+     line-height:1; letter-spacing:-.02em; color:var(--green); margin:0; }
+.quote{ font-family:'Source Serif 4',Georgia,serif; font-size:28px; font-weight:400;
+     font-style:italic; line-height:1.44; color:var(--ink); margin:0; }
+.g{ color:var(--green); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+
+/* ---- tables ---- */
+table.t{ width:100%; border-collapse:collapse; font-family:'Archivo',sans-serif; }
+table.t th{ font-size:20px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); text-align:left; padding:0 18px 14px 0; border-bottom:1px solid var(--line-2); }
+table.t td{ font-size:22px; font-weight:400; color:var(--ink-2); text-align:left;
+    padding:16px 18px 16px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+table.t td.strong{ font-weight:600; color:var(--ink); }
+table.t td.num{ font-variant-numeric:tabular-nums; font-weight:600; color:var(--ink); }
+table.t tr.last td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="06 Programs &amp; Facilities" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:100px; width:900px; z-index:10;">
+    <p class="k">06 — Activities &amp; Service Plan</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:150px; width:1120px; z-index:10;">
+    <h1 class="h1">A week at the Commons: 26 open hours, 9 recurring programs.</h1>
+  </div>
+
+  <!-- weekly grid -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:308px; width:1200px; z-index:10;">
+    <p class="lab">Typical operating week · steady state from month 12</p>
+  </div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute; left:120px; top:352px; width:1200px; height:512px; z-index:10;">
+    <div style="display:grid; grid-template-columns:150px repeat(5,1fr); grid-template-rows:44px repeat(3,1fr); gap:8px; width:1200px; height:512px;">
+
+      <!-- header row -->
+      <div></div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:20px; font-weight:600; letter-spacing:.10em; color:#86908A;">MON–TUE</div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:20px; font-weight:600; letter-spacing:.10em; color:#86908A;">WED</div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:20px; font-weight:600; letter-spacing:.10em; color:#86908A;">THU</div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:20px; font-weight:600; letter-spacing:.10em; color:#86908A;">FRI</div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:20px; font-weight:600; letter-spacing:.10em; color:#86908A;">SAT–SUN</div>
+
+      <!-- morning -->
+      <div style="display:flex; align-items:center; font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17;">Morning</div>
+      <div style="background:#E7F1EA; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Garden crew</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">Volunteer-led · plots</span>
+      </div>
+      <div style="background:#E7F1EA; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Seniors' walk &amp; tea</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">With Fairview Health</span>
+      </div>
+      <div style="background:#E7F1EA; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Garden crew</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">Volunteer-led · plots</span>
+      </div>
+      <div style="background:#F6F7F4; border-radius:4px; padding:16px 18px; display:flex; align-items:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:19px; color:#86908A;">Open ground only</span>
+      </div>
+      <div style="background:#1E7A46; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#FFFFFF; line-height:1.3;">Saturday market</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#A8D8BC; margin-top:5px;">12 stalls · entry plaza</span>
+      </div>
+
+      <!-- afternoon -->
+      <div style="display:flex; align-items:center; font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17;">After school</div>
+      <div style="background:#1E7A46; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#FFFFFF; line-height:1.3;">Homework club</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#A8D8BC; margin-top:5px;">Maple High tutors</span>
+      </div>
+      <div style="background:#1E7A46; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#FFFFFF; line-height:1.3;">Homework club</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#A8D8BC; margin-top:5px;">Maple High tutors</span>
+      </div>
+      <div style="background:#1E7A46; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#FFFFFF; line-height:1.3;">Youth court league</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#A8D8BC; margin-top:5px;">Ages 13–19</span>
+      </div>
+      <div style="background:#1E7A46; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#FFFFFF; line-height:1.3;">Homework club</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#A8D8BC; margin-top:5px;">Maple High tutors</span>
+      </div>
+      <div style="background:#A8D8BC; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Family open play</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">Staffed · play zone</span>
+      </div>
+
+      <!-- evening -->
+      <div style="display:flex; align-items:center; font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17;">Evening</div>
+      <div style="background:#F6F7F4; border-radius:4px; padding:16px 18px; display:flex; align-items:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:19px; color:#86908A;">Pavilion bookable</span>
+      </div>
+      <div style="background:#E7F1EA; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Newcomer English</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">Library partnership</span>
+      </div>
+      <div style="background:#E7F1EA; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Repair café</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">Monthly · tool library</span>
+      </div>
+      <div style="background:#E7F1EA; border-radius:4px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:21px; font-weight:600; color:#131C17; line-height:1.3;">Film &amp; supper night</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:18px; color:#55615A; margin-top:5px;">Fortnightly · grove</span>
+      </div>
+      <div style="background:#F6F7F4; border-radius:4px; padding:16px 18px; display:flex; align-items:center;">
+        <span style="font-family:'Archivo',sans-serif; font-size:19px; color:#86908A;">Pavilion bookable</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- right: facilities + staffing -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1400px; top:308px; width:400px; z-index:10;">
+    <p class="lab">Facilities delivered</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1400px; top:352px; width:400px; z-index:10;">
+    <div style="display:flex; flex-direction:column;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; padding:0 0 15px 0; border-bottom:1px solid #E2E6E1;">
+        <span style="font-family:'Archivo',sans-serif; font-size:22px; color:#55615A;">Native trees planted</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17; font-variant-numeric:tabular-nums;">34</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; padding:15px 0; border-bottom:1px solid #E2E6E1;">
+        <span style="font-family:'Archivo',sans-serif; font-size:22px; color:#55615A;">Pavilion floor area</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17; font-variant-numeric:tabular-nums;">90 m²</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; padding:15px 0; border-bottom:1px solid #E2E6E1;">
+        <span style="font-family:'Archivo',sans-serif; font-size:22px; color:#55615A;">Raised growing beds</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17; font-variant-numeric:tabular-nums;">40</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; padding:15px 0; border-bottom:1px solid #E2E6E1;">
+        <span style="font-family:'Archivo',sans-serif; font-size:22px; color:#55615A;">Benches &amp; picnic tables</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17; font-variant-numeric:tabular-nums;">26</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; padding:15px 0;">
+        <span style="font-family:'Archivo',sans-serif; font-size:22px; color:#55615A;">Bike parking spaces</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17; font-variant-numeric:tabular-nums;">24</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:704px; width:400px; height:160px; background:#F6F7F4; border-radius:4px; z-index:1;">
+    <div style="position:absolute; left:32px; top:28px; width:336px;">
+      <p class="lab">Staffing model</p>
+      <p class="sm" style="margin-top:12px; line-height:1.42;">One part-time site coordinator (0.6 FTE) plus a rota of 40 trained resident volunteers.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:966px; width:1680px; height:1px; background:var(--line); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:900px; z-index:10;">
+    <p class="note">Maple Ward Commons · Community Improvement Project Proposal</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:990px; width:200px; z-index:10;">
+    <p class="note" style="text-align:right;">06 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

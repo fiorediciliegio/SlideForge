@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Capability Radar</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Plus Jakarta Sans','Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Capability radar" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:78px;width:900px;z-index:10;">
+    <div class="mono" style="font-size:17px;font-weight:500;letter-spacing:2.6px;color:#1A56DB;text-transform:uppercase;">07 · Capability benchmark</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:118px;width:1300px;z-index:10;">
+    <div style="font-size:54px;line-height:1.14;font-weight:700;letter-spacing:-1.2px;color:#0E1A2B;">We lead on speed and price clarity, trail on depth and control</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:250px;width:1680px;height:1px;background:#E3E9F0;z-index:1;"></div>
+
+  <!-- radar -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:120px;top:282px;width:760px;height:700px;z-index:10;">
+    <svg width="700" height="640" viewBox="-20 -20 640 640" style="position:absolute;left:20px;top:20px;">
+      <polygon points="300,60 528.3,225.8 441.1,494.2 158.9,494.2 71.7,225.8" fill="#FBFCFE" stroke="#D3DDEA" stroke-width="1.5"/>
+      <polygon points="300,108 482.6,240.7 412.9,455.3 187.1,455.3 117.4,240.7" fill="none" stroke="#E3E9F0" stroke-width="1"/>
+      <polygon points="300,156 437.0,255.5 384.6,416.5 215.4,416.5 163.0,255.5" fill="none" stroke="#E3E9F0" stroke-width="1"/>
+      <polygon points="300,204 391.3,270.3 356.4,377.7 243.6,377.7 208.7,270.3" fill="none" stroke="#E3E9F0" stroke-width="1"/>
+      <polygon points="300,252 345.7,285.2 328.2,338.8 271.8,338.8 254.3,285.2" fill="none" stroke="#E3E9F0" stroke-width="1"/>
+      <line x1="300" y1="300" x2="300" y2="60" stroke="#E3E9F0" stroke-width="1"/>
+      <line x1="300" y1="300" x2="528.3" y2="225.8" stroke="#E3E9F0" stroke-width="1"/>
+      <line x1="300" y1="300" x2="441.1" y2="494.2" stroke="#E3E9F0" stroke-width="1"/>
+      <line x1="300" y1="300" x2="158.9" y2="494.2" stroke="#E3E9F0" stroke-width="1"/>
+      <line x1="300" y1="300" x2="71.7" y2="225.8" stroke="#E3E9F0" stroke-width="1"/>
+
+      <polygon points="300,79.2 500.8,234.7 373.4,401.0 173.0,474.7 190.4,264.4" fill="none" stroke="#0E1A2B" stroke-width="3" stroke-dasharray="9 6"/>
+      <polygon points="300,184.8 510.0,231.8 407.2,447.5 215.4,416.5 144.8,249.6" fill="none" stroke="#A6B3C4" stroke-width="2.5"/>
+      <polygon points="300,156 446.1,252.5 427.0,474.7 221.0,408.7 108.3,237.7" fill="rgba(26,86,219,0.16)" stroke="#1A56DB" stroke-width="3.5"/>
+      <circle cx="300" cy="156" r="7" fill="#1A56DB"/>
+      <circle cx="446.1" cy="252.5" r="7" fill="#1A56DB"/>
+      <circle cx="427.0" cy="474.7" r="7" fill="#1A56DB"/>
+      <circle cx="221.0" cy="408.7" r="7" fill="#1A56DB"/>
+      <circle cx="108.3" cy="237.7" r="7" fill="#1A56DB"/>
+    </svg>
+    <div style="position:absolute;left:190px;top:0px;width:280px;text-align:center;font-size:20px;font-weight:700;color:#0E1A2B;">Automation depth</div>
+    <div style="position:absolute;left:556px;top:212px;width:186px;font-size:20px;font-weight:700;color:#0E1A2B;">Integration<br>breadth</div>
+    <div style="position:absolute;left:470px;top:544px;width:200px;font-size:20px;font-weight:700;color:#0E1A2B;">Time to<br>first value</div>
+    <div style="position:absolute;left:66px;top:544px;width:210px;text-align:right;font-size:20px;font-weight:700;color:#0E1A2B;">Governance<br>&amp; trust</div>
+    <div style="position:absolute;left:0px;top:212px;width:186px;text-align:right;font-size:20px;font-weight:700;color:#0E1A2B;">Commercial<br>clarity</div>
+  </div>
+
+  <!-- legend -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:966px;width:700px;z-index:10;">
+    <div style="display:flex;gap:40px;align-items:center;">
+      <div style="display:flex;gap:12px;align-items:center;"><span style="display:inline-block;width:30px;height:5px;background:#1A56DB;"></span><span style="font-size:19px;font-weight:600;color:#0E1A2B;">Orbital (us)</span></div>
+      <div style="display:flex;gap:12px;align-items:center;"><span style="display:inline-block;width:30px;height:4px;background:repeating-linear-gradient(90deg,#0E1A2B 0 9px,transparent 9px 15px);"></span><span style="font-size:19px;font-weight:600;color:#0E1A2B;">Northwind Flow</span></div>
+      <div style="display:flex;gap:12px;align-items:center;"><span style="display:inline-block;width:30px;height:4px;background:#A6B3C4;"></span><span style="font-size:19px;font-weight:600;color:#56657C;">Latch</span></div>
+    </div>
+  </div>
+
+  <!-- right: scores -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:940px;top:282px;width:860px;height:96px;background:#0E1A2B;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:976px;top:308px;width:790px;z-index:10;">
+    <div style="display:flex;align-items:baseline;">
+      <span class="mono" style="font-size:15px;letter-spacing:1.8px;color:#8FAEE8;text-transform:uppercase;">Competitive Fit Index · weighted 0–100</span>
+      <span class="mono" style="margin-left:auto;font-size:15px;letter-spacing:1.6px;color:#8FAEE8;">Δ VS US</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute;left:940px;top:410px;width:860px;height:400px;z-index:10;">
+    <table style="width:860px;border-collapse:collapse;">
+      <tbody>
+        <tr>
+          <td style="padding:22px 0;border-bottom:1px solid #EDF1F6;"><div style="font-size:25px;font-weight:700;color:#0E1A2B;">Northwind Flow</div></td>
+          <td style="width:300px;padding:22px 24px;border-bottom:1px solid #EDF1F6;"><div style="width:276px;height:16px;background:#EDF1F6;"><div style="width:224px;height:16px;background:#0E1A2B;"></div></div></td>
+          <td class="mono" style="width:104px;padding:22px 0;text-align:right;font-size:28px;font-weight:500;color:#0E1A2B;border-bottom:1px solid #EDF1F6;">81</td>
+          <td class="mono" style="width:120px;padding:22px 0;text-align:right;font-size:22px;color:#B45309;border-bottom:1px solid #EDF1F6;">+13</td>
+        </tr>
+        <tr>
+          <td style="padding:22px 0;border-bottom:1px solid #EDF1F6;"><div style="font-size:25px;font-weight:700;color:#1A56DB;">Orbital (us)</div></td>
+          <td style="padding:22px 24px;border-bottom:1px solid #EDF1F6;"><div style="width:276px;height:16px;background:#EDF1F6;"><div style="width:188px;height:16px;background:#1A56DB;"></div></div></td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:28px;font-weight:500;color:#1A56DB;border-bottom:1px solid #EDF1F6;">68</td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:22px;color:#9AA7B8;border-bottom:1px solid #EDF1F6;">—</td>
+        </tr>
+        <tr>
+          <td style="padding:22px 0;border-bottom:1px solid #EDF1F6;"><div style="font-size:25px;font-weight:700;color:#0E1A2B;">Latch</div></td>
+          <td style="padding:22px 24px;border-bottom:1px solid #EDF1F6;"><div style="width:276px;height:16px;background:#EDF1F6;"><div style="width:180px;height:16px;background:#8FAEE8;"></div></div></td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:28px;font-weight:500;color:#0E1A2B;border-bottom:1px solid #EDF1F6;">65</td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:22px;color:#3A4A61;border-bottom:1px solid #EDF1F6;">−3</td>
+        </tr>
+        <tr>
+          <td style="padding:22px 0;border-bottom:1px solid #EDF1F6;"><div style="font-size:25px;font-weight:700;color:#0E1A2B;">Cascade Ops</div></td>
+          <td style="padding:22px 24px;border-bottom:1px solid #EDF1F6;"><div style="width:276px;height:16px;background:#EDF1F6;"><div style="width:158px;height:16px;background:#8FAEE8;"></div></div></td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:28px;font-weight:500;color:#0E1A2B;border-bottom:1px solid #EDF1F6;">57</td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:22px;color:#3A4A61;border-bottom:1px solid #EDF1F6;">−11</td>
+        </tr>
+        <tr>
+          <td style="padding:22px 0;"><div style="font-size:25px;font-weight:700;color:#B45309;">Trellis AI</div></td>
+          <td style="padding:22px 24px;"><div style="width:276px;height:16px;background:#EDF1F6;"><div style="width:130px;height:16px;background:#B45309;"></div></div></td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:28px;font-weight:500;color:#0E1A2B;">47</td>
+          <td class="mono" style="padding:22px 0;text-align:right;font-size:22px;color:#3A4A61;">−21</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:940px;top:838px;width:860px;height:112px;background:#F5F8FB;border-left:3px solid #1A56DB;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:976px;top:864px;width:800px;z-index:10;">
+    <div style="font-size:23px;line-height:1.5;color:#0E1A2B;">A 13-point gap sits almost entirely in two dimensions. Closing automation depth alone moves us to <strong>77</strong> — within contesting range of the leader.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1008px;width:1000px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:1.2px;color:#9AA7B8;">Product Competitive Landscape Analysis · Illustrative sample data</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1008px;width:140px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:1.2px;color:#9AA7B8;text-align:right;">07 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

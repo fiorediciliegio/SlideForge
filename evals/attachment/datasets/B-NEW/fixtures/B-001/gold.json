@@ -1,0 +1,13 @@
+{
+  "case_id": "B-001",
+  "size_class": "边界",
+  "target_input_tokens": 22000,
+  "estimated_outline_input_tokens": 22060,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "多附件",
+  "attachment_types": "MD + TXT",
+  "content_strategies": "full_context + summarized_context",
+  "evaluation_risks": "1. 把8,600万元初步数字当成最终结果；2. 把上半年累计或第三季度目标当成第二季度实际；3. 把7个线索写成7个客户；4. 把Nova/Apollo写成已完成；5. 编造差距原因；6. 只使用一个附件；7. 未形成8页完整叙事。"
+}

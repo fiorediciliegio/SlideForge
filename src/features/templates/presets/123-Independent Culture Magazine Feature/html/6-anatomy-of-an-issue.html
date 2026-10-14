@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anatomy of an Issue</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&family=Archivo+Narrow:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#f2ede4;}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#f2ede4;font-family:'Playfair Display',serif;color:#0a0a0a;}
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:.28;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- running head -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:80px;width:1760px;height:1px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:44px;width:900px;height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Margin / Noise &nbsp; №04 &nbsp;—&nbsp; The Anatomy
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1620px;top:44px;width:220px;height:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-align:right;text-transform:uppercase;z-index:10;">
+    page 06 / 10
+  </div>
+
+  <!-- category tab -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:120px;width:260px;height:34px;background:#0a0a0a;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:94px;top:127px;width:240px;height:22px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;letter-spacing:.3em;color:#f2ede4;text-transform:uppercase;z-index:10;">
+    § the anatomy
+  </div>
+
+  <!-- headline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:60px;top:165px;width:1360px;height:110px;font-family:'Playfair Display',serif;font-weight:900;font-size:120px;line-height:.88;letter-spacing:-.04em;color:#0a0a0a;z-index:10;">
+    Half the issue is
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:60px;top:272px;width:1360px;height:110px;font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:120px;line-height:.88;letter-spacing:-.045em;color:#e63329;z-index:10;">
+    other people's words.
+  </div>
+
+  <!-- headline stat, right -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1440px;top:155px;width:400px;height:185px;font-family:'Playfair Display',serif;font-weight:900;font-size:200px;line-height:.9;letter-spacing:-.04em;color:#e63329;text-align:right;z-index:10;">
+    24
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1440px;top:350px;width:400px;height:44px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.5;letter-spacing:.14em;color:#0a0a0a;text-align:right;text-transform:uppercase;z-index:10;">
+    of 48 pages made by<br>contributors, not editors
+  </div>
+
+  <!-- rule + standfirst -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:420px;width:200px;height:5px;background:#e63329;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:445px;width:1300px;height:24px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Page allocation, Issue №04 &nbsp;·&nbsp; 48 pages, five signatures &nbsp;·&nbsp; indicative
+  </div>
+
+  <!-- ROW 1 — editorial & front matter -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:505px;width:380px;height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Editorial &amp; front matter
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:500px;width:340px;height:30px;background:#0a0a0a;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:836px;top:503px;width:130px;height:26px;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1;color:#0a0a0a;z-index:10;">
+    4 pp
+  </div>
+
+  <!-- ROW 2 — the feature -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:575px;width:380px;height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    The feature
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:570px;width:1190px;height:30px;background:#0a0a0a;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1686px;top:573px;width:130px;height:26px;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1;color:#0a0a0a;z-index:10;">
+    14 pp
+  </div>
+
+  <!-- ROW 3 — voices & interviews -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:645px;width:380px;height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Voices &amp; interviews
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:640px;width:850px;height:30px;background:#e63329;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1346px;top:643px;width:130px;height:26px;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1;color:#e63329;z-index:10;">
+    10 pp
+  </div>
+
+  <!-- ROW 4 — photography -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:715px;width:380px;height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Photography
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:710px;width:680px;height:30px;background:#e63329;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1176px;top:713px;width:130px;height:26px;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1;color:#e63329;z-index:10;">
+    8 pp
+  </div>
+
+  <!-- ROW 5 — reviews & listings -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:785px;width:380px;height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Reviews &amp; listings
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:780px;width:510px;height:30px;background:#e63329;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1006px;top:783px;width:130px;height:26px;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1;color:#e63329;z-index:10;">
+    6 pp
+  </div>
+
+  <!-- ROW 6 — colophon & back pages -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:855px;width:380px;height:20px;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Colophon &amp; back pages
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:480px;top:850px;width:510px;height:30px;background:#0a0a0a;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1006px;top:853px;width:130px;height:26px;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;line-height:1;color:#0a0a0a;z-index:10;">
+    6 pp
+  </div>
+
+  <!-- legend -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:914px;width:16px;height:16px;background:#e63329;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:106px;top:912px;width:420px;height:20px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Made by contributors — 24 pp
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:560px;top:914px;width:16px;height:16px;background:#0a0a0a;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:586px;top:912px;width:420px;height:20px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.16em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    Made by the editors — 24 pp
+  </div>
+
+  <!-- conclusion -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1080px;top:898px;width:760px;height:60px;font-family:'Playfair Display',serif;font-style:italic;font-size:19px;line-height:1.45;color:#0a0a0a;text-align:right;z-index:10;">
+    The editors build the frame; everyone else fills it. That ratio is why the magazine survives losing any one contributor — and would not survive losing the pool.
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:1010px;width:1760px;height:1px;background:#0a0a0a;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:80px;top:1030px;width:900px;height:22px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.3em;color:#0a0a0a;text-transform:uppercase;z-index:10;">
+    section iii. — the anatomy
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

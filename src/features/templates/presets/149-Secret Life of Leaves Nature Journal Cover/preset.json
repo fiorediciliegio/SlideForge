@@ -1,0 +1,146 @@
+{
+  "id": "149-Secret Life of Leaves Nature Journal Cover",
+  "version": 1,
+  "ppt_number": 149,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "amber"
+  ],
+  "name": "Secret Life of Leaves Nature Journal Cover",
+  "description": "Botanical science cover with warm paper texture, sage and olive tones, layered leaf illustrations, elegant title typography, and field-journal notes.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["students"],"formats":["lesson"],"primary_styles":["fresh","editorial"],"visual_traits":["fresh","editorial","illustration","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Botanical science cover with warm paper texture, sage and olive tones, layered leaf illustrations, elegant title typography, and field-journal notes."
+    },
+    {
+      "path": "images/2-how-a-leaf-builds-sugar.webp",
+      "alt": "How a Leaf Builds Sugar reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-a-day-in-the-life-of-a-leaf.webp",
+      "alt": "A Day in the Life of a Leaf reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-light-changes-the-rate-of-photosynthesis.webp",
+      "alt": "Light Changes the Rate of Photosynthesis reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-four-things-to-remember.webp",
+      "alt": "Four Things to Remember reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Botanical science cover with warm paper texture, sage and olive tones, layered leaf illustrations, elegant title typography, and field-journal notes."
+    },
+    {
+      "path": "html/2-how-a-leaf-builds-sugar.html",
+      "description": "How a Leaf Builds Sugar reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-a-day-in-the-life-of-a-leaf.html",
+      "description": "A Day in the Life of a Leaf reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-light-changes-the-rate-of-photosynthesis.html",
+      "description": "Light Changes the Rate of Photosynthesis reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-four-things-to-remember.html",
+      "description": "Four Things to Remember reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "journal-field-journal",
+      "name": "Field Journal",
+      "swatches": [
+        "#F8F2DF",
+        "#273126",
+        "#486A3E",
+        "#E0B84D"
+      ],
+      "roles": {
+        "bg": "#F8F2DF",
+        "surface": "#FFFAF0",
+        "ink": "#273126",
+        "muted": "#786F5D",
+        "accent_primary": "#486A3E",
+        "accent_secondary": "#E0B84D",
+        "accent_tertiary": "#D56C38",
+        "line": "#D5DFBD"
+      }
+    },
+    {
+      "id": "journal-terracotta-herb",
+      "name": "Terracotta Herb",
+      "swatches": [
+        "#F9F0E4",
+        "#352A26",
+        "#7A533C",
+        "#C79447"
+      ],
+      "roles": {
+        "bg": "#F9F0E4",
+        "surface": "#FFF9F0",
+        "ink": "#352A26",
+        "muted": "#715F52",
+        "accent_primary": "#7A533C",
+        "accent_secondary": "#C79447",
+        "accent_tertiary": "#C96945",
+        "line": "#E5D7C1"
+      }
+    },
+    {
+      "id": "journal-ocean-olive",
+      "name": "Ocean Olive",
+      "swatches": [
+        "#F0F5EE",
+        "#203A37",
+        "#477C68",
+        "#D2AE4C"
+      ],
+      "roles": {
+        "bg": "#F0F5EE",
+        "surface": "#FCFFFA",
+        "ink": "#203A37",
+        "muted": "#5C7570",
+        "accent_primary": "#477C68",
+        "accent_secondary": "#D2AE4C",
+        "accent_tertiary": "#D76B50",
+        "line": "#D6E3D1"
+      }
+    },
+    {
+      "id": "journal-plum-moss",
+      "name": "Plum Moss",
+      "swatches": [
+        "#F6F0EE",
+        "#3A2935",
+        "#6C5965",
+        "#B8A04B"
+      ],
+      "roles": {
+        "bg": "#F6F0EE",
+        "surface": "#FFF9F8",
+        "ink": "#3A2935",
+        "muted": "#725D6C",
+        "accent_primary": "#6C5965",
+        "accent_secondary": "#B8A04B",
+        "accent_tertiary": "#BE6D54",
+        "line": "#E2D5D3"
+      }
+    }
+  ]
+}

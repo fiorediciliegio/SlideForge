@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sponsorship Formats</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE SIGNAL ROOM — Sponsorship Media Kit
+   Shared design system: type, color, surface treatments.
+   Layout/position stays inline on each data-object.
+   ============================================================ */
+
+:root{
+  /* Core palette — warm editorial "on-air" */
+  --ink:        #171310;
+  --ink-2:      #221C18;
+  --ink-3:      #2E2622;
+  --cream:      #F6F1E7;
+  --cream-2:    #EDE5D6;
+  --amber:      #E39B34;
+  --amber-deep: #A8571F;
+  --clay:       #B4472C;
+  --olive:      #6E7A55;
+
+  /* Derived */
+  --ink-70: rgba(23,19,16,.70);
+  --ink-52: rgba(23,19,16,.52);
+  --ink-40: rgba(23,19,16,.40);
+  --ink-14: rgba(23,19,16,.14);
+  --ink-07: rgba(23,19,16,.07);
+  --cr-78:  rgba(246,241,231,.78);
+  --cr-58:  rgba(246,241,231,.58);
+  --cr-40:  rgba(246,241,231,.40);
+  --cr-16:  rgba(246,241,231,.16);
+  --cr-08:  rgba(246,241,231,.08);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  font-family:'Karla','Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-light{
+  background:
+    radial-gradient(1200px 640px at 88% -12%, rgba(227,155,52,.13) 0%, rgba(227,155,52,0) 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(180,71,44,.09) 0%, rgba(180,71,44,0) 60%),
+    #F6F1E7;
+}
+.bg-dark{
+  background:
+    radial-gradient(1100px 620px at 92% -10%, rgba(227,155,52,.20) 0%, rgba(227,155,52,0) 60%),
+    radial-gradient(900px 560px at -6% 106%, rgba(180,71,44,.16) 0%, rgba(180,71,44,0) 62%),
+    #171310;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--amber-deep); margin:0;
+}
+.eyebrow.on-dark{ color:var(--amber); }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:88px; line-height:1.02; letter-spacing:-.02em;
+  color:var(--cream); margin:0;
+}
+.h2{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:56px; line-height:1.08; letter-spacing:-.018em;
+  color:var(--ink); margin:0;
+}
+.h2.on-dark{ color:var(--cream); }
+.h3{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:30px; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.h3.on-dark{ color:var(--cream); }
+.h4{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:23px; line-height:1.24; letter-spacing:-.004em;
+  color:var(--ink); margin:0;
+}
+.h4.on-dark{ color:var(--cream); }
+
+.lead{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:26px; line-height:1.52; color:var(--ink-70); margin:0;
+}
+.lead.on-dark{ color:var(--cr-78); }
+
+.body{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:20px; line-height:1.5; color:var(--ink-70); margin:0;
+}
+.body.on-dark{ color:var(--cr-78); }
+
+.micro{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-40); margin:0;
+}
+.micro.on-dark{ color:var(--cr-40); }
+
+.metric{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:66px; line-height:1; letter-spacing:-.028em;
+  color:var(--ink); margin:0; font-variant-numeric: tabular-nums;
+}
+.metric.on-dark{ color:var(--cream); }
+.metric .unit{ font-size:.46em; font-weight:700; letter-spacing:0; }
+
+.tag{
+  display:inline-block; font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px 5px; border-radius:var(--r-sm);
+  background:rgba(227,155,52,.20); color:var(--amber-deep);
+}
+.tag.on-dark{ background:rgba(227,155,52,.18); color:var(--amber); }
+
+/* ---------- Surfaces ---------- */
+.card{
+  background:#FFFDF8; border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-quiet{
+  background:rgba(23,19,16,.035); border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-dark{
+  background:rgba(246,241,231,.055); border:1px solid var(--cr-16);
+  border-radius:var(--r-md);
+}
+.card-ink{
+  background:var(--ink); border:1px solid rgba(23,19,16,1);
+  border-radius:var(--r-md);
+}
+.card-amber{
+  background:var(--amber); border:1px solid var(--amber);
+  border-radius:var(--r-md);
+}
+.rule{ background:var(--ink-14); }
+.rule-dark{ background:var(--cr-16); }
+
+/* ---------- Chart primitives ---------- */
+.bar-track{ background:var(--ink-07); border-radius:2px; overflow:hidden; }
+.bar-track-dark{ background:rgba(246,241,231,.10); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; border-radius:2px; }
+
+table.kit{ border-collapse:collapse; width:100%; }
+table.kit th{
+  font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+  text-align:left; padding:0 0 12px; border-bottom:1px solid var(--ink-14);
+}
+table.kit td{
+  font-family:'Karla',sans-serif; font-size:20px; color:var(--ink);
+  padding:15px 0; border-bottom:1px solid var(--ink-07);
+  font-variant-numeric: tabular-nums;
+}
+table.kit.on-dark th{ color:var(--cr-40); border-bottom-color:var(--cr-16); }
+table.kit.on-dark td{ color:var(--cream); border-bottom-color:rgba(246,241,231,.09); }
+</style>
+</head>
+<body>
+<div class="slide bg-light" data-screen-label="07 Sponsorship Formats" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:0px; top:0px; width:10px; height:1080px; z-index:1; background:var(--ink);"></div>
+
+  <p class="eyebrow" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:84px; width:700px; z-index:10;">07 — Inventory</p>
+
+  <h2 class="h2" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:128px; width:820px; z-index:10;">Five ways to appear<br>on the show</h2>
+
+  <p class="lead" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1020px; top:136px; width:780px; z-index:10; font-size:21px;">
+    Formats stack. Most partners begin with mid-roll, then add the newsletter and a segment once attribution is proven.</p>
+
+  <!-- format cards row 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:322px; width:324px; height:322px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:152px; top:354px; width:44px; height:44px; z-index:1; border-radius:4px; background:rgba(227,155,52,.20);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:368px; width:44px; text-align:center; z-index:10; color:var(--amber-deep); font-size:16px; letter-spacing:0;">01</p>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:420px; width:260px; z-index:10; font-size:25px;">Mid-roll read</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:462px; width:260px; z-index:10; font-size:18px;">
+    90 seconds at the attention peak, written from a product session and tied to the episode topic.</p>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:152px; top:566px; width:260px; height:1px; z-index:1; background:var(--ink-14);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:586px; width:260px; z-index:10;">From $4,800 / episode</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:476px; top:322px; width:324px; height:322px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:508px; top:354px; width:44px; height:44px; z-index:1; border-radius:4px; background:rgba(227,155,52,.20);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:508px; top:368px; width:44px; text-align:center; z-index:10; color:var(--amber-deep); font-size:16px; letter-spacing:0;">02</p>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:508px; top:420px; width:260px; z-index:10; font-size:25px;">Pre / post-roll</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:508px; top:462px; width:260px; z-index:10; font-size:18px;">
+    30-second opener or 20-second closer with offer code. Sold as a pair for continuity.</p>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:508px; top:566px; width:260px; height:1px; z-index:1; background:var(--ink-14);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:508px; top:586px; width:260px; z-index:10;">From $2,600 / episode</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:832px; top:322px; width:324px; height:322px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:864px; top:354px; width:44px; height:44px; z-index:1; border-radius:4px; background:rgba(227,155,52,.20);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:864px; top:368px; width:44px; text-align:center; z-index:10; color:var(--amber-deep); font-size:16px; letter-spacing:0;">03</p>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:864px; top:420px; width:260px; z-index:10; font-size:25px;">Named segment</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:864px; top:462px; width:260px; z-index:10; font-size:18px;">
+    A recurring 4-minute feature — “Numbers, brought to you by …” — across a six-episode run.</p>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:864px; top:566px; width:260px; height:1px; z-index:1; background:var(--ink-14);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:864px; top:586px; width:260px; z-index:10;">From $32,000 / run</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1188px; top:322px; width:324px; height:322px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:354px; width:44px; height:44px; z-index:1; border-radius:4px; background:rgba(227,155,52,.20);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:368px; width:44px; text-align:center; z-index:10; color:var(--amber-deep); font-size:16px; letter-spacing:0;">04</p>
+  <h4 class="h4" data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:420px; width:260px; z-index:10; font-size:25px;">Newsletter block</h4>
+  <p class="body" data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:462px; width:260px; z-index:10; font-size:18px;">
+    Written placement to 46K subscribers, published with the episode. 51% open rate.</p>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:566px; width:260px; height:1px; z-index:1; background:var(--ink-14);"></div>
+  <p class="micro" data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:586px; width:260px; z-index:10;">From $1,900 / send</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1544px; top:322px; width:256px; height:322px; z-index:1; background:var(--ink); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1576px; top:354px; width:44px; height:44px; z-index:1; border-radius:4px; background:rgba(227,155,52,.24);"></div>
+  <p class="micro on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:1576px; top:368px; width:44px; text-align:center; z-index:10; color:var(--amber); font-size:16px; letter-spacing:0;">05</p>
+  <h4 class="h4 on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:1576px; top:420px; width:192px; z-index:10; font-size:25px;">Live &amp; event</h4>
+  <p class="body on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:1576px; top:462px; width:192px; z-index:10; font-size:18px;">
+    On-stage recording at your conference, released as a titled episode.</p>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1576px; top:566px; width:192px; height:1px; z-index:1; background:var(--cr-16);"></div>
+  <p class="micro on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:1576px; top:586px; width:192px; z-index:10;">Quoted per event</p>
+
+  <!-- sample read -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:696px; width:1024px; height:250px; z-index:1; background:rgba(23,19,16,.035); border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:696px; width:5px; height:250px; z-index:1; background:var(--clay); border-radius:6px 0 0 6px;"></div>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:160px; top:726px; width:600px; z-index:10;">Sample mid-roll read · Ep. 161</p>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:160px; top:766px; width:944px; z-index:10; font-size:22px; line-height:1.56; color:var(--ink);">
+    “We spent this whole episode on reconciliation debt. Meridian is the tool my old finance team used to close the gap — I sat with their team for an hour before saying that. If you're closing books manually, start at meridian.io/signal.”</p>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:160px; top:892px; width:944px; z-index:10;">92 seconds · 4.1% click-through · 214 attributed signups</p>
+
+  <!-- standards panel -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1188px; top:696px; width:612px; height:250px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1220px; top:726px; width:548px; z-index:10;">Included with every format</p>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1220px; top:768px; width:548px; z-index:10; font-size:19px; line-height:1.75;">
+    Category exclusivity for the flight<br>
+    Unique tracking URL and offer code<br>
+    Script approval with one revision round<br>
+    Evergreen back-catalogue exposure</p>
+
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:988px; width:1200px; z-index:10;">Rates shown are 2026 season list prices, excluding production for live formats.</p>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1740px; top:988px; width:60px; text-align:right; z-index:10;">07</p>
+</div>
+</body>
+</html>

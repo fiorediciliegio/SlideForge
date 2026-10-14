@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MERIDIAN — Cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#000;font-family:'DM Sans',sans-serif}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#0B0B0E}
+  /* Film grain via noise */
+  .grain{position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:220px 220px;opacity:.55;mix-blend-mode:overlay;pointer-events:none;z-index:30}
+  /* deep gradient warm-red wash on right */
+  .wash{position:absolute;left:0;top:0;width:1920px;height:1080px;background:radial-gradient(ellipse 1100px 700px at 78% 60%,rgba(107,21,24,.55) 0%,rgba(107,21,24,.10) 45%,rgba(0,0,0,0) 75%);z-index:2}
+  .vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.65) 100%);z-index:3}
+  /* corner marks */
+  .corner-mark{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:#D9A441;text-transform:uppercase}
+  .display{font-family:'Bodoni Moda',serif;font-weight:900;color:#F2EAD8;line-height:.86;letter-spacing:-.02em}
+  .serif{font-family:'Cormorant Garamond',serif;color:#E8DCC0}
+  .mono{font-family:'JetBrains Mono',monospace;color:#D9A441;letter-spacing:.15em;text-transform:uppercase;font-size:11px}
+  .yellow{color:#D9A441}
+  .red{color:#8B2030}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- editorial top strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:74px;background:#0B0B0E;z-index:5;border-bottom:1px solid rgba(217,164,65,.25);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:32px;width:680px;z-index:10;">
+    <span class="mono">M—01 · Cover · Edition XI</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:32px;text-align:right;z-index:10;">
+    <span class="mono">A Festival of Independent Cinema</span>
+  </div>
+
+  <!-- left vertical rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:160px;width:1px;height:760px;background:#D9A441;z-index:6;opacity:.85"></div>
+
+  <!-- tiny editorial line above title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:175px;width:600px;z-index:10;">
+    <span class="mono yellow">Program 11 · 2026 · Vol. XI</span>
+  </div>
+
+  <!-- MASSIVE MERIDIAN title block -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:230px;width:1660px;z-index:10;">
+    <div class="display" style="font-size:260px;">MERIDIAN</div>
+  </div>
+
+  <!-- subtitle / tagline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:610px;width:900px;z-index:10;">
+    <div class="serif" style="font-size:64px;font-style:italic;letter-spacing:-.01em;color:#F2EAD8;">
+      The Crossing — <span style="color:#D9A441;">eleven</span> films about the spaces between.
+    </div>
+  </div>
+
+  <!-- right-side date / venue block -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;right:90px;top:760px;width:280px;height:1px;background:#D9A441;z-index:8;opacity:.7"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:780px;width:520px;text-align:right;z-index:10;">
+    <div class="mono" style="margin-bottom:14px;color:#D9A441;">Screening Days</div>
+    <div class="display" style="font-size:54px;color:#F2EAD8;line-height:1;">Sep 14 — 19 · 2026</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:910px;width:520px;text-align:right;z-index:10;">
+    <div class="serif" style="font-size:22px;color:#E8DCC0;line-height:1.4;">
+      Halle aux Grains · Cinéma Le Champo ·<br>L'Atelier — Paris, France
+    </div>
+  </div>
+
+  <!-- bottom strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:1006px;width:1920px;height:1px;background:rgba(217,164,65,.30);z-index:6"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:1024px;width:800px;z-index:10;">
+    <span class="mono" style="color:#E8DCC0;">An invitation to listen for borders — in geography, in memory, in the body.</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:1024px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#D9A441;">p. 01 / 10</span>
+  </div>
+
+  <!-- atmospheric red wash (no fake photo) -->
+  <div class="wash"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+</div>
+</body>
+</html>

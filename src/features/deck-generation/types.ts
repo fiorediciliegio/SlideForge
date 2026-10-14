@@ -1,0 +1,301 @@
+import type {
+  AgentClient,
+  AgentPageVisualReviewResult,
+} from "../../agent/agentClient";
+import type { AiClient } from "../../ai/aiClient";
+import type { AiInteractionLogger } from "../../ai/interactionLog";
+import type {
+  PageProgress,
+  ResearchDiscoveryProgress,
+  ResearchDiscoveryProgressActivity,
+  ResearchDiscoveryProgressPhase,
+  ResearchDiscoveryProgressPhaseRecord,
+  ResearchDiscoveryProgressQuery,
+  ResearchDiscoveryProgressSource,
+  ResearchDiscoveryProgressState,
+  ResearchDiscoveryProgressSummary,
+  ResearchDiscoveryProgressVisualAsset,
+  RenderDeckHtmlResult,
+  SharedResearchContextResult,
+  WorkspaceOutline,
+  WorkspaceResult,
+  AttachmentContext,
+} from "../../api/types";
+import type { PptBackend } from "../../api/pptBackend";
+import type { Locale } from "../../i18n/messages";
+import type { AppHostUploadClient } from "../../runtime/appHostUploadClient";
+import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { ResearchWebClient } from "../../api/researchWebClient";
+
+export const ATTEMPT_LIMITS = {
+  render: 10,
+  visualReview: 5,
+  agent: 5,
+};
+
+export const LOCAL_GATE_REPAIR_LIMIT = 3;
+
+export type RenderFailurePhase = "pre-render-typecheck" | "render";
+
+export interface RenderFailureHistoryItem {
+  attempt: number;
+  phase: RenderFailurePhase;
+  error: string;
+  timestamp: string;
+}
+
+export interface NoChangeAuthoringRetry {
+  retryCount: number;
+  previousSummary: string;
+  previousChangedFiles: string[];
+}
+
+export type DeckGenerationStep =
+  | "visual-master"
+  | "authoring-kit"
+  | "style-guide"
+  | "persistent-elements"
+  | "page-sources"
+  | "visual-rhythm"
+  | "page-visual-plans"
+  | "page-refinement-prepare"
+  | "deck-refinement-planning"
+  | "deck-refinement-style-guide"
+  | "deck-refinement-commit"
+  | "research-planning"
+  | "research-discovery"
+  | "research-collection"
+  | "research-curation"
+  | "evidence-page-planning"
+  | "prepare"
+  | "page-authoring"
+  | "page-render"
+  | "page-layout-check"
+  | "page-layout-rewrite"
+  | "page-visual-review"
+  | "final-render"
+  | "complete"
+  | "interrupted"
+  | "cancelled"
+  | "failed";
+
+export type DeckGenerationStartMode = "new" | "resume";
+
+export interface DeckGenerationProgressPage {
+  page_id: string;
+  index: number;
+  title: string;
+  status: string;
+  render_attempts: number;
+  render_attempt_limit: number;
+  visual_review_attempts: number;
+  visual_review_attempt_limit: number;
+  agent_failures: number;
+  agent_failure_limit: number;
+  agent_infrastructure_failures: number;
+  last_error?: string;
+  last_screenshot_path?: string;
+  last_html_path?: string;
+  render_source_sha256?: string;
+  snapshot_source_sha256?: string;
+}
+
+export interface DeckGenerationStream {
+  run_id?: string;
+  kind?: string;
+  page_id: string;
+  page_index: number;
+  status: string;
+  lines: string[];
+  activities: string[];
+  /** In-memory partial HTML for the page currently being authored. It is never
+   * persisted and is replaced by the normal rendered screenshot when ready. */
+  preview_html?: string;
+  started_at?: string;
+  updated_at?: string;
+}
+
+export type {
+  ResearchDiscoveryProgress,
+  ResearchDiscoveryProgressActivity,
+  ResearchDiscoveryProgressPhase,
+  ResearchDiscoveryProgressPhaseRecord,
+  ResearchDiscoveryProgressQuery,
+  ResearchDiscoveryProgressSource,
+  ResearchDiscoveryProgressState,
+  ResearchDiscoveryProgressSummary,
+  ResearchDiscoveryProgressVisualAsset,
+};
+
+/**
+ * App-owned progress captions. Unlike `message`, which carries Agent or backend
+ * text verbatim, these are resolved from the active locale on every render so a
+ * mid-run language switch cannot leave stale copy on screen.
+ */
+export type DeckGenerationProgressMessageKey = "confirmingOutline";
+
+export interface DeckGenerationProgress {
+  step: DeckGenerationStep;
+  message: string;
+  messageKey?: DeckGenerationProgressMessageKey;
+  currentPageIndex: number | null;
+  totalPages: number;
+  pages: DeckGenerationProgressPage[];
+  /**
+   * Pages this run will rewrite. Absent until the run knows them, which for a
+   * deck refinement is only after its plan commits. Consumers use it to hold a
+   * placeholder over a page whose current screenshot is about to be replaced.
+   */
+  targetPageIds?: string[];
+  recoveryRunKind?: NonNullable<PageProgress["recovery"]>["run_kind"];
+  stream?: DeckGenerationStream;
+  activeStreams?: DeckGenerationStream[];
+  researchDiscovery?: ResearchDiscoveryProgress;
+}
+
+export interface DeckGenerationStreamSnapshot {
+  id: string;
+  phase: string;
+  kind?: string;
+  label: string;
+  page_id?: string;
+  page_index?: number;
+  status: string;
+  message: string;
+  lines: string[];
+  activities: string[];
+  updated_at: string;
+}
+
+export interface DeckGenerationResult {
+  outline: WorkspaceOutline;
+  authoringDeck: AuthoringDeck;
+  progress: PageProgress;
+  rendered: RenderDeckHtmlResult;
+}
+
+export interface AuthoringPage {
+  page_id: string;
+  index: number;
+  page_type: "cover" | "standard";
+  title: string;
+  outline: string;
+  slide_path: string;
+}
+
+export interface AuthoringDeck {
+  title: string;
+  pages: AuthoringPage[];
+}
+
+export interface DeckGenerationError {
+  type:
+    | "page_failed"
+    | "agent_infrastructure"
+    | "final_render_failed"
+    | "stale_artifacts"
+    | "cancelled"
+    | "invalid_confirmed_outline";
+  message: string;
+  page_id?: string;
+  page_index?: number;
+  page_status?: string;
+}
+
+export type DeckGenerationCompletion =
+  | { status: "completed"; result: DeckGenerationResult; noChange?: boolean }
+  | { status: "research-completed" }
+  | { status: "cancelled"; progress: DeckGenerationProgress | null }
+  | {
+      status: "failed";
+      error: DeckGenerationError;
+      progress: DeckGenerationProgress | null;
+    };
+
+export interface PageRefinementVisualContext {
+  screenshotPath?: string;
+  source: "progress" | "fresh-render" | "unavailable";
+  unavailableReason?: string;
+}
+
+export interface RunDeckGenerationInput {
+  backend: PptBackend;
+  aiClient: AiClient;
+  agentClient: AgentClient;
+  researchWebClient: ResearchWebClient;
+  hostUploadClient?: AppHostUploadClient | null;
+  aiLogger?: AiInteractionLogger | null;
+  workspace: WorkspaceResult;
+  confirmedOutline: WorkspaceOutline;
+  attachmentContext?: AttachmentContext | null;
+  locale: Locale;
+  startMode?: DeckGenerationStartMode;
+  onProgress: (progress: DeckGenerationProgress) => void;
+  isCancelled: () => boolean;
+  cancelSignal?: AbortSignal;
+  /** Stable transaction identity, shared by new generation and its recovery. */
+  generationRunId?: string;
+  refinementRequest?: string;
+  pageRefinementReasons?: Record<string, string>;
+  pageRefinementVisualContexts?: Record<string, PageRefinementVisualContext>;
+  /** HTML source and native screenshot attachment for the target Page Refinement. */
+  pageRefinementHtmlContexts?: Record<string, {
+    html: string;
+    screenshotAttachment?: AgentImageAttachment;
+  }>;
+  /** Reuse persisted research artifacts without running Web or image search. */
+  reuseExistingResearch?: boolean;
+  /** Internal test mode: persist image research, then stop before page generation. */
+  stopAfterImageResearch?: boolean;
+  refinementRunKind?: "page-refinement" | "deck-refinement";
+  resumeResearch?: boolean;
+  rewriteVisualRhythm?: boolean;
+  selectedStyleProfile?: {
+    displayName?: string;
+    profilePath: string;
+    content: string;
+  } | null;
+}
+
+export interface RunDeckRefinementInput extends RunDeckGenerationInput {
+  instruction: string;
+  scope: "deck" | "slide";
+  pageId?: string;
+  resumePageIds?: string[];
+  skipIntentReview?: boolean;
+}
+
+export interface RunPageGenerationRetryInput extends RunDeckGenerationInput {
+  pageId: string;
+}
+
+export type DeckGenerationContext = Omit<RunDeckGenerationInput, "startMode">;
+export type PageTerminalReason = "accepted" | "page_failed" | "agent_infrastructure" | "cancelled";
+
+export interface PageGenerationResult {
+  page: AuthoringPage;
+  reason: PageTerminalReason;
+  progress: PageProgress;
+  error?: DeckGenerationError;
+}
+
+export interface VisualPlanningContext {
+  styleGuide: string;
+  visualRhythm: string;
+  research: SharedResearchContextResult;
+}
+
+export interface DeckGenerationRuntime extends DeckGenerationContext {
+  targetPageIds?: readonly string[];
+  visualPlanningContext?: VisualPlanningContext;
+  sharedResearchContext?: SharedResearchContextResult;
+  attachmentContext?: AttachmentContext | null;
+  activeStreams: Map<string, DeckGenerationStream>;
+  researchDiscoveryProgress?: ResearchDiscoveryProgress;
+  getProgress: () => PageProgress | null;
+  setProgress: (progress: PageProgress) => void;
+}
+
+export interface StoredPageReviews {
+  visualReview: AgentPageVisualReviewResult | null;
+}

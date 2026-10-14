@@ -1,0 +1,201 @@
+{
+  "case_id": "B-030",
+  "brief_id": "B-030",
+  "brief": "Create a 9-slide donor briefing from the attached programme summary. Use only attachment facts. Image Research may locate respectful, geographically accurate landscape and service-delivery visuals, but not identifiable beneficiaries.",
+  "repetition": 1,
+  "total_repetitions": 3,
+  "provided_requirements": {
+    "version": 1,
+    "status": "confirmed",
+    "source": {
+      "brief": "Create a 9-slide donor briefing from the attached programme summary. Use only attachment facts. Image Research may locate respectful, geographically accurate landscape and service-delivery visuals, but not identifiable beneficiaries."
+    },
+    "candidates": {
+      "audience": [
+        {
+          "label": "Programme donors",
+          "description": "Programme donors"
+        }
+      ],
+      "purpose": [
+        {
+          "label": "Implementation and funding update",
+          "description": "Implementation and funding update"
+        }
+      ],
+      "desired_outcome": [
+        {
+          "label": "Show completed work, work in progress, monitoring limits, and next-year funding need",
+          "description": "Show completed work, work in progress, monitoring limits, and next-year funding need"
+        }
+      ],
+      "slide_count": [
+        9
+      ],
+      "output_language": [
+        "English"
+      ],
+      "visual_tone": [
+        {
+          "label": "Accountable, place-based, human",
+          "description": "Accountable, place-based, human"
+        }
+      ]
+    },
+    "selections": {
+      "audience": {
+        "label": "Programme donors",
+        "description": "Programme donors"
+      },
+      "purpose": {
+        "label": "Implementation and funding update",
+        "description": "Implementation and funding update"
+      },
+      "desired_outcome": {
+        "label": "Show completed work, work in progress, monitoring limits, and next-year funding need",
+        "description": "Show completed work, work in progress, monitoring limits, and next-year funding need"
+      },
+      "slide_count": 9,
+      "output_language": "English",
+      "visual_tone": {
+        "label": "Accountable, place-based, human",
+        "description": "Accountable, place-based, human"
+      },
+      "visual_style_preset": null
+    },
+    "research": {
+      "web": {
+        "recommended": false,
+        "reason": "Disabled by the fixed evaluation Requirements.",
+        "enabled": false
+      },
+      "images": {
+        "recommended": true,
+        "reason": "Enabled by the fixed evaluation Requirements.",
+        "enabled": true
+      }
+    },
+    "updated_at": "2026-08-28T00:00:00.000Z",
+    "confirmed_at": "2026-08-28T00:00:00.000Z"
+  },
+  "provided_uploaded_source_analysis_context": [
+    {
+      "source_id": "b-030-source-1",
+      "filename": "rural-water-programme.docx",
+      "content_strategy": "summarized_context",
+      "original_reading_method": "document_read",
+      "main_message": "During 2025, 38 water points were rehabilitated and 12 new systems entered construction; only 7 of the new systems were complete by year-end. Reported service coverage estimates increased from 61% to 68% in target communities, based on programme monitoring rather than an independent survey.",
+      "relationship_to_task": "This fixed attachment summary is supplied to the Outline stage as user-provided evidence.",
+      "key_facts": [
+        {
+          "evidence_id": "b-030-evidence-base",
+          "fact": "During 2025, 38 water points were rehabilitated and 12 new systems entered construction; only 7 of the new systems were complete by year-end. Reported service coverage estimates increased from 61% to 68% in target communities, based on programme monitoring rather than an independent survey. Two sites were delayed by land-access negotiations. The 2026 plan proposes maintenance committees in all 50 sites, subject to partner funding.",
+          "source_label": "rural-water-programme.docx",
+          "excerpt": "During 2025, 38 water points were rehabilitated and 12 new systems entered construction; only 7 of the new systems were complete by year-end. Reported service coverage estimates increased from 61% to 68% in target communities, based on programme monitoring rather than an independent survey. Two sites were delayed by land-access negotiations. The 2026 plan proposes maintenance committees in all 50 sites, subject to partner funding."
+        },
+        {
+          "evidence_id": "b-030-support-1",
+          "fact": "Implementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "rural-water-programme.docx supporting record 1",
+          "excerpt": "### B-030 Supporting Record 001\nImplementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-030-support-2",
+          "fact": "Measurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "rural-water-programme.docx supporting record 2",
+          "excerpt": "### B-030 Supporting Record 002\nMeasurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-030-support-3",
+          "fact": "Status note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "rural-water-programme.docx supporting record 3",
+          "excerpt": "### B-030 Supporting Record 003\nStatus note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-030-support-4",
+          "fact": "Evidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "rural-water-programme.docx supporting record 4",
+          "excerpt": "### B-030 Supporting Record 004\nEvidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        },
+        {
+          "evidence_id": "b-030-support-5",
+          "fact": "Communication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.",
+          "source_label": "rural-water-programme.docx supporting record 5",
+          "excerpt": "### B-030 Supporting Record 005\nCommunication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision."
+        },
+        {
+          "evidence_id": "b-030-support-6",
+          "fact": "Supporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.",
+          "source_label": "rural-water-programme.docx supporting record 6",
+          "excerpt": "### B-030 Supporting Record 006\nSupporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier."
+        },
+        {
+          "evidence_id": "b-030-support-7",
+          "fact": "Implementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "rural-water-programme.docx supporting record 7",
+          "excerpt": "### B-030 Supporting Record 007\nImplementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-030-support-8",
+          "fact": "Measurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "rural-water-programme.docx supporting record 8",
+          "excerpt": "### B-030 Supporting Record 008\nMeasurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-030-support-9",
+          "fact": "Status note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "rural-water-programme.docx supporting record 9",
+          "excerpt": "### B-030 Supporting Record 009\nStatus note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-030-support-10",
+          "fact": "Evidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "rural-water-programme.docx supporting record 10",
+          "excerpt": "### B-030 Supporting Record 010\nEvidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        },
+        {
+          "evidence_id": "b-030-support-11",
+          "fact": "Communication log 11: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.",
+          "source_label": "rural-water-programme.docx supporting record 11",
+          "excerpt": "### B-030 Supporting Record 011\nCommunication log 11: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision."
+        },
+        {
+          "evidence_id": "b-030-support-12",
+          "fact": "Supporting record 12: On 2025-04-13, workstream 3 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.",
+          "source_label": "rural-water-programme.docx supporting record 12",
+          "excerpt": "### B-030 Supporting Record 012\nSupporting record 12: On 2025-04-13, workstream 3 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier."
+        },
+        {
+          "evidence_id": "b-030-support-13",
+          "fact": "Implementation note 13: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+          "source_label": "rural-water-programme.docx supporting record 13",
+          "excerpt": "### B-030 Supporting Record 013\nImplementation note 13: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+        },
+        {
+          "evidence_id": "b-030-support-14",
+          "fact": "Measurement note 14: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+          "source_label": "rural-water-programme.docx supporting record 14",
+          "excerpt": "### B-030 Supporting Record 014\nMeasurement note 14: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+        },
+        {
+          "evidence_id": "b-030-support-15",
+          "fact": "Status note 15: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+          "source_label": "rural-water-programme.docx supporting record 15",
+          "excerpt": "### B-030 Supporting Record 015\nStatus note 15: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+        },
+        {
+          "evidence_id": "b-030-support-16",
+          "fact": "Evidence boundary 16: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+          "source_label": "rural-water-programme.docx supporting record 16",
+          "excerpt": "### B-030 Supporting Record 016\nEvidence boundary 16: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+        }
+      ],
+      "must_include": [],
+      "must_avoid": [
+        "This is the final section of B-030. The Outline must continue to follow the user brief and fixed Requirements, must not convert plans into completed results, must not invent unsupported causes, and must not expose original file paths."
+      ],
+      "gaps": [],
+      "unread_content": []
+    }
+  ]
+}

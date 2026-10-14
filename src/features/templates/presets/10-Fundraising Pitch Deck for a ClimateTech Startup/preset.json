@@ -1,0 +1,103 @@
+{
+  "id": "10-Fundraising Pitch Deck for a ClimateTech Startup",
+  "version": 1,
+  "ppt_number": 10,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "green",
+    "lime",
+    "yellow",
+    "black"
+  ],
+  "name": "Fundraising Pitch Deck for a ClimateTech Startup",
+  "description": "Industrial climate-tech design with deep green fields, lime metrics, heat-map gradients, and rigorous dashboard structures.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Industrial & Infrastructure",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["infrastructure"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["dark"],"visual_traits":["dark","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "左侧上方超大标题主导深森林绿、荧光绿与暖黄封面，几何色块与细线补充节奏。"
+    },
+    {
+      "path": "images/2-heat-blind-spot.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，一幅图表集中排布，核心观点拉开层级。"
+    },
+    {
+      "path": "images/3-switching-barrier.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，五块卡片组成五列网格，风险信息组织动线。"
+    },
+    {
+      "path": "images/4-solution-architecture.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，五块卡片组成五列网格，产品信息强化对比。"
+    },
+    {
+      "path": "images/5-how-it-works.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，双面板划分主体区域，流程信息收束版面。"
+    },
+    {
+      "path": "images/6-market-opportunity.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，一幅图表集中排布，人群信息形成重心。"
+    },
+    {
+      "path": "images/7-business-model.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，四块卡片组成三列网格，方案层级拉开层级。"
+    },
+    {
+      "path": "images/8-pilot-validation.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，双面板划分主体区域，验证信息组织动线。"
+    },
+    {
+      "path": "images/9-roadmap-risk.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，四块卡片组成四列网格，风险信息强化对比。"
+    },
+    {
+      "path": "images/10-team-and-ask.webp",
+      "alt": "深森林绿、荧光绿与暖黄页面，五块卡片组成三列网格，人物卡收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页由深森林绿、荧光绿与暖黄划分层次，左侧上方的超大标题占据主视区；几何色块与细线补充节奏，页脚细字稳定版面。"
+    },
+    {
+      "path": "html/2-heat-blind-spot.html",
+      "description": "标题固定在左上方，深森林绿、荧光绿与暖黄分隔主体；单一大面板承载主体信息，一幅图表落在左侧，核心观点与醒目标记补充层级。"
+    },
+    {
+      "path": "html/3-switching-barrier.html",
+      "description": "深森林绿、荧光绿与暖黄画面，标题置于左上方；五块信息卡组成五列网格，分级标签、状态色与风险标记集中在画面中部。"
+    },
+    {
+      "path": "html/4-solution-architecture.html",
+      "description": "左上方标题锚定深森林绿、荧光绿与暖黄画面；五块信息卡横向并列，功能模块与结构示意顺着版面动线分布。"
+    },
+    {
+      "path": "html/5-how-it-works.html",
+      "description": "深森林绿、荧光绿与暖黄作为底色，标题落在左上方；两块主面板建立清晰分区，一幅图表落在左侧，步骤模块与连接关系补充层级。"
+    },
+    {
+      "path": "html/6-market-opportunity.html",
+      "description": "标题固定在左上方，深森林绿、荧光绿与暖黄分隔主体；单一大面板承载主体信息，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/7-business-model.html",
+      "description": "深森林绿、荧光绿与暖黄画面，标题置于左上方；四块信息卡组成三列网格，一幅图表落在左侧，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/8-pilot-validation.html",
+      "description": "左上方标题锚定深森林绿、荧光绿与暖黄画面；两块主面板建立清晰分区，一幅图表落在左侧，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/9-roadmap-risk.html",
+      "description": "深森林绿、荧光绿与暖黄作为底色，标题落在左上方；四块信息卡横向并列，分级标签、状态色与风险标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/10-team-and-ask.html",
+      "description": "标题固定在左上方，深森林绿、荧光绿与暖黄分隔主体；五块信息卡组成三列网格，一幅图表落在左侧，人物信息与职责标签补充层级。"
+    }
+  ]
+}

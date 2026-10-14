@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Travel Route</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;padding:0;overflow:hidden;}</style>
+</head>
+<body>
+<div class="slide paper-bg" style="position:relative;width:1920px;height:1080px;overflow:hidden;" data-screen-label="03 Travel Route">
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:104px;width:700px;height:34px;z-index:10;">
+    <p class="eyebrow" style="margin:0;">The Loop We Drove</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:116px;top:144px;width:900px;height:98px;z-index:10;">
+    <h1 class="disp" style="margin:0;font-size:70px;line-height:1.05;">Our Travel Route</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1180px;top:150px;width:620px;height:104px;z-index:10;">
+    <p class="txt" style="margin:0;font-size:26px;line-height:1.3;text-align:right;">A clockwise loop out of Las Vegas — north into Utah, south into Arizona, home from where we started.</p>
+  </div>
+
+  <!-- map paper -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:100px;top:250px;width:1720px;height:620px;background:#FFFDF7;border:2px solid var(--edge);border-radius:18px;box-shadow:0 16px 34px rgba(51,47,41,.12);z-index:1;"></div>
+
+  <!-- map graphic -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:100px;top:250px;width:1720px;height:620px;z-index:5;">
+    <svg width="1720" height="620" viewBox="0 0 1720 620" xmlns="http://www.w3.org/2000/svg">
+      <!-- terrain -->
+      <path d="M60 470 Q210 392 360 452 T700 440 Q880 400 1030 458 T1400 452 Q1560 410 1680 462 L1680 560 L60 560 Z" fill="#F3E7CF" opacity=".55"/>
+      <path d="M300 300 q90 -80 180 0 q70 -60 150 4 l-330 0 z" fill="#DFE9CF" opacity=".8"/>
+      <path d="M1180 250 q80 -70 160 0 l-160 0 z" fill="#DFE9CF" opacity=".8"/>
+      <circle cx="720" cy="86" r="34" fill="#FFC53D" opacity=".55"/>
+      <g opacity=".5" stroke="#CBBFA6" stroke-width="2" stroke-dasharray="4 12">
+        <line x1="60" y1="150" x2="1660" y2="150"/><line x1="60" y1="330" x2="1660" y2="330"/>
+        <line x1="60" y1="510" x2="1660" y2="510"/>
+      </g>
+
+      <!-- driving route -->
+      <path d="M150 430 Q300 470 500 300" fill="none" stroke="#FF6B45" stroke-width="7" stroke-linecap="round" stroke-dasharray="20 15"/>
+      <path d="M500 300 Q650 200 830 170" fill="none" stroke="#FF6B45" stroke-width="7" stroke-linecap="round" stroke-dasharray="20 15"/>
+      <path d="M830 170 Q1010 200 1150 285" fill="none" stroke="#FF6B45" stroke-width="7" stroke-linecap="round" stroke-dasharray="20 15"/>
+      <path d="M1150 285 Q1290 340 1310 440" fill="none" stroke="#FF6B45" stroke-width="7" stroke-linecap="round" stroke-dasharray="20 15"/>
+
+      <!-- return flight arc, broken around the label -->
+      <path d="M1310 440 Q1230 560 1000 578" fill="none" stroke="#2C7FB8" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 16"/>
+      <path d="M560 578 Q300 566 150 430" fill="none" stroke="#2C7FB8" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 16"/>
+      <path d="M168 452 l-22 -30 l34 8 z" fill="#2C7FB8"/>
+
+      <!-- car icon on leg 2 -->
+      <g transform="translate(646,214) rotate(-22)">
+        <rect x="-26" y="-13" width="52" height="20" rx="8" fill="#FFFDF7" stroke="#332F29" stroke-width="3"/>
+        <path d="M-14 -13 l8 -11 h14 l7 11" fill="#FFFDF7" stroke="#332F29" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="-13" cy="9" r="6" fill="#332F29"/><circle cx="14" cy="9" r="6" fill="#332F29"/>
+      </g>
+      <!-- car icon on leg 4 -->
+      <g transform="translate(1266,352) rotate(64)">
+        <rect x="-26" y="-13" width="52" height="20" rx="8" fill="#FFFDF7" stroke="#332F29" stroke-width="3"/>
+        <path d="M-14 -13 l8 -11 h14 l7 11" fill="#FFFDF7" stroke="#332F29" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="-13" cy="9" r="6" fill="#332F29"/><circle cx="14" cy="9" r="6" fill="#332F29"/>
+      </g>
+      <!-- plane icon on return arc -->
+      <g transform="translate(1150,556) rotate(196)">
+        <path d="M0 -20 L9 6 L0 1 L-9 6 Z" fill="#2C7FB8"/>
+        <path d="M-22 0 L22 0" stroke="#2C7FB8" stroke-width="5" stroke-linecap="round"/>
+      </g>
+
+      <!-- markers -->
+      <g font-family="'Baloo 2',sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">
+        <circle cx="150" cy="430" r="25" fill="#2C7FB8" stroke="#fff" stroke-width="4"/><text x="150" y="440">1</text>
+        <circle cx="500" cy="300" r="25" fill="#FF6B45" stroke="#fff" stroke-width="4"/><text x="500" y="310">2</text>
+        <circle cx="830" cy="170" r="25" fill="#FF6B45" stroke="#fff" stroke-width="4"/><text x="830" y="180">3</text>
+        <circle cx="1150" cy="285" r="25" fill="#FF6B45" stroke="#fff" stroke-width="4"/><text x="1150" y="295">4</text>
+        <circle cx="1310" cy="440" r="25" fill="#FF6B45" stroke="#fff" stroke-width="4"/><text x="1310" y="450">5</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- map labels -->
+  <div data-object="true" data-object-type="textbox" class="plate" style="position:absolute;left:118px;top:708px;width:322px;height:92px;padding:12px 18px;box-sizing:border-box;z-index:10;">
+    <p class="txt" style="margin:0;font-size:21px;font-weight:700;letter-spacing:.08em;color:var(--sky-deep);">1 · LAS VEGAS, NV</p>
+    <p class="hand" style="margin:2px 0 0;font-size:27px;">Jul 4 — landed, keys in hand</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="plate" style="position:absolute;left:400px;top:426px;width:340px;height:92px;padding:12px 18px;box-sizing:border-box;z-index:10;">
+    <p class="txt" style="margin:0;font-size:21px;font-weight:700;letter-spacing:.08em;color:var(--coral-deep);">2 · ZION N.P., UT</p>
+    <p class="hand" style="margin:2px 0 0;font-size:27px;">Jul 5–7 — canyon &amp; river days</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="plate" style="position:absolute;left:790px;top:296px;width:352px;height:92px;padding:12px 18px;box-sizing:border-box;z-index:10;">
+    <p class="txt" style="margin:0;font-size:21px;font-weight:700;letter-spacing:.08em;color:var(--coral-deep);">3 · BRYCE CANYON, UT</p>
+    <p class="hand" style="margin:2px 0 0;font-size:27px;">Jul 8–9 — hoodoos at sunrise</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="plate" style="position:absolute;left:1180px;top:386px;width:360px;height:92px;padding:12px 18px;box-sizing:border-box;z-index:10;">
+    <p class="txt" style="margin:0;font-size:21px;font-weight:700;letter-spacing:.08em;color:var(--coral-deep);">4 · PAGE, AZ</p>
+    <p class="hand" style="margin:2px 0 0;font-size:27px;">Jul 10–11 — slot canyon &amp; lake</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="plate" style="position:absolute;left:1440px;top:646px;width:352px;height:92px;padding:12px 18px;box-sizing:border-box;z-index:10;">
+    <p class="txt" style="margin:0;font-size:21px;font-weight:700;letter-spacing:.08em;color:var(--coral-deep);">5 · GRAND CANYON, AZ</p>
+    <p class="hand" style="margin:2px 0 0;font-size:27px;">Jul 12–13 — South Rim, sunset</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="plate" style="position:absolute;left:664px;top:786px;width:412px;height:76px;padding:10px 18px;box-sizing:border-box;background:rgba(79,179,232,.95);z-index:10;">
+    <p class="txt" style="margin:0;font-size:21px;font-weight:700;letter-spacing:.08em;color:#fff;">6 · HOME FROM LAS VEGAS</p>
+    <p class="hand" style="margin:0;font-size:26px;color:#fff;">Jul 14 — one very quiet flight</p>
+  </div>
+
+  <!-- legend + footer -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:898px;width:1080px;height:44px;z-index:10;">
+    <p class="hand" style="margin:0;font-size:36px;color:var(--ink);">11 days · 2 states · 3 national parks — one loop, no backtracking.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:900px;width:490px;height:36px;z-index:10;">
+    <p class="txt" style="margin:0;font-size:22px;font-weight:700;text-align:right;"><span style="color:var(--coral-deep);">— — driving</span> &nbsp;·&nbsp; <span style="color:var(--sky-deep);">- - flying</span></p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:988px;width:900px;height:28px;z-index:10;">
+    <p class="footline">The Nguyen Family · Utah &amp; Arizona · July 2026</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" class="folio" style="position:absolute;left:1792px;top:966px;width:56px;height:56px;z-index:10;">
+    <p style="margin:0;font-size:26px;line-height:56px;">3</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Electron Tug-of-War</title>
+<style>
+/* ==== COMIC BOOK DESIGN SYSTEM ==== */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bowlby+One&family=Luckiest+Guy&family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap');
+
+:root {
+  --red: #ED1C24;
+  --yellow: #FFDE17;
+  --sky: #29ABE2;
+  --white: #FFFFFF;
+  --black: #111111;
+  --paper: #FFF8E7;
+
+  --font-title: 'Bangers', 'Bowlby One', sans-serif;
+  --font-pow: 'Luckiest Guy', 'Bangers', sans-serif;
+  --font-body: 'Comic Neue', 'Comic Sans MS', sans-serif;
+  --font-hand: 'Permanent Marker', cursive;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--black);
+}
+
+/* Halftone dot pattern */
+.halftone-red {
+  background-image: radial-gradient(circle, var(--red) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-yellow {
+  background-image: radial-gradient(circle, var(--yellow) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+.halftone-black {
+  background-image: radial-gradient(circle, var(--black) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-sky {
+  background-image: radial-gradient(circle, var(--sky) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+
+/* Diagonal speed lines */
+.speedlines {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--black) 0 3px,
+    transparent 3px 22px
+  );
+}
+.speedlines-white {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--white) 0 4px,
+    transparent 4px 26px
+  );
+}
+
+/* Radial burst */
+.burst-lines {
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--black) 0deg 3deg,
+    transparent 3deg 12deg
+  );
+}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="05 Electron Tug-of-War" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFF8E7;">
+
+  <!-- halftone yellow backdrop -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1; background-image: radial-gradient(circle, #FFDE17 4px, transparent 4.5px); background-size: 24px 24px; opacity:0.55;"></div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:38px; width:1140px; z-index:10; transform: rotate(-2deg);">
+    <div style="background:#111; border:8px solid #111; padding:12px 36px; box-shadow: 10px 10px 0 #ED1C24;">
+      <div style="font-family: var(--font-title); font-size:64px; color:#FFDE17; letter-spacing:3px; line-height:1;">⚡ THE ELECTRON TUG-OF-WAR!</div>
+    </div>
+  </div>
+
+  <!-- Subtitle -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:174px; width:1210px; z-index:10;">
+    <div style="font-family: var(--font-pow); font-size:32px; color:#111; letter-spacing:1px; line-height:1.2; white-space:nowrap;">The <span style="background:#ED1C24; color:#FFDE17; padding:2px 12px; border:3px solid #111; -webkit-text-stroke:1px #111;">FARTHER APART</span> two materials sit, the bigger the zap.</div>
+  </div>
+
+  <!-- Page badge -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1720px; top:20px; width:140px; height:100px; z-index:11; background:#ED1C24; border:6px solid #111; transform: rotate(4deg); display:flex; align-items:center; justify-content:center;">
+    <div style="font-family: var(--font-title); font-size:56px; color:#FFDE17; letter-spacing:2px; -webkit-text-stroke:1px #111;">05</div>
+  </div>
+
+  <!-- ===== SPECTRUM / ROPE PANEL ===== -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:60px; top:245px; width:1800px; height:430px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 12px 12px 0 #111; overflow:hidden;">
+
+    <div style="position:absolute; left:0; top:0; background:#29ABE2; color:#fff; font-family: var(--font-title); font-size:34px; padding:6px 22px; letter-spacing:2px; border-right:6px solid #111; border-bottom:6px solid #111; z-index:4;">THE ELECTRON RANKING</div>
+
+    <!-- rope + knots + stubs -->
+    <svg style="position:absolute; left:0; top:0; width:1780px; height:410px; z-index:1;" viewBox="0 0 1780 410">
+      <!-- rope body -->
+      <line x1="34" y1="250" x2="1746" y2="250" stroke="#111" stroke-width="15" stroke-linecap="round"/>
+      <line x1="34" y1="250" x2="1746" y2="250" stroke="#FFDE17" stroke-width="6" stroke-dasharray="15 13"/>
+      <!-- end arrows -->
+      <path d="M40,215 L4,250 L40,285 Z" fill="#ED1C24" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M1740,215 L1776,250 L1740,285 Z" fill="#29ABE2" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <!-- knots -->
+      <circle cx="140" cy="250" r="10" fill="#111"/>
+      <circle cx="390" cy="250" r="10" fill="#111"/>
+      <circle cx="640" cy="250" r="10" fill="#111"/>
+      <circle cx="890" cy="250" r="10" fill="#111"/>
+      <circle cx="1140" cy="250" r="10" fill="#111"/>
+      <circle cx="1390" cy="250" r="10" fill="#111"/>
+      <circle cx="1640" cy="250" r="10" fill="#111"/>
+      <!-- stubs up -->
+      <line x1="140" y1="250" x2="140" y2="230" stroke="#111" stroke-width="6"/>
+      <line x1="640" y1="250" x2="640" y2="230" stroke="#111" stroke-width="6"/>
+      <line x1="1140" y1="250" x2="1140" y2="230" stroke="#111" stroke-width="6"/>
+      <line x1="1640" y1="250" x2="1640" y2="230" stroke="#111" stroke-width="6"/>
+      <!-- stubs down -->
+      <line x1="390" y1="250" x2="390" y2="270" stroke="#111" stroke-width="6"/>
+      <line x1="890" y1="250" x2="890" y2="270" stroke="#111" stroke-width="6"/>
+      <line x1="1390" y1="250" x2="1390" y2="270" stroke="#111" stroke-width="6"/>
+    </svg>
+
+    <!-- End labels -->
+    <div style="position:absolute; left:24px; top:64px; width:430px; background:#ED1C24; border:5px solid #111; padding:6px 14px; box-shadow:5px 5px 0 #111; z-index:3;">
+      <div style="font-family: var(--font-pow); font-size:24px; color:#FFDE17; -webkit-text-stroke:1px #111; line-height:1.1;">GIVES ELECTRONS AWAY → turns <span style="color:#FFFFFF">+</span></div>
+    </div>
+    <div style="position:absolute; left:1326px; top:64px; width:430px; background:#29ABE2; border:5px solid #111; padding:6px 14px; box-shadow:5px 5px 0 #111; z-index:3; text-align:right;">
+      <div style="font-family: var(--font-pow); font-size:24px; color:#FFFFFF; -webkit-text-stroke:1px #111; line-height:1.1;">GRABS ELECTRONS → turns <span style="color:#FFDE17">−</span></div>
+    </div>
+
+    <!-- CHIPS ABOVE -->
+    <div style="position:absolute; left:55px; top:150px; width:170px; height:80px; background:#FFDE17; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:30px; color:#111; letter-spacing:1px; line-height:1;">HAIR</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#ED1C24;">strongest giver</div>
+    </div>
+    <div style="position:absolute; left:555px; top:150px; width:170px; height:80px; background:#FFDE17; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:30px; color:#111; letter-spacing:1px; line-height:1;">PAPER</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#ED1C24;">mild giver</div>
+    </div>
+    <div style="position:absolute; left:1055px; top:150px; width:170px; height:80px; background:#29ABE2; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:30px; color:#FFFFFF; letter-spacing:1px; line-height:1; -webkit-text-stroke:1px #111;">WOOD</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#FFDE17;">mild grabber</div>
+    </div>
+    <div style="position:absolute; left:1555px; top:150px; width:170px; height:80px; background:#29ABE2; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:26px; color:#FFFFFF; letter-spacing:1px; line-height:1; -webkit-text-stroke:1px #111;">PLASTIC</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#FFDE17;">strongest grabber</div>
+    </div>
+
+    <!-- CHIPS BELOW -->
+    <div style="position:absolute; left:305px; top:270px; width:170px; height:80px; background:#FFDE17; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:30px; color:#111; letter-spacing:1px; line-height:1;">WOOL</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#ED1C24;">strong giver</div>
+    </div>
+    <div style="position:absolute; left:805px; top:270px; width:170px; height:80px; background:#FFFFFF; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:28px; color:#111; letter-spacing:1px; line-height:1;">COTTON</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#111;">sits in the middle</div>
+    </div>
+    <div style="position:absolute; left:1305px; top:270px; width:170px; height:80px; background:#29ABE2; border:5px solid #111; box-shadow:4px 4px 0 #111; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="font-family: var(--font-title); font-size:26px; color:#FFFFFF; letter-spacing:1px; line-height:1; -webkit-text-stroke:1px #111;">BALLOON</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:15px; color:#FFDE17;">strong grabber</div>
+    </div>
+
+    <!-- footnote inside panel -->
+    <div style="position:absolute; left:24px; top:364px; right:24px; z-index:3;">
+      <div style="font-family: var(--font-hand); font-size:20px; color:#111;">★ Classroom ranking — it shows the ORDER materials line up in, not measured amounts.</div>
+    </div>
+  </div>
+
+  <!-- ===== MATCH-UP CARDS ===== -->
+
+  <!-- Card A -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:60px; top:700px; width:580px; height:290px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#ED1C24; color:#FFDE17; font-family: var(--font-title); font-size:28px; padding:4px 18px; letter-spacing:2px; border-right:5px solid #111; border-bottom:5px solid #111;">MATCH-UP A</div>
+    <!-- pair -->
+    <div style="position:absolute; left:20px; top:58px; right:20px; display:flex; align-items:center; gap:10px;">
+      <div style="flex:1; background:#FFDE17; border:4px solid #111; padding:6px 4px; text-align:center; font-family: var(--font-title); font-size:24px; color:#111;">HAIR</div>
+      <div style="flex:0 0 auto; font-family: var(--font-pow); font-size:22px; color:#ED1C24;">↔</div>
+      <div style="flex:1; background:#29ABE2; border:4px solid #111; padding:6px 4px; text-align:center; font-family: var(--font-title); font-size:24px; color:#FFF; -webkit-text-stroke:1px #111;">PLASTIC</div>
+    </div>
+    <!-- gap bar -->
+    <div style="position:absolute; left:20px; top:130px; right:20px;">
+      <div style="font-family: var(--font-body); font-weight:700; font-size:16px; color:#111; margin-bottom:5px;">GAP ON THE ROPE</div>
+      <div style="height:26px; background:#FFF8E7; border:4px solid #111; position:relative;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:100%; background:#ED1C24;"></div>
+      </div>
+    </div>
+    <!-- verdict -->
+    <div style="position:absolute; left:20px; top:212px; right:20px; display:flex; align-items:center; gap:10px;">
+      <svg style="flex:0 0 auto; width:104px; height:52px;" viewBox="0 0 104 52">
+        <path d="M18,2 L6,28 L16,28 L4,50 L30,22 L19,22 L31,2 Z" fill="#FFDE17" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M52,2 L40,28 L50,28 L38,50 L64,22 L53,22 L65,2 Z" fill="#FFDE17" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M86,2 L74,28 L84,28 L72,50 L98,22 L87,22 L99,2 Z" fill="#FFDE17" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+      </svg>
+      <div style="flex:1 1 auto; font-family: var(--font-pow); font-size:28px; color:#ED1C24; -webkit-text-stroke:1px #111; line-height:1;">BIGGEST ZAP!</div>
+    </div>
+  </div>
+
+  <!-- Card B -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:670px; top:700px; width:580px; height:290px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#ED1C24; color:#FFDE17; font-family: var(--font-title); font-size:28px; padding:4px 18px; letter-spacing:2px; border-right:5px solid #111; border-bottom:5px solid #111;">MATCH-UP B</div>
+    <div style="position:absolute; left:20px; top:58px; right:20px; display:flex; align-items:center; gap:10px;">
+      <div style="flex:1; background:#FFDE17; border:4px solid #111; padding:6px 4px; text-align:center; font-family: var(--font-title); font-size:24px; color:#111;">WOOL</div>
+      <div style="flex:0 0 auto; font-family: var(--font-pow); font-size:22px; color:#ED1C24;">↔</div>
+      <div style="flex:1; background:#29ABE2; border:4px solid #111; padding:6px 4px; text-align:center; font-family: var(--font-title); font-size:24px; color:#FFF; -webkit-text-stroke:1px #111;">BALLOON</div>
+    </div>
+    <div style="position:absolute; left:20px; top:130px; right:20px;">
+      <div style="font-family: var(--font-body); font-weight:700; font-size:16px; color:#111; margin-bottom:5px;">GAP ON THE ROPE</div>
+      <div style="height:26px; background:#FFF8E7; border:4px solid #111; position:relative;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:67%; background:#ED1C24;"></div>
+      </div>
+    </div>
+    <div style="position:absolute; left:20px; top:212px; right:20px; display:flex; align-items:center; gap:10px;">
+      <svg style="flex:0 0 auto; width:104px; height:52px;" viewBox="0 0 104 52">
+        <path d="M18,2 L6,28 L16,28 L4,50 L30,22 L19,22 L31,2 Z" fill="#FFDE17" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M52,2 L40,28 L50,28 L38,50 L64,22 L53,22 L65,2 Z" fill="#FFDE17" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M86,2 L74,28 L84,28 L72,50 L98,22 L87,22 L99,2 Z" fill="#FFFFFF" stroke="#111" stroke-width="3.5" stroke-linejoin="round" opacity="0.35"/>
+      </svg>
+      <div style="flex:1 1 auto; font-family: var(--font-pow); font-size:28px; color:#111; line-height:1;">STRONG ZAP</div>
+    </div>
+  </div>
+
+  <!-- Card C -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1280px; top:700px; width:580px; height:290px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#111; color:#FFDE17; font-family: var(--font-title); font-size:28px; padding:4px 18px; letter-spacing:2px; border-right:5px solid #111; border-bottom:5px solid #111;">MATCH-UP C</div>
+    <div style="position:absolute; left:20px; top:58px; right:20px; display:flex; align-items:center; gap:10px;">
+      <div style="flex:1; background:#FFDE17; border:4px solid #111; padding:6px 4px; text-align:center; font-family: var(--font-title); font-size:24px; color:#111;">PAPER</div>
+      <div style="flex:0 0 auto; font-family: var(--font-pow); font-size:22px; color:#ED1C24;">↔</div>
+      <div style="flex:1; background:#FFFFFF; border:4px solid #111; padding:6px 4px; text-align:center; font-family: var(--font-title); font-size:24px; color:#111;">COTTON</div>
+    </div>
+    <div style="position:absolute; left:20px; top:130px; right:20px;">
+      <div style="font-family: var(--font-body); font-weight:700; font-size:16px; color:#111; margin-bottom:5px;">GAP ON THE ROPE</div>
+      <div style="height:26px; background:#FFF8E7; border:4px solid #111; position:relative;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:17%; background:#ED1C24;"></div>
+      </div>
+    </div>
+    <div style="position:absolute; left:20px; top:212px; right:20px; display:flex; align-items:center; gap:10px;">
+      <svg style="flex:0 0 auto; width:104px; height:52px;" viewBox="0 0 104 52">
+        <path d="M18,2 L6,28 L16,28 L4,50 L30,22 L19,22 L31,2 Z" fill="#FFDE17" stroke="#111" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M52,2 L40,28 L50,28 L38,50 L64,22 L53,22 L65,2 Z" fill="#FFFFFF" stroke="#111" stroke-width="3.5" stroke-linejoin="round" opacity="0.35"/>
+        <path d="M86,2 L74,28 L84,28 L72,50 L98,22 L87,22 L99,2 Z" fill="#FFFFFF" stroke="#111" stroke-width="3.5" stroke-linejoin="round" opacity="0.35"/>
+      </svg>
+      <div style="flex:1 1 auto; font-family: var(--font-body); font-weight:700; font-size:20px; color:#111; line-height:1.15;">Tiny zap — they're neighbours on the rope!</div>
+    </div>
+  </div>
+
+  <!-- corner sticker -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:180px; width:530px; z-index:10; transform: rotate(3deg);">
+    <div style="background:#FFDE17; border:5px solid #111; padding:6px 16px; box-shadow:6px 6px 0 #111; text-align:center;">
+      <div style="font-family: var(--font-pow); font-size:22px; color:#111; line-height:1.1;">Same material + same material = NO zap!</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

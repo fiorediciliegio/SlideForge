@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solution Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Solution Architecture" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:84px;width:900px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:24px;font-weight:600;color:#0D4FA3;letter-spacing:.20em;text-transform:uppercase;">03 · Overall solution</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:124px;width:1180px;z-index:10;font-family:'Archivo',sans-serif;font-size:54px;font-weight:700;color:#101828;line-height:1.1;letter-spacing:-0.01em;">One platform, four layers, no custom black boxes</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1330px;top:132px;width:494px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:25px;color:#475467;line-height:1.45;">82% of the scope is met by configured standard modules. Only integration adapters are built — and they are handed over with source code.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:296px;width:1400px;height:150px;background:#F5F8FC;border:1px solid #E1E9F4;border-radius:8px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:320px;width:1352px;height:102px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="display:flex;align-items:center;gap:32px;height:102px;">
+      <div style="width:300px;">
+        <div style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#101828;">Experience layer</div>
+        <div style="font-size:23px;color:#98A2B3;margin-top:6px;">Role-based, 4,800 users</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Web workspace</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Field mobile app</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Supplier portal</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Executive dashboard</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:466px;width:1400px;height:150px;background:#EAF1FA;border:1px solid #D3E0F0;border-radius:8px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:490px;width:1352px;height:102px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="display:flex;align-items:center;gap:32px;height:102px;">
+      <div style="width:300px;">
+        <div style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#101828;">Application layer</div>
+        <div style="font-size:23px;color:#98A2B3;margin-top:6px;">Configured, not coded</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Finance</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Supply chain</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Service ops</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Asset management</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Analytics</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:636px;width:1400px;height:150px;background:#DCE8F7;border:1px solid #C6D8ED;border-radius:8px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:660px;width:1352px;height:102px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="display:flex;align-items:center;gap:32px;height:102px;">
+      <div style="width:300px;">
+        <div style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#101828;">Integration layer</div>
+        <div style="font-size:23px;color:#98A2B3;margin-top:6px;">Legacy runs until cut-over</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">API gateway</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Event bus</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Change data capture</span>
+        <span style="font-size:24px;color:#0B3E7E;background:#FFFFFF;border:1px solid #C9D8EA;border-radius:6px;padding:12px 20px;">Legacy adapters ×4</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:806px;width:1400px;height:150px;background:#0B3E7E;border-radius:8px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:830px;width:1352px;height:102px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="display:flex;align-items:center;gap:32px;height:102px;">
+      <div style="width:300px;">
+        <div style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#FFFFFF;">Data &amp; platform</div>
+        <div style="font-size:23px;color:#9FC0E2;margin-top:6px;">EU-resident private cloud</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <span style="font-size:24px;color:#FFFFFF;border:1px solid rgba(255,255,255,.42);border-radius:6px;padding:12px 20px;">Unified data model</span>
+        <span style="font-size:24px;color:#FFFFFF;border:1px solid rgba(255,255,255,.42);border-radius:6px;padding:12px 20px;">Lakehouse</span>
+        <span style="font-size:24px;color:#FFFFFF;border:1px solid rgba(255,255,255,.42);border-radius:6px;padding:12px 20px;">Identity &amp; access</span>
+        <span style="font-size:24px;color:#FFFFFF;border:1px solid rgba(255,255,255,.42);border-radius:6px;padding:12px 20px;">Dual-region backup</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1544px;top:296px;width:280px;height:660px;background:#FFFFFF;border:2px solid #0D4FA3;border-radius:8px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1576px;top:328px;width:216px;z-index:10;font-family:'IBM Plex Sans',sans-serif;">
+    <div style="font-size:24px;font-weight:600;color:#0D4FA3;letter-spacing:.14em;text-transform:uppercase;line-height:1.3;">Cross-cutting</div>
+    <div style="margin-top:26px;">
+      <div style="padding:20px 0;border-top:1px solid #E4E7EC;"><div style="font-family:'Archivo',sans-serif;font-size:27px;font-weight:600;color:#101828;">Security &amp; IAM</div><div style="font-size:22px;color:#667085;margin-top:6px;line-height:1.35;">Zero-trust, SSO, MFA</div></div>
+      <div style="padding:20px 0;border-top:1px solid #E4E7EC;"><div style="font-family:'Archivo',sans-serif;font-size:27px;font-weight:600;color:#101828;">Observability</div><div style="font-size:22px;color:#667085;margin-top:6px;line-height:1.35;">Full-stack tracing</div></div>
+      <div style="padding:20px 0;border-top:1px solid #E4E7EC;"><div style="font-family:'Archivo',sans-serif;font-size:27px;font-weight:600;color:#101828;">DevSecOps</div><div style="font-size:22px;color:#667085;margin-top:6px;line-height:1.35;">Automated release gates</div></div>
+      <div style="padding:20px 0;border-top:1px solid #E4E7EC;"><div style="font-family:'Archivo',sans-serif;font-size:27px;font-weight:600;color:#101828;">Data governance</div><div style="font-size:22px;color:#667085;margin-top:6px;line-height:1.35;">Ownership per domain</div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;background:#E4E7EC;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1018px;width:1200px;z-index:10;font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:#98A2B3;letter-spacing:.04em;">Meridian Enterprise Solutions &nbsp;·&nbsp; Bid No. NWG-2026-ERP-014</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1524px;top:1018px;width:300px;text-align:right;z-index:10;font-family:'Archivo',sans-serif;font-size:24px;font-weight:600;color:#0D4FA3;">04 / 10</div>
+
+</div>
+</body>
+</html>

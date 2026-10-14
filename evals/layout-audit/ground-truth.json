@@ -1,0 +1,830 @@
+{
+  "description": "Layout-audit eval ground truth. 80 controlled samples (C01-C04 x V0/V1 x 10 repeats) manually annotated in results-clean.xlsx on 2026-09-07; 2 real-page samples (page13/page15) annotated on 2026-09-08: both positive (right-upper card bottom-boundary overflow, missed by v7).",
+  "labeling_rule": "gt_has_overflow = (overflow annotation == \"是\"); annotations starting with \"否\" (incl. notes) count as negative.",
+  "samples": [
+    {
+      "sample": "C01-V0-01",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 1,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-02",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 2,
+      "gt_overflow_raw": "否（但是左侧开始标号了1）",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-03",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 3,
+      "gt_overflow_raw": "否 （出现了黄色字体）",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-04",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 4,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C01/C01-V0-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-05",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 5,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-06",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 6,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-07",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 7,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-08",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 8,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C01/C01-V0-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-09",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 9,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V0-10",
+      "case_id": "C01",
+      "version": "V0",
+      "repeat": 10,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V0-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-01",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 1,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C01/C01-V1-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-02",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 2,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-03",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 3,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-04",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 4,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-05",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 5,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-06",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 6,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C01/C01-V1-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-07",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 7,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C01/C01-V1-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-08",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 8,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-09",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 9,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C01-V1-10",
+      "case_id": "C01",
+      "version": "V1",
+      "repeat": 10,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C01/C01-V1-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-01",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 1,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V0-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-02",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 2,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C02/C02-V0-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-03",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 3,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C02/C02-V0-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-04",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 4,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V0-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-05",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 5,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V0-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-06",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 6,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V0-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-07",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 7,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V0-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-08",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 8,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C02/C02-V0-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-09",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 9,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C02/C02-V0-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V0-10",
+      "case_id": "C02",
+      "version": "V0",
+      "repeat": 10,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C02/C02-V0-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-01",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 1,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-02",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 2,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C02/C02-V1-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-03",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 3,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-04",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 4,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-05",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 5,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-06",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 6,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-07",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 7,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-08",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 8,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-09",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 9,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C02-V1-10",
+      "case_id": "C02",
+      "version": "V1",
+      "repeat": 10,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C02/C02-V1-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-01",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 1,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V0-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-02",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 2,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V0-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-03",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 3,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V0-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-04",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 4,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V0-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-05",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 5,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V0-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-06",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 6,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V0-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-07",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 7,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V0-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-08",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 8,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V0-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-09",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 9,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V0-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V0-10",
+      "case_id": "C03",
+      "version": "V0",
+      "repeat": 10,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V0-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-01",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 1,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V1-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-02",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 2,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-03",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 3,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-04",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 4,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-05",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 5,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-06",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 6,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V1-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-07",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 7,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-08",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 8,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-09",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 9,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C03/C03-V1-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C03-V1-10",
+      "case_id": "C03",
+      "version": "V1",
+      "repeat": 10,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C03/C03-V1-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-01",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 1,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V0-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-02",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 2,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V0-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-03",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 3,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V0-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-04",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 4,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V0-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-05",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 5,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V0-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-06",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 6,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V0-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-07",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 7,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V0-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-08",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 8,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V0-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-09",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 9,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V0-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V0-10",
+      "case_id": "C04",
+      "version": "V0",
+      "repeat": 10,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V0-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-01",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 1,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-01.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-02",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 2,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-02.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-03",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 3,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V1-03.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-04",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 4,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V1-04.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-05",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 5,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-05.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-06",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 6,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-06.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-07",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 7,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-07.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-08",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 8,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-08.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-09",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 9,
+      "gt_overflow_raw": "否",
+      "gt_has_overflow": false,
+      "html_path": "cases/C04/C04-V1-09.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "C04-V1-10",
+      "case_id": "C04",
+      "version": "V1",
+      "repeat": 10,
+      "gt_overflow_raw": "是",
+      "gt_has_overflow": true,
+      "html_path": "cases/C04/C04-V1-10.html",
+      "sample_type": "original"
+    },
+    {
+      "sample": "page13",
+      "case_id": "page13",
+      "version": "new",
+      "repeat": 0,
+      "gt_overflow_raw": "是（右侧上框 GOALS 卡片下边界溢出，文字压入下层 SCOPE 卡片）",
+      "gt_has_overflow": true,
+      "html_path": "cases/page13.html",
+      "sample_type": "new",
+      "annotated_at": "2026-09-08",
+      "annotated_by": "manual"
+    },
+    {
+      "sample": "page15",
+      "case_id": "page15",
+      "version": "new",
+      "repeat": 0,
+      "gt_overflow_raw": "是（右侧上框 02 生产端卡片下边界溢出，落地指标文字超出卡片）",
+      "gt_has_overflow": true,
+      "html_path": "cases/page15.html",
+      "sample_type": "new",
+      "annotated_at": "2026-09-08",
+      "annotated_by": "manual"
+    }
+  ]
+}

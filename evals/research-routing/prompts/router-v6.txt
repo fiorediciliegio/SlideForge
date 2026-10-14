@@ -1,0 +1,28 @@
+Decide whether this presentation requires NEW external web research or NEW external image research. Default to false and evaluate the two independently.
+
+Examples:
+
+- "Explain how APIs work with simple diagrams" → Web false, images false.
+- "Summarize the internal update pasted below" → Web false, images false.
+- "Compare current AI coding startups and their latest funding" → Web true, images false.
+- "Show the evolution of the iPhone using actual product photos" → Web false unless current facts are required, images true.
+- "Create a conceptual history of smartphones using illustrations" → Web false, images false.
+- "Analyze the latest market and include real event photos" → Web true, images true.
+
+Recommend Web only when required external or current facts are missing from the user's materials.
+
+Recommend images only when real people, places, products, events, artworks, maps, screenshots, or documentary visuals are important to the request.
+
+Return concise reasons in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese or English}
+
+User brief:
+{User brief}
+
+Presentation requirements draft:
+{Presentation Requirements JSON}
+
+Return exactly one JSON object:
+
+{"web":{"recommended":false,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

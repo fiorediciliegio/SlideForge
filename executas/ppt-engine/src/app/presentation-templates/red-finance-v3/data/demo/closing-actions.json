@@ -1,0 +1,32 @@
+{
+  "title": "Closing Actions",
+  "metaLabel": "BLUEPRINT / CLOSING",
+  "footerText": "Business Professional | Closing Actions",
+  "pageNumber": "10",
+  "variant": "conclusion-plus-actions",
+  "density": "medium",
+  "heading": "Conclusion and actions",
+  "headingSubtitle": "final wrap-up",
+  "finalTitle": "Final judgment",
+  "finalText": "Close the deck with a concise conclusion and clear actions.",
+  "actions": [
+    {
+      "icon": "route",
+      "title": "Prioritize",
+      "description": "Define priorities and the focus for the next 30 days."
+    },
+    {
+      "icon": "shield",
+      "title": "Validate",
+      "description": "Check risks, assumptions, and critical dependencies."
+    },
+    {
+      "icon": "lightbulb",
+      "title": "Decide",
+      "description": "Clarify what needs confirmation or authorization."
+    }
+  ],
+  "decisionAsk": "Confirm resources, priorities, and authorization for the next phase.",
+  "decisionAskTitle": "Decision ask",
+  "summary": "A closing slide should make next steps explicit, not just repeat a slogan."
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Two Column Insight",
+  "metaLabel": "BLUEPRINT / TWO COLUMN",
+  "footerText": "Business Professional | Two Column Insight",
+  "pageNumber": "03",
+  "variant": "narrative-left-evidence-right",
+  "density": "medium",
+  "narrativeTitle": "Core judgment",
+  "narrativeSummary": "Use one side for the main argument and the other for compact supporting evidence.",
+  "narrativeItems": [
+    {
+      "icon": "lightbulb",
+      "title": "Lead with the answer",
+      "description": "State the judgment first, then explain it through structured evidence."
+    },
+    {
+      "icon": "shield",
+      "title": "Evidence discipline",
+      "description": "Keep evidence selective so the two columns do not become dense tables."
+    },
+    {
+      "icon": "route",
+      "title": "Clear handoff",
+      "description": "Close with a concise callout that naturally leads into the next slide."
+    }
+  ],
+  "evidenceTitle": "Supporting evidence",
+  "evidenceSubtitle": "cards / metrics / compact evidence",
+  "evidenceCards": [
+    {
+      "icon": "chart-column",
+      "title": "Scale shift",
+      "description": "Use compact metric cards to show movement and relative position.",
+      "tag": "scale"
+    },
+    {
+      "icon": "bank",
+      "title": "Structural gap",
+      "description": "Break complex facts into two to four lightweight evidence cards.",
+      "tag": "structure"
+    },
+    {
+      "icon": "coins",
+      "title": "Operating signal",
+      "description": "Keep key judgments editable instead of burying them in long prose.",
+      "tag": "signal"
+    }
+  ],
+  "conclusion": "Use this page to explain one argument and support it with a few focused facts."
+}

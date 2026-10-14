@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Everything, On One Page</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="18 Bento Grid" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F5EBD8;">
+
+  <!-- Masthead -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:56px; background:#6B7A3A; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:18px; width:1300px; z-index:11;">
+    <div class="mono" style="color:#FBF6EC; font-size:14px; letter-spacing:0.28em; font-weight:700;">18 / THE BACK PAGE · TEAR THIS ONE OUT</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:18px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#F5C518; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 18</div>
+  </div>
+
+  <!-- Title row -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:80px; width:900px; z-index:11;">
+    <div class="mono" style="font-size:15px; letter-spacing:0.28em; color:#E63946; font-weight:700;">— THE BACK PAGE · SUMMARY</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:108px; width:1200px; z-index:11;">
+    <div class="serif" style="font-size:62px; line-height:1.16; color:#1A1A1A;">Everything, <span style="color:#E63946; font-style:italic;">On One Page.</span></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:112px; width:540px; z-index:11; text-align:right;">
+    <div class="serif" style="font-size:21px; line-height:1.35; color:#1A1A1A; font-style:italic;">Six stops, five must-tries, one walk. Fold it into your pocket and go.</div>
+  </div>
+
+  <!-- ===== BENTO ROW 1 ===== -->
+
+  <!-- TILE A · big feature image (tall, spans both rows) -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:60px; top:216px; width:520px; height:512px; overflow:hidden; z-index:5; border:3px solid #1A1A1A;">
+    <img src="../assets/pasta.jpg" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:596px; width:520px; height:132px; background:rgba(26,26,26,0.82); z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:84px; top:614px; width:472px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">THE ONE UNMISSABLE PLATE</div>
+    <div class="serif" style="font-size:38px; line-height:1.06; color:#FBF6EC; margin-top:4px;">Amatriciana, Trattoria Rosa</div>
+  </div>
+
+  <!-- TILE B · headline stat, tomato -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:596px; top:216px; width:412px; height:246px; background:#E63946; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:622px; top:238px; width:360px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">TOTAL SPEND, PER PERSON</div>
+    <div class="serif" style="font-size:104px; line-height:1.05; color:#FBF6EC; margin-top:2px;">$73</div>
+    <div style="font-size:15px; line-height:1.35; color:#FBF6EC; margin-top:2px; opacity:0.92;">Breakfast to last bowl, everything included.</div>
+  </div>
+
+  <!-- TILE C · yellow stat -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1024px; top:216px; width:412px; height:246px; background:#F5C518; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1050px; top:238px; width:360px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#C1272D; font-weight:700;">ON FOOT, END TO END</div>
+    <div class="serif" style="font-size:104px; line-height:1.05; color:#1A1A1A; margin-top:2px;">11.4<span style="font-size:44px;"> km</span></div>
+    <div style="font-size:15px; line-height:1.35; color:#1A1A1A; margin-top:2px; opacity:0.85;">Five legs, two and a half hours moving.</div>
+  </div>
+
+  <!-- TILE D · small image, tacos -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1452px; top:216px; width:408px; height:246px; overflow:hidden; z-index:5; border:3px solid #1A1A1A;">
+    <img src="../assets/tacos.jpg" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1452px; top:216px; width:408px; z-index:12;">
+    <div style="display:inline-block; background:#F5C518; padding:7px 15px; border-right:3px solid #1A1A1A; border-bottom:3px solid #1A1A1A;">
+      <span class="mono" style="font-size:11px; letter-spacing:0.22em; color:#1A1A1A; font-weight:700;">BEST VALUE · $3</span>
+    </div>
+  </div>
+
+  <!-- ===== BENTO ROW 2 ===== -->
+
+  <!-- TILE E · the five must-tries list, cobalt (wide) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:596px; top:478px; width:840px; height:250px; background:#1F3A93; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:622px; top:496px; width:788px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">THE FIVE MUST-TRY BITES</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; column-gap:28px; row-gap:7px; margin-top:10px;">
+      <div style="display:flex; align-items:baseline; gap:10px;"><span class="serif" style="font-size:26px; color:#F5C518;">01</span><span class="serif" style="font-size:23px; color:#FBF6EC;">Butter croissant</span></div>
+      <div style="display:flex; align-items:baseline; gap:10px;"><span class="serif" style="font-size:26px; color:#F5C518;">04</span><span class="serif" style="font-size:23px; color:#FBF6EC;">Pistachio gelato</span></div>
+      <div style="display:flex; align-items:baseline; gap:10px;"><span class="serif" style="font-size:26px; color:#F5C518;">02</span><span class="serif" style="font-size:23px; color:#FBF6EC;">Al pastor tacos</span></div>
+      <div style="display:flex; align-items:baseline; gap:10px;"><span class="serif" style="font-size:26px; color:#F5C518;">05</span><span class="serif" style="font-size:23px; color:#FBF6EC;">Tonkotsu ramen</span></div>
+      <div style="display:flex; align-items:baseline; gap:10px;"><span class="serif" style="font-size:26px; color:#F5C518;">03</span><span class="serif" style="font-size:23px; color:#FBF6EC;">Amatriciana pasta</span></div>
+      <div style="display:flex; align-items:baseline; gap:10px;"><span class="hand" style="font-size:25px; color:#F5C518;">in this order →</span></div>
+    </div>
+  </div>
+
+  <!-- TILE F · small image, gelato -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1452px; top:478px; width:408px; height:250px; overflow:hidden; z-index:5; border:3px solid #1A1A1A;">
+    <img src="../assets/gelato.jpg" style="width:100%; height:100%; object-fit:cover;">
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1452px; top:478px; width:408px; z-index:12;">
+    <div style="display:inline-block; background:#FBF6EC; padding:7px 15px; border-right:3px solid #1A1A1A; border-bottom:3px solid #1A1A1A;">
+      <span class="mono" style="font-size:11px; letter-spacing:0.22em; color:#1A1A1A; font-weight:700;">22:00 · RIVERSIDE</span>
+    </div>
+  </div>
+
+  <!-- ===== BENTO ROW 3 ===== -->
+
+  <!-- TILE G · timing rules, cream -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:744px; width:520px; height:200px; background:#FBF6EC; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:84px; top:762px; width:472px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#E63946; font-weight:700;">THE CLOCK</div>
+    <div style="display:grid; grid-template-columns:auto 1fr; column-gap:14px; row-gap:5px; margin-top:8px; align-items:baseline;">
+      <span class="mono" style="font-size:15px; font-weight:700; color:#1A1A1A;">07:30</span><span style="font-size:16px; color:#1A1A1A;">First coffee, harbour</span>
+      <span class="mono" style="font-size:15px; font-weight:700; color:#1A1A1A;">13:30</span><span style="font-size:16px; color:#1A1A1A;">Standing lunch, market</span>
+      <span class="mono" style="font-size:15px; font-weight:700; color:#1A1A1A;">19:00</span><span style="font-size:16px; color:#1A1A1A;">The one booked table</span>
+      <span class="mono" style="font-size:15px; font-weight:700; color:#1A1A1A;">23:30</span><span style="font-size:16px; color:#1A1A1A;">Last bowl, downtown</span>
+    </div>
+  </div>
+
+  <!-- TILE H · olive rules tile -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:596px; top:744px; width:412px; height:200px; background:#6B7A3A; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:622px; top:762px; width:360px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">THREE HOUSE RULES</div>
+    <div style="font-size:17px; line-height:1.5; color:#FBF6EC; margin-top:8px;">
+      Never sit down for coffee.<br>
+      Only one long dinner a day.<br>
+      Always keep cash for the kerb.
+    </div>
+  </div>
+
+  <!-- TILE I · what to skip, cream -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1024px; top:744px; width:412px; height:200px; background:#FBF6EC; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1050px; top:762px; width:360px; z-index:11;">
+    <div class="mono" style="font-size:11px; letter-spacing:0.24em; color:#C1272D; font-weight:700;">WHAT TO SKIP</div>
+    <div style="font-size:17px; line-height:1.5; color:#1A1A1A; margin-top:8px;">
+      The hotel breakfast.<br>
+      Any menu with photographs.<br>
+      A second sit-down meal.
+    </div>
+  </div>
+
+  <!-- TILE J · sign-off, tomato -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1452px; top:744px; width:408px; height:200px; background:#E63946; border:3px solid #1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1478px; top:768px; width:356px; z-index:11;">
+    <div class="serif" style="font-size:40px; line-height:1.08; color:#FBF6EC;">Go get <span style="color:#F5C518; font-style:italic;">hungry.</span></div>
+    <div class="hand" style="font-size:28px; color:#F5C518; line-height:1.1; margin-top:8px;">see you at breakfast</div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:976px; width:1800px; height:2px; background:#1A1A1A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:996px; width:900px; z-index:11;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700;">CITY FOOD EXPLORER · ISSUE Nº 07 · APPETITE MAGAZINE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1200px; top:996px; width:660px; z-index:11; text-align:right;">
+    <div class="mono" style="font-size:13px; letter-spacing:0.26em; color:#E63946; font-weight:700;">END OF ISSUE · P. 18 / 18</div>
+  </div>
+
+</div>
+</body>
+</html>

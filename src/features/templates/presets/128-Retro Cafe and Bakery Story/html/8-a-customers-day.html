@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A Customer's Day — The Hearth Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F5C04A;
+  --butter-soft:#FBE3A2;
+  --chocolate:#3B2417;
+  --choco-deep:#2A1810;
+  --cherry:#C8342B;
+  --cherry-deep:#9B241D;
+  --cream:#F4E9D4;
+  --paper:#FAF1DC;
+  --ink:#251610;
+  --moss:#3F5C3B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8DCC0;overflow:hidden;font-family:'Fraunces',serif}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--paper)}
+.slide::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='28'/><feColorMatrix values='0 0 0 0 0.20 0 0 0 0 0.14 0 0 0 0 0.08 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");opacity:0.5;z-index:3;pointer-events:none}
+
+/* Title block */
+.head{position:absolute;left:100px;top:60px;right:100px;z-index:6}
+.head .ht{font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:6px}
+.head h2{font-family:'Fraunces',serif;font-weight:900;font-size:60px;line-height:.92;letter-spacing:-.02em;color:var(--choco-deep)}
+.head h2 em{font-family:'Caveat',cursive;color:var(--cherry-deep);font-style:normal;font-weight:700;font-size:46px;display:inline-block;margin-left:6px}
+.head .hsub{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--chocolate);margin-top:6px;max-width:1100px;line-height:1.4}
+
+/* timeline band */
+.tl-caption{position:absolute;left:100px;top:272px;width:1720px;z-index:6;font-family:'Special Elite',monospace;font-size:13px;letter-spacing:.36em;text-transform:uppercase;color:var(--cherry-deep)}
+.tl-band{position:absolute;left:100px;top:320px;width:1720px;height:130px;z-index:1;
+  background:var(--butter-soft);border-top:1.5px solid var(--chocolate);border-bottom:1.5px solid var(--chocolate)}
+.tl-marks{position:absolute;left:100px;top:320px;width:1720px;height:200px;z-index:6}
+.tl-marks .rail{position:absolute;left:140px;top:70px;width:1500px;height:3px;background:var(--chocolate)}
+.tl-marks .tick{position:absolute;top:60px;width:24px;height:24px;border-radius:50%;border:2.5px solid var(--chocolate);background:var(--cream);
+  font-family:'Fraunces',serif;font-weight:900;font-size:13px;color:var(--choco-deep);display:flex;align-items:center;justify-content:center;line-height:1}
+.tl-marks .tick.on{background:var(--cherry);color:var(--paper)}
+.tl-marks .tm{position:absolute;top:26px;width:140px;text-align:center;font-family:'Special Elite',monospace;font-size:15px;letter-spacing:.14em;color:var(--choco-deep)}
+.tl-marks .gap{position:absolute;top:92px;width:130px;text-align:center;font-family:'Caveat',cursive;font-size:21px;color:var(--cherry-deep);line-height:1}
+.tl-marks .stem{position:absolute;top:132px;width:0;height:68px;border-left:2px dashed rgba(59,36,23,.55)}
+
+/* stops — directly placed on the slide */
+.stop{position:absolute;width:280px;height:380px;background:var(--cream);border:1.5px solid var(--chocolate);padding:18px 18px 60px;display:flex;flex-direction:column;box-shadow:4px 4px 0 rgba(59,36,23,.15);top:520px;z-index:5}
+.stop.b{background:var(--butter-soft);box-shadow:4px 4px 0 var(--cherry)}
+.stop.c{background:#FBF5E5}
+.stop.d{background:var(--cream)}
+
+.stop .s-pic{height:110px;background:var(--paper);border:1px solid var(--chocolate);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;position:relative;overflow:hidden}
+.stop .s-num{position:absolute;top:6px;right:8px;background:var(--chocolate);color:var(--butter);padding:2px 9px;font-family:'Fraunces',serif;font-weight:900;font-size:16px;line-height:1;z-index:2}
+.stop .s-name{font-family:'Fraunces',serif;font-weight:900;font-size:22px;color:var(--choco-deep);line-height:1.05;margin-bottom:8px;letter-spacing:-.005em}
+.stop .s-time{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:8px}
+.stop p{font-family:'Fraunces',serif;font-size:15px;color:var(--chocolate);line-height:1.4;flex:1}
+.stop .s-foot{position:absolute;bottom:14px;left:18px;right:18px;font-family:'Caveat',cursive;font-size:18px;color:var(--cherry-deep);line-height:1.1;border-top:1px dashed var(--cherry);padding-top:6px}
+
+/* Footer chapter chip */
+.chip{position:absolute;left:100px;bottom:40px;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--chocolate);background:var(--butter-soft);padding:6px 12px;border:1px solid var(--chocolate);z-index:6}
+.pn-right{position:absolute;right:100px;bottom:40px;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.4em;color:var(--chocolate);text-transform:uppercase;background:var(--butter-soft);padding:6px 12px;border:1px solid var(--chocolate);z-index:6;display:none}
+
+/* bell-style floating handwritten line */
+.handline{position:absolute;font-family:'Caveat',cursive;color:var(--cherry-deep);font-size:24px;line-height:1.1;z-index:7}
+</style>
+</head>
+<body>
+<div class="slide">
+
+<div class="head">
+  <div class="ht">★ CHAPTER EIGHT · ONE CUSTOMER · ONE DAY ★</div>
+  <h2>A customer's<em>day.</em></h2>
+  <div class="hsub">Follow Mira — a regular from the second flat up — through one morning at the cafe. Same door, same stool she always takes, same order she always remembers to change.</div>
+</div>
+
+<!-- Timeline band: one morning, end to end -->
+<div data-object="true" data-object-type="textbox" class="tl-caption">★ ONE MORNING, END TO END — 7:16 AM TO 8:24 AM · 68 MINUTES · SIX STOPS ★</div>
+
+<div data-object="true" data-object-type="shape" class="tl-band"></div>
+
+<div data-object="true" data-object-type="textbox" class="tl-marks">
+  <div class="rail"></div>
+
+  <div class="tm" style="left:70px">7:16 AM</div>
+  <div class="tm" style="left:370px">7:22 AM</div>
+  <div class="tm" style="left:670px">7:25 AM</div>
+  <div class="tm" style="left:970px">7:35 AM</div>
+  <div class="tm" style="left:1270px">8:10 AM</div>
+  <div class="tm" style="left:1570px">8:24 AM</div>
+
+  <div class="tick on" style="left:128px">1</div>
+  <div class="tick" style="left:428px">2</div>
+  <div class="tick" style="left:728px">3</div>
+  <div class="tick on" style="left:1028px">4</div>
+  <div class="tick" style="left:1328px">5</div>
+  <div class="tick on" style="left:1628px">6</div>
+
+  <div class="gap" style="left:225px">+6 min</div>
+  <div class="gap" style="left:525px">+3 min</div>
+  <div class="gap" style="left:825px">+10 min</div>
+  <div class="gap" style="left:1125px">+35 min — the long, still stretch</div>
+  <div class="gap" style="left:1425px">+14 min</div>
+
+  <div class="stem" style="left:140px"></div>
+  <div class="stem" style="left:440px"></div>
+  <div class="stem" style="left:740px"></div>
+  <div class="stem" style="left:1040px"></div>
+  <div class="stem" style="left:1340px"></div>
+  <div class="stem" style="left:1640px"></div>
+</div>
+
+  <div data-object="true" data-object-type="textbox" class="stop b" style="left:100px">
+    <div class="s-num">01</div>
+    <div class="s-pic">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="20" y="14" width="60" height="68" fill="#3F5C3B"/>
+        <rect x="30" y="26" width="40" height="20" fill="#FBE3A2"/>
+        <circle cx="50" cy="36" r="6" fill="#C8342B"/>
+        <line x1="50" y1="46" x2="50" y2="72"/>
+        <circle cx="50" cy="78" r="3" fill="#F5C04A"/>
+      </svg>
+    </div>
+    <div class="s-time">7:16 AM</div>
+    <div class="s-name">Push through the door</div>
+    <p>The bell gives one short ring. Mira steps out of the morning rain, hangs her coat on the second peg by the wall — never the first.</p>
+    <div class="s-foot">"the second peg<br>is mine by habit."</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="stop c" style="left:400px">
+    <div class="s-num">02</div>
+    <div class="s-pic">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="22" y="36" width="48" height="40" fill="#F4E9D4"/>
+        <path d="M22 36 L46 56 L70 36"/>
+        <circle cx="46" cy="46" r="5" fill="#C8342B"/>
+      </svg>
+    </div>
+    <div class="s-time">7:22 AM</div>
+    <div class="s-name">Order at the counter</div>
+    <p>A laminated menu she does not need. A honey-lavender flat white and a butter croissant today — switch to the rye and the cortado on Wednesdays.</p>
+    <div class="s-foot">"I always vary<br>only one of the two."</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="stop d" style="left:700px">
+    <div class="s-num">03</div>
+    <div class="s-pic">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="50" cy="62" rx="34" ry="14" fill="#C8342B" opacity=".3"/>
+        <path d="M30 30 Q30 22 50 22 Q70 22 70 30 L70 64 Q70 70 64 70 L36 70 Q30 70 30 64 Z" fill="#F4E9D4"/>
+        <line x1="50" y1="22" x2="50" y2="70" stroke-dasharray="3 4"/>
+      </svg>
+    </div>
+    <div class="s-time">7:25 AM</div>
+    <div class="s-name">Find her stool</div>
+    <p>The stool by the window with the chipped foot — a small flaw the cafe has refused to fix for sentimental reasons. She pads it with a folded napkin.</p>
+    <div class="s-foot">"the chip is part<br>of the stool now."</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="stop b" style="left:1000px">
+    <div class="s-num">04</div>
+    <div class="s-pic">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="50" cy="50" rx="22" ry="20" fill="#F5C04A"/>
+        <path d="M28 50 Q50 30 72 50"/>
+        <path d="M34 56 L42 50 L36 46"/>
+        <path d="M66 56 L58 50 L64 46"/>
+      </svg>
+    </div>
+    <div class="s-time">7:35 AM</div>
+    <div class="s-name">Tear, bite, read</div>
+    <p>The croissant gives way in three clean layers. She reads the same paperback she has been reading since spring, slowly, with a thumb holding the page.</p>
+    <div class="s-foot">"three bites,<br>three pages."</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="stop c" style="left:1300px">
+    <div class="s-num">05</div>
+    <div class="s-pic">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="22" y="38" width="56" height="40" fill="#F4E9D4"/>
+        <path d="M22 38 L50 62 L78 38"/>
+        <line x1="34" y1="38" x2="50" y2="56"/>
+        <line x1="66" y1="38" x2="50" y2="56"/>
+      </svg>
+    </div>
+    <div class="s-time">8:10 AM</div>
+    <div class="s-name">Stay ten more minutes</div>
+    <p>A second short coffee, ordered at the table by a waiter who knows the table she is at. No menu is brought; the small second cup comes quietly.</p>
+    <div class="s-foot">"the second cup<br>is unspoken."</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="stop d" style="left:1600px">
+    <div class="s-num">06</div>
+    <div class="s-pic">
+      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="26" y="22" width="48" height="60" fill="#FBE3A2"/>
+        <rect x="26" y="22" width="48" height="14" fill="#C8342B"/>
+        <path d="M40 44 L60 44 M40 52 L60 52 M40 60 L52 60"/>
+      </svg>
+    </div>
+    <div class="s-time">8:24 AM</div>
+    <div class="s-name">A loaf to take home</div>
+    <p>On the way out she swaps a paper-wrapped sourdough from the counter for tomorrow's breakfast. The bag is stamped with her name in soft pencil.</p>
+    <div class="s-foot">"tomorrow,<br>the same door."</div>
+  </div>
+
+
+
+<div class="chip">CHAPTER 08 · ONE MORNING AT THE HEARTH</div>
+<div class="pn-right">PAGE 08 / 10</div>
+
+</div>
+
+<template data-slide-notes>This page follows a single fictional customer's morning — Mira — from door push to takeaway. It carries no real name, address, or quoted review; the customer is a composite drawn to give the slide body without inventing testimonials.</template>
+</body>
+</html>

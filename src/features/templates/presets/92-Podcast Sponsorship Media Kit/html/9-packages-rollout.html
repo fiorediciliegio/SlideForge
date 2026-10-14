@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Packages & Rollout</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE SIGNAL ROOM — Sponsorship Media Kit
+   Shared design system: type, color, surface treatments.
+   Layout/position stays inline on each data-object.
+   ============================================================ */
+
+:root{
+  /* Core palette — warm editorial "on-air" */
+  --ink:        #171310;
+  --ink-2:      #221C18;
+  --ink-3:      #2E2622;
+  --cream:      #F6F1E7;
+  --cream-2:    #EDE5D6;
+  --amber:      #E39B34;
+  --amber-deep: #A8571F;
+  --clay:       #B4472C;
+  --olive:      #6E7A55;
+
+  /* Derived */
+  --ink-70: rgba(23,19,16,.70);
+  --ink-52: rgba(23,19,16,.52);
+  --ink-40: rgba(23,19,16,.40);
+  --ink-14: rgba(23,19,16,.14);
+  --ink-07: rgba(23,19,16,.07);
+  --cr-78:  rgba(246,241,231,.78);
+  --cr-58:  rgba(246,241,231,.58);
+  --cr-40:  rgba(246,241,231,.40);
+  --cr-16:  rgba(246,241,231,.16);
+  --cr-08:  rgba(246,241,231,.08);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  font-family:'Karla','Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-light{
+  background:
+    radial-gradient(1200px 640px at 88% -12%, rgba(227,155,52,.13) 0%, rgba(227,155,52,0) 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(180,71,44,.09) 0%, rgba(180,71,44,0) 60%),
+    #F6F1E7;
+}
+.bg-dark{
+  background:
+    radial-gradient(1100px 620px at 92% -10%, rgba(227,155,52,.20) 0%, rgba(227,155,52,0) 60%),
+    radial-gradient(900px 560px at -6% 106%, rgba(180,71,44,.16) 0%, rgba(180,71,44,0) 62%),
+    #171310;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--amber-deep); margin:0;
+}
+.eyebrow.on-dark{ color:var(--amber); }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:88px; line-height:1.02; letter-spacing:-.02em;
+  color:var(--cream); margin:0;
+}
+.h2{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:56px; line-height:1.08; letter-spacing:-.018em;
+  color:var(--ink); margin:0;
+}
+.h2.on-dark{ color:var(--cream); }
+.h3{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:30px; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.h3.on-dark{ color:var(--cream); }
+.h4{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:23px; line-height:1.24; letter-spacing:-.004em;
+  color:var(--ink); margin:0;
+}
+.h4.on-dark{ color:var(--cream); }
+
+.lead{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:26px; line-height:1.52; color:var(--ink-70); margin:0;
+}
+.lead.on-dark{ color:var(--cr-78); }
+
+.body{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:20px; line-height:1.5; color:var(--ink-70); margin:0;
+}
+.body.on-dark{ color:var(--cr-78); }
+
+.micro{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-40); margin:0;
+}
+.micro.on-dark{ color:var(--cr-40); }
+
+.metric{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:66px; line-height:1; letter-spacing:-.028em;
+  color:var(--ink); margin:0; font-variant-numeric: tabular-nums;
+}
+.metric.on-dark{ color:var(--cream); }
+.metric .unit{ font-size:.46em; font-weight:700; letter-spacing:0; }
+
+.tag{
+  display:inline-block; font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px 5px; border-radius:var(--r-sm);
+  background:rgba(227,155,52,.20); color:var(--amber-deep);
+}
+.tag.on-dark{ background:rgba(227,155,52,.18); color:var(--amber); }
+
+/* ---------- Surfaces ---------- */
+.card{
+  background:#FFFDF8; border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-quiet{
+  background:rgba(23,19,16,.035); border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-dark{
+  background:rgba(246,241,231,.055); border:1px solid var(--cr-16);
+  border-radius:var(--r-md);
+}
+.card-ink{
+  background:var(--ink); border:1px solid rgba(23,19,16,1);
+  border-radius:var(--r-md);
+}
+.card-amber{
+  background:var(--amber); border:1px solid var(--amber);
+  border-radius:var(--r-md);
+}
+.rule{ background:var(--ink-14); }
+.rule-dark{ background:var(--cr-16); }
+
+/* ---------- Chart primitives ---------- */
+.bar-track{ background:var(--ink-07); border-radius:2px; overflow:hidden; }
+.bar-track-dark{ background:rgba(246,241,231,.10); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; border-radius:2px; }
+
+table.kit{ border-collapse:collapse; width:100%; }
+table.kit th{
+  font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+  text-align:left; padding:0 0 12px; border-bottom:1px solid var(--ink-14);
+}
+table.kit td{
+  font-family:'Karla',sans-serif; font-size:20px; color:var(--ink);
+  padding:15px 0; border-bottom:1px solid var(--ink-07);
+  font-variant-numeric: tabular-nums;
+}
+table.kit.on-dark th{ color:var(--cr-40); border-bottom-color:var(--cr-16); }
+table.kit.on-dark td{ color:var(--cream); border-bottom-color:rgba(246,241,231,.09); }
+</style>
+</head>
+<body>
+<div class="slide bg-light" data-screen-label="09 Packages & Rollout" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:0px; top:0px; width:10px; height:1080px; z-index:1; background:var(--ink);"></div>
+
+  <p class="eyebrow" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:84px; width:700px; z-index:10;">09 — Packages &amp; rollout</p>
+
+  <h2 class="h2" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:128px; width:820px; z-index:10;">Three ways in</h2>
+
+  <p class="lead" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1020px; top:132px; width:780px; z-index:10; font-size:21px;">
+    All packages include category exclusivity, tracked links and the day-14 / day-30 report. Season 4 inventory is sold in flights of four episodes or more.</p>
+
+  <!-- STARTER -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:288px; width:508px; height:498px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:320px; width:436px; z-index:10;">Package 01</p>
+  <h3 class="h3" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:156px; top:352px; width:436px; z-index:10; font-size:32px;">Test Flight</h3>
+  <p class="metric" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:404px; width:436px; z-index:10; font-size:46px;">$18<span class="unit">K</span></p>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:466px; width:436px; z-index:10; font-size:18px;">4 episodes · one month</p>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:156px; top:512px; width:436px; height:1px; z-index:1; background:var(--ink-14);"></div>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:540px; width:436px; z-index:10; font-size:19px; line-height:1.86;">
+    4 × mid-roll host read<br>
+    2 × newsletter block<br>
+    Tracked URL + offer code<br>
+    Day-30 performance report</p>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:730px; width:436px; z-index:10;">Best for first-time audio buyers</p>
+
+  <!-- SEASON — featured -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:660px; top:264px; width:508px; height:546px; z-index:1; background:var(--ink); border-radius:6px;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:660px; top:264px; width:508px; height:6px; z-index:5; background:var(--amber); border-radius:6px 6px 0 0;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:696px; top:300px; width:436px; z-index:10; display:flex; justify-content:space-between; align-items:center;">
+    <span class="micro on-dark" style="color:var(--cr-58);">Package 02</span>
+    <span class="tag on-dark">Most partners</span>
+  </div>
+  <h3 class="h3 on-dark" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:696px; top:348px; width:436px; z-index:10; font-size:32px;">Season Partner</h3>
+  <p class="metric on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:696px; top:400px; width:436px; z-index:10; font-size:46px;">$64<span class="unit">K</span></p>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:696px; top:462px; width:436px; z-index:10; font-size:18px;">12 episodes · one quarter</p>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:696px; top:508px; width:436px; height:1px; z-index:1; background:var(--cr-16);"></div>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:696px; top:536px; width:436px; z-index:10; font-size:19px; line-height:1.86;">
+    12 × mid-roll + pre-roll pair<br>
+    12 × newsletter block<br>
+    1 × named segment run<br>
+    Quarterly brand-lift survey<br>
+    Category exclusivity, full quarter</p>
+  <p class="micro on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:696px; top:754px; width:436px; z-index:10; color:var(--cr-58);">Saves 18% vs. per-episode rates</p>
+
+  <!-- TITLE -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1200px; top:288px; width:600px; height:498px; z-index:1; background:#FFFDF8; border:1px solid var(--ink-14); border-radius:6px;"></div>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1236px; top:320px; width:528px; z-index:10;">Package 03</p>
+  <h3 class="h3" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:1236px; top:352px; width:528px; z-index:10; font-size:32px;">Title Sponsor</h3>
+  <p class="metric" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1236px; top:404px; width:528px; z-index:10; font-size:46px;">$180<span class="unit">K</span></p>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1236px; top:466px; width:528px; z-index:10; font-size:18px;">Full season · 40 episodes</p>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1236px; top:512px; width:528px; height:1px; z-index:1; background:var(--ink-14);"></div>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1236px; top:540px; width:528px; z-index:10; font-size:19px; line-height:1.86;">
+    Everything in Season Partner, ×3<br>
+    “Presented by” in show name and art<br>
+    2 × live event recordings<br>
+    Two co-branded research episodes<br>
+    First refusal on Season 5</p>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1236px; top:730px; width:528px; z-index:10;">One sponsor per season · limited to one</p>
+
+  <!-- rollout timeline -->
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:852px; width:900px; z-index:10;">Rollout — from signature to first report</p>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:912px; width:1680px; height:3px; z-index:1; background:var(--ink-14); border-radius:2px;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:912px; width:420px; height:3px; z-index:5; background:var(--amber); border-radius:2px;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:904px; width:19px; height:19px; z-index:6; border-radius:50%; background:var(--amber); border:3px solid var(--cream);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:540px; top:904px; width:19px; height:19px; z-index:6; border-radius:50%; background:var(--amber); border:3px solid var(--cream);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:904px; width:19px; height:19px; z-index:6; border-radius:50%; background:var(--ink); border:3px solid var(--cream);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1380px; top:904px; width:19px; height:19px; z-index:6; border-radius:50%; background:var(--ink); border:3px solid var(--cream);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:948px; width:360px; z-index:10;">
+    <p class="h4" style="font-size:20px;">Week 1 · Sign &amp; brief</p>
+    <p class="body" style="margin-top:8px; font-size:17px;">Insertion order, exclusivity locked, brief received.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:540px; top:948px; width:360px; z-index:10;">
+    <p class="h4" style="font-size:20px;">Week 2 · Product session</p>
+    <p class="body" style="margin-top:8px; font-size:17px;">Walkthrough with your team, first script drafted.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:948px; width:360px; z-index:10;">
+    <p class="h4" style="font-size:20px;">Week 3 · First episode airs</p>
+    <p class="body" style="margin-top:8px; font-size:17px;">Read live Tuesday, newsletter ships same morning.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:948px; width:360px; z-index:10;">
+    <p class="h4" style="font-size:20px;">Week 5 · First report</p>
+    <p class="body" style="margin-top:8px; font-size:17px;">Downloads, clicks and codes reconciled with your CRM.</p>
+  </div>
+
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1740px; top:852px; width:60px; text-align:right; z-index:10;">09</p>
+</div>
+</body>
+</html>

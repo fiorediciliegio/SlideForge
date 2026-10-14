@@ -1,0 +1,146 @@
+{
+  "id": "143-Q4 Strategic Business Plan Cover",
+  "version": 1,
+  "ppt_number": 143,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "dark",
+  "color": [
+    "blue",
+    "red",
+    "white"
+  ],
+  "name": "Q4 Strategic Business Plan Cover",
+  "description": "Quarterly strategy cover with a deep navy field, sharply contrasting red diagonal panel, frosted quarter numeral, and white executive typography.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["strategy"],"industries":["business"],"audiences":["employee"],"formats":["roadmap"],"primary_styles":["formal","dark"],"visual_traits":["formal","dark","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Quarterly strategy cover with a deep navy field, sharply contrasting red diagonal panel, frosted quarter numeral, and white executive typography."
+    },
+    {
+      "path": "images/2-q4-strategic-priorities.webp",
+      "alt": "Q4 Strategic Priorities reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-q4-execution-roadmap.webp",
+      "alt": "Q4 Execution Roadmap reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-growth-and-margin-outlook.webp",
+      "alt": "Growth & Margin Outlook reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-priorities-risks-and-next-steps.webp",
+      "alt": "Priorities, Risks & Next Steps reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Quarterly strategy cover with a deep navy field, sharply contrasting red diagonal panel, frosted quarter numeral, and white executive typography."
+    },
+    {
+      "path": "html/2-q4-strategic-priorities.html",
+      "description": "Q4 Strategic Priorities reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-q4-execution-roadmap.html",
+      "description": "Q4 Execution Roadmap reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-growth-and-margin-outlook.html",
+      "description": "Growth & Margin Outlook reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-priorities-risks-and-next-steps.html",
+      "description": "Priorities, Risks & Next Steps reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "strategy-navy-signal",
+      "name": "Navy Signal",
+      "swatches": [
+        "#071A33",
+        "#E8EEF6",
+        "#DA1330",
+        "#16406E"
+      ],
+      "roles": {
+        "bg": "#071A33",
+        "surface": "#0B2547",
+        "ink": "#E8EEF6",
+        "muted": "#9EB4CE",
+        "accent_primary": "#DA1330",
+        "accent_secondary": "#16406E",
+        "accent_tertiary": "#FF5C72",
+        "line": "#27517D"
+      }
+    },
+    {
+      "id": "strategy-evergreen-gold",
+      "name": "Evergreen Gold",
+      "swatches": [
+        "#061E1B",
+        "#F1FAF5",
+        "#D39A28",
+        "#2D7368"
+      ],
+      "roles": {
+        "bg": "#061E1B",
+        "surface": "#0B302C",
+        "ink": "#F1FAF5",
+        "muted": "#B6D2C6",
+        "accent_primary": "#D39A28",
+        "accent_secondary": "#2D7368",
+        "accent_tertiary": "#F3C765",
+        "line": "#275C56"
+      }
+    },
+    {
+      "id": "strategy-aubergine-coral",
+      "name": "Aubergine Coral",
+      "swatches": [
+        "#1A0F24",
+        "#FBF5FC",
+        "#E46559",
+        "#6A4388"
+      ],
+      "roles": {
+        "bg": "#1A0F24",
+        "surface": "#30203F",
+        "ink": "#FBF5FC",
+        "muted": "#CFBED5",
+        "accent_primary": "#E46559",
+        "accent_secondary": "#6A4388",
+        "accent_tertiary": "#FF9A82",
+        "line": "#563A6A"
+      }
+    },
+    {
+      "id": "strategy-cobalt-tangerine",
+      "name": "Cobalt Tangerine",
+      "swatches": [
+        "#08162B",
+        "#EFF6FF",
+        "#E67A36",
+        "#2A6FB0"
+      ],
+      "roles": {
+        "bg": "#08162B",
+        "surface": "#102C50",
+        "ink": "#EFF6FF",
+        "muted": "#B7CAE3",
+        "accent_primary": "#E67A36",
+        "accent_secondary": "#2A6FB0",
+        "accent_tertiary": "#FFAA5D",
+        "line": "#28547E"
+      }
+    }
+  ]
+}

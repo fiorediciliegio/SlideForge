@@ -1,0 +1,63 @@
+{
+  "id": "85-Pitch Deck for a Web3 Infrastructure Project",
+  "version": 1,
+  "ppt_number": 85,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "cyan",
+    "lime",
+    "purple"
+  ],
+  "name": "Pitch Deck for a Web3 Infrastructure Project",
+  "description": "Futuristic Web3 design with near-black fields, electric cyan networks, lime highlights, and dense modular system diagrams.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["technology"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["dark"],"visual_traits":["dark","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "近黑色、电光青与荧光绿构成封面底色，左侧上方超大标题与几何色块与细线前后呼应。"
+    },
+    {
+      "path": "images/2-pain-and-opportunity.webp",
+      "alt": "近黑色、电光青与荧光绿页面，双面板划分主体区域，核心判断强化对比。"
+    },
+    {
+      "path": "images/3-architecture.webp",
+      "alt": "近黑色、电光青与荧光绿页面，标题、细线与留白划分层级，产品信息收束版面。"
+    },
+    {
+      "path": "images/4-ecosystem-and-competition.webp",
+      "alt": "近黑色、电光青与荧光绿页面，四块卡片组成三列网格，人群关系形成重心。"
+    },
+    {
+      "path": "images/5-team-roadmap-funds.webp",
+      "alt": "近黑色、电光青与荧光绿页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，左侧上方以超大标题建立焦点，近黑色、电光青与荧光绿贯穿背景与强调元素；几何色块与细线和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-pain-and-opportunity.html",
+      "description": "近黑色、电光青与荧光绿画面，标题置于左上方；两块主面板建立清晰分区，问题陈述与强调数字顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-architecture.html",
+      "description": "左上方标题锚定近黑色、电光青与荧光绿画面；单一大面板承载主体信息，功能模块与结构示意嵌入主体模块。"
+    },
+    {
+      "path": "html/4-ecosystem-and-competition.html",
+      "description": "近黑色、电光青与荧光绿作为底色，标题落在左上方；四块信息卡横向并列，一幅图表落在中央，一组表格位于右侧。"
+    },
+    {
+      "path": "html/5-team-roadmap-funds.html",
+      "description": "标题固定在左上方，近黑色、电光青与荧光绿分隔主体；横向时间轴串联阶段节点与日期标记，一幅图表落在右侧，阶段节点与时间标记补充层级。"
+    }
+  ]
+}

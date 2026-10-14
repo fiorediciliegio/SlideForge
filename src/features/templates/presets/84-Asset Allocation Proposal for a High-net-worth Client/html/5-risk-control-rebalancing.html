@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risk control and rebalancing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;background:#171918;} table{border-collapse:collapse;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Risk control & rebalancing" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#171918;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; z-index:1; background-image:repeating-linear-gradient(0deg, rgba(244,240,232,0.022) 0px, rgba(244,240,232,0.022) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 5px), linear-gradient(160deg,#1b1e1c 0%, #171918 60%, #131514 100%);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:56px; width:1100px; z-index:10; font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:23px; letter-spacing:0.18em; color:#B89A5A;">05 — RISK CONTROL &amp; GOVERNANCE</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:104px; width:1280px; z-index:10; font-family:'Cormorant Garamond',serif; font-weight:400; font-size:60px; line-height:1.1; color:#F4F0E8;">The allocation holds only if the rules are written down.</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1420px; top:110px; width:400px; z-index:10; text-align:right; font-family:'IBM Plex Sans',sans-serif; font-weight:300; font-size:24px; line-height:1.5; color:rgba(244,240,232,0.62);">Risk budget <span style="font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:28px; color:#F4F0E8;">9.4%</span> vol<br>Ceiling <span style="font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:28px; color:#B89A5A;">11.0%</span> vol</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:246px; width:1720px; height:1px; z-index:1; background:rgba(244,240,232,0.18);"></div>
+
+  <!-- Risk budget contribution -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:268px; width:620px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:23px; letter-spacing:0.12em; line-height:1.4; color:rgba(244,240,232,0.55);">RISK BUDGET — CONTRIBUTION<br>TO TOTAL VOLATILITY</div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:344px; width:620px; height:300px; z-index:10;">
+    <svg width="620" height="300" viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, sans-serif">
+      <g font-size="23" fill="rgba(244,240,232,0.85)" font-weight="300">
+        <text x="0" y="24">Global equities</text><text x="0" y="80">Domestic equities</text><text x="0" y="136">Private equity</text><text x="0" y="192">Real assets</text><text x="0" y="248">Bonds, ARP &amp; cash</text>
+      </g>
+      <g>
+        <rect x="276" y="4" width="137.5" height="26" fill="#165B43"/><rect x="276" y="60" width="96.3" height="26" fill="#2F8A63"/>
+        <rect x="276" y="116" width="61.9" height="26" fill="#D9C48A"/><rect x="276" y="172" width="41.3" height="26" fill="#B89A5A"/>
+        <rect x="276" y="228" width="34.4" height="26" fill="#9AA39D"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="23" font-weight="500" fill="#F4F0E8">
+        <text x="424" y="24">40%</text><text x="383" y="80">28%</text><text x="349" y="136">18%</text><text x="328" y="192">12%</text><text x="321" y="248">10%</text>
+      </g>
+      <line x1="276" y1="272" x2="620" y2="272" stroke="rgba(244,240,232,0.22)"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="19" fill="rgba(244,240,232,0.45)"><text x="276" y="294">0%</text><text x="620" y="294" text-anchor="end">50%</text></g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:664px; width:620px; z-index:10; font-family:'IBM Plex Sans',sans-serif; font-size:24px; font-weight:300; line-height:1.4; color:rgba(244,240,232,0.78);">Equities carry 68% of the risk on 51% of the capital — the intended, and monitored, concentration of the mandate.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:790px; top:268px; width:1px; height:492px; z-index:1; background:rgba(244,240,232,0.14);"></div>
+
+  <!-- Rebalance triggers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:840px; top:268px; width:980px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:23px; letter-spacing:0.12em; color:rgba(244,240,232,0.55);">REBALANCE TRIGGERS — TOLERANCE BANDS AND ACTIONS</div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute; left:840px; top:312px; width:980px; z-index:10;">
+    <table style="width:980px; table-layout:fixed; font-family:'IBM Plex Sans',sans-serif; color:#F4F0E8;">
+      <colgroup><col style="width:252px"><col style="width:118px"><col style="width:152px"><col style="width:458px"></colgroup>
+      <thead>
+        <tr style="border-bottom:1px solid rgba(244,240,232,0.28);">
+          <th style="text-align:left; padding:0 0 9px 0; font-family:'IBM Plex Mono',monospace; font-size:21px; font-weight:400; letter-spacing:0.1em; color:rgba(244,240,232,0.5);">SLEEVE</th>
+          <th style="text-align:right; padding:0 14px 9px 0; font-size:22px; font-weight:500;">Target</th>
+          <th style="text-align:right; padding:0 24px 9px 0; font-size:22px; font-weight:500;">Band</th>
+          <th style="text-align:left; padding:0 0 9px 0; font-size:22px; font-weight:500;">Action on breach</th>
+        </tr>
+      </thead>
+      <tbody style="font-size:23px;">
+        <tr style="border-bottom:1px solid rgba(244,240,232,0.10);"><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.88);">Total equities</td><td style="text-align:right; padding:11px 14px 11px 0; font-family:'IBM Plex Mono',monospace;">51%</td><td style="text-align:right; padding:11px 24px 11px 0; font-family:'IBM Plex Mono',monospace; color:#B89A5A;">± 5pp</td><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.78);">Trim to target within 10 business days</td></tr>
+        <tr style="border-bottom:1px solid rgba(244,240,232,0.10);"><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.88);">Bonds &amp; credit</td><td style="text-align:right; padding:11px 14px 11px 0; font-family:'IBM Plex Mono',monospace;">21%</td><td style="text-align:right; padding:11px 24px 11px 0; font-family:'IBM Plex Mono',monospace; color:#B89A5A;">± 4pp</td><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.78);">Fund equity trims; duration kept 4–6y</td></tr>
+        <tr style="border-bottom:1px solid rgba(244,240,232,0.10);"><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.88);">Illiquids (PE + RE)</td><td style="text-align:right; padding:11px 14px 11px 0; font-family:'IBM Plex Mono',monospace;">21%</td><td style="text-align:right; padding:11px 24px 11px 0; font-family:'IBM Plex Mono',monospace; color:#B89A5A;">+3 / −6pp</td><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.78);">No forced sale; adjust commitment pace</td></tr>
+        <tr style="border-bottom:1px solid rgba(244,240,232,0.10);"><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.88);">Single-name equity</td><td style="text-align:right; padding:11px 14px 11px 0; font-family:'IBM Plex Mono',monospace;">—</td><td style="text-align:right; padding:11px 24px 11px 0; font-family:'IBM Plex Mono',monospace; color:#B89A5A;">max 5%</td><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.78);">Staged reduction, tax-lot optimised</td></tr>
+        <tr style="border-bottom:1px solid rgba(244,240,232,0.10);"><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.88);">Liquidity reserve</td><td style="text-align:right; padding:11px 14px 11px 0; font-family:'IBM Plex Mono',monospace;">2.0m</td><td style="text-align:right; padding:11px 24px 11px 0; font-family:'IBM Plex Mono',monospace; color:#B89A5A;">min 1.5m</td><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.78);">Top up from bonds before any equity sale</td></tr>
+        <tr><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.88);">Portfolio drawdown</td><td style="text-align:right; padding:11px 14px 11px 0; font-family:'IBM Plex Mono',monospace;">—</td><td style="text-align:right; padding:11px 24px 11px 0; font-family:'IBM Plex Mono',monospace; color:#C9704A;">−15%</td><td style="padding:11px 0; font-weight:300; color:rgba(244,240,232,0.78);">Committee review within 5 business days</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:840px; top:664px; width:980px; z-index:10; font-family:'IBM Plex Sans',sans-serif; font-size:24px; font-weight:300; line-height:1.4; color:rgba(244,240,232,0.68);">Bands are checked monthly on month-end valuations. Breaches are documented with rationale, cost and tax impact — and reported whether or not action is taken.</div>
+
+  <!-- Governance calendar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:100px; top:790px; width:1720px; height:1px; z-index:1; background:rgba(244,240,232,0.18);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:810px; width:1720px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:23px; letter-spacing:0.12em; color:rgba(244,240,232,0.55);">ANNUAL GOVERNANCE CALENDAR</div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:854px; width:1720px; height:34px; z-index:10;">
+    <svg width="1720" height="34" viewBox="0 0 1720 34" xmlns="http://www.w3.org/2000/svg">
+      <line x1="9" y1="17" x2="1711" y2="17" stroke="rgba(244,240,232,0.22)" stroke-width="1"/>
+      <g fill="#165B43"><circle cx="9" cy="17" r="9"/><circle cx="438" cy="17" r="9"/><circle cx="867" cy="17" r="9"/><circle cx="1296" cy="17" r="9"/></g>
+      <circle cx="1711" cy="17" r="9" fill="#B89A5A"/>
+      <g fill="#F4F0E8"><circle cx="9" cy="17" r="3.5"/><circle cx="438" cy="17" r="3.5"/><circle cx="867" cy="17" r="3.5"/><circle cx="1296" cy="17" r="3.5"/></g>
+      <circle cx="1711" cy="17" r="3.5" fill="#171918"/>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:900px; width:1720px; z-index:10; font-family:'IBM Plex Sans',sans-serif; color:#F4F0E8;">
+    <div style="display:grid; grid-template-columns:429px 429px 429px 429px;">
+      <div style="padding-right:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:24px; color:#B89A5A; letter-spacing:0.08em;">Q1</div><div style="font-size:24px; font-weight:300; line-height:1.3; margin-top:6px; color:rgba(244,240,232,0.85);">Performance &amp; attribution review; tax-lot housekeeping</div></div>
+      <div style="padding-right:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:24px; color:#B89A5A; letter-spacing:0.08em;">Q2</div><div style="font-size:24px; font-weight:300; line-height:1.3; margin-top:6px; color:rgba(244,240,232,0.85);">Assumptions refresh; strategic allocation re-approval</div></div>
+      <div style="padding-right:32px;"><div style="font-family:'IBM Plex Mono',monospace; font-size:24px; color:#B89A5A; letter-spacing:0.08em;">Q3</div><div style="font-size:24px; font-weight:300; line-height:1.3; margin-top:6px; color:rgba(244,240,232,0.85);">Stress test &amp; liquidity ladder; capital-call schedule</div></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace; font-size:24px; color:#B89A5A; letter-spacing:0.08em;">Q4</div><div style="font-size:24px; font-weight:300; line-height:1.3; margin-top:6px; color:rgba(244,240,232,0.85);">Estate &amp; succession alignment; mandate documentation</div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:1024px; width:1720px; z-index:10; font-family:'IBM Plex Mono',monospace; font-size:22px; color:rgba(244,240,232,0.42); letter-spacing:0.04em;">
+    <div style="display:flex; justify-content:space-between;"><span>ILLUSTRATIVE GOVERNANCE FRAMEWORK — BANDS AND TRIGGERS SUBJECT TO SIGNED MANDATE</span><span>05 / 05</span></div>
+  </div>
+
+</div>
+</body>
+</html>

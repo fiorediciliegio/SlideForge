@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pain &amp; Opportunity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;overflow:hidden;background:#120F1E;}
+  .sg{font-family:'Space Grotesk','Segoe UI',sans-serif;}
+  .mn{font-family:'IBM Plex Mono','Consolas',monospace;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 Pain &amp; Opportunity" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#120F1E;">
+
+  <!-- bg -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;background:radial-gradient(1100px 700px at 1560px 980px, rgba(24,209,209,0.10) 0%, rgba(24,209,209,0) 72%), #120F1E;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;opacity:0.22;background-image:linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);background-size:80px 80px;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:4px;z-index:1;background:linear-gradient(90deg,#18D1D1 0%,#B8F23D 100%);"></div>
+
+  <!-- header -->
+  <div data-object="true" data-object-type="textbox" class="mn" style="position:absolute;left:100px;top:78px;width:900px;height:34px;z-index:10;font-size:25px;letter-spacing:0.26em;color:#18D1D1;font-weight:500;">
+    02 &nbsp;/&nbsp; PROBLEM &amp; TIMING
+  </div>
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:96px;top:118px;width:1740px;height:74px;z-index:10;font-size:58px;line-height:1.14;font-weight:700;letter-spacing:-0.03em;color:#F2F0FA;">
+    Every new rollup adds users — and one more island.
+  </div>
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:100px;top:206px;width:1660px;height:84px;z-index:10;font-size:31px;line-height:1.3;font-weight:400;color:#9C98B3;">
+    Execution got cheap and modular. Coordination between execution environments did not — and it is the layer nobody owns.
+  </div>
+
+  <!-- ============ LEFT: developer pain journey ============ -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:100px;top:292px;width:700px;height:700px;z-index:1;background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.10);"></div>
+  <div data-object="true" data-object-type="textbox" class="mn" style="position:absolute;left:128px;top:316px;width:640px;height:32px;z-index:10;font-size:24px;letter-spacing:0.18em;color:#B8F23D;font-weight:600;">
+    DEVELOPER PAIN JOURNEY
+  </div>
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:128px;top:358px;width:644px;height:624px;z-index:10;color:#F2F0FA;">
+    <div style="display:grid;grid-template-columns:52px 1fr;row-gap:13px;column-gap:16px;align-items:start;">
+
+      <div class="mn" style="font-size:26px;color:#18D1D1;font-weight:600;padding-top:2px;">01</div>
+      <div>
+        <div style="font-size:30px;font-weight:600;line-height:1.2;">Pick a stack</div>
+        <div style="font-size:25px;color:#9C98B3;line-height:1.35;margin-top:4px;">DA, sequencer and bridge chosen once, locked in for years</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:10px;">
+          <div style="height:8px;width:120px;background:#18D1D1;opacity:0.55;"></div>
+          <div class="mn" style="font-size:22px;color:#6F6B85;">4–6 weeks</div>
+        </div>
+      </div>
+
+      <div class="mn" style="font-size:26px;color:#18D1D1;font-weight:600;padding-top:2px;">02</div>
+      <div>
+        <div style="font-size:30px;font-weight:600;line-height:1.2;">Wire interop by hand</div>
+        <div style="font-size:25px;color:#9C98B3;line-height:1.35;margin-top:4px;">One custom bridge per counterparty chain — N&times;N integrations</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:10px;">
+          <div style="height:8px;width:250px;background:#18D1D1;opacity:0.7;"></div>
+          <div class="mn" style="font-size:22px;color:#6F6B85;">2–4 months</div>
+        </div>
+      </div>
+
+      <div class="mn" style="font-size:26px;color:#18D1D1;font-weight:600;padding-top:2px;">03</div>
+      <div>
+        <div style="font-size:30px;font-weight:600;line-height:1.2;">Audit a growing surface</div>
+        <div style="font-size:25px;color:#9C98B3;line-height:1.35;margin-top:4px;">Each bridge is new trusted code and a new failure mode</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:10px;">
+          <div style="height:8px;width:330px;background:#B8F23D;opacity:0.8;"></div>
+          <div class="mn" style="font-size:22px;color:#6F6B85;">recurring</div>
+        </div>
+      </div>
+
+      <div class="mn" style="font-size:26px;color:#18D1D1;font-weight:600;padding-top:2px;">04</div>
+      <div>
+        <div style="font-size:30px;font-weight:600;line-height:1.2;">Operate split liquidity</div>
+        <div style="font-size:25px;color:#9C98B3;line-height:1.35;margin-top:4px;">Users re-bridge, depth fragments, support load compounds</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:10px;">
+          <div style="height:8px;width:420px;background:#B8F23D;"></div>
+          <div class="mn" style="font-size:22px;color:#6F6B85;">forever</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ RIGHT: market layer diagram ============ -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:840px;top:292px;width:980px;height:700px;z-index:1;background:rgba(24,209,209,0.045);border:1px solid rgba(24,209,209,0.20);"></div>
+  <div data-object="true" data-object-type="textbox" class="mn" style="position:absolute;left:868px;top:316px;width:920px;height:32px;z-index:10;font-size:24px;letter-spacing:0.18em;color:#18D1D1;font-weight:600;">
+    MODULAR STACK — WHERE VALUE IS UNCLAIMED
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:868px;top:360px;width:924px;height:88px;z-index:10;background:rgba(255,255,255,0.05);border-left:5px solid rgba(255,255,255,0.28);box-sizing:border-box;padding:14px 22px;">
+    <div style="font-size:29px;font-weight:600;color:#F2F0FA;">Applications</div>
+    <div class="mn" style="font-size:23px;color:#8E8AA3;margin-top:4px;">Perps · games · consumer wallets — commoditised distribution</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:868px;top:462px;width:924px;height:126px;z-index:10;background:rgba(184,242,61,0.13);border:2px solid #B8F23D;box-sizing:border-box;padding:14px 22px;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <div style="font-size:30px;font-weight:700;color:#B8F23D;">Interop &amp; shared execution</div>
+      <div class="mn" style="font-size:22px;color:#B8F23D;letter-spacing:0.12em;">OUR LAYER</div>
+    </div>
+    <div class="mn" style="font-size:23px;color:#D7E9AE;margin-top:6px;">No default standard today: per-pair bridges, custom relayers, manual ops.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:868px;top:602px;width:924px;height:88px;z-index:10;background:rgba(255,255,255,0.05);border-left:5px solid rgba(24,209,209,0.55);box-sizing:border-box;padding:14px 22px;">
+    <div style="font-size:29px;font-weight:600;color:#F2F0FA;">Execution / rollup frameworks</div>
+    <div class="mn" style="font-size:23px;color:#8E8AA3;margin-top:4px;">Mature and increasingly interchangeable</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:868px;top:706px;width:924px;height:88px;z-index:10;background:rgba(255,255,255,0.05);border-left:5px solid rgba(24,209,209,0.55);box-sizing:border-box;padding:14px 22px;">
+    <div style="font-size:29px;font-weight:600;color:#F2F0FA;">Data availability</div>
+    <div class="mn" style="font-size:23px;color:#8E8AA3;margin-top:4px;">Multiple credible providers — price competition</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="sg" style="position:absolute;left:868px;top:810px;width:924px;height:88px;z-index:10;background:rgba(255,255,255,0.05);border-left:5px solid rgba(24,209,209,0.55);box-sizing:border-box;padding:14px 22px;">
+    <div style="font-size:29px;font-weight:600;color:#F2F0FA;">Settlement / L1 trust</div>
+    <div class="mn" style="font-size:23px;color:#8E8AA3;margin-top:4px;">Fixed anchor — we inherit it, we do not replace it</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="mn" style="position:absolute;left:868px;top:916px;width:924px;height:64px;z-index:10;font-size:21px;line-height:1.36;color:#6F6B85;">
+    Effort ranges and layer maturity are <span style="color:#B8F23D;">illustrative assumptions</span>, not measured benchmarks.
+  </div>
+
+</div>
+</body>
+</html>

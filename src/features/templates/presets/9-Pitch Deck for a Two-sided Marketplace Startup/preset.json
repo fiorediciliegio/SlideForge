@@ -1,0 +1,103 @@
+{
+  "id": "9-Pitch Deck for a Two-sided Marketplace Startup",
+  "version": 1,
+  "ppt_number": 9,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "black",
+    "orange",
+    "cream",
+    "green"
+  ],
+  "name": "Pitch Deck for a Two-sided Marketplace Startup",
+  "description": "Bold marketplace design alternating near-black storytelling panels with cream analysis pages, orange highlights, and network diagrams.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["technology"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["dark"],"visual_traits":["dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "近黑色、活力橙与奶油白封面采用左侧上方超大标题，一幅图表与一块几何面板与留白形成对照。"
+    },
+    {
+      "path": "images/2-problem-two-sided.webp",
+      "alt": "近黑色、活力橙与奶油白页面，标题、细线与留白划分层级，核心判断收束版面。"
+    },
+    {
+      "path": "images/3-cost-of-status-quo.webp",
+      "alt": "近黑色、活力橙与奶油白页面，一幅图表集中排布，状态信息形成重心。"
+    },
+    {
+      "path": "images/4-solution-overview.webp",
+      "alt": "近黑色、活力橙与奶油白页面，一组表格压缩信息密度，概览信息拉开层级。"
+    },
+    {
+      "path": "images/5-platform-mechanics.webp",
+      "alt": "近黑色、活力橙与奶油白页面，一幅图表集中排布，产品信息组织动线。"
+    },
+    {
+      "path": "images/6-market-and-network-effects.webp",
+      "alt": "近黑色、活力橙与奶油白页面，三幅图表集中排布，人群信息强化对比。"
+    },
+    {
+      "path": "images/7-business-model.webp",
+      "alt": "近黑色、活力橙与奶油白页面，一幅图表集中排布，方案层级收束版面。"
+    },
+    {
+      "path": "images/8-traction-dashboard.webp",
+      "alt": "近黑色、活力橙与奶油白页面，一幅图表集中排布，指标信息形成重心。"
+    },
+    {
+      "path": "images/9-growth-roadmap.webp",
+      "alt": "近黑色、活力橙与奶油白页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    },
+    {
+      "path": "images/10-team-and-ask.webp",
+      "alt": "近黑色、活力橙与奶油白页面，一幅图表集中排布，人物卡组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页采用近黑色、活力橙与奶油白，超大标题锚定左侧上方；一幅图表与一块几何面板连接主体与边缘信息，留白保持画面张力。"
+    },
+    {
+      "path": "html/2-problem-two-sided.html",
+      "description": "近黑色、活力橙与奶油白作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，问题陈述与强调数字嵌入主体模块。"
+    },
+    {
+      "path": "html/3-cost-of-status-quo.html",
+      "description": "标题固定在左上方，近黑色、活力橙与奶油白分隔主体；留白与细线分隔出清晰阅读区，一幅图表落在中央，状态色、指标数字与摘要卡补充层级。"
+    },
+    {
+      "path": "html/4-solution-overview.html",
+      "description": "近黑色、活力橙与奶油白画面，标题置于左上方；留白与细线分隔出清晰阅读区，一组表格位于中央，摘要数字与概览模块补充层级。"
+    },
+    {
+      "path": "html/5-platform-mechanics.html",
+      "description": "左上方标题锚定近黑色、活力橙与奶油白画面；留白与细线分隔出清晰阅读区，一幅图表落在中央，功能模块与结构示意补充层级。"
+    },
+    {
+      "path": "html/6-market-and-network-effects.html",
+      "description": "近黑色、活力橙与奶油白作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，三幅图表落在中央，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/7-business-model.html",
+      "description": "标题固定在左上方，近黑色、活力橙与奶油白分隔主体；三组大号数字拉开视觉节奏，一幅图表落在右侧，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/8-traction-dashboard.html",
+      "description": "近黑色、活力橙与奶油白画面，标题置于左上方；留白与细线分隔出清晰阅读区，一幅指标图表落在左侧，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/9-growth-roadmap.html",
+      "description": "左上方标题锚定近黑色、活力橙与奶油白画面；横向时间轴串联阶段节点与日期标记，一幅图表落在左侧，阶段节点与时间标记补充层级。"
+    },
+    {
+      "path": "html/10-team-and-ask.html",
+      "description": "近黑色、活力橙与奶油白作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅图表落在左侧，人物信息与职责标签补充层级。"
+    }
+  ]
+}

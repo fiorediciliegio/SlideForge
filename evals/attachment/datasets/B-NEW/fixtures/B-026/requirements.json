@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create an 11-slide biotech pipeline review for the portfolio committee. Preserve programme stages and evidence status exactly. Do not add external clinical benchmarks or probability-of-success estimates."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Biotech portfolio committee",
+        "description": "Biotech portfolio committee"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Pipeline and funding review",
+        "description": "Pipeline and funding review"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Clarify stage, evidence, uncertainty, and decisions by programme",
+        "description": "Clarify stage, evidence, uncertainty, and decisions by programme"
+      }
+    ],
+    "slide_count": [
+      11
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Scientific, portfolio-oriented, disciplined",
+        "description": "Scientific, portfolio-oriented, disciplined"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Biotech portfolio committee",
+      "description": "Biotech portfolio committee"
+    },
+    "purpose": {
+      "label": "Pipeline and funding review",
+      "description": "Pipeline and funding review"
+    },
+    "desired_outcome": {
+      "label": "Clarify stage, evidence, uncertainty, and decisions by programme",
+      "description": "Clarify stage, evidence, uncertainty, and decisions by programme"
+    },
+    "slide_count": 11,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Scientific, portfolio-oriented, disciplined",
+      "description": "Scientific, portfolio-oriented, disciplined"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

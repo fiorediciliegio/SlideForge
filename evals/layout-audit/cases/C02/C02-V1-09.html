@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Caerlaverock 89th Meeting Minutes Master Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans SC', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --c-primary: #0F1B2D;
+    --c-accent: #1D4ED8;
+    --c-muted: #5A6B84;
+    --c-border: #E3E7EE;
+    --c-bg-light: #F5F7FA;
+    --c-white: #FFFFFF;
+    --fs-title: 48px;
+    --fs-subtitle: 24px;
+    --fs-body: 21px;
+    --fs-caption: 18px;
+    --fs-tag: 16px;
+  }
+  html, body { margin:0; padding:0; overflow:hidden; background:#111; }
+  .slide {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    box-sizing: border-box;
+    background: var(--c-white);
+    font-family: var(--font-sans);
+    color: var(--c-primary);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .f-header { position: absolute; left: 96px; top: 80px; width: 1728px; z-index: 100; }
+  .f-tag { font-family: var(--font-mono); font-size: var(--fs-tag); font-weight: 600; letter-spacing: 3px; color: var(--c-accent); margin-bottom: 12px; text-transform: uppercase; }
+  .f-title { font-size: var(--fs-title); font-weight: 700; letter-spacing: -1px; color: var(--c-primary); line-height: 1.2; margin-bottom: 12px; }
+  .f-meta { font-size: var(--fs-caption); color: var(--c-muted); font-family: var(--font-sans); }
+  .f-divider { position: absolute; left: 96px; top: 270px; width: 1728px; height: 1px; background: var(--c-border); z-index: 90; }
+  .content-area { position: absolute; left: 96px; top: 310px; width: 1728px; height: 640px; z-index: 50; font-size: var(--fs-body); line-height: 1.6; }
+  .f-footer { position: absolute; left: 96px; bottom: 50px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--c-border); padding-top: 20px; z-index: 100; }
+  .f-foot-left { font-family: var(--font-mono); font-size: var(--fs-tag); letter-spacing: 1.5px; color: var(--c-muted); text-transform: uppercase; }
+  .f-foot-right { font-family: var(--font-mono); font-size: var(--fs-subtitle); font-weight: 600; color: var(--c-primary); }
+
+  /* Custom Layout Styles */
+  .main-layout {
+    display: flex;
+    gap: 48px;
+    height: 100%;
+  }
+  .left-col {
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .right-col {
+    width: 1240px;
+    height: 100%;
+  }
+  .info-card {
+    background: var(--c-bg-light);
+    padding: 24px;
+    border-radius: 8px;
+  }
+  .info-card-title {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--c-accent);
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .attendee-list {
+    font-size: 17px;
+    color: var(--c-primary);
+    line-height: 1.6;
+  }
+  .attendee-group {
+    margin-bottom: 12px;
+  }
+  .attendee-group strong {
+    color: var(--c-primary);
+    font-weight: 600;
+  }
+  .attendee-group span {
+    color: var(--c-muted);
+  }
+  .stat-grid {
+    display: flex;
+    gap: 16px;
+  }
+  .stat-box {
+    flex: 1;
+    background: var(--c-bg-light);
+    padding: 16px 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--c-accent);
+  }
+  .stat-val {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--c-primary);
+    line-height: 1.2;
+    font-family: var(--font-mono);
+  }
+  .stat-lbl {
+    font-size: 14px;
+    color: var(--c-muted);
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  
+  /* Table Styles */
+  .minutes-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .minutes-table th {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--c-muted);
+    text-align: left;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--c-primary);
+    text-transform: uppercase;
+  }
+  .minutes-table td {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--c-border);
+    font-size: 17px;
+    line-height: 1.45;
+    vertical-align: top;
+  }
+  .col-topic { width: 220px; font-weight: 700; color: var(--c-primary); }
+  .col-decision { width: 560px; color: var(--c-primary); padding-right: 20px; }
+  .col-action { width: 460px; }
+  
+  /* Action Item Tags */
+  .action-item-box {
+    margin-bottom: 6px;
+  }
+  .action-item-box:last-child {
+    margin-bottom: 0;
+  }
+  .ap-tag {
+    background: #EEF2FF;
+    color: var(--c-accent);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .ap-text {
+    font-size: 16px;
+    color: var(--c-primary);
+  }
+  .ap-owner {
+    color: var(--c-muted);
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Header -->
+  <header class="f-header" data-fixed="true">
+    <div class="f-tag">089 · MEETING MINUTES SUMMARY</div>
+    <h1 class="f-title">第 89 次会议讨论事项、决定与行动项汇总</h1>
+    <div class="f-meta">Caerlaverock Wildfowling Panel · 16 April 2025 · Chairman: Stuart Graham (NatureScot)</div>
+  </header>
+
+  <!-- Fixed Decorative Line -->
+  <div class="f-divider" data-fixed="true"></div>
+
+  <!-- Dynamic Content Area -->
+  <main class="content-area">
+    <div class="main-layout">
+      
+      <!-- Left Column: Metadata & Highlights -->
+      <div class="left-col">
+        <!-- Attendees Card -->
+        <div class="info-card">
+          <div class="info-card-title">ATTENDEES & APOLOGIES</div>
+          <div class="attendee-list">
+            <div class="attendee-group">
+              <strong>主席:</strong> Stuart Graham <span>(NatureScot)</span>
+            </div>
+            <div class="attendee-group">
+              <strong>NatureScot:</strong> Suzanne McIntyre, Andrew Over, Susan Copeland <span>(记录)</span>
+            </div>
+            <div class="attendee-group">
+              <strong>协会代表:</strong> Graeme Dalby <span>(CDWA)</span>, David Gilbert <span>(SSWA)</span>, Cameron Balfour <span>(BASC)</span>
+            </div>
+            <div class="attendee-group" style="margin-bottom: 0; padding-top: 8px; border-top: 1px dashed var(--c-border);">
+              <strong>请假:</strong> Anna Austin <span>(Caerlaverock Estate)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Meeting Info -->
+        <div class="info-card" style="padding: 20px 24px;">
+          <div class="info-card-title" style="margin-bottom: 4px;">NEXT PANEL MEETING</div>
+          <div style="font-size: 22px; font-weight: 700; color: var(--c-primary);">2026 年 4 月</div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-val">23%</div>
+            <div class="stat-lbl">许可实际使用率<br>(总申请 548 份)</div>
+          </div>
+          <div class="stat-box" style="border-left-color: #10B981;">
+            <div class="stat-val">0</div>
+            <div class="stat-lbl">连续两年违规记录<br>(维持现有监督模式)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Structured Table -->
+      <div class="right-col">
+        <table class="minutes-table">
+          <thead>
+            <tr>
+              <th class="col-topic">讨论事项</th>
+              <th class="col-decision">决定 / 结论</th>
+              <th class="col-action">行动项 / 负责人</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-topic">上届行动项回顾<br>& 管理员报告</td>
+              <td class="col-decision">确认 AP 88/2、88/4 已完成；AP 88/1、88/3 已在本次讨论。确认连续两年无违规记录。</td>
+              <td class="col-action"><span style="color: var(--c-muted); font-size: 15px;">—</span></td>
+            </tr>
+            <tr>
+              <td class="col-topic">野禽与猎取报告</td>
+              <td class="col-decision">分析粉脚雁、白额雁数量及许可证使用数据。决定维持现有猎取管理水平，关注粉脚雁分布变化。</td>
+              <td class="col-action"><span style="color: var(--c-muted); font-size: 15px;">—</span></td>
+            </tr>
+            <tr>
+              <td class="col-topic">新猎手支持机制</td>
+              <td class="col-decision">CDWA 和 SSWA 继续提供入场指导。新猎手申请时将由俱乐部提供可用支持。</td>
+              <td class="col-action">
+                <div class="action-item-box">
+                  <span class="ap-tag">AP89/2</span><span class="ap-text">预订表中提供新猎手数据</span>
+                  <span class="ap-owner">[NatureScot]</span>
+                </div>
+                <div class="action-item-box">
+                  <span class="ap-tag">AP89/3</span><span class="ap-text">起草新猎手支持建议信</span>
+                  <span class="ap-owner">[NatureScot]</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-topic">缺席预订处理<br>& 猎季日期调整</td>
+              <td class="col-decision">对多次未取消预订者发信提醒。考虑土地租赁、牲畜安全及候鸟恢复期，维持 10 月 1 日开始现状，下届继续讨论。</td>
+              <td class="col-action">
+                <div class="action-item-box">
+                  <span class="ap-tag">AP89/4</span><span class="ap-text">在需要时起草提醒信件</span>
+                  <span class="ap-owner">[NatureScot]</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-topic">安全标识优化<br>& 其他事项</td>
+              <td class="col-decision">决定在区域立柱上增加反光贴以辅助夜间撤离。</td>
+              <td class="col-action">
+                <div class="action-item-box">
+                  <span class="ap-tag">AP89/5</span><span class="ap-text">采购并安装反光贴</span>
+                  <span class="ap-owner">[NatureScot]</span>
+                </div>
+                <div class="action-item-box">
+                  <span class="ap-tag">其他</span><span class="ap-text">邮寄下季度管理员卡片</span>
+                  <span class="ap-owner">[Susan Copeland]</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="f-footer" data-fixed="true">
+    <div class="f-foot-left">CAERLAVEROCK GAME MANAGEMENT GROUP &times; 89TH MEETING MINUTES</div>
+    <div class="f-foot-right">01</div>
+  </footer>
+</div>
+</body>
+</html>

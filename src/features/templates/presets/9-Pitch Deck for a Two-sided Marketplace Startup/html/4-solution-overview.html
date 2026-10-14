@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solution — One Rail, Both Sides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;}
+  table{border-collapse:collapse;width:100%;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Solution overview" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4EFE6;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;background:#F4EFE6;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:86px;width:1240px;z-index:10;">
+    <div style="font-size:24px;font-weight:600;letter-spacing:4.5px;color:#C4552F;">03 · THE SOLUTION</div>
+    <div style="font-size:60px;font-weight:700;letter-spacing:-1.6px;line-height:1.08;color:#16130F;margin-top:16px;">One rail: verified supply, instant calls, fast money</div>
+  </div>
+
+  <!-- three pillars -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:272px;width:553px;height:300px;background:#16130F;border-radius:4px;padding:34px 36px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="width:38px;height:38px;border:2px solid #E0A33C;border-radius:3px;"></div>
+      <div style="font-size:22px;font-weight:600;letter-spacing:3px;color:#E0A33C;">01 · SUPPLY GRAPH</div>
+    </div>
+    <div style="font-size:34px;font-weight:700;color:#F4EFE6;margin-top:24px;letter-spacing:-0.5px;">Credentials, verified once</div>
+    <div style="font-size:25px;line-height:1.45;color:rgba(244,239,230,0.72);margin-top:16px;">Certifications, rigging tickets, insurance and shift history live on one crew profile — reusable across every buyer.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:683px;top:272px;width:554px;height:300px;background:#FFFFFF;border:1px solid rgba(22,19,15,0.10);border-radius:4px;padding:34px 36px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="width:38px;height:38px;border:2px solid #C4552F;border-radius:3px;"></div>
+      <div style="font-size:22px;font-weight:600;letter-spacing:3px;color:#C4552F;">02 · MATCH ENGINE</div>
+    </div>
+    <div style="font-size:34px;font-weight:700;color:#16130F;margin-top:24px;letter-spacing:-0.5px;">Crew calls that fill themselves</div>
+    <div style="font-size:25px;line-height:1.45;color:#5E564D;margin-top:16px;">Post roles, rates and call times once; ranked crew are notified and accept in-app. Median fill in 3.2 hours.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1257px;top:272px;width:553px;height:300px;background:#FFFFFF;border:1px solid rgba(22,19,15,0.10);border-radius:4px;padding:34px 36px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="width:38px;height:38px;border:2px solid #1F5B54;border-radius:3px;"></div>
+      <div style="font-size:22px;font-weight:600;letter-spacing:3px;color:#1F5B54;">03 · MONEY RAIL</div>
+    </div>
+    <div style="font-size:34px;font-weight:700;color:#16130F;margin-top:24px;letter-spacing:-0.5px;">Escrow in, payout in 48h</div>
+    <div style="font-size:25px;line-height:1.45;color:#5E564D;margin-top:16px;">Buyers fund the call sheet up front; verified clock-outs release payment, with tax forms and insurance handled.</div>
+  </div>
+
+  <!-- before / after table -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:598px;width:1700px;z-index:10;">
+    <div style="font-size:24px;font-weight:600;letter-spacing:3px;color:#8A8175;">WHAT CHANGES FOR A TYPICAL 40-PERSON SHOW</div>
+  </div>
+  <div data-object="true" data-object-type="table" style="position:absolute;left:110px;top:638px;width:1700px;height:314px;background:#FFFFFF;border:1px solid rgba(22,19,15,0.10);border-radius:4px;z-index:10;">
+    <table>
+      <thead>
+        <tr style="background:#EAE2D5;">
+          <th style="text-align:left;padding:16px 32px;font-size:23px;font-weight:600;letter-spacing:2.5px;color:#5E564D;width:34%;">METRIC</th>
+          <th style="text-align:left;padding:16px 24px;font-size:23px;font-weight:600;letter-spacing:2.5px;color:#5E564D;width:22%;">TODAY</th>
+          <th style="text-align:left;padding:16px 24px;font-size:23px;font-weight:600;letter-spacing:2.5px;color:#1F5B54;width:22%;">WITH STAGEHAND</th>
+          <th style="text-align:left;padding:16px 32px;font-size:23px;font-weight:600;letter-spacing:2.5px;color:#5E564D;width:22%;">SOURCE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-top:1px solid rgba(22,19,15,0.10);">
+          <td style="padding:15px 32px;font-size:27px;font-weight:600;color:#16130F;">Time to fill a call</td>
+          <td style="padding:15px 24px;font-size:27px;color:#8A8175;">3 days</td>
+          <td style="padding:15px 24px;font-size:27px;font-weight:700;color:#1F5B54;">3.2 hours</td>
+          <td style="padding:15px 32px;font-size:23px;color:#8A8175;">Platform median, LTM</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(22,19,15,0.10);">
+          <td style="padding:15px 32px;font-size:27px;font-weight:600;color:#16130F;">Fill rate</td>
+          <td style="padding:15px 24px;font-size:27px;color:#8A8175;">71%</td>
+          <td style="padding:15px 24px;font-size:27px;font-weight:700;color:#1F5B54;">94%</td>
+          <td style="padding:15px 32px;font-size:23px;color:#8A8175;">29,600 shifts, LTM</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(22,19,15,0.10);">
+          <td style="padding:15px 32px;font-size:27px;font-weight:600;color:#16130F;">Crew payout time</td>
+          <td style="padding:15px 24px;font-size:27px;color:#8A8175;">38 days</td>
+          <td style="padding:15px 24px;font-size:27px;font-weight:700;color:#1F5B54;">2 days</td>
+          <td style="padding:15px 32px;font-size:23px;color:#8A8175;">Escrow release logs</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(22,19,15,0.10);">
+          <td style="padding:15px 32px;font-size:27px;font-weight:600;color:#16130F;">Labour cost variance</td>
+          <td style="padding:15px 24px;font-size:27px;color:#8A8175;">&plusmn;14%</td>
+          <td style="padding:15px 24px;font-size:27px;font-weight:700;color:#1F5B54;">&plusmn;4%</td>
+          <td style="padding:15px 32px;font-size:23px;color:#8A8175;">Top-20 buyer sample</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:966px;width:1700px;height:1px;background:rgba(22,19,15,0.14);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:986px;width:700px;z-index:10;">
+    <div style="font-size:22px;letter-spacing:4px;color:#8A8175;">STAGEHAND · SERIES A</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1560px;top:986px;width:250px;z-index:10;">
+    <div style="font-size:22px;letter-spacing:2px;color:#8A8175;text-align:right;">04 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

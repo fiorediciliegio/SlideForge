@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audience insight</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURA Pods Pro — FY26 Launch Deck
+   Design system: White + Blue accent (single primary, two secondaries)
+   Type: Manrope (display/UI) + IBM Plex Mono (labels, numbers)
+   Radius 4px · hairline 1px · no gradients · no glow
+   ============================================================ */
+
+:root{
+  --ink:      #0F1B2D;   /* primary text            */
+  --ink-2:    #5B6B82;   /* secondary text          */
+  --ink-3:    #93A1B5;   /* tertiary / chrome text  */
+  --line:     #E4E9F0;   /* hairline                */
+  --line-2:   #F0F3F8;   /* faint hairline          */
+  --blue:     #1A56DB;   /* PRIMARY accent          */
+  --blue-ink: #123FA0;   /* accent, pressed         */
+  --blue-soft:#EDF2FE;   /* accent wash             */
+  --wash:     #F6F8FB;   /* neutral surface         */
+  --white:    #FFFFFF;
+
+  --r: 4px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--white);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---------- type roles (typography only; layout stays inline) ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--blue); margin:0;
+}
+.h1{ font-family:'Manrope',sans-serif; font-weight:800; font-size:58px;
+     line-height:1.12; letter-spacing:-.022em; color:var(--ink); margin:0; }
+.h1-xl{ font-family:'Manrope',sans-serif; font-weight:800; font-size:112px;
+     line-height:1.0; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.h2{ font-family:'Manrope',sans-serif; font-weight:700; font-size:34px;
+     line-height:1.25; letter-spacing:-.012em; color:var(--ink); margin:0; }
+.h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:25px;
+     line-height:1.3; color:var(--ink); margin:0; }
+.lead{ font-family:'Manrope',sans-serif; font-weight:500; font-size:29px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.body{ font-family:'Manrope',sans-serif; font-weight:500; font-size:23px;
+     line-height:1.55; color:var(--ink-2); margin:0; }
+.small{ font-family:'Manrope',sans-serif; font-weight:500; font-size:20px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.stat{ font-family:'Manrope',sans-serif; font-weight:800; font-size:88px;
+     line-height:.95; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.stat-sm{ font-family:'Manrope',sans-serif; font-weight:800; font-size:60px;
+     line-height:1; letter-spacing:-.03em; color:var(--ink); margin:0; }
+
+.mono{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:18px;
+     letter-spacing:.04em; color:var(--ink-2); margin:0; }
+.tag{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.tag-b{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin:0; }
+.idx{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:17px;
+     letter-spacing:.1em; color:var(--blue); margin:0; }
+.foot{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:15px;
+     letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+
+.accent{ color:var(--blue); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Audience insight" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:96px;width:900px;z-index:10;">
+    <p class="eyebrow">02 &nbsp;/&nbsp; Audience insight</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:150px;width:1000px;z-index:10;">
+    <h1 class="h1">Where the commuter<br>journey breaks down.</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1220px;top:162px;width:580px;z-index:10;">
+    <p class="body">Diary study, 240 premium-tier owners, 14 days. Satisfaction is high at purchase and collapses in the two moments that matter most — the walk out the door and the shared office.</p>
+  </div>
+
+  <!-- journey map -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:120px;top:376px;width:1680px;height:430px;z-index:10;">
+    <svg width="1680" height="430" viewBox="0 0 1680 430" xmlns="http://www.w3.org/2000/svg">
+      <!-- baseline grid -->
+      <line x1="0" y1="60" x2="1680" y2="60" stroke="#F0F3F8" stroke-width="1"/>
+      <line x1="0" y1="170" x2="1680" y2="170" stroke="#F0F3F8" stroke-width="1"/>
+      <line x1="0" y1="280" x2="1680" y2="280" stroke="#E4E9F0" stroke-width="1"/>
+      <text x="0" y="48" font-family="'IBM Plex Mono',monospace" font-size="15" letter-spacing="2" fill="#93A1B5">DELIGHTED</text>
+      <text x="0" y="304" font-family="'IBM Plex Mono',monospace" font-size="15" letter-spacing="2" fill="#93A1B5">FRUSTRATED</text>
+
+      <!-- emotion curve -->
+      <polyline points="230,92 520,132 810,258 1100,238 1390,150"
+                fill="none" stroke="#1A56DB" stroke-width="3" stroke-linejoin="round"/>
+      <!-- friction zone marker -->
+      <rect x="700" y="60" width="220" height="220" fill="#EDF2FE"/>
+      <polyline points="230,92 520,132 810,258 1100,238 1390,150"
+                fill="none" stroke="#1A56DB" stroke-width="3" stroke-linejoin="round"/>
+
+      <g font-family="'Manrope',sans-serif">
+        <!-- stage 1 -->
+        <circle cx="230" cy="92" r="8" fill="#FFFFFF" stroke="#1A56DB" stroke-width="3"/>
+        <text x="230" y="352" text-anchor="middle" font-size="23" font-weight="700" fill="#0F1B2D">Unboxing</text>
+        <text x="230" y="384" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">CSAT 91</text>
+
+        <!-- stage 2 -->
+        <circle cx="520" cy="132" r="8" fill="#FFFFFF" stroke="#1A56DB" stroke-width="3"/>
+        <text x="520" y="352" text-anchor="middle" font-size="23" font-weight="700" fill="#0F1B2D">First pairing</text>
+        <text x="520" y="384" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">CSAT 84</text>
+
+        <!-- stage 3 – trough -->
+        <circle cx="810" cy="258" r="11" fill="#1A56DB"/>
+        <text x="810" y="352" text-anchor="middle" font-size="23" font-weight="700" fill="#0F1B2D">Street &amp; transit</text>
+        <text x="810" y="384" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#1A56DB">CSAT 52</text>
+
+        <!-- stage 4 -->
+        <circle cx="1100" cy="238" r="11" fill="#1A56DB"/>
+        <text x="1100" y="352" text-anchor="middle" font-size="23" font-weight="700" fill="#0F1B2D">Open-plan office</text>
+        <text x="1100" y="384" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#1A56DB">CSAT 57</text>
+
+        <!-- stage 5 -->
+        <circle cx="1390" cy="150" r="8" fill="#FFFFFF" stroke="#1A56DB" stroke-width="3"/>
+        <text x="1390" y="352" text-anchor="middle" font-size="23" font-weight="700" fill="#0F1B2D">Evening wind-down</text>
+        <text x="1390" y="384" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">CSAT 79</text>
+      </g>
+      <text x="810" y="30" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="15" letter-spacing="2.4" fill="#1A56DB">FRICTION ZONE — 61% OF ALL COMPLAINTS</text>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:838px;width:1680px;height:1px;background:var(--line);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:874px;width:490px;z-index:10;">
+    <p class="idx">01</p>
+    <p class="h3" style="margin-top:12px;font-size:24px;">Manual ANC toggling</p>
+    <p class="small" style="margin-top:8px;">Users switch modes 11× a day — and still get it wrong.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:715px;top:874px;width:490px;z-index:10;">
+    <p class="idx">02</p>
+    <p class="h3" style="margin-top:12px;font-size:24px;">Seal drift while moving</p>
+    <p class="small" style="margin-top:8px;">Bass loss reported by 43% of walkers and runners.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1310px;top:874px;width:490px;z-index:10;">
+    <p class="idx">03</p>
+    <p class="h3" style="margin-top:12px;font-size:24px;">Voice clarity on calls</p>
+    <p class="small" style="margin-top:8px;">Top return reason in the open-plan office cohort.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1002px;width:1100px;z-index:10;">
+    <p class="foot">AURA Pods Pro — FY26 launch &nbsp;·&nbsp; Illustrative sample data</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1002px;width:140px;z-index:10;text-align:right;">
+    <p class="foot">03 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

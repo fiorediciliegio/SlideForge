@@ -1,0 +1,103 @@
+{
+  "id": "105-Vintage European City Postcard Travel Guide",
+  "version": 1,
+  "ppt_number": 105,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "blue",
+    "rust",
+    "brown"
+  ],
+  "name": "Vintage European City Postcard Travel Guide",
+  "description": "Vintage postcard travel guide with aged paper, framed photography, route maps, stamps, and handwritten notes.",
+  "user": "Creative & Personal",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["travel-guide"],"industries":["consumer","travel"],"audiences":["public"],"formats":["guide"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "泛黄封面左侧为衬线刊头与旅行文字，右侧老照片配票据、印章和蓝色注释卡，层级鲜明。"
+    },
+    {
+      "path": "images/2-route-overview.webp",
+      "alt": "大型折叠地图占据中央，砖红步行路线连接节点，右侧蓝色信息栏补充行程，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/3-history-character.webp",
+      "alt": "左侧三张年代卡纵向排列，右侧两张历史照片与蓝色城市特征卡构成档案拼贴，信息对比清楚。"
+    },
+    {
+      "path": "images/4-architecture-landmarks.webp",
+      "alt": "左侧大幅教堂照片配中部两张细节图，右侧三条编号说明形成建筑观察页，信息对比清楚。"
+    },
+    {
+      "path": "images/5-neighborhoods.webp",
+      "alt": "四张竖向街区照片嵌入蓝色胶片边框，下方四段说明组成清晰连续的漫步路线，阅读顺序明确。"
+    },
+    {
+      "path": "images/6-cafes-everyday-food.webp",
+      "alt": "左侧咖啡馆文字清单与右侧多图拼贴并列，棕红底色营造温暖餐饮章节，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-markets-local-life.webp",
+      "alt": "左右不等宽摄影拼贴覆盖页面，蓝色批注卡与手写句子增添城市日记感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/8-day-in-the-city.webp",
+      "alt": "路线与花费清单占据左侧，右侧电车照片和底部蓝色建议条构成一日计划，版面层次清晰有序。"
+    },
+    {
+      "path": "images/9-memorable-moments.webp",
+      "alt": "四张小型发现照片横排，底部票据、邮戳和手写便笺组成纪念品拼贴，主视觉层级鲜明有序。"
+    },
+    {
+      "path": "images/10-final-postcard.webp",
+      "alt": "编号建议清单配城市鸟瞰照片与明信片背面元素，蓝色引语卡完成旅行收尾，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，泛黄封面左侧为衬线刊头与旅行文字，右侧老照片配票据、印章和蓝色注释卡，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/2-route-overview.html",
+      "description": "大型折叠地图占据中央，砖红步行路线连接节点，右侧蓝色信息栏补充行程，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/3-history-character.html",
+      "description": "泛黄纸张上，左侧三张年代卡按时间顺序排列，右侧上下放置两张历史照片并叠加蓝色城市特征卡，形成编年档案布局。"
+    },
+    {
+      "path": "html/4-architecture-landmarks.html",
+      "description": "泛黄页面左侧以大幅教堂照片建立视觉重心，中部上下排列两张建筑细节图，右侧三条编号说明与蓝色提示卡组织观察要点。"
+    },
+    {
+      "path": "html/5-neighborhoods.html",
+      "description": "泛黄页面中部用蓝色胶片边框并排四张街区照片，下方对应四段地点说明，底部深蓝建议条和票据元素强化旅行档案感。"
+    },
+    {
+      "path": "html/6-cafes-everyday-food.html",
+      "description": "左侧咖啡馆文字清单与右侧多图拼贴并列，棕红底色营造温暖餐饮章节，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/7-markets-local-life.html",
+      "description": "左右不等宽摄影拼贴覆盖页面，蓝色批注卡与手写句子增添城市日记感，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/8-day-in-the-city.html",
+      "description": "路线与花费清单占据左侧，右侧电车照片和底部蓝色建议条构成一日计划，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/9-memorable-moments.html",
+      "description": "泛黄奶油纸画布上，四张小型发现照片横排，底部票据、邮戳和手写便笺组成纪念品拼贴，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/10-final-postcard.html",
+      "description": "编号建议清单配城市鸟瞰照片与明信片背面元素，蓝色引语卡完成旅行收尾，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

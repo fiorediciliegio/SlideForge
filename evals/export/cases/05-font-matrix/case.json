@@ -1,0 +1,10 @@
+{
+  "id": "05-font-matrix",
+  "title": "多字体与多字重矩阵",
+  "description": "系统字体、本地 @font-face、重复字体规则、字重、斜体和字距组合。",
+  "deck_html_file": "05-font-matrix/deck.html",
+  "slide_html_files": ["05-font-matrix/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["fonts", "font-face", "weights", "typography"],
+  "manual_checks": ["字体回退不会导致文本溢出", "400/600/700/800 字重层次可辨", "衬线、无衬线、等宽字体保持差异"]
+}

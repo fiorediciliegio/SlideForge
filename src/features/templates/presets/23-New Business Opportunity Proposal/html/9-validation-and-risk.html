@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validation Plan and Risk Mitigation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ============================================================
+   New Business Opportunity Proposal — shared design system
+   Editorial business-proposal aesthetic (warm sand / ink green)
+   Only fonts + tokens live here. All layout is inline per slide.
+   ============================================================ */
+
+:root {
+  /* surfaces */
+  --sand:        #F3EEE6;   /* page background */
+  --sand-deep:   #E8E0D3;   /* alt band */
+  --card:        #FBF8F3;   /* card fill */
+  --ink:         #14201C;   /* primary text / dark panels */
+  --ink-soft:    #1B2C26;   /* dark panel alt */
+
+  /* accents */
+  --terra:       #C15A2B;   /* primary accent */
+  --terra-soft:  #EBC8B2;
+  --pine:        #1F4D3F;   /* secondary accent */
+  --pine-soft:   #BFD3C8;
+  --clay:        #A8977F;   /* tertiary / labels */
+
+  /* text */
+  --t-strong:    #14201C;
+  --t-body:      #3E4B45;
+  --t-muted:     #8A7E6B;
+  --t-invert:    #F3EEE6;
+
+  /* lines */
+  --rule:        #D8CFC0;
+  --rule-dark:   #3A4A43;
+
+  /* type */
+  --f-display: 'Archivo', 'Helvetica Neue', sans-serif;
+  --f-body:    'IBM Plex Sans', sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+
+  /* geometry */
+  --r-card: 4px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; }
+table { border-collapse: collapse; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="09 Validation and risk" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--sand); font-family:var(--f-body);">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:80px; width:1120px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:19px; font-weight:600; letter-spacing:0.22em; color:var(--terra);">08 · VALIDATION &amp; RISK</div>
+    <h2 style="margin:18px 0 0 0; font-family:var(--f-display); font-weight:700; font-size:62px; line-height:1.06; letter-spacing:-0.02em; color:var(--t-strong);">Four stage gates, each with a kill<br>criterion we agree to in advance</h2>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:76px; top:84px; width:5px; height:170px; background:var(--terra); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:96px; width:470px; z-index:10;">
+    <div style="border-left:3px solid var(--pine); padding-left:22px;">
+      <div style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.16em; color:var(--t-muted);">GOVERNANCE</div>
+      <p style="margin:12px 0 0 0; font-size:22px; line-height:1.5; color:var(--t-body);">Funding is released one gate at a time. Only <strong style="color:var(--terra); font-weight:600;">$1.8M</strong> is committed today — the rest is contingent on evidence.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:340px; width:1680px; height:1px; background:var(--rule); z-index:1;"></div>
+
+  <!-- stage gate timeline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:388px; width:800px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:17px; font-weight:600; letter-spacing:0.16em; color:var(--t-strong);">STAGE-GATE VALIDATION PLAN — 24 MONTHS</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:452px; width:1680px; height:3px; background:var(--rule); z-index:1;"></div>
+
+  <!-- gate 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:154px; top:438px; width:30px; height:30px; background:var(--terra); border-radius:50%; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:496px; width:390px; height:246px; background:var(--card); border:1px solid var(--rule); border-top:5px solid var(--terra); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:154px; top:526px; width:322px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:var(--terra);">GATE 1</span>
+      <span style="font-family:var(--f-mono); font-size:16px; color:var(--t-muted);">M0–M4</span>
+    </div>
+    <h3 style="margin:14px 0 0 0; font-family:var(--f-display); font-weight:600; font-size:28px; line-height:1.15; color:var(--t-strong);">Technical proof</h3>
+    <p style="margin:12px 0 0 0; font-size:19px; line-height:1.45; color:var(--t-body);">Instrument 30 in-house assets; validate prediction accuracy against known failures.</p>
+    <div style="margin-top:16px; padding-top:14px; border-top:1px dashed var(--rule); font-family:var(--f-mono); font-size:17px; color:var(--terra);">Kill if accuracy &lt; 70%</div>
+  </div>
+
+  <!-- gate 2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:584px; top:438px; width:30px; height:30px; background:var(--terra); border-radius:50%; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:550px; top:496px; width:390px; height:246px; background:var(--card); border:1px solid var(--rule); border-top:5px solid var(--terra); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:584px; top:526px; width:322px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:var(--terra);">GATE 2</span>
+      <span style="font-family:var(--f-mono); font-size:16px; color:var(--t-muted);">M5–M9</span>
+    </div>
+    <h3 style="margin:14px 0 0 0; font-family:var(--f-display); font-weight:600; font-size:28px; line-height:1.15; color:var(--t-strong);">Paid pilot</h3>
+    <p style="margin:12px 0 0 0; font-size:19px; line-height:1.45; color:var(--t-body);">Three customers, 60 assets, real invoices at Tier 2 list price.</p>
+    <div style="margin-top:16px; padding-top:14px; border-top:1px dashed var(--rule); font-family:var(--f-mono); font-size:17px; color:var(--terra);">Kill if &lt; 2 pilots convert</div>
+  </div>
+
+  <!-- gate 3 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1014px; top:438px; width:30px; height:30px; background:var(--pine); border-radius:50%; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:496px; width:390px; height:246px; background:var(--card); border:1px solid var(--rule); border-top:5px solid var(--pine); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1014px; top:526px; width:322px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:var(--pine);">GATE 3</span>
+      <span style="font-family:var(--f-mono); font-size:16px; color:var(--t-muted);">M10–M16</span>
+    </div>
+    <h3 style="margin:14px 0 0 0; font-family:var(--f-display); font-weight:600; font-size:28px; line-height:1.15; color:var(--t-strong);">Repeatable sale</h3>
+    <p style="margin:12px 0 0 0; font-size:19px; line-height:1.45; color:var(--t-body);">Hand the motion to two regional reps; prove CAC below $3,000.</p>
+    <div style="margin-top:16px; padding-top:14px; border-top:1px dashed var(--rule); font-family:var(--f-mono); font-size:17px; color:var(--pine);">Kill if CAC &gt; $4,200</div>
+  </div>
+
+  <!-- gate 4 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1444px; top:438px; width:30px; height:30px; background:var(--pine); border-radius:50%; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1410px; top:496px; width:390px; height:246px; background:var(--ink); border-top:5px solid var(--pine); border-radius:var(--r-card); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1444px; top:526px; width:322px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline;">
+      <span style="font-family:var(--f-mono); font-size:16px; letter-spacing:0.14em; color:var(--pine-soft);">GATE 4</span>
+      <span style="font-family:var(--f-mono); font-size:16px; color:rgba(243,238,230,0.5);">M17–M24</span>
+    </div>
+    <h3 style="margin:14px 0 0 0; font-family:var(--f-display); font-weight:600; font-size:28px; line-height:1.15; color:var(--t-invert);">Scale decision</h3>
+    <p style="margin:12px 0 0 0; font-size:19px; line-height:1.45; color:rgba(243,238,230,0.78);">400 assets under contract; commit the full build-out or hold at current scale.</p>
+    <div style="margin-top:16px; padding-top:14px; border-top:1px dashed var(--rule-dark); font-family:var(--f-mono); font-size:17px; color:var(--terra-soft);">Full funding released here</div>
+  </div>
+
+  <!-- risk register -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:770px; width:800px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:17px; font-weight:600; letter-spacing:0.16em; color:var(--t-strong);">TOP RISKS AND MITIGATIONS</div>
+  </div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute; left:120px; top:812px; width:1680px; z-index:10;">
+    <table style="width:1680px; font-size:19px;">
+      <thead>
+        <tr>
+          <th style="text-align:left; padding:12px 20px 12px 0; font-family:var(--f-mono); font-size:15px; letter-spacing:0.12em; font-weight:600; color:var(--t-muted); border-bottom:2px solid var(--ink);">RISK</th>
+          <th style="text-align:center; padding:12px; font-family:var(--f-mono); font-size:15px; letter-spacing:0.12em; font-weight:600; color:var(--t-muted); border-bottom:2px solid var(--ink); width:130px;">LIKELIHOOD</th>
+          <th style="text-align:center; padding:12px; font-family:var(--f-mono); font-size:15px; letter-spacing:0.12em; font-weight:600; color:var(--t-muted); border-bottom:2px solid var(--ink); width:130px;">IMPACT</th>
+          <th style="text-align:left; padding:12px 0 12px 24px; font-family:var(--f-mono); font-size:15px; letter-spacing:0.12em; font-weight:600; color:var(--t-muted); border-bottom:2px solid var(--ink); width:820px;">MITIGATION &amp; OWNER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:11px 20px 11px 0; color:var(--t-strong); font-weight:500; border-bottom:1px solid var(--rule);">Prediction accuracy below promise</td>
+          <td style="padding:11px 12px; text-align:center; border-bottom:1px solid var(--rule);"><span style="font-family:var(--f-mono); font-size:17px; color:var(--terra); font-weight:600;">MED</span></td>
+          <td style="padding:11px 12px; text-align:center; border-bottom:1px solid var(--rule);"><span style="font-family:var(--f-mono); font-size:17px; color:var(--terra); font-weight:600;">HIGH</span></td>
+          <td style="padding:11px 0 11px 24px; color:var(--t-body); border-bottom:1px solid var(--rule);">Launch Tier 1 monitoring first; no uptime guarantee sold before Gate 3 — <em>Data lead</em></td>
+        </tr>
+        <tr>
+          <td style="padding:11px 20px 11px 0; color:var(--t-strong); font-weight:500; border-bottom:1px solid var(--rule);">Channel conflict with service partners</td>
+          <td style="padding:11px 12px; text-align:center; border-bottom:1px solid var(--rule);"><span style="font-family:var(--f-mono); font-size:17px; color:var(--terra); font-weight:600;">HIGH</span></td>
+          <td style="padding:11px 12px; text-align:center; border-bottom:1px solid var(--rule);"><span style="font-family:var(--f-mono); font-size:17px; color:var(--pine); font-weight:600;">MED</span></td>
+          <td style="padding:11px 0 11px 24px; color:var(--t-body); border-bottom:1px solid var(--rule);">Offer partners a white-label tier with revenue share — <em>Channel director</em></td>
+        </tr>
+        <tr>
+          <td style="padding:11px 20px 11px 0; color:var(--t-strong); font-weight:500; border-bottom:1px solid var(--rule);">Technician capacity caps SLA growth</td>
+          <td style="padding:11px 12px; text-align:center; border-bottom:1px solid var(--rule);"><span style="font-family:var(--f-mono); font-size:17px; color:var(--pine); font-weight:600;">MED</span></td>
+          <td style="padding:11px 12px; text-align:center; border-bottom:1px solid var(--rule);"><span style="font-family:var(--f-mono); font-size:17px; color:var(--terra); font-weight:600;">HIGH</span></td>
+          <td style="padding:11px 0 11px 24px; color:var(--t-body); border-bottom:1px solid var(--rule);">Cap contracted assets per region at 1.4× staffed capacity — <em>Service ops</em></td>
+        </tr>
+        <tr>
+          <td style="padding:11px 20px 11px 0; color:var(--t-strong); font-weight:500;">Customer data-access objections</td>
+          <td style="padding:11px 12px; text-align:center;"><span style="font-family:var(--f-mono); font-size:17px; color:var(--t-muted); font-weight:600;">LOW</span></td>
+          <td style="padding:11px 12px; text-align:center;"><span style="font-family:var(--f-mono); font-size:17px; color:var(--pine); font-weight:600;">MED</span></td>
+          <td style="padding:11px 0 11px 24px; color:var(--t-body);">Edge-only telemetry option, customer owns raw data by contract — <em>Legal</em></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>

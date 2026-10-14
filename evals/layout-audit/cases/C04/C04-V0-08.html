@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post-Reunion Talent Scouting Playbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --ink: #101114;
+  --mute: #7C818B;
+  --line: #E3E4E7;
+  --paper: #FFFFFF;
+  --red: #D01A2E;
+  --accent: #FBECEE;
+  --f-sans: 'Archivo', sans-serif;
+  --f-serif: 'Instrument Serif', serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #0c0d0f; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.slide {
+  position: relative; width: 1920px; height: 1080px; background: var(--paper);
+  font-family: var(--f-sans); color: var(--ink); overflow: hidden; padding: 90px 100px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.bg-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 30px solid var(--ink); pointer-events: none; z-index: 10; }
+.bg-line-top { position: absolute; top: 160px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.bg-line-bottom { position: absolute; bottom: 150px; left: 100px; right: 100px; height: 1px; background: var(--line); z-index: 1; }
+.h1 { font-size: 80px; font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; margin: 0; text-transform: uppercase; }
+.serif-italic { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--red); text-transform: none; }
+.eyebrow { font-size: 18px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.body-text { font-size: 22px; line-height: 1.5; color: #3A3D45; }
+.header { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; margin-bottom: 10px; }
+.header .logo { font-size: 18px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+.header .tag { font-family: var(--f-serif); font-style: italic; font-size: 26px; color: var(--red); }
+.title-area { margin-top: 30px; z-index: 5; }
+.content-area { flex-grow: 1; margin-top: 40px; margin-bottom: 40px; z-index: 5; position: relative; display: flex; }
+.footer { display: flex; justify-content: space-between; align-items: center; z-index: 5; height: 40px; font-size: 18px; font-weight: 600; color: var(--mute); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Custom Page-Specific Styles */
+.matrix-container {
+  position: relative;
+  width: 1120px;
+  height: 560px;
+  margin-left: 60px;
+}
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+.quadrant {
+  position: relative;
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 16px;
+  background: #FAFAFB;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.quadrant.highlight-quad {
+  background: var(--accent);
+  border: 2px solid var(--red);
+}
+.quadrant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.quadrant-title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.quadrant.highlight-quad .quadrant-title {
+  color: var(--red);
+}
+.quadrant-label {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--line);
+  color: var(--ink);
+}
+.quadrant.highlight-quad .quadrant-label {
+  background: var(--red);
+  color: var(--paper);
+}
+
+.islander-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+.islander-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(16, 17, 20, 0.03);
+  width: calc(50% - 8px);
+}
+.islander-card.highlight {
+  border-color: var(--red);
+}
+.islander-card .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--line);
+}
+.islander-card.highlight .avatar {
+  box-shadow: 0 0 0 1px var(--red);
+}
+.islander-card .avatar-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #E3E4E7;
+  color: #7C818B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+.islander-card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.islander-card .name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.islander-card .meta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mute);
+}
+.islander-card .tag-badge {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--red);
+  margin-top: 2px;
+}
+
+/* Axis Labels */
+.y-axis-label {
+  position: absolute;
+  left: -55px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.y-axis-arrow-top {
+  position: absolute;
+  left: -50px;
+  top: 0px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--mute);
+}
+.y-axis-arrow-bottom {
+  position: absolute;
+  left: -50px;
+  bottom: 0px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--mute);
+}
+.x-axis-label {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.x-axis-arrow-left {
+  position: absolute;
+  left: 0px;
+  bottom: -40px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--mute);
+}
+.x-axis-arrow-right {
+  position: absolute;
+  right: 0px;
+  bottom: -40px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--mute);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 480px;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+}
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar-title {
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--red);
+}
+.sidebar-desc {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #3A3D45;
+}
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+.sidebar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.sidebar-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-top: 8px;
+}
+.sidebar-item-text {
+  font-size: 18px;
+  line-height: 1.4;
+  color: #3A3D45;
+}
+.sidebar-item-text strong {
+  color: var(--ink);
+}
+.sidebar-metadata {
+  background: #F6F6F4;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--mute);
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Decorative Frame & Lines -->
+  <div class="bg-frame" data-fixed="true"></div>
+  <div class="bg-line-top" data-fixed="true"></div>
+  <div class="bg-line-bottom" data-fixed="true"></div>
+  
+  <!-- Fixed Header -->
+  <header class="header" data-fixed="true">
+    <div class="logo">The $500K Influencer Playbook</div>
+    <div class="tag">Post-Reunion Scouting Edition</div>
+  </header>
+
+  <!-- Fixed Title Area -->
+  <div class="title-area" data-fixed="true">
+    <div class="eyebrow">Viral Social Media Content & Strategy</div>
+    <h1 class="h1">The Talent Matrix: <span class="serif-italic">Viral Momentum vs. Brand Safety</span></h1>
+  </div>
+
+  <!-- Editable Content Area -->
+  <main class="content-area">
+    
+    <!-- Left: 2x2 Matrix -->
+    <div class="matrix-container">
+      <!-- Axis Labels & Arrows -->
+      <div class="y-axis-arrow-top">▲ HIGH</div>
+      <div class="y-axis-label">Viral Momentum (Post-Reunion)</div>
+      <div class="y-axis-arrow-bottom">▼ LOW</div>
+
+      <div class="x-axis-arrow-left">◀ RISKY</div>
+      <div class="x-axis-label">Brand Safety & Alignment</div>
+      <div class="x-axis-arrow-right">SAFE ▶</div>
+
+      <div class="matrix-grid">
+        
+        <!-- Top Left: RISKY BET -->
+        <div class="quadrant">
+          <div class="quadrant-header">
+            <span class="quadrant-title">Risky Bet</span>
+            <span class="quadrant-label">High Attention / PR Risk</span>
+          </div>
+          <div class="islander-container">
+            <div class="islander-card">
+              <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d5511d6afd971406.jpg" class="avatar" alt="Melanie Moreno">
+              <div class="info">
+                <div class="name">Melanie M.</div>
+                <div class="meta">2.5M Followers</div>
+                <div class="tag-badge">Drama / Runway</div>
+              </div>
+            </div>
+            <div class="islander-card">
+              <div class="avatar-placeholder">KB</div>
+              <div class="info">
+                <div class="name">Kayda B.</div>
+                <div class="meta">1.7M Followers</div>
+                <div class="tag-badge">Backlash Signals</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Right: SIGN NOW (Highlighted) -->
+        <div class="quadrant highlight-quad">
+          <div class="quadrant-header">
+            <span class="quadrant-title">Sign Now</span>
+            <span class="quadrant-label">High Viral / High Safety</span>
+          </div>
+          <div class="islander-container">
+            <div class="islander-card highlight">
+              <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-d0acbf4808c0f71f.webp" class="avatar" alt="Trinity Tatum">
+              <div class="info">
+                <div class="name">Trinity T.</div>
+                <div class="meta">3.6M Followers</div>
+                <div class="tag-badge">S8 Winner</div>
+              </div>
+            </div>
+            <div class="islander-card highlight">
+              <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-c7ef241cdee62a31.jpg" class="avatar" alt="Aniya Harvey">
+              <div class="info">
+                <div class="name">Aniya H.</div>
+                <div class="meta">2.1M Followers</div>
+                <div class="tag-badge">Gersh Backed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Left: PASS -->
+        <div class="quadrant">
+          <div class="quadrant-header">
+            <span class="quadrant-title">Pass</span>
+            <span class="quadrant-label">Lower Hype / High Risk</span>
+          </div>
+          <div class="islander-container">
+            <div class="islander-card">
+              <div class="avatar-placeholder">SR</div>
+              <div class="info">
+                <div class="name">Sincere R.</div>
+                <div class="meta">612K Followers</div>
+                <div class="tag-badge">Relationship Risk</div>
+              </div>
+            </div>
+            <div class="islander-card">
+              <div class="avatar-placeholder">EB</div>
+              <div class="info">
+                <div class="name">Early Exits</div>
+                <div class="meta">Various Counts</div>
+                <div class="tag-badge">Low Momentum</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Right: HIGH UPSIDE -->
+        <div class="quadrant">
+          <div class="quadrant-header">
+            <span class="quadrant-title">High Upside</span>
+            <span class="quadrant-label">Staying Power / Safe</span>
+          </div>
+          <div class="islander-container">
+            <div class="islander-card">
+              <img src="/Users/leyouming/anna-workspace/ppt/.generation-runs/79710e2e-4e82-47dc-982e-cbd6949b734b/shadow/ppt-20260904-171602/research/evidence/images/image-dba968ff974d586c.webp" class="avatar" alt="Bryce Alakai">
+              <div class="info">
+                <div class="name">Bryce A.</div>
+                <div class="meta">1.9M Followers</div>
+                <div class="tag-badge">DJ Background</div>
+              </div>
+            </div>
+            <div class="islander-card">
+              <div class="avatar-placeholder">CM</div>
+              <div class="info">
+                <div class="name">Corbin M.</div>
+                <div class="meta">~1.0M Followers</div>
+                <div class="tag-badge">Fitness/Travel</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right: Sidebar Takeaways -->
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-title">The Screenshot Slide</div>
+        <p class="sidebar-desc">
+          Post-Reunion attention is highly volatile. While Trinity and Aniya offer maximum reach with certified brand safety, relationship drama drives high but risky attention for Melanie, and early-exits rapidly lose traction.
+        </p>
+        <div class="sidebar-list">
+          <div class="sidebar-item">
+            <div class="sidebar-bullet"></div>
+            <div class="sidebar-item-text">
+              <strong>Sign Now:</strong> Backed by major agencies (WME/Gersh) with high-signal, risk-free public appeal.
+            </div>
+          </div>
+          <div class="sidebar-item">
+            <div class="sidebar-bullet"></div>
+            <div class="sidebar-item-text">
+              <strong>Risky Bet:</strong> Massive follower counts but active negative sentiment or polarizing drama.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-metadata">
+        <strong>Temporal Context &amp; Verification:</strong><br>
+        • Love Island S8 Reunion Aired: August 31, 2026<br>
+        • Verified Social Metrics Cutoff: September 4, 2026<br>
+        • Placements backed by live Instagram profile fetches.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="footer" data-fixed="true">
+    <div>Pop-Culture Editorial Matrix</div>
+    <div style="color: var(--red); font-style: italic; font-family: var(--f-serif); text-transform: none; font-size: 22px;">Debate, Screenshot & Share</div>
+    <div>Page [03]</div>
+  </footer>
+</div>
+</body>
+</html>

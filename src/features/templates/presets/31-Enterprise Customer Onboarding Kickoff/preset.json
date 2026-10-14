@@ -1,0 +1,103 @@
+{
+  "id": "31-Enterprise Customer Onboarding Kickoff",
+  "version": 1,
+  "ppt_number": 31,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "navy",
+    "blue",
+    "gray"
+  ],
+  "name": "Enterprise Customer Onboarding Kickoff",
+  "description": "Structured onboarding design with bright white space, navy guidance panels, blue workflow blocks, and clear action checklists.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["customer-success-review"],"industries":["technology"],"audiences":["client"],"formats":["workshop"],"primary_styles":["minimal"],"visual_traits":["minimal"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、深海军蓝与亮蓝封面采用左侧中部超大标题，几何色块与细线与留白形成对照。"
+    },
+    {
+      "path": "images/2-program-context.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，四组大号数字形成节奏，方案信息收束版面。"
+    },
+    {
+      "path": "images/3-stakeholder-needs.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，一组表格压缩信息密度，人群关系形成重心。"
+    },
+    {
+      "path": "images/4-goals-scope-success.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，四块卡片组成四列网格，范围信息拉开层级。"
+    },
+    {
+      "path": "images/5-implementation-phases.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，横向时间轴串联阶段节点，日期标记组织动线。"
+    },
+    {
+      "path": "images/6-delivery-workflow.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，六块卡片组成六列网格，流程关系强化对比。"
+    },
+    {
+      "path": "images/7-roles-governance.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，一组表格压缩信息密度，人群关系收束版面。"
+    },
+    {
+      "path": "images/8-kpi-baseline.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，四块卡片组成四列网格，绩效信息形成重心。"
+    },
+    {
+      "path": "images/9-timeline-risks.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，标题、细线与留白划分层级，风险信息拉开层级。"
+    },
+    {
+      "path": "images/10-immediate-actions.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，标题、细线与留白划分层级，决策信息组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页采用白色、深海军蓝与亮蓝，超大标题锚定左侧中部；几何色块与细线连接主体与边缘信息，留白保持画面张力。"
+    },
+    {
+      "path": "html/2-program-context.html",
+      "description": "白色、深海军蓝与亮蓝作为底色，标题落在左上方；四组大号数字拉开视觉节奏，功能分区与场景模块嵌入主体模块。"
+    },
+    {
+      "path": "html/3-stakeholder-needs.html",
+      "description": "标题固定在左上方，白色、深海军蓝与亮蓝分隔主体；留白与细线分隔出清晰阅读区，一组表格位于中央，角色节点与关系模块补充层级。"
+    },
+    {
+      "path": "html/4-goals-scope-success.html",
+      "description": "白色、深海军蓝与亮蓝画面，标题置于左上方；四块信息卡组成四列网格，目标卡、范围块与关键数字贴合卡片边界。"
+    },
+    {
+      "path": "html/5-implementation-phases.html",
+      "description": "左上方标题锚定白色、深海军蓝与亮蓝画面；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记集中在画面中部。"
+    },
+    {
+      "path": "html/6-delivery-workflow.html",
+      "description": "白色、深海军蓝与亮蓝作为底色，标题落在左上方；六块信息卡组成六列网格，步骤节点与连接线顺着版面动线分布。"
+    },
+    {
+      "path": "html/7-roles-governance.html",
+      "description": "标题固定在左上方，白色、深海军蓝与亮蓝分隔主体；单一大面板承载主体信息，一组表格位于左侧，角色节点与关系模块补充层级。"
+    },
+    {
+      "path": "html/8-kpi-baseline.html",
+      "description": "白色、深海军蓝与亮蓝画面，标题置于左上方；四块信息卡横向并列，一幅图表落在左侧，指标数字与趋势标记补充层级。"
+    },
+    {
+      "path": "html/9-timeline-risks.html",
+      "description": "左上方标题锚定白色、深海军蓝与亮蓝画面；留白与细线分隔出清晰阅读区，分级标签、状态色与风险标记贴合卡片边界。"
+    },
+    {
+      "path": "html/10-immediate-actions.html",
+      "description": "白色、深海军蓝与亮蓝作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，行动卡与强调结论集中在画面中部。"
+    }
+  ]
+}

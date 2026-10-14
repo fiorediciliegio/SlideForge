@@ -1,0 +1,103 @@
+{
+  "id": "102-Electric Vehicle Product Launch Deck",
+  "version": 1,
+  "ppt_number": 102,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "orange",
+    "gray",
+    "white"
+  ],
+  "name": "Electric Vehicle Product Launch Deck",
+  "description": "High-performance automotive launch design with dark product imagery, oversized type, and luminous orange data.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["product-launch"],"industries":["consumer"],"audiences":["client"],"formats":["proposal"],"primary_styles":["dark"],"visual_traits":["dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "黑色封面以超大车型标题和橙色编号为中心，低光车身主视觉横贯画布，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-market-shift.webp",
+      "alt": "左侧大指标配右侧增长柱状图，黑灰卡片和橙色高亮营造发布会数据感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-customer-insight.webp",
+      "alt": "三组需求洞察卡横排，底部条形图和客户引语卡以橙色强调购买动机，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/4-positioning.webp",
+      "alt": "深色定位坐标图配右侧分层文字说明，橙色品牌节点突出目标市场位置，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/5-design-philosophy.webp",
+      "alt": "双栏产品摄影搭配底部规格卡，橙色数字在黑色背景上强化性能细节，主视觉层级鲜明有序。"
+    },
+    {
+      "path": "images/6-product-substance.webp",
+      "alt": "三列系统支柱卡横排，深灰分区和橙色数据把平台能力拆解为模块，整体数据层级清晰有序。"
+    },
+    {
+      "path": "images/7-buyer-scenarios.webp",
+      "alt": "左侧买家情景表与右侧暗调照片卡并列，底部数字条呈现市场规模，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/8-pricing-lineup.webp",
+      "alt": "三张定价卡横排在黑色背景上，中间橙框推荐车型形成清晰价格梯度，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/9-validation-advantage.webp",
+      "alt": "顶部四张验证指标卡横排，下方竞品对照表与右侧环形图组成紧凑证据页，信息对比清楚。"
+    },
+    {
+      "path": "images/10-launch-plan-ask.webp",
+      "alt": "暗色收尾页以横向发布节点和大幅车身背景组织路线，橙框请求卡突出决策，顺序层级清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，黑色封面以超大车型标题和橙色编号为中心，低光车身主视觉横贯画布，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/2-market-shift.html",
+      "description": "左侧大指标配右侧增长柱状图，黑灰卡片和橙色高亮营造发布会数据感，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/3-customer-insight.html",
+      "description": "三组需求洞察卡横排，底部条形图和客户引语卡以橙色强调购买动机，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/4-positioning.html",
+      "description": "深色定位坐标图配右侧分层文字说明，橙色品牌节点突出目标市场位置，细线连接、彩色节点与留白共同维持清晰的流程节奏。"
+    },
+    {
+      "path": "html/5-design-philosophy.html",
+      "description": "双栏产品摄影搭配底部规格卡，橙色数字在黑色背景上强化性能细节，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/6-product-substance.html",
+      "description": "三列系统支柱卡横排，深灰分区和橙色数据把平台能力拆解为模块，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/7-buyer-scenarios.html",
+      "description": "曜石黑画布上，左侧买家情景表与右侧暗调照片卡并列，底部数字条呈现市场规模，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/8-pricing-lineup.html",
+      "description": "三张定价卡横排在黑色背景上，中间橙框推荐车型形成清晰价格梯度，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/9-validation-advantage.html",
+      "description": "黑色页面顶部横排四张验证指标卡，下方以车型对照表比较关键属性，右侧环形图展示购买理由，橙色高亮贯穿全页。"
+    },
+    {
+      "path": "html/10-launch-plan-ask.html",
+      "description": "暗色收尾页以横向发布节点和大幅车身背景组织路线，橙框请求卡突出决策，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

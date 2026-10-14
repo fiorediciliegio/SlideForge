@@ -1,0 +1,103 @@
+{
+  "id": "11-Pitch Deck for a Smart Hardware and Robotics Startup",
+  "version": 1,
+  "ppt_number": 11,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "orange",
+    "gray",
+    "white"
+  ],
+  "name": "Pitch Deck for a Smart Hardware and Robotics Startup",
+  "description": "Industrial robotics design with charcoal panels, safety-orange accents, technical diagrams, and dense operational metrics.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Industrial & Infrastructure",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["infrastructure"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["dark"],"visual_traits":["dark","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "炭黑、工业橙与冷灰色封面，左侧中部放置超大标题，三块几何面板建立视觉重心。"
+    },
+    {
+      "path": "images/2-problem.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，四块卡片组成两列网格，核心判断形成重心。"
+    },
+    {
+      "path": "images/3-needs-analysis.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，三块卡片纵向叠放，分析图表拉开层级。"
+    },
+    {
+      "path": "images/4-solution.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，双面板划分主体区域，产品信息组织动线。"
+    },
+    {
+      "path": "images/5-technology.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，四块卡片纵向叠放，产品信息强化对比。"
+    },
+    {
+      "path": "images/6-market.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，四块卡片组成两列网格，人群信息收束版面。"
+    },
+    {
+      "path": "images/7-business-model.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，左半区三组大数字，右侧三卡叠放，方案层级形成重心。"
+    },
+    {
+      "path": "images/8-validation.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，顶部横排四张卡片，下方双区展开，验证信息拉开层级。"
+    },
+    {
+      "path": "images/9-roadmap.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，横向时间轴串联阶段节点，日期标记组织动线。"
+    },
+    {
+      "path": "images/10-team-and-ask.webp",
+      "alt": "炭黑、工业橙与冷灰色页面，五块卡片组成三列网格，人物卡强化对比。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，炭黑、工业橙与冷灰色确定整体基调，左侧中部放置超大标题；三块几何面板分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-problem.html",
+      "description": "左上方标题锚定炭黑、工业橙与冷灰色画面；四块信息卡组成两列网格，问题陈述与强调数字沿主区展开。"
+    },
+    {
+      "path": "html/3-needs-analysis.html",
+      "description": "炭黑、工业橙与冷灰色作为底色，标题落在左上方；三块信息卡纵向叠放，一幅分析图表落在左侧，对比图表与差异标记补充层级。"
+    },
+    {
+      "path": "html/4-solution.html",
+      "description": "标题固定在左上方，炭黑、工业橙与冷灰色分隔主体；两块主面板建立清晰分区，功能模块与结构示意集中在画面中部。"
+    },
+    {
+      "path": "html/5-technology.html",
+      "description": "炭黑、工业橙与冷灰色画面，标题置于左上方；四块信息卡纵向叠放，一组表格位于右侧，功能模块与结构示意补充层级。"
+    },
+    {
+      "path": "html/6-market.html",
+      "description": "左上方标题锚定炭黑、工业橙与冷灰色画面；四块信息卡组成两列网格，一幅图表落在左侧，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/7-business-model.html",
+      "description": "炭黑、工业橙与冷灰色作为底色，标题落在左上方；左半区以三组大号数字开场，右侧纵向排列三块卡片，一幅图表落在左侧，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/8-validation.html",
+      "description": "标题固定在左上方，炭黑、工业橙与冷灰色分隔主体；顶部横排四张指标卡，下方切分为数据表与侧栏，一组表格位于左侧，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/9-roadmap.html",
+      "description": "炭黑、工业橙与冷灰色画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/10-team-and-ask.html",
+      "description": "左上方标题锚定炭黑、工业橙与冷灰色画面；五块信息卡组成三列网格，一幅图表落在右侧，人物信息与职责标签补充层级。"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "75-Nonprofit Fundraising Pitch Deck",
+  "version": 1,
+  "ppt_number": 75,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "green",
+    "black",
+    "cream"
+  ],
+  "name": "Nonprofit Fundraising Pitch Deck",
+  "description": "Mission-led nonprofit design with clear white space, deep green panels, human photography, and accessible impact metrics.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["public-sector"],"audiences":["public"],"formats":["pitch-deck"],"primary_styles":["formal"],"visual_traits":["formal","photographic","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、深绿色与暖米色封面以左侧中部超大标题开场，一幅图片拉开层级。"
+    },
+    {
+      "path": "images/2-the-problem.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，核心判断强化对比。"
+    },
+    {
+      "path": "images/3-beneficiary-needs.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，人群关系收束版面。"
+    },
+    {
+      "path": "images/4-solution-overview.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，概览信息形成重心。"
+    },
+    {
+      "path": "images/5-delivery-model.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，方案层级拉开层级。"
+    },
+    {
+      "path": "images/6-who-we-serve.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，人群关系组织动线。"
+    },
+    {
+      "path": "images/7-impact-dashboard.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，指标信息强化对比。"
+    },
+    {
+      "path": "images/8-case-validation.webp",
+      "alt": "白色、深绿色与暖米色页面，双面板划分主体区域，验证信息收束版面。"
+    },
+    {
+      "path": "images/9-use-of-funds.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，财务信息形成重心。"
+    },
+    {
+      "path": "images/10-ways-to-support.webp",
+      "alt": "白色、深绿色与暖米色页面，一幅图片构成视觉重心，行动信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，白色、深绿色与暖米色主导画面，左侧中部的超大标题形成第一视点；一幅图片与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-the-problem.html",
+      "description": "左上方标题锚定白色、深绿色与暖米色画面；单一大面板承载主体信息，一幅图片集中于右侧，一幅图表落在右侧。"
+    },
+    {
+      "path": "html/3-beneficiary-needs.html",
+      "description": "白色、深绿色与暖米色作为底色，标题落在左上方；单一大面板承载主体信息，一幅图片集中于左侧，一幅图表落在中央。"
+    },
+    {
+      "path": "html/4-solution-overview.html",
+      "description": "标题固定在左上方，白色、深绿色与暖米色分隔主体；单一大面板承载主体信息，一幅图片集中于左侧，一幅图表落在右侧。"
+    },
+    {
+      "path": "html/5-delivery-model.html",
+      "description": "白色、深绿色与暖米色画面，标题置于左上方；留白与细线分隔出清晰阅读区，一幅图片集中于左侧，一幅图表落在中央。"
+    },
+    {
+      "path": "html/6-who-we-serve.html",
+      "description": "左上方标题锚定白色、深绿色与暖米色画面；单一大面板承载主体信息，一幅图片集中于右侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/7-impact-dashboard.html",
+      "description": "白色、深绿色与暖米色作为底色，标题落在左上方；单一大面板承载主体信息，一幅图片集中于右侧，三幅指标图表落在中央。"
+    },
+    {
+      "path": "html/8-case-validation.html",
+      "description": "标题固定在左上方，白色、深绿色与暖米色分隔主体；两块主面板建立清晰分区，一幅图片集中于左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/9-use-of-funds.html",
+      "description": "白色、深绿色与暖米色画面，标题置于左上方；单一大面板承载主体信息，一幅图片集中于左侧，两幅财务图表落在中央。"
+    },
+    {
+      "path": "html/10-ways-to-support.html",
+      "description": "左上方标题锚定白色、深绿色与暖米色画面；单一大面板承载主体信息，一幅图片集中于左侧，一幅图表落在中央。"
+    }
+  ]
+}

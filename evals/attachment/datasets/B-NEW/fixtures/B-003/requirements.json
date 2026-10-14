@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "基于附件制作10页员工差旅制度更新说明。附件内容是公司草案，同时请通过Web Research核对2026年仍适用的公开税务规则；公司内部额度和审批要求不得被外部资料覆盖。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "中国大陆员工及审批人",
+        "description": "中国大陆员工及审批人"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "说明公司差旅草案与待核对的外部规则",
+        "description": "说明公司差旅草案与待核对的外部规则"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "区分公司规定、公开法规和尚未确认事项",
+        "description": "区分公司规定、公开法规和尚未确认事项"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "正式、易执行、合规",
+        "description": "正式、易执行、合规"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "中国大陆员工及审批人",
+      "description": "中国大陆员工及审批人"
+    },
+    "purpose": {
+      "label": "说明公司差旅草案与待核对的外部规则",
+      "description": "说明公司差旅草案与待核对的外部规则"
+    },
+    "desired_outcome": {
+      "label": "区分公司规定、公开法规和尚未确认事项",
+      "description": "区分公司规定、公开法规和尚未确认事项"
+    },
+    "slide_count": 10,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "正式、易执行、合规",
+      "description": "正式、易执行、合规"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hero Products</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* CHAR & CO. — deck design system
+   ONE system for all 10 slides: type scale, line-heights, 40px card insets,
+   identical footer rule + page number position on every page. */
+
+*{box-sizing:border-box;}
+body{
+  margin:0;padding:0;overflow:hidden;
+  font-family:'Archivo','Helvetica Neue',Helvetica,sans-serif;
+  color:#1C1B19;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- brand ---------- */
+.serif{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;}
+.dot{display:inline-block;width:14px;height:14px;background:#C0332A;margin-right:16px;vertical-align:middle;}
+.mark{font-size:19px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;vertical-align:middle;color:#1C1B19;}
+.on-dark .mark,.mark-light{color:#FFFFFF;}
+
+/* ---------- headers ---------- */
+.eyebrow{font-size:21px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#C0332A;}
+.h1{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;
+    font-size:66px;line-height:1.14;letter-spacing:-.01em;color:#1C1B19;}
+.h1-xl{font-family:'Instrument Serif',Georgia,'Times New Roman',serif;font-weight:400;
+    font-size:92px;line-height:1.08;letter-spacing:-.015em;color:#1C1B19;}
+.lede{font-size:24px;line-height:1.6;color:#57524B;}
+
+/* ---------- labels & body ---------- */
+.kicker{font-size:20px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#8B857C;}
+.kicker-red{color:#C0332A;}
+.kicker-amber{color:#F0B27A;}
+.card-title{font-size:27px;line-height:1.25;font-weight:600;color:#1C1B19;}
+.card-title-s{font-size:23px;line-height:1.3;font-weight:600;color:#1C1B19;}
+.body{font-size:21px;line-height:1.55;color:#6E6A64;}
+.body-dark{font-size:21px;line-height:1.55;color:#3A3630;}
+.body-sm{font-size:19px;line-height:1.5;color:#6E6A64;}
+
+/* ---------- numerals ---------- */
+.num-xl{font-family:'Instrument Serif',Georgia,serif;font-size:78px;line-height:1;letter-spacing:-.01em;}
+.num-l{font-family:'Instrument Serif',Georgia,serif;font-size:62px;line-height:1;letter-spacing:-.01em;}
+.num-m{font-family:'Instrument Serif',Georgia,serif;font-size:46px;line-height:1;}
+.num-unit{font-size:26px;color:#6E6A64;}
+.red{color:#C0332A;}
+.tnum{font-variant-numeric:tabular-nums;}
+
+/* ---------- surfaces (inner content always inset 40px) ---------- */
+.card{background:#F7F5F2;border-radius:8px;}
+.card-outline{background:#FFFFFF;border:1px solid #E2DED7;border-radius:8px;}
+.card-red{background:#FDF6F5;border:1px solid #F0D9D6;border-radius:8px;}
+.card-dark{background:#1C1B19;border-radius:8px;}
+.rule{background:#E2DED7;}
+.rule-mid{background:#C7C1B8;}
+.rule-red{background:#C0332A;}
+
+/* ---------- footer: identical geometry on all 10 slides ---------- */
+.foot{font-size:20px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:#8B857C;}
+.pagenum{font-size:34px;font-weight:600;line-height:1;color:#1C1B19;font-variant-numeric:tabular-nums;text-align:right;}
+.pagenum .tot{font-size:24px;font-weight:500;color:#B5AEA5;}
+.pagenum-light{color:#FFFFFF;}
+.pagenum-light .tot{color:rgba(255,255,255,.62);}
+
+/* ---------- parts ---------- */
+.step-circle{width:52px;height:52px;border-radius:50%;background:#C0332A;color:#fff;
+  font-size:21px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+.step-circle-ghost{background:#FFFFFF;color:#C0332A;border:2px solid #E8CFCC;}
+.pill{display:inline-block;font-size:19px;letter-spacing:.06em;text-transform:uppercase;
+  font-weight:600;padding:8px 16px;border-radius:4px;}
+</style>
+<style>
+  .p-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px;padding-top:16px;border-top:1px solid #E2DED7;}
+  .p-price{font-size:30px;font-weight:600;}
+  .p-gm{font-size:19px;letter-spacing:.06em;text-transform:uppercase;color:#8B857C;font-weight:600;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Hero Products" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:100px;top:56px;width:640px;height:30px;z-index:10;">
+    <span class="dot"></span><span class="mark">Char &amp; Co.</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="eyebrow" style="position:absolute;left:100px;top:136px;width:900px;height:28px;z-index:10;">04 · Hero Products</div>
+
+  <div data-object="true" data-object-type="textbox" class="h1" style="position:absolute;left:100px;top:180px;width:1020px;height:86px;z-index:10;">Four dishes carry the business.</div>
+
+  <div data-object="true" data-object-type="textbox" class="body-dark" style="position:absolute;left:1180px;top:186px;width:640px;height:112px;z-index:10;">A deliberately short menu: the top four SKUs drive 71% of orders, which keeps prep simple and grill timing predictable.</div>
+
+  <div data-object="true" data-object-type="shape" class="card-outline" style="position:absolute;left:100px;top:300px;width:400px;height:520px;z-index:1;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/p-chicken.jpg" alt="Charcoal chicken bowl" style="position:absolute;left:101px;top:301px;width:398px;height:240px;object-fit:cover;border-radius:8px 8px 0 0;z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:140px;top:581px;width:320px;height:210px;z-index:10;">
+    <div class="kicker kicker-red">Hero · 31% of orders</div>
+    <div class="card-title serif" style="font-weight:400;font-size:30px;margin-top:12px;">Charcoal Chicken Bowl</div>
+    <div class="body-sm" style="margin-top:10px;">Thigh meat, house marinade, 90 seconds over open flame.</div>
+    <div class="p-row"><span class="p-price tnum">¥38</span><span class="p-gm">68% GM</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="card-outline" style="position:absolute;left:540px;top:300px;width:400px;height:520px;z-index:1;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/product-bibimbap.jpg" alt="Chilli beef bowl" style="position:absolute;left:541px;top:301px;width:398px;height:240px;object-fit:cover;border-radius:8px 8px 0 0;z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:580px;top:581px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">No. 2 · 19% of orders</div>
+    <div class="card-title serif" style="font-weight:400;font-size:30px;margin-top:12px;">Chilli Beef Bowl</div>
+    <div class="body-sm" style="margin-top:10px;">Sliced short rib, charred scallion, fermented chilli glaze.</div>
+    <div class="p-row"><span class="p-price tnum">¥46</span><span class="p-gm">63% GM</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="card-outline" style="position:absolute;left:980px;top:300px;width:400px;height:520px;z-index:1;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/product-share.jpg" alt="Skewer trio set" style="position:absolute;left:981px;top:301px;width:398px;height:240px;object-fit:cover;border-radius:8px 8px 0 0;z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1020px;top:581px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">No. 3 · 12% of orders</div>
+    <div class="card-title serif" style="font-weight:400;font-size:30px;margin-top:12px;">Skewer Trio Set</div>
+    <div class="body-sm" style="margin-top:10px;">Three skewers plus rice — the evening and sharing driver.</div>
+    <div class="p-row"><span class="p-price tnum">¥52</span><span class="p-gm">61% GM</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="card-outline" style="position:absolute;left:1420px;top:300px;width:400px;height:520px;z-index:1;"></div>
+  <img data-object="true" data-object-type="image" src="../assets/p-veg.jpg" alt="Grilled tofu bowl" style="position:absolute;left:1421px;top:301px;width:398px;height:240px;object-fit:cover;border-radius:8px 8px 0 0;z-index:5;">
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1460px;top:581px;width:320px;height:210px;z-index:10;">
+    <div class="kicker">No. 4 · 9% of orders</div>
+    <div class="card-title serif" style="font-weight:400;font-size:30px;margin-top:12px;">Grilled Tofu Bowl</div>
+    <div class="body-sm" style="margin-top:10px;">Highest-margin item; anchors the vegetarian ticket.</div>
+    <div class="p-row"><span class="p-price tnum">¥32</span><span class="p-gm">74% GM</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:100px;top:858px;width:1120px;height:96px;z-index:10;">
+    <div class="kicker" style="margin-bottom:18px;">Menu mix · share of order volume</div>
+    <div style="display:flex;height:26px;width:100%;">
+      <div style="width:31%;background:#C0332A;"></div>
+      <div style="width:19%;background:#D4685F;"></div>
+      <div style="width:12%;background:#E3A199;"></div>
+      <div style="width:9%;background:#EFC9A6;"></div>
+      <div style="width:29%;background:#E6E2DB;"></div>
+    </div>
+    <div style="display:flex;margin-top:12px;font-size:19px;color:#6E6A64;">
+      <div style="width:31%;">Chicken 31%</div><div style="width:19%;">Beef 19%</div><div style="width:12%;">Skewers 12%</div><div style="width:9%;">Tofu 9%</div><div style="width:29%;">Sides &amp; drinks 29%</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="rule" style="position:absolute;left:1300px;top:858px;width:1px;height:96px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1360px;top:858px;width:460px;height:96px;z-index:10;">
+    <div class="kicker">Blended food cost</div>
+    <div class="num-m tnum" style="margin-top:14px;display:inline-block;">33.8<span class="num-unit">%</span></div>
+    <span class="body-sm" style="margin-left:20px;">Contracted supply, all cities.</span>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="rule" style="position:absolute;left:100px;top:960px;width:1720px;height:1px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="foot" style="position:absolute;left:100px;top:990px;width:1200px;height:26px;z-index:10;">Prices shown are Chengdu menu, 2026</div>
+
+  <div data-object="true" data-object-type="textbox" class="pagenum tnum" style="position:absolute;left:1620px;top:982px;width:200px;height:40px;z-index:10;">05<span class="tot"> / 10</span></div>
+
+</div>
+</body>
+</html>

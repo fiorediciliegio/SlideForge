@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Target Architecture and Core Capabilities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#ffffff;}
+  .hd{font-family:'Archivo',sans-serif;}
+  .bd{font-family:'IBM Plex Sans',sans-serif;}
+  .lay{display:flex;align-items:center;gap:20px;}
+  .lbl{width:250px;}
+  .lbl .t{font-family:'Archivo',sans-serif;font-size:23px;font-weight:500;color:#0E1726;}
+  .lbl .s{font-family:'IBM Plex Sans',sans-serif;font-size:16px;font-weight:300;color:#8C99AD;margin-top:3px;}
+  .box{flex:1;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'IBM Plex Sans',sans-serif;font-size:20px;font-weight:400;color:#12233A;background:#ffffff;border:1px solid #D3DEEC;}
+  .row{display:flex;gap:12px;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Target architecture" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#ffffff;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:#0F4C9A;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:88px;width:1000px;z-index:10;">
+    <div class="bd" style="font-size:18px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#0F4C9A;">03 &nbsp;/&nbsp; Target architecture</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:126px;width:1180px;z-index:10;">
+    <div class="hd" style="font-size:58px;font-weight:600;line-height:1.08;letter-spacing:-0.015em;color:#0E1726;">One composable core, six layers, one owner each</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1360px;top:132px;width:440px;z-index:10;">
+    <div class="bd" style="font-size:20px;font-weight:300;line-height:1.5;color:#5C6A80;">Core systems stay. What changes is how data, integration and intelligence are shared above them.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:250px;width:1680px;height:1px;background:#D9E2EF;z-index:1;"></div>
+
+  <!-- architecture stack -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:292px;width:1440px;height:650px;z-index:2;">
+    <div style="display:flex;flex-direction:column;gap:13px;height:100%;">
+
+      <div class="lay" style="height:92px;">
+        <div class="lbl"><div class="t">Channels</div><div class="s">Where the work arrives</div></div>
+        <div class="row" style="flex:1;height:100%;">
+          <div class="box">Customer portal</div>
+          <div class="box">Field &amp; mobile</div>
+          <div class="box">Partner EDI</div>
+          <div class="box">Internal desktop</div>
+        </div>
+      </div>
+
+      <div class="lay" style="height:92px;">
+        <div class="lbl"><div class="t">Experience</div><div class="s">Journey orchestration</div></div>
+        <div class="row" style="flex:1;height:100%;">
+          <div class="box" style="background:#F4F7FB;">Quote &amp; order journey</div>
+          <div class="box" style="background:#F4F7FB;">Service &amp; case journey</div>
+          <div class="box" style="background:#F4F7FB;">Supply commitment journey</div>
+        </div>
+      </div>
+
+      <div class="lay" style="height:108px;">
+        <div class="lbl"><div class="t">Intelligence</div><div class="s">Governed models &amp; decisions</div></div>
+        <div class="row" style="flex:1;height:100%;">
+          <div class="box" style="background:#E8F0FB;border-color:#B9CFEC;">Demand<br>forecasting</div>
+          <div class="box" style="background:#E8F0FB;border-color:#B9CFEC;">Pricing &amp;<br>margin guidance</div>
+          <div class="box" style="background:#E8F0FB;border-color:#B9CFEC;">Document<br>extraction</div>
+          <div class="box" style="background:#E8F0FB;border-color:#B9CFEC;">Anomaly &amp;<br>risk scoring</div>
+        </div>
+      </div>
+
+      <div class="lay" style="height:92px;">
+        <div class="lbl"><div class="t">Integration</div><div class="s">Event backbone &amp; APIs</div></div>
+        <div class="row" style="flex:1;height:100%;">
+          <div class="box" style="background:#0F4C9A;border-color:#0F4C9A;color:#ffffff;font-weight:500;">Managed API gateway &nbsp;&middot;&nbsp; event streaming &nbsp;&middot;&nbsp; 60 published contracts</div>
+        </div>
+      </div>
+
+      <div class="lay" style="height:108px;">
+        <div class="lbl"><div class="t">Systems of record</div><div class="s">Retained, not replaced</div></div>
+        <div class="row" style="flex:1;height:100%;">
+          <div class="box">ERP</div>
+          <div class="box">CRM</div>
+          <div class="box">MES</div>
+          <div class="box">WMS</div>
+          <div class="box">HCM</div>
+        </div>
+      </div>
+
+      <div class="lay" style="height:92px;">
+        <div class="lbl"><div class="t">Data foundation</div><div class="s">One lakehouse, 12 data products</div></div>
+        <div class="row" style="flex:1;height:100%;">
+          <div class="box" style="background:#F4F7FB;">Customer &amp; product master</div>
+          <div class="box" style="background:#F4F7FB;">Transaction history</div>
+          <div class="box" style="background:#F4F7FB;">Quality &amp; lineage services</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- governance spine -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1600px;top:292px;width:200px;height:650px;background:#F4F7FB;border:1px solid #D3DEEC;border-top:5px solid #0F4C9A;z-index:2;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1628px;top:336px;width:150px;z-index:10;">
+    <div class="hd" style="font-size:26px;font-weight:600;line-height:1.2;color:#0E1726;">Security, identity &amp; governance</div>
+    <div class="bd" style="font-size:18px;font-weight:300;line-height:1.5;color:#5C6A80;margin-top:18px;">Applies to every layer, owned by one accountable board.</div>
+    <div style="width:48px;height:3px;background:#0F4C9A;margin-top:26px;"></div>
+    <div class="bd" style="font-size:18px;font-weight:400;line-height:1.6;color:#0E1726;margin-top:24px;">Zero-trust access<br><br>Model &amp; data catalogue<br><br>Policy as code<br><br>Continuous audit evidence</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:986px;width:1200px;z-index:10;">
+    <div class="bd" style="font-size:16px;font-weight:400;color:#9AA6B8;">Design principle: buy the platform, build the differentiation &middot; no core system replacement before Wave 3</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1700px;top:986px;width:100px;z-index:10;">
+    <div class="bd" style="font-size:16px;font-weight:500;color:#9AA6B8;text-align:right;">04 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

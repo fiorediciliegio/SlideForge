@@ -1,0 +1,103 @@
+{
+  "id": "24-Customer Sales Deck for a SaaS Product",
+  "version": 1,
+  "ppt_number": 24,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "navy",
+    "blue",
+    "gray"
+  ],
+  "name": "Customer Sales Deck for a SaaS Product",
+  "description": "Clean enterprise SaaS design with generous white space, navy sidebars, blue accents, and crisp modular content blocks.",
+  "user": "Sales & Marketing",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["partnership"],"industries":["technology"],"audiences":["client"],"formats":["proposal"],"primary_styles":["minimal"],"visual_traits":["minimal"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、深海军蓝与亮蓝封面，左侧中部放置超大标题，几何色块与细线建立视觉重心。"
+    },
+    {
+      "path": "images/2-customer-context.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，四组大号数字形成节奏，人群信息拉开层级。"
+    },
+    {
+      "path": "images/3-problem-analysis.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，一幅图表集中排布，分析图表组织动线。"
+    },
+    {
+      "path": "images/4-solution-overview.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，一组表格压缩信息密度，概览信息强化对比。"
+    },
+    {
+      "path": "images/5-platform-workflow.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，一组表格压缩信息密度，流程关系收束版面。"
+    },
+    {
+      "path": "images/6-users-scenarios.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，四块卡片组成四列网格，财务信息形成重心。"
+    },
+    {
+      "path": "images/7-implementation-plan.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    },
+    {
+      "path": "images/8-proof-roi.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，一幅图表集中排布，验证信息组织动线。"
+    },
+    {
+      "path": "images/9-pricing-model.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，三块卡片横向并列，方案层级强化对比。"
+    },
+    {
+      "path": "images/10-next-steps.webp",
+      "alt": "白色、深海军蓝与亮蓝页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，白色、深海军蓝与亮蓝确定整体基调，左侧中部放置超大标题；几何色块与细线分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-customer-context.html",
+      "description": "左上方标题锚定白色、深海军蓝与亮蓝画面；单一大面板承载主体信息，分类标签与数据卡贴合卡片边界。"
+    },
+    {
+      "path": "html/3-problem-analysis.html",
+      "description": "白色、深海军蓝与亮蓝作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅分析图表落在中央，对比图表与差异标记补充层级。"
+    },
+    {
+      "path": "html/4-solution-overview.html",
+      "description": "标题固定在左上方，白色、深海军蓝与亮蓝分隔主体；单一大面板承载主体信息，一组表格位于左侧，摘要数字与概览模块补充层级。"
+    },
+    {
+      "path": "html/5-platform-workflow.html",
+      "description": "白色、深海军蓝与亮蓝画面，标题置于左上方；单一大面板承载主体信息，一组表格位于左侧，步骤节点与连接线补充层级。"
+    },
+    {
+      "path": "html/6-users-scenarios.html",
+      "description": "左上方标题锚定白色、深海军蓝与亮蓝画面；四块信息卡横向并列，金额数字、占比与变化标记沿主区展开。"
+    },
+    {
+      "path": "html/7-implementation-plan.html",
+      "description": "白色、深海军蓝与亮蓝作为底色，标题落在左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记贴合卡片边界。"
+    },
+    {
+      "path": "html/8-proof-roi.html",
+      "description": "标题固定在左上方，白色、深海军蓝与亮蓝分隔主体；单一大面板承载主体信息，一幅图表落在右侧，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/9-pricing-model.html",
+      "description": "白色、深海军蓝与亮蓝画面，标题置于左上方；三块信息卡横向并列，分层模块与价格数字顺着版面动线分布。"
+    },
+    {
+      "path": "html/10-next-steps.html",
+      "description": "左上方标题锚定白色、深海军蓝与亮蓝画面；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记嵌入主体模块。"
+    }
+  ]
+}

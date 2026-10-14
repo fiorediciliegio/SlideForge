@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "根据附件制作10页年度工作报告简报，面向人大代表和公众。区分完成事项、在建项目、目标和下一年度计划，重要数字不得改写口径。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "人大代表及公众",
+        "description": "人大代表及公众"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "年度政府工作沟通",
+        "description": "年度政府工作沟通"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "准确说明成果、未完成目标、在建和下一年度计划",
+        "description": "准确说明成果、未完成目标、在建和下一年度计划"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "庄重、透明、民生导向",
+        "description": "庄重、透明、民生导向"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "人大代表及公众",
+      "description": "人大代表及公众"
+    },
+    "purpose": {
+      "label": "年度政府工作沟通",
+      "description": "年度政府工作沟通"
+    },
+    "desired_outcome": {
+      "label": "准确说明成果、未完成目标、在建和下一年度计划",
+      "description": "准确说明成果、未完成目标、在建和下一年度计划"
+    },
+    "slide_count": 10,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "庄重、透明、民生导向",
+      "description": "庄重、透明、民生导向"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

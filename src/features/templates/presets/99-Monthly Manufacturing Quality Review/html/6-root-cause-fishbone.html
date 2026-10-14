@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Root Cause Analysis — Fishbone</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#F4F2EE;">
+<div class="slide" data-screen-label="06 Root Cause" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F2EE;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:74px;width:8px;height:36px;background:#C97A10;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:124px;top:72px;width:900px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:3.4px;color:#8B857A;">06 · ROOT-CAUSE ANALYSIS · 6M FISHBONE</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:114px;width:1600px;z-index:10;">
+    <h2 style="margin:0;font-family:'Archivo',sans-serif;font-size:52px;font-weight:600;letter-spacing:-0.6px;line-height:1.15;color:#16181C;">Why solder bridging persists on Line 3 reflow</h2>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:200px;width:1728px;height:1px;background:#D9D4CB;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:236px;width:1728px;height:596px;background:#FFFFFF;border:1px solid #E4E0D7;border-radius:2px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:128px;top:262px;width:1664px;height:544px;z-index:10;">
+    <svg width="1664" height="544" viewBox="0 0 1664 544" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+      <!-- spine -->
+      <line x1="40" y1="272" x2="1348" y2="272" stroke="#3E4C59" stroke-width="5"/>
+      <polygon points="1348,254 1394,272 1348,290" fill="#3E4C59"/>
+      <!-- effect box -->
+      <rect x="1400" y="210" width="258" height="124" fill="#16181C"/>
+      <text x="1422" y="248" font-family="IBM Plex Mono, monospace" font-size="17" letter-spacing="2" fill="#E9A13B">EFFECT</text>
+      <text x="1422" y="282" font-family="Archivo, sans-serif" font-size="24" font-weight="600" fill="#F4F2EE">Solder bridging</text>
+      <text x="1422" y="310" font-family="IBM Plex Mono, monospace" font-size="18" fill="#B7B2A8">2,210 defects · 29%</text>
+
+      <!-- upper ribs -->
+      <g stroke="#8A9099" stroke-width="3">
+        <line x1="100" y1="100" x2="190" y2="262"/>
+        <line x1="520" y1="100" x2="610" y2="262"/>
+        <line x1="940" y1="100" x2="1030" y2="262"/>
+      </g>
+      <!-- lower ribs -->
+      <g stroke="#8A9099" stroke-width="3">
+        <line x1="190" y1="282" x2="100" y2="444"/>
+        <line x1="610" y1="282" x2="520" y2="444"/>
+        <line x1="1030" y1="282" x2="940" y2="444"/>
+      </g>
+
+      <!-- rib heads -->
+      <g font-family="IBM Plex Mono, monospace" font-size="18" letter-spacing="1.6" fill="#16181C">
+        <rect x="56" y="50" width="204" height="34" fill="#EDEAE3"/><text x="72" y="74">MACHINE</text>
+        <rect x="476" y="50" width="204" height="34" fill="#EDEAE3"/><text x="492" y="74">MATERIAL</text>
+        <rect x="896" y="50" width="204" height="34" fill="#EDEAE3"/><text x="912" y="74">METHOD</text>
+        <rect x="56" y="458" width="204" height="34" fill="#EDEAE3"/><text x="72" y="482">MEASUREMENT</text>
+        <rect x="476" y="458" width="204" height="34" fill="#EDEAE3"/><text x="492" y="482">MAN / SKILL</text>
+        <rect x="896" y="458" width="204" height="34" fill="#EDEAE3"/><text x="912" y="482">ENVIRONMENT</text>
+      </g>
+
+      <!-- upper cause twigs -->
+      <g stroke="#C9C4BA" stroke-width="2">
+        <line x1="125" y1="145" x2="165" y2="145"/><line x1="150" y1="190" x2="190" y2="190"/><line x1="175" y1="235" x2="215" y2="235"/>
+        <line x1="545" y1="145" x2="585" y2="145"/><line x1="570" y1="190" x2="610" y2="190"/>
+        <line x1="965" y1="145" x2="1005" y2="145"/><line x1="990" y1="190" x2="1030" y2="190"/><line x1="1015" y1="235" x2="1055" y2="235"/>
+      </g>
+      <g font-family="Barlow, sans-serif" font-size="19" fill="#2C2E33">
+        <text x="174" y="151">Stencil aperture wear · 18k cycles</text>
+        <text x="199" y="196">Zone-4 thermocouple drift ±6 °C</text>
+        <text x="224" y="241">Squeegee pressure not logged</text>
+        <text x="594" y="151">Paste viscosity out of window</text>
+        <text x="619" y="196">Two paste lots mixed mid-shift</text>
+        <text x="1014" y="151">Profile last verified Q4 2025</text>
+        <text x="1039" y="196">No stencil-cleaning spec</text>
+        <text x="1064" y="241">Changeover checklist skipped 9×</text>
+      </g>
+
+      <!-- lower cause twigs -->
+      <g stroke="#C9C4BA" stroke-width="2">
+        <line x1="150" y1="354" x2="190" y2="354"/><line x1="125" y1="399" x2="165" y2="399"/>
+        <line x1="570" y1="354" x2="610" y2="354"/><line x1="545" y1="399" x2="585" y2="399"/>
+        <line x1="990" y1="354" x2="1030" y2="354"/><line x1="965" y1="399" x2="1005" y2="399"/>
+      </g>
+      <g font-family="Barlow, sans-serif" font-size="19" fill="#2C2E33">
+        <text x="199" y="360">Paste height gauge R&amp;R = 24%</text>
+        <text x="174" y="405">AOI set to legacy recipe</text>
+        <text x="619" y="360">Tribal knowledge, no standard</text>
+        <text x="594" y="405">3 new operators, 1 shift training</text>
+        <text x="1039" y="360">Paste fridge log gaps on nights</text>
+        <text x="1014" y="405">Humidity 58% RH in SMT room</text>
+      </g>
+
+      <!-- verified root markers -->
+      <g>
+        <circle cx="150" cy="190" r="8" fill="#B4433A"/>
+        <circle cx="545" cy="145" r="8" fill="#B4433A"/>
+        <circle cx="965" cy="145" r="8" fill="#B4433A"/>
+        <circle cx="150" cy="354" r="8" fill="#B4433A"/>
+      </g>
+      <text x="40" y="528" font-family="IBM Plex Mono, monospace" font-size="17" fill="#B4433A">● VERIFIED ROOT CAUSE · 5-WHY CONFIRMED + DATA</text>
+      <text x="740" y="528" font-family="IBM Plex Mono, monospace" font-size="17" fill="#8B857A">OTHER BRANCHES SCREENED · NOT SUPPORTED BY JULY DATA</text>
+    </svg>
+  </div>
+
+  <!-- verified causes strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:856px;width:420px;height:124px;background:#FFFFFF;border:1px solid #E4E0D7;border-left:6px solid #B4433A;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:130px;top:880px;width:360px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:2px;color:#B4433A;">ROOT CAUSE 1</p>
+    <p style="margin:8px 0 0 0;font-family:'Barlow',sans-serif;font-size:23px;line-height:1.35;color:#2C2E33;">Zone-4 thermocouple drift — profile no longer matches paste spec.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:532px;top:856px;width:420px;height:124px;background:#FFFFFF;border:1px solid #E4E0D7;border-left:6px solid #B4433A;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:566px;top:880px;width:360px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:2px;color:#B4433A;">ROOT CAUSE 2</p>
+    <p style="margin:8px 0 0 0;font-family:'Barlow',sans-serif;font-size:23px;line-height:1.35;color:#2C2E33;">Paste viscosity outside window on 11 of 21 audited shifts.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:968px;top:856px;width:420px;height:124px;background:#FFFFFF;border:1px solid #E4E0D7;border-left:6px solid #B4433A;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1002px;top:880px;width:360px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:2px;color:#B4433A;">ROOT CAUSE 3</p>
+    <p style="margin:8px 0 0 0;font-family:'Barlow',sans-serif;font-size:23px;line-height:1.35;color:#2C2E33;">Reflow profile not re-validated since the Q4 2025 board revision.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1404px;top:856px;width:420px;height:124px;background:#FFFFFF;border:1px solid #E4E0D7;border-left:6px solid #B4433A;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1438px;top:880px;width:360px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:2px;color:#B4433A;">ROOT CAUSE 4</p>
+    <p style="margin:8px 0 0 0;font-family:'Barlow',sans-serif;font-size:23px;line-height:1.35;color:#2C2E33;">Paste-height gauge R&amp;R at 24% — measurement system not capable.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1022px;width:1300px;z-index:10;">
+    <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:19px;letter-spacing:1.6px;color:#8B857A;">MONTHLY MANUFACTURING QUALITY REVIEW · RIDGELINE PLANT 2 · JULY 2026</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1022px;width:200px;z-index:10;">
+    <p style="margin:0;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:19px;letter-spacing:1.6px;color:#8B857A;">06 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

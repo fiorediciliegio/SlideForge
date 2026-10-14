@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Problem</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#15181B;
+  --ink-2:#39414A;
+  --muted:#767C82;
+  --line:#D8D4CB;
+  --canvas:#F5F3EF;
+  --panel:#FFFFFF;
+  --panel-alt:#EBE8E0;
+  --accent:#B8492B;
+  --accent-soft:#F1DED6;
+  --slate:#1B2429;
+  --slate-2:#2C3A41;
+  --ok:#4C7358;
+  --warn:#9C7A22;
+}
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background:var(--canvas);
+  font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.kicker{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:21px; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+}
+.kicker-d{ color:#D98E74; }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:600;
+  font-size:62px; line-height:1.06; letter-spacing:-.02em; color:var(--ink);
+}
+.h2{ font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.2; letter-spacing:-.01em; }
+.h3{ font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; line-height:1.25; }
+.lead{ font-size:27px; line-height:1.42; color:var(--ink-2); }
+.body{ font-size:23px; line-height:1.5; color:var(--ink-2); }
+.small{ font-size:21px; line-height:1.45; color:var(--muted); }
+
+.label{
+  font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.num{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  letter-spacing:-.03em; line-height:1; color:var(--ink);
+}
+
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:4px; }
+.card-alt{ background:var(--panel-alt); border:1px solid var(--line); border-radius:4px; }
+.card-d{ background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14); border-radius:4px; }
+
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:16px 20px; border-bottom:1px solid var(--line);
+}
+table.grid td{
+  font-size:23px; color:var(--ink-2); padding:20px;
+  border-bottom:1px solid var(--line); vertical-align:middle;
+}
+table.grid td.k{ color:var(--ink); font-weight:500; }
+
+.chip{
+  display:inline-block; border:1px solid var(--line); border-radius:3px;
+  background:#fff; color:var(--ink-2);
+  font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:.04em;
+  padding:9px 14px; margin:0 8px 10px 0;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 The Problem" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F5F3EF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#B8492B; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:118px; width:900px; z-index:10;">
+    <div class="kicker">01 · THE PROBLEM</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:176px; width:880px; z-index:10;">
+    <div class="h1">Revenue operations is<br>the last un-automated<br>function in finance.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:428px; width:840px; z-index:10;">
+    <div class="lead">
+      Mid-market B2B companies bill on contracts, not carts. Usage tiers, annual
+      commits, credits and mid-term upgrades all arrive as email attachments —
+      then get re-keyed by hand into the ERP.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:602px; width:840px; z-index:10;">
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      <div style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="width:8px; height:8px; margin-top:14px; background:#B8492B; flex:none;"></div>
+        <div class="body">Billing logic lives in spreadsheets that only one analyst understands.</div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="width:8px; height:8px; margin-top:14px; background:#B8492B; flex:none;"></div>
+        <div class="body">Collections is a shared inbox — no owner, no sequence, no forecast.</div>
+      </div>
+      <div style="display:flex; gap:20px; align-items:flex-start;">
+        <div style="width:8px; height:8px; margin-top:14px; background:#B8492B; flex:none;"></div>
+        <div class="body">Every audit becomes an archaeology project across four systems.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- right dark quote panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:118px; width:660px; height:452px; background:#1B2429; border-radius:4px; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1176px; top:174px; width:548px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#D98E74;">DISCOVERY CALL · 63 INTERVIEWS</div>
+    <div style="font-family:'Archivo',sans-serif; font-weight:500; font-size:34px; line-height:1.32; color:#fff; margin-top:34px;">
+      “Close week is four people, three spreadsheets and one very long
+      Slack thread. I can tell you our cash position — just not today.”
+    </div>
+    <div style="font-size:21px; color:#8C979E; margin-top:34px;">VP Finance · 240-seat vertical SaaS · $34M ARR</div>
+  </div>
+
+  <!-- KPI cards -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:614px; width:660px; height:112px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:640px; width:580px; z-index:10;">
+    <div style="display:flex; align-items:baseline; gap:24px;">
+      <div class="num" style="font-size:56px; width:190px;">68<span style="font-size:30px;"> days</span></div>
+      <div class="small" style="flex:1;">Median DSO across our interview set — 27 days above their own target.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:742px; width:660px; height:112px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:768px; width:580px; z-index:10;">
+    <div style="display:flex; align-items:baseline; gap:24px;">
+      <div class="num" style="font-size:56px; width:190px;">$1.9M</div>
+      <div class="small" style="flex:1;">Working capital trapped in late receivables per $25M of ARR.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:870px; width:660px; height:112px; background:#F1DED6; border:1px solid #E0C6BA; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:896px; width:580px; z-index:10;">
+    <div style="display:flex; align-items:baseline; gap:24px;">
+      <div class="num" style="font-size:56px; width:190px; color:#B8492B;">9.4<span style="font-size:30px;"> hrs</span></div>
+      <div class="small" style="flex:1; color:#6B4436;">Per analyst, per week, spent re-keying and reconciling by hand.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:1006px; width:1640px; height:1px; background:#D8D4CB; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:1026px; width:900px; z-index:10;">
+    <div class="label" style="font-size:18px;">THREADLINE · PRE-SEED 2026</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1640px; top:1026px; width:140px; text-align:right; z-index:10;">
+    <div class="label" style="font-size:18px;">02</div>
+  </div>
+
+</div>
+</body>
+</html>

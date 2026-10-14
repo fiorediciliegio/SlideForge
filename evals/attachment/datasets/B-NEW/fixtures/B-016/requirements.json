@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "根据危机沟通预案制作8页管理层演练简报，并用Web Research核对当前适用的监管通知渠道。内部联络人、处置层级和公司时限以附件为准。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "管理层与危机响应小组",
+        "description": "管理层与危机响应小组"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "危机沟通桌面演练",
+        "description": "危机沟通桌面演练"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "掌握内部升级、对外口径和需研究的监管渠道",
+        "description": "掌握内部升级、对外口径和需研究的监管渠道"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "紧迫、清楚、可执行",
+        "description": "紧迫、清楚、可执行"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "管理层与危机响应小组",
+      "description": "管理层与危机响应小组"
+    },
+    "purpose": {
+      "label": "危机沟通桌面演练",
+      "description": "危机沟通桌面演练"
+    },
+    "desired_outcome": {
+      "label": "掌握内部升级、对外口径和需研究的监管渠道",
+      "description": "掌握内部升级、对外口径和需研究的监管渠道"
+    },
+    "slide_count": 8,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "紧迫、清楚、可执行",
+      "description": "紧迫、清楚、可执行"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rate, Occupancy and Revenue Model</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>html,body{margin:0;padding:0;overflow:hidden;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Revenue Model" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;font-family:'Manrope',sans-serif;color:#14161A;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:74px;width:800px;z-index:10;font-size:20px;font-weight:600;letter-spacing:0.26em;color:#A62B32;">06 &nbsp;&middot;&nbsp; RATE, OCCUPANCY &amp; REVENUE</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:116px;width:940px;z-index:10;font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:600;line-height:1.08;color:#14161A;">We win on rate, not on filling every night</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1160px;top:126px;width:640px;z-index:10;font-size:24px;font-weight:300;line-height:1.55;color:#4A4E55;">The model holds occupancy three points below the peninsula average and takes an $54 rate premium instead &mdash; a 123 RevPAR index with materially lower housekeeping and OTA cost.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:288px;width:1680px;height:1px;background:#E6E3DC;z-index:1;"></div>
+
+  <!-- Seasonality chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:322px;width:820px;z-index:10;font-size:22px;font-weight:600;letter-spacing:0.14em;color:#14161A;">STABILISED YEAR BY MONTH &mdash; OCCUPANCY VS. ADR</div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:120px;top:372px;width:840px;height:320px;z-index:10;">
+    <canvas id="c2" width="840" height="320"></canvas>
+  </div>
+
+  <!-- Rate ladder -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1030px;top:322px;width:770px;z-index:10;font-size:22px;font-weight:600;letter-spacing:0.14em;color:#14161A;">HOW THE $352 STABILISED ADR IS BUILT</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1030px;top:376px;width:770px;z-index:10;">
+    <div style="display:flex;align-items:center;height:56px;border-bottom:1px solid #EDEAE3;">
+      <div style="width:340px;font-size:23px;font-weight:500;color:#2C3036;">Comp-set ADR, peninsula</div>
+      <div style="width:290px;"><div style="height:14px;width:248px;background:#DDD9D0;"></div></div>
+      <div style="width:140px;text-align:right;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#14161A;">$298</div>
+    </div>
+    <div style="display:flex;align-items:center;height:56px;border-bottom:1px solid #EDEAE3;">
+      <div style="width:340px;font-size:23px;font-weight:500;color:#2C3036;">Design &amp; product premium</div>
+      <div style="width:290px;"><div style="height:14px;width:58px;background:#A62B32;"></div></div>
+      <div style="width:140px;text-align:right;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#A62B32;">+$34</div>
+    </div>
+    <div style="display:flex;align-items:center;height:56px;border-bottom:1px solid #EDEAE3;">
+      <div style="width:340px;font-size:23px;font-weight:500;color:#2C3036;">Suite &amp; room-mix effect</div>
+      <div style="width:290px;"><div style="height:14px;width:48px;background:#A62B32;"></div></div>
+      <div style="width:140px;text-align:right;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#A62B32;">+$28</div>
+    </div>
+    <div style="display:flex;align-items:center;height:56px;border-bottom:1px solid #EDEAE3;">
+      <div style="width:340px;font-size:23px;font-weight:500;color:#2C3036;">Ramp &amp; discount discipline</div>
+      <div style="width:290px;"><div style="height:14px;width:20px;background:#D9A24B;"></div></div>
+      <div style="width:140px;text-align:right;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#8B8779;">&minus;$8</div>
+    </div>
+    <div style="display:flex;align-items:center;height:62px;border-bottom:3px solid #14161A;">
+      <div style="width:340px;font-size:24px;font-weight:700;color:#14161A;">Stabilised ADR, Year 3</div>
+      <div style="width:290px;"><div style="height:18px;width:266px;background:#14161A;"></div></div>
+      <div style="width:140px;text-align:right;font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#14161A;">$352</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1030px;top:672px;width:770px;z-index:10;font-size:22px;font-weight:400;line-height:1.5;color:#4A4E55;">Premiums are evidenced by two in-market design-led comparables running $344 ADR at 96 combined keys &mdash; before their suite inventory is counted.</div>
+
+  <!-- KPI band -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:770px;width:1680px;height:198px;background:#FAF9F6;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:770px;width:1680px;height:3px;background:#A62B32;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:168px;top:812px;width:1584px;z-index:10;">
+    <div style="display:flex;">
+      <div style="width:396px;">
+        <div style="font-size:19px;font-weight:600;letter-spacing:0.14em;color:#8B8779;">STABILISED ADR</div>
+        <div style="margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:600;line-height:1;color:#14161A;">$352</div>
+        <div style="margin-top:8px;font-size:21px;color:#4A4E55;">+18% vs. comp set</div>
+      </div>
+      <div style="width:396px;padding-left:40px;border-left:1px solid #DDD9D0;">
+        <div style="font-size:19px;font-weight:600;letter-spacing:0.14em;color:#8B8779;">OCCUPANCY</div>
+        <div style="margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:600;line-height:1;color:#14161A;">74.6%</div>
+        <div style="margin-top:8px;font-size:21px;color:#4A4E55;">Deliberately below market</div>
+      </div>
+      <div style="width:396px;padding-left:40px;border-left:1px solid #DDD9D0;">
+        <div style="font-size:19px;font-weight:600;letter-spacing:0.14em;color:#8B8779;">REVPAR</div>
+        <div style="margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:600;line-height:1;color:#14161A;">$262</div>
+        <div style="margin-top:8px;font-size:21px;color:#4A4E55;">Comp set at $213</div>
+      </div>
+      <div style="width:356px;padding-left:40px;border-left:1px solid #DDD9D0;">
+        <div style="font-size:19px;font-weight:600;letter-spacing:0.14em;color:#8B8779;">REVPAR INDEX</div>
+        <div style="margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:600;line-height:1;color:#A62B32;">123</div>
+        <div style="margin-top:8px;font-size:21px;color:#4A4E55;">Target by Year 3</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1002px;width:1200px;z-index:10;font-size:18px;font-weight:400;color:#9A968C;">Stabilised-year operating model (Year 3, 2031). Comp-set RevPAR of $213 reflects $298 ADR at 71.5% occupancy per STR competitive set.</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1002px;width:140px;z-index:10;text-align:right;font-size:19px;font-weight:600;letter-spacing:0.16em;color:#9A968C;">07 / 10</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+new Chart(document.getElementById('c2'),{
+ data:{labels:['J','F','M','A','M','J','J','A','S','O','N','D'],
+  datasets:[
+   {type:'bar',label:'Occupancy %',data:[56,66,85,90,86,77,71,66,74,87,77,60],backgroundColor:'#DDD9D0',hoverBackgroundColor:'#DDD9D0',borderWidth:0,yAxisID:'y',barPercentage:0.62,categoryPercentage:0.8},
+   {type:'line',label:'ADR $',data:[268,296,412,428,405,358,332,318,344,418,356,289],borderColor:'#A62B32',borderWidth:3,fill:false,tension:0.32,pointRadius:4,pointBackgroundColor:'#A62B32',yAxisID:'y1'}
+  ]},
+ options:{responsive:false,animation:false,layout:{padding:{top:6}},
+  plugins:{legend:{position:'bottom',labels:{font:{family:'Manrope',size:17,weight:'500'},color:'#4A4E55',boxWidth:24,boxHeight:12,padding:20}}},
+  scales:{
+   y:{position:'left',min:0,max:100,ticks:{font:{family:'Manrope',size:15},color:'#9A968C',stepSize:25,callback:v=>v+'%'},grid:{color:'#EDEAE3'},border:{display:false}},
+   y1:{position:'right',min:200,max:460,ticks:{font:{family:'Manrope',size:15},color:'#A62B32',stepSize:65,callback:v=>'$'+v},grid:{display:false},border:{display:false}},
+   x:{ticks:{font:{family:'Manrope',size:16,weight:'500'},color:'#4A4E55'},grid:{display:false},border:{color:'#E6E3DC'}}
+  }}
+});
+</script>
+</div>
+</body>
+</html>

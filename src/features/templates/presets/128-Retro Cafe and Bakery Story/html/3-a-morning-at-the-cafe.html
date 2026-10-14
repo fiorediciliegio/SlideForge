@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A Morning at the Cafe — The Hearth Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Caveat:wght@500;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --butter:#F5C04A;
+  --butter-soft:#FBE3A2;
+  --chocolate:#3B2417;
+  --choco-deep:#2A1810;
+  --cherry:#C8342B;
+  --cherry-deep:#9B241D;
+  --cream:#F4E9D4;
+  --paper:#FAF1DC;
+  --ink:#251610;
+  --moss:#3F5C3B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#E8DCC0;overflow:hidden;font-family:'Fraunces',serif}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--butter-soft)}
+.slide::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='8'/><feColorMatrix values='0 0 0 0 0.20 0 0 0 0 0.14 0 0 0 0 0.08 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/></svg>");opacity:0.45;z-index:1;pointer-events:none}
+
+/* ============================================================
+   ZONE GEOMETRY — every element is centered around canvas x=960
+   ============================================================ */
+
+/* ZONE 1 — Top header, centered on canvas 960 */
+.head{position:absolute;left:300px;top:60px;width:1320px;z-index:6;text-align:center}
+.head .crest{font-family:'Special Elite',monospace;font-size:13px;letter-spacing:.45em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:10px}
+.head h2{font-family:'Fraunces',serif;font-weight:900;font-size:74px;line-height:1;letter-spacing:-.02em;color:var(--choco-deep);margin-bottom:14px}
+.head h2 em{font-family:'Caveat',cursive;color:var(--cherry-deep);font-weight:700;font-style:normal;font-size:62px;margin-left:8px;display:inline-block;transform:translateY(-4px)}
+.head p{font-family:'Fraunces',serif;font-style:italic;font-size:22px;line-height:1.45;color:var(--chocolate);max-width:1080px;margin:0 auto}
+
+/* ZONE 2 — Timecard, anchored right; balanced by left "open today" small chip */
+.timecard{position:absolute;right:80px;top:60px;width:180px;background:var(--cream);border:1.5px solid var(--chocolate);z-index:7;padding:14px 18px;box-shadow:5px 5px 0 var(--cherry)}
+.timecard .t-label{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:4px}
+.timecard .t-num{font-family:'Fraunces',serif;font-weight:900;font-size:46px;line-height:1;color:var(--choco-deep)}
+.timecard .t-note{font-family:'Caveat',cursive;font-size:17px;color:var(--moss);margin-top:4px;line-height:1.1}
+
+.open-chip{position:absolute;left:80px;top:60px;width:180px;background:var(--cream);border:1.5px solid var(--chocolate);z-index:7;padding:14px 18px;box-shadow:5px 5px 0 var(--moss)}
+.open-chip .oc-l{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--cherry-deep);margin-bottom:4px}
+.open-chip .oc-b{font-family:'Fraunces',serif;font-weight:900;font-size:22px;line-height:1.05;color:var(--choco-deep)}
+.open-chip .oc-n{font-family:'Caveat',cursive;font-size:17px;color:var(--cherry-deep);margin-top:4px;line-height:1.1}
+
+/* ZONE 3 — Decorative dashed tape + centered handwritten caption */
+.tape{position:absolute;left:120px;right:120px;top:300px;height:6px;background:repeating-linear-gradient(90deg,var(--cherry) 0 14px,transparent 14px 22px);z-index:5}
+.cap-line{position:absolute;left:0;right:0;top:316px;z-index:6;text-align:center;font-family:'Caveat',cursive;color:var(--cherry-deep);font-size:24px;line-height:1}
+
+/* ZONE 4 — Timeline clocks + dots — 5 stations centered at canvas x = 240/600/960/1320/1680 */
+/* The shared anchor container with no chrome (transparent) — each child is positioned individually */
+.clock{position:absolute;top:380px;width:130px;text-align:center;margin-left:-65px;
+  font-family:'Fraunces',serif;font-weight:900;font-size:30px;color:var(--choco-deep);
+  background:var(--paper);padding:2px 8px;border:1.5px solid var(--chocolate);
+  white-space:nowrap;z-index:7}
+.dot-el{position:absolute;top:438px;width:34px;height:34px;border-radius:50%;background:var(--cherry);border:4px solid var(--paper);box-shadow:0 0 0 2px var(--chocolate);z-index:7;margin-left:-17px}
+.dot-el.b{background:var(--butter)}
+.dot-el.d{background:var(--cherry-deep)}
+
+/* Connector stems from dot down to card */
+.stem-line{position:absolute;top:472px;width:2px;height:14px;background:var(--chocolate);z-index:6;margin-left:-1px}
+
+/* ZONE 5 — Station cards — 5 cards, W=240, gap=120, total 1680, centered at canvas 960 */
+.station{position:absolute;top:486px;width:240px;height:300px;background:var(--cream);border:1.5px solid var(--chocolate);
+  padding:14px 14px 12px;box-shadow:5px 5px 0 rgba(59,36,23,.15);text-align:center;z-index:8}
+.station.b{box-shadow:5px 5px 0 var(--cherry);background:var(--butter-soft)}
+.station.c{box-shadow:5px 5px 0 var(--chocolate);background:var(--cream)}
+.station.m{box-shadow:5px 5px 0 var(--moss);background:#FBF5E5}
+
+.station .pic{width:104px;height:104px;background:var(--paper);border:1px solid var(--chocolate);border-radius:6px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
+.station h4{font-family:'Fraunces',serif;font-weight:800;font-size:20px;color:var(--choco-deep);line-height:1.05;margin-bottom:8px;letter-spacing:-.005em;padding:4px 10px;background:var(--butter-soft);display:inline-block;border:1px solid var(--chocolate)}
+.station h4.alt{background:var(--cream)}
+.station h4.moss{background:#FBF5E5}
+.station h4.cherry{background:var(--cherry);color:var(--cream);border-color:var(--choco-deep)}
+.station p{font-family:'Fraunces',serif;font-size:14px;line-height:1.45;color:var(--chocolate);margin-top:8px;text-align:left;padding:0 4px}
+
+/* ZONE 6 — Bottom dark band */
+.bband{position:absolute;left:0;right:0;bottom:0;height:90px;background:var(--chocolate);color:var(--cream);
+  display:flex;align-items:center;justify-content:space-between;padding:0 80px;z-index:7}
+.bband .b-l{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--butter-soft);max-width:520px}
+.bband .b-c{font-family:'Caveat',cursive;font-size:24px;color:var(--butter);text-align:center}
+.bband .b-r{font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.35em;text-transform:uppercase;color:var(--paper)}
+.bband .pn{font-family:'Fraunces',serif;font-weight:900;font-size:30px;color:var(--butter);min-width:40px;text-align:right}
+</style>
+</head>
+<body>
+<div class="slide">
+
+<!-- ZONE 1 -->
+<div data-object="true" data-object-type="textbox" class="head">
+  <div class="crest">✦ Chapter Three ✦ 06:00 — 09:00 ✦</div>
+  <h2>A morning at the<em>cafe.</em></h2>
+  <p>Long before the first customer pushes open the green door, the kitchen is already awake. Here is the half-hour-by-half-hour rhythm — the small choreography that turns an empty room into a warm one.</p>
+</div>
+
+<!-- ZONE 2 — left chip + right timecard for symmetric top corners -->
+<div data-object="true" data-object-type="textbox" class="open-chip">
+  <div class="oc-l">Today's Bake</div>
+  <div class="oc-b">Dough on</div>
+  <div class="oc-n">— by 6:00 sharp —</div>
+</div>
+<div data-object="true" data-object-type="textbox" class="timecard">
+  <div class="t-label">Doors Open</div>
+  <div class="t-num">7:30</div>
+  <div class="t-note">— ish, when the<br>bread is ready —</div>
+</div>
+
+<!-- ZONE 3 -->
+<div data-object="true" data-object-type="shape" class="tape"></div>
+<div data-object="true" data-object-type="textbox" class="cap-line">… flour hand · oven door · coffee breath · first regular of the morning …</div>
+
+<!-- ZONE 4+5 — Master plan: 5 stations. Center spacing 360px apart. Cards W=240, gap=120.
+     Canvas-relative station left-edges: 120, 480, 840, 1200, 1560. Centers: 240, 600, 960, 1320, 1680.
+     Dot/clock at the same canvas centers. -->
+
+<!-- Station 01 — 06:00 — Dough & Prep — center 240 -->
+<div data-object="true" data-object-type="textbox" class="clock" style="left:240px">06:00</div>
+<div data-object="true" data-object-type="shape" class="dot-el b" style="left:240px"></div>
+<div data-object="true" data-object-type="shape" class="stem-line" style="left:240px"></div>
+<div data-object="true" data-object-type="textbox" class="station b" style="left:120px">
+  <div class="pic">
+    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="50" cy="56" rx="32" ry="20" fill="#F5C04A"/>
+      <path d="M18 56 Q50 76 82 56"/>
+      <path d="M30 50 Q34 30 50 30 Q66 30 70 50"/>
+      <path d="M58 24 Q62 14 56 10"/>
+    </svg>
+  </div>
+  <h4>Dough &amp; Prep</h4>
+  <p>Cold butter is cubed by hand. The overnight dough is folded and rested; rye is shaped into rounds.</p>
+</div>
+
+<!-- Station 02 — 06:45 — Ovens Warm — center 600 -->
+<div data-object="true" data-object-type="textbox" class="clock" style="left:600px">06:45</div>
+<div data-object="true" data-object-type="shape" class="dot-el" style="left:600px"></div>
+<div data-object="true" data-object-type="shape" class="stem-line" style="left:600px"></div>
+<div data-object="true" data-object-type="textbox" class="station c" style="left:480px">
+  <div class="pic">
+    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="22" y="22" width="56" height="56" fill="#C8342B"/>
+      <rect x="32" y="34" width="36" height="32" fill="#F5C04A"/>
+      <path d="M40 30 L40 70 M60 30 L60 70 M22 50 L78 50"/>
+    </svg>
+  </div>
+  <h4 class="alt">Ovens Warm</h4>
+  <p>The wood oven climbs to baking heat. A kettle is filled. The radio is switched on, low.</p>
+</div>
+
+<!-- Station 03 — 07:10 — Coffee Breathed — center 960 (canvas center) -->
+<div data-object="true" data-object-type="textbox" class="clock" style="left:960px">07:10</div>
+<div data-object="true" data-object-type="shape" class="dot-el d" style="left:960px"></div>
+<div data-object="true" data-object-type="shape" class="stem-line" style="left:960px"></div>
+<div data-object="true" data-object-type="textbox" class="station m" style="left:840px">
+  <div class="pic">
+    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 50 H82 V68 Q82 80 70 80 H30 Q18 80 18 68 Z" fill="#F4E9D4"/>
+      <path d="M82 56 Q94 56 94 66 Q94 76 82 76"/>
+      <path d="M40 38 Q40 22 50 22 Q60 22 60 38"/>
+      <path d="M50 22 Q56 14 52 8"/>
+    </svg>
+  </div>
+  <h4 class="moss">Coffee Breathed</h4>
+  <p>Beans are weighed, ground, and the first espresso is pulled — tasted, and pulled again.</p>
+</div>
+
+<!-- Station 04 — 07:25 — Counter Set — center 1320 -->
+<div data-object="true" data-object-type="textbox" class="clock" style="left:1320px">07:25</div>
+<div data-object="true" data-object-type="shape" class="dot-el b" style="left:1320px"></div>
+<div data-object="true" data-object-type="shape" class="stem-line" style="left:1320px"></div>
+<div data-object="true" data-object-type="textbox" class="station" style="left:1200px">
+  <div class="pic">
+    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="20" y="32" width="60" height="40" fill="#F4E9D4"/>
+      <path d="M20 32 L50 56 L80 32"/>
+      <path d="M30 32 L50 50"/>
+      <path d="M14 22 L24 22 M14 30 L24 30 M76 22 L86 22"/>
+    </svg>
+  </div>
+  <h4 class="alt">Counter Set</h4>
+  <p>Pastries are laid out. Napkins are folded. Salt and sugar bowls refilled. The chalk menu is updated.</p>
+</div>
+
+<!-- Station 05 — 07:30 — Door Unlocked — center 1680 -->
+<div data-object="true" data-object-type="textbox" class="clock" style="left:1680px">07:30</div>
+<div data-object="true" data-object-type="shape" class="dot-el" style="left:1680px"></div>
+<div data-object="true" data-object-type="shape" class="stem-line" style="left:1680px"></div>
+<div data-object="true" data-object-type="textbox" class="station b" style="left:1560px">
+  <div class="pic">
+    <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="#3B2417" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="28" y="18" width="44" height="64" rx="3" fill="#3F5C3B"/>
+      <rect x="36" y="28" width="28" height="36" fill="#FBE3A2"/>
+      <circle cx="50" cy="46" r="6" fill="#C8342B"/>
+      <path d="M50 56 L50 70"/>
+      <circle cx="50" cy="78" r="3" fill="#FBE3A2"/>
+    </svg>
+  </div>
+  <h4>Door Unlocked</h4>
+  <p>The bell rings once. The first regular steps in. The day begins for real.</p>
+</div>
+
+<!-- ZONE 6 -->
+<div class="bband">
+  <div class="b-l">Every morning —<br>flour first, customer last.</div>
+  <div class="b-c">a small choreography<br>in seven short steps</div>
+  <div class="b-r">SLIDE 03 · THE HEARTH ROOM<br>MORNING RITUAL</div>
+  <div class="pn">03</div>
+</div>
+
+</div>
+
+<template data-slide-notes>This slide maps the half-hour-by-half-hour opening ritual — from dough to first bell — without naming real hours, owners, or contracts. It introduces the kitchen's quiet logistics so the reader understands what's behind every dish on the next pages.</template>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "id": "83-Family Insurance Protection Plan",
+  "version": 1,
+  "ppt_number": 83,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "blue",
+    "gold",
+    "gray"
+  ],
+  "name": "Family Insurance Protection Plan",
+  "description": "Advisory insurance design with warm cream backgrounds, layered blue diagrams, muted gold highlights, and reassuring editorial typography.",
+  "user": "Business Professionals",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":[],"industries":["finance"],"audiences":["client"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖奶油色、层次蓝与哑金色封面采用左侧中部超大标题，一幅图片与留白形成对照。"
+    },
+    {
+      "path": "images/2-family-profile-and-gap.webp",
+      "alt": "暖奶油色、层次蓝与哑金色页面，两幅图表集中排布，诊断信息组织动线。"
+    },
+    {
+      "path": "images/3-protection-mix.webp",
+      "alt": "暖奶油色、层次蓝与哑金色页面，三幅图表集中排布，配置信息强化对比。"
+    },
+    {
+      "path": "images/4-premium-and-scenarios.webp",
+      "alt": "暖奶油色、层次蓝与哑金色页面，一幅图表集中排布，财务信息收束版面。"
+    },
+    {
+      "path": "images/5-application-steps.webp",
+      "alt": "暖奶油色、层次蓝与哑金色页面，一幅图片构成视觉重心，流程信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页采用暖奶油色、层次蓝与哑金色，超大标题锚定左侧中部；一幅图片连接主体与边缘信息，留白保持画面张力。"
+    },
+    {
+      "path": "html/2-family-profile-and-gap.html",
+      "description": "暖奶油色、层次蓝与哑金色画面，标题置于左上方；留白与细线分隔出清晰阅读区，两幅图表落在右侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/3-protection-mix.html",
+      "description": "左上方标题锚定暖奶油色、层次蓝与哑金色画面；单一大面板承载主体信息，三幅图表落在左侧，配置模块、比例数字与情景标记补充层级。"
+    },
+    {
+      "path": "html/4-premium-and-scenarios.html",
+      "description": "暖奶油色、层次蓝与哑金色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅财务图表落在中央，一组表格位于中央。"
+    },
+    {
+      "path": "html/5-application-steps.html",
+      "description": "标题固定在左上方，暖奶油色、层次蓝与哑金色分隔主体；单一大面板承载主体信息，一幅图片集中于中央，一幅图表落在中央。"
+    }
+  ]
+}

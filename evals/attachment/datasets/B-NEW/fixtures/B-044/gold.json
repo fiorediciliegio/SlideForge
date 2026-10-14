@@ -1,0 +1,13 @@
+{
+  "case_id": "B-044",
+  "size_class": "边界",
+  "target_input_tokens": 25000,
+  "estimated_outline_input_tokens": 25113,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": false,
+  "attachment_mode": "Multiple attachments",
+  "attachment_types": "DOCX + MD",
+  "content_strategies": "summarized_context + full_context",
+  "evaluation_risks": "1. Claiming full Scope 3 coverage; 2. Treating drafted governance as approved; 3. Saying a pilot is assurance-ready; 4. Using obsolete standard dates; 5. Mixing legal requirements across jurisdictions."
+}

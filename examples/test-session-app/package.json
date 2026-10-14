@@ -1,0 +1,16 @@
+{
+  "name": "test-session-lifecycle-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Anna App for testing raw agent session lifecycle APIs.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "anna-app dev",
+    "test": "node --test test/*.test.mjs",
+    "validate": "anna-app validate --strict"
+  },
+  "devDependencies": {
+    "@anna-ai/cli": "latest"
+  }
+}

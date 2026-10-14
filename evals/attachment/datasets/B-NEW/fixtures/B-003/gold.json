@@ -1,0 +1,13 @@
+{
+  "case_id": "B-003",
+  "size_class": "中",
+  "target_input_tokens": 3500,
+  "estimated_outline_input_tokens": 3627,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": false,
+  "attachment_mode": "单附件",
+  "attachment_types": "DOCX",
+  "content_strategies": "summarized_context",
+  "evaluation_risks": "1. 把草案写成已生效制度；2. 用Web资料改写公司额度；3. 未为税务结论安排研究方向；4. 把外部规则伪装成附件事实；5. 未区分例外审批与普遍权限。"
+}

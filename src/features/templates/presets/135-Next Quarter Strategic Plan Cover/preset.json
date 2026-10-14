@@ -1,0 +1,147 @@
+{
+  "id": "135-Next Quarter Strategic Plan Cover",
+  "version": 1,
+  "ppt_number": 135,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "white",
+    "blue",
+    "red",
+    "gray"
+  ],
+  "name": "Next Quarter Strategic Plan Cover",
+  "description": "Executive planning cover with navy typography, red emphasis, soft radial fields, and a structured planning card.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["strategy"],"industries":["business"],"audiences":["employee"],"formats":["roadmap"],"primary_styles":["formal","minimal"],"visual_traits":["formal","minimal"]},
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "navy-red",
+      "name": "Navy Red",
+      "swatches": [
+        "#FDFDFE",
+        "#0A2F6B",
+        "#C8102E",
+        "#7889A0"
+      ],
+      "roles": {
+        "bg": "#FDFDFE",
+        "surface": "#F7F9FC",
+        "ink": "#0A2F6B",
+        "muted": "#3E5573",
+        "accent_primary": "#C8102E",
+        "accent_secondary": "#7889A0",
+        "accent_tertiary": "#FF6B7F",
+        "line": "#E4EAF3"
+      }
+    },
+    {
+      "id": "cobalt-coral",
+      "name": "Cobalt Coral",
+      "swatches": [
+        "#F7F9FF",
+        "#16356F",
+        "#E6554E",
+        "#7D9BCB"
+      ],
+      "roles": {
+        "bg": "#F7F9FF",
+        "surface": "#F1F5FC",
+        "ink": "#16356F",
+        "muted": "#5E7297",
+        "accent_primary": "#E6554E",
+        "accent_secondary": "#A93632",
+        "accent_tertiary": "#FFB05A",
+        "line": "#D9E3F1"
+      }
+    },
+    {
+      "id": "teal-tangerine",
+      "name": "Teal Tangerine",
+      "swatches": [
+        "#F5F8F8",
+        "#133B45",
+        "#E16A3D",
+        "#5F9FA9"
+      ],
+      "roles": {
+        "bg": "#F5F8F8",
+        "surface": "#F2F7F7",
+        "ink": "#133B45",
+        "muted": "#527079",
+        "accent_primary": "#E16A3D",
+        "accent_secondary": "#934025",
+        "accent_tertiary": "#F5B74F",
+        "line": "#D5E3E2"
+      }
+    },
+    {
+      "id": "aubergine-saffron",
+      "name": "Aubergine Saffron",
+      "swatches": [
+        "#FBF8FC",
+        "#3B2454",
+        "#D69A24",
+        "#AA91BE"
+      ],
+      "roles": {
+        "bg": "#FBF8FC",
+        "surface": "#F8F3FA",
+        "ink": "#3B2454",
+        "muted": "#745C84",
+        "accent_primary": "#D69A24",
+        "accent_secondary": "#81520D",
+        "accent_tertiary": "#E87970",
+        "line": "#E8DEEC"
+      }
+    }
+  ],
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Executive strategic planning cover with navy and red accents, oversized quarter marker, and a structured right-side panel."
+    },
+    {
+      "path": "images/2-executive-overview.webp",
+      "alt": "Executive Overview"
+    },
+    {
+      "path": "images/3-implementation-roadmap.webp",
+      "alt": "Implementation Roadmap"
+    },
+    {
+      "path": "images/4-performance-insights.webp",
+      "alt": "Performance Insights"
+    },
+    {
+      "path": "images/5-key-decisions-next-steps.webp",
+      "alt": "Key Decisions and Next Steps"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Executive strategy cover with bold navy typography, restrained red accents, soft geometric fields, and a high-contrast planning panel."
+    },
+    {
+      "path": "html/2-executive-overview.html",
+      "description": "Executive Overview"
+    },
+    {
+      "path": "html/3-implementation-roadmap.html",
+      "description": "Implementation Roadmap"
+    },
+    {
+      "path": "html/4-performance-insights.html",
+      "description": "Performance Insights"
+    },
+    {
+      "path": "html/5-key-decisions-next-steps.html",
+      "description": "Key Decisions and Next Steps"
+    }
+  ]
+}

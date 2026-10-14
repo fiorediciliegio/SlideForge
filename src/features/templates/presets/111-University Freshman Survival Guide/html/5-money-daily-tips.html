@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Money & Daily Life — Freshman Survival Guide</title>
+<style>
+/* Sticker-collage theme — Freshman Survival Guide */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@600;700;800;900&family=Patrick+Hand&display=swap');
+
+:root{
+  --blue:#2C7BE5;        /* bright blue */
+  --blue-deep:#1B4FA6;
+  --orange:#FF7A2A;      /* bright orange */
+  --orange-soft:#FFB877;
+  --lime:#B8E438;        /* lime green */
+  --lime-deep:#7BB800;
+  --purple:#8B5CF6;      /* small purple accent */
+  --purple-deep:#5B21B6;
+  --white:#FFFFFF;
+  --cream:#FFF8E9;       /* soft warm off-white bg — not beige-luxury */
+  --paper:#FDFBF3;
+  --ink:#1F2A44;         /* deep navy ink for handwriting feel */
+  --ink-soft:#3B4A6B;
+
+  --f-display:'Fredoka', system-ui, sans-serif;
+  --f-hand:'Caveat', cursive;
+  --f-marker:'Patrick Hand', cursive;
+  --f-body:'Nunito', system-ui, sans-serif;
+}
+
+/* --- Sticker & tape utility styles (used inline in slides) --- */
+.sticker{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 6px 0 rgba(31,42,68,.12), 0 14px 30px rgba(31,42,68,.10);
+  border:3px solid var(--ink);
+}
+.tape{
+  position:absolute;
+  background:rgba(255, 224, 130, .78);
+  box-shadow:0 4px 10px rgba(0,0,0,.10);
+  transform:rotate(-6deg);
+}
+.pin{
+  width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ff6b6b, #b91c1c 70%);
+  box-shadow:0 4px 0 rgba(0,0,0,.25), inset -3px -4px 6px rgba(0,0,0,.25);
+  border:3px solid #fff;
+}
+</style>
+<style>
+  body{margin:0;padding:0;overflow:hidden;font-family:var(--f-body);}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;
+    background:#FFF8E9;
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="05 Money and Daily Life">
+
+  <!-- Title badge (blue) -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:80px;top:60px;width:880px;height:130px;
+              background:var(--blue);border:5px solid var(--ink);border-radius:24px;
+              transform:rotate(-1.5deg);box-shadow:8px 8px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:70px;width:860px;height:120px;z-index:10;
+              transform:rotate(-1.5deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:32px;color:var(--lime);line-height:1;">chapter 04 ✦</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:52px;line-height:1;letter-spacing:-1px;margin-top:4px;">
+      Money-Saving &amp; Daily-Life Hacks
+    </div>
+  </div>
+
+  <!-- Subtitle -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:920px;top:100px;width:640px;height:80px;z-index:10;
+              font-family:var(--f-marker);font-size:32px;color:var(--ink-soft);line-height:1.2;">
+    Small habits now = way more coffee money later.
+  </div>
+
+  <!-- ========= LEFT: The 50/30/20 pie ========= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:80px;top:230px;width:660px;height:520px;
+              background:#fff;border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:250px;width:600px;height:70px;z-index:10;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:36px;line-height:1;">💰 The 50 / 30 / 20 rule</div>
+    <div style="font-family:var(--f-marker);font-size:24px;color:var(--purple-deep);margin-top:6px;">of every dollar you get this month</div>
+  </div>
+
+  <!-- Pie chart SVG -->
+  <svg data-object="true" data-object-type="chart"
+       style="position:absolute;left:120px;top:350px;width:340px;height:340px;z-index:10;"
+       viewBox="0 0 200 200">
+    <!-- 50% needs (blue) -->
+    <path d="M100,100 L100,10 A90,90 0 0,1 100,190 Z" fill="#2C7BE5" stroke="#1F2A44" stroke-width="4"/>
+    <!-- 30% wants (orange) -->
+    <path d="M100,100 L100,190 A90,90 0 0,1 23.9,53.1 Z" fill="#FF7A2A" stroke="#1F2A44" stroke-width="4"/>
+    <!-- 20% save (lime) -->
+    <path d="M100,100 L23.9,53.1 A90,90 0 0,1 100,10 Z" fill="#B8E438" stroke="#1F2A44" stroke-width="4"/>
+    <!-- center circle -->
+    <circle cx="100" cy="100" r="34" fill="#fff" stroke="#1F2A44" stroke-width="4"/>
+    <text x="100" y="97" font-family="Fredoka" font-size="14" text-anchor="middle" fill="#1F2A44" font-weight="700">MONEY</text>
+    <text x="100" y="114" font-family="Fredoka" font-size="14" text-anchor="middle" fill="#1F2A44" font-weight="700">PLAN</text>
+  </svg>
+
+  <!-- Pie legend -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:490px;top:370px;width:230px;height:80px;z-index:11;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1;">
+      <span style="display:inline-block;width:22px;height:22px;background:var(--blue);border:3px solid var(--ink);vertical-align:middle;margin-right:8px;"></span>50% Needs
+    </div>
+    <div style="font-family:var(--f-body);font-weight:600;font-size:18px;color:var(--ink-soft);margin-top:4px;margin-left:2px;">rent, meal plan, textbooks, transit</div>
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:490px;top:475px;width:230px;height:80px;z-index:11;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1;">
+      <span style="display:inline-block;width:22px;height:22px;background:var(--orange);border:3px solid var(--ink);vertical-align:middle;margin-right:8px;"></span>30% Wants
+    </div>
+    <div style="font-family:var(--f-body);font-weight:600;font-size:18px;color:var(--ink-soft);margin-top:4px;margin-left:2px;">bubble tea, concerts, road trips</div>
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:490px;top:580px;width:230px;height:80px;z-index:11;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1;">
+      <span style="display:inline-block;width:22px;height:22px;background:var(--lime);border:3px solid var(--ink);vertical-align:middle;margin-right:8px;"></span>20% Save
+    </div>
+    <div style="font-family:var(--f-body);font-weight:600;font-size:18px;color:var(--ink-soft);margin-top:4px;margin-left:2px;">tiny emergency fund → sanity</div>
+  </div>
+
+  <!-- Wallet cutout sticker -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:60px;top:670px;width:120px;height:120px;
+              background:var(--purple);border:5px solid var(--ink);border-radius:22px;
+              transform:rotate(-12deg);box-shadow:6px 6px 0 var(--ink);z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:60px;top:670px;width:120px;height:120px;z-index:11;
+              transform:rotate(-12deg);
+              display:flex;align-items:center;justify-content:center;
+              font-size:70px;">👛</div>
+
+  <!-- Bottom banner: 3 daily hacks -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:80px;top:790px;width:660px;height:240px;
+              background:var(--purple);border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;transform:rotate(1deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:810px;width:600px;height:200px;z-index:10;
+              transform:rotate(1deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:40px;color:#FFE082;line-height:1;">daily life hacks 🧦</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:22px;line-height:1.5;margin-top:10px;">
+      🧺 Laundry Sunday mornings — machines are empty<br>
+      💧 Refillable bottle → saves $20/wk on drinks<br>
+      🛏️ Make your bed. Every day. It works.
+    </div>
+  </div>
+
+  <!-- ========= RIGHT: 6 hack stickers grid ========= -->
+  <!-- section label -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:790px;top:240px;width:1080px;height:60px;z-index:10;color:var(--ink);
+              font-family:var(--f-display);font-weight:700;font-size:36px;line-height:1;">
+    🪙 Six easy money wins
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:790px;top:290px;width:1080px;height:40px;z-index:10;
+              font-family:var(--f-marker);font-size:26px;color:var(--purple-deep);">
+    Do these once, benefit all semester.
+  </div>
+
+  <!-- Hack 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:790px;top:350px;width:340px;height:200px;background:var(--lime);border:5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-2deg);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:810px;top:365px;width:300px;height:170px;z-index:10;transform:rotate(-2deg);color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:60px;line-height:1;">📚</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;margin-top:6px;">Rent or e-book</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;color:var(--ink-soft);line-height:1.3;margin-top:6px;">textbooks. Never buy new until you've checked the library first.</div>
+  </div>
+
+  <!-- Hack 2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1160px;top:350px;width:340px;height:200px;background:var(--orange);border:5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(1.8deg);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1180px;top:365px;width:300px;height:170px;z-index:10;transform:rotate(1.8deg);color:#fff;">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:60px;line-height:1;">🎫</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;margin-top:6px;">Student ID = magic</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;line-height:1.3;margin-top:6px;">movies, museums, Spotify, Amazon Prime — flash it everywhere.</div>
+  </div>
+
+  <!-- Hack 3 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1530px;top:350px;width:340px;height:200px;background:#fff;border:5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-1.2deg);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1550px;top:365px;width:300px;height:170px;z-index:10;transform:rotate(-1.2deg);color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:60px;line-height:1;">🍜</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;margin-top:6px;">Use the meal plan</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;color:var(--ink-soft);line-height:1.3;margin-top:6px;">it's paid for. Every skipped meal is money you already lost.</div>
+  </div>
+
+  <!-- Hack 4 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:790px;top:580px;width:340px;height:200px;background:#fff;border:5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(1.5deg);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:810px;top:595px;width:300px;height:170px;z-index:10;transform:rotate(1.5deg);color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:60px;line-height:1;">🚌</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;margin-top:6px;">Transit &gt; rideshare</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;color:var(--ink-soft);line-height:1.3;margin-top:6px;">most campuses give free bus passes with your ID. Use them.</div>
+  </div>
+
+  <!-- Hack 5 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1160px;top:580px;width:340px;height:200px;background:var(--blue);border:5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(-2deg);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1180px;top:595px;width:300px;height:170px;z-index:10;transform:rotate(-2deg);color:#fff;">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:60px;line-height:1;">🎁</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;margin-top:6px;">Free event food</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;line-height:1.3;margin-top:6px;">pizza, coffee, snacks at info sessions. Every. Single. Week.</div>
+  </div>
+
+  <!-- Hack 6 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1530px;top:580px;width:340px;height:200px;background:var(--lime);border:5px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);z-index:2;transform:rotate(2deg);"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1550px;top:595px;width:300px;height:170px;z-index:10;transform:rotate(2deg);color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:60px;line-height:1;">📱</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;margin-top:6px;">Track it (5 min/wk)</div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:19px;color:var(--ink-soft);line-height:1.3;margin-top:6px;">any free app. Awareness alone cuts spending ~20%.</div>
+  </div>
+
+  <!-- Bottom right: sleep sticker -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:790px;top:820px;width:1080px;height:200px;
+              background:var(--orange);border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;transform:rotate(-0.8deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:820px;top:845px;width:1020px;height:160px;z-index:10;
+              transform:rotate(-0.8deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:44px;line-height:1;color:#FFE082;">😴 the one habit that beats them all →</div>
+    <div style="font-family:var(--f-display);font-weight:700;font-size:34px;line-height:1.1;margin-top:10px;">
+      SLEEP 7+ HOURS. It's free, it's legal, and it fixes almost everything —
+      grades, mood, immune system, decision-making.
+    </div>
+  </div>
+
+  <!-- washi tape -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:700px;top:800px;width:220px;height:36px;
+              background:repeating-linear-gradient(45deg, var(--blue) 0 14px, #B7D4F5 14px 28px);
+              transform:rotate(-10deg);opacity:.85;z-index:5;">
+  </div>
+
+  <!-- Page number -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1780px;top:1030px;width:80px;height:40px;z-index:10;
+              font-family:var(--f-hand);font-size:36px;color:var(--ink-soft);">05</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AURA Pods Pro — Launch Cover</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURA Pods Pro — FY26 Launch Deck
+   Design system: White + Blue accent (single primary, two secondaries)
+   Type: Manrope (display/UI) + IBM Plex Mono (labels, numbers)
+   Radius 4px · hairline 1px · no gradients · no glow
+   ============================================================ */
+
+:root{
+  --ink:      #0F1B2D;   /* primary text            */
+  --ink-2:    #5B6B82;   /* secondary text          */
+  --ink-3:    #93A1B5;   /* tertiary / chrome text  */
+  --line:     #E4E9F0;   /* hairline                */
+  --line-2:   #F0F3F8;   /* faint hairline          */
+  --blue:     #1A56DB;   /* PRIMARY accent          */
+  --blue-ink: #123FA0;   /* accent, pressed         */
+  --blue-soft:#EDF2FE;   /* accent wash             */
+  --wash:     #F6F8FB;   /* neutral surface         */
+  --white:    #FFFFFF;
+
+  --r: 4px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--white);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---------- type roles (typography only; layout stays inline) ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--blue); margin:0;
+}
+.h1{ font-family:'Manrope',sans-serif; font-weight:800; font-size:58px;
+     line-height:1.12; letter-spacing:-.022em; color:var(--ink); margin:0; }
+.h1-xl{ font-family:'Manrope',sans-serif; font-weight:800; font-size:112px;
+     line-height:1.0; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.h2{ font-family:'Manrope',sans-serif; font-weight:700; font-size:34px;
+     line-height:1.25; letter-spacing:-.012em; color:var(--ink); margin:0; }
+.h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:25px;
+     line-height:1.3; color:var(--ink); margin:0; }
+.lead{ font-family:'Manrope',sans-serif; font-weight:500; font-size:29px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.body{ font-family:'Manrope',sans-serif; font-weight:500; font-size:23px;
+     line-height:1.55; color:var(--ink-2); margin:0; }
+.small{ font-family:'Manrope',sans-serif; font-weight:500; font-size:20px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.stat{ font-family:'Manrope',sans-serif; font-weight:800; font-size:88px;
+     line-height:.95; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.stat-sm{ font-family:'Manrope',sans-serif; font-weight:800; font-size:60px;
+     line-height:1; letter-spacing:-.03em; color:var(--ink); margin:0; }
+
+.mono{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:18px;
+     letter-spacing:.04em; color:var(--ink-2); margin:0; }
+.tag{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.tag-b{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin:0; }
+.idx{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:17px;
+     letter-spacing:.1em; color:var(--blue); margin:0; }
+.foot{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:15px;
+     letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+
+.accent{ color:var(--blue); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="01 Cover" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <!-- full-bleed product image, right two-fifths -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:1080px;top:0px;width:840px;height:1080px;z-index:5;overflow:hidden;">
+    <img src="../assets/hero-earbuds.jpg" alt="AURA Pods Pro" style="width:840px;height:1080px;object-fit:cover;display:block;">
+  </div>
+
+  <!-- brand mark -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:92px;width:420px;z-index:10;">
+    <p class="tag" style="color:var(--ink);font-weight:500;font-size:18px;letter-spacing:.34em;">AURA<span class="accent">&nbsp;•</span>&nbsp;AUDIO</p>
+  </div>
+
+  <!-- accent rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:302px;width:64px;height:4px;background:var(--blue);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:332px;width:820px;z-index:10;">
+    <p class="eyebrow">New Product Launch &nbsp;/&nbsp; FY26</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:384px;width:900px;z-index:10;">
+    <h1 class="h1-xl">AURA Pods Pro</h1>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:534px;width:800px;z-index:10;">
+    <p class="lead">Adaptive spatial audio that re-tunes itself to your ear —<br>every second, without a single setting to touch.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:742px;width:840px;height:1px;background:var(--line);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:774px;width:250px;z-index:10;">
+    <p class="tag">Reveal date</p>
+    <p class="h3" style="margin-top:10px;font-size:23px;">September 18, 2026</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:400px;top:774px;width:250px;z-index:10;">
+    <p class="tag">Format</p>
+    <p class="h3" style="margin-top:10px;font-size:23px;">Global launch stream</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:680px;top:774px;width:280px;z-index:10;">
+    <p class="tag">Owner</p>
+    <p class="h3" style="margin-top:10px;font-size:23px;">Product Marketing, Audio</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1000px;width:700px;z-index:10;">
+    <p class="foot">Confidential — internal launch review</p>
+  </div>
+
+</div>
+</body>
+</html>

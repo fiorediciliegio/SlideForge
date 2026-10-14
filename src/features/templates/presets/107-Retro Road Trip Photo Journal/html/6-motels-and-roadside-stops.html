@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Motels and Roadside Stops — Retro Road Trip Photo Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RETRO ROAD TRIP PHOTO JOURNAL — shared analog design system
+   One film stock, one paper, one caption logic, all 10 slides.
+   ============================================================ */
+
+*{box-sizing:border-box;}
+
+:root{
+  --cream:#EFE3CA;
+  --paper:#E7D8B9;
+  --paper-2:#DFCDA9;
+  --ink:#241C14;
+  --ink-80:rgba(36,28,20,.84);
+  --ink-65:rgba(36,28,20,.66);
+  --ink-45:rgba(36,28,20,.46);
+  --brown:#4B3626;
+  --orange:#C2551D;
+  --red:#7C2416;
+  --teal:#2C5B58;
+  --dark:#1B1610;
+  --lt:#F2E8D2;
+  --lt-80:rgba(242,232,210,.84);
+  --lt-60:rgba(242,232,210,.62);
+}
+
+body{margin:0;padding:0;overflow:hidden;background:var(--dark);}
+
+/* ---------- film grain + vignette, identical on every slide ---------- */
+.slide::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:78;
+  background:radial-gradient(120% 90% at 50% 45%,rgba(0,0,0,0) 48%,rgba(24,18,12,.30) 100%);
+}
+.slide::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:79;
+  opacity:.085;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:220px 220px;
+}
+
+/* ---------- paper ---------- */
+.paper-bg{
+  background-color:var(--cream);
+  background-image:
+    repeating-linear-gradient(94deg,rgba(120,86,48,.028) 0 2px,rgba(0,0,0,0) 2px 7px),
+    repeating-linear-gradient(2deg,rgba(120,86,48,.022) 0 1px,rgba(0,0,0,0) 1px 6px),
+    radial-gradient(70% 60% at 22% 18%,rgba(255,250,236,.55),rgba(0,0,0,0) 70%);
+}
+.dark-bg{
+  background-color:var(--dark);
+  background-image:
+    radial-gradient(80% 70% at 78% 12%,rgba(124,36,22,.30),rgba(0,0,0,0) 66%),
+    radial-gradient(60% 60% at 8% 92%,rgba(44,91,88,.26),rgba(0,0,0,0) 70%);
+}
+
+/* ---------- one film stock for every photograph ---------- */
+.ph{filter:sepia(.24) saturate(.84) contrast(1.055) brightness(1.02);}
+
+/* ---------- film frame (printed edge) ---------- */
+.fr{background:#F4EBD7;padding:12px;box-shadow:0 12px 30px rgba(20,14,8,.34);position:relative;}
+.fr>img{display:block;width:100%;height:100%;object-fit:cover;}
+.fr.dk{background:#15110C;box-shadow:0 12px 30px rgba(0,0,0,.5);}
+.fr.strip{padding:10px 10px 34px;}
+.fr.strip .sn{
+  position:absolute;left:12px;right:12px;bottom:7px;
+  font:700 19px/1 'Courier Prime',monospace;letter-spacing:.11em;
+  color:var(--ink-65);display:flex;justify-content:space-between;
+}
+.fr.strip.dk .sn{color:var(--lt-60);}
+
+/* ---------- typography ---------- */
+.kick{font:700 22px/1 'Courier Prime',monospace;letter-spacing:.30em;color:var(--orange);text-transform:uppercase;display:block;}
+.ttl{font:400 76px/.95 'Alfa Slab One',serif;color:var(--ink);margin:0;letter-spacing:-.008em;text-wrap:pretty;}
+.sub{font:600 30px/1.35 'Spectral',serif;color:var(--red);margin:0;}
+.lead{font:400 29px/1.55 'Spectral',serif;color:var(--ink-80);margin:0;}
+.bd{font:400 25px/1.6 'Spectral',serif;color:var(--ink-80);margin:0;}
+.cap{font:400 24px/1.34 'Spectral',serif;color:var(--ink-65);margin:0;}
+.stamp{font:700 21px/1.2 'Courier Prime',monospace;letter-spacing:.15em;color:var(--red);text-transform:uppercase;}
+.hand{font:600 32px/1.25 'Caveat',cursive;color:var(--teal);margin:0;}
+.foot{font:400 20px/1 'Courier Prime',monospace;letter-spacing:.17em;color:var(--ink-45);text-transform:uppercase;display:block;}
+
+/* light-on-dark variants */
+.lt-ttl{color:var(--lt);}
+.lt-lead{color:var(--lt-80);}
+.lt-bd{color:var(--lt-80);}
+.lt-cap{color:var(--lt-60);}
+.lt-foot{color:rgba(242,232,210,.55);}
+.lt-kick{color:#E4883F;}
+.lt-hand{color:#7FB2AC;}
+
+/* ---------- marks ---------- */
+.rule{background:var(--orange);height:5px;}
+.rule-th{background:var(--ink);height:2px;opacity:.28;}
+.tag{
+  display:inline-block;padding:7px 15px 6px;
+  font:700 20px/1 'Courier Prime',monospace;letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.tag-red{background:var(--red);color:var(--cream);}
+.tag-teal{background:var(--teal);color:var(--cream);}
+.tag-out{border:2px solid var(--ink-45);color:var(--ink-65);}
+
+/* note / ephemera card */
+.note{
+  background:#F3E9D2;border:1px solid rgba(75,54,38,.30);
+  box-shadow:0 10px 24px rgba(20,14,8,.26);
+}
+.note-teal{background:#E4E8DF;border:1px solid rgba(44,91,88,.35);}
+
+ul.tick{margin:0;padding:0;list-style:none;}
+ul.tick li{
+  position:relative;padding-left:34px;margin-bottom:16px;
+  font:400 25px/1.5 'Spectral',serif;color:var(--ink-80);
+}
+ul.tick li:last-child{margin-bottom:0;}
+ul.tick li::before{
+  content:'';position:absolute;left:0;top:13px;width:18px;height:3px;background:var(--orange);
+}
+ul.tick.lt li{color:var(--lt-80);}
+ul.tick.lt li::before{background:#E4883F;}
+</style>
+</head>
+<body>
+<div class="slide dark-bg" data-screen-label="06 Motels and Roadside Stops" style="position:relative;width:1920px;height:1080px;overflow:hidden;">
+
+  <img data-object="true" data-object-type="image" class="ph" src="../assets/hero-motel-neon.jpg" alt="Neon motel sign glowing above a low desert motel at dusk" style="position:absolute;left:0;top:0;width:764px;height:1080px;object-fit:cover;object-position:50% 32%;z-index:5;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:604px;top:0;width:200px;height:1080px;background:linear-gradient(90deg,rgba(27,22,16,0) 0%,rgba(27,22,16,.80) 58%,#1B1610 100%);z-index:6;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:790px;width:700px;height:290px;background:linear-gradient(180deg,rgba(16,12,8,0) 0%,rgba(16,12,8,.78) 52%,rgba(14,10,7,.94) 100%);z-index:6;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:60px;top:872px;width:500px;z-index:10;">
+    <span class="stamp" style="color:#E4883F;font-size:19px;display:block;margin-bottom:9px;">Frame 061 &middot; 20:48</span>
+    <p class="cap lt-cap" style="font-size:23px;">Vacancy light on. Room 7, second door from the ice machine.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:860px;top:80px;width:964px;padding-bottom:18px;z-index:10;">
+    <span class="kick lt-kick" style="margin-bottom:14px;">Nights 02, 04 &amp; 06 &middot; Roadside Ephemera</span>
+    <h1 class="ttl lt-ttl" style="font-size:66px;line-height:1.02;">Rooms Rented<br>by the Night</h1>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:862px;top:308px;width:172px;height:5px;background:#C2551D;z-index:10;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:860px;top:346px;width:600px;z-index:10;">
+    <p class="lead lt-lead" style="font-size:26px;">Cash up front, key on a plastic diamond. Thin towels, loud ice machine, and the best sleep of the whole trip.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1520px;top:318px;width:304px;z-index:10;">
+    <div class="note" style="padding:22px 22px 20px;">
+      <span class="foot" style="margin-bottom:10px;">Receipt &middot; Night 04</span>
+      <div style="display:flex;justify-content:space-between;margin-bottom:9px;">
+        <span style="font:400 22px/1.2 'Spectral',serif;color:#241C14;">Room, single</span>
+        <span style="font:700 20px/1.2 'Courier Prime',monospace;color:#241C14;">14.00</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:9px;">
+        <span style="font:400 22px/1.2 'Spectral',serif;color:#241C14;">Ice, bucket</span>
+        <span style="font:700 20px/1.2 'Courier Prime',monospace;color:#241C14;">0.25</span>
+      </div>
+      <div class="rule-th" style="margin:12px 0 10px;"></div>
+      <div style="display:flex;justify-content:space-between;">
+        <span class="stamp" style="font-size:19px;">Paid</span>
+        <span style="font:700 24px/1.2 'Courier Prime',monospace;color:#7C2416;">14.25</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="image" class="fr strip dk" style="position:absolute;left:860px;top:532px;width:472px;height:300px;z-index:5;">
+    <img class="ph" src="../assets/stop-pumps.jpg" alt="Row of vintage orange gas pumps at an old filling station" style="width:452px;height:256px;">
+    <span class="sn"><span>Fill-up, mile 596</span><span>064</span></span>
+  </div>
+
+  <div data-object="true" data-object-type="image" class="fr strip dk" style="position:absolute;left:1362px;top:532px;width:462px;height:300px;z-index:5;">
+    <img class="ph" src="../assets/stop-station.jpg" alt="Restored roadside filling station under open sky" style="width:442px;height:256px;">
+    <span class="sn"><span>Closed since &rsquo;68</span><span>067</span></span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:860px;top:868px;width:590px;z-index:10;">
+    <span class="tag tag-red" style="margin-bottom:18px;">Collected</span>
+    <p class="bd lt-bd" style="margin-top:18px;font-size:24px;">Three room keys we forgot to return, a matchbook, and 40&cent; in gas-station change still in the door pocket.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1520px;top:868px;width:304px;z-index:10;">
+    <p class="hand lt-hand" style="font-size:29px;">Neon buzzed all night. Worth it.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1690px;top:1012px;width:120px;text-align:right;z-index:10;">
+    <span class="foot lt-foot">06 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

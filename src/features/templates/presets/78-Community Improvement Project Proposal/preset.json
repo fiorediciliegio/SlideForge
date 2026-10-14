@@ -1,0 +1,103 @@
+{
+  "id": "78-Community Improvement Project Proposal",
+  "version": 1,
+  "ppt_number": 78,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "black",
+    "white"
+  ],
+  "name": "Community Improvement Project Proposal",
+  "description": "Community proposal design with warm neutral space, layered green modules, editorial typography, and approachable impact graphics.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["partnership","public-service"],"industries":["public-sector"],"audiences":["client","public"],"formats":["proposal"],"primary_styles":["fresh"],"visual_traits":["fresh"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖米色、层次绿与墨黑封面以左侧中部超大标题开场，几何色块与细线拉开层级。"
+    },
+    {
+      "path": "images/2-core-problem.webp",
+      "alt": "暖米色、层次绿与墨黑页面，标题、细线与留白划分层级，核心判断组织动线。"
+    },
+    {
+      "path": "images/3-needs-analysis.webp",
+      "alt": "暖米色、层次绿与墨黑页面，一幅图表集中排布，分析图表强化对比。"
+    },
+    {
+      "path": "images/4-solution-overview.webp",
+      "alt": "暖米色、层次绿与墨黑页面，标题、细线与留白划分层级，概览信息收束版面。"
+    },
+    {
+      "path": "images/5-design-principles.webp",
+      "alt": "暖米色、层次绿与墨黑页面，四块卡片纵向叠放，框架信息形成重心。"
+    },
+    {
+      "path": "images/6-programs-and-facilities.webp",
+      "alt": "暖米色、层次绿与墨黑页面，一组表格压缩信息密度，方案信息拉开层级。"
+    },
+    {
+      "path": "images/7-participation-model.webp",
+      "alt": "暖米色、层次绿与墨黑页面，五块卡片组成两列网格，方案层级组织动线。"
+    },
+    {
+      "path": "images/8-partners-and-budget.webp",
+      "alt": "暖米色、层次绿与墨黑页面，一幅图表集中排布，财务信息强化对比。"
+    },
+    {
+      "path": "images/9-roadmap-and-risks.webp",
+      "alt": "暖米色、层次绿与墨黑页面，四块卡片组成四列网格，风险信息收束版面。"
+    },
+    {
+      "path": "images/10-impact-and-ask.webp",
+      "alt": "暖米色、层次绿与墨黑页面，七块卡片组成四列网格，绩效信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖米色、层次绿与墨黑主导画面，左侧中部的超大标题形成第一视点；几何色块与细线与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-core-problem.html",
+      "description": "标题固定在左上方，暖米色、层次绿与墨黑分隔主体；单一大面板承载主体信息，问题陈述与强调数字集中在画面中部。"
+    },
+    {
+      "path": "html/3-needs-analysis.html",
+      "description": "暖米色、层次绿与墨黑画面，标题置于左上方；单一大面板承载主体信息，一幅分析图表落在左侧，对比图表与差异标记补充层级。"
+    },
+    {
+      "path": "html/4-solution-overview.html",
+      "description": "左上方标题锚定暖米色、层次绿与墨黑画面；单一大面板承载主体信息，摘要数字与概览模块嵌入主体模块。"
+    },
+    {
+      "path": "html/5-design-principles.html",
+      "description": "暖米色、层次绿与墨黑作为底色，标题落在左上方；四块信息卡纵向叠放，框架模块与强调结论沿主区展开。"
+    },
+    {
+      "path": "html/6-programs-and-facilities.html",
+      "description": "标题固定在左上方，暖米色、层次绿与墨黑分隔主体；单一大面板承载主体信息，一组表格位于左侧，功能分区与场景模块补充层级。"
+    },
+    {
+      "path": "html/7-participation-model.html",
+      "description": "暖米色、层次绿与墨黑画面，标题置于左上方；五块信息卡组成两列网格，一幅图表落在右侧，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/8-partners-and-budget.html",
+      "description": "左上方标题锚定暖米色、层次绿与墨黑画面；单一大面板承载主体信息，一幅财务图表落在左侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/9-roadmap-and-risks.html",
+      "description": "暖米色、层次绿与墨黑作为底色，标题落在左上方；四块信息卡横向并列，分级标签、状态色与风险标记嵌入主体模块。"
+    },
+    {
+      "path": "html/10-impact-and-ask.html",
+      "description": "标题固定在左上方，暖米色、层次绿与墨黑分隔主体；七块信息卡组成四列网格，指标数字与趋势标记沿主区展开。"
+    }
+  ]
+}

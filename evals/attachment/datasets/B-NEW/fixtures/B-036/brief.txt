@@ -1,0 +1,1 @@
+Prepare a 9-slide manufacturing quality review. Combine the defect log with the corrective-action summary. Separate observed defects, suspected causes, confirmed root causes, completed actions, and pending validation.

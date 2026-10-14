@@ -1,0 +1,10 @@
+{
+  "id": "08-complex-layout",
+  "title": "复杂综合布局",
+  "description": "Grid、Flex、绝对定位、重叠、透明、裁切、旋转、渐变和阴影。",
+  "deck_html_file": "08-complex-layout/deck.html",
+  "slide_html_files": ["08-complex-layout/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["grid", "flex", "absolute", "overlap", "shadow", "clip"],
+  "manual_checks": ["重叠层级和透明玻璃卡保持一致", "旋转标签与裁切圆形不偏移", "Grid 卡片边界与间距准确"]
+}

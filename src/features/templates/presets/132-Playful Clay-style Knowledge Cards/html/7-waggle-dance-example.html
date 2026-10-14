@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The waggle dance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Clay Knowledge Cards — shared visual identity
+   Appearance only (surfaces, texture, typography). All layout/position is
+   authored inline on each data-object so the editor keeps its coordinates.
+   Lighting: single soft light from the upper-left on every object.
+   ========================================================================== */
+
+:root{
+  --cream:#FDF6E9;
+  --cream-2:#F8EEDC;
+
+  --mint:#9DDCBF;   --mint-d:#6BC29E;  --mint-l:#C6EFDC;
+  --orange:#F3A263; --orange-d:#DD8340; --orange-l:#FBC998;
+  --lav:#C5B7EB;    --lav-d:#A492DA;   --lav-l:#DFD6F7;
+  --butter:#FAD86C; --butter-d:#EBBF3F; --butter-l:#FDEDB2;
+  --blue:#A4D2F1;   --blue-d:#79B7E2;  --blue-l:#CEE8FA;
+
+  --ink:#4A3728;
+  --ink-soft:#7C6753;
+  --ink-faint:#9C8974;
+  --white:#FFFDF7;
+}
+
+/* --- clay surfaces: soft matte volume, never glossy ---------------------- */
+.clay{
+  box-shadow:
+    inset 10px 12px 18px rgba(255,255,255,.55),
+    inset -10px -13px 20px rgba(124,86,46,.16),
+    0 22px 30px -16px rgba(124,90,50,.34);
+}
+.clay-s{
+  box-shadow:
+    inset 6px 7px 11px rgba(255,255,255,.58),
+    inset -6px -8px 13px rgba(124,86,46,.16),
+    0 13px 20px -11px rgba(124,90,50,.32);
+}
+.clay-in{
+  box-shadow:
+    inset 7px 9px 16px rgba(124,86,46,.20),
+    inset -6px -7px 12px rgba(255,255,255,.55);
+}
+
+/* protected text area: a clean, style-consistent plate under copy */
+.plate{
+  background:rgba(255,253,247,.95);
+  box-shadow:
+    inset 5px 6px 10px rgba(255,255,255,.75),
+    inset -5px -6px 11px rgba(140,105,65,.10),
+    0 16px 26px -18px rgba(124,90,50,.30);
+}
+
+/* subtle handmade matte grain — extremely low contrast */
+.grain{
+  background-image:radial-gradient(rgba(124,86,46,.055) 1px, transparent 1.7px);
+  background-size:7px 7px;
+}
+
+/* --- typography: rounded, friendly, highly legible ---------------------- */
+.t-h{
+  font-family:'Baloo 2','Trebuchet MS',sans-serif;
+  font-weight:800; color:var(--ink); margin:0; letter-spacing:-.4px;
+  text-wrap:pretty;
+}
+.t-b{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:600; color:var(--ink-soft); margin:0; text-wrap:pretty;
+}
+.t-k{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:800; color:var(--ink-faint); margin:0;
+  letter-spacing:3.4px; text-transform:uppercase;
+}
+.src{
+  font-family:'Nunito','Trebuchet MS',sans-serif;
+  font-weight:700; color:var(--ink-faint); margin:0;
+}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<div class="slide grain" data-screen-label="07 Example in Action" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FDF6E9;">
+
+  <!-- kicker + title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:74px;width:940px;z-index:10;">
+    <p class="t-k" style="font-size:22px;">Card 07 &nbsp;·&nbsp; Example in action</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:118px;width:1000px;z-index:10;">
+    <p class="t-h" style="font-size:56px;line-height:1.12;">One bee dances the map, and the hive reads it</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:262px;width:960px;z-index:10;">
+    <p class="t-b" style="font-size:28px;line-height:1.45;">A returning forager runs a figure-eight on the comb. The straight middle part &mdash; the waggle run &mdash; carries two pieces of information at once.</p>
+  </div>
+
+  <!-- MINIATURE SCENE: sunny meadow with hive and flower patch -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:110px;top:416px;width:900px;height:452px;border-radius:48px;background:#CEE8FA;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:718px;width:900px;height:150px;border-radius:0 0 48px 48px;background:#C6EFDC;z-index:2;"></div>
+
+  <div data-object="true" data-object-type="image" style="position:absolute;left:826px;top:450px;width:136px;height:136px;z-index:5;">
+    <div class="clay" style="position:absolute;left:0px;top:0px;width:136px;height:136px;border-radius:50%;background:#FAD86C;"></div>
+    <div style="position:absolute;left:38px;top:52px;width:16px;height:16px;border-radius:50%;background:#4A3728;"></div>
+    <div style="position:absolute;left:82px;top:52px;width:16px;height:16px;border-radius:50%;background:#4A3728;"></div>
+    <div style="position:absolute;left:50px;top:82px;width:36px;height:18px;border-bottom:8px solid #4A3728;border-radius:0 0 36px 36px;"></div>
+  </div>
+
+  <!-- clay hive on the left of the scene -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:170px;top:606px;width:212px;height:196px;z-index:5;">
+    <div class="clay-s" style="position:absolute;left:12px;top:0px;width:188px;height:44px;border-radius:22px;background:#F3A263;"></div>
+    <div class="clay-s" style="position:absolute;left:2px;top:50px;width:208px;height:48px;border-radius:24px;background:#FBC998;"></div>
+    <div class="clay-s" style="position:absolute;left:12px;top:104px;width:188px;height:48px;border-radius:24px;background:#F3A263;"></div>
+    <div class="clay" style="position:absolute;left:26px;top:158px;width:160px;height:38px;border-radius:19px;background:#DD8340;"></div>
+    <div class="clay-in" style="position:absolute;left:78px;top:168px;width:56px;height:20px;border-radius:10px;background:#4A3728;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:816px;width:252px;z-index:10;">
+    <p class="t-h" style="font-size:24px;text-align:center;">Home hive</p>
+  </div>
+
+  <!-- flight path dots (behind flower patch) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:414px;top:640px;width:236px;height:76px;z-index:4;">
+    <div style="position:absolute;left:0px;top:62px;width:14px;height:14px;border-radius:50%;background:#79B7E2;"></div>
+    <div style="position:absolute;left:54px;top:34px;width:14px;height:14px;border-radius:50%;background:#79B7E2;"></div>
+    <div style="position:absolute;left:110px;top:14px;width:14px;height:14px;border-radius:50%;background:#79B7E2;"></div>
+    <div style="position:absolute;left:166px;top:0px;width:14px;height:14px;border-radius:50%;background:#79B7E2;"></div>
+    <div style="position:absolute;left:222px;top:10px;width:14px;height:14px;border-radius:50%;background:#79B7E2;"></div>
+  </div>
+
+  <!-- flower patch -->
+  <div data-object="true" data-object-type="image" style="position:absolute;left:668px;top:632px;width:262px;height:172px;z-index:5;">
+    <div style="position:absolute;left:40px;top:76px;width:12px;height:96px;border-radius:6px;background:#6BC29E;"></div>
+    <div class="clay-s" style="position:absolute;left:8px;top:32px;width:76px;height:76px;border-radius:50%;background:#C5B7EB;"></div>
+    <div class="clay-s" style="position:absolute;left:30px;top:54px;width:32px;height:32px;border-radius:50%;background:#FAD86C;"></div>
+    <div style="position:absolute;left:132px;top:60px;width:12px;height:112px;border-radius:6px;background:#6BC29E;"></div>
+    <div class="clay-s" style="position:absolute;left:100px;top:8px;width:76px;height:76px;border-radius:50%;background:#F3A263;"></div>
+    <div class="clay-s" style="position:absolute;left:122px;top:30px;width:32px;height:32px;border-radius:50%;background:#FDEDB2;"></div>
+    <div style="position:absolute;left:220px;top:88px;width:12px;height:84px;border-radius:6px;background:#6BC29E;"></div>
+    <div class="clay-s" style="position:absolute;left:188px;top:44px;width:76px;height:76px;border-radius:50%;background:#9DDCBF;"></div>
+    <div class="clay-s" style="position:absolute;left:210px;top:66px;width:32px;height:32px;border-radius:50%;background:#FAD86C;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:668px;top:816px;width:262px;z-index:10;">
+    <p class="t-h" style="font-size:24px;text-align:center;">Flower patch</p>
+  </div>
+
+  <!-- protected caption plate inside the scene sky -->
+  <div data-object="true" data-object-type="shape" class="plate" style="position:absolute;left:166px;top:452px;width:596px;height:124px;border-radius:30px;z-index:3;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:200px;top:478px;width:528px;z-index:10;">
+    <p class="t-b" style="font-size:24px;line-height:1.4;">Foragers usually work 2&ndash;3&thinsp;km (1.5&ndash;2&thinsp;mi) from home, and further when food is scarce.</p>
+  </div>
+
+  <!-- RIGHT COLUMN: how to read the dance -->
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:1060px;top:416px;width:750px;height:210px;border-radius:44px;background:#FDEDB2;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:1104px;top:452px;width:138px;height:138px;z-index:5;">
+    <div class="clay-s" style="position:absolute;left:0px;top:0px;width:138px;height:138px;border-radius:50%;background:#FFFDF7;"></div>
+    <div style="position:absolute;left:63px;top:22px;width:12px;height:52px;border-radius:6px;background:#C5B7EB;"></div>
+    <div style="position:absolute;left:66px;top:66px;width:46px;height:12px;border-radius:6px;background:#F3A263;transform:rotate(40deg);transform-origin:left center;"></div>
+    <div class="clay-s" style="position:absolute;left:56px;top:59px;width:26px;height:26px;border-radius:50%;background:#4A3728;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1274px;top:462px;width:502px;z-index:10;">
+    <p class="t-h" style="font-size:31px;">Angle = direction</p>
+    <p class="t-b" style="font-size:23px;line-height:1.38;margin-top:8px;">Straight up on the comb means &ldquo;fly toward the sun.&rdquo; Tilt the run 40&deg; and the food sits 40&deg; from the sun.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="clay" style="position:absolute;left:1060px;top:658px;width:750px;height:210px;border-radius:44px;background:#C6EFDC;z-index:1;"></div>
+  <div data-object="true" data-object-type="image" style="position:absolute;left:1104px;top:694px;width:138px;height:138px;z-index:5;">
+    <div class="clay-s" style="position:absolute;left:0px;top:0px;width:138px;height:138px;border-radius:50%;background:#FFFDF7;"></div>
+    <div class="clay-s" style="position:absolute;left:22px;top:52px;width:34px;height:34px;border-radius:50%;background:#6BC29E;"></div>
+    <div class="clay-s" style="position:absolute;left:64px;top:52px;width:34px;height:34px;border-radius:50%;background:#9DDCBF;"></div>
+    <div class="clay-s" style="position:absolute;left:106px;top:52px;width:22px;height:34px;border-radius:11px;background:#C6EFDC;"></div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1274px;top:704px;width:502px;z-index:10;">
+    <p class="t-h" style="font-size:31px;">Length = distance</p>
+    <p class="t-b" style="font-size:23px;line-height:1.38;margin-top:8px;">A longer waggle means a longer flight. A 2.5-second run points to food about 2,625&thinsp;m away.</p>
+  </div>
+
+  <!-- chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:972px;width:700px;z-index:10;">
+    <p class="t-k" style="font-size:22px;letter-spacing:2.6px;">Inside the Beehive &nbsp;·&nbsp; Clay Knowledge Cards</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:860px;top:974px;width:840px;z-index:10;">
+    <p class="src" style="font-size:22px;text-align:right;">Sources: NC State Extension (Tarpy); NobelPrize.org &mdash; von Frisch, 1973</p>
+  </div>
+  <div data-object="true" data-object-type="shape" class="clay-s" style="position:absolute;left:1746px;top:948px;width:70px;height:70px;border-radius:50%;background:#A4D2F1;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1754px;top:966px;width:54px;z-index:10;">
+    <p class="t-h" style="font-size:28px;text-align:center;line-height:34px;">07</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "id": "43-Enterprise Digital Transformation Roadmap",
+  "version": 1,
+  "ppt_number": 43,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "navy",
+    "teal",
+    "gray"
+  ],
+  "name": "Enterprise Digital Transformation Roadmap",
+  "description": "Enterprise-roadmap design with bright white space, navy information panels, teal timelines, and precise capability maps.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Technology & AI",
+  "recommendation_profile": {"use_cases":["strategy"],"industries":["technology"],"audiences":["executive","employee"],"formats":["roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、深海军蓝与青绿色构成封面底色，左侧中部超大标题与一幅图片前后呼应。"
+    },
+    {
+      "path": "images/2-vision-and-maturity.webp",
+      "alt": "白色、深海军蓝与青绿色页面，一幅图表集中排布，框架信息拉开层级。"
+    },
+    {
+      "path": "images/3-capability-map.webp",
+      "alt": "白色、深海军蓝与青绿色页面，标题、细线与留白划分层级，产品信息组织动线。"
+    },
+    {
+      "path": "images/4-layered-architecture.webp",
+      "alt": "白色、深海军蓝与青绿色页面，五块卡片组成两列网格，产品信息强化对比。"
+    },
+    {
+      "path": "images/5-phased-roadmap.webp",
+      "alt": "白色、深海军蓝与青绿色页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，左侧中部以超大标题建立焦点，白色、深海军蓝与青绿色贯穿背景与强调元素；一幅图片和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-vision-and-maturity.html",
+      "description": "白色、深海军蓝与青绿色画面，标题置于左上方；单一大面板承载主体信息，一幅图表落在右侧，框架模块与强调结论补充层级。"
+    },
+    {
+      "path": "html/3-capability-map.html",
+      "description": "左上方标题锚定白色、深海军蓝与青绿色画面；单一大面板承载主体信息，功能模块与结构示意集中在画面中部。"
+    },
+    {
+      "path": "html/4-layered-architecture.html",
+      "description": "白色、深海军蓝与青绿色作为底色，标题落在左上方；五块信息卡组成两列网格，功能模块与结构示意顺着版面动线分布。"
+    },
+    {
+      "path": "html/5-phased-roadmap.html",
+      "description": "标题固定在左上方，白色、深海军蓝与青绿色分隔主体；横向时间轴串联阶段节点与日期标记，两幅图表落在中央，阶段节点与时间标记补充层级。"
+    }
+  ]
+}

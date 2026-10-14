@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "制作10页医院门诊运营复盘，面向院级管理层。区分就诊量、等待时间、患者反馈和改进项目状态。不得给出临床建议或推断医生绩效。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "医院管理层",
+        "description": "医院管理层"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "门诊运营复盘",
+        "description": "门诊运营复盘"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "准确呈现量、效率、体验及改进项目成熟度",
+        "description": "准确呈现量、效率、体验及改进项目成熟度"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "专业、运营导向、审慎",
+        "description": "专业、运营导向、审慎"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "医院管理层",
+      "description": "医院管理层"
+    },
+    "purpose": {
+      "label": "门诊运营复盘",
+      "description": "门诊运营复盘"
+    },
+    "desired_outcome": {
+      "label": "准确呈现量、效率、体验及改进项目成熟度",
+      "description": "准确呈现量、效率、体验及改进项目成熟度"
+    },
+    "slide_count": 10,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "专业、运营导向、审慎",
+      "description": "专业、运营导向、审慎"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

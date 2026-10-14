@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Execution Diagnosis</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;padding:0;overflow:hidden;background:#F5F2EC;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Execution diagnosis" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2EC">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:74px;width:900px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:.22em;text-transform:uppercase;color:#C1553A">03 &nbsp;/&nbsp; Diagnosis</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:104px;width:1560px;z-index:10;font-family:'Archivo',sans-serif;font-size:52px;font-weight:600;letter-spacing:-.025em;line-height:1.08;color:#14201C">The constraint is execution speed, not strategic choice</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:194px;width:1728px;height:1px;z-index:1;background:rgba(20,32,28,.16)"></div>
+
+  <!-- LOSS ANALYSIS CHART -->
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:236px;width:900px;height:688px;z-index:10;background:#FFFFFF;border:1px solid rgba(20,32,28,.14);border-radius:3px;padding:36px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,32,28,.52)">Where initiative time is lost</div>
+    <div style="margin-top:12px;font-family:'Archivo',sans-serif;font-size:32px;font-weight:600;letter-spacing:-.02em;color:#14201C">Elapsed-time analysis, 12 initiatives</div>
+
+    <div style="margin-top:38px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:23px;font-weight:500;color:#14201C">Decision latency</span><span style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#C1553A">34%</span></div>
+      <div style="margin-top:10px;height:20px;background:#EDE7DB;border-radius:2px"><div style="width:34%;height:20px;background:#C1553A;border-radius:2px"></div></div>
+      <div style="margin-top:8px;font-size:18px;color:rgba(20,32,28,.58)">Waiting on an approval that has no named decider</div>
+    </div>
+
+    <div style="margin-top:32px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:23px;font-weight:500;color:#14201C">Rework from unclear ownership</span><span style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#C1553A">26%</span></div>
+      <div style="margin-top:10px;height:20px;background:#EDE7DB;border-radius:2px"><div style="width:26%;height:20px;background:#D07A5F;border-radius:2px"></div></div>
+      <div style="margin-top:8px;font-size:18px;color:rgba(20,32,28,.58)">Two teams building against different assumptions</div>
+    </div>
+
+    <div style="margin-top:32px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:23px;font-weight:500;color:#14201C">Cross-team dependencies</span><span style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#2F6F5E">22%</span></div>
+      <div style="margin-top:10px;height:20px;background:#EDE7DB;border-radius:2px"><div style="width:22%;height:20px;background:#2F6F5E;border-radius:2px"></div></div>
+      <div style="margin-top:8px;font-size:18px;color:rgba(20,32,28,.58)">Queued behind platform and data engineering</div>
+    </div>
+
+    <div style="margin-top:32px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:23px;font-weight:500;color:#14201C">Late scope change</span><span style="font-family:'Archivo',sans-serif;font-size:30px;font-weight:600;color:#C98A21">18%</span></div>
+      <div style="margin-top:10px;height:20px;background:#EDE7DB;border-radius:2px"><div style="width:18%;height:20px;background:#C98A21;border-radius:2px"></div></div>
+      <div style="margin-top:8px;font-size:18px;color:rgba(20,32,28,.58)">Scope added after the funding gate was passed</div>
+    </div>
+  </div>
+
+  <!-- INSIGHT CARDS -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1044px;top:236px;width:780px;height:200px;z-index:10;background:#14201C;border-radius:3px;padding:30px 34px">
+    <div style="display:flex;align-items:center;gap:28px">
+      <div style="flex:0 0 210px;font-family:'Archivo',sans-serif;font-size:60px;font-weight:600;letter-spacing:-.03em;line-height:1;color:#F5F2EC">7 of 12</div>
+      <div style="flex:1 1 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#C1553A">Ownership</div>
+        <div style="margin-top:10px;font-size:23px;line-height:1.4;color:rgba(245,242,236,.88)">Initiatives have more than one person described as accountable.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1044px;top:452px;width:780px;height:200px;z-index:10;background:#FFFFFF;border:1px solid rgba(20,32,28,.14);border-radius:3px;padding:30px 34px">
+    <div style="display:flex;align-items:center;gap:28px">
+      <div style="flex:0 0 210px;font-family:'Archivo',sans-serif;font-size:60px;font-weight:600;letter-spacing:-.03em;line-height:1;color:#14201C">19 days</div>
+      <div style="flex:1 1 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#C1553A">Decision speed</div>
+        <div style="margin-top:10px;font-size:23px;line-height:1.4;color:rgba(20,32,28,.72)">Median time from escalation raised to decision recorded.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1044px;top:668px;width:780px;height:200px;z-index:10;background:#FFFFFF;border:1px solid rgba(20,32,28,.14);border-radius:3px;padding:30px 34px">
+    <div style="display:flex;align-items:center;gap:28px">
+      <div style="flex:0 0 210px;font-family:'Archivo',sans-serif;font-size:60px;font-weight:600;letter-spacing:-.03em;line-height:1;color:#14201C">41%</div>
+      <div style="flex:1 1 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:#C1553A">Alignment</div>
+        <div style="margin-top:10px;font-size:23px;line-height:1.4;color:rgba(20,32,28,.72)">Of team leads can name the company's top three priorities.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1044px;top:884px;width:780px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:16px;line-height:1.5;letter-spacing:.06em;color:rgba(20,32,28,.50)">Basis: 42 leader interviews, 9 months of initiative logs and 118 recorded escalations.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:984px;width:1728px;height:1px;z-index:1;background:rgba(20,32,28,.16)"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1002px;width:1200px;z-index:10;font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.13em;text-transform:uppercase;color:rgba(20,32,28,.48)">Executive Strategy Execution Update &nbsp;·&nbsp; Q3 FY2026</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1002px;width:200px;z-index:10;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.13em;color:rgba(20,32,28,.48)">03 / 10</div>
+
+</div>
+</body>
+</html>

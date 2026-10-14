@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "把产品操作手册整理成9页客服培训PPT，重点说明开通、权限、常见错误、退款边界和升级路径。不得增加手册没有承诺的功能或时效。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "一线客服人员",
+        "description": "一线客服人员"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "产品支持培训",
+        "description": "产品支持培训"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "准确处理常见问题并识别升级边界",
+        "description": "准确处理常见问题并识别升级边界"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "清晰、流程化、服务导向",
+        "description": "清晰、流程化、服务导向"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "一线客服人员",
+      "description": "一线客服人员"
+    },
+    "purpose": {
+      "label": "产品支持培训",
+      "description": "产品支持培训"
+    },
+    "desired_outcome": {
+      "label": "准确处理常见问题并识别升级边界",
+      "description": "准确处理常见问题并识别升级边界"
+    },
+    "slide_count": 9,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "清晰、流程化、服务导向",
+      "description": "清晰、流程化、服务导向"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

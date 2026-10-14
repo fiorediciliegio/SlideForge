@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reporting & Next Steps</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE SIGNAL ROOM — Sponsorship Media Kit
+   Shared design system: type, color, surface treatments.
+   Layout/position stays inline on each data-object.
+   ============================================================ */
+
+:root{
+  /* Core palette — warm editorial "on-air" */
+  --ink:        #171310;
+  --ink-2:      #221C18;
+  --ink-3:      #2E2622;
+  --cream:      #F6F1E7;
+  --cream-2:    #EDE5D6;
+  --amber:      #E39B34;
+  --amber-deep: #A8571F;
+  --clay:       #B4472C;
+  --olive:      #6E7A55;
+
+  /* Derived */
+  --ink-70: rgba(23,19,16,.70);
+  --ink-52: rgba(23,19,16,.52);
+  --ink-40: rgba(23,19,16,.40);
+  --ink-14: rgba(23,19,16,.14);
+  --ink-07: rgba(23,19,16,.07);
+  --cr-78:  rgba(246,241,231,.78);
+  --cr-58:  rgba(246,241,231,.58);
+  --cr-40:  rgba(246,241,231,.40);
+  --cr-16:  rgba(246,241,231,.16);
+  --cr-08:  rgba(246,241,231,.08);
+
+  --r-sm: 4px;
+  --r-md: 6px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  font-family:'Karla','Segoe UI',sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Backgrounds ---------- */
+.bg-light{
+  background:
+    radial-gradient(1200px 640px at 88% -12%, rgba(227,155,52,.13) 0%, rgba(227,155,52,0) 62%),
+    radial-gradient(900px 520px at -8% 108%, rgba(180,71,44,.09) 0%, rgba(180,71,44,0) 60%),
+    #F6F1E7;
+}
+.bg-dark{
+  background:
+    radial-gradient(1100px 620px at 92% -10%, rgba(227,155,52,.20) 0%, rgba(227,155,52,0) 60%),
+    radial-gradient(900px 560px at -6% 106%, rgba(180,71,44,.16) 0%, rgba(180,71,44,0) 62%),
+    #171310;
+}
+
+/* ---------- Type ---------- */
+.eyebrow{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:18px; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--amber-deep); margin:0;
+}
+.eyebrow.on-dark{ color:var(--amber); }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:88px; line-height:1.02; letter-spacing:-.02em;
+  color:var(--cream); margin:0;
+}
+.h2{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:56px; line-height:1.08; letter-spacing:-.018em;
+  color:var(--ink); margin:0;
+}
+.h2.on-dark{ color:var(--cream); }
+.h3{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:30px; line-height:1.18; letter-spacing:-.01em;
+  color:var(--ink); margin:0;
+}
+.h3.on-dark{ color:var(--cream); }
+.h4{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:23px; line-height:1.24; letter-spacing:-.004em;
+  color:var(--ink); margin:0;
+}
+.h4.on-dark{ color:var(--cream); }
+
+.lead{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:26px; line-height:1.52; color:var(--ink-70); margin:0;
+}
+.lead.on-dark{ color:var(--cr-78); }
+
+.body{
+  font-family:'Karla',sans-serif; font-weight:400;
+  font-size:20px; line-height:1.5; color:var(--ink-70); margin:0;
+}
+.body.on-dark{ color:var(--cr-78); }
+
+.micro{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-40); margin:0;
+}
+.micro.on-dark{ color:var(--cr-40); }
+
+.metric{
+  font-family:'Archivo',sans-serif; font-weight:800;
+  font-size:66px; line-height:1; letter-spacing:-.028em;
+  color:var(--ink); margin:0; font-variant-numeric: tabular-nums;
+}
+.metric.on-dark{ color:var(--cream); }
+.metric .unit{ font-size:.46em; font-weight:700; letter-spacing:0; }
+
+.tag{
+  display:inline-block; font-family:'Archivo',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:.14em; text-transform:uppercase;
+  padding:6px 12px 5px; border-radius:var(--r-sm);
+  background:rgba(227,155,52,.20); color:var(--amber-deep);
+}
+.tag.on-dark{ background:rgba(227,155,52,.18); color:var(--amber); }
+
+/* ---------- Surfaces ---------- */
+.card{
+  background:#FFFDF8; border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-quiet{
+  background:rgba(23,19,16,.035); border:1px solid var(--ink-14);
+  border-radius:var(--r-md);
+}
+.card-dark{
+  background:rgba(246,241,231,.055); border:1px solid var(--cr-16);
+  border-radius:var(--r-md);
+}
+.card-ink{
+  background:var(--ink); border:1px solid rgba(23,19,16,1);
+  border-radius:var(--r-md);
+}
+.card-amber{
+  background:var(--amber); border:1px solid var(--amber);
+  border-radius:var(--r-md);
+}
+.rule{ background:var(--ink-14); }
+.rule-dark{ background:var(--cr-16); }
+
+/* ---------- Chart primitives ---------- */
+.bar-track{ background:var(--ink-07); border-radius:2px; overflow:hidden; }
+.bar-track-dark{ background:rgba(246,241,231,.10); border-radius:2px; overflow:hidden; }
+.bar-fill{ height:100%; border-radius:2px; }
+
+table.kit{ border-collapse:collapse; width:100%; }
+table.kit th{
+  font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-40);
+  text-align:left; padding:0 0 12px; border-bottom:1px solid var(--ink-14);
+}
+table.kit td{
+  font-family:'Karla',sans-serif; font-size:20px; color:var(--ink);
+  padding:15px 0; border-bottom:1px solid var(--ink-07);
+  font-variant-numeric: tabular-nums;
+}
+table.kit.on-dark th{ color:var(--cr-40); border-bottom-color:var(--cr-16); }
+table.kit.on-dark td{ color:var(--cream); border-bottom-color:rgba(246,241,231,.09); }
+</style>
+</head>
+<body>
+<div class="slide bg-dark" data-screen-label="10 Reporting & Next Steps" style="position:relative; width:1920px; height:1080px; overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:0px; top:0px; width:10px; height:1080px; z-index:1; background:var(--amber);"></div>
+
+  <!-- co-host portrait, right edge -->
+  <img data-object="true" data-object-type="image" src="../assets/cohost-portrait.jpg" alt="Producer Nadia Fournier"
+       style="position:absolute; left:1420px; top:0px; width:500px; height:1080px; object-fit:cover; object-position:52% 26%; z-index:5;">
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1360px; top:0px; width:340px; height:1080px; z-index:6;
+              background:linear-gradient(90deg,#171310 0%, rgba(23,19,16,.90) 34%, rgba(23,19,16,0) 100%);"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1420px; top:820px; width:500px; height:260px; z-index:7;
+              background:linear-gradient(180deg, rgba(23,19,16,0) 0%, rgba(23,19,16,.86) 68%, rgba(23,19,16,.94) 100%);"></div>
+
+  <p class="eyebrow on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:88px; width:700px; z-index:10;">10 — Reporting &amp; next steps</p>
+
+  <h2 class="h2 on-dark" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:120px; top:132px; width:860px; z-index:10;">You will know<br>exactly what worked</h2>
+
+  <p class="lead on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:120px; top:290px; width:820px; z-index:10;">
+    Reporting is part of the deal, not an upsell. Two reports per flight, reconciled against your own CRM so attribution is never a debate.</p>
+
+  <!-- what you receive: KPI cards -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:434px; width:296px; height:186px; z-index:1; background:rgba(246,241,231,.055); border:1px solid var(--cr-16); border-radius:6px;"></div>
+  <p class="h4 on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:466px; width:232px; z-index:10; font-size:21px;">Delivery</p>
+  <p class="body on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:504px; width:232px; z-index:10; font-size:17px;">Downloads, unique listeners, completion rate at the read timestamp.</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:440px; top:434px; width:296px; height:186px; z-index:1; background:rgba(246,241,231,.055); border:1px solid var(--cr-16); border-radius:6px;"></div>
+  <p class="h4 on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:472px; top:466px; width:232px; z-index:10; font-size:21px;">Response</p>
+  <p class="body on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:472px; top:504px; width:232px; z-index:10; font-size:17px;">Clicks on the tracked URL plus offer-code redemptions by week.</p>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:434px; width:296px; height:186px; z-index:1; background:rgba(246,241,231,.055); border:1px solid var(--cr-16); border-radius:6px;"></div>
+  <p class="h4 on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:792px; top:466px; width:232px; z-index:10; font-size:21px;">Brand lift</p>
+  <p class="body on-dark" data-object="true" data-object-type="textbox" style="position:absolute; left:792px; top:504px; width:232px; z-index:10; font-size:17px;">Aided and unaided recall from a listener panel, quarterly.</p>
+
+  <!-- reporting cadence strip -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:660px; width:936px; height:94px; z-index:1; background:rgba(246,241,231,.055); border:1px solid var(--cr-16); border-radius:6px;"></div>
+  <p class="micro on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:688px; width:250px; z-index:10; color:var(--amber);">Cadence</p>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:714px; width:400px; z-index:10; font-size:18px;">Day 14 interim · Day 30 final · Quarterly review call</p>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:640px; top:684px; width:1px; height:46px; z-index:1; background:var(--cr-16);"></div>
+  <p class="micro on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:684px; top:688px; width:340px; z-index:10; color:var(--amber);">Format</p>
+  <p class="body on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:684px; top:714px; width:340px; z-index:10; font-size:18px;">Shared dashboard + one-page PDF summary</p>
+
+  <!-- the ask -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:120px; top:800px; width:936px; height:172px; z-index:1; background:var(--amber); border-radius:6px;"></div>
+  <p class="micro" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:828px; width:600px; z-index:10; color:rgba(23,19,16,.62);">The ask</p>
+  <h3 class="h3" data-object="true" data-object-type="textbox"
+      style="position:absolute; left:156px; top:858px; width:864px; z-index:10; font-size:30px; color:var(--ink);">Hold a Season 4 slot for one four-episode test flight</h3>
+  <p class="body" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:156px; top:906px; width:864px; z-index:10; font-size:19px; color:rgba(23,19,16,.74);">
+    Reply with your category and preferred month — we will confirm exclusivity within two business days. Season 4 inventory closes 15 October.</p>
+
+  <!-- contact panel -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1104px; top:434px; width:296px; height:538px; z-index:8; background:rgba(23,19,16,.72); border:1px solid var(--cr-16); border-radius:6px;"></div>
+  <p class="micro on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1136px; top:466px; width:232px; z-index:10; color:var(--amber);">Contact</p>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:1136px; top:506px; width:232px; z-index:10;">
+    <p class="h4 on-dark" style="font-size:21px;">Nadia Fournier</p>
+    <p class="body on-dark" style="margin-top:8px; font-size:17px;">Partnerships lead</p>
+    <p class="body on-dark" style="margin-top:12px; font-size:17px; color:var(--cream);">partnerships@<br>thesignalroom.fm</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1136px; top:664px; width:232px; height:1px; z-index:10; background:var(--cr-16);"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:1136px; top:692px; width:232px; z-index:10;">
+    <p class="h4 on-dark" style="font-size:21px;">Maya Okonkwo</p>
+    <p class="body on-dark" style="margin-top:8px; font-size:17px;">Host, for creative calls</p>
+    <p class="body on-dark" style="margin-top:12px; font-size:17px; color:var(--cream);">maya@<br>thesignalroom.fm</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute; left:1136px; top:850px; width:232px; height:1px; z-index:10; background:var(--cr-16);"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute; left:1136px; top:878px; width:232px; z-index:10;">
+    <p class="micro on-dark" style="color:var(--cr-58);">Rate card &amp; audio samples</p>
+    <p class="body on-dark" style="margin-top:10px; font-size:17px; color:var(--cream);">thesignalroom.fm/partners</p>
+  </div>
+
+  <p class="micro on-dark" data-object="true" data-object-type="textbox"
+     style="position:absolute; left:1740px; top:1010px; width:60px; text-align:right; z-index:10;">10</p>
+</div>
+</body>
+</html>

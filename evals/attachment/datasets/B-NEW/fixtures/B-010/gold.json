@@ -1,0 +1,13 @@
+{
+  "case_id": "B-010",
+  "size_class": "边界",
+  "target_input_tokens": 23500,
+  "estimated_outline_input_tokens": 23633,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": true,
+  "attachment_mode": "No attachment",
+  "attachment_types": "None",
+  "content_strategies": "null",
+  "evaluation_risks": "1. Relying on stale model knowledge; 2. Mixing monthly and annual prices; 3. Using unofficial screenshots without context; 4. Calling one vendor best without criteria; 5. Presenting research directions as already verified facts."
+}

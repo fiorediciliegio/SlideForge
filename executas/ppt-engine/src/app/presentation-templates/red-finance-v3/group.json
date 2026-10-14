@@ -1,0 +1,27 @@
+{
+  "group_id": "red-finance-v3",
+  "group_name": "Business Professional",
+  "group_description": "TSX-first finance templates for strategic reports, executive briefings, and structured analysis decks.",
+  "group_brief": "Suitable for formal decks on financial industry research, strategic analysis, executive briefings, digital currency, and banking transformation. V3 uses a TSX-first workflow: the AI Agent selects the closest blueprint page, copies it into a concrete slide, and edits the TSX directly.",
+  "style_tags": ["finance", "editorial", "serious", "tsx-first"],
+  "industry_tags": ["finance", "banking", "fintech"],
+  "use_cases": ["strategy-report", "industry-analysis", "executive-brief"],
+  "audience_tags": ["management", "board", "client"],
+  "tone_tags": ["professional", "formal", "analytical"],
+  "cover_layout_id": "red-finance-v3:cover-statement",
+  "closing_layout_id": "red-finance-v3:closing-actions",
+  "ordered": true,
+  "default": false,
+  "registry_order": 92,
+  "layouts": [
+    "slides/CoverStatement.tsx",
+    "slides/SectionDivider.tsx",
+    "slides/TwoColumnInsight.tsx",
+    "slides/ChartWithNarrative.tsx",
+    "slides/ComparisonMatrix.tsx",
+    "slides/TimelinePlan.tsx",
+    "slides/KpiSummary.tsx",
+    "slides/ImageNarrativeShowcase.tsx",
+    "slides/ClosingActions.tsx"
+  ]
+}

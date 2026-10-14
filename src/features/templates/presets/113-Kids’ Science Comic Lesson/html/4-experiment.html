@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Experiment</title>
+<style>
+/* ==== COMIC BOOK DESIGN SYSTEM ==== */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bowlby+One&family=Luckiest+Guy&family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap');
+
+:root {
+  --red: #ED1C24;
+  --yellow: #FFDE17;
+  --sky: #29ABE2;
+  --white: #FFFFFF;
+  --black: #111111;
+  --paper: #FFF8E7;
+
+  --font-title: 'Bangers', 'Bowlby One', sans-serif;
+  --font-pow: 'Luckiest Guy', 'Bangers', sans-serif;
+  --font-body: 'Comic Neue', 'Comic Sans MS', sans-serif;
+  --font-hand: 'Permanent Marker', cursive;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--black);
+}
+
+/* Halftone dot pattern */
+.halftone-red {
+  background-image: radial-gradient(circle, var(--red) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-yellow {
+  background-image: radial-gradient(circle, var(--yellow) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+.halftone-black {
+  background-image: radial-gradient(circle, var(--black) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-sky {
+  background-image: radial-gradient(circle, var(--sky) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+
+/* Diagonal speed lines */
+.speedlines {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--black) 0 3px,
+    transparent 3px 22px
+  );
+}
+.speedlines-white {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--white) 0 4px,
+    transparent 4px 26px
+  );
+}
+
+/* Radial burst */
+.burst-lines {
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--black) 0deg 3deg,
+    transparent 3deg 12deg
+  );
+}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="04 Experiment" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFDE17;">
+
+  <!-- speed lines subtle -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1; background: repeating-linear-gradient(-25deg, rgba(17,17,17,0.08) 0 3px, transparent 3px 26px);"></div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:40px; width:1200px; z-index:10; transform: rotate(-2deg);">
+    <div style="background:#ED1C24; border:8px solid #111; padding:14px 40px; box-shadow: 10px 10px 0 #111;">
+      <div style="font-family: var(--font-title); font-size:72px; color:#FFFFFF; letter-spacing:3px; -webkit-text-stroke:2px #111;">TRY IT YOURSELF!</div>
+    </div>
+  </div>
+
+  <!-- What you need banner -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:60px; width:580px; z-index:10; transform: rotate(3deg);">
+    <div style="background:#29ABE2; border:6px solid #111; padding:10px 24px; box-shadow: 8px 8px 0 #111; text-align:center;">
+      <div style="font-family: var(--font-pow); font-size:30px; color:#fff; -webkit-text-stroke:1px #111;">You need:</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:24px; color:#fff; margin-top:4px;">🎈 1 balloon &nbsp;•&nbsp; 🧑 your head &nbsp;•&nbsp; 📄 paper bits</div>
+    </div>
+  </div>
+
+  <!-- 4 STEP PANELS -->
+  <!-- Step 1 -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:60px; top:200px; width:440px; height:520px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#ED1C24; color:#FFDE17; font-family: var(--font-title); font-size:56px; padding:2px 20px; letter-spacing:2px; border-right:6px solid #111; border-bottom:6px solid #111; -webkit-text-stroke:1px #111;">1</div>
+    <svg style="position:absolute; left:60px; top:70px; width:320px; height:280px;" viewBox="0 0 320 280">
+      <!-- balloon being blown -->
+      <ellipse cx="200" cy="140" rx="90" ry="100" fill="#ED1C24" stroke="#111" stroke-width="7"/>
+      <ellipse cx="180" cy="115" rx="15" ry="22" fill="#fff" opacity="0.7"/>
+      <path d="M195,235 L200,255 L215,235 Z" fill="#ED1C24" stroke="#111" stroke-width="5"/>
+      <!-- puff cloud -->
+      <path d="M50,150 Q30,140 40,120 Q20,110 40,90 Q50,75 70,85 Q80,70 100,80 Q120,75 115,100 Q130,120 105,130 Q100,155 80,150 Q65,165 50,150 Z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <text x="75" y="120" text-anchor="middle" font-family="Bangers, sans-serif" font-size="26" fill="#111">PUFF!</text>
+    </svg>
+    <div style="position:absolute; left:20px; bottom:20px; right:20px;">
+      <div style="font-family: var(--font-pow); font-size:32px; color:#ED1C24; line-height:1;">BLOW IT UP!</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:22px; color:#111; margin-top:6px; line-height:1.25;">Blow up a balloon and tie the end. Ask a grown-up if you need a hand.</div>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:530px; top:200px; width:440px; height:520px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#ED1C24; color:#FFDE17; font-family: var(--font-title); font-size:56px; padding:2px 20px; letter-spacing:2px; border-right:6px solid #111; border-bottom:6px solid #111; -webkit-text-stroke:1px #111;">2</div>
+    <svg style="position:absolute; left:40px; top:70px; width:360px; height:290px;" viewBox="0 0 360 290">
+      <!-- head -->
+      <ellipse cx="180" cy="180" rx="90" ry="95" fill="#FFD9B3" stroke="#111" stroke-width="7"/>
+      <!-- hair -->
+      <path d="M100,140 L90,60 L130,130 L120,50 L155,125 L165,45 L195,120 L205,40 L230,120 L245,50 L260,130 L275,60 L275,140" fill="#111" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <!-- eyes -->
+      <path d="M145,180 Q160,170 175,180" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M195,180 Q210,170 225,180" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M170,225 Q180,240 190,225" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- balloon on head -->
+      <ellipse cx="270" cy="90" rx="60" ry="65" fill="#FFDE17" stroke="#111" stroke-width="6"/>
+      <!-- rub arrows -->
+      <path d="M180,60 Q210,45 240,55" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round" marker-end="none"/>
+      <path d="M235,50 L245,55 L232,62" stroke="#111" stroke-width="5" fill="none"/>
+      <path d="M310,120 Q330,110 340,130" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div style="position:absolute; right:20px; top:80px; background:#FFDE17; border:5px solid #111; padding:6px 16px; font-family: var(--font-pow); font-size:26px; color:#111; box-shadow: 4px 4px 0 #111; transform: rotate(8deg);">RUB!</div>
+    <div style="position:absolute; left:20px; bottom:20px; right:20px;">
+      <div style="font-family: var(--font-pow); font-size:32px; color:#ED1C24; line-height:1;">RUB ON HAIR!</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:22px; color:#111; margin-top:6px; line-height:1.25;">Rub the balloon on your head, back and forth, about 10 times.</div>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1000px; top:200px; width:440px; height:520px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#ED1C24; color:#FFDE17; font-family: var(--font-title); font-size:56px; padding:2px 20px; letter-spacing:2px; border-right:6px solid #111; border-bottom:6px solid #111; -webkit-text-stroke:1px #111;">3</div>
+    <svg style="position:absolute; left:40px; top:70px; width:360px; height:290px;" viewBox="0 0 360 290">
+      <!-- paper bits on table -->
+      <line x1="20" y1="240" x2="340" y2="240" stroke="#111" stroke-width="5"/>
+      <rect x="40" y="220" width="24" height="20" fill="#29ABE2" stroke="#111" stroke-width="4" transform="rotate(-8 52 230)"/>
+      <rect x="90" y="222" width="22" height="18" fill="#FFDE17" stroke="#111" stroke-width="4" transform="rotate(6 100 230)"/>
+      <rect x="130" y="220" width="26" height="22" fill="#ED1C24" stroke="#111" stroke-width="4" transform="rotate(-4 143 230)"/>
+      <rect x="180" y="223" width="20" height="20" fill="#29ABE2" stroke="#111" stroke-width="4" transform="rotate(9 190 230)"/>
+      <rect x="220" y="221" width="22" height="18" fill="#FFDE17" stroke="#111" stroke-width="4" transform="rotate(-5 231 230)"/>
+      <rect x="270" y="220" width="24" height="20" fill="#ED1C24" stroke="#111" stroke-width="4" transform="rotate(3 282 230)"/>
+
+      <!-- balloon hovering -->
+      <ellipse cx="180" cy="90" rx="70" ry="80" fill="#ED1C24" stroke="#111" stroke-width="7"/>
+      <ellipse cx="165" cy="65" rx="12" ry="18" fill="#fff" opacity="0.7"/>
+      <path d="M175,168 L180,185 L188,168 Z" fill="#ED1C24" stroke="#111" stroke-width="5"/>
+
+      <!-- attraction arrows -->
+      <path d="M180,180 L160,215" stroke="#111" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
+      <path d="M180,180 L195,215" stroke="#111" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
+      <path d="M180,180 L225,215" stroke="#111" stroke-width="4" fill="none" stroke-dasharray="6 4"/>
+
+      <!-- flying paper up -->
+      <rect x="150" y="185" width="20" height="14" fill="#FFDE17" stroke="#111" stroke-width="3" transform="rotate(20 160 192)"/>
+      <rect x="200" y="190" width="18" height="14" fill="#29ABE2" stroke="#111" stroke-width="3" transform="rotate(-15 209 197)"/>
+    </svg>
+    <div style="position:absolute; left:20px; bottom:20px; right:20px;">
+      <div style="font-family: var(--font-pow); font-size:32px; color:#ED1C24; line-height:1;">HOVER OVER PAPER!</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:22px; color:#111; margin-top:6px; line-height:1.25;">Tear tiny paper bits. Hold the balloon just above them.</div>
+    </div>
+  </div>
+
+  <!-- Step 4 -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1470px; top:200px; width:400px; height:520px; z-index:5; background:#FFFFFF; border:10px solid #111; box-shadow: 10px 10px 0 #111; overflow:hidden;">
+    <div style="position:absolute; left:0; top:0; background:#ED1C24; color:#FFDE17; font-family: var(--font-title); font-size:56px; padding:2px 20px; letter-spacing:2px; border-right:6px solid #111; border-bottom:6px solid #111; -webkit-text-stroke:1px #111;">4</div>
+    <!-- Burst behind -->
+    <div style="position:absolute; left:50%; top:200px; width:500px; height:500px; transform: translate(-50%,-50%); background: repeating-conic-gradient(from 0deg, rgba(237,28,36,0.35) 0deg 4deg, transparent 4deg 12deg);"></div>
+    <svg style="position:absolute; left:20px; top:70px; width:360px; height:290px;" viewBox="0 0 360 290">
+      <!-- balloon covered in paper -->
+      <ellipse cx="180" cy="140" rx="90" ry="100" fill="#ED1C24" stroke="#111" stroke-width="7"/>
+      <ellipse cx="160" cy="115" rx="14" ry="20" fill="#fff" opacity="0.7"/>
+      <!-- stuck paper -->
+      <rect x="100" y="90" width="20" height="16" fill="#FFDE17" stroke="#111" stroke-width="3" transform="rotate(-20 110 98)"/>
+      <rect x="130" y="60" width="22" height="16" fill="#29ABE2" stroke="#111" stroke-width="3" transform="rotate(10 141 68)"/>
+      <rect x="180" y="55" width="20" height="16" fill="#FFDE17" stroke="#111" stroke-width="3" transform="rotate(-8 190 63)"/>
+      <rect x="220" y="80" width="22" height="18" fill="#FFDE17" stroke="#111" stroke-width="3" transform="rotate(15 231 89)"/>
+      <rect x="240" y="140" width="20" height="16" fill="#29ABE2" stroke="#111" stroke-width="3" transform="rotate(-10 250 148)"/>
+      <rect x="90" y="160" width="22" height="16" fill="#FFDE17" stroke="#111" stroke-width="3" transform="rotate(8 101 168)"/>
+      <rect x="110" y="200" width="20" height="16" fill="#29ABE2" stroke="#111" stroke-width="3" transform="rotate(-15 120 208)"/>
+      <rect x="200" y="210" width="22" height="16" fill="#FFDE17" stroke="#111" stroke-width="3" transform="rotate(12 211 218)"/>
+    </svg>
+    <div style="position:absolute; right:10px; top:70px; transform: rotate(10deg);">
+      <div style="background:#FFDE17; border:5px solid #111; padding:6px 14px; font-family: var(--font-pow); font-size:28px; color:#ED1C24; -webkit-text-stroke:1px #111; box-shadow: 4px 4px 0 #111;">WOW!</div>
+    </div>
+    <div style="position:absolute; left:20px; bottom:20px; right:20px;">
+      <div style="font-family: var(--font-pow); font-size:32px; color:#ED1C24; line-height:1;">WATCH THEM JUMP!</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:22px; color:#111; margin-top:6px; line-height:1.25;">The paper bits leap up and stick to the balloon like magic!</div>
+    </div>
+  </div>
+
+  <!-- Big red arrow between panels -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:480px; top:445px; width:70px; height:60px; z-index:8;" viewBox="0 0 70 60">
+    <path d="M0,20 L40,20 L40,5 L65,30 L40,55 L40,40 L0,40 Z" fill="#111" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+  </svg>
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:950px; top:445px; width:70px; height:60px; z-index:8;" viewBox="0 0 70 60">
+    <path d="M0,20 L40,20 L40,5 L65,30 L40,55 L40,40 L0,40 Z" fill="#111" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+  </svg>
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:1420px; top:445px; width:70px; height:60px; z-index:8;" viewBox="0 0 70 60">
+    <path d="M0,20 L40,20 L40,5 L65,30 L40,55 L40,40 L0,40 Z" fill="#111" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+  </svg>
+
+  <!-- Bottom explanation -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:770px; width:1240px; z-index:10;">
+    <div style="background:#FFFFFF; border:8px solid #111; padding:18px 30px; box-shadow: 10px 10px 0 #111;">
+      <div style="font-family: var(--font-pow); font-size:36px; color:#111; line-height:1.15;">👀 <span style="color:#ED1C24">WHAT'S HAPPENING:</span> The balloon steals tiny electrons from your hair. Now it has extra <span style="color:#29ABE2">–</span> charge, so it pulls the <span style="color:#ED1C24">+</span> side of the paper right up to it!</div>
+    </div>
+  </div>
+
+  <!-- Safety tip sticker -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:770px; width:540px; z-index:10; transform: rotate(-3deg);">
+    <div style="background:#29ABE2; border:8px solid #111; padding:14px 24px; box-shadow: 10px 10px 0 #111;">
+      <div style="font-family: var(--font-title); font-size:36px; color:#FFDE17; -webkit-text-stroke:1px #111;">🛡 SAFETY TIP!</div>
+      <div style="font-family: var(--font-body); font-weight:700; font-size:22px; color:#fff; margin-top:6px; line-height:1.25;">Works BEST on a dry day. Damp air stops the trick — try again when it's not raining!</div>
+    </div>
+  </div>
+
+  <!-- page num -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1720px; top:960px; width:140px; height:100px; z-index:10; background:#111; border:6px solid #111; transform: rotate(-4deg); display:flex; align-items:center; justify-content:center;">
+    <div style="font-family: var(--font-title); font-size:56px; color:#FFDE17; letter-spacing:2px;">04</div>
+  </div>
+
+</div>
+</body>
+</html>

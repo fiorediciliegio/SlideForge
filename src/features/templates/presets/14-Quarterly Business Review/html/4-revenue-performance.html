@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Revenue Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;padding:0;overflow:hidden;background:#F4F1EA;font-family:'IBM Plex Sans',sans-serif;color:#16191C;-webkit-font-smoothing:antialiased;}
+  .eyebrow{font-family:'Archivo',sans-serif;font-weight:600;font-size:19px;letter-spacing:.18em;text-transform:uppercase;color:#C2542A;}
+  .h1{font-family:'Archivo',sans-serif;font-weight:700;font-size:54px;line-height:1.06;letter-spacing:-.015em;}
+  .lbl{font-family:'Archivo',sans-serif;font-weight:600;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:#8A8377;}
+  .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;}
+  .foot{font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:.08em;color:#9A9385;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" style="position:relative;width:1920px;height:1080px;overflow:hidden;" data-screen-label="04 Revenue Performance">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:14px;height:1080px;background:#16191C;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:82px;width:1000px;height:26px;z-index:10;"><div class="eyebrow">03 &nbsp;·&nbsp; Performance — revenue</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:120px;width:1180px;height:66px;z-index:10;"><div class="h1">Growth is real, but the curve flattened</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1330px;top:124px;width:462px;height:64px;z-index:10;"><div class="lbl" style="text-align:right;">Revenue, six quarters, $M</div><div class="mono" style="font-size:19px;color:#5C6469;text-align:right;margin-top:8px;">Actual vs. plan &nbsp;·&nbsp; segment mix</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:128px;top:214px;width:1664px;height:1px;background:#D6D0C4;z-index:1;"></div>
+
+  <!-- CHART PANEL -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:128px;top:258px;width:1020px;height:552px;background:#FFFDF8;border:1px solid #DCD5C7;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:164px;top:286px;width:600px;height:26px;z-index:10;"><div class="lbl">Quarterly revenue vs. plan</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:764px;top:286px;width:348px;height:26px;z-index:10;">
+    <div style="text-align:right;font-size:17px;color:#5C6469;">
+      <span style="display:inline-block;width:14px;height:14px;background:#26404F;border-radius:2px;vertical-align:-2px;"></span>&nbsp;Actual&nbsp;&nbsp;&nbsp;
+      <span style="display:inline-block;width:22px;height:3px;background:#C2542A;vertical-align:4px;"></span>&nbsp;Plan
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:164px;top:334px;width:948px;height:446px;z-index:10;">
+    <svg width="948" height="446" viewBox="0 0 948 446" role="img" aria-label="Quarterly revenue versus plan, six quarters">
+      <!-- gridlines: value 0..56 mapped to y 366..46 -->
+      <g stroke="#E6DFD0" stroke-width="1">
+        <line x1="86" y1="366" x2="948" y2="366"/>
+        <line x1="86" y1="286" x2="948" y2="286"/>
+        <line x1="86" y1="206" x2="948" y2="206"/>
+        <line x1="86" y1="126" x2="948" y2="126"/>
+        <line x1="86" y1="46"  x2="948" y2="46"/>
+      </g>
+      <g font-family="IBM Plex Mono, monospace" font-size="16" fill="#9A9385" text-anchor="end">
+        <text x="68" y="372">0</text>
+        <text x="68" y="292">14</text>
+        <text x="68" y="212">28</text>
+        <text x="68" y="132">42</text>
+        <text x="68" y="52">56</text>
+      </g>
+      <line x1="86" y1="366" x2="948" y2="366" stroke="#16191C" stroke-width="2"/>
+
+      <!-- bars: x centers every 140 starting 156, width 86 -->
+      <!-- Q1'25 38.9 -> h=222 ; Q2'25 42.6 -> 243 ; Q3'25 43.8 -> 250 ; Q4'25 47.1 -> 269 ; Q1'26 46.2 -> 264 ; Q2'26 48.6 -> 278 -->
+      <rect x="113" y="144" width="86" height="222" fill="#26404F" opacity="0.42"/>
+      <rect x="253" y="123" width="86" height="243" fill="#26404F" opacity="0.52"/>
+      <rect x="393" y="116" width="86" height="250" fill="#26404F" opacity="0.62"/>
+      <rect x="533" y="97"  width="86" height="269" fill="#26404F" opacity="0.72"/>
+      <rect x="673" y="102" width="86" height="264" fill="#26404F" opacity="0.82"/>
+      <rect x="813" y="88"  width="86" height="278" fill="#26404F"/>
+      <rect x="813" y="88"  width="86" height="4"   fill="#C2542A"/>
+
+      <!-- plan markers: 38.0->349? compute h: v*5.714 ; plan Q1'25 38.0 y=366-217=149 ; 41.5 -> 129 ; 44.0 -> 115 ; 46.5 -> 100 ; 48.0 -> 92 ; 50.0 -> 80 -->
+      <g stroke="#C2542A" stroke-width="3">
+        <line x1="105" y1="149" x2="207" y2="149"/>
+        <line x1="245" y1="129" x2="347" y2="129"/>
+        <line x1="385" y1="115" x2="487" y2="115"/>
+        <line x1="525" y1="100" x2="627" y2="100"/>
+        <line x1="665" y1="92"  x2="767" y2="92"/>
+        <line x1="805" y1="80"  x2="907" y2="80"/>
+      </g>
+
+      <g font-family="Archivo, sans-serif" font-weight="600" font-size="19" fill="#16191C" text-anchor="middle">
+        <text x="156" y="134">38.9</text>
+        <text x="296" y="113">42.6</text>
+        <text x="436" y="106">43.8</text>
+        <text x="576" y="87">47.1</text>
+        <text x="716" y="82">46.2</text>
+      </g>
+      <text x="856" y="70" font-family="Archivo, sans-serif" font-weight="700" font-size="26" fill="#C2542A" text-anchor="middle">48.6</text>
+
+      <g font-family="IBM Plex Mono, monospace" font-size="17" fill="#5C6469" text-anchor="middle">
+        <text x="156" y="400">Q1 25</text>
+        <text x="296" y="400">Q2 25</text>
+        <text x="436" y="400">Q3 25</text>
+        <text x="576" y="400">Q4 25</text>
+        <text x="716" y="400">Q1 26</text>
+        <text x="856" y="400" fill="#16191C" font-weight="600">Q2 26</text>
+      </g>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="16" fill="#9A9385" text-anchor="middle">
+        <text x="156" y="428">+11.4%</text>
+        <text x="296" y="428">+12.8%</text>
+        <text x="436" y="428">+13.1%</text>
+        <text x="576" y="428">+15.9%</text>
+        <text x="716" y="428">+18.8%</text>
+        <text x="856" y="428" fill="#C08A2E" font-weight="600">+14.2%</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- SEGMENT PANEL -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1176px;top:258px;width:616px;height:552px;background:#16191C;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1212px;top:286px;width:544px;height:26px;z-index:10;"><div class="lbl" style="color:#9A9385;">Revenue by segment</div></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:1212px;top:334px;width:544px;height:340px;z-index:10;">
+    <div style="font-family:'IBM Plex Sans',sans-serif;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;color:#F4F1EA;font-size:21px;"><span>Enterprise</span><span class="mono" style="font-size:20px;">$24.8M &nbsp;<span style="color:#6FB295;">+18%</span></span></div>
+      <div style="width:544px;height:14px;background:#2B3237;border-radius:2px;margin:10px 0 26px;"><div style="width:544px;height:14px;background:#C2542A;border-radius:2px;"></div></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:baseline;color:#F4F1EA;font-size:21px;"><span>Mid-market</span><span class="mono" style="font-size:20px;">$13.9M &nbsp;<span style="color:#6FB295;">+11%</span></span></div>
+      <div style="width:544px;height:14px;background:#2B3237;border-radius:2px;margin:10px 0 26px;"><div style="width:305px;height:14px;background:#D98A64;border-radius:2px;"></div></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:baseline;color:#F4F1EA;font-size:21px;"><span>SMB &amp; self-serve</span><span class="mono" style="font-size:20px;">$6.1M &nbsp;<span style="color:#E0705C;">−4%</span></span></div>
+      <div style="width:544px;height:14px;background:#2B3237;border-radius:2px;margin:10px 0 26px;"><div style="width:134px;height:14px;background:#5C7A8A;border-radius:2px;"></div></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:baseline;color:#F4F1EA;font-size:21px;"><span>Services &amp; support</span><span class="mono" style="font-size:20px;">$3.8M &nbsp;<span style="color:#6FB295;">+22%</span></span></div>
+      <div style="width:544px;height:14px;background:#2B3237;border-radius:2px;margin:10px 0 0;"><div style="width:83px;height:14px;background:#8FA7B4;border-radius:2px;"></div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1212px;top:700px;width:544px;height:82px;z-index:10;">
+    <div style="width:544px;height:1px;background:#31383D;"></div>
+    <div style="font-size:21px;line-height:1.4;color:#C9CDD0;margin-top:18px;">Enterprise carried the quarter. Self-serve declined for a second straight quarter.</div>
+  </div>
+
+  <!-- CALLOUTS -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:128px;top:840px;width:1664px;height:1px;background:#D6D0C4;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:872px;width:520px;height:96px;z-index:10;">
+    <div class="lbl">Gap to plan</div>
+    <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:38px;color:#C08A2E;margin-top:8px;">−$1.4M</div>
+    <div style="font-size:19px;color:#5C6469;margin-top:6px;">Two enterprise deals ($1.1M) slipped into Q3</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:700px;top:872px;width:520px;height:96px;z-index:10;">
+    <div class="lbl">Growth deceleration</div>
+    <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:38px;color:#C08A2E;margin-top:8px;">−4.6 pts</div>
+    <div style="font-size:19px;color:#5C6469;margin-top:6px;">YoY growth fell from 18.8% to 14.2% QoQ</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1272px;top:872px;width:520px;height:96px;z-index:10;">
+    <div class="lbl">Revenue concentration</div>
+    <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:38px;color:#3F7D5E;margin-top:8px;">51%</div>
+    <div style="font-size:19px;color:#5C6469;margin-top:6px;">Enterprise share of revenue, up from 49%</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:1006px;width:900px;height:24px;z-index:10;"><div class="foot">Q2 2026 &nbsp;·&nbsp; QUARTERLY BUSINESS REVIEW</div></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1692px;top:1006px;width:100px;height:24px;z-index:10;"><div class="foot" style="text-align:right;">04</div></div>
+
+</div>
+</body>
+</html>

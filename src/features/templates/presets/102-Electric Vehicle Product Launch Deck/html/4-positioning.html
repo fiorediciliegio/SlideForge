@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Positioning</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* AURION E9 launch deck — shared design system
+   Dark cinematic keynote stage. Condensed grotesk display + humanist body.
+   Sharp 2px radii, 1px hairlines, amber ember accent, cool steel secondary. */
+
+:root{
+  --bg:#0A0B0D;
+  --panel:#13161A;
+  --panel-2:#181C21;
+  --line:#2A3037;
+  --line-soft:#1F242A;
+  --txt:#F3F2EF;
+  --muted:#8C949D;
+  --muted-2:#646C75;
+  --accent:#FF8A2B;
+  --accent-deep:#B9550F;
+  --accent-wash:rgba(255,138,43,0.09);
+  --cool:#79A4B8;
+  --r:2px;
+}
+
+body{margin:0;padding:0;overflow:hidden;background:var(--bg);}
+
+.d{font-family:'Barlow Condensed','Arial Narrow',Helvetica,sans-serif;}
+.b{font-family:'Barlow','Helvetica Neue',Helvetica,sans-serif;}
+
+.kicker{font-family:'Barlow',Helvetica,sans-serif;font-size:24px;font-weight:600;
+  letter-spacing:0.26em;text-transform:uppercase;color:var(--accent);}
+.chrome{font-family:'Barlow',Helvetica,sans-serif;font-size:22px;font-weight:500;
+  letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-2);}
+.title{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:600;
+  color:var(--txt);line-height:1.06;letter-spacing:-0.005em;}
+.num{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;
+  color:var(--accent);line-height:0.92;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;}
+.lbl{font-family:'Barlow',Helvetica,sans-serif;font-size:23px;font-weight:600;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--txt);}
+.body{font-family:'Barlow',Helvetica,sans-serif;font-size:25px;font-weight:400;
+  line-height:1.5;color:var(--muted);text-wrap:pretty;}
+.foot{font-family:'Barlow',Helvetica,sans-serif;font-size:22px;font-weight:400;
+  line-height:1.4;color:var(--muted-2);}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="04 Positioning — where E9 lands" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#0A0B0D;">
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:0px;top:0px;width:1920px;height:6px;z-index:1;background:linear-gradient(90deg,#FF8A2B 0%,#B9550F 34%,#2A3037 34%,#2A3037 100%);"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:120px;top:80px;width:900px;height:36px;z-index:10;">
+    <div class="kicker">04 — Positioning</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:118px;top:124px;width:1500px;height:92px;z-index:10;">
+    <div class="title" style="font-size:78px;">Premium capability, delivered at volume price</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:120px;top:246px;width:1680px;height:1px;z-index:1;background:#2A3037;"></div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:196px;top:300px;width:900px;height:600px;z-index:1;background:#101317;border:1px solid #2A3037;border-radius:2px;background-image:linear-gradient(#1B2026 1px,transparent 1px),linear-gradient(90deg,#1B2026 1px,transparent 1px);background-size:180px 120px;"></div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:196px;top:600px;width:900px;height:1px;z-index:5;background:#39424B;"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:646px;top:300px;width:1px;height:600px;z-index:5;background:#39424B;"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:120px;top:300px;width:56px;height:600px;z-index:10;">
+    <div class="chrome" style="font-size:20px;writing-mode:vertical-rl;transform:rotate(180deg);height:600px;text-align:center;">Software &amp; intelligence depth</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:196px;top:916px;width:900px;height:34px;z-index:10;text-align:center;">
+    <div class="chrome" style="font-size:20px;">Transaction price</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:246px;top:712px;width:250px;height:56px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:15px;height:15px;background:#4E5963;border-radius:50%;flex:0 0 auto;"></div>
+      <div class="foot" style="font-size:21px;color:#8C949D;">Legacy ICE carry-over</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:430px;top:626px;width:250px;height:56px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:15px;height:15px;background:#4E5963;border-radius:50%;flex:0 0 auto;"></div>
+      <div class="foot" style="font-size:21px;color:#8C949D;">Value EV challengers</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:900px;top:336px;width:250px;height:56px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:15px;height:15px;background:#79A4B8;border-radius:50%;flex:0 0 auto;"></div>
+      <div class="foot" style="font-size:21px;color:#79A4B8;">Premium imports</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:766px;top:540px;width:260px;height:56px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:15px;height:15px;background:#79A4B8;border-radius:50%;flex:0 0 auto;"></div>
+      <div class="foot" style="font-size:21px;color:#79A4B8;">Tech-native flagships</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:466px;top:388px;width:112px;height:112px;z-index:6;border:2px solid #FF8A2B;border-radius:50%;background:rgba(255,138,43,0.14);"></div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:508px;top:430px;width:28px;height:28px;z-index:7;border-radius:50%;background:#FF8A2B;"></div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:600px;top:400px;width:290px;height:104px;z-index:10;">
+    <div class="lbl" style="font-size:30px;color:#FF8A2B;letter-spacing:0.06em;">AURION E9</div>
+    <div class="foot" style="font-size:21px;margin-top:4px;">The open quadrant — high capability, accessible price</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1200px;top:300px;width:600px;height:160px;z-index:10;">
+    <div class="chrome" style="font-size:20px;">Positioning statement</div>
+    <div class="title" style="font-size:42px;line-height:1.22;margin-top:14px;">Flagship-grade hardware, priced where the volume actually is.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1200px;top:484px;width:600px;height:1px;z-index:1;background:#2A3037;"></div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1200px;top:514px;width:600px;height:118px;z-index:10;">
+    <div class="lbl" style="font-size:24px;letter-spacing:0.08em;">01 · Hardware over trim levels</div>
+    <div class="body" style="font-size:24px;margin-top:10px;">800 V architecture and the full sensor set are standard from the entry car — not paywalled upward.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1200px;top:646px;width:600px;height:118px;z-index:10;">
+    <div class="lbl" style="font-size:24px;letter-spacing:0.08em;">02 · Range stated honestly</div>
+    <div class="body" style="font-size:24px;margin-top:10px;">Every figure published alongside a −10 °C highway number. We win the trust argument, not the spec sheet.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1200px;top:778px;width:600px;height:118px;z-index:10;">
+    <div class="lbl" style="font-size:24px;letter-spacing:0.08em;">03 · Built to gain value</div>
+    <div class="body" style="font-size:24px;margin-top:10px;">A five-year feature roadmap committed at launch, with compute headroom reserved to deliver it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:120px;top:1006px;width:700px;height:34px;z-index:10;">
+    <div class="chrome" style="font-size:21px;">AURION E9 · Launch Deck</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1660px;top:1000px;width:140px;height:44px;z-index:10;text-align:right;">
+    <div class="num" style="font-size:38px;color:#646C75;">04</div>
+  </div>
+
+</div>
+</body>
+</html>

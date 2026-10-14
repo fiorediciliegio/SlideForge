@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Client context</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Ashcroft & Vale — proposal design system
+   White + red accent. Newsreader (display) / IBM Plex Sans (text). */
+
+:root{
+  --ink:#0F1419;
+  --ink-2:#3B454F;
+  --gray:#78828C;
+  --line:#E2E5E9;
+  --line-2:#EFF1F3;
+  --red:#C8102E;
+  --red-2:#8F0C21;
+  --red-mid:#E0697A;
+  --red-pale:#F2B8C1;
+  --tint:#FBEEF0;
+  --bg-alt:#F6F7F8;
+}
+
+html,body{margin:0;padding:0;overflow:hidden;}
+body{font-family:'IBM Plex Sans','Helvetica Neue',Helvetica,sans-serif;-webkit-font-smoothing:antialiased;color:#0F1419;}
+
+.serif{font-family:'Newsreader',Georgia,'Times New Roman',serif;}
+
+.eyebrow{font-size:23px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);}
+.stitle{font-family:'Newsreader',Georgia,serif;font-size:56px;font-weight:500;line-height:1.12;letter-spacing:-.012em;color:var(--ink);}
+.ssub{font-size:27px;font-weight:400;line-height:1.35;color:var(--gray);}
+.lead{font-size:28px;line-height:1.45;color:var(--ink-2);}
+.body{font-size:25px;line-height:1.46;color:var(--ink-2);}
+.small{font-size:23px;line-height:1.42;color:var(--gray);}
+.label{font-size:22px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gray);}
+.big{font-family:'Newsreader',Georgia,serif;font-weight:500;letter-spacing:-.02em;color:var(--ink);}
+.chip{display:inline-block;font-size:22px;font-weight:600;letter-spacing:.03em;color:var(--red);background:var(--tint);padding:6px 13px;}
+.ft{font-size:22px;color:#98A1AA;letter-spacing:.02em;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="02 Client context" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:#C8102E;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:76px;width:900px;z-index:10;">
+    <p class="eyebrow" style="margin:0;">01 &nbsp;·&nbsp; Client context</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:118px;width:1300px;z-index:10;">
+    <h2 class="stitle" style="margin:0;">Meridian has grown volume for four years — and lost margin in every one of them.</h2>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:290px;width:104px;height:4px;background:#C8102E;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:334px;width:880px;z-index:10;">
+    <p class="lead" style="margin:0;">Meridian is a <strong style="color:#0F1419;font-weight:600;">$2.4B</strong> manufacturer of precision components for the energy and mobility sectors, operating nine plants across three regions. Volume is up 18% since FY23, but each point of growth has been sold at a lower margin than the last.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:534px;width:880px;z-index:10;">
+    <p class="label" style="margin:0 0 22px 0;">Three forces behind the decline</p>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <span style="flex:none;width:10px;height:10px;background:#C8102E;margin-top:14px;"></span>
+        <span class="body" style="display:block;">List prices rose <strong style="color:#0F1419;font-weight:600;">3.1%</strong> while alloy, energy and freight inputs rose <strong style="color:#0F1419;font-weight:600;">11.4%</strong>.</span>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <span style="flex:none;width:10px;height:10px;background:#C8102E;margin-top:14px;"></span>
+        <span class="body" style="display:block;">The plant network runs at <strong style="color:#0F1419;font-weight:600;">71%</strong> utilisation, with three sites below 60%.</span>
+      </div>
+      <div style="display:flex;gap:20px;align-items:flex-start;">
+        <span style="flex:none;width:10px;height:10px;background:#C8102E;margin-top:14px;"></span>
+        <span class="body" style="display:block;">The top 40 accounts — <strong style="color:#0F1419;font-weight:600;">58%</strong> of revenue — are renegotiated locally, without margin guardrails.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- metric rail -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1100px;top:290px;width:700px;height:660px;background:#F6F7F8;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1148px;top:330px;width:604px;z-index:10;">
+    <p class="label" style="margin:0;">Baseline &nbsp;·&nbsp; FY26 estimate vs FY23</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1148px;top:392px;width:604px;z-index:10;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #E2E5E9;padding-bottom:22px;">
+      <div>
+        <p class="big" style="margin:0;font-size:66px;line-height:1;">10.6<span style="font-size:38px;">%</span></p>
+        <p class="small" style="margin:8px 0 0 0;">EBITDA margin, FY26E</p>
+      </div>
+      <p style="margin:0;font-size:23px;font-weight:600;color:#C8102E;">▼ 420 bps</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1148px;top:544px;width:604px;z-index:10;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #E2E5E9;padding-bottom:22px;">
+      <div>
+        <p class="big" style="margin:0;font-size:66px;line-height:1;">71<span style="font-size:38px;">%</span></p>
+        <p class="small" style="margin:8px 0 0 0;">Network utilisation</p>
+      </div>
+      <p style="margin:0;font-size:23px;font-weight:600;color:#C8102E;">▼ 9 pts</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1148px;top:696px;width:604px;z-index:10;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #E2E5E9;padding-bottom:22px;">
+      <div>
+        <p class="big" style="margin:0;font-size:66px;line-height:1;">38<span style="font-size:38px;">%</span></p>
+        <p class="small" style="margin:8px 0 0 0;">SKUs below target margin</p>
+      </div>
+      <p style="margin:0;font-size:23px;font-weight:600;color:#C8102E;">▲ 14 pts</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1148px;top:848px;width:604px;z-index:10;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;">
+      <div>
+        <p class="big" style="margin:0;font-size:66px;line-height:1;">4.7<span style="font-size:38px;">%</span></p>
+        <p class="small" style="margin:8px 0 0 0;">Price realisation vs list</p>
+      </div>
+      <p style="margin:0;font-size:23px;font-weight:600;color:#C8102E;">▼ 260 bps</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:1000px;width:1680px;height:1px;background:#E2E5E9;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1018px;width:1300px;z-index:10;">
+    <p class="ft" style="margin:0;">Ashcroft &amp; Vale &nbsp;·&nbsp; Meridian Industrial Group &nbsp;·&nbsp; Margin recovery proposal</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1560px;top:1018px;width:240px;z-index:10;">
+    <p class="ft" style="margin:0;text-align:right;">02</p>
+  </div>
+
+</div>
+</body>
+</html>

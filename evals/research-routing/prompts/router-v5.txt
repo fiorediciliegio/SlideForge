@@ -1,0 +1,25 @@
+Determine whether to recommend NEW external Web and image research for this presentation.
+
+Apply the following priorities in order:
+
+1. Follow any explicit user instruction to use or avoid research.
+2. If the user has already supplied sufficient content or assets, do not recommend additional research.
+3. Recommend Web only when required facts are current, external, verifiable, or missing.
+4. Recommend images only when actual real-world visuals are necessary to communicate the requested subject.
+5. Do not recommend research for decoration, general background knowledge, or content that can be expressed with generated charts, diagrams, or illustrations.
+
+Evaluate Web and images independently and default to false when the need is uncertain.
+
+Return one concise reason for each decision in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese or English}
+
+User brief:
+{User brief}
+
+Presentation requirements draft:
+{Presentation Requirements JSON}
+
+Return exactly one JSON object:
+
+{"web":{"recommended":false,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

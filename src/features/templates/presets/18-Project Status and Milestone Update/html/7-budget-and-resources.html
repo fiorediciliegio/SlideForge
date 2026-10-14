@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Budget and Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;padding:0;overflow:hidden;background:#F5F2EC;font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  .h{font-family:'Space Grotesk',sans-serif;}
+  .m{font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Budget and Resources" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:10px;background:#16191C;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:240px;height:10px;background:#C24D2C;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:62px;width:1200px;z-index:10;">
+    <span class="m" style="font-size:21px;letter-spacing:.2em;color:#C24D2C;font-weight:500;">07 · MONEY AND PEOPLE</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:100px;width:1300px;z-index:10;">
+    <h1 class="h" style="margin:0;font-size:62px;line-height:1.18;font-weight:600;letter-spacing:-0.02em;color:#16191C;">Budget consumption and resource load</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1424px;top:104px;width:400px;text-align:right;z-index:10;">
+    <span class="m" style="font-size:21px;color:#6B6660;letter-spacing:.06em;">Finance close, period 06<br>Currency: USD</span>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:206px;width:1728px;height:1px;background:#DCD6CC;z-index:1;"></div>
+
+  <!-- donut -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:248px;width:560px;z-index:10;">
+    <span class="m" style="font-size:19px;letter-spacing:.2em;color:#6B6660;">BUDGET DRAWN VS REMAINING</span>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:296px;width:560px;height:400px;z-index:10;">
+    <div style="position:absolute;left:0;top:0;width:560px;height:400px;background:#FFFFFF;border:1px solid #DCD6CC;border-radius:4px;"></div>
+    <svg width="330" height="330" viewBox="0 0 330 330" style="position:absolute;left:34px;top:36px;">
+      <circle cx="165" cy="165" r="120" fill="none" stroke="#EFEAE1" stroke-width="42"/>
+      <!-- drawn 58.6% of 4.2M = 2.46M ; circumference 753.98 -> 441.8 -->
+      <circle cx="165" cy="165" r="120" fill="none" stroke="#C24D2C" stroke-width="42" stroke-dasharray="441.8 753.98" transform="rotate(-90 165 165)"/>
+      <!-- committed but unspent 14.3% -> 107.8 offset 441.8 -->
+      <circle cx="165" cy="165" r="120" fill="none" stroke="#C68A1E" stroke-width="42" stroke-dasharray="107.8 753.98" stroke-dashoffset="-441.8" transform="rotate(-90 165 165)"/>
+      <text x="165" y="158" font-family="Space Grotesk" font-size="58" font-weight="600" fill="#16191C" text-anchor="middle">58.6%</text>
+      <text x="165" y="190" font-family="IBM Plex Mono" font-size="17" fill="#6B6660" text-anchor="middle">$2.46M drawn</text>
+      <text x="165" y="213" font-family="IBM Plex Mono" font-size="17" fill="#6B6660" text-anchor="middle">of $4.20M</text>
+    </svg>
+    <div style="position:absolute;left:398px;top:96px;width:140px;">
+      <div style="margin-bottom:26px;"><span style="display:inline-block;width:16px;height:16px;background:#C24D2C;border-radius:2px;"></span><br><span class="m" style="font-size:18px;color:#3A3E42;">Spent<br>$2.46M</span></div>
+      <div style="margin-bottom:26px;"><span style="display:inline-block;width:16px;height:16px;background:#C68A1E;border-radius:2px;"></span><br><span class="m" style="font-size:18px;color:#3A3E42;">Committed<br>$0.60M</span></div>
+      <div><span style="display:inline-block;width:16px;height:16px;background:#EFEAE1;border:1px solid #DCD6CC;border-radius:2px;"></span><br><span class="m" style="font-size:18px;color:#3A3E42;">Free<br>$1.14M</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:722px;width:560px;height:234px;background:#16191C;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:126px;top:748px;width:500px;z-index:10;">
+    <span class="m" style="font-size:18px;letter-spacing:.18em;color:#8C8781;">FORECAST AT COMPLETION</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:126px;top:780px;width:250px;z-index:10;">
+    <span class="h" style="font-size:56px;font-weight:600;color:#F5F2EC;line-height:1;letter-spacing:-0.02em;">$4.47M</span>
+    <p style="margin:8px 0 0;font-size:21px;line-height:1.35;color:#BFB9AF;">EAC at current burn<br>and recovery scope</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:406px;top:780px;width:230px;z-index:10;">
+    <span class="h" style="font-size:56px;font-weight:600;color:#E8B450;line-height:1;letter-spacing:-0.02em;">+$270k</span>
+    <p style="margin:8px 0 0;font-size:21px;line-height:1.35;color:#BFB9AF;">variance vs approved,<br>6.4% overrun</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:126px;top:906px;width:500px;z-index:10;">
+    <span class="m" style="font-size:18px;color:#BFB9AF;">Covered by the $310k contingency.</span>
+  </div>
+
+  <!-- cost breakdown table -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:704px;top:248px;width:560px;z-index:10;">
+    <span class="m" style="font-size:19px;letter-spacing:.2em;color:#6B6660;">COST LINES — PLAN VS ACTUAL TO DATE</span>
+  </div>
+  <div data-object="true" data-object-type="table" style="position:absolute;left:704px;top:296px;width:560px;z-index:10;">
+    <table style="border-collapse:collapse;width:560px;table-layout:fixed;">
+      <thead>
+        <tr>
+          <th style="width:230px;text-align:left;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">LINE</span></th>
+          <th style="width:110px;text-align:right;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">PLAN</span></th>
+          <th style="width:110px;text-align:right;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">ACTUAL</span></th>
+          <th style="width:110px;text-align:right;padding:0 0 10px;border-bottom:2px solid #16191C;"><span class="m" style="font-size:17px;letter-spacing:.12em;color:#6B6660;font-weight:500;">VAR.</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;"><span style="font-size:24px;color:#16191C;">Internal delivery team</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3A3E42;">1,180k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;">1,164k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3F7A4F;">−16k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;"><span style="font-size:24px;color:#16191C;">Systems integrator</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3A3E42;">690k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;">812k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#B23B2E;">+122k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;"><span style="font-size:24px;color:#16191C;">Migration &amp; data cleansing</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3A3E42;">240k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;">331k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#B23B2E;">+91k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;"><span style="font-size:24px;color:#16191C;">Licences &amp; cloud</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3A3E42;">128k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;">119k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3F7A4F;">−9k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;"><span style="font-size:24px;color:#16191C;">Change &amp; training</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3A3E42;">96k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;">34k</span></td>
+          <td style="padding:15px 0;border-bottom:1px solid #DCD6CC;text-align:right;"><span class="m" style="font-size:22px;color:#3F7A4F;">−62k</span></td>
+        </tr>
+        <tr>
+          <td style="padding:15px 0;border-bottom:2px solid #16191C;"><span class="h" style="font-size:24px;color:#16191C;font-weight:600;">Total to date</span></td>
+          <td style="padding:15px 0;border-bottom:2px solid #16191C;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;font-weight:500;">2,334k</span></td>
+          <td style="padding:15px 0;border-bottom:2px solid #16191C;text-align:right;"><span class="m" style="font-size:22px;color:#16191C;font-weight:500;">2,460k</span></td>
+          <td style="padding:15px 0;border-bottom:2px solid #16191C;text-align:right;"><span class="m" style="font-size:22px;color:#B23B2E;font-weight:500;">+126k</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:704px;top:832px;width:560px;height:124px;background:#EFEAE1;border-left:5px solid #C24D2C;border-radius:0 4px 4px 0;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:734px;top:854px;width:500px;z-index:10;">
+    <span class="m" style="font-size:18px;letter-spacing:.16em;color:#C24D2C;">DRIVER</span>
+    <p style="margin:6px 0 0;font-size:23px;line-height:1.3;color:#16191C;">Overrun sits in migration and SI effort — the same root cause as the slip.</p>
+  </div>
+
+  <!-- resource load -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1312px;top:248px;width:512px;z-index:10;">
+    <span class="m" style="font-size:19px;letter-spacing:.2em;color:#6B6660;">RESOURCE LOAD — FTE VS DEMAND</span>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:1312px;top:296px;width:512px;height:400px;z-index:10;">
+    <div style="position:absolute;left:0;top:0;width:512px;height:400px;background:#FFFFFF;border:1px solid #DCD6CC;border-radius:4px;"></div>
+    <div style="position:absolute;left:28px;top:26px;width:456px;">
+      <!-- row template -->
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;"><span class="h" style="font-size:23px;color:#16191C;font-weight:500;">Engineering</span><span class="m" style="font-size:20px;color:#3F7A4F;">9.0 / 9.0</span></div>
+        <div style="position:relative;width:456px;height:14px;background:#EFEAE1;border-radius:2px;margin-top:8px;"><div style="position:absolute;left:0;top:0;width:342px;height:14px;background:#3F7A4F;border-radius:2px;"></div><div style="position:absolute;left:342px;top:-5px;width:2px;height:24px;background:#16191C;"></div></div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;"><span class="h" style="font-size:23px;color:#16191C;font-weight:500;">Data engineering</span><span class="m" style="font-size:20px;color:#B23B2E;">4.5 / 7.0</span></div>
+        <div style="position:relative;width:456px;height:14px;background:#EFEAE1;border-radius:2px;margin-top:8px;"><div style="position:absolute;left:0;top:0;width:171px;height:14px;background:#B23B2E;border-radius:2px;"></div><div style="position:absolute;left:266px;top:-5px;width:2px;height:24px;background:#16191C;"></div></div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;"><span class="h" style="font-size:23px;color:#16191C;font-weight:500;">QA &amp; test</span><span class="m" style="font-size:20px;color:#C68A1E;">3.0 / 4.0</span></div>
+        <div style="position:relative;width:456px;height:14px;background:#EFEAE1;border-radius:2px;margin-top:8px;"><div style="position:absolute;left:0;top:0;width:114px;height:14px;background:#C68A1E;border-radius:2px;"></div><div style="position:absolute;left:152px;top:-5px;width:2px;height:24px;background:#16191C;"></div></div>
+      </div>
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;"><span class="h" style="font-size:23px;color:#16191C;font-weight:500;">Compliance</span><span class="m" style="font-size:20px;color:#3F7A4F;">3.0 / 2.5</span></div>
+        <div style="position:relative;width:456px;height:14px;background:#EFEAE1;border-radius:2px;margin-top:8px;"><div style="position:absolute;left:0;top:0;width:114px;height:14px;background:#3F7A4F;border-radius:2px;"></div><div style="position:absolute;left:95px;top:-5px;width:2px;height:24px;background:#16191C;"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;"><span class="h" style="font-size:23px;color:#16191C;font-weight:500;">Change &amp; training</span><span class="m" style="font-size:20px;color:#C68A1E;">5.0 / 6.5</span></div>
+        <div style="position:relative;width:456px;height:14px;background:#EFEAE1;border-radius:2px;margin-top:8px;"><div style="position:absolute;left:0;top:0;width:190px;height:14px;background:#C68A1E;border-radius:2px;"></div><div style="position:absolute;left:247px;top:-5px;width:2px;height:24px;background:#16191C;"></div></div>
+      </div>
+      <div style="margin-top:16px;"><span class="m" style="font-size:17px;color:#6B6660;">bar = assigned FTE&nbsp;&nbsp;|&nbsp;&nbsp;rule = demand</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1312px;top:722px;width:512px;height:234px;background:#FFFFFF;border:1px solid #DCD6CC;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1342px;top:746px;width:452px;z-index:10;">
+    <span class="m" style="font-size:18px;letter-spacing:.16em;color:#B23B2E;">CRITICAL GAP</span>
+    <p class="h" style="margin:9px 0 0;font-size:28px;line-height:1.2;font-weight:600;color:#16191C;">Data engineering is 2.5 FTE short</p>
+    <p style="margin:10px 0 0;font-size:21px;line-height:1.35;color:#6B6660;">Two contractors identified, start 25 Aug, funded from the training underspend.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:988px;width:1728px;height:1px;background:#DCD6CC;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1006px;width:1300px;z-index:10;">
+    <span class="m" style="font-size:19px;color:#6B6660;letter-spacing:.08em;">PROJECT ATLAS · STATUS REVIEW · PERIOD ENDING 14 AUG 2026</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1006px;width:200px;text-align:right;z-index:10;">
+    <span class="m" style="font-size:19px;color:#16191C;font-weight:500;">07 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "case_id": "B-026",
+  "size_class": "长",
+  "target_input_tokens": 9000,
+  "estimated_outline_input_tokens": 9145,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "Multiple attachments",
+  "attachment_types": "DOCX + TXT",
+  "content_strategies": "summarized_context + full_context",
+  "evaluation_risks": "1. Treating dose escalation as proof of efficacy; 2. Calling CX-07 terminated; 3. Turning budget ranges into approved funding; 4. Adding external success probabilities; 5. Losing the three explicit decisions."
+}

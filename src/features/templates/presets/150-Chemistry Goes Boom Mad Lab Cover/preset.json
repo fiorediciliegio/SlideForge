@@ -1,0 +1,147 @@
+{
+  "id": "150-Chemistry Goes Boom Mad Lab Cover",
+  "version": 1,
+  "ppt_number": 150,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "dark",
+  "color": [
+    "purple",
+    "green",
+    "pink",
+    "black"
+  ],
+  "name": "Chemistry Goes Boom Mad Lab Cover",
+  "description": "Chemistry comic cover with a dark purple field, neon lime and pink contrasts, oversized outlined type, hazard stripes, and a bubbling flask illustration.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["students"],"formats":["lesson"],"primary_styles":["dark","playful"],"visual_traits":["dark","playful","cartoon","illustration","high-contrast","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Chemistry comic cover with a dark purple field, neon lime and pink contrasts, oversized outlined type, hazard stripes, and a bubbling flask illustration."
+    },
+    {
+      "path": "images/2-mad-science-lab-02.webp",
+      "alt": "Mad Science Lab — 02 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-mad-science-lab-03.webp",
+      "alt": "Mad Science Lab — 03 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-mad-science-lab-04.webp",
+      "alt": "Mad Science Lab — 04 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-mad-science-lab-05.webp",
+      "alt": "Mad Science Lab — 05 reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Chemistry comic cover with a dark purple field, neon lime and pink contrasts, oversized outlined type, hazard stripes, and a bubbling flask illustration."
+    },
+    {
+      "path": "html/2-mad-science-lab-02.html",
+      "description": "Mad Science Lab — 02 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-mad-science-lab-03.html",
+      "description": "Mad Science Lab — 03 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-mad-science-lab-04.html",
+      "description": "Mad Science Lab — 04 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-mad-science-lab-05.html",
+      "description": "Mad Science Lab — 05 reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "lab-acid-pop",
+      "name": "Acid Pop",
+      "swatches": [
+        "#0E0E13",
+        "#FFFDF4",
+        "#A8FF2A",
+        "#8128CE"
+      ],
+      "roles": {
+        "bg": "#0E0E13",
+        "surface": "#17131C",
+        "ink": "#FFFDF4",
+        "muted": "#DED4EB",
+        "accent_primary": "#A8FF2A",
+        "accent_secondary": "#8128CE",
+        "accent_tertiary": "#FF3CA6",
+        "line": "#341052"
+      }
+    },
+    {
+      "id": "lab-cyan-tangerine",
+      "name": "Cyan Tangerine",
+      "swatches": [
+        "#07151C",
+        "#F4FFFD",
+        "#53E1E7",
+        "#2478C9"
+      ],
+      "roles": {
+        "bg": "#07151C",
+        "surface": "#102932",
+        "ink": "#F4FFFD",
+        "muted": "#B7D5D5",
+        "accent_primary": "#53E1E7",
+        "accent_secondary": "#2478C9",
+        "accent_tertiary": "#FF874C",
+        "line": "#164B58"
+      }
+    },
+    {
+      "id": "lab-solar-slime",
+      "name": "Solar Slime",
+      "swatches": [
+        "#19120B",
+        "#FFF9E8",
+        "#E9E34E",
+        "#E55D35"
+      ],
+      "roles": {
+        "bg": "#19120B",
+        "surface": "#302213",
+        "ink": "#FFF9E8",
+        "muted": "#E4D7B8",
+        "accent_primary": "#E9E34E",
+        "accent_secondary": "#E55D35",
+        "accent_tertiary": "#5FE39D",
+        "line": "#5B3D18"
+      }
+    },
+    {
+      "id": "lab-berry-mint",
+      "name": "Berry Mint",
+      "swatches": [
+        "#180A20",
+        "#FFF6FF",
+        "#F06AC6",
+        "#762BD0"
+      ],
+      "roles": {
+        "bg": "#180A20",
+        "surface": "#32123D",
+        "ink": "#FFF6FF",
+        "muted": "#E0BDD7",
+        "accent_primary": "#F06AC6",
+        "accent_secondary": "#762BD0",
+        "accent_tertiary": "#72F0C3",
+        "line": "#58235E"
+      }
+    }
+  ]
+}

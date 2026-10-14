@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Custom Page Layout Styles */
+  .problem-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 64px;
+  }
+  .left-col {
+    width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 12px;
+  }
+  .v-divider {
+    width: 1px;
+    height: 560px;
+    background: var(--border);
+    align-self: flex-start;
+    margin-top: 12px;
+  }
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 12px;
+  }
+  .focus-tag {
+    font-family: 'Archivo', sans-serif;
+    font-size: var(--f-meta);
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+  }
+  .focus-title {
+    font-size: var(--f-sub);
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 24px;
+    line-height: 1.3;
+  }
+  .focus-desc {
+    font-size: var(--f-body);
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .placeholder-highlight {
+    color: #C0842E;
+    font-weight: 500;
+    display: block;
+    margin-top: 16px;
+  }
+  .focus-badge {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 40px;
+  }
+  .badge-label {
+    font-size: var(--f-meta);
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .badge-value {
+    font-size: var(--f-body);
+    font-weight: 600;
+    color: var(--primary);
+  }
+  .row-item {
+    display: grid;
+    grid-template-columns: 64px 1fr 180px;
+    gap: 24px;
+    align-items: start;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  .row-item:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .row-num {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+  }
+  .row-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+  }
+  .row-p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+  }
+  .placeholder-text {
+    color: #C0842E;
+    font-style: normal;
+  }
+  .row-meta {
+    text-align: right;
+  }
+  .meta-label {
+    font-size: var(--f-meta);
+    color: var(--light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  .meta-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: var(--f-meta);
+    font-weight: 600;
+  }
+  .meta-tag.pending {
+    background: #FFF8E7;
+    color: #C0842E;
+    border: 1px solid #FFE7B3;
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <div class="content-area">
+    <div class="problem-container">
+      <!-- Left Column: Core Focus -->
+      <div class="left-col">
+        <div class="focus-tag">CORE FOCUS</div>
+        <div class="focus-title">确立唯一核心信息</div>
+        <div class="focus-desc">
+          明确具体的可持续发展核心痛点与现有方案局限性，是构建可行性技术方案的起点。
+          <span class="placeholder-highlight">[待结合具体申报项目补充核心痛点定义]</span>
+        </div>
+        
+        <div class="focus-badge">
+          <span class="badge-label">项目阶段 / Phase</span>
+          <span class="badge-value">问题定义与需求分析</span>
+        </div>
+      </div>
+
+      <!-- Vertical Divider -->
+      <div class="v-divider"></div>
+
+      <!-- Right Column: Three Key Aspects -->
+      <div class="right-col">
+        <!-- Row 1: Core Challenge -->
+        <div class="row-item">
+          <div class="row-num ar">01</div>
+          <div class="row-content">
+            <h3 class="row-title">核心挑战 / Core Challenge</h3>
+            <p class="row-p placeholder-text">
+              [待补充：请在此描述您的技术方案所致力于解决的具体环境或社会可持续发展问题。例如：特定区域的水资源短缺、供应链碳足迹追踪困难、或废弃物循环利用率低下等。]
+            </p>
+          </div>
+          <div class="row-meta">
+            <div class="meta-label">状态 / Status</div>
+            <div class="meta-tag pending">待补充</div>
+          </div>
+        </div>
+
+        <!-- Row 2: Status Analysis -->
+        <div class="row-item">
+          <div class="row-num ar">02</div>
+          <div class="row-content">
+            <h3 class="row-title">现状分析与局限性 / Existing Limitations</h3>
+            <p class="row-p placeholder-text">
+              [待补充：现有解决方案在效率、可扩展性、成本或技术实现上的局限性。说明为什么当前的通用方法无法完美解决上述痛点，从而凸显本方案的创新性与必要性。]
+            </p>
+          </div>
+          <div class="row-meta">
+            <div class="meta-label">状态 / Status</div>
+            <div class="meta-tag pending">待补充</div>
+          </div>
+        </div>
+
+        <!-- Row 3: Urgency & SDG -->
+        <div class="row-item">
+          <div class="row-num ar">03</div>
+          <div class="row-content">
+            <h3 class="row-title">解决紧迫性与 SDG 贡献 / Urgency & SDG Impact</h3>
+            <p class="row-p placeholder-text">
+              [待补充：阐述立即解决该问题的紧迫性，并明确本方案将直接贡献于哪些联合国可持续发展目标（SDGs），例如 SDG 13（气候行动）或 SDG 6（清洁饮水和卫生设施）。]
+            </p>
+          </div>
+          <div class="row-meta">
+            <div class="meta-label">状态 / Status</div>
+            <div class="meta-tag pending">待补充</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

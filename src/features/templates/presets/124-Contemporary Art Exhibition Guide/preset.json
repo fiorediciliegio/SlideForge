@@ -1,0 +1,103 @@
+{
+  "id": "124-Contemporary Art Exhibition Guide",
+  "version": 1,
+  "ppt_number": 124,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "black",
+    "blue",
+    "red"
+  ],
+  "name": "Contemporary Art Exhibition Guide",
+  "description": "Contemporary exhibition guide with generous whitespace, precise grids, serif headings, and disciplined captions.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["media"],"audiences":["public"],"formats":["guide"],"primary_styles":["minimal"],"visual_traits":["minimal","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "大面积留白配左侧衬线标题、右侧作品大图和红蓝标记的展览封面，构图克制醒目。"
+    },
+    {
+      "path": "images/2-curatorial-theme.webp",
+      "alt": "左侧章节大号与策展标题、右侧三列概念块组成克制的画册内页，网格秩序严谨。"
+    },
+    {
+      "path": "images/3-artists-and-works.webp",
+      "alt": "十二格艺术家与作品索引以严谨网格排列，红蓝标记点缀黑白信息，视觉清晰统一。"
+    },
+    {
+      "path": "images/4-selection-criteria.webp",
+      "alt": "象限分析图与标准列表左右分栏，细线坐标和蓝红重点保持博物馆感，版面理性克制。"
+    },
+    {
+      "path": "images/5-featured-artwork.webp",
+      "alt": "左侧大幅作品图搭配右侧图注、技术表和留白，呈现典型展览画册版式，主次明确。"
+    },
+    {
+      "path": "images/6-time-based-works.webp",
+      "alt": "多条时长条形图配作品标签和精细刻度，蓝红节点构成时间艺术索引，节奏清晰。"
+    },
+    {
+      "path": "images/7-exhibition-space.webp",
+      "alt": "展厅平面图以房间网格、蓝色参观路线和红色节点展示空间动线，路径一目了然。"
+    },
+    {
+      "path": "images/8-how-to-look.webp",
+      "alt": "画廊照片、观看指南和对照表三栏并置，蓝色引语框强化阅读提示，留白舒展。"
+    },
+    {
+      "path": "images/9-exhibition-legacy.webp",
+      "alt": "巡展时间轨与出版收藏信息左右排布，细线和留白呈现长期影响，画册感克制。"
+    },
+    {
+      "path": "images/10-visitor-information.webp",
+      "alt": "四格参观信息、右侧展览图和底部蓝色收尾块组成清晰服务页，分区明确易读。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，大面积纯白留白中左侧排列黑色衬线大标题与展期信息，右侧作品图占据约三分之二画面，红色定位标记和蓝色细线形成视觉坐标。"
+    },
+    {
+      "path": "html/2-curatorial-theme.html",
+      "description": "左侧以超大章节数字、衬线标题和导语构成窄栏，右侧三列概念模块沿严谨网格排列，黑色细线与蓝红小标记控制节奏。"
+    },
+    {
+      "path": "html/3-artists-and-works.html",
+      "description": "十二个艺术家与作品条目以四乘三网格铺满主体，每格由姓名、作品缩略图或编号和精简图注组成，红蓝标记点缀黑白秩序。"
+    },
+    {
+      "path": "html/4-selection-criteria.html",
+      "description": "左侧大型象限图使用细坐标线和蓝红节点定位作品，右侧纵向排列筛选标准与说明，底部通栏洞察以规则线收束分析。"
+    },
+    {
+      "path": "html/5-featured-artwork.html",
+      "description": "左侧大幅作品图占据主要面积，右侧以衬线标题、短文、图注和技术参数表纵向排列，白色留白与细线形成典型展览画册版式。"
+    },
+    {
+      "path": "html/6-time-based-works.html",
+      "description": "多组时间艺术作品以横向时长条纵向排列，精细刻度、蓝色轨道和红色关键节点编码播放长度，右侧图注保持严格对齐。"
+    },
+    {
+      "path": "html/7-exhibition-space.html",
+      "description": "大型展厅平面图以房间网格和细黑线勾勒空间，蓝色参观路线穿过多个区域，红色节点、图例和路径说明共同组织动线。"
+    },
+    {
+      "path": "html/8-how-to-look.html",
+      "description": "左侧大幅画廊照片、中部衬线标题与导语、右侧观看方法和对照表构成三栏布局，蓝色引语框与红色标记突出关键提示。"
+    },
+    {
+      "path": "html/9-exhibition-legacy.html",
+      "description": "左侧以细线时间轨串联巡展城市与日期，右侧分区排列出版、收藏和后续计划，衬线总结语与大量留白营造长期回望感。"
+    },
+    {
+      "path": "html/10-visitor-information.html",
+      "description": "左侧四格信息网格整理地址、时间、票务与交通，右侧放置大幅展览图像，底部国际蓝通栏承载收尾提示和联系方式。"
+    }
+  ]
+}

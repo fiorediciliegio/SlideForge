@@ -1,0 +1,76 @@
+{
+  "eyebrow": "Demographics",
+  "title": "Population Structure: Age Distribution",
+  "headerMetaLabel": "Data Source",
+  "headerMetaValue": "UN World Population Prospects 2024",
+  "headerIcon": "users",
+  "legendItems": [
+    {
+      "label": "0-14 Years"
+    },
+    {
+      "label": "15-64 Years"
+    },
+    {
+      "label": "65+ Years"
+    }
+  ],
+  "entities": [
+    {
+      "name": "China",
+      "symbol": "CN",
+      "statusLabel": "Aging Society",
+      "totalValue": "1.41B",
+      "totalLabel": "Population",
+      "centerMetricLabel": "Median Age",
+      "centerMetricValue": "39.5",
+      "segments": [
+        {
+          "label": "0-14 Years",
+          "value": 17
+        },
+        {
+          "label": "15-64 Years",
+          "value": 68
+        },
+        {
+          "label": "65+ Years",
+          "value": 15
+        }
+      ],
+      "footerLabel": "Old-Age Dependency",
+      "footerValue": "22.5",
+      "footerSuffix": "%",
+      "footerIcon": "users"
+    },
+    {
+      "name": "Japan",
+      "symbol": "JP",
+      "statusLabel": "Super-Aged Society",
+      "totalValue": "123M",
+      "totalLabel": "Population",
+      "centerMetricLabel": "Median Age",
+      "centerMetricValue": "49.5",
+      "segments": [
+        {
+          "label": "0-14 Years",
+          "value": 11
+        },
+        {
+          "label": "15-64 Years",
+          "value": 59
+        },
+        {
+          "label": "65+ Years",
+          "value": 30
+        }
+      ],
+      "footerLabel": "Old-Age Dependency",
+      "footerValue": "54.2",
+      "footerSuffix": "%",
+      "footerIcon": "users"
+    }
+  ],
+  "footerSource": "Source: UN World Population Prospects 2024",
+  "pageNumber": "06"
+}

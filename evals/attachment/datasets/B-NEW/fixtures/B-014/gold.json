@@ -1,0 +1,13 @@
+{
+  "case_id": "B-014",
+  "size_class": "长",
+  "target_input_tokens": 9000,
+  "estimated_outline_input_tokens": 9092,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": true,
+  "attachment_mode": "无附件",
+  "attachment_types": "无",
+  "content_strategies": "null",
+  "evaluation_risks": "1. 编造地方工业史；2. 图片没有年代、地点或版权方向；3. 用现代遗址照片代替历史事件证据；4. 研究页面缺少来源核对；5. 把策展建议写成已确认展品。"
+}

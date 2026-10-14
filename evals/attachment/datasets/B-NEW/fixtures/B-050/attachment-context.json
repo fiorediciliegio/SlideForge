@@ -1,0 +1,48 @@
+[
+  {
+    "source_id": "b-050-source-1",
+    "filename": "approved-biography.docx",
+    "content_strategy": "summarized_context",
+    "original_reading_method": "document_read",
+    "main_message": "The executive has 18 years of experience in humanitarian operations and organizational leadership. Previous roles include regional director from 2016–2020 and chief operating officer from 2020–2025.",
+    "relationship_to_task": "This fixed attachment summary is supplied to the Outline stage as user-provided evidence.",
+    "key_facts": [
+      {
+        "evidence_id": "b-050-evidence-base",
+        "fact": "The executive has 18 years of experience in humanitarian operations and organizational leadership. Previous roles include regional director from 2016–2020 and chief operating officer from 2020–2025. She led a multi-country operating-model redesign, but the attachment provides no financial savings figure. Her appointment as chief executive begins 1 November 2026. The biography lists three public board roles, which require current verification. Personal address, family details, and private contact information are excluded from approved use.",
+        "source_label": "approved-biography.docx",
+        "excerpt": "The executive has 18 years of experience in humanitarian operations and organizational leadership. Previous roles include regional director from 2016–2020 and chief operating officer from 2020–2025. She led a multi-country operating-model redesign, but the attachment provides no financial savings figure. Her appointment as chief executive begins 1 November 2026. The biography lists three public board roles, which require current verification. Personal address, family details, and private contact information are excluded from approved use."
+      },
+      {
+        "evidence_id": "b-050-support-1",
+        "fact": "Implementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.",
+        "source_label": "approved-biography.docx supporting record 1",
+        "excerpt": "### B-050 Supporting Record 001\nImplementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact."
+      },
+      {
+        "evidence_id": "b-050-support-2",
+        "fact": "Measurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.",
+        "source_label": "approved-biography.docx supporting record 2",
+        "excerpt": "### B-050 Supporting Record 002\nMeasurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method."
+      },
+      {
+        "evidence_id": "b-050-support-3",
+        "fact": "Status note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.",
+        "source_label": "approved-biography.docx supporting record 3",
+        "excerpt": "### B-050 Supporting Record 003\nStatus note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue."
+      },
+      {
+        "evidence_id": "b-050-support-4",
+        "fact": "Evidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.",
+        "source_label": "approved-biography.docx supporting record 4",
+        "excerpt": "### B-050 Supporting Record 004\nEvidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure."
+      }
+    ],
+    "must_include": [],
+    "must_avoid": [
+      "This is the final section of B-050. The Outline must continue to follow the user brief and fixed Requirements, must not convert plans into completed results, must not invent unsupported causes, and must not expose original file paths."
+    ],
+    "gaps": [],
+    "unread_content": []
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "id": "07-svg-chart-icons",
+  "title": "SVG 图表、图标与渐变",
+  "description": "多系列 SVG 图表、渐变、透明、虚线、旋转和裁切。",
+  "deck_html_file": "07-svg-chart-icons/deck.html",
+  "slide_html_files": ["07-svg-chart-icons/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["svg", "chart", "icons", "gradient", "transparency"],
+  "manual_checks": ["SVG 渐变和透明度准确", "折线、面积和散点位置一致", "图标没有被裁切或栅格化异常"]
+}

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cost, Lead-Time and Service Impact</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ============================================================
+   LOGISTICS NETWORK OPTIMIZATION — DESIGN SYSTEM
+   Paper: #F5F2EB   Ink: #16211D   Teal: #1E5B4F   Clay: #C0562A
+   Display: Archivo · Body: IBM Plex Sans · Data: IBM Plex Mono
+   Radius: 2px · Rules: 1px #D6D0C2
+   ============================================================ */
+
+:root{
+  --ink:#16211D;
+  --ink2:#3A4744;
+  --muted:#77837E;
+  --paper:#F5F2EB;
+  --paper2:#ECE7DC;
+  --line:#D6D0C2;
+  --teal:#1E5B4F;
+  --teal2:#2F7F6D;
+  --clay:#C0562A;
+  --amber:#E0A03C;
+  --sand:#D9C69F;
+  --dmuted:#9FAAA5;
+  --dline:#33423D;
+}
+
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:#F5F2EB;
+     -webkit-font-smoothing:antialiased;}
+
+/* --- typography ------------------------------------------------ */
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:400;
+         letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;
+     letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.h1{font-family:'Archivo',sans-serif;font-weight:600;font-size:58px;line-height:1.04;
+    letter-spacing:-.015em;color:var(--ink);margin:0;}
+.h2{font-family:'Archivo',sans-serif;font-weight:600;font-size:36px;line-height:1.12;
+    letter-spacing:-.01em;color:var(--ink);margin:0;}
+.h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:28px;line-height:1.2;
+    color:var(--ink);margin:0;}
+.lead{font-family:'IBM Plex Sans',sans-serif;font-size:28px;font-weight:400;
+      line-height:1.42;color:var(--ink2);margin:0;}
+.body{font-family:'IBM Plex Sans',sans-serif;font-size:24px;font-weight:400;
+      line-height:1.45;color:var(--ink2);margin:0;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.num{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.02em;
+     line-height:.92;color:var(--teal);}
+.num-clay{color:var(--clay);}
+.strong{font-weight:600;color:var(--ink);}
+
+/* --- on dark ---------------------------------------------------- */
+.dk .h1,.dk .h2,.dk .h3{color:var(--paper);}
+.dk .lead,.dk .body{color:#CFD6D2;}
+.dk .eyebrow,.dk .lbl{color:var(--dmuted);}
+.dk .num{color:var(--amber);}
+.dk .strong{color:var(--paper);}
+
+/* --- surfaces --------------------------------------------------- */
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:2px;}
+.panel{background:var(--paper2);border-radius:2px;}
+.rule{background:var(--line);}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:19px;
+     letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:2px;
+     background:#E3EAE6;color:var(--teal);}
+
+/* --- table ------------------------------------------------------ */
+table{border-collapse:collapse;width:100%;}
+th{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:500;
+   letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+   text-align:left;padding:0 0 14px 0;border-bottom:1px solid var(--line);}
+td{font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:var(--ink2);
+   padding:18px 0;border-bottom:1px solid var(--line);vertical-align:middle;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="08 Impact and Results" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2EB;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:70px;width:900px;z-index:10;">
+    <div class="eyebrow">07 &nbsp;/&nbsp; Modelled Impact</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:112px;width:1180px;z-index:10;">
+    <h2 class="h1">$25.5M out, 1.2 days faster,<br>service up in every segment.</h2>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:266px;width:1700px;height:1px;background:#D6D0C2;z-index:1;"></div>
+
+  <!-- big numbers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:302px;width:380px;z-index:10;">
+    <div class="num" style="font-size:88px;">$25.5M</div>
+    <div class="lbl" style="margin-top:14px;">Annual run-rate saving</div>
+    <p class="body" style="font-size:21px;margin-top:8px;">13.8% of current logistics spend, net of new site cost.</p>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:530px;top:310px;width:1px;height:180px;background:#D6D0C2;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:590px;top:302px;width:340px;z-index:10;">
+    <div class="num" style="font-size:88px;">−1.2<span style="font-size:34px;font-weight:500;color:#77837E;"> d</span></div>
+    <div class="lbl" style="margin-top:14px;">Order lead time</div>
+    <p class="body" style="font-size:21px;margin-top:8px;">3.4 days down to 2.2 days, network average.</p>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:970px;top:310px;width:1px;height:180px;background:#D6D0C2;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1030px;top:302px;width:340px;z-index:10;">
+    <div class="num" style="font-size:88px;">+5.4<span style="font-size:34px;font-weight:500;color:#77837E;"> pts</span></div>
+    <div class="lbl" style="margin-top:14px;">On-time in-full</div>
+    <p class="body" style="font-size:21px;margin-top:8px;">91.4% to 96.8%, above the customer standard.</p>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1410px;top:310px;width:1px;height:180px;background:#D6D0C2;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1470px;top:302px;width:340px;z-index:10;">
+    <div class="num num-clay" style="font-size:88px;">19<span style="font-size:34px;font-weight:500;color:#77837E;"> mo</span></div>
+    <div class="lbl" style="margin-top:14px;">Payback period</div>
+    <p class="body" style="font-size:21px;margin-top:8px;">On $34.8M capex and transition cost.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:534px;width:1700px;height:1px;background:#D6D0C2;z-index:1;"></div>
+
+  <!-- waterfall -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:570px;width:1000px;z-index:10;">
+    <div class="lbl">Where the $25.5M comes from</div>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:110px;top:626px;width:1010px;height:326px;z-index:10;">
+    <svg width="1010" height="326" viewBox="0 0 1010 326" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="236" x2="1010" y2="236" stroke="#D6D0C2" stroke-width="1"/>
+
+      <!-- bars: baseline, 4 savings, 1 add, net -->
+      <rect x="10" y="46" width="112" height="190" fill="#16211D"/>
+      <rect x="160" y="46" width="112" height="72" fill="#2F7F6D"/>
+      <rect x="310" y="46" width="112" height="54" fill="#2F7F6D"/>
+      <rect x="460" y="46" width="112" height="42" fill="#2F7F6D"/>
+      <rect x="610" y="46" width="112" height="30" fill="#2F7F6D"/>
+      <rect x="760" y="46" width="112" height="26" fill="#C0562A"/>
+      <rect x="910" y="46" width="90" height="190" fill="#1E5B4F"/>
+
+      <g font-family="Archivo, sans-serif" font-weight="600" font-size="24" fill="#16211D">
+        <text x="10" y="34">$184.6M</text>
+        <text x="160" y="34">−$9.6M</text>
+        <text x="310" y="34">−$7.2M</text>
+        <text x="460" y="34">−$5.4M</text>
+        <text x="610" y="34">−$4.1M</text>
+        <text x="760" y="34" fill="#C0562A">+$0.8M</text>
+        <text x="900" y="34" fill="#1E5B4F">$159.1M</text>
+      </g>
+
+      <g font-family="IBM Plex Sans, sans-serif" font-size="20" fill="#3A4744">
+        <text x="10" y="268">FY25</text><text x="10" y="292">baseline</text>
+        <text x="160" y="268">Linehaul</text><text x="160" y="292">consolidation</text>
+        <text x="310" y="268">Site closures</text><text x="310" y="292">&amp; 3PL exit</text>
+        <text x="460" y="268">Expedite</text><text x="460" y="292">reduction</text>
+        <text x="610" y="268">Inventory</text><text x="610" y="292">pooling</text>
+        <text x="760" y="268">New hub</text><text x="760" y="292">fixed cost</text>
+        <text x="900" y="268">FY28</text><text x="900" y="292">run rate</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- right: segment service gains -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1180px;top:570px;width:1px;height:382px;background:#D6D0C2;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1250px;top:570px;width:560px;z-index:10;">
+    <div class="lbl">Service gain by segment</div>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:1250px;top:626px;width:560px;height:326px;z-index:10;">
+    <div style="font-family:'IBM Plex Sans',sans-serif;">
+      <div style="padding-bottom:22px;border-bottom:1px solid #D6D0C2;">
+        <div style="display:flex;justify-content:space-between;font-size:23px;color:#16211D;"><span class="strong">National retail DCs</span><span class="mono">96.1 → 97.4%</span></div>
+        <div style="height:10px;background:#ECE7DC;margin-top:10px;position:relative;"><div style="position:absolute;left:0;top:0;height:10px;width:97.4%;background:#1E5B4F;"></div></div>
+      </div>
+      <div style="padding:22px 0;border-bottom:1px solid #D6D0C2;">
+        <div style="display:flex;justify-content:space-between;font-size:23px;color:#16211D;"><span class="strong">Store-direct replenish</span><span class="mono">92.4 → 96.5%</span></div>
+        <div style="height:10px;background:#ECE7DC;margin-top:10px;position:relative;"><div style="position:absolute;left:0;top:0;height:10px;width:96.5%;background:#1E5B4F;"></div></div>
+      </div>
+      <div style="padding:22px 0;border-bottom:1px solid #D6D0C2;">
+        <div style="display:flex;justify-content:space-between;font-size:23px;color:#16211D;"><span class="strong">E-commerce parcel</span><span class="mono">83.7 → 96.2%</span></div>
+        <div style="height:10px;background:#ECE7DC;margin-top:10px;position:relative;"><div style="position:absolute;left:0;top:0;height:10px;width:96.2%;background:#C0562A;"></div></div>
+      </div>
+      <div style="padding-top:22px;">
+        <div style="display:flex;justify-content:space-between;font-size:23px;color:#16211D;"><span class="strong">Field service &amp; spares</span><span class="mono">78.9 → 94.1%</span></div>
+        <div style="height:10px;background:#ECE7DC;margin-top:10px;position:relative;"><div style="position:absolute;left:0;top:0;height:10px;width:94.1%;background:#C0562A;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:996px;width:1200px;z-index:10;">
+    <div class="mono" style="font-size:20px;letter-spacing:.08em;color:#77837E;text-transform:uppercase;">Logistics Network Optimization Strategy</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1610px;top:996px;width:200px;z-index:10;">
+    <div class="mono" style="font-size:20px;letter-spacing:.08em;color:#77837E;text-align:right;">08 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

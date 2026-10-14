@@ -1,0 +1,45 @@
+{
+  "title": "Chart With Narrative",
+  "metaLabel": "BLUEPRINT / CHART NARRATIVE",
+  "footerText": "Business Professional | Chart With Narrative",
+  "pageNumber": "05",
+  "variant": "chart-left-narrative-right",
+  "density": "high",
+  "chartKind": "bar",
+  "chartTitle": "Trend and change",
+  "chartSubtitle": "One chart paired with one concise narrative.",
+  "labels": ["Q1", "Q2", "Q3", "Q4"],
+  "series": [
+    {
+      "label": "Current",
+      "values": [42, 48, 55, 61]
+    },
+    {
+      "label": "Target",
+      "values": [40, 45, 50, 58]
+    }
+  ],
+  "minValue": 0,
+  "maxValue": 100,
+  "ticks": [0, 20, 40, 60, 80, 100],
+  "narrativeTitle": "Interpretation points",
+  "narrativeSubtitle": "short interpretation",
+  "narrativeItems": [
+    {
+      "icon": "lightbulb",
+      "title": "Change drivers",
+      "description": "Break key drivers into short points instead of crowding the chart."
+    },
+    {
+      "icon": "shield",
+      "title": "Measurement note",
+      "description": "Keep definitions and conclusions editable beside the chart."
+    },
+    {
+      "icon": "route",
+      "title": "Next step",
+      "description": "Use the conclusion to bridge into the next analysis or action."
+    }
+  ],
+  "summary": "Best for one primary chart with concise interpretation; avoid dashboard-style chart collections."
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rollout, validation and risks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;padding:0;overflow:hidden;background:#F6F4F0;-webkit-font-smoothing:antialiased;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="09 Rollout and risks" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F6F4F0;font-family:'IBM Plex Sans',sans-serif;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:52px;width:56px;height:4px;background:#E0552B;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:988px;width:1728px;height:1px;background:#DFD9D0;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1104px;top:236px;width:1px;height:718px;background:#DFD9D0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:76px;width:900px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:2.2px;text-transform:uppercase;color:#E0552B;z-index:10;">08 · Rollout &amp; risk</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:108px;width:1300px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:54px;line-height:1.12;letter-spacing:-1.2px;color:#15171C;z-index:10;">How we validate before we commit</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:236px;width:940px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:#8B8D95;z-index:10;">Rollout ladder · every release walks these four gates</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:132px;top:308px;width:2px;height:552px;background:#DFD9D0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:118px;top:308px;width:30px;height:30px;background:#E0552B;border-radius:15px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:196px;top:298px;width:840px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;color:#15171C;">Design partners</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#6C6F78;">8 accounts · week 1–2</span>
+    </div>
+    <div style="font-size:19px;color:#6C6F78;line-height:1.5;margin-top:8px;">Weekly build reviews. Gate: 6 of 8 complete the task unassisted.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:118px;top:452px;width:30px;height:30px;background:#D9A521;border-radius:15px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:196px;top:442px;width:840px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;color:#15171C;">Private beta</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#6C6F78;">120 accounts · week 3–6</span>
+    </div>
+    <div style="font-size:19px;color:#6C6F78;line-height:1.5;margin-top:8px;">Feature-flagged cohort. Gate: run success ≥ 98.5%, CSAT ≥ 4.2.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:118px;top:596px;width:30px;height:30px;background:#2F6F63;border-radius:15px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:196px;top:586px;width:840px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;color:#15171C;">Staged GA</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#6C6F78;">10% → 50% → 100% · week 7–9</span>
+    </div>
+    <div style="font-size:19px;color:#6C6F78;line-height:1.5;margin-top:8px;">Automatic rollback on error-rate regression above 0.5 points.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:118px;top:740px;width:30px;height:30px;background:#5B5FC7;border-radius:15px;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:196px;top:730px;width:840px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:28px;color:#15171C;">Learn &amp; re-plan</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:#6C6F78;">week 10</span>
+    </div>
+    <div style="font-size:19px;color:#6C6F78;line-height:1.5;margin-top:8px;">Written review against the exit metric; backlog re-scored before the next train.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:872px;width:940px;height:82px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:895px;width:876px;font-size:20px;color:#3C4048;z-index:10;">Early signal: design-partner pilot cut setup time to <span style="font-family:'IBM Plex Mono',monospace;color:#15171C;">9.4 days</span> across 8 accounts.</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1168px;top:236px;width:656px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;color:#8B8D95;z-index:10;">Top risks &amp; mitigations</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:288px;width:656px;height:158px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:288px;width:4px;height:158px;background:#E0552B;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1204px;top:314px;width:592px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#15171C;">Scheduler rewrite slips</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#E0552B;">HIGH</span>
+    </div>
+    <div style="font-size:18px;color:#6C6F78;line-height:1.45;margin-top:10px;">Blocks R2 approvals and all Phase 2 observability work.</div>
+    <div style="font-size:18px;color:#15171C;line-height:1.45;margin-top:10px;">→ Two platform engineers ring-fenced; weekly burn-up to VP Eng.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:466px;width:656px;height:158px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:466px;width:4px;height:158px;background:#D9A521;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1204px;top:492px;width:592px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#15171C;">Templates miss real processes</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#B4860F;">MEDIUM</span>
+    </div>
+    <div style="font-size:18px;color:#6C6F78;line-height:1.45;margin-top:10px;">Generic templates would not move the activation number.</div>
+    <div style="font-size:18px;color:#15171C;line-height:1.45;margin-top:10px;">→ Each template sourced from a real customer workflow, then tested.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:644px;width:656px;height:158px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:644px;width:4px;height:158px;background:#D9A521;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1204px;top:670px;width:592px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#15171C;">SOC 2 audit timing</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#B4860F;">MEDIUM</span>
+    </div>
+    <div style="font-size:18px;color:#6C6F78;line-height:1.45;margin-top:10px;">An audit slip pushes enterprise readiness past the FY close.</div>
+    <div style="font-size:18px;color:#15171C;line-height:1.45;margin-top:10px;">→ Evidence collection starts Jan ’27, one quarter ahead of the window.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:822px;width:656px;height:132px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1168px;top:822px;width:4px;height:132px;background:#8B8D95;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1204px;top:848px;width:592px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;color:#15171C;">Support load from new steps</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#6C6F78;">LOW</span>
+    </div>
+    <div style="font-size:18px;color:#15171C;line-height:1.45;margin-top:10px;">→ Enablement kit and macros shipped one week before each GA.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1004px;width:900px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8B8D95;z-index:10;">Atlas Ops Cloud · Product Roadmap &amp; Release Plan</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1004px;width:200px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8B8D95;z-index:10;">09 / 10</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "id": "03-bilingual-roadmap",
+  "title": "中英双语产品路线图",
+  "description": "中英文混排、时间轴、里程碑和多层信息卡。",
+  "deck_html_file": "03-bilingual-roadmap/deck.html",
+  "slide_html_files": ["03-bilingual-roadmap/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["bilingual", "timeline", "mixed-language"],
+  "manual_checks": ["中英文基线一致", "季度标签和里程碑不重叠", "细线和虚线完整"]
+}

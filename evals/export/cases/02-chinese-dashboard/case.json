@@ -1,0 +1,10 @@
+{
+  "id": "02-chinese-dashboard",
+  "title": "中文经营数据看板",
+  "description": "中文指标、环形图、进度条和紧凑业务说明。",
+  "deck_html_file": "02-chinese-dashboard/deck.html",
+  "slide_html_files": ["02-chinese-dashboard/deck.html"],
+  "expected_slide_count": 1,
+  "tags": ["chinese", "dashboard", "progress", "donut"],
+  "manual_checks": ["中文字体无乱码或缺字", "百分比与单位不换行", "环形图和进度条颜色准确"]
+}

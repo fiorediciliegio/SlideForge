@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "把销售手册整理成8页新品销售赋能PPT。产品事实只使用附件；Image Research用于真实使用场景和行业环境，不要搜索或展示竞品Logo。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "企业销售与售前团队",
+        "description": "企业销售与售前团队"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "新品销售赋能",
+        "description": "新品销售赋能"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "统一价值表达、适用场景、限制和异议处理",
+        "description": "统一价值表达、适用场景、限制和异议处理"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "清楚、有说服力但不夸张",
+        "description": "清楚、有说服力但不夸张"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "企业销售与售前团队",
+      "description": "企业销售与售前团队"
+    },
+    "purpose": {
+      "label": "新品销售赋能",
+      "description": "新品销售赋能"
+    },
+    "desired_outcome": {
+      "label": "统一价值表达、适用场景、限制和异议处理",
+      "description": "统一价值表达、适用场景、限制和异议处理"
+    },
+    "slide_count": 8,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "清楚、有说服力但不夸张",
+      "description": "清楚、有说服力但不夸张"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": true,
+      "reason": "Enabled by the fixed evaluation Requirements.",
+      "enabled": true
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

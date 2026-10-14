@@ -1,0 +1,115 @@
+import assert from "node:assert/strict";
+import { describe, it } from "node:test";
+
+import type { DeckGenerationProgress } from "../../src/features/deck-generation/index.ts";
+import { getGenerationProgressDisplayMessage } from "../../src/features/deck-workspace/generationProgressDisplay.ts";
+import { messages } from "../../src/i18n/messages.ts";
+
+const completeProgress: DeckGenerationProgress = {
+  step: "complete",
+  message: "生成完成",
+  currentPageIndex: 0,
+  totalPages: 0,
+  pages: [],
+};
+
+describe("Generation Progress Display", () => {
+  it("最终超时显示本地化原因，运行中的提示和原始错误不变", () => {
+    const raw = "Agent stream idle timeout after 180000ms";
+    const progress: DeckGenerationProgress = { ...completeProgress, step: "failed", message: raw };
+    for (const locale of ["zh", "en", "ja", "de"] as const) {
+      const t = messages[locale];
+      assert.equal(getGenerationProgressDisplayMessage(t, progress), t.errors.summaryModelBusy);
+    }
+    assert.equal(progress.message, raw);
+    assert.equal(getGenerationProgressDisplayMessage(messages.zh, {
+      ...progress, step: "page-authoring", message: "正在生成",
+    }), "正在生成");
+  });
+
+  it("localizes completed generation instead of reusing persisted progress text", () => {
+    assert.equal(getGenerationProgressDisplayMessage(messages.en, completeProgress), "Generation complete");
+    assert.equal(getGenerationProgressDisplayMessage(messages.zh, completeProgress), "生成完成");
+  });
+
+  it("keeps live progress messages for non-complete steps", () => {
+    assert.equal(
+      getGenerationProgressDisplayMessage(messages.en, {
+        ...completeProgress,
+        step: "page-authoring",
+        message: "Writing page 1",
+      }),
+      "Writing page 1",
+    );
+  });
+
+  it("hides page accepted summaries while Research Discovery is active", () => {
+    assert.equal(
+      getGenerationProgressDisplayMessage(messages.zh, {
+        ...completeProgress,
+        step: "research-collection",
+        message: "0/1 页已通过",
+        researchDiscovery: {
+          status: "running",
+          summary: {
+            facts: 0,
+            derivedInsights: 0,
+            visualAssets: 0,
+            gaps: 0,
+            rejectedMaterial: 0,
+          },
+          records: [
+            { phase: "web-decision", state: "completed" },
+            { phase: "web-collection", state: "completed" },
+            { phase: "visual-decision", state: "completed" },
+            { phase: "visual-collection", state: "running" },
+          ],
+        },
+      }),
+      "搜索并筛选图片素材",
+    );
+  });
+
+  it("uses Research Discovery step fallback when stale page accepted summaries have no active phase", () => {
+    assert.equal(
+      getGenerationProgressDisplayMessage(messages.zh, {
+        ...completeProgress,
+        step: "research-discovery",
+        message: "0/1 页通过",
+      }),
+      "判断是否需要网页资料",
+    );
+    assert.equal(
+      getGenerationProgressDisplayMessage(messages.en, {
+        ...completeProgress,
+        step: "research-collection",
+        message: "0/1 accepted",
+      }),
+      "Search and organize web research",
+    );
+  });
+
+  it("re-resolves app-owned captions when the locale changes mid-run", () => {
+    const confirming: DeckGenerationProgress = {
+      ...completeProgress,
+      step: "outline-confirmation",
+      message: "正在确认大纲…",
+      messageKey: "confirmingOutline",
+    };
+
+    assert.equal(getGenerationProgressDisplayMessage(messages.zh, confirming), messages.zh.generating.confirmingOutline);
+    assert.equal(getGenerationProgressDisplayMessage(messages.en, confirming), messages.en.generating.confirmingOutline);
+    assert.doesNotMatch(getGenerationProgressDisplayMessage(messages.en, confirming), /[\u4e00-\u9fa5]/);
+  });
+
+  it("keeps page accepted summaries during page generation", () => {
+    assert.equal(
+      getGenerationProgressDisplayMessage(messages.zh, {
+        ...completeProgress,
+        step: "page-authoring",
+        message: "0/1 页已通过",
+      }),
+      "0/1 页已通过",
+    );
+  });
+});

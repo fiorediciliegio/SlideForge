@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>First-Year Scorecard — Freshman Survival Guide</title>
+<style>
+/* Sticker-collage theme — Freshman Survival Guide */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@600;700;800;900&family=Patrick+Hand&display=swap');
+
+:root{
+  --blue:#2C7BE5;        /* bright blue */
+  --blue-deep:#1B4FA6;
+  --orange:#FF7A2A;      /* bright orange */
+  --orange-soft:#FFB877;
+  --lime:#B8E438;        /* lime green */
+  --lime-deep:#7BB800;
+  --purple:#8B5CF6;      /* small purple accent */
+  --purple-deep:#5B21B6;
+  --white:#FFFFFF;
+  --cream:#FFF8E9;       /* soft warm off-white bg — not beige-luxury */
+  --paper:#FDFBF3;
+  --ink:#1F2A44;         /* deep navy ink for handwriting feel */
+  --ink-soft:#3B4A6B;
+
+  --f-display:'Fredoka', system-ui, sans-serif;
+  --f-hand:'Caveat', cursive;
+  --f-marker:'Patrick Hand', cursive;
+  --f-body:'Nunito', system-ui, sans-serif;
+}
+
+/* --- Sticker & tape utility styles (used inline in slides) --- */
+.sticker{
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 6px 0 rgba(31,42,68,.12), 0 14px 30px rgba(31,42,68,.10);
+  border:3px solid var(--ink);
+}
+.tape{
+  position:absolute;
+  background:rgba(255, 224, 130, .78);
+  box-shadow:0 4px 10px rgba(0,0,0,.10);
+  transform:rotate(-6deg);
+}
+.pin{
+  width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ff6b6b, #b91c1c 70%);
+  box-shadow:0 4px 0 rgba(0,0,0,.25), inset -3px -4px 6px rgba(0,0,0,.25);
+  border:3px solid #fff;
+}
+</style>
+<style>
+  body{margin:0;padding:0;overflow:hidden;font-family:var(--f-body);}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;
+    background:
+      radial-gradient(circle at 12% 14%, rgba(184,228,56,.26), transparent 32%),
+      radial-gradient(circle at 88% 86%, rgba(44,123,229,.20), transparent 32%),
+      #FFF8E9;
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="10 First-Year Scorecard">
+
+  <!-- ================= TITLE ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:80px;top:50px;width:900px;height:130px;
+              background:var(--purple);border:5px solid var(--ink);border-radius:24px;
+              transform:rotate(-1.5deg);box-shadow:8px 8px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:60px;width:880px;height:120px;z-index:10;
+              transform:rotate(-1.5deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:32px;color:var(--lime);line-height:1;">chapter 09 ✦</div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:52px;line-height:1;letter-spacing:-1px;margin-top:4px;">
+      What a Good First Year Looks Like
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1020px;top:78px;width:620px;height:90px;z-index:10;
+              font-family:var(--f-marker);font-size:29px;color:var(--ink-soft);line-height:1.25;">
+    Not a GPA number. Five things you can honestly<br>
+    check in May — score yourself, not your classmates.
+  </div>
+
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1670px;top:52px;width:180px;height:34px;
+              background:repeating-linear-gradient(45deg, var(--lime) 0 13px, #DFF2A6 13px 26px);
+              transform:rotate(-12deg);opacity:.9;z-index:5;">
+  </div>
+
+  <!-- ================= LEFT — 5 DIMENSION BARS ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:70px;top:210px;width:1090px;height:600px;
+              background:#FDFBF3;border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:1;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:234px;width:1030px;height:70px;z-index:10;color:var(--ink);">
+    <div style="font-family:var(--f-display);font-weight:700;font-size:30px;line-height:1;">
+      The five that actually compound
+    </div>
+    <div style="font-family:var(--f-marker);font-size:23px;color:var(--ink-soft);margin-top:4px;">
+      shaded bar = a realistic first-year target, not a maximum
+    </div>
+  </div>
+
+  <!-- BAR 1 — Academics -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:310px;width:308px;height:78px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:21px;color:var(--ink);line-height:1.2;">
+    📚 Academic footing<br><span style="font-weight:700;font-size:17px;color:var(--ink-soft);">passing everything, panicking in nothing</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:318px;width:600px;height:38px;
+              background:#fff;border:4px solid var(--ink);border-radius:19px;z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:318px;width:432px;height:38px;
+              background:var(--blue);border:4px solid var(--ink);border-radius:19px;z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1040px;top:320px;width:100px;height:34px;z-index:10;
+              font-family:var(--f-body);font-weight:900;font-size:22px;color:var(--blue-deep);">
+    72%
+  </div>
+
+  <!-- BAR 2 — People -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:398px;width:308px;height:78px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:21px;color:var(--ink);line-height:1.2;">
+    🤝 People you'd call<br><span style="font-weight:700;font-size:17px;color:var(--ink-soft);">3–5 names is a full success</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:406px;width:600px;height:38px;
+              background:#fff;border:4px solid var(--ink);border-radius:19px;z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:406px;width:510px;height:38px;
+              background:var(--orange);border:4px solid var(--ink);border-radius:19px;z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1040px;top:408px;width:100px;height:34px;z-index:10;
+              font-family:var(--f-body);font-weight:900;font-size:22px;color:#B8451D;">
+    85%
+  </div>
+
+  <!-- BAR 3 — Health -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:486px;width:308px;height:78px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:21px;color:var(--ink);line-height:1.2;">
+    🌙 Sleep &amp; health baseline<br><span style="font-weight:700;font-size:17px;color:var(--ink-soft);">the one that carries the other four</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:494px;width:600px;height:38px;
+              background:#fff;border:4px solid var(--ink);border-radius:19px;z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:494px;width:552px;height:38px;
+              background:var(--lime);border:4px solid var(--ink);border-radius:19px;z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1040px;top:496px;width:100px;height:34px;z-index:10;
+              font-family:var(--f-body);font-weight:900;font-size:22px;color:var(--lime-deep);">
+    92%
+  </div>
+
+  <!-- BAR 4 — Exploration -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:574px;width:308px;height:78px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:21px;color:var(--ink);line-height:1.2;">
+    🧭 Things you tried once<br><span style="font-weight:700;font-size:17px;color:var(--ink-soft);">quitting counts — trying is the metric</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:582px;width:600px;height:38px;
+              background:#fff;border:4px solid var(--ink);border-radius:19px;z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:582px;width:396px;height:38px;
+              background:var(--purple);border:4px solid var(--ink);border-radius:19px;z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1040px;top:584px;width:100px;height:34px;z-index:10;
+              font-family:var(--f-body);font-weight:900;font-size:22px;color:var(--purple-deep);">
+    66%
+  </div>
+
+  <!-- BAR 5 — Money -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:662px;width:308px;height:78px;z-index:10;
+              font-family:var(--f-body);font-weight:800;font-size:21px;color:var(--ink);line-height:1.2;">
+    💰 Money under control<br><span style="font-weight:700;font-size:17px;color:var(--ink-soft);">you know roughly where it went</span>
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:670px;width:600px;height:38px;
+              background:#fff;border:4px solid var(--ink);border-radius:19px;z-index:5;">
+  </div>
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:420px;top:670px;width:342px;height:38px;
+              background:var(--blue);border:4px solid var(--ink);border-radius:19px;z-index:6;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1040px;top:672px;width:100px;height:34px;z-index:10;
+              font-family:var(--f-body);font-weight:900;font-size:22px;color:var(--blue-deep);">
+    57%
+  </div>
+
+  <!-- Insight strip inside panel -->
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:100px;top:744px;width:1030px;height:62px;z-index:10;
+              font-family:var(--f-body);font-weight:700;font-size:21px;color:var(--ink-soft);line-height:1.35;">
+    Nobody finishes year one at 100% on all five — and the students who look like they did
+    are just quieter about the low bar.
+  </div>
+
+  <!-- ================= RIGHT — THE REFRAME ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1210px;top:210px;width:640px;height:290px;
+              background:var(--orange);border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;transform:rotate(1.2deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1242px;top:236px;width:580px;height:250px;z-index:10;
+              transform:rotate(1.2deg);color:#fff;">
+    <div style="font-family:var(--f-hand);font-size:38px;line-height:1;color:#FFE082;">the honest bar 🎯</div>
+    <div style="font-family:var(--f-body);font-weight:900;font-size:31px;line-height:1.2;margin-top:10px;">
+      Year one isn't for peaking.<br>It's for building the version of you that year two runs on.
+    </div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:20px;line-height:1.35;margin-top:12px;">
+      Habits, not highlights. Nobody asks a graduate about their freshman GPA.
+    </div>
+  </div>
+
+  <!-- Red-flag / green-flag comparison -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1210px;top:530px;width:640px;height:280px;
+              background:#fff;border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1242px;top:552px;width:580px;height:40px;z-index:10;
+              font-family:var(--f-display);font-weight:700;font-size:26px;color:var(--purple-deep);line-height:1;">
+    Check in every month, not every May
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1242px;top:600px;width:280px;height:190px;z-index:10;
+              font-family:var(--f-body);font-weight:700;font-size:19px;color:var(--ink);line-height:1.5;">
+    <span style="font-family:var(--f-hand);font-size:28px;color:#B8451D;">drifting ⚠︎</span><br>
+    ✗ Skipped 3+ classes<br>
+    ✗ Haven't spoken to staff<br>
+    ✗ Weekends feel empty<br>
+    ✗ Sleep is fully random
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1548px;top:600px;width:280px;height:190px;z-index:10;
+              font-family:var(--f-body);font-weight:700;font-size:19px;color:var(--ink);line-height:1.5;">
+    <span style="font-family:var(--f-hand);font-size:28px;color:var(--lime-deep);">on track ✓</span><br>
+    ✓ You have a routine<br>
+    ✓ One adult knows you<br>
+    ✓ Plans you didn't make<br>
+    ✓ You can name a favourite
+  </div>
+
+  <!-- Divider between the two columns -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1528px;top:604px;width:3px;height:182px;
+              background:rgba(31,42,68,.25);z-index:6;">
+  </div>
+
+  <!-- ================= CLOSING BAND ================= -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:70px;top:846px;width:1780px;height:170px;
+              background:var(--blue);border:5px solid var(--ink);border-radius:22px;
+              box-shadow:10px 10px 0 var(--ink);z-index:2;transform:rotate(-0.5deg);">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:110px;top:872px;width:1020px;height:126px;z-index:10;
+              transform:rotate(-0.5deg);color:#fff;">
+    <div style="font-family:var(--f-body);font-weight:900;font-size:34px;line-height:1.1;">
+      You will not do this perfectly — and it will still work.
+    </div>
+    <div style="font-family:var(--f-body);font-weight:700;font-size:20px;line-height:1.35;margin-top:10px;">
+      Show up, ask early, sleep enough, and keep saying yes a little longer than feels comfortable.
+      That's the whole guide.
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1290px;top:876px;width:520px;height:120px;z-index:10;
+              transform:rotate(-0.5deg);text-align:right;">
+    <div style="font-family:var(--f-hand);font-size:52px;line-height:1;color:var(--lime);">see you on campus ♡</div>
+    <div style="font-family:var(--f-marker);font-size:24px;color:#fff;margin-top:8px;opacity:.95;">
+      now go be a first-year properly.
+    </div>
+  </div>
+
+  <!-- Star accent -->
+  <div data-object="true" data-object-type="shape"
+       style="position:absolute;left:1168px;top:792px;width:84px;height:84px;
+              background:var(--purple);border:4px solid var(--ink);border-radius:16px;
+              transform:rotate(16deg);box-shadow:5px 5px 0 var(--ink);z-index:7;">
+  </div>
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1168px;top:792px;width:84px;height:84px;z-index:11;
+              transform:rotate(16deg);text-align:center;line-height:84px;font-size:44px;">
+    ⭐
+  </div>
+
+  <div data-object="true" data-object-type="textbox"
+       style="position:absolute;left:1780px;top:1032px;width:80px;height:40px;z-index:10;
+              font-family:var(--f-hand);font-size:32px;color:var(--ink-soft);text-align:right;">10</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "case_id": "B-020",
+  "size_class": "中",
+  "target_input_tokens": 4200,
+  "estimated_outline_input_tokens": 4289,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": true,
+  "attachment_mode": "单附件",
+  "attachment_types": "MD",
+  "content_strategies": "full_context",
+  "evaluation_risks": "1. 搜索竞品后直接模仿；2. 使用霓虹未来感；3. 编造用户规模或功效；4. 图片方向与通勤场景无关；5. 把视觉参考当作品牌事实。"
+}

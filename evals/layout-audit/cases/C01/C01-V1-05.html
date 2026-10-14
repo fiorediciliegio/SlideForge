@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Page specific styles */
+  .grid-layout { display: grid; grid-template-columns: 680px 1px 950px; gap: 48px; height: 100%; align-items: start; }
+  .left-col { display: flex; flex-direction: column; justify-content: flex-start; height: 100%; }
+  .right-col { display: flex; flex-direction: column; justify-content: flex-start; height: 100%; }
+  .separator { width: 1px; height: 580px; background: var(--border); margin-top: 20px; }
+  .accent-bar { width: 72px; height: 6px; background: var(--primary); margin-bottom: 32px; }
+  .placeholder-box { background: var(--bg-card); border: 2px dashed var(--light); border-radius: 12px; padding: 40px; margin-top: 24px; }
+  .placeholder-title { font-size: 26px; font-weight: 600; color: var(--primary); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .placeholder-desc { font-size: var(--f-body); line-height: 1.6; color: var(--muted); }
+  .tip-text { font-size: var(--f-meta); color: var(--light); margin-top: 24px; line-height: 1.5; border-top: 1px solid var(--border); padding-top: 16px; }
+  
+  .rowwrap { display: grid; grid-template-columns: 48px 1fr 180px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding-top: 24px; margin-bottom: 32px; }
+  .rowno { font-size: 24px; font-weight: 600; color: var(--primary); }
+  .rowh { font-size: 24px; font-weight: 600; color: var(--dark); margin: 0 0 12px 0; }
+  .rowp { font-size: var(--f-body); line-height: 1.55; color: var(--muted); margin: 0; }
+  .meterlab { font-size: var(--f-meta); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--light); margin: 0 0 10px 0; text-align: right; }
+  .seg { display: flex; gap: 6px; justify-content: flex-end; }
+  .seg i { display: block; width: 24px; height: 8px; background: var(--border); }
+  .seg i.on { background: var(--primary); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Problem Definition">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <div class="content-area">
+    <div class="grid-layout">
+      <!-- Left Column: Core Challenge -->
+      <div class="left-col">
+        <div class="accent-bar"></div>
+        <h2 style="font-size: 32px; font-weight: 600; color: var(--dark); margin: 0 0 8px 0;">核心挑战定义</h2>
+        <p style="font-size: var(--f-meta); color: var(--light); margin: 0;">阐明本方案致力于解决的特定环境或社会问题</p>
+        
+        <div class="placeholder-box">
+          <div class="placeholder-title">
+            <span>[ 待补充 ]</span>
+            <span style="font-size: 16px; font-weight: 400; color: var(--light); border: 1px solid var(--light); padding: 2px 8px; border-radius: 4px; text-transform: uppercase;">Pending Input</span>
+          </div>
+          <p class="placeholder-desc">
+            请在此处补充 2-3 句针对当前项目所致力于解决的具体可持续发展问题的简要描述。<br><br>
+            例如：全球水资源短缺、碳排放追踪困难、或特定社区的生态危机等。
+          </p>
+          <p class="tip-text">
+            ※ 提示：结合 2024 Call for Code 全球挑战赛的可持续发展主题，使评委能快速感知痛点的真实存在性与严峻性。
+          </p>
+        </div>
+      </div>
+      
+      <!-- Separator Line -->
+      <div class="separator"></div>
+      
+      <!-- Right Column: Status & Urgency -->
+      <div class="right-col" style="padding-top: 38px;">
+        <!-- Row 1: Status Analysis -->
+        <div class="rowwrap">
+          <div class="rowno ar">01</div>
+          <div>
+            <h3 class="rowh">现状分析：现有解决方案的局限性</h3>
+            <p class="rowp">
+              <strong style="color: var(--dark);">[ 待补充 ]：</strong>现有解决方案在<strong>效率</strong>或<strong>可扩展性</strong>方面存在哪些明显的局限性？请在此处填入具体的技术或业务瓶颈分析（例如：算力消耗高、部署成本昂贵、数据更新延迟或无法跨区域推广）。
+            </p>
+          </div>
+          <div>
+            <!-- Spacer for layout balance with Row 2 -->
+          </div>
+        </div>
+        
+        <!-- Row 2: Urgency & SDG Contribution -->
+        <div class="rowwrap" style="margin-bottom: 0;">
+          <div class="rowno ar">02</div>
+          <div>
+            <h3 class="rowh">解决该问题的紧迫性 &amp; SDGs 贡献</h3>
+            <p class="rowp">
+              <strong style="color: var(--dark);">[ 待补充 ]：</strong>阐明立即解决该问题的必要性，以及本方案对联合国可持续发展目标（SDGs，如 SDG 13 气候行动、SDG 6 清洁饮水等）的具体贡献路径。
+            </p>
+          </div>
+          <div style="flex-shrink: 0;">
+            <p class="meterlab">Urgency</p>
+            <div class="seg">
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+            <p style="font-size: 14px; color: var(--light); text-align: right; margin: 8px 0 0 0;">[ 待评估 ]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

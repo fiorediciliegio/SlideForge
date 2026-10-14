@@ -1,0 +1,13 @@
+{
+  "case_id": "B-012",
+  "size_class": "中",
+  "target_input_tokens": 5600,
+  "estimated_outline_input_tokens": 5692,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "单附件",
+  "attachment_types": "MD",
+  "content_strategies": "full_context",
+  "evaluation_risks": "1. 承诺退款或处理时效；2. 混淆三种角色权限；3. 让普通成员自行创建空间；4. 错误码解释错误；5. 漏掉必须升级的三类问题。"
+}

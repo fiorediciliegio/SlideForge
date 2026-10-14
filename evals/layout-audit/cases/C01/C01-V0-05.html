@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Grid & List Styles matching Aesthetic Reference */
+  .rowwrap { display: grid; grid-template-columns: 56px 1fr 172px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding-top: 20px; }
+  .rowno { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; color: var(--primary); letter-spacing: .04em; }
+  .rowh { font-weight: 600; font-size: 24px; line-height: 1.2; color: var(--dark); margin: 0; }
+  .rowp { font-weight: 400; font-size: 18px; line-height: 1.45; color: var(--muted); margin-top: 8px; }
+  .meterlab { font-family: 'Archivo', sans-serif; font-weight: 500; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; text-align: right; margin-top: 0; }
+  .seg { display: flex; gap: 5px; justify-content: flex-end; }
+  .seg i { display: block; width: 26px; height: 8px; background: var(--border); }
+  .seg i.on { background: var(--primary); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide 2">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  <div class="content-area">
+    <!-- Left Column: Core Challenge Placeholder -->
+    <div style="position:absolute; left:0; top:0; width:690px; height:644px;">
+      <div style="width:72px; height:6px; background:var(--primary); margin-bottom:36px;"></div>
+      <p style="font-weight:600; font-size:32px; line-height:1.4; color:var(--primary); margin-bottom:24px;">
+        核心挑战：[待补充]
+      </p>
+      <p style="font-size:20px; line-height:1.6; color:var(--muted); margin-bottom:48px;">
+        当前项目申报书（README.md）未提供具体的环境或社会问题描述。为确保方案的针对性，此处需在后续补充明确、具体的可持续发展痛点，以便评审专家快速理解项目立项背景。
+      </p>
+
+      <!-- Placeholder Metrics to align with tech aesthetic -->
+      <div style="display:flex; gap:40px; margin-top:60px; border-top:1px solid var(--border); padding-top:40px;">
+        <div>
+          <p class="ar" style="font-weight:700; font-size:54px; line-height:1; color:var(--dark);">-- %</p>
+          <p style="font-size:18px; line-height:1.4; color:var(--light); margin-top:12px;">现有方案效率瓶颈<br>[待补充]</p>
+        </div>
+        <div style="border-left: 1px solid var(--border); padding-left: 40px;">
+          <p class="ar" style="font-weight:700; font-size:54px; line-height:1; color:var(--dark);">N/A</p>
+          <p style="font-size:18px; line-height:1.4; color:var(--light); margin-top:12px;">紧迫性及 SDG 贡献<br>[待补充]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vertical Divider -->
+    <div style="position:absolute; left:816px; top:0; width:1px; height:600px; background:var(--border);"></div>
+
+    <!-- Right Column: Status Quo and Urgency -->
+    <div style="position:absolute; left:864px; top:0; width:864px; height:644px;">
+      <h2 style="font-weight:600; font-size:28px; line-height:1.2; color:var(--dark); margin-bottom:12px;">现有方案局限性与紧迫性评估</h2>
+      <p style="font-size:18px; line-height:1.45; color:var(--light); margin-bottom:36px;">针对当前技术现状进行深度剖析，凸显引入全新技术架构的必要性。</p>
+
+      <!-- Row 1 -->
+      <div class="rowwrap" style="margin-bottom:28px;">
+        <div class="rowno">01</div>
+        <div>
+          <h3 class="rowh">现有解决方案的效率局限 [待补充]</h3>
+          <p class="rowp">当前行业内现有的应对方案在数据处理效率、响应速度或资源消耗上存在局限，无法满足高频次的实时监测或执行需求。</p>
+        </div>
+        <div>
+          <p class="meterlab">Urgency</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="rowwrap" style="margin-bottom:28px;">
+        <div class="rowno">02</div>
+        <div>
+          <h3 class="rowh">方案的可扩展性瓶颈 [待补充]</h3>
+          <p class="rowp">现有方案多依赖于特定硬件或本地化部署，缺乏云原生或高扩展性架构支持，难以在不同区域或大规模场景下快速复制和推广。</p>
+        </div>
+        <div>
+          <p class="meterlab">Urgency</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="rowwrap">
+        <div class="rowno">03</div>
+        <div>
+          <h3 class="rowh">解决该问题的紧迫性 [待补充]</h3>
+          <p class="rowp">随着全球可持续发展目标的推进，延迟解决将导致更严重的生态或社会负面影响，亟需借助前沿科技力量进行根本性变革。</p>
+        </div>
+        <div>
+          <p class="meterlab">Urgency</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

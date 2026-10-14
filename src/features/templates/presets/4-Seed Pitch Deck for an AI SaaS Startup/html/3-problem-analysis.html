@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Why It Stays Broken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   HELIO — Seed Deck Design System
+   Dark modern tech · one system across all 10 slides
+   ========================================================== */
+
+:root{
+  --bg:      #0A0C11;
+  --elev-1:  rgba(255,255,255,0.045);
+  --elev-2:  rgba(255,255,255,0.075);
+  --line:    rgba(255,255,255,0.10);
+  --line-2:  rgba(255,255,255,0.20);
+
+  --tx:      #F3F5F8;
+  --tx-2:    #A2ACBB;
+  --tx-3:    #6B7786;
+
+  --a1:      #FF6A3D;   /* primary   — ember */
+  --a2:      #5EE6C0;   /* secondary — mint  */
+  --a3:      #9B8CFF;   /* tertiary  — iris  */
+
+  --r-lg: 20px;
+  --r-md: 14px;
+  --r-sm: 8px;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type ---------- */
+.dsp{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.025em; margin:0; }
+.num{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.035em; line-height:1; }
+.mono{ font-family:'JetBrains Mono', monospace; }
+.eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:19px; font-weight:500;
+  letter-spacing:0.20em; text-transform:uppercase; color:var(--a1);
+}
+.h-title{ font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:60px; line-height:1.06; letter-spacing:-0.028em; margin:0; }
+.lede{ font-size:25px; line-height:1.5; color:var(--tx-2); margin:0; }
+.body{ font-size:21px; line-height:1.55; color:var(--tx-2); margin:0; }
+.lbl{ font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3); }
+.foot{ font-family:'JetBrains Mono', monospace; font-size:17px; letter-spacing:0.16em; color:#5A6472; }
+
+/* ---------- surfaces ---------- */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.014));
+  border:1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.card-flat{
+  background: rgba(255,255,255,0.032);
+  border:1px solid var(--line);
+  border-radius: var(--r-md);
+}
+.chip{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace; font-size:15px; letter-spacing:0.10em;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid var(--line-2); color:var(--tx-2);
+}
+
+/* ---------- tables ---------- */
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:500;
+  letter-spacing:0.16em; text-transform:uppercase; color:var(--tx-3);
+  text-align:left; padding:0 20px 16px 20px; border-bottom:1px solid var(--line-2);
+}
+table.grid td{
+  font-size:20px; line-height:1.42; color:var(--tx-2);
+  padding:20px; border-bottom:1px solid var(--line); vertical-align:top;
+}
+table.grid td.k{ color:var(--tx); font-weight:600; font-family:'Space Grotesk', sans-serif; font-size:22px; }
+table.grid tr:last-child td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="03 Why It Stays Broken" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#0A0C11;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; z-index:1;
+       background:radial-gradient(900px 600px at 6% 100%, rgba(155,140,255,0.14), transparent 70%);"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1px; z-index:5; background:rgba(255,255,255,0.12);"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:72px; width:900px; z-index:10;">
+    <span class="eyebrow">02 &nbsp;/&nbsp; Root cause</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:118px; width:1180px; z-index:10;">
+    <h2 class="h-title">Deflection was never the bottleneck.<br>Permission to act was.</h2>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1400px; top:130px; width:420px; z-index:10;">
+    <p class="body">Existing tools answer questions. Resolution requires writing to systems of record — which is exactly what no vendor will underwrite.</p>
+  </div>
+
+  <!-- left: the gap chain -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:100px; top:336px; width:836px; height:600px; z-index:10; display:flex; flex-direction:column; gap:18px;">
+    <div class="card" style="flex:1; padding:26px 32px; display:flex; align-items:center; gap:28px;">
+      <span class="num" style="font-size:44px; color:rgba(255,255,255,0.22); width:56px;">01</span>
+      <div>
+        <div class="dsp" style="font-size:27px; color:#F3F5F8;">Knowledge lives in five places</div>
+        <div class="body" style="font-size:19px; padding-top:7px;">Docs, Slack threads, the CRM, a billing admin panel, and one senior agent's head.</div>
+      </div>
+    </div>
+    <div class="card" style="flex:1; padding:26px 32px; display:flex; align-items:center; gap:28px;">
+      <span class="num" style="font-size:44px; color:rgba(255,255,255,0.22); width:56px;">02</span>
+      <div>
+        <div class="dsp" style="font-size:27px; color:#F3F5F8;">Bots can read, but cannot write</div>
+        <div class="body" style="font-size:19px; padding-top:7px;">Suggesting an answer is safe. Issuing the refund is a compliance question no one owns.</div>
+      </div>
+    </div>
+    <div class="card" style="flex:1; padding:26px 32px; display:flex; align-items:center; gap:28px;">
+      <span class="num" style="font-size:44px; color:rgba(255,255,255,0.22); width:56px;">03</span>
+      <div>
+        <div class="dsp" style="font-size:27px; color:#F3F5F8;">Automation ships as a project</div>
+        <div class="body" style="font-size:19px; padding-top:7px;">Median enterprise deployment: 5 months and a systems integrator invoice.</div>
+      </div>
+    </div>
+    <div class="card" style="flex:1; padding:26px 32px; display:flex; align-items:center; gap:28px; border-color:rgba(255,106,61,0.38);">
+      <span class="num" style="font-size:44px; color:#FF6A3D; width:56px;">04</span>
+      <div>
+        <div class="dsp" style="font-size:27px; color:#F3F5F8;">So the queue is solved by hiring</div>
+        <div class="body" style="font-size:19px; padding-top:7px;">The one lever that always works, and never gets cheaper.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- right: ranked buyer pain -->
+  <div data-object="true" data-object-type="chart" style="position:absolute; left:976px; top:336px; width:844px; height:600px; z-index:10;" class="card">
+    <div style="padding:34px 38px; height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="lbl">What support leaders rank as blocking</div>
+        <div class="mono" style="font-size:15px; color:#5A6472; padding-top:8px;">SHARE NAMING IT A TOP&#8209;2 PROBLEM · n=61</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:22px;">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; padding-bottom:9px;">
+            <span class="body" style="font-size:21px; color:#F3F5F8;">Can't act inside our own systems</span>
+            <span class="num" style="font-size:30px; color:#FF6A3D;">71%</span>
+          </div>
+          <span style="display:block; height:10px; background:rgba(255,255,255,0.06); border-radius:5px;"><span style="display:block; width:71%; height:100%; background:#FF6A3D; border-radius:5px;"></span></span>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; padding-bottom:9px;">
+            <span class="body" style="font-size:21px; color:#F3F5F8;">No audit trail we can defend</span>
+            <span class="num" style="font-size:30px; color:#F3F5F8;">58%</span>
+          </div>
+          <span style="display:block; height:10px; background:rgba(255,255,255,0.06); border-radius:5px;"><span style="display:block; width:58%; height:100%; background:rgba(255,106,61,0.62); border-radius:5px;"></span></span>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; padding-bottom:9px;">
+            <span class="body" style="font-size:21px; color:#F3F5F8;">Setup needs engineering we don't have</span>
+            <span class="num" style="font-size:30px; color:#F3F5F8;">54%</span>
+          </div>
+          <span style="display:block; height:10px; background:rgba(255,255,255,0.06); border-radius:5px;"><span style="display:block; width:54%; height:100%; background:rgba(255,106,61,0.52); border-radius:5px;"></span></span>
+        </div>
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; padding-bottom:9px;">
+            <span class="body" style="font-size:21px; color:#F3F5F8;">Answer quality drifts after launch</span>
+            <span class="num" style="font-size:30px; color:#F3F5F8;">39%</span>
+          </div>
+          <span style="display:block; height:10px; background:rgba(255,255,255,0.06); border-radius:5px;"><span style="display:block; width:39%; height:100%; background:rgba(255,106,61,0.40); border-radius:5px;"></span></span>
+        </div>
+      </div>
+
+      <div class="card-flat" style="padding:22px 26px; display:flex; align-items:center; gap:22px;">
+        <span class="num" style="font-size:38px; color:#5EE6C0;">3.1×</span>
+        <span class="body" style="font-size:19px;">willingness to pay for <span style="color:#F3F5F8;">resolution</span> versus <span style="color:#F3F5F8;">deflection</span>, priced in the same interview set.</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:100px; top:996px; width:1200px; z-index:10;">
+    <span class="foot">SOURCE: HELIO DISCOVERY PROGRAM — 61 SUPPORT LEADERS (ILLUSTRATIVE SAMPLE DATA)</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:996px; width:220px; z-index:10; text-align:right;">
+    <span class="foot" style="color:#F3F5F8;">03 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

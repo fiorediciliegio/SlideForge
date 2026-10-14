@@ -1,0 +1,147 @@
+{
+  "id": "152-Why Does It Rain Clay World Cover",
+  "version": 1,
+  "ppt_number": 152,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "blue",
+    "yellow",
+    "green",
+    "coral"
+  ],
+  "name": "Why Does It Rain Clay World Cover",
+  "description": "Children's weather cover with soft clay-like clouds and raindrops, a smiling sun, rounded colorful typography, green hills, and four water-cycle chips.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["children"],"formats":["lesson"],"primary_styles":["playful"],"visual_traits":["playful","cartoon","illustration","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Children's weather cover with soft clay-like clouds and raindrops, a smiling sun, rounded colorful typography, green hills, and four water-cycle chips."
+    },
+    {
+      "path": "images/2-the-water-cycle-in-four-moves.webp",
+      "alt": "The Water Cycle in Four Moves reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-one-drop-s-big-journey.webp",
+      "alt": "One Drop's Big Journey reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-heat-speeds-up-evaporation.webp",
+      "alt": "Heat Speeds Up Evaporation reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-remember-the-rain-recipe.webp",
+      "alt": "Remember the Rain Recipe reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Children's weather cover with soft clay-like clouds and raindrops, a smiling sun, rounded colorful typography, green hills, and four water-cycle chips."
+    },
+    {
+      "path": "html/2-the-water-cycle-in-four-moves.html",
+      "description": "The Water Cycle in Four Moves reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-one-drop-s-big-journey.html",
+      "description": "One Drop's Big Journey reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-heat-speeds-up-evaporation.html",
+      "description": "Heat Speeds Up Evaporation reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-remember-the-rain-recipe.html",
+      "description": "Remember the Rain Recipe reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "rain-sky-garden",
+      "name": "Sky Garden",
+      "swatches": [
+        "#A9E7F5",
+        "#24466D",
+        "#3E87CF",
+        "#5CA866"
+      ],
+      "roles": {
+        "bg": "#A9E7F5",
+        "surface": "#FFFDF7",
+        "ink": "#24466D",
+        "muted": "#3E87CF",
+        "accent_primary": "#3E87CF",
+        "accent_secondary": "#5CA866",
+        "accent_tertiary": "#FFD75C",
+        "line": "#D7E1E8"
+      }
+    },
+    {
+      "id": "rain-lavender-peach",
+      "name": "Lavender Peach",
+      "swatches": [
+        "#E8DDF8",
+        "#463563",
+        "#7D69C1",
+        "#6FAD8B"
+      ],
+      "roles": {
+        "bg": "#E8DDF8",
+        "surface": "#FFFCF8",
+        "ink": "#463563",
+        "muted": "#7F6AA6",
+        "accent_primary": "#7D69C1",
+        "accent_secondary": "#6FAD8B",
+        "accent_tertiary": "#F5B45F",
+        "line": "#E1D6ED"
+      }
+    },
+    {
+      "id": "rain-mint-coral",
+      "name": "Mint Coral",
+      "swatches": [
+        "#D8F0E5",
+        "#254D4B",
+        "#42A99A",
+        "#6FAF5E"
+      ],
+      "roles": {
+        "bg": "#D8F0E5",
+        "surface": "#FFFCF6",
+        "ink": "#254D4B",
+        "muted": "#629485",
+        "accent_primary": "#42A99A",
+        "accent_secondary": "#6FAF5E",
+        "accent_tertiary": "#F27E67",
+        "line": "#D2E3DB"
+      }
+    },
+    {
+      "id": "rain-sunset-blue",
+      "name": "Sunset Blue",
+      "swatches": [
+        "#DDF0FA",
+        "#24466D",
+        "#4B90C9",
+        "#7CB76A"
+      ],
+      "roles": {
+        "bg": "#DDF0FA",
+        "surface": "#FFFDF6",
+        "ink": "#24466D",
+        "muted": "#5B86A3",
+        "accent_primary": "#4B90C9",
+        "accent_secondary": "#7CB76A",
+        "accent_tertiary": "#F6A84B",
+        "line": "#D6E1E8"
+      }
+    }
+  ]
+}

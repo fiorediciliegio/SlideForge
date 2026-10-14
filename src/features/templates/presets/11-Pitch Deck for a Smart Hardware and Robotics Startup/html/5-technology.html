@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Core Technology</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:#0E1215;font-family:'Archivo',sans-serif;}
+.mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Core technology" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#0E1215;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;background-color:#0E1215;background-image:linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);background-size:80px 80px, 80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:74px;width:700px;height:28px;z-index:10;"><span class="mono" style="font-size:22px;color:#FF6A2B;">04 — Core technology</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:112px;width:1400px;height:80px;z-index:10;"><div style="font-size:62px;font-weight:700;line-height:1.06;color:#F1EFEA;letter-spacing:-.01em;">Four layers, one closed loop</div></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:214px;width:1728px;height:1px;z-index:1;background:#2E383F;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:246px;width:1100px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#8D9AA2;">System architecture</span></div>
+
+  <!-- L4 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:294px;width:1100px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;border-left:5px solid #3B454C;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:318px;width:1040px;height:80px;z-index:10;">
+    <div style="display:flex;align-items:baseline;gap:20px;"><span class="mono" style="font-size:21px;color:#5D686F;">L4</span><span style="font-size:31px;font-weight:600;color:#F1EFEA;">Fleet OS &amp; operations console</span></div>
+    <div class="mono" style="font-size:20px;color:#8D9AA2;margin-top:10px;">Job scheduling · OEE telemetry · OTA rollout · MES / ERP connectors</div>
+  </div>
+
+  <!-- L3 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:444px;width:1100px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;border-left:5px solid #FF6A2B;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:468px;width:1040px;height:80px;z-index:10;">
+    <div style="display:flex;align-items:baseline;gap:20px;"><span class="mono" style="font-size:21px;color:#FF6A2B;">L3</span><span style="font-size:31px;font-weight:600;color:#F1EFEA;">Task &amp; grasp planner</span></div>
+    <div class="mono" style="font-size:20px;color:#8D9AA2;margin-top:10px;">Learned grasp policy · 3.4M sim episodes · 6-second part teach-in</div>
+  </div>
+
+  <!-- L2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:594px;width:1100px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;border-left:5px solid #FF6A2B;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:618px;width:1040px;height:80px;z-index:10;">
+    <div style="display:flex;align-items:baseline;gap:20px;"><span class="mono" style="font-size:21px;color:#FF6A2B;">L2</span><span style="font-size:31px;font-weight:600;color:#F1EFEA;">Perception &amp; localization</span></div>
+    <div class="mono" style="font-size:20px;color:#8D9AA2;margin-top:10px;">Active ToF + stereo fusion · 8 ms pose · ±3 mm machine docking</div>
+  </div>
+
+  <!-- L1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:744px;width:1100px;height:126px;z-index:1;background:#141A1F;border:1px solid #2E383F;border-left:5px solid #3B454C;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:768px;width:1040px;height:80px;z-index:10;">
+    <div style="display:flex;align-items:baseline;gap:20px;"><span class="mono" style="font-size:21px;color:#5D686F;">L1</span><span style="font-size:31px;font-weight:600;color:#F1EFEA;">Motion control &amp; safety</span></div>
+    <div class="mono" style="font-size:20px;color:#8D9AA2;margin-top:10px;white-space:nowrap;">200 Hz torque loop · dual-channel E-stop · SSM safety</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:900px;width:1100px;height:60px;z-index:10;"><div style="font-size:26px;line-height:1.35;color:#8D9AA2;"><span style="color:#FF6A2B;">↺</span> Every grasp outcome streams back into the planner — 1.2M labeled attempts logged to date.</div></div>
+
+  <!-- spec table -->
+  <div data-object="true" data-object-type="table" style="position:absolute;left:1260px;top:294px;width:564px;height:610px;z-index:10;">
+    <table style="width:100%;border-collapse:collapse;font-family:'Archivo',sans-serif;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;font-size:20px;font-weight:500;color:#FF6A2B;">Spec</th>
+          <th style="text-align:right;padding:0 0 16px 0;border-bottom:1px solid #FF6A2B;font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;font-size:20px;font-weight:500;color:#FF6A2B;">Today</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#A9B4BB;">Edge compute</td><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;text-align:right;">200 TOPS</td></tr>
+        <tr><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#A9B4BB;">Perception latency</td><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;text-align:right;">8 ms</td></tr>
+        <tr><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#A9B4BB;">Grasp success, mixed bin</td><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;text-align:right;">98.2%</td></tr>
+        <tr><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#A9B4BB;">New part teach-in</td><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;text-align:right;">6 s</td></tr>
+        <tr><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#A9B4BB;">Control loop</td><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;text-align:right;">200 Hz</td></tr>
+        <tr><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#A9B4BB;">Safety standard</td><td style="padding:22px 0;border-bottom:1px solid #232B31;font-size:25px;color:#F1EFEA;text-align:right;">ISO/TS 15066</td></tr>
+        <tr><td style="padding:22px 0;font-size:25px;color:#A9B4BB;">IP filings</td><td style="padding:22px 0;font-size:25px;color:#F1EFEA;text-align:right;">4 granted / 7 pending</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1000px;width:900px;height:28px;z-index:10;"><span class="mono" style="font-size:21px;color:#5D686F;">Vantiq Robotics · Seed round · Confidential</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1400px;top:1000px;width:424px;height:28px;z-index:10;text-align:right;"><span class="mono" style="font-size:21px;color:#FF6A2B;">05 / 10</span></div>
+</div>
+</body>
+</html>

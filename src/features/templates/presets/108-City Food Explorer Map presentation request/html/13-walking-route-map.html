@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Walking Route</title>
+<style>
+/* City Food Explorer — editorial food-magazine system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Bebas+Neue&family=Caveat:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --tomato: #E63946;
+  --tomato-deep: #C1272D;
+  --cream: #FBF6EC;
+  --cream-warm: #F5EBD8;
+  --olive: #6B7A3A;
+  --olive-deep: #4E5A28;
+  --cobalt: #1F3A93;
+  --cobalt-deep: #14265E;
+  --yellow: #F5C518;
+  --ink: #1A1A1A;
+  --paper: #F8F1E1;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow: hidden; }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--ink); background: var(--cream); }
+
+.serif { font-family: 'DM Serif Display', serif; }
+.display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.hand { font-family: 'Caveat', cursive; }
+.mono { font-family: 'Space Mono', monospace; letter-spacing: -0.02em; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="13 Walking Route Map" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FBF6EC;">
+
+  <!-- Masthead -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:56px; background:#F5C518; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:18px; width:1300px; z-index:11;">
+    <div class="mono" style="color:#1A1A1A; font-size:14px; letter-spacing:0.28em; font-weight:700;">13 / APPENDIX A · THE WALK, DRAWN BY HAND</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1720px; top:18px; width:140px; z-index:11; text-align:right;">
+    <div class="mono" style="color:#1A1A1A; font-size:14px; letter-spacing:0.28em; font-weight:700;">P. 13</div>
+  </div>
+
+  <!-- Chapter -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:90px; width:900px; z-index:11;">
+    <div class="mono" style="font-size:16px; letter-spacing:0.28em; color:#E63946; font-weight:700;">— APPENDIX A · FIELD NOTES</div>
+  </div>
+
+  <!-- Title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:120px; width:1150px; z-index:11;">
+    <div class="serif" style="font-size:74px; line-height:1.15; color:#1A1A1A;">The <span style="color:#E63946; font-style:italic;">Walking</span> Route.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:122px; width:560px; z-index:11;">
+    <div class="serif" style="font-size:22px; line-height:1.35; color:#1A1A1A; font-style:italic;">No metro, no taxi. The whole issue fits inside one long walk — here it is, corner by corner.</div>
+  </div>
+
+  <!-- ===== MAP CARD ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:250px; width:1800px; height:460px; background:#F5EBD8; border:3px solid #1A1A1A; z-index:3;"></div>
+
+  <!-- Map texture + blocks + river -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:250px; width:1800px; height:460px; z-index:4; pointer-events:none;" viewBox="0 0 1800 460" preserveAspectRatio="none">
+    <defs>
+      <pattern id="rdots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
+        <circle cx="18" cy="18" r="1.1" fill="#C1B79A"/>
+      </pattern>
+    </defs>
+    <rect width="1800" height="460" fill="url(#rdots)"/>
+    <rect x="70" y="50" width="260" height="150" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="5 7"/>
+    <rect x="470" y="220" width="300" height="170" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="5 7"/>
+    <rect x="880" y="60" width="280" height="140" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="5 7"/>
+    <rect x="1230" y="230" width="320" height="160" fill="none" stroke="#C1B79A" stroke-width="2" stroke-dasharray="5 7"/>
+    <path d="M 0 400 Q 300 370, 620 392 T 1200 376 T 1800 404" stroke="#1F3A93" stroke-width="12" fill="none" opacity="0.3" stroke-linecap="round"/>
+  </svg>
+
+  <!-- The hand-drawn route -->
+  <svg data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:250px; width:1800px; height:460px; z-index:6; pointer-events:none;" viewBox="0 0 1800 460">
+    <path d="M 140 330 Q 270 250, 400 180 Q 560 110, 700 300 Q 860 400, 1020 150 Q 1180 60, 1340 290 Q 1500 400, 1660 140"
+          stroke="#E63946" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="17 11"/>
+    <text x="268" y="238" font-family="'Space Mono', monospace" font-size="13" letter-spacing="1.4" fill="#6B7A3A">1.8 KM</text>
+    <text x="556" y="176" font-family="'Space Mono', monospace" font-size="13" letter-spacing="1.4" fill="#6B7A3A">2.4 KM</text>
+    <text x="866" y="398" font-family="'Space Mono', monospace" font-size="13" letter-spacing="1.4" fill="#6B7A3A">2.1 KM</text>
+    <text x="1176" y="122" font-family="'Space Mono', monospace" font-size="13" letter-spacing="1.4" fill="#6B7A3A">2.6 KM</text>
+    <text x="1492" y="382" font-family="'Space Mono', monospace" font-size="13" letter-spacing="1.4" fill="#6B7A3A">2.5 KM</text>
+  </svg>
+
+  <!-- Stop pins -->
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:172px; top:552px; width:56px; height:56px; z-index:8;">
+    <div style="width:56px; height:56px; border-radius:50%; background:#F5C518; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:30px; color:#1A1A1A;">1</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:432px; top:402px; width:56px; height:56px; z-index:8;">
+    <div style="width:56px; height:56px; border-radius:50%; background:#F5C518; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:30px; color:#1A1A1A;">2</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:732px; top:522px; width:56px; height:56px; z-index:8;">
+    <div style="width:56px; height:56px; border-radius:50%; background:#E63946; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:30px; color:#FBF6EC;">3</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:1052px; top:372px; width:56px; height:56px; z-index:8;">
+    <div style="width:56px; height:56px; border-radius:50%; background:#6B7A3A; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:30px; color:#FBF6EC;">4</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:1372px; top:512px; width:56px; height:56px; z-index:8;">
+    <div style="width:56px; height:56px; border-radius:50%; background:#1F3A93; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:30px; color:#FBF6EC;">5</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="icon" style="position:absolute; left:1692px; top:362px; width:56px; height:56px; z-index:8;">
+    <div style="width:56px; height:56px; border-radius:50%; background:#1F3A93; border:3px solid #1A1A1A; box-shadow:4px 4px 0 #1A1A1A; display:flex; align-items:center; justify-content:center;">
+      <span class="serif" style="font-size:30px; color:#FBF6EC;">6</span>
+    </div>
+  </div>
+
+  <!-- Stop labels -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:172px; top:614px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:27px; color:#1A1A1A; line-height:1;">Sunrise Café</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">07:30 · HARBOUR</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:432px; top:348px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:27px; color:#1A1A1A; line-height:1;">Espresso Bar</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">09:00 · OLD TOWN</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:732px; top:584px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:27px; color:#1A1A1A; line-height:1;">Taco Alley</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">13:30 · MARKET</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1052px; top:318px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:27px; color:#1A1A1A; line-height:1;">Trattoria Rosa</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">19:00 · CANAL SIDE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1372px; top:574px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:27px; color:#1A1A1A; line-height:1;">Gelato Rossa</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">22:00 · RIVERSIDE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1640px; top:308px; width:220px; z-index:9;">
+    <div class="hand" style="font-size:27px; color:#1A1A1A; line-height:1;">Neon Noodle</div>
+    <div class="mono" style="font-size:11px; color:#6B7A3A; letter-spacing:0.15em; margin-top:2px;">23:30 · DOWNTOWN</div>
+  </div>
+
+  <!-- Compass -->
+  <svg data-object="true" data-object-type="icon" style="position:absolute; left:1766px; top:606px; width:80px; height:80px; z-index:10;" viewBox="0 0 80 80">
+    <circle cx="40" cy="40" r="36" fill="#FBF6EC" stroke="#1A1A1A" stroke-width="3"/>
+    <path d="M 40 9 L 45 40 L 40 71 L 35 40 Z" fill="#1F3A93"/>
+    <path d="M 9 40 L 40 35 L 71 40 L 40 45 Z" fill="#E63946"/>
+    <circle cx="40" cy="40" r="3" fill="#1A1A1A"/>
+  </svg>
+
+  <!-- ===== LEG PROFILE ===== -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:60px; top:730px; width:1000px; z-index:11;">
+    <div class="mono" style="font-size:12px; letter-spacing:0.26em; color:#1A1A1A; font-weight:700;">FIG. 05 · THE FIVE LEGS, TO SCALE</div>
+  </div>
+
+  <svg data-object="true" data-object-type="chart" style="position:absolute; left:60px; top:762px; width:1800px; height:120px; z-index:10;" viewBox="0 0 1800 120">
+    <rect x="0" y="40" width="279" height="34" fill="#F5C518" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="139" y="30" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="24" fill="#1A1A1A">1.8 km</text>
+    <text x="139" y="98" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" letter-spacing="1.6" fill="#1A1A1A">1 → 2 · 24 MIN</text>
+
+    <rect x="287" y="40" width="372" height="34" fill="#E63946" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="473" y="30" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="24" fill="#1A1A1A">2.4 km</text>
+    <text x="473" y="98" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" letter-spacing="1.6" fill="#1A1A1A">2 → 3 · 31 MIN</text>
+
+    <rect x="667" y="40" width="326" height="34" fill="#6B7A3A" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="830" y="30" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="24" fill="#1A1A1A">2.1 km</text>
+    <text x="830" y="98" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" letter-spacing="1.6" fill="#1A1A1A">3 → 4 · 28 MIN</text>
+
+    <rect x="1001" y="40" width="403" height="34" fill="#1F3A93" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="1202" y="30" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="24" fill="#1A1A1A">2.6 km</text>
+    <text x="1202" y="98" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" letter-spacing="1.6" fill="#1A1A1A">4 → 5 · 34 MIN</text>
+
+    <rect x="1412" y="40" width="388" height="34" fill="#C1272D" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="1606" y="30" text-anchor="middle" font-family="'DM Serif Display', serif" font-size="24" fill="#1A1A1A">2.5 km</text>
+    <text x="1606" y="98" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" letter-spacing="1.6" fill="#1A1A1A">5 → 6 · 33 MIN</text>
+  </svg>
+
+  <!-- ===== BOTTOM BAND ===== -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:60px; top:920px; width:1800px; height:100px; background:#6B7A3A; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:88px; top:942px; width:1744px; z-index:12;">
+    <div style="display:flex; align-items:center; gap:44px;">
+      <div>
+        <div class="mono" style="font-size:10px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">TOTAL DISTANCE</div>
+        <div class="serif" style="font-size:32px; color:#FBF6EC; line-height:1.1;">11.4 km</div>
+      </div>
+      <div style="width:2px; height:52px; background:rgba(251,246,236,0.45);"></div>
+      <div>
+        <div class="mono" style="font-size:10px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">MOVING TIME</div>
+        <div class="serif" style="font-size:32px; color:#FBF6EC; line-height:1.1;">2 h 30 m</div>
+      </div>
+      <div style="width:2px; height:52px; background:rgba(251,246,236,0.45);"></div>
+      <div>
+        <div class="mono" style="font-size:10px; letter-spacing:0.24em; color:#F5C518; font-weight:700;">STEEPEST LEG</div>
+        <div class="serif" style="font-size:32px; color:#FBF6EC; line-height:1.1;">Old Town stairs</div>
+      </div>
+      <div style="width:2px; height:52px; background:rgba(251,246,236,0.45);"></div>
+      <div style="flex:1;">
+        <div class="hand" style="font-size:30px; color:#F5C518; line-height:1.1;">flat shoes — you'll thank us by leg four</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "titleLineOne": "China",
+  "titleConnector": "vs",
+  "titleLineTwo": "Japan",
+  "subtitle": "Comprehensive Comparison",
+  "topicItems": [
+    "Economy",
+    "Demographics",
+    "Technology",
+    "Trade",
+    "History",
+    "Culture"
+  ],
+  "entities": [
+    {
+      "label": "China"
+    },
+    {
+      "label": "Japan"
+    }
+  ],
+  "showDecorations": true
+}

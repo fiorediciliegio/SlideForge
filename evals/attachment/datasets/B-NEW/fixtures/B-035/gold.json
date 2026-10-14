@@ -1,0 +1,13 @@
+{
+  "case_id": "B-035",
+  "size_class": "边界",
+  "target_input_tokens": 28000,
+  "estimated_outline_input_tokens": 28079,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": true,
+  "attachment_mode": "无附件",
+  "attachment_types": "无",
+  "content_strategies": "null",
+  "evaluation_risks": "1. 编造租金或盈利；2. 将城市级人口直接代表目标商圈；3. 使用高端超市图片偏离社区定位；4. 把研究假设写成结论；5. 缺少选址和冷链验证方向。"
+}

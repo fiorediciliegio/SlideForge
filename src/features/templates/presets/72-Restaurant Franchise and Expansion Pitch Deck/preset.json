@@ -1,0 +1,103 @@
+{
+  "id": "72-Restaurant Franchise and Expansion Pitch Deck",
+  "version": 1,
+  "ppt_number": 72,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "red",
+    "black",
+    "brown"
+  ],
+  "name": "Restaurant Franchise and Expansion Pitch Deck",
+  "description": "Restaurant investment design with cream editorial pages, restrained red accents, refined serif type, and rich food photography.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["fundraising","growth-strategy"],"industries":["consumer"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "奶油白、深红与暖棕色封面，左侧中部放置超大标题，一幅图片建立视觉重心。"
+    },
+    {
+      "path": "images/2-brand-story.webp",
+      "alt": "奶油白、深红与暖棕色页面，一幅图片构成视觉重心，传播信息拉开层级。"
+    },
+    {
+      "path": "images/3-consumer-insight.webp",
+      "alt": "奶油白、深红与暖棕色页面，一幅图表集中排布，核心观点组织动线。"
+    },
+    {
+      "path": "images/4-store-model.webp",
+      "alt": "奶油白、深红与暖棕色页面，四块卡片组成四列网格，方案层级强化对比。"
+    },
+    {
+      "path": "images/5-hero-products.webp",
+      "alt": "奶油白、深红与暖棕色页面，四块卡片组成四列网格，产品信息收束版面。"
+    },
+    {
+      "path": "images/6-market-opportunity.webp",
+      "alt": "奶油白、深红与暖棕色页面，一组表格压缩信息密度，人群信息形成重心。"
+    },
+    {
+      "path": "images/7-franchise-model.webp",
+      "alt": "奶油白、深红与暖棕色页面，四块卡片组成三列网格，方案层级拉开层级。"
+    },
+    {
+      "path": "images/8-unit-economics.webp",
+      "alt": "奶油白、深红与暖棕色页面，四块卡片组成四列网格，财务信息组织动线。"
+    },
+    {
+      "path": "images/9-expansion-roadmap.webp",
+      "alt": "奶油白、深红与暖棕色页面，横向时间轴串联阶段节点，日期标记强化对比。"
+    },
+    {
+      "path": "images/10-the-ask.webp",
+      "alt": "奶油白、深红与暖棕色页面，一幅图表集中排布，决策信息收束版面。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，奶油白、深红与暖棕色确定整体基调，左侧中部放置超大标题；一幅图片分布在画面主区，页脚信息与留白共同收束版面。"
+    },
+    {
+      "path": "html/2-brand-story.html",
+      "description": "左上方标题锚定奶油白、深红与暖棕色画面；留白与细线分隔出清晰阅读区，一幅图片集中于中央，品牌元素与传播模块补充层级。"
+    },
+    {
+      "path": "html/3-consumer-insight.html",
+      "description": "奶油白、深红与暖棕色作为底色，标题落在左上方；单一大面板承载主体信息，一幅图表落在右侧，核心观点与醒目标记补充层级。"
+    },
+    {
+      "path": "html/4-store-model.html",
+      "description": "标题固定在左上方，奶油白、深红与暖棕色分隔主体；四块信息卡横向并列，一幅图片集中于中央，分层模块与价格数字补充层级。"
+    },
+    {
+      "path": "html/5-hero-products.html",
+      "description": "奶油白、深红与暖棕色画面，标题置于左上方；四块信息卡横向并列，四幅图片集中于中央，一幅图表落在左侧。"
+    },
+    {
+      "path": "html/6-market-opportunity.html",
+      "description": "左上方标题锚定奶油白、深红与暖棕色画面；单一大面板承载主体信息，一组表格位于右侧，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/7-franchise-model.html",
+      "description": "奶油白、深红与暖棕色作为底色，标题落在左上方；四块信息卡组成三列网格，分层模块与价格数字贴合卡片边界。"
+    },
+    {
+      "path": "html/8-unit-economics.html",
+      "description": "标题固定在左上方，奶油白、深红与暖棕色分隔主体；四块信息卡横向并列，两幅财务图表落在中央，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/9-expansion-roadmap.html",
+      "description": "奶油白、深红与暖棕色画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/10-the-ask.html",
+      "description": "左上方标题锚定奶油白、深红与暖棕色画面；单一大面板承载主体信息，一幅图表落在左侧，行动卡与强调结论补充层级。"
+    }
+  ]
+}

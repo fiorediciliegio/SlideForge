@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validation</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURA Pods Pro — FY26 Launch Deck
+   Design system: White + Blue accent (single primary, two secondaries)
+   Type: Manrope (display/UI) + IBM Plex Mono (labels, numbers)
+   Radius 4px · hairline 1px · no gradients · no glow
+   ============================================================ */
+
+:root{
+  --ink:      #0F1B2D;   /* primary text            */
+  --ink-2:    #5B6B82;   /* secondary text          */
+  --ink-3:    #93A1B5;   /* tertiary / chrome text  */
+  --line:     #E4E9F0;   /* hairline                */
+  --line-2:   #F0F3F8;   /* faint hairline          */
+  --blue:     #1A56DB;   /* PRIMARY accent          */
+  --blue-ink: #123FA0;   /* accent, pressed         */
+  --blue-soft:#EDF2FE;   /* accent wash             */
+  --wash:     #F6F8FB;   /* neutral surface         */
+  --white:    #FFFFFF;
+
+  --r: 4px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--white);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---------- type roles (typography only; layout stays inline) ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--blue); margin:0;
+}
+.h1{ font-family:'Manrope',sans-serif; font-weight:800; font-size:58px;
+     line-height:1.12; letter-spacing:-.022em; color:var(--ink); margin:0; }
+.h1-xl{ font-family:'Manrope',sans-serif; font-weight:800; font-size:112px;
+     line-height:1.0; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.h2{ font-family:'Manrope',sans-serif; font-weight:700; font-size:34px;
+     line-height:1.25; letter-spacing:-.012em; color:var(--ink); margin:0; }
+.h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:25px;
+     line-height:1.3; color:var(--ink); margin:0; }
+.lead{ font-family:'Manrope',sans-serif; font-weight:500; font-size:29px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.body{ font-family:'Manrope',sans-serif; font-weight:500; font-size:23px;
+     line-height:1.55; color:var(--ink-2); margin:0; }
+.small{ font-family:'Manrope',sans-serif; font-weight:500; font-size:20px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.stat{ font-family:'Manrope',sans-serif; font-weight:800; font-size:88px;
+     line-height:.95; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.stat-sm{ font-family:'Manrope',sans-serif; font-weight:800; font-size:60px;
+     line-height:1; letter-spacing:-.03em; color:var(--ink); margin:0; }
+
+.mono{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:18px;
+     letter-spacing:.04em; color:var(--ink-2); margin:0; }
+.tag{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.tag-b{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin:0; }
+.idx{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:17px;
+     letter-spacing:.1em; color:var(--blue); margin:0; }
+.foot{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:15px;
+     letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+
+.accent{ color:var(--blue); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Validation" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:96px;width:900px;z-index:10;">
+    <p class="eyebrow">07 &nbsp;/&nbsp; Validation</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:150px;width:1000px;z-index:10;">
+    <h1 class="h1">The beta cohort already<br>proved the promise.</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1220px;top:162px;width:580px;z-index:10;">
+    <p class="body">1,200 participants, six weeks, three metro markets. Every headline claim on the launch page traces back to this cohort.</p>
+  </div>
+
+  <!-- left: CSAT recovery bar chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:392px;width:700px;z-index:10;">
+    <p class="tag">Scenario satisfaction — beta vs. current generation</p>
+  </div>
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:120px;top:440px;width:820px;height:412px;z-index:10;">
+    <svg width="820" height="412" viewBox="0 0 820 412" xmlns="http://www.w3.org/2000/svg">
+      <!-- gridlines -->
+      <g stroke="#F0F3F8" stroke-width="1">
+        <line x1="300" y1="0" x2="300" y2="330"/>
+        <line x1="440" y1="0" x2="440" y2="330"/>
+        <line x1="580" y1="0" x2="580" y2="330"/>
+        <line x1="720" y1="0" x2="720" y2="330"/>
+      </g>
+      <line x1="300" y1="330" x2="820" y2="330" stroke="#E4E9F0" stroke-width="1"/>
+
+      <g font-family="'Manrope',sans-serif">
+        <!-- row 1 -->
+        <text x="0" y="34" font-size="22" font-weight="700" fill="#0F1B2D">Street &amp; transit</text>
+        <rect x="300" y="14" width="128" height="24" fill="#E4E9F0"/>
+        <rect x="300" y="46" width="365" height="24" fill="#1A56DB"/>
+        <text x="440" y="33" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">52</text>
+        <text x="677" y="65" font-family="'IBM Plex Mono',monospace" font-size="17" font-weight="500" fill="#1A56DB">89</text>
+
+        <!-- row 2 -->
+        <text x="0" y="140" font-size="22" font-weight="700" fill="#0F1B2D">Open-plan office</text>
+        <rect x="300" y="120" width="145" height="24" fill="#E4E9F0"/>
+        <rect x="300" y="152" width="345" height="24" fill="#1A56DB"/>
+        <text x="457" y="139" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">57</text>
+        <text x="657" y="171" font-family="'IBM Plex Mono',monospace" font-size="17" font-weight="500" fill="#1A56DB">86</text>
+
+        <!-- row 3 -->
+        <text x="0" y="246" font-size="22" font-weight="700" fill="#0F1B2D">Voice calls</text>
+        <rect x="300" y="226" width="160" height="24" fill="#E4E9F0"/>
+        <rect x="300" y="258" width="332" height="24" fill="#1A56DB"/>
+        <text x="472" y="245" font-family="'IBM Plex Mono',monospace" font-size="17" fill="#5B6B82">61</text>
+        <text x="644" y="277" font-family="'IBM Plex Mono',monospace" font-size="17" font-weight="500" fill="#1A56DB">84</text>
+      </g>
+
+      <!-- legend -->
+      <rect x="300" y="360" width="18" height="18" fill="#E4E9F0"/>
+      <text x="328" y="375" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#5B6B82">Current gen</text>
+      <rect x="490" y="360" width="18" height="18" fill="#1A56DB"/>
+      <text x="518" y="375" font-family="'IBM Plex Mono',monospace" font-size="16" fill="#5B6B82">AURA Pods Pro beta</text>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1000px;top:392px;width:1px;height:460px;background:var(--line);z-index:1;"></div>
+
+  <!-- right: KPI cards + quote -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1080px;top:392px;width:340px;height:200px;background:var(--wash);border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1112px;top:424px;width:280px;z-index:10;">
+    <p class="stat-sm" style="font-size:56px;">94<span style="font-size:28px;">%</span></p>
+    <p class="small" style="margin-top:14px;">would recommend to a colleague</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1460px;top:392px;width:340px;height:200px;background:var(--wash);border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1492px;top:424px;width:280px;z-index:10;">
+    <p class="stat-sm" style="font-size:56px;">-71<span style="font-size:28px;">%</span></p>
+    <p class="small" style="margin-top:14px;">fewer manual mode switches per day</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1080px;top:616px;width:340px;height:200px;background:var(--wash);border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1112px;top:648px;width:280px;z-index:10;">
+    <p class="stat-sm" style="font-size:56px;">6.1<span style="font-size:28px;">h</span></p>
+    <p class="small" style="margin-top:14px;">average daily wear time in week 6</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1460px;top:616px;width:340px;height:200px;background:var(--blue);border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1492px;top:648px;width:280px;z-index:10;">
+    <p class="stat-sm" style="font-size:56px;color:#FFFFFF;">2.3<span style="font-size:28px;">%</span></p>
+    <p class="small" style="margin-top:14px;color:rgba(255,255,255,0.82);">return rate — category avg. is 8.4%</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:886px;width:1680px;height:1px;background:var(--line);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:914px;width:1400px;z-index:10;">
+    <p class="h3" style="font-size:28px;font-weight:700;line-height:1.4;">“I stopped touching the case halfway through week one. It just handled the subway.”</p>
+    <p class="tag" style="margin-top:12px;">Beta participant #0417 &nbsp;·&nbsp; commuter professional cohort</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1002px;width:140px;z-index:10;text-align:right;">
+    <p class="foot">08 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

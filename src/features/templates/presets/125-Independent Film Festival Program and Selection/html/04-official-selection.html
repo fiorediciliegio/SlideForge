@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MERIDIAN — Official Selection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:#F2EAD8}
+  .paper{position:absolute;inset:0;background-image:linear-gradient(180deg,rgba(11,11,14,.012) 0 1px,transparent 1px 100%),linear-gradient(90deg,rgba(11,11,14,.012) 0 1px,transparent 1px 100%);background-size:48px 48px;z-index:1}
+  .grain{position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0 0.05 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:240px 240px;opacity:.5;mix-blend-mode:multiply;z-index:30;pointer-events:none}
+  .display{font-family:'Bodoni Moda',serif;font-weight:900;color:#0B0B0E;letter-spacing:-.02em;line-height:.92}
+  .serif{font-family:'Cormorant Garamond',serif;color:#2A1F1A}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.15em;text-transform:uppercase;font-size:11px}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="paper"></div>
+
+  <!-- top chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:36px;width:680px;z-index:10;">
+    <span class="mono" style="color:#6B1518;">M—04 · Official Selection · Composition</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:36px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#2A1F1A;">A Program of Eleven Films</span>
+  </div>
+
+  <!-- title block -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:120px;width:1100px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:14px;">Composition</div>
+    <div class="display" style="font-size:128px;">Eleven films.<br><span style="font-style:italic;font-weight:400;">Three axes</span> of architecture.</div>
+  </div>
+
+  <!-- three editorial columns — by Genre / Region / Format -->
+  <!-- Column 1: GEOGRAPHIC REGION -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:520px;width:1px;height:430px;background:#6B1518;z-index:6;opacity:.5"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:520px;width:540px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:18px;">Axis 01 — Region</div>
+    <div class="display" style="font-size:60px;margin-bottom:24px;line-height:1;">17 countries</div>
+    <div style="border-top:1px solid #0B0B0E;padding-top:14px;">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;"><span class="serif" style="font-size:18px;">Europe</span><span class="mono">05</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);"><span class="serif" style="font-size:18px;">Latin America &amp; Caribbean</span><span class="mono">03</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);"><span class="serif" style="font-size:18px;">West &amp; East Asia</span><span class="mono">05</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);"><span class="serif" style="font-size:18px;">MENA / Africa at large</span><span class="mono">04</span></div>
+    </div>
+    <p class="serif" style="font-style:italic;font-size:16px;color:#2A1F1A;margin-top:14px;line-height:1.4;">Some films belong to more than one map.</p>
+  </div>
+
+  <!-- Column 2: CREATIVE PERSPECTIVE -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:700px;top:520px;width:1px;height:430px;background:#6B1518;z-index:6;opacity:.5"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:730px;top:520px;width:520px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:18px;">Axis 02 — Perspective</div>
+    <div class="display" style="font-size:60px;margin-bottom:24px;line-height:1;">Director<br>experience</div>
+    <div style="border-top:1px solid #0B0B0E;padding-top:14px;">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;align-items:baseline;"><span class="serif" style="font-size:18px;">First features</span><span class="display" style="color:#6B1518;">05</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);align-items:baseline;"><span class="serif" style="font-size:18px;">Second features</span><span class="display" style="color:#6B1518;">03</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);align-items:baseline;"><span class="serif" style="font-size:18px;">Third film &amp; beyond</span><span class="display" style="color:#6B1518;">03</span></div>
+    </div>
+    <p class="serif" style="font-style:italic;font-size:16px;color:#2A1F1A;margin-top:14px;line-height:1.4;">Eight of eleven are women, non-binary, or first-time directors.</p>
+  </div>
+
+  <!-- Column 3: FORMAT -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1300px;top:520px;width:1px;height:430px;background:#6B1518;z-index:6;opacity:.5"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1330px;top:520px;width:520px;z-index:10;">
+    <div class="mono" style="color:#6B1518;margin-bottom:18px;">Axis 03 — Format</div>
+    <div class="display" style="font-size:60px;margin-bottom:24px;line-height:1;">Screen<br>&amp; form</div>
+    <div style="border-top:1px solid #0B0B0E;padding-top:14px;">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;"><span class="serif" style="font-size:18px;">Fiction features (60–110 min)</span><span class="mono">06</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);"><span class="serif" style="font-size:18px;">Documentary features</span><span class="mono">03</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-top:1px dashed rgba(11,11,14,.25);"><span class="serif" style="font-size:18px;">Hybrid / essay films</span><span class="mono">02</span></div>
+    </div>
+    <p class="serif" style="font-style:italic;font-size:16px;color:#2A1F1A;margin-top:14px;line-height:1.4;">All works in original language with French subtitles.</p>
+  </div>
+
+  <!-- bottom rule -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:90px;top:990px;width:1740px;height:1px;background:#0B0B0E;z-index:6"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:90px;top:1010px;width:680px;z-index:10;">
+    <span class="mono" style="color:#2A1F1A;">Compiled by selections committee · Published August 2026</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;right:90px;top:1010px;text-align:right;z-index:10;">
+    <span class="mono" style="color:#6B1518;">p. 04 / 10</span>
+  </div>
+
+  <div class="grain"></div>
+</div>
+</body>
+</html>

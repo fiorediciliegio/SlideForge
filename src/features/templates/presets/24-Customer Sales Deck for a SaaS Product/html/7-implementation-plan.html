@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation Plan</title>
+<style>
+/* Cadence sales deck - shared type & color system (non-positioning only) */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#0B1B2B;
+  --slate:#56657A;
+  --muted:#8A98A8;
+  --line:#E4E9EF;
+  --wash:#F5F7FA;
+  --blue:#1B5CFF;
+  --navy:#0A2540;
+  --amber:#C9761B;
+  --tint:#EDF2FF;
+}
+body{
+  margin:0; padding:0; overflow:hidden; background:#FFFFFF;
+  font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+p{margin:0;}
+table{border-collapse:collapse;}
+.h{font-family:'Instrument Sans','Helvetica Neue',sans-serif;color:var(--ink);letter-spacing:-0.02em;font-weight:600;}
+.num{font-family:'Instrument Sans','Helvetica Neue',sans-serif;font-weight:600;letter-spacing:-0.035em;color:var(--ink);}
+.eb{font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:0.2em;text-transform:uppercase;color:var(--blue);}
+.lab{font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
+.body{font-size:24px;line-height:1.55;color:var(--slate);}
+.foot{font-family:'IBM Plex Mono',monospace;font-size:16px;letter-spacing:0.12em;text-transform:uppercase;color:#9AA6B4;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Implementation Plan" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#1B5CFF; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:110px; width:900px; z-index:10;">
+    <p class="eb">06 · Implementation</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:166px; width:1080px; z-index:10;">
+    <p class="h" style="font-size:58px; line-height:1.12; margin:0;">Live in 90 days, value in the first quarter</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:180px; width:520px; z-index:10;">
+    <p class="body" style="font-size:22px;">A phased rollout with a named Cadence delivery lead. No big-bang cutover: the pilot region proves the model before scale-up.</p>
+  </div>
+
+  <!-- timeline axis -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:180px; top:420px; width:1620px; height:2px; background:#E4E9EF; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:180px; top:404px; width:16px; height:34px; background:#1B5CFF; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:580px; top:404px; width:16px; height:34px; background:#1B5CFF; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:404px; width:16px; height:34px; background:#1B5CFF; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1380px; top:404px; width:16px; height:34px; background:#0A2540; z-index:5;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:180px; top:334px; width:360px; z-index:10;">
+    <p class="lab" style="color:#1B5CFF; margin:0;">Weeks 1–3</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:580px; top:334px; width:360px; z-index:10;">
+    <p class="lab" style="color:#1B5CFF; margin:0;">Weeks 4–7</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:980px; top:334px; width:360px; z-index:10;">
+    <p class="lab" style="color:#1B5CFF; margin:0;">Weeks 8–12</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:334px; width:400px; z-index:10;">
+    <p class="lab" style="color:#0A2540; margin:0;">Quarter 2 onward</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:180px; top:476px; width:360px; z-index:10;">
+    <p class="h" style="font-size:32px; margin:0 0 16px 0;">Foundation</p>
+    <p class="body" style="font-size:20px;">CRM sync, SSO, stage definitions agreed with RevOps. Historical pipeline imported and baselined.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:580px; top:476px; width:360px; z-index:10;">
+    <p class="h" style="font-size:32px; margin:0 0 16px 0;">Pilot region</p>
+    <p class="body" style="font-size:20px;">DACH team of 42 sellers goes live. Weekly review cadence runs entirely in Cadence.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:980px; top:476px; width:360px; z-index:10;">
+    <p class="h" style="font-size:32px; margin:0 0 16px 0;">Scale-up</p>
+    <p class="body" style="font-size:20px;">Remaining five regions onboard in two waves. Manager coaching certification completed.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:476px; width:400px; z-index:10;">
+    <p class="h" style="font-size:32px; margin:0 0 16px 0;">Optimise</p>
+    <p class="body" style="font-size:20px;">Quarterly business review against the baseline; scoring model tuned on closed-won data.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:690px; width:1680px; height:1px; background:#E4E9EF; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:726px; width:1080px; height:230px; background:#F5F7FA; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:760px; width:300px; z-index:10;">
+    <p class="lab" style="margin:0 0 16px 0;">Exit criteria · pilot</p>
+    <p class="h" style="font-size:24px; font-weight:500; line-height:1.45; margin:0;">Go / no-go decision made on evidence, not opinion.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:520px; top:762px; width:200px; z-index:10;">
+    <p class="num" style="font-size:48px; color:#1B5CFF; margin:0 0 8px 0;">85%</p>
+    <p class="body" style="font-size:19px;">Weekly active sellers</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:520px; top:872px; width:200px; z-index:10;">
+    <p class="num" style="font-size:48px; color:#1B5CFF; margin:0 0 8px 0;">±5%</p>
+    <p class="body" style="font-size:19px;">Forecast variance</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:790px; top:762px; width:340px; z-index:10;">
+    <p class="num" style="font-size:48px; color:#1B5CFF; margin:0 0 8px 0;">−10 days</p>
+    <p class="body" style="font-size:19px;">Median sales cycle vs. baseline</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:790px; top:872px; width:340px; z-index:10;">
+    <p class="num" style="font-size:48px; color:#1B5CFF; margin:0 0 8px 0;">100%</p>
+    <p class="body" style="font-size:19px;">Reviews run on live data</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:726px; width:560px; z-index:10;">
+    <p class="lab" style="margin:0 0 16px 0;">What we need from Northwind</p>
+    <p class="h" style="font-size:24px; font-weight:500; line-height:1.6; margin:0;">One executive sponsor · one RevOps owner at 50% for six weeks · CRM admin access in week one · pilot region managers in the weekly working group.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:1000px; width:1680px; height:1px; background:#E4E9EF; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1020px; width:900px; z-index:10;">
+    <p class="foot">Cadence × Northwind Group · Confidential</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1440px; top:1020px; width:360px; text-align:right; z-index:10;">
+    <p class="foot">07</p>
+  </div>
+
+</div>
+</body>
+</html>

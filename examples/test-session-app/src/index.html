@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Session 生命周期测试</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>Session 生命周期测试</h1>
+          <p>测试 raw Agent session 生命周期和 Anna LLM complete 调用，并持久化完整调用记录与精确耗时。</p>
+        </div>
+        <div class="topbar__status">
+          <div class="status">
+            <span id="conn-dot" class="dot dot--off"></span>
+            <span id="conn-label">未连接</span>
+          </div>
+          <div class="status">
+            <span>后台仍有</span>
+            <strong id="background-count">0</strong>
+            <span>个请求</span>
+          </div>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="测试类型">
+        <button class="tab tab--active" type="button" data-tab="session">Session 测试</button>
+        <button class="tab" type="button" data-tab="batch">批量测试</button>
+        <button class="tab" type="button" data-tab="llm">LLM 测试</button>
+        <button class="tab" type="button" data-tab="records">调用记录 <span id="record-count" class="pill">0</span></button>
+      </nav>
+
+      <section id="tab-session" class="tab-panel tab-panel--active">
+        <section class="layout">
+          <section class="panel controls">
+            <div class="panel__head">
+              <h2>Session 操作</h2>
+              <button id="refresh-runtime" class="btn btn--ghost" type="button">重新连接</button>
+            </div>
+
+            <fieldset class="session-config">
+              <legend>Session 创建配置</legend>
+              <div class="tool-mode-options">
+                <label class="choice-card">
+                  <input type="radio" name="tool-mode" value="all" checked />
+                  <span><strong>全部</strong><small>继承 Host 的完整工具集，运行时通常显示 granted_tools: ["*"]。</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="tool-mode" value="selected" />
+                  <span><strong>部分多选</strong><small>只开放下方勾选的工具；全部取消则不使用工具。</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="tool-mode" value="manual" />
+                  <span><strong>手动输入</strong><small>用逗号、空格或换行分隔工具名称；留空则不使用工具。</small></span>
+                </label>
+              </div>
+
+              <div id="selected-tools-panel" class="tool-config-panel" hidden>
+                <div class="actions tool-presets">
+                  <button id="select-read-only-tools" class="mini-btn" type="button">只选文件读取</button>
+                  <button id="select-file-read-write-tools" class="mini-btn" type="button">选择文件读写</button>
+                  <button id="select-all-tools" class="mini-btn" type="button">全选 Sandbox</button>
+                  <button id="clear-selected-tools" class="mini-btn" type="button">清空</button>
+                </div>
+                <div id="tool-checkbox-list" class="tool-checkbox-list" aria-label="Sandbox 工具多选"></div>
+              </div>
+
+              <label id="manual-tools-panel" class="field tool-config-panel" hidden>
+                <span>工具名称</span>
+                <textarea id="manual-tools" class="manual-tools" rows="4" spellcheck="false" placeholder="fs_read_file&#10;fs_write_file, web_search"></textarea>
+              </label>
+
+              <div class="catalog-status-row">
+                <span id="catalog-status" class="hint">连接 Runtime 后读取 Session 工具目录。</span>
+                <button id="refresh-catalog" class="mini-btn" type="button" disabled>刷新目录</button>
+              </div>
+              <div id="tool-policy-warning" class="config-warning" hidden></div>
+              <details class="catalog-details">
+                <summary>查看 catalog 原始结果</summary>
+                <pre id="catalog-json" class="json">{}</pre>
+              </details>
+
+              <label class="field">
+                <span>Session system prompt（可选）</span>
+                <textarea id="create-system-prompt" rows="4" placeholder="例如：请始终用中文简洁回答。"></textarea>
+                <small class="hint">只随 session.create 的 systemPrompt 提交，并持久化到新建 Session。</small>
+              </label>
+            </fieldset>
+
+            <div class="actions">
+              <button id="create-session" class="btn btn--primary" type="button" disabled>创建 session</button>
+              <button id="delete-selected" class="btn" type="button" disabled>删除选中</button>
+              <button id="delete-all" class="btn btn--danger" type="button" disabled>清理全部</button>
+              <button id="stop-session-wait" class="btn btn--warn" type="button" disabled>停止等待</button>
+            </div>
+
+            <label class="field">
+              <span>手动输入 / 持久化恢复的 app_session_uuid</span>
+              <input id="manual-session-id" placeholder="例如 aps_xxx，用于测试 raw run/delete" />
+            </label>
+
+            <div class="actions">
+              <button id="attach-manual" class="btn" type="button" disabled>加入持有列表</button>
+              <button id="save-selected" class="btn" type="button" disabled>保存选中 ID</button>
+              <button id="clear-saved" class="btn btn--ghost" type="button">清空持久化 ID</button>
+            </div>
+
+            <section class="subpanel">
+              <div class="panel__head">
+                <h2>当前持有的 sessions</h2>
+                <span id="session-count" class="pill">0</span>
+              </div>
+              <ul id="session-list" class="session-list" aria-label="当前 session 列表"></ul>
+            </section>
+
+            <section class="subpanel">
+              <div class="panel__head">
+                <h2>localStorage 中的 ID</h2>
+                <span id="saved-count" class="pill">0</span>
+              </div>
+              <ul id="saved-list" class="session-list" aria-label="持久化 session id 列表"></ul>
+            </section>
+          </section>
+
+          <section class="panel run-panel">
+            <div class="panel__head">
+              <h2>session.run 测试</h2>
+            </div>
+
+            <dl class="kv">
+              <div><dt>选中 ID</dt><dd id="selected-session-id">-</dd></div>
+              <div><dt>来源</dt><dd id="selected-session-source">-</dd></div>
+              <div><dt>状态</dt><dd id="selected-session-state">-</dd></div>
+              <div><dt>工具策略</dt><dd id="selected-session-tool-policy">-</dd></div>
+              <div><dt>创建级系统提示词</dt><dd id="selected-session-system-prompt">-</dd></div>
+              <div><dt>当前调用</dt><dd id="active-session-record">-</dd></div>
+            </dl>
+
+            <label class="field">
+              <span>当前 Session 默认模型偏好</span>
+              <select id="session-model">
+                <option value="">自动选择（使用用户默认路由）</option>
+              </select>
+              <small class="hint">模型通过每次 session.run 的 modelPreferences 传入；实际模型以返回帧为准。</small>
+            </label>
+
+            <label class="field">
+              <span>本轮 System prompt override（可选）</span>
+              <textarea id="run-system-prompt" rows="4" placeholder="留空则使用创建 Session 时保存的系统提示词。"></textarea>
+              <small class="hint">只随当前 session.run 的 systemPrompt 提交，不修改 Session 中持久化的设置。</small>
+            </label>
+
+            <label class="field">
+              <span>User prompt（必填）</span>
+              <textarea id="run-content" rows="8">请用一句中文说明你收到了这个 session.run 请求，并返回当前可见的 session 上下文摘要。</textarea>
+            </label>
+
+            <fieldset class="session-image-controls">
+              <legend>本轮图片附件（可选）</legend>
+              <label class="field">
+                <span>选择图片（最多 6 张）</span>
+                <input id="session-images" type="file" accept="image/png,image/jpeg,image/webp,image/gif,.png,.jpg,.jpeg,.webp,.gif" multiple />
+                <small class="hint">支持 PNG、JPEG、WebP 和 GIF。每次运行会附上列表中的全部图片；移除或清空后不再附带。刷新页面后需重新选择。</small>
+              </label>
+              <label class="field field--compact">
+                <span>图片识别精度</span>
+                <select id="session-image-detail">
+                  <option value="high">高精度</option>
+                  <option value="auto">自动</option>
+                  <option value="low">低精度</option>
+                </select>
+              </label>
+              <ul id="session-image-list" class="session-image-list" aria-label="本轮图片列表"></ul>
+              <div class="actions">
+                <button id="upload-session-images" class="btn" type="button" disabled>上传／重新上传图片</button>
+                <button id="clear-session-images" class="btn btn--ghost" type="button" disabled>清空图片</button>
+              </div>
+              <p id="session-image-status" class="hint" role="status" aria-live="polite">未添加图片，将按纯文本运行。</p>
+              <p class="hint">请先上传再运行。上传耗时单独保存在“调用记录”的“图片上传”类型中。识图需要模型支持；平台返回的模型错误会保留在会话调用记录中。</p>
+            </fieldset>
+
+            <div class="actions">
+              <button id="run-selected" class="btn btn--primary" type="button" disabled>运行选中 session</button>
+              <button id="run-manual" class="btn" type="button" disabled>运行手动 ID</button>
+            </div>
+          </section>
+        </section>
+
+        <section class="panel session-inspector-panel">
+          <div class="panel__head panel__head--wrap">
+            <div>
+              <h2>选中 Session 的 RPC 诊断</h2>
+              <p class="hint">工具调用默认折叠；打开后查看完整输入和输出。内容来自已持久化的 RPC stream frames。</p>
+            </div>
+            <button id="copy-session-report" class="btn btn--ghost" type="button" disabled>复制 Session 摘要</button>
+          </div>
+          <div id="session-summary" class="session-summary"></div>
+          <div id="session-records" class="session-records" aria-live="polite"></div>
+        </section>
+      </section>
+
+      <section id="tab-batch" class="tab-panel">
+        <section class="layout">
+          <section class="panel controls">
+            <div class="panel__head">
+              <div>
+                <h2>批量运行配置</h2>
+                <p class="hint">按并发数一次性创建同样多的 Session，并发跑 session.run，跑完自动删除，无需手动管理。</p>
+              </div>
+            </div>
+
+            <fieldset class="session-config">
+              <legend>Session 创建配置</legend>
+              <div class="tool-mode-options">
+                <label class="choice-card">
+                  <input type="radio" name="batch-tool-mode" value="all" checked />
+                  <span><strong>全部</strong><small>继承 Host 的完整工具集。</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="batch-tool-mode" value="selected" />
+                  <span><strong>部分多选</strong><small>只开放下方勾选的工具；全部取消则不使用工具。</small></span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="batch-tool-mode" value="manual" />
+                  <span><strong>手动输入</strong><small>用逗号、空格或换行分隔工具名称；留空则不使用工具。</small></span>
+                </label>
+              </div>
+
+              <div id="batch-selected-tools-panel" class="tool-config-panel" hidden>
+                <div id="batch-tool-checkbox-list" class="tool-checkbox-list" aria-label="批量 Sandbox 工具多选"></div>
+              </div>
+
+              <label id="batch-manual-tools-panel" class="field tool-config-panel" hidden>
+                <span>工具名称</span>
+                <textarea id="batch-manual-tools" class="manual-tools" rows="3" spellcheck="false" placeholder="fs_read_file&#10;fs_write_file, web_search"></textarea>
+              </label>
+
+              <div id="batch-tool-policy-warning" class="config-warning" hidden></div>
+
+              <label class="field">
+                <span>Session system prompt（可选）</span>
+                <textarea id="batch-create-system-prompt" rows="3" placeholder="例如：请始终用中文简洁回答。"></textarea>
+                <small class="hint">每个 Session 都用同一份 session.create systemPrompt 创建。</small>
+              </label>
+            </fieldset>
+
+            <fieldset class="session-config">
+              <legend>批量与输出</legend>
+              <label class="field field--compact">
+                <span>并发数（1～64，等于总运行次数）</span>
+                <input id="batch-concurrency" type="number" min="1" max="64" step="1" value="3" />
+              </label>
+              <label class="field">
+                <span>输出目录（必须是绝对路径）</span>
+                <input id="batch-output-dir" spellcheck="false" placeholder="/Users/你的用户名/tmp/batch-out" />
+                <small class="hint">由自带的 batch-writer Executa 在本机创建并写入；目录不存在时自动递归创建。</small>
+              </label>
+              <label class="field field--compact">
+                <span>输出文件前缀</span>
+                <input id="batch-output-prefix" spellcheck="false" placeholder="run" value="run" />
+              </label>
+              <label class="field field--compact">
+                <span>输出文件后缀（可留空）</span>
+                <input id="batch-output-suffix" spellcheck="false" placeholder="txt" value="txt" />
+              </label>
+              <p class="hint">文件名为 <code>前缀_&lt;第几次&gt;.后缀</code>；失败的那次写成 <code>前缀_&lt;第几次&gt;.error.后缀</code>，内容为错误信息。同名文件会被覆盖。</p>
+            </fieldset>
+
+            <div class="actions">
+              <button id="batch-start" class="btn btn--primary" type="button" disabled>开始批量测试</button>
+            </div>
+            <p id="batch-config-error" class="config-warning" hidden></p>
+          </section>
+
+          <section class="panel run-panel">
+            <div class="panel__head">
+              <h2>session.run 配置</h2>
+            </div>
+
+            <label class="field">
+              <span>模型偏好</span>
+              <select id="batch-session-model">
+                <option value="">自动选择（使用用户默认路由）</option>
+              </select>
+              <small class="hint">作为每次 session.run 的 modelPreferences 传入；实际模型以返回帧为准。</small>
+            </label>
+
+            <label class="field">
+              <span>System prompt override（可选）</span>
+              <textarea id="batch-run-system-prompt" rows="3" placeholder="留空则使用创建 Session 时的系统提示词。"></textarea>
+            </label>
+
+            <label class="field">
+              <span>User prompt（必填，所有并发共用同一份）</span>
+              <textarea id="batch-run-content" rows="6">请用一句中文说明你收到了这个 session.run 请求。</textarea>
+            </label>
+
+            <p class="hint">批量测试不携带图片附件；如需测试识图请使用 Session 测试页。</p>
+
+            <dl class="kv metrics">
+              <div><dt>状态</dt><dd id="batch-status">未开始</dd></div>
+              <div><dt>成功 / 失败</dt><dd id="batch-tally">-</dd></div>
+              <div><dt>总耗时</dt><dd id="batch-duration">-</dd></div>
+            </dl>
+          </section>
+        </section>
+
+        <section class="panel">
+          <div class="panel__head panel__head--wrap">
+            <div>
+              <h2>批量运行进度</h2>
+              <p class="hint">每一行是一条独立流水线：session.create → session.run → 写文件 → session.delete。完整 RPC 记录在“调用记录”页签的 batch 类型下。</p>
+            </div>
+            <button id="batch-copy-summary" class="btn btn--ghost" type="button" disabled>复制批量摘要</button>
+          </div>
+          <ul id="batch-progress-list" class="batch-progress-list" aria-live="polite"></ul>
+        </section>
+      </section>
+
+      <section id="tab-llm" class="tab-panel">
+        <section class="panel llm-panel">
+          <div class="panel__head">
+            <div>
+              <h2>llm.complete 测试</h2>
+              <p class="hint">优先复刻 PPT App 的 runtime.call 调用路径；不可用时回退到 runtime.llm.complete。</p>
+            </div>
+            <button id="copy-llm-result" class="btn btn--ghost" type="button" disabled>复制结果摘要</button>
+          </div>
+
+          <label class="field">
+            <span>System prompt（可选）</span>
+            <textarea id="llm-system-prompt" rows="4" placeholder="例如：请始终用中文简洁回答。"></textarea>
+          </label>
+          <label class="field">
+            <span>User prompt（必填）</span>
+            <textarea id="llm-user-prompt" rows="8">请用一句中文回复，并说明你已经收到这条 LLM 测试请求。</textarea>
+          </label>
+          <fieldset class="session-image-controls">
+            <legend>本轮图片附件（可选）</legend>
+            <label class="field">
+              <span>选择图片（最多 6 张）</span>
+              <input id="llm-images" type="file" accept="image/png,image/jpeg,image/webp,image/gif,.png,.jpg,.jpeg,.webp,.gif" multiple />
+              <small class="hint">支持 PNG、JPEG、WebP 和 GIF。选择后自动读取，调用时发送全部图片；刷新页面后需重新选择。</small>
+            </label>
+            <ul id="llm-image-list" class="session-image-list" aria-label="LLM 本轮图片列表"></ul>
+            <div class="actions">
+              <button id="clear-llm-images" class="btn btn--ghost" type="button" disabled>清空图片</button>
+            </div>
+            <p id="llm-image-status" class="hint" role="status" aria-live="polite">未添加图片，将按纯文本调用。</p>
+            <p class="hint">识图需要多模态模型。图片随本次调用直接发送，无需单独上传；调用记录保留图片名称、类型和大小，省略图片字节。</p>
+          </fieldset>
+
+          <label class="field field--compact">
+            <span>Anna Runtime 超时时间（秒，10～600）</span>
+            <input id="llm-timeout-seconds" type="number" min="10" max="600" step="1" value="120" />
+          </label>
+
+          <div class="actions">
+            <button id="run-llm" class="btn btn--primary" type="button" disabled>调用 LLM</button>
+            <button id="stop-llm-wait" class="btn btn--warn" type="button" disabled>停止等待</button>
+          </div>
+
+          <dl class="kv metrics">
+            <div><dt>当前调用</dt><dd id="active-llm-record">-</dd></div>
+            <div><dt>调用路径</dt><dd id="llm-invocation-path">-</dd></div>
+            <div><dt>耗时</dt><dd id="llm-duration">-</dd></div>
+          </dl>
+
+          <section id="llm-result-view" class="llm-result" aria-live="polite">
+            <div class="llm-result__header">
+              <h3>最终返回文本</h3>
+              <span id="llm-result-status" class="llm-result__status" hidden></span>
+            </div>
+            <p id="llm-result-empty" class="empty">调用完成后，这里会显示最终文字、实际模型和 token 用量。</p>
+            <div id="llm-output-text" class="llm-output-text" hidden></div>
+            <div id="llm-result-metrics" class="llm-result__metrics" hidden></div>
+          </section>
+        </section>
+      </section>
+
+      <section id="tab-records" class="tab-panel">
+        <section class="panel">
+          <div class="panel__head panel__head--wrap">
+            <div>
+              <h2>IndexedDB 调用记录</h2>
+              <p class="hint">保存完整请求、响应、stream frames、事件时间线和耗时；不会自动删除。</p>
+            </div>
+            <div class="actions">
+              <select id="record-category-filter" aria-label="调用类型筛选">
+                <option value="all">全部类型</option>
+                <option value="session">Session</option>
+                <option value="batch">批量测试</option>
+                <option value="llm">LLM</option>
+                <option value="upload">图片上传</option>
+              </select>
+              <select id="record-status-filter" aria-label="状态筛选">
+                <option value="all">全部状态</option>
+                <option value="running">运行中</option>
+                <option value="waiting_stopped">已停止等待</option>
+                <option value="succeeded">成功</option>
+                <option value="failed">失败</option>
+                <option value="interrupted">已中断</option>
+              </select>
+              <button id="refresh-records" class="btn btn--ghost" type="button">刷新</button>
+              <button id="copy-all-records" class="btn btn--ghost" type="button">复制全部</button>
+              <button id="clear-records" class="btn btn--danger" type="button">清空全部</button>
+            </div>
+          </div>
+
+          <div id="clear-records-confirmation" class="config-warning record-clear-confirmation" role="group" aria-labelledby="clear-records-message" hidden>
+            <p id="clear-records-message">确定清空全部调用记录吗？包含当前筛选条件之外的记录，清空后不可恢复。此操作不会删除平台 Session。</p>
+            <div class="actions">
+              <button id="confirm-clear-records" class="btn btn--danger" type="button">确认清空</button>
+              <button id="cancel-clear-records" class="btn btn--ghost" type="button">取消</button>
+            </div>
+          </div>
+          <p id="record-action-status" class="hint" role="status" aria-live="polite" hidden></p>
+
+          <div class="records-layout">
+            <ul id="record-list" class="record-list" aria-label="调用记录列表"></ul>
+            <section class="record-detail">
+              <div class="panel__head">
+                <h2>完整记录</h2>
+                <div class="actions">
+                  <button id="copy-record" class="btn btn--ghost" type="button" disabled>复制当前</button>
+                  <button id="delete-record" class="btn btn--danger" type="button" disabled>删除当前</button>
+                </div>
+              </div>
+              <pre id="record-json" class="json record-json">{}</pre>
+            </section>
+          </div>
+        </section>
+      </section>
+
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

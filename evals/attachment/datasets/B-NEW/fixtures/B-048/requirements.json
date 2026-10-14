@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create a 9-slide research-lab orientation deck. Use the lab handbook for operating rules and the project guide for research workflow. Do not add institutional policies not in the attachments."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "New research-lab members",
+        "description": "New research-lab members"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Lab orientation",
+        "description": "Lab orientation"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Explain safe operations, data practices, project workflow, and missing policy areas",
+        "description": "Explain safe operations, data practices, project workflow, and missing policy areas"
+      }
+    ],
+    "slide_count": [
+      9
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Clear, responsible, collegial",
+        "description": "Clear, responsible, collegial"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "New research-lab members",
+      "description": "New research-lab members"
+    },
+    "purpose": {
+      "label": "Lab orientation",
+      "description": "Lab orientation"
+    },
+    "desired_outcome": {
+      "label": "Explain safe operations, data practices, project workflow, and missing policy areas",
+      "description": "Explain safe operations, data practices, project workflow, and missing policy areas"
+    },
+    "slide_count": 9,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Clear, responsible, collegial",
+      "description": "Clear, responsible, collegial"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

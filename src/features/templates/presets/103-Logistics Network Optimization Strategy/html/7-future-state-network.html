@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Future-State Network</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ============================================================
+   LOGISTICS NETWORK OPTIMIZATION — DESIGN SYSTEM
+   Paper: #F5F2EB   Ink: #16211D   Teal: #1E5B4F   Clay: #C0562A
+   Display: Archivo · Body: IBM Plex Sans · Data: IBM Plex Mono
+   Radius: 2px · Rules: 1px #D6D0C2
+   ============================================================ */
+
+:root{
+  --ink:#16211D;
+  --ink2:#3A4744;
+  --muted:#77837E;
+  --paper:#F5F2EB;
+  --paper2:#ECE7DC;
+  --line:#D6D0C2;
+  --teal:#1E5B4F;
+  --teal2:#2F7F6D;
+  --clay:#C0562A;
+  --amber:#E0A03C;
+  --sand:#D9C69F;
+  --dmuted:#9FAAA5;
+  --dline:#33423D;
+}
+
+*{box-sizing:border-box;}
+body{margin:0;padding:0;overflow:hidden;background:#F5F2EB;
+     -webkit-font-smoothing:antialiased;}
+
+/* --- typography ------------------------------------------------ */
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:400;
+         letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.lbl{font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:500;
+     letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.h1{font-family:'Archivo',sans-serif;font-weight:600;font-size:58px;line-height:1.04;
+    letter-spacing:-.015em;color:var(--ink);margin:0;}
+.h2{font-family:'Archivo',sans-serif;font-weight:600;font-size:36px;line-height:1.12;
+    letter-spacing:-.01em;color:var(--ink);margin:0;}
+.h3{font-family:'Archivo',sans-serif;font-weight:600;font-size:28px;line-height:1.2;
+    color:var(--ink);margin:0;}
+.lead{font-family:'IBM Plex Sans',sans-serif;font-size:28px;font-weight:400;
+      line-height:1.42;color:var(--ink2);margin:0;}
+.body{font-family:'IBM Plex Sans',sans-serif;font-size:24px;font-weight:400;
+      line-height:1.45;color:var(--ink2);margin:0;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.num{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.02em;
+     line-height:.92;color:var(--teal);}
+.num-clay{color:var(--clay);}
+.strong{font-weight:600;color:var(--ink);}
+
+/* --- on dark ---------------------------------------------------- */
+.dk .h1,.dk .h2,.dk .h3{color:var(--paper);}
+.dk .lead,.dk .body{color:#CFD6D2;}
+.dk .eyebrow,.dk .lbl{color:var(--dmuted);}
+.dk .num{color:var(--amber);}
+.dk .strong{color:var(--paper);}
+
+/* --- surfaces --------------------------------------------------- */
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:2px;}
+.panel{background:var(--paper2);border-radius:2px;}
+.rule{background:var(--line);}
+.tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:19px;
+     letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:2px;
+     background:#E3EAE6;color:var(--teal);}
+
+/* --- table ------------------------------------------------------ */
+table{border-collapse:collapse;width:100%;}
+th{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:500;
+   letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+   text-align:left;padding:0 0 14px 0;border-bottom:1px solid var(--line);}
+td{font-family:'IBM Plex Sans',sans-serif;font-size:24px;color:var(--ink2);
+   padding:18px 0;border-bottom:1px solid var(--line);vertical-align:middle;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="07 Future-State Network" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F2EB;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:70px;width:900px;z-index:10;">
+    <div class="eyebrow">06 &nbsp;/&nbsp; Future-State Design</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:112px;width:1180px;z-index:10;">
+    <h2 class="h1">Twelve nodes, three flow paths,<br>78% of demand inside next-day reach.</h2>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:274px;width:1700px;height:1px;background:#D6D0C2;z-index:1;"></div>
+
+  <!-- architecture diagram -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:110px;top:312px;width:1090px;height:636px;background:#FFFFFF;border:1px solid #D6D0C2;border-radius:2px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:150px;top:348px;width:1010px;z-index:10;">
+    <div class="lbl">Tiered flow architecture</div>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:150px;top:404px;width:1010px;height:512px;z-index:10;">
+    <svg width="1010" height="512" viewBox="0 0 1010 512" xmlns="http://www.w3.org/2000/svg">
+      <!-- column labels -->
+      <g font-family="IBM Plex Mono, monospace" font-size="18" fill="#77837E" letter-spacing="1.6">
+        <text x="0" y="14">SUPPLY</text>
+        <text x="216" y="14">TIER 1 · HUB</text>
+        <text x="502" y="14">TIER 2 · REGIONAL</text>
+        <text x="812" y="14">DEMAND</text>
+      </g>
+      <line x1="0" y1="30" x2="1010" y2="30" stroke="#D6D0C2" stroke-width="1"/>
+
+      <!-- flow lines -->
+      <g stroke="#C6C0B2" stroke-width="1.5" fill="none">
+        <path d="M126 96 L216 96"/>
+        <path d="M126 96 C170 96 176 236 216 236"/>
+        <path d="M126 236 L216 236"/>
+        <path d="M126 236 C170 236 176 96 216 96"/>
+      </g>
+      <g stroke="#2F7F6D" stroke-width="2" fill="none">
+        <path d="M406 96 L502 96"/>
+        <path d="M406 96 C450 96 458 206 502 206"/>
+        <path d="M406 236 C450 236 458 206 502 206"/>
+        <path d="M406 236 L502 316"/>
+      </g>
+      <g stroke="#C0562A" stroke-width="2" stroke-dasharray="7 5" fill="none">
+        <path d="M406 236 C520 236 560 426 700 426"/>
+      </g>
+      <g stroke="#2F7F6D" stroke-width="2" fill="none">
+        <path d="M700 96 L812 76"/>
+        <path d="M700 206 L812 176"/>
+        <path d="M700 206 L812 276"/>
+        <path d="M700 316 L812 376"/>
+      </g>
+      <path d="M700 426 L812 456" stroke="#C0562A" stroke-width="2" stroke-dasharray="7 5" fill="none"/>
+
+      <!-- supply -->
+      <g>
+        <rect x="0" y="70" width="126" height="52" fill="#ECE7DC" stroke="#D6D0C2"/>
+        <text x="16" y="102" font-family="IBM Plex Sans, sans-serif" font-size="20" fill="#3A4744">Plants ×4</text>
+        <rect x="0" y="210" width="126" height="52" fill="#ECE7DC" stroke="#D6D0C2"/>
+        <text x="16" y="242" font-family="IBM Plex Sans, sans-serif" font-size="20" fill="#3A4744">Imports</text>
+      </g>
+
+      <!-- tier 1 -->
+      <g>
+        <rect x="216" y="66" width="190" height="60" fill="#16211D"/>
+        <text x="236" y="94" font-family="Archivo, sans-serif" font-weight="600" font-size="21" fill="#F5F2EB">Central Hub N</text>
+        <text x="236" y="116" font-family="IBM Plex Mono, monospace" font-size="17" fill="#9FAAA5">bulk · 96k m²</text>
+        <rect x="216" y="206" width="190" height="60" fill="#16211D"/>
+        <text x="236" y="234" font-family="Archivo, sans-serif" font-weight="600" font-size="21" fill="#F5F2EB">Central Hub S</text>
+        <text x="236" y="256" font-family="IBM Plex Mono, monospace" font-size="17" fill="#9FAAA5">bulk · 88k m²</text>
+      </g>
+
+      <!-- tier 2 -->
+      <g>
+        <rect x="502" y="66" width="198" height="60" fill="#FFFFFF" stroke="#1E5B4F" stroke-width="2"/>
+        <text x="522" y="94" font-family="Archivo, sans-serif" font-weight="600" font-size="21" fill="#16211D">Regional DC ×5</text>
+        <text x="522" y="116" font-family="IBM Plex Mono, monospace" font-size="17" fill="#77837E">full range</text>
+
+        <rect x="502" y="176" width="198" height="60" fill="#FFFFFF" stroke="#1E5B4F" stroke-width="2"/>
+        <text x="522" y="204" font-family="Archivo, sans-serif" font-weight="600" font-size="21" fill="#16211D">Forward Hub ×2</text>
+        <text x="522" y="226" font-family="IBM Plex Mono, monospace" font-size="17" fill="#77837E">new · SW &amp; SE</text>
+
+        <rect x="502" y="286" width="198" height="60" fill="#FFFFFF" stroke="#1E5B4F" stroke-width="2"/>
+        <text x="522" y="314" font-family="Archivo, sans-serif" font-weight="600" font-size="21" fill="#16211D">Cross-dock ×3</text>
+        <text x="522" y="336" font-family="IBM Plex Mono, monospace" font-size="17" fill="#77837E">no stock held</text>
+
+        <rect x="502" y="396" width="198" height="60" fill="#FDF3E6" stroke="#C0562A" stroke-width="2"/>
+        <text x="522" y="424" font-family="Archivo, sans-serif" font-weight="600" font-size="21" fill="#16211D">Spares cells ×6</text>
+        <text x="522" y="446" font-family="IBM Plex Mono, monospace" font-size="17" fill="#C0562A">inside RDCs</text>
+      </g>
+
+      <!-- demand -->
+      <g font-family="IBM Plex Sans, sans-serif" font-size="20" fill="#3A4744">
+        <circle cx="826" cy="76" r="7" fill="#1E5B4F"/><text x="846" y="83">Retail DCs · 72 h</text>
+        <circle cx="826" cy="176" r="7" fill="#1E5B4F"/><text x="846" y="183">Stores · 48 h</text>
+        <circle cx="826" cy="276" r="7" fill="#1E5B4F"/><text x="846" y="283">Parcel · next day</text>
+        <circle cx="826" cy="376" r="7" fill="#1E5B4F"/><text x="846" y="383">Marketplace · next day</text>
+        <circle cx="826" cy="456" r="7" fill="#C0562A"/><text x="846" y="463">Field service · 4 h</text>
+      </g>
+
+      <!-- legend -->
+      <line x1="0" y1="490" x2="1010" y2="490" stroke="#D6D0C2"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="17" fill="#77837E">
+        <line x1="0" y1="506" x2="40" y2="506" stroke="#2F7F6D" stroke-width="2"/>
+        <text x="52" y="511">STOCKED FLOW</text>
+        <line x1="240" y1="506" x2="280" y2="506" stroke="#C0562A" stroke-width="2" stroke-dasharray="7 5"/>
+        <text x="292" y="511">FAST LANE / SAME DAY</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- right rail: before / after -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1250px;top:312px;width:560px;z-index:10;">
+    <div class="lbl">Design shift at a glance</div>
+  </div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute;left:1250px;top:364px;width:560px;z-index:10;">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:250px;">Parameter</th>
+          <th style="width:130px;">Now</th>
+          <th>Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Stocking nodes</td><td class="mono">17</td><td class="mono" style="color:#1E5B4F;">12</td></tr>
+        <tr><td>Avg. outbound haul</td><td class="mono">512 km</td><td class="mono" style="color:#1E5B4F;">337 km</td></tr>
+        <tr><td>Next-day coverage</td><td class="mono">46%</td><td class="mono" style="color:#1E5B4F;">78%</td></tr>
+        <tr><td>Split-shipment rate</td><td class="mono">22%</td><td class="mono" style="color:#1E5B4F;">9%</td></tr>
+        <tr style="border-bottom:none;"><td style="border-bottom:none;">Site utilisation</td><td class="mono" style="border-bottom:none;">61%</td><td class="mono" style="border-bottom:none;color:#1E5B4F;">83%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1250px;top:722px;width:560px;height:226px;background:#16211D;border-radius:2px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1294px;top:756px;width:480px;z-index:10;">
+    <div class="lbl" style="color:#E0A03C;">Footprint change</div>
+    <div style="display:flex;gap:40px;margin-top:22px;">
+      <div>
+        <div class="num" style="font-size:56px;color:#E0A03C;">−6</div>
+        <div class="body" style="font-size:21px;color:#CFD6D2;margin-top:8px;">sites exited<br>(4 depots, 2 3PL)</div>
+      </div>
+      <div style="width:1px;background:#33423D;"></div>
+      <div>
+        <div class="num" style="font-size:56px;color:#E0A03C;">+2</div>
+        <div class="body" style="font-size:21px;color:#CFD6D2;margin-top:8px;">forward hubs<br>opened SW &amp; SE</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:110px;top:996px;width:1200px;z-index:10;">
+    <div class="mono" style="font-size:20px;letter-spacing:.08em;color:#77837E;text-transform:uppercase;">Logistics Network Optimization Strategy</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1610px;top:996px;width:200px;z-index:10;">
+    <div class="mono" style="font-size:20px;letter-spacing:.08em;color:#77837E;text-align:right;">07 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

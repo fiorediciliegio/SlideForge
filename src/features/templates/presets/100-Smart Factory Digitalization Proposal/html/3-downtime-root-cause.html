@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Where the hours go — and why</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#14181C;}
+  .lbl{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+  .display{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.012em;}
+  .barrow{display:flex;align-items:center;gap:20px;margin-bottom:24px;}
+  .barlabel{width:296px;font-size:26px;line-height:1.2;}
+  .bartrack{flex:1;height:34px;background:#EAE5DA;position:relative;}
+  .barfill{position:absolute;left:0;top:0;height:34px;}
+  .barval{font-family:'IBM Plex Mono',monospace;font-size:26px;width:78px;text-align:right;}
+  .rc{background:#FFFFFF;border:1px solid #D8D2C5;border-top:5px solid #14181C;border-radius:2px;padding:22px 24px;}
+  .rclbl{font-family:'IBM Plex Mono',monospace;letter-spacing:.1em;text-transform:uppercase;font-size:20px;color:#E08A0F;}
+  .rcbody{font-size:24px;line-height:1.34;margin-top:12px;color:#3A4045;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="03 Root cause" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;background-image:linear-gradient(to right,rgba(20,24,28,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(20,24,28,.045) 1px,transparent 1px);background-size:80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:60px;width:1200px;z-index:10;font-size:24px;color:#6E7378;"><span style="color:#E08A0F;">03</span> &nbsp;/&nbsp; Problem analysis</div>
+
+  <div data-object="true" data-object-type="textbox" class="display" style="position:absolute;left:96px;top:100px;width:1500px;z-index:10;font-size:62px;line-height:1.06;">The loss is visible only after the shift ends</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:186px;width:1500px;z-index:10;font-size:30px;line-height:1.35;color:#5C6166;">Two thirds of the 148 monthly downtime hours sit in causes a live signal would catch in minutes.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:256px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:300px;width:900px;height:600px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:32px 34px;">
+    <div class="lbl" style="font-size:22px;color:#6E7378;">Unplanned downtime by cause · hours per month</div>
+    <div style="font-size:24px;color:#8A857A;margin:8px 0 30px 0;font-family:'IBM Plex Mono',monospace;">12-month average, lines 1–4 combined · total 148 h</div>
+
+    <div class="barrow"><div class="barlabel">Mechanical failure</div><div class="bartrack"><div class="barfill" style="width:455px;background:#A8402A;"></div></div><div class="barval">41</div></div>
+    <div class="barrow"><div class="barlabel">Changeover &amp; setup</div><div class="bartrack"><div class="barfill" style="width:378px;background:#A8402A;"></div></div><div class="barval">34</div></div>
+    <div class="barrow"><div class="barlabel">Material starvation</div><div class="bartrack"><div class="barfill" style="width:300px;background:#E08A0F;"></div></div><div class="barval">27</div></div>
+    <div class="barrow"><div class="barlabel">Quality hold / rework</div><div class="bartrack"><div class="barfill" style="width:200px;background:#E08A0F;"></div></div><div class="barval">18</div></div>
+    <div class="barrow"><div class="barlabel">Tooling &amp; fixtures</div><div class="bartrack"><div class="barfill" style="width:178px;background:#37505E;"></div></div><div class="barval">16</div></div>
+    <div class="barrow" style="margin-bottom:0;"><div class="barlabel">Operator / utility wait</div><div class="bartrack"><div class="barfill" style="width:133px;background:#37505E;"></div></div><div class="barval">12</div></div>
+
+    <div style="display:flex;gap:28px;margin-top:28px;padding-top:20px;border-top:1px solid #EAE5DA;font-size:23px;color:#6E7378;font-family:'IBM Plex Mono',monospace;">
+      <span><span style="display:inline-block;width:16px;height:16px;background:#A8402A;margin-right:8px;"></span>Wave 1</span>
+      <span><span style="display:inline-block;width:16px;height:16px;background:#E08A0F;margin-right:8px;"></span>Wave 2</span>
+      <span><span style="display:inline-block;width:16px;height:16px;background:#37505E;margin-right:8px;"></span>Wave 3</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="rc" style="position:absolute;left:1060px;top:300px;width:372px;height:292px;z-index:10;">
+    <div class="rclbl">01 · No machine signal</div>
+    <div class="rcbody">68% of stoppages are logged by hand, on average <span style="font-weight:600;color:#14181C;">42 minutes</span> after the event — and 24 of the 62 machines emit no data at all.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="rc" style="position:absolute;left:1452px;top:300px;width:372px;height:292px;z-index:10;">
+    <div class="rclbl">02 · Disconnected systems</div>
+    <div class="rcbody">ERP, a spreadsheet MES and paper travelers never share a part genealogy — the same order is keyed in <span style="font-weight:600;color:#14181C;">three times</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="rc" style="position:absolute;left:1060px;top:608px;width:372px;height:292px;z-index:10;">
+    <div class="rclbl">03 · Reactive maintenance</div>
+    <div class="rcbody">82% of work orders are breakdown-driven, and there is no condition data on the <span style="font-weight:600;color:#14181C;">44 assets</span> behind most stoppage hours.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="rc" style="position:absolute;left:1452px;top:608px;width:372px;height:292px;z-index:10;">
+    <div class="rclbl">04 · Decisions at handover</div>
+    <div class="rcbody">Supervisors see yesterday's numbers at <span style="font-weight:600;color:#14181C;">09:00</span>. By then the shift that lost the hours has already gone home.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:924px;width:1728px;z-index:10;font-size:30px;line-height:1.3;color:#14181C;">The constraint is not capacity — Plant 2 already has it. The constraint is that <span style="font-weight:600;">nobody sees the loss while it is still happening.</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:992px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:1012px;width:1200px;z-index:10;font-size:24px;color:#8A857A;">Northline Works · Plant 2 · Digitalization proposal</div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1600px;top:1012px;width:224px;z-index:10;font-size:24px;color:#8A857A;text-align:right;">03 / 10</div>
+
+</div>
+</body>
+</html>

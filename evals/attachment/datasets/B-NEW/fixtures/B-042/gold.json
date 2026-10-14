@@ -1,0 +1,13 @@
+{
+  "case_id": "B-042",
+  "size_class": "边界",
+  "target_input_tokens": 23500,
+  "estimated_outline_input_tokens": 23614,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": false,
+  "attachment_mode": "No attachment",
+  "attachment_types": "None",
+  "content_strategies": "null",
+  "evaluation_risks": "1. Presenting vendor forecasts as observed facts; 2. Using cross-sector data as financial-sector evidence; 3. Mixing jurisdictions; 4. Inventing incidents; 5. Adding image research despite a chart-first requirement."
+}

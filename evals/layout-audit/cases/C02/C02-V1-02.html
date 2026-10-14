@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Caerlaverock 89th Meeting Minutes Master Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans SC', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --c-primary: #0F1B2D;
+    --c-accent: #1D4ED8;
+    --c-muted: #5A6B84;
+    --c-border: #E3E7EE;
+    --c-bg-light: #F5F7FA;
+    --c-white: #FFFFFF;
+    --fs-title: 52px;
+    --fs-subtitle: 24px;
+    --fs-body: 21px;
+    --fs-caption: 18px;
+    --fs-tag: 16px;
+  }
+  html, body { margin:0; padding:0; overflow:hidden; background:#111; }
+  .slide {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    box-sizing: border-box;
+    background: var(--c-white);
+    font-family: var(--font-sans);
+    color: var(--c-primary);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .f-header { position: absolute; left: 96px; top: 80px; width: 1728px; z-index: 100; }
+  .f-tag { font-family: var(--font-mono); font-size: var(--fs-tag); font-weight: 600; letter-spacing: 3px; color: var(--c-accent); margin-bottom: 12px; text-transform: uppercase; }
+  .f-title { font-size: var(--fs-title); font-weight: 700; letter-spacing: -1px; color: var(--c-primary); line-height: 1.2; margin-bottom: 12px; }
+  .f-meta { font-size: var(--fs-caption); color: var(--c-muted); font-family: var(--font-sans); }
+  .f-divider { position: absolute; left: 96px; top: 270px; width: 1728px; height: 1px; background: var(--c-border); z-index: 90; }
+  .content-area { position: absolute; left: 96px; top: 310px; width: 1728px; height: 640px; z-index: 50; font-size: var(--fs-body); line-height: 1.6; }
+  .f-footer { position: absolute; left: 96px; bottom: 50px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--c-border); padding-top: 20px; z-index: 100; }
+  .f-foot-left { font-family: var(--font-mono); font-size: var(--fs-tag); letter-spacing: 1.5px; color: var(--c-muted); text-transform: uppercase; }
+  .f-foot-right { font-family: var(--font-mono); font-size: var(--fs-subtitle); font-weight: 600; color: var(--c-primary); }
+
+  /* Custom styles for structured layout */
+  .layout-container { display: flex; gap: 40px; height: 100%; }
+  .sidebar { width: 380px; flex-shrink: 0; background: var(--c-bg-light); border-radius: 12px; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; }
+  .sidebar-section { margin-bottom: 24px; }
+  .sidebar-section:last-child { margin-bottom: 0; }
+  .sidebar-label { font-family: var(--font-mono); font-size: 14px; color: var(--c-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
+  .sidebar-value { font-size: 18px; color: var(--c-primary); line-height: 1.5; font-weight: 500; }
+  .sidebar-value-light { font-size: 16px; color: var(--c-muted); line-height: 1.4; margin-top: 4px; }
+  
+  .table-container { flex-grow: 1; overflow: hidden; display: flex; flex-direction: column; }
+  .minutes-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .minutes-table th { font-family: var(--font-sans); font-size: 16px; font-weight: 700; color: var(--c-muted); padding: 12px 16px; border-bottom: 2px solid var(--c-primary); text-transform: uppercase; letter-spacing: 0.5px; }
+  .minutes-table td { padding: 12px 16px; border-bottom: 1px solid var(--c-border); font-size: 17px; line-height: 1.4; vertical-align: top; color: var(--c-primary); }
+  
+  .topic-cell { font-weight: 700; color: var(--c-primary); width: 18%; }
+  .decision-cell { width: 45%; color: #334155; }
+  .action-cell { width: 37%; }
+  
+  .action-item { display: flex; flex-direction: column; margin-bottom: 8px; background: #F8FAFC; border-left: 3px solid var(--c-accent); padding: 6px 12px; border-radius: 0 6px 6px 0; }
+  .action-item:last-child { margin-bottom: 0; }
+  .action-code { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--c-accent); display: inline-block; margin-bottom: 2px; }
+  .action-text { font-size: 15px; color: var(--c-primary); line-height: 1.3; }
+  .action-owner { font-size: 13px; color: var(--c-muted); margin-top: 2px; font-weight: 500; }
+  .no-action { color: var(--c-muted); font-size: 15px; font-style: italic; }
+  
+  .badge-neutral { display: inline-block; background: #E2E8F0; color: #475569; font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-top: 4px; font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Header -->
+  <header class="f-header" data-fixed="true">
+    <div class="f-tag">089 · MEETING MINUTES REPORT</div>
+    <h1 class="f-title">第 89 次会议讨论事项、决定与行动项汇总</h1>
+    <div class="f-meta">Caerlaverock Game Management Group · Chairman: Stuart Graham · NatureScot & Wildfowling Associations</div>
+  </header>
+
+  <!-- Fixed Decorative Line -->
+  <div class="f-divider" data-fixed="true"></div>
+
+  <!-- Dynamic Content Area -->
+  <main class="content-area">
+    <div class="layout-container">
+      <!-- Left Sidebar: Metadata -->
+      <aside class="sidebar">
+        <div>
+          <div class="sidebar-section">
+            <div class="sidebar-label">会议时间 / Place</div>
+            <div class="sidebar-value" style="font-weight: 700;">2025 年 4 月 16 日</div>
+            <div class="sidebar-value-light">Caerlaverock Wildfowling Panel</div>
+          </div>
+          
+          <div class="sidebar-section">
+            <div class="sidebar-label">参会人员 / Attendees</div>
+            <div class="sidebar-value" style="font-size: 16px; line-height: 1.6;">
+              <strong>Stuart Graham</strong> (主席, NatureScot)<br>
+              <strong>Suzanne McIntyre</strong> (NatureScot)<br>
+              <strong>Andrew Over</strong> (NatureScot)<br>
+              <strong>Susan Copeland</strong> (记录, NatureScot)<br>
+              <strong>Graeme Dalby</strong> (CDWA)<br>
+              <strong>David Gilbert</strong> (SSWA)<br>
+              <strong>Cameron Balfour</strong> (BASC)
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="sidebar-label">请假 / Apologies</div>
+            <div class="sidebar-value" style="font-size: 16px; color: #64748B;">
+              Anna Austin (Caerlaverock Estate)
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section" style="border-top: 1px solid #E2E8F0; padding-top: 20px;">
+          <div class="sidebar-label">下次会议 / Next Meeting</div>
+          <div class="sidebar-value" style="color: var(--c-accent); font-weight: 700;">2026 年 4 月</div>
+        </div>
+      </aside>
+
+      <!-- Right Panel: Structured Table -->
+      <section class="table-container">
+        <table class="minutes-table">
+          <thead>
+            <tr>
+              <th class="topic-cell">讨论事项</th>
+              <th class="decision-cell">决定与核心内容</th>
+              <th class="action-cell">行动项与负责人</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="topic-cell">上届行动项回顾</td>
+              <td class="decision-cell">确认 AP 88/2 与 AP 88/4 已完成；AP 88/1 与 AP 88/3 已纳入本次会议议程中进行讨论。</td>
+              <td class="action-cell"><span class="no-action">—</span></td>
+            </tr>
+            <tr>
+              <td class="topic-cell">野禽与猎取报告</td>
+              <td class="decision-cell">分析粉脚雁、白额雁数量及许可证使用率（总申请 548 份，使用率 23%）。决定维持现有猎取管理水平，持续关注粉脚雁分布变化。</td>
+              <td class="action-cell"><span class="no-action">—</span></td>
+            </tr>
+            <tr>
+              <td class="topic-cell">管理员与违规情况</td>
+              <td class="decision-cell">确认连续第二年无违规或违规记录，对当前管理成效表示肯定，决定维持现有监督模式。</td>
+              <td class="action-cell"><span class="no-action">—</span></td>
+            </tr>
+            <tr>
+              <td class="topic-cell">新猎手支持机制</td>
+              <td class="decision-cell">决定由 CDWA 和 SSWA 继续为新猎手提供入场指导，预订和申请流程中无缝嵌入支持政策。</td>
+              <td class="action-cell">
+                <div class="action-item">
+                  <span class="action-code">AP 89/2</span>
+                  <span class="action-text">在预订表格中提供新猎手数据</span>
+                  <span class="action-owner">负责人: NatureScot</span>
+                </div>
+                <div class="action-item" style="margin-top: 4px;">
+                  <span class="action-code">AP 89/3</span>
+                  <span class="action-text">起草发给新猎手的支持建议信</span>
+                  <span class="action-owner">负责人: NatureScot</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="topic-cell">缺席数据处理</td>
+              <td class="decision-cell">针对多次未取消预订的个人发送提醒信，若缺席问题持续则考虑采取更严格的限制措施。</td>
+              <td class="action-cell">
+                <div class="action-item">
+                  <span class="action-code">AP 89/4</span>
+                  <span class="action-text">在需要时起草提醒信件</span>
+                  <span class="action-owner">负责人: NatureScot</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="topic-cell">猎季开始日期调整</td>
+              <td class="decision-cell">综合考量土地租赁、牲畜安全及候鸟恢复期，决定维持 10 月 1 日开始的现状，下届会议继续讨论。</td>
+              <td class="action-cell"><span class="no-action">—</span></td>
+            </tr>
+            <tr>
+              <td class="topic-cell">安全与标识优化</td>
+              <td class="decision-cell">决定在区域立柱上增加反光贴以辅助夜间撤离；Susan Copeland 负责邮寄下一季度管理员卡片。</td>
+              <td class="action-cell">
+                <div class="action-item">
+                  <span class="action-code">AP 89/5</span>
+                  <span class="action-text">采购并安装区域立柱反光贴</span>
+                  <span class="action-owner">负责人: NatureScot</span>
+                </div>
+                <div class="action-item" style="margin-top: 4px;">
+                  <span class="action-code">OTHER</span>
+                  <span class="action-text">向 Graeme Dalby 邮寄下季度管理员卡片</span>
+                  <span class="action-owner">负责人: Susan Copeland</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="f-footer" data-fixed="true">
+    <div class="f-foot-left">CAERLAVEROCK GAME MANAGEMENT GROUP &times; 89TH MEETING MINUTES</div>
+    <div class="f-foot-right">01</div>
+  </footer>
+</div>
+</body>
+</html>

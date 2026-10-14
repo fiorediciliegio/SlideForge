@@ -1,0 +1,103 @@
+{
+  "id": "125-Independent Film Festival Program and Selection",
+  "version": 1,
+  "ppt_number": 125,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "cream",
+    "burgundy",
+    "gold"
+  ],
+  "name": "Independent Film Festival Program and Selection",
+  "description": "Elegant film-festival program with dramatic serif type, fine rules, abstract imagery, and dense schedules.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["media"],"audiences":["public"],"formats":["guide"],"primary_styles":["editorial","dark"],"visual_traits":["editorial","dark","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/01-cover.webp",
+      "alt": "墨黑封面以超大象牙白刊名横贯画面，酒红渐变与暗金日期营造电影节海报感，层级鲜明。"
+    },
+    {
+      "path": "images/02-festival-theme.webp",
+      "alt": "象牙白页面用超大衬线主题标题开场，三栏短文与极简图形保持刊物留白，版面层次清晰有序。"
+    },
+    {
+      "path": "images/03-curatorial-vision.webp",
+      "alt": "黑色背景左侧为巨型宣言标题，右侧四条编号原则纵向排列，金色点缀克制，版面层次清晰有序。"
+    },
+    {
+      "path": "images/04-official-selection.webp",
+      "alt": "象牙白页面以超大数字标题和三列信息表构成选片架构，酒红编号强化层级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/05-featured-films.webp",
+      "alt": "黑色页面用四张抽象电影画面与文本错落拼贴，金色边线形成策展档案感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/06-directors.webp",
+      "alt": "左侧超大标题配右侧四张人物档案卡，抽象肖像与酒红蓝黑色块统一视觉，版面层次清晰有序。"
+    },
+    {
+      "path": "images/07-stories.webp",
+      "alt": "黑色页面将五张故事卡不规则排布，超大标题与暗金斜体形成叙事节奏，版面层次清晰有序。"
+    },
+    {
+      "path": "images/08-screening-schedule.webp",
+      "alt": "深色页面以五列放映日程表横向铺开，酒红信息条和细金线组织高密度内容，版面层次清晰有序。"
+    },
+    {
+      "path": "images/09-experience-guide.webp",
+      "alt": "象牙白页面以大标题和三张体验卡构成指南，酒红罗马数字形成优雅分栏，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-closing.webp",
+      "alt": "墨黑收尾页以超大双行邀请语居中，暗金斜体与底部细线信息形成海报式结尾，层级鲜明。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/01-cover.html",
+      "description": "封面页，墨黑封面以超大象牙白刊名横贯画面，酒红渐变与暗金日期营造电影节海报感，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/02-festival-theme.html",
+      "description": "象牙白页面用超大衬线主题标题开场，三栏短文与极简图形保持刊物留白，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/03-curatorial-vision.html",
+      "description": "黑色背景左侧为巨型宣言标题，右侧四条编号原则纵向排列，金色点缀克制，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/04-official-selection.html",
+      "description": "象牙白页面以超大数字标题和三列信息表构成选片架构，酒红编号强化层级，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/05-featured-films.html",
+      "description": "黑色页面用四张抽象电影画面与文本错落拼贴，金色边线形成策展档案感，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/06-directors.html",
+      "description": "左侧超大标题配右侧四张人物档案卡，抽象肖像与酒红蓝黑色块统一视觉，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/07-stories.html",
+      "description": "黑色页面将五张故事卡不规则排布，超大标题与暗金斜体形成叙事节奏，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/08-screening-schedule.html",
+      "description": "深色页面以五列放映日程表横向铺开，酒红信息条和细金线组织高密度内容，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/09-experience-guide.html",
+      "description": "象牙白页面以大标题和三张体验卡构成指南，酒红罗马数字形成优雅分栏，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/10-closing.html",
+      "description": "墨黑收尾页以超大双行邀请语居中，暗金斜体与底部细线信息形成海报式结尾，统一间距与留白进一步保持清晰阅读节奏。"
+    }
+  ]
+}

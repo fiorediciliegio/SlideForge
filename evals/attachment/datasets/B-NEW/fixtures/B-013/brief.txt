@@ -1,0 +1,1 @@
+Create an 8-slide architecture decision deck for the engineering review board. Reconcile the proposal and the constraint memo. Do not invent benchmark results or imply approval has already been granted.

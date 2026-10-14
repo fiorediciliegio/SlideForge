@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "请根据附件制作一份8页的“2025年第二季度经营复盘与第三季度行动计划”PPT，面向公司管理层。重点说明第二季度经营结果、预算差距、区域表现、重点客户、核心项目状态、风险及第三季度计划。财务数据以正式财务摘要为准，会议纪要只用于补充业务进展。不得推测附件没有说明的业绩变化原因。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "公司管理层",
+        "description": "公司管理层"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "季度经营复盘与第三季度决策讨论",
+        "description": "季度经营复盘与第三季度决策讨论"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "准确区分正式结果、预算、累计数据、项目状态和未来目标",
+        "description": "准确区分正式结果、预算、累计数据、项目状态和未来目标"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "专业、克制、数据导向",
+        "description": "专业、克制、数据导向"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "公司管理层",
+      "description": "公司管理层"
+    },
+    "purpose": {
+      "label": "季度经营复盘与第三季度决策讨论",
+      "description": "季度经营复盘与第三季度决策讨论"
+    },
+    "desired_outcome": {
+      "label": "准确区分正式结果、预算、累计数据、项目状态和未来目标",
+      "description": "准确区分正式结果、预算、累计数据、项目状态和未来目标"
+    },
+    "slide_count": 8,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "专业、克制、数据导向",
+      "description": "专业、克制、数据导向"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,174 @@
+{
+  "group_id": "red-finance-v3",
+  "catalog_type": "tsx-first",
+  "version": 2,
+  "purpose": "Help the PPT AI Agent choose a copyable TSX blueprint page first, derive it into slides/*.tsx, and then edit the final slide implementation directly.",
+  "directory_roles": {
+    "blueprints": {
+      "path": "./blueprints",
+      "role": "Directory of copyable TSX blueprint pages.",
+      "rules": [
+        "Start here by selecting the blueprint page closest to the content structure.",
+        "Copy it into ./slides before adapting it for the concrete deck.",
+        "Do not treat this directory as a runtime JSON DSL."
+      ]
+    },
+    "slides": {
+      "path": "./slides",
+      "role": "Directory of final slide pages for the concrete deck.",
+      "rules": [
+        "manifest.json should only point to TSX files in this directory.",
+        "AI may edit TSX here directly to adjust layout, component composition, and content mapping.",
+        "Slides here should not remain unchanged blueprint copies for long."
+      ]
+    },
+    "reference_slides": {
+      "path": "./reference-slides",
+      "role": "Read-only reference slides for visual density, component composition, and export conventions.",
+      "rules": [
+        "Use them only to inspect visual density, component composition, and export conventions.",
+        "Do not add them to group.json.layouts.",
+        "Do not use them as manifest.json source.path values."
+      ]
+    },
+    "data": {
+      "path": "./data",
+      "role": "Content data for demo slides or concrete decks.",
+      "rules": [
+        "JSON should carry content only, not page-structure decisions.",
+        "If layout overflows or a component is unsuitable, prefer editing slides/*.tsx."
+      ]
+    }
+  },
+  "blueprints": [
+    {
+      "id": "cover-statement",
+      "name": "Cover Statement",
+      "blueprint_source": "./blueprints/CoverStatement.tsx",
+      "example_slide": "./slides/CoverStatement.tsx",
+      "layout_family": "cover",
+      "content_intents": ["opening", "positioning", "theme-statement"],
+      "suitable_for": ["cover", "strategy report opening", "theme statement", "executive briefing opening"],
+      "avoid_for": ["body analysis", "complex charts", "comparison matrix", "long process explanation"]
+    },
+    {
+      "id": "section-divider",
+      "name": "Section Divider",
+      "blueprint_source": "./blueprints/SectionDivider.tsx",
+      "example_slide": "./slides/SectionDivider.tsx",
+      "layout_family": "section",
+      "content_intents": ["transition", "framing", "section-introduction"],
+      "suitable_for": ["section divider", "topic transition", "analysis framework introduction", "method explanation"],
+      "avoid_for": ["metric summary", "detailed comparison", "long timeline", "long body text"]
+    },
+    {
+      "id": "two-column-insight",
+      "name": "Two Column Insight",
+      "blueprint_source": "./blueprints/TwoColumnInsight.tsx",
+      "example_slide": "./slides/TwoColumnInsight.tsx",
+      "layout_family": "two-column",
+      "content_intents": ["overview", "insight", "analysis", "explanation"],
+      "suitable_for": ["industry overview", "insight explanation", "problem analysis", "strategy explanation"],
+      "avoid_for": ["complex timeline", "large matrix", "multi-chart dashboard", "pure cover"]
+    },
+    {
+      "id": "chart-with-narrative",
+      "name": "Chart With Narrative",
+      "blueprint_source": "./blueprints/ChartWithNarrative.tsx",
+      "example_slide": "./slides/ChartWithNarrative.tsx",
+      "layout_family": "chart-narrative",
+      "content_intents": ["trend", "scale", "structure-change", "evidence"],
+      "suitable_for": ["trend analysis", "scale change", "structural change", "forecast explanation"],
+      "avoid_for": ["data-free opinion", "large multi-entity matrix", "process plan", "cover transition"]
+    },
+    {
+      "id": "comparison-matrix",
+      "name": "Comparison Matrix",
+      "blueprint_source": "./blueprints/ComparisonMatrix.tsx",
+      "example_slide": "./slides/ComparisonMatrix.tsx",
+      "layout_family": "matrix",
+      "content_intents": ["comparison", "evaluation", "tradeoff", "benchmark"],
+      "suitable_for": ["China-US comparison", "option comparison", "capability matrix", "market-structure comparison"],
+      "avoid_for": ["single narrative", "time evolution", "cover", "large tables over six rows"]
+    },
+    {
+      "id": "timeline-plan",
+      "name": "Timeline Plan",
+      "blueprint_source": "./blueprints/TimelinePlan.tsx",
+      "example_slide": "./slides/TimelinePlan.tsx",
+      "layout_family": "timeline",
+      "content_intents": ["roadmap", "execution", "phasing", "milestones"],
+      "suitable_for": ["implementation path", "strategic roadmap", "phase planning", "milestone plan"],
+      "avoid_for": ["pure metric summary", "large matrix", "cover", "unordered categorization"]
+    },
+    {
+      "id": "kpi-summary",
+      "name": "KPI Summary",
+      "blueprint_source": "./blueprints/KpiSummary.tsx",
+      "example_slide": "./slides/KpiSummary.tsx",
+      "layout_family": "kpi",
+      "content_intents": ["performance", "targets", "status", "dashboard"],
+      "suitable_for": ["metric summary", "operating dashboard", "target breakdown", "status snapshot"],
+      "avoid_for": ["long narrative", "complex roadmap", "long explanation"]
+    },
+    {
+      "id": "image-narrative-showcase",
+      "name": "Image Narrative Showcase",
+      "blueprint_source": "./blueprints/ImageNarrativeShowcase.tsx",
+      "example_slide": "./slides/ImageNarrativeShowcase.tsx",
+      "layout_family": "image-narrative",
+      "content_intents": ["visual-evidence", "image-showcase", "asset-explanation", "photo-narrative"],
+      "suitable_for": ["primary image page", "product screenshot", "map explanation", "visual evidence", "photo with interpretation"],
+      "avoid_for": ["multiple unrelated images", "dense text page", "dashboard", "large comparison matrix"]
+    },
+    {
+      "id": "closing-actions",
+      "name": "Closing Actions",
+      "blueprint_source": "./blueprints/ClosingActions.tsx",
+      "example_slide": "./slides/ClosingActions.tsx",
+      "layout_family": "closing",
+      "content_intents": ["closing", "actions", "decision-request", "next-steps"],
+      "suitable_for": ["summary page", "action recommendations", "decision request", "next-step plan"],
+      "avoid_for": ["body analysis", "complex charts", "multi-dimensional comparison"]
+    }
+  ],
+  "reference_examples": [
+    {
+      "reference_path": "./reference-slides/IndustryOverview.tsx",
+      "visual_pattern": "left narrative list + right chart + bottom emphasized conclusion",
+      "related_blueprints": ["two-column-insight", "chart-with-narrative"],
+      "do_not_copy_directly": true
+    },
+    {
+      "reference_path": "./reference-slides/MarketTrends.tsx",
+      "visual_pattern": "top cards + bottom chart panel",
+      "related_blueprints": ["chart-with-narrative"],
+      "do_not_copy_directly": true
+    },
+    {
+      "reference_path": "./reference-slides/ChinaUsMarketComparison.tsx",
+      "visual_pattern": "comparison panels + metrics",
+      "related_blueprints": ["comparison-matrix", "kpi-summary"],
+      "do_not_copy_directly": true
+    },
+    {
+      "reference_path": "./reference-slides/StrategicRoadmap.tsx",
+      "visual_pattern": "pillar points + roadmap + KPIs",
+      "related_blueprints": ["timeline-plan", "kpi-summary"],
+      "do_not_copy_directly": true
+    },
+    {
+      "reference_path": "./reference-slides/ConclusionOutlook.tsx",
+      "visual_pattern": "summary priorities + action items",
+      "related_blueprints": ["closing-actions"],
+      "do_not_copy_directly": true
+    }
+  ],
+  "agent_workflow_notes": [
+    "Read catalog.json first and choose the blueprints/*.tsx file closest to the content structure.",
+    "Copy or derive the selected blueprint TSX into slides/*.tsx, then edit the final page directly.",
+    "manifest.json source.path should only point to slides/*.tsx.",
+    "data/*.json should carry content only; if structure, spacing, or components are unsuitable, edit slides/*.tsx.",
+    "reference-slides/ is read-only reference material and must not enter the generation path."
+  ]
+}

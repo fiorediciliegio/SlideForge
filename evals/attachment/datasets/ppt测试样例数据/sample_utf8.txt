@@ -1,0 +1,13 @@
+UTF-8 Multilingual Sample
+=========================
+
+English: Hello World
+Arabic: مرحبا بالعالم
+Chinese: 你好世界
+Russian: Привет мир
+Japanese: こんにちは世界
+Korean: 안녕하세요 세계
+Hindi: नमस्ते दुनिया
+Greek: Γεια σου κόσμε
+Hebrew: שלום עולם
+Emoji: 🌍🎉🚀✨💻🎨🔥⭐🌟💎

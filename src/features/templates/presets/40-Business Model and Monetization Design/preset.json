@@ -1,0 +1,63 @@
+{
+  "id": "40-Business Model and Monetization Design",
+  "version": 1,
+  "ppt_number": 40,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "green",
+    "cream",
+    "orange",
+    "white"
+  ],
+  "name": "Business Model and Monetization Design",
+  "description": "Editorial business-model design with forest-green fields, cream diagrams, warm orange accents, and balanced analytical layouts.",
+  "user": "Founders & Leaders",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["strategy"],"industries":["business"],"audiences":["executive"],"formats":["roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "森林绿、奶油白与暖橙色封面采用左侧中部超大标题，一块几何面板与留白形成对照。"
+    },
+    {
+      "path": "images/2-ecosystem-roles.webp",
+      "alt": "森林绿、奶油白与暖橙色页面，标题、细线与留白划分层级，人群关系组织动线。"
+    },
+    {
+      "path": "images/3-revenue-streams-pricing.webp",
+      "alt": "森林绿、奶油白与暖橙色页面，双面板划分主体区域，财务信息强化对比。"
+    },
+    {
+      "path": "images/4-unit-economics.webp",
+      "alt": "森林绿、奶油白与暖橙色页面，三块卡片横向并列，财务信息收束版面。"
+    },
+    {
+      "path": "images/5-validation-expansion.webp",
+      "alt": "森林绿、奶油白与暖橙色页面，双面板划分主体区域，验证信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页采用森林绿、奶油白与暖橙色，超大标题锚定左侧中部；一块几何面板连接主体与边缘信息，留白保持画面张力。"
+    },
+    {
+      "path": "html/2-ecosystem-roles.html",
+      "description": "森林绿、奶油白与暖橙色作为底色，标题落在左上方；单一大面板承载主体信息，角色节点与关系模块集中在画面中部。"
+    },
+    {
+      "path": "html/3-revenue-streams-pricing.html",
+      "description": "标题固定在左上方，森林绿、奶油白与暖橙色分隔主体；两块主面板建立清晰分区，关键数字与数据标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/4-unit-economics.html",
+      "description": "森林绿、奶油白与暖橙色画面，标题置于左上方；三块信息卡横向并列，关键数字与数据标记嵌入主体模块。"
+    },
+    {
+      "path": "html/5-validation-expansion.html",
+      "description": "左上方标题锚定森林绿、奶油白与暖橙色画面；两块主面板建立清晰分区，一组表格位于右侧，验证数字、证据卡与对照标记补充层级。"
+    }
+  ]
+}

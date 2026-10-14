@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>City and Route Overview</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=Caveat:wght@500;600;700&family=Cinzel:wght@400;600&display=swap');
+
+/* ============================================================
+   VINTAGE EUROPEAN CITY POSTCARD TRAVEL GUIDE
+   Shared visual identity — colour, paper, photo treatment,
+   ephemera language. Positioning stays inline on each slide.
+   Palette: terracotta #B5502F · cobalt #2A4E8A
+            cream #FCF6E8 · mustard #D9A227 · ink #33291F
+   Shadow direction: always down + slightly right.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; background: #241c14; }
+
+/* ---------- paper ---------- */
+.paper {
+  background-color: #F2E7D3;
+  background-image:
+    radial-gradient(ellipse 900px 620px at 18% 12%, rgba(255,253,247,.85), rgba(255,253,247,0) 62%),
+    radial-gradient(ellipse 780px 560px at 86% 88%, rgba(126,92,56,.16), rgba(126,92,56,0) 64%),
+    radial-gradient(ellipse 520px 380px at 92% 8%, rgba(181,80,47,.07), rgba(181,80,47,0) 70%),
+    repeating-linear-gradient(92deg, rgba(150,116,72,.045) 0 1px, rgba(150,116,72,0) 1px 4px),
+    repeating-linear-gradient(3deg, rgba(150,116,72,.035) 0 1px, rgba(150,116,72,0) 1px 5px);
+}
+
+/* ---------- typography ---------- */
+.disp  { font-family: 'Bodoni Moda', Didot, 'Times New Roman', serif; color: #33291F; }
+.body  { font-family: 'Crimson Pro', Georgia, serif; color: #3E3226; }
+.hw    { font-family: 'Caveat', 'Segoe Script', cursive; color: #2A4E8A; }
+.lbl   { font-family: 'Cinzel', serif; letter-spacing: .22em; text-transform: uppercase; color: #8A6A4A; }
+.cap   { font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: .07em;
+         text-transform: uppercase; color: #7A5F42; }
+.num   { font-family: 'Bodoni Moda', Didot, serif; color: #B5502F; }
+
+/* ---------- photographs ---------- */
+.ph {
+  background: #FCF6E8;
+  padding: 13px;
+  box-shadow: 0 14px 30px rgba(58,40,22,.30), 0 2px 4px rgba(58,40,22,.18);
+}
+.ph > img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(.18) saturate(.88) contrast(1.06) brightness(1.03);
+}
+.ph-thin { padding: 9px; }
+.ph-wide { padding: 13px 13px 13px; }
+.bleed > img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  filter: sepia(.16) saturate(.9) contrast(1.05) brightness(1.02);
+}
+
+/* ---------- paper slips, cards, labels ---------- */
+.slip {
+  background: #FCF6E8;
+  border: 1px solid rgba(139,104,64,.32);
+  box-shadow: 0 10px 22px rgba(58,40,22,.20);
+}
+.slip-warm { background: #F8EFD9; }
+.slip-mustard { background: #F3DFAE; border: 1px solid rgba(160,118,44,.42); }
+.slip-cobalt { background: #2A4E8A; border: none; color: #F6EEDC; }
+.slip-terra { background: #B5502F; border: none; color: #FDF6E7; }
+.torn {
+  background: #FCF6E8;
+  box-shadow: 0 10px 22px rgba(58,40,22,.20);
+  clip-path: polygon(0 3px, 6% 0, 18% 4px, 32% 0, 47% 5px, 61% 0, 74% 4px, 88% 0, 100% 4px,
+                     100% calc(100% - 4px), 87% 100%, 72% calc(100% - 5px), 58% 100%,
+                     43% calc(100% - 4px), 27% 100%, 13% calc(100% - 5px), 0 100%);
+}
+
+/* ---------- ephemera ---------- */
+.stamp {
+  background: #FCF6E8;
+  padding: 11px;
+  -webkit-mask:
+    radial-gradient(circle 5px, #0000 96%, #000) -7px -7px / 14px 14px,
+    linear-gradient(#000 0 0) 50% / calc(100% - 14px) calc(100% - 14px) no-repeat;
+  mask:
+    radial-gradient(circle 5px, #0000 96%, #000) -7px -7px / 14px 14px,
+    linear-gradient(#000 0 0) 50% / calc(100% - 14px) calc(100% - 14px) no-repeat;
+}
+.pmark {
+  border: 3px double #2A4E8A;
+  border-radius: 50%;
+  color: #2A4E8A;
+  opacity: .68;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; line-height: 1.25;
+}
+.tick {
+  background: #F7EDD6;
+  border: 1px solid rgba(139,104,64,.45);
+  box-shadow: 0 9px 20px rgba(58,40,22,.22);
+}
+.tape {
+  background: linear-gradient(180deg, rgba(240,229,201,.90), rgba(223,206,168,.82));
+  box-shadow: 0 3px 9px rgba(58,40,22,.20);
+  border-left: 1px dashed rgba(255,255,255,.55);
+  border-right: 1px dashed rgba(255,255,255,.55);
+}
+.ring {
+  border: 6px solid rgba(122,86,48,.26);
+  border-radius: 50%;
+}
+
+/* ---------- map ---------- */
+.map {
+  background-color: #EEE0C2;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0) 32.4%, rgba(255,255,255,.60) 33.0%, rgba(120,92,58,.20) 33.3%, rgba(255,255,255,0) 33.9%),
+    linear-gradient(90deg, rgba(255,255,255,0) 65.7%, rgba(255,255,255,.60) 66.3%, rgba(120,92,58,.20) 66.6%, rgba(255,255,255,0) 67.2%),
+    linear-gradient(0deg, rgba(255,255,255,0) 48.5%, rgba(255,255,255,.50) 49.3%, rgba(120,92,58,.17) 49.7%, rgba(255,255,255,0) 50.5%),
+    radial-gradient(ellipse at 30% 25%, rgba(255,252,243,.7), rgba(255,252,243,0) 60%);
+  border: 1px solid rgba(120,92,58,.42);
+  box-shadow: 0 16px 34px rgba(58,40,22,.26), inset 0 0 70px rgba(150,116,70,.20);
+}
+
+/* ---------- surfaces ---------- */
+.filmbase {
+  background-color: #2A4E8A;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(252,246,232,.85) 0 18px, rgba(252,246,232,0) 18px 44px);
+  background-size: 100% 15px;
+  background-position: 0 6px, 0 0;
+  background-repeat: repeat-x;
+  box-shadow: 0 14px 32px rgba(58,40,22,.26);
+}
+.table-top {
+  background-color: #9E4B2C;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 25% 20%, rgba(255,214,168,.26), rgba(255,214,168,0) 65%),
+    repeating-linear-gradient(88deg, rgba(60,26,12,.16) 0 2px, rgba(60,26,12,0) 2px 9px),
+    repeating-linear-gradient(88deg, rgba(255,226,186,.07) 0 1px, rgba(255,226,186,0) 1px 26px);
+  box-shadow: inset 0 0 90px rgba(56,22,10,.34), 0 14px 30px rgba(58,40,22,.24);
+}
+.rule-terra { background: #B5502F; }
+.rule-ink { background: rgba(51,41,31,.55); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="02 City and Route Overview" style="position:relative;width:1920px;height:1080px;overflow:hidden;">
+
+  <div data-object="true" data-object-type="shape" class="paper" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:84px;width:900px;font-size:19px;z-index:10;">Two &middot; City &amp; Route Overview</div>
+
+  <div data-object="true" data-object-type="textbox" class="disp" style="position:absolute;left:88px;top:116px;width:1744px;font-size:53px;font-weight:600;line-height:1.18;z-index:10;">One walking loop links the station, the old core and the river.</div>
+
+  <div data-object="true" data-object-type="shape" class="rule-terra" style="position:absolute;left:90px;top:202px;width:1740px;height:3px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="shape" class="map" style="position:absolute;left:90px;top:258px;width:1150px;height:742px;z-index:5;">
+    <svg viewBox="0 0 1150 768" width="1150" height="768" style="display:block;">
+      <g font-family="Cinzel, serif" transform="scale(1,0.9662)">
+        <!-- district tints -->
+        <polygon points="40,470 250,438 284,646 62,690" fill="#2A4E8A" opacity="0.10"></polygon>
+        <polygon points="258,332 560,300 604,522 300,560" fill="#9A6B3A" opacity="0.20"></polygon>
+        <polygon points="556,118 836,150 802,332 560,300" fill="#B5502F" opacity="0.13"></polygon>
+        <polygon points="838,178 1094,222 1082,432 844,400" fill="#D9A227" opacity="0.20"></polygon>
+
+        <!-- secondary streets -->
+        <g stroke="#8A7050" stroke-width="2" opacity="0.34" fill="none">
+          <path d="M70,392 L1096,300"></path>
+          <path d="M120,270 L300,690"></path>
+          <path d="M480,110 L520,700"></path>
+          <path d="M760,120 L830,620"></path>
+          <path d="M40,548 L1100,500"></path>
+          <path d="M900,140 L1090,140"></path>
+          <path d="M240,180 L1000,110"></path>
+        </g>
+
+        <!-- river -->
+        <path d="M-20,714 L1170,594" stroke="#8FAEC6" stroke-width="46" opacity="0.62" fill="none"></path>
+        <path d="M-20,714 L1170,594" stroke="#6E92AE" stroke-width="1.5" opacity="0.5" fill="none"></path>
+        <text x="330" y="742" font-size="19" letter-spacing="3" fill="#5C7E97" font-style="italic">[RIVER NAME]</text>
+
+        <!-- district names -->
+        <g font-size="19" letter-spacing="3" fill="#7E6144" opacity="0.9">
+          <text x="150" y="546" text-anchor="middle">STATION SIDE</text>
+          <text x="300" y="342" text-anchor="middle">OLD CORE</text>
+          <text x="700" y="140" text-anchor="middle">CATHEDRAL QUARTER</text>
+          <text x="960" y="200" text-anchor="middle">ARTISANS' QUARTER</text>
+          <text x="900" y="700" text-anchor="middle">RIVER BANK</text>
+        </g>
+
+        <!-- return leg -->
+        <path d="M600,545 L150,620" stroke="#2A4E8A" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round" fill="none" opacity="0.85"></path>
+
+        <!-- main walking loop -->
+        <path d="M150,620 L430,480 L600,250 L880,300 L1030,420 L600,545" stroke="#B5502F" stroke-width="5.5" stroke-dasharray="15 9" stroke-linecap="round" fill="none"></path>
+
+        <!-- direction arrows -->
+        <g fill="#B5502F">
+          <polygon points="-9,-7 11,0 -9,7" transform="translate(290,550) rotate(-26.6)"></polygon>
+          <polygon points="-9,-7 11,0 -9,7" transform="translate(515,365) rotate(-53.5)"></polygon>
+          <polygon points="-9,-7 11,0 -9,7" transform="translate(740,275) rotate(10.1)"></polygon>
+          <polygon points="-9,-7 11,0 -9,7" transform="translate(955,360) rotate(38.7)"></polygon>
+          <polygon points="-9,-7 11,0 -9,7" transform="translate(815,483) rotate(163.8)"></polygon>
+        </g>
+
+        <!-- stop markers -->
+        <g>
+          <circle cx="150" cy="620" r="17" fill="#FCF6E8" stroke="#B5502F" stroke-width="4"></circle>
+          <circle cx="430" cy="480" r="17" fill="#FCF6E8" stroke="#B5502F" stroke-width="4"></circle>
+          <circle cx="600" cy="250" r="17" fill="#FCF6E8" stroke="#B5502F" stroke-width="4"></circle>
+          <circle cx="880" cy="300" r="17" fill="#FCF6E8" stroke="#B5502F" stroke-width="4"></circle>
+          <circle cx="1030" cy="420" r="17" fill="#FCF6E8" stroke="#B5502F" stroke-width="4"></circle>
+          <circle cx="600" cy="545" r="17" fill="#FCF6E8" stroke="#B5502F" stroke-width="4"></circle>
+          <g font-size="18" font-weight="700" fill="#B5502F" text-anchor="middle">
+            <text x="150" y="627">1</text>
+            <text x="430" y="487">2</text>
+            <text x="600" y="257">3</text>
+            <text x="880" y="307">4</text>
+            <text x="1030" y="427">5</text>
+            <text x="600" y="552">6</text>
+          </g>
+        </g>
+
+        <!-- protected label plates -->
+        <g>
+          <rect x="30" y="644" width="220" height="34" rx="3" fill="#FCF6E8" opacity="0.95" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="42" y="667" font-size="17" letter-spacing="1" fill="#3E3226">[CENTRAL STATION]</text>
+
+          <rect x="150" y="398" width="296" height="34" rx="3" fill="#FCF6E8" opacity="0.95" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="162" y="421" font-size="17" letter-spacing="1" fill="#3E3226">MARKET SQUARE &middot; OLD CORE</text>
+
+          <rect x="511" y="176" width="178" height="34" rx="3" fill="#FCF6E8" opacity="0.95" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="523" y="199" font-size="17" letter-spacing="1" fill="#3E3226">CATHEDRAL HILL</text>
+
+          <rect x="791" y="226" width="178" height="34" rx="3" fill="#FCF6E8" opacity="0.95" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="803" y="249" font-size="17" letter-spacing="1" fill="#3E3226">ARTISAN STREET</text>
+
+          <rect x="920" y="468" width="220" height="34" rx="3" fill="#FCF6E8" opacity="0.95" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="932" y="491" font-size="17" letter-spacing="1" fill="#3E3226">TERRACE VIEWPOINT</text>
+
+          <rect x="511" y="582" width="178" height="34" rx="3" fill="#FCF6E8" opacity="0.95" stroke="#B08A5E" stroke-width="1"></rect>
+          <text x="523" y="605" font-size="17" letter-spacing="1" fill="#3E3226">RIVERSIDE WALK</text>
+        </g>
+
+        <!-- compass -->
+        <g transform="translate(1062,116)">
+          <circle r="40" fill="#FCF6E8" opacity="0.9" stroke="#B08A5E" stroke-width="1.5"></circle>
+          <polygon points="0,-27 7,4 0,-3 -7,4" fill="#B5502F"></polygon>
+          <polygon points="0,27 7,-4 0,3 -7,-4" fill="#8A7050" opacity="0.6"></polygon>
+          <text x="0" y="-30" text-anchor="middle" font-size="15" letter-spacing="1" fill="#3E3226">N</text>
+        </g>
+
+        <!-- scale bar -->
+        <g transform="translate(44,716)">
+          <rect x="0" y="0" width="60" height="9" fill="#3E3226" opacity="0.8"></rect>
+          <rect x="60" y="0" width="60" height="9" fill="#FCF6E8" stroke="#3E3226" stroke-width="1"></rect>
+          <text x="0" y="30" font-size="15" letter-spacing="1" fill="#5E4A34">0</text>
+          <text x="120" y="30" font-size="15" letter-spacing="1" text-anchor="middle" fill="#5E4A34">[500 m]</text>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:220px;width:700px;font-size:17px;color:#8A6A4A;z-index:10;">Folded city map &middot; sketched on arrival</div>
+
+  <div data-object="true" data-object-type="shape" class="slip-cobalt" style="position:absolute;left:1290px;top:258px;width:540px;height:172px;box-shadow:0 12px 26px rgba(58,40,22,.24);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1316px;top:280px;width:490px;z-index:10;">
+    <div class="lbl" style="font-size:16px;color:#E9C77A;margin:0 0 10px 0;">Where the loop begins</div>
+    <div class="body" style="font-size:23px;line-height:1.42;color:#FAF3E2;margin:0;">Leave [Central Station] by the main hall, west exit. The old core lies downhill, roughly [12] minutes on foot.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="slip" style="position:absolute;left:1290px;top:452px;width:540px;height:340px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1316px;top:472px;width:490px;z-index:10;">
+    <div class="lbl" style="font-size:16px;margin:0 0 4px 0;">The loop, in order</div>
+    <div class="rule-terra" style="width:60px;height:3px;margin:0 0 14px 0;"></div>
+    <div style="display:flex;flex-direction:column;gap:11px;">
+      <div style="display:flex;align-items:baseline;gap:14px;"><span class="num" style="font-size:23px;font-weight:600;width:22px;">1</span><span class="body" style="font-size:22px;">[Central Station]</span><span class="hw" style="font-size:23px;margin-left:auto;">start</span></div>
+      <div style="display:flex;align-items:baseline;gap:14px;"><span class="num" style="font-size:23px;font-weight:600;width:22px;">2</span><span class="body" style="font-size:22px;">Market Square, old core</span><span class="hw" style="font-size:23px;margin-left:auto;">12 min</span></div>
+      <div style="display:flex;align-items:baseline;gap:14px;"><span class="num" style="font-size:23px;font-weight:600;width:22px;">3</span><span class="body" style="font-size:22px;">Cathedral Hill</span><span class="hw" style="font-size:23px;margin-left:auto;">10 min</span></div>
+      <div style="display:flex;align-items:baseline;gap:14px;"><span class="num" style="font-size:23px;font-weight:600;width:22px;">4</span><span class="body" style="font-size:22px;">Artisan Street</span><span class="hw" style="font-size:23px;margin-left:auto;">9 min</span></div>
+      <div style="display:flex;align-items:baseline;gap:14px;"><span class="num" style="font-size:23px;font-weight:600;width:22px;">5</span><span class="body" style="font-size:22px;">Terrace Viewpoint</span><span class="hw" style="font-size:23px;margin-left:auto;">14 min</span></div>
+      <div style="display:flex;align-items:baseline;gap:14px;"><span class="num" style="font-size:23px;font-weight:600;width:22px;">6</span><span class="body" style="font-size:22px;">Riverside Walk</span><span class="hw" style="font-size:23px;margin-left:auto;">16 min</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" class="slip-mustard" style="position:absolute;left:1290px;top:814px;width:540px;height:186px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1316px;top:832px;width:490px;z-index:10;">
+    <div class="lbl" style="font-size:16px;color:#7A5A18;margin:0 0 12px 0;">Reading the map</div>
+    <div class="body" style="font-size:21px;line-height:1.52;margin:0;color:#4A3A22;">
+      Terracotta dashes &mdash; the walking loop, in numbered order.<br>
+      Blue dots &mdash; the return leg along the water.<br>
+      Tinted blocks &mdash; districts, detailed on later pages.<br>
+      Walking times are estimates for an unhurried pace.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:90px;top:1014px;width:700px;font-size:14px;z-index:10;">[CITY] &middot; Postcard Travel Guide</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1600px;top:1020px;width:230px;text-align:right;z-index:10;">
+    <span class="num" style="font-size:26px;font-weight:600;">02</span><span class="lbl" style="font-size:14px;">/10</span>
+  </div>
+
+</div>
+</body>
+</html>

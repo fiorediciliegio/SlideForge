@@ -1,0 +1,1567 @@
+{
+  "test_id": "outline-provided-requirements-20260826-rerun-3",
+  "repeat": 1,
+  "target_stage": "outline-confirmed",
+  "briefs": [
+    {
+      "id": "outline-001",
+      "brief": "我要做一份关于蜜雪冰城的PPT。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "我要做一份关于蜜雪冰城的PPT。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "普通消费者与品牌观察者",
+              "description": "对蜜雪冰城有所认知、希望进一步了解品牌与商业模式的普通观众。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "品牌介绍与商业分析",
+              "description": "介绍蜜雪冰城的品牌定位、产品、目标市场、经营模式与发展特点。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "形成品牌整体认知",
+              "description": "帮助观众建立对蜜雪冰城品牌和经营逻辑的基础理解。"
+            }
+          ],
+          "slide_count": [
+            8
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "年轻、亲和的品牌分析风格",
+              "description": "体现大众消费品牌的活力，同时保持结构清晰。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "普通消费者与品牌观察者",
+            "description": "对蜜雪冰城有所认知、希望进一步了解品牌与商业模式的普通观众。"
+          },
+          "purpose": {
+            "label": "品牌介绍与商业分析",
+            "description": "介绍蜜雪冰城的品牌定位、产品、目标市场、经营模式与发展特点。"
+          },
+          "desired_outcome": {
+            "label": "形成品牌整体认知",
+            "description": "帮助观众建立对蜜雪冰城品牌和经营逻辑的基础理解。"
+          },
+          "slide_count": 8,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "年轻、亲和的品牌分析风格",
+            "description": "体现大众消费品牌的活力，同时保持结构清晰。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-002",
+      "brief": "做一个关于中国具身智能产业发展的PPT。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "做一个关于中国具身智能产业发展的PPT。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "企业管理者与行业观察者",
+              "description": "对具身智能缺少系统认识、希望了解产业发展的商业人士。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "中国具身智能产业概览",
+              "description": "介绍概念、产业构成、应用、商业化与挑战。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "建立产业全局认知",
+              "description": "帮助观众形成进一步研究中国具身智能产业的基础框架。"
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "专业、清晰的产业分析风格",
+              "description": "强调逻辑和易读性，避免过度技术化。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "企业管理者与行业观察者",
+            "description": "对具身智能缺少系统认识、希望了解产业发展的商业人士。"
+          },
+          "purpose": {
+            "label": "中国具身智能产业概览",
+            "description": "介绍概念、产业构成、应用、商业化与挑战。"
+          },
+          "desired_outcome": {
+            "label": "建立产业全局认知",
+            "description": "帮助观众形成进一步研究中国具身智能产业的基础框架。"
+          },
+          "slide_count": 10,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "专业、清晰的产业分析风格",
+            "description": "强调逻辑和易读性，避免过度技术化。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-003",
+      "brief": "Create a presentation about Tesla.",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "Create a presentation about Tesla."
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "General business audience",
+              "description": "People seeking a basic understanding of Tesla as a company and brand."
+            }
+          ],
+          "purpose": [
+            {
+              "label": "Company overview",
+              "description": "Introduce Tesla’s business areas, products, positioning, operating logic, opportunities, and risks without unsupported facts."
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "Build a balanced company-level understanding",
+              "description": "Help the audience understand the major dimensions through which Tesla may be analyzed."
+            }
+          ],
+          "slide_count": [
+            8
+          ],
+          "output_language": [
+            "English"
+          ],
+          "visual_tone": [
+            {
+              "label": "Modern, restrained corporate analysis",
+              "description": "Clear and technology-oriented without unsupported promotional claims."
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "General business audience",
+            "description": "People seeking a basic understanding of Tesla as a company and brand."
+          },
+          "purpose": {
+            "label": "Company overview",
+            "description": "Introduce Tesla’s business areas, products, positioning, operating logic, opportunities, and risks without unsupported facts."
+          },
+          "desired_outcome": {
+            "label": "Build a balanced company-level understanding",
+            "description": "Help the audience understand the major dimensions through which Tesla may be analyzed."
+          },
+          "slide_count": 8,
+          "output_language": "English",
+          "visual_tone": {
+            "label": "Modern, restrained corporate analysis",
+            "description": "Clear and technology-oriented without unsupported promotional claims."
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-004",
+      "brief": "做一份8页的AI基础科普PPT，向没有技术背景的大学生解释大语言模型是什么、如何工作、能够做什么、有哪些局限，以及日常使用时应该注意什么。希望内容通俗易懂，可以使用生活化的比喻，但不要编造具体数据。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "做一份8页的AI基础科普PPT，向没有技术背景的大学生解释大语言模型是什么、如何工作、能够做什么、有哪些局限，以及日常使用时应该注意什么。希望内容通俗易懂，可以使用生活化的比喻，但不要编造具体数据。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "无技术背景的大学生",
+              "description": "了解AI概念但缺乏机器学习和计算机专业基础的学生。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "大语言模型基础科普",
+              "description": "解释基本概念、工作方式、能力、局限与日常使用注意事项。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "建立正确且实用的AI认知",
+              "description": "让学生能够理解、使用并理性判断大语言模型的输出。"
+            }
+          ],
+          "slide_count": [
+            8
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "通俗、轻松的校园科普风格",
+              "description": "使用生活化表达和简单示意，避免术语堆积。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "无技术背景的大学生",
+            "description": "了解AI概念但缺乏机器学习和计算机专业基础的学生。"
+          },
+          "purpose": {
+            "label": "大语言模型基础科普",
+            "description": "解释基本概念、工作方式、能力、局限与日常使用注意事项。"
+          },
+          "desired_outcome": {
+            "label": "建立正确且实用的AI认知",
+            "description": "让学生能够理解、使用并理性判断大语言模型的输出。"
+          },
+          "slide_count": 8,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "通俗、轻松的校园科普风格",
+            "description": "使用生活化表达和简单示意，避免术语堆积。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-005",
+      "brief": "请制作一份关于中国具身智能产业发展的PPT，面向对该行业不太了解的企业管理者，介绍行业概念、产业链、主要应用场景、商业化机会和当前挑战。整份PPT控制在10页左右，风格专业、清晰，不要太学术化。因为没有提供行业资料，不要编造市场规模、融资金额、公司排名或具体政策。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请制作一份关于中国具身智能产业发展的PPT，面向对该行业不太了解的企业管理者，介绍行业概念、产业链、主要应用场景、商业化机会和当前挑战。整份PPT控制在10页左右，风格专业、清晰，不要太学术化。因为没有提供行业资料，不要编造市场规模、融资金额、公司排名或具体政策。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "非技术背景的企业管理者",
+              "description": "希望快速理解中国具身智能产业结构与商业机会的决策者。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "产业发展与商业机会分析",
+              "description": "介绍概念、产业链、应用场景、商业化机会和挑战。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "形成产业决策框架",
+              "description": "帮助管理者识别产业关键环节、潜在机会及需要继续验证的问题。"
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "专业、清晰的管理层产业分析风格",
+              "description": "突出商业逻辑，避免过度学术化。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "非技术背景的企业管理者",
+            "description": "希望快速理解中国具身智能产业结构与商业机会的决策者。"
+          },
+          "purpose": {
+            "label": "产业发展与商业机会分析",
+            "description": "介绍概念、产业链、应用场景、商业化机会和挑战。"
+          },
+          "desired_outcome": {
+            "label": "形成产业决策框架",
+            "description": "帮助管理者识别产业关键环节、潜在机会及需要继续验证的问题。"
+          },
+          "slide_count": 10,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "专业、清晰的管理层产业分析风格",
+            "description": "突出商业逻辑，避免过度学术化。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-006",
+      "brief": "Create a 10-slide presentation introducing quantum computing to a non-technical business audience. Explain the basic idea, how it differs from classical computing, the types of problems it may be useful for, current limitations, potential business applications, and what company leaders should monitor. Keep the tone realistic. Do not invent market figures, company achievements, timelines, or claims of quantum advantage.",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "Create a 10-slide presentation introducing quantum computing to a non-technical business audience. Explain the basic idea, how it differs from classical computing, the types of problems it may be useful for, current limitations, potential business applications, and what company leaders should monitor. Keep the tone realistic. Do not invent market figures, company achievements, timelines, or claims of quantum advantage."
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "Non-technical business leaders",
+              "description": "Executives and managers who need a practical understanding of quantum computing."
+            }
+          ],
+          "purpose": [
+            {
+              "label": "Quantum-computing business introduction",
+              "description": "Explain the concept, differences from classical computing, possible applications, limitations, and leadership implications."
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "Build realistic strategic awareness",
+              "description": "Help leaders understand what quantum computing may affect and what should be monitored without overstating maturity."
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "English"
+          ],
+          "visual_tone": [
+            {
+              "label": "Clear and realistic executive explainer",
+              "description": "Professional, accessible, and restrained, with limited technical complexity."
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "Non-technical business leaders",
+            "description": "Executives and managers who need a practical understanding of quantum computing."
+          },
+          "purpose": {
+            "label": "Quantum-computing business introduction",
+            "description": "Explain the concept, differences from classical computing, possible applications, limitations, and leadership implications."
+          },
+          "desired_outcome": {
+            "label": "Build realistic strategic awareness",
+            "description": "Help leaders understand what quantum computing may affect and what should be monitored without overstating maturity."
+          },
+          "slide_count": 10,
+          "output_language": "English",
+          "visual_tone": {
+            "label": "Clear and realistic executive explainer",
+            "description": "Professional, accessible, and restrained, with limited technical complexity."
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-007",
+      "brief": "请制作一份大学公开课PPT，主题是“如何识别图表中的误导性表达”，共10页。先用一个简单问题引起兴趣，再介绍截断坐标轴、错误比例、选择性时间范围、双坐标轴、面积与体积误导、缺少基准、相关性冒充因果等常见问题，最后给出一套检查图表可信度的方法。面向非统计专业学生，内容应通俗、有教学节奏，不要编造真实媒体或公司的错误案例。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请制作一份大学公开课PPT，主题是“如何识别图表中的误导性表达”，共10页。先用一个简单问题引起兴趣，再介绍截断坐标轴、错误比例、选择性时间范围、双坐标轴、面积与体积误导、缺少基准、相关性冒充因果等常见问题，最后给出一套检查图表可信度的方法。面向非统计专业学生，内容应通俗、有教学节奏，不要编造真实媒体或公司的错误案例。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "非统计专业大学生",
+              "description": "需要提升图表阅读和信息判断能力的普通学生。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "误导性图表识别教学",
+              "description": "介绍常见图表误导方式，并提供一套可操作的检查方法。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "提升图表判断能力",
+              "description": "让学生能够识别常见问题并主动检查图表的可信度。"
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "通俗、互动的课堂教学风格",
+              "description": "具有循序渐进的教学节奏，使用简单示意而非复杂统计表达。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "非统计专业大学生",
+            "description": "需要提升图表阅读和信息判断能力的普通学生。"
+          },
+          "purpose": {
+            "label": "误导性图表识别教学",
+            "description": "介绍常见图表误导方式，并提供一套可操作的检查方法。"
+          },
+          "desired_outcome": {
+            "label": "提升图表判断能力",
+            "description": "让学生能够识别常见问题并主动检查图表的可信度。"
+          },
+          "slide_count": 10,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "通俗、互动的课堂教学风格",
+            "description": "具有循序渐进的教学节奏，使用简单示意而非复杂统计表达。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-008",
+      "brief": "我们正在开发一款面向中小企业的AI会议助手，主要功能包括会议录音转写、自动摘要、待办事项提取和历史会议检索。请制作一份10页的产品发布PPT，面向潜在企业客户。故事线从企业会议效率问题开始，依次介绍产品方案、核心功能、产品使用流程、典型场景、客户价值、部署方式、试用计划和下一步行动。不要添加没有提供的客户案例、客户名称、市场规模、准确率或效率提升数据。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "我们正在开发一款面向中小企业的AI会议助手，主要功能包括会议录音转写、自动摘要、待办事项提取和历史会议检索。请制作一份10页的产品发布PPT，面向潜在企业客户。故事线从企业会议效率问题开始，依次介绍产品方案、核心功能、产品使用流程、典型场景、客户价值、部署方式、试用计划和下一步行动。不要添加没有提供的客户案例、客户名称、市场规模、准确率或效率提升数据。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "中小企业潜在客户",
+              "description": "关注会议效率、知识沉淀和任务执行的管理者及团队负责人。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "AI会议助手产品发布与试用转化",
+              "description": "从会议问题出发，介绍产品方案、功能、流程、场景、价值和试用计划。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "促使潜在客户申请试用",
+              "description": "让观众理解产品价值并愿意进入试用或进一步沟通阶段。"
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "现代、可信的企业级科技产品风格",
+              "description": "突出问题、产品流程和用户价值。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "中小企业潜在客户",
+            "description": "关注会议效率、知识沉淀和任务执行的管理者及团队负责人。"
+          },
+          "purpose": {
+            "label": "AI会议助手产品发布与试用转化",
+            "description": "从会议问题出发，介绍产品方案、功能、流程、场景、价值和试用计划。"
+          },
+          "desired_outcome": {
+            "label": "促使潜在客户申请试用",
+            "description": "让观众理解产品价值并愿意进入试用或进一步沟通阶段。"
+          },
+          "slide_count": 10,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "现代、可信的企业级科技产品风格",
+            "description": "突出问题、产品流程和用户价值。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-009",
+      "brief": "请制作一份观点型PPT，讨论“AI是否会取代初级程序员”。面向软件公司的技术管理者，共9页。不要简单回答会或不会，而是分别分析哪些工作更容易被自动化、哪些能力仍然需要人类、初级岗位可能如何变化、企业招聘和人才培养应该如何调整。内容应形成清晰的论证过程，明确区分事实、推测和建议，不要编造调查数据或引用不存在的研究。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请制作一份观点型PPT，讨论“AI是否会取代初级程序员”。面向软件公司的技术管理者，共9页。不要简单回答会或不会，而是分别分析哪些工作更容易被自动化、哪些能力仍然需要人类、初级岗位可能如何变化、企业招聘和人才培养应该如何调整。内容应形成清晰的论证过程，明确区分事实、推测和建议，不要编造调查数据或引用不存在的研究。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "软件公司技术管理者",
+              "description": "负责研发团队组织、招聘、工作分配和人才培养的技术负责人。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "分析AI对初级程序员岗位的影响",
+              "description": "讨论任务自动化、能力变化、岗位演化和企业人才策略。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "形成平衡的人才决策框架",
+              "description": "帮助管理者调整招聘、培养和团队分工，而不是得出简单的取代结论。"
+            }
+          ],
+          "slide_count": [
+            9
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "理性、克制的技术管理分析风格",
+              "description": "强调论证关系，并区分事实、推测与建议。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "软件公司技术管理者",
+            "description": "负责研发团队组织、招聘、工作分配和人才培养的技术负责人。"
+          },
+          "purpose": {
+            "label": "分析AI对初级程序员岗位的影响",
+            "description": "讨论任务自动化、能力变化、岗位演化和企业人才策略。"
+          },
+          "desired_outcome": {
+            "label": "形成平衡的人才决策框架",
+            "description": "帮助管理者调整招聘、培养和团队分工，而不是得出简单的取代结论。"
+          },
+          "slide_count": 9,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "理性、克制的技术管理分析风格",
+            "description": "强调论证关系，并区分事实、推测与建议。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-010",
+      "brief": "Create a 10-slide investor pitch deck for a fictional startup called GreenRoute. GreenRoute helps small delivery companies plan delivery routes. The product imports daily orders, groups nearby destinations, recommends delivery sequences, and allows dispatchers to adjust routes manually. The company has a working prototype and is preparing a three-month pilot with two local delivery companies, but it has no paying customers. Cover the problem, solution, product workflow, target users, business-model assumptions, pilot plan, risks, funding use, and next milestones. Do not invent revenue, testimonials, market size, performance improvements, or investor commitments.",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "Create a 10-slide investor pitch deck for a fictional startup called GreenRoute. GreenRoute helps small delivery companies plan delivery routes. The product imports daily orders, groups nearby destinations, recommends delivery sequences, and allows dispatchers to adjust routes manually. The company has a working prototype and is preparing a three-month pilot with two local delivery companies, but it has no paying customers. Cover the problem, solution, product workflow, target users, business-model assumptions, pilot plan, risks, funding use, and next milestones. Do not invent revenue, testimonials, market size, performance improvements, or investor commitments."
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "Early-stage investors",
+              "description": "Investors evaluating GreenRoute’s problem, product, pilot plan, assumptions, and execution risks."
+            }
+          ],
+          "purpose": [
+            {
+              "label": "Pilot-stage investor pitch",
+              "description": "Present the problem, solution, workflow, target users, business-model assumptions, pilot, risks, funding use, and milestones."
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "Secure interest for further investor discussion",
+              "description": "Demonstrate a credible validation plan without overstating traction."
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "English"
+          ],
+          "visual_tone": [
+            {
+              "label": "Focused early-stage startup pitch",
+              "description": "Modern and confident while transparent about assumptions and missing validation."
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "Early-stage investors",
+            "description": "Investors evaluating GreenRoute’s problem, product, pilot plan, assumptions, and execution risks."
+          },
+          "purpose": {
+            "label": "Pilot-stage investor pitch",
+            "description": "Present the problem, solution, workflow, target users, business-model assumptions, pilot, risks, funding use, and milestones."
+          },
+          "desired_outcome": {
+            "label": "Secure interest for further investor discussion",
+            "description": "Demonstrate a credible validation plan without overstating traction."
+          },
+          "slide_count": 10,
+          "output_language": "English",
+          "visual_tone": {
+            "label": "Focused early-stage startup pitch",
+            "description": "Modern and confident while transparent about assumptions and missing validation."
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-011",
+      "brief": "请帮我制作一份公司内部CRM项目阶段性汇报PPT。项目从今年3月启动，目标是统一销售线索、客户信息和跟进记录。目前已经完成需求调研、系统选型和第一阶段数据清洗；原计划6月底完成试点，但由于历史数据质量问题，预计推迟两周。当前主要风险包括字段标准不统一、部分销售团队参与度不足，以及旧系统数据缺失。下一步计划是完成数据迁移、选择两个销售团队试点，并建立每周问题跟踪机制。汇报对象是公司管理层，共8页，重点说明当前进度、延期原因、风险和需要管理层协调的事项。不要添加预算、完成率或人员数量。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请帮我制作一份公司内部CRM项目阶段性汇报PPT。项目从今年3月启动，目标是统一销售线索、客户信息和跟进记录。目前已经完成需求调研、系统选型和第一阶段数据清洗；原计划6月底完成试点，但由于历史数据质量问题，预计推迟两周。当前主要风险包括字段标准不统一、部分销售团队参与度不足，以及旧系统数据缺失。下一步计划是完成数据迁移、选择两个销售团队试点，并建立每周问题跟踪机制。汇报对象是公司管理层，共8页，重点说明当前进度、延期原因、风险和需要管理层协调的事项。不要添加预算、完成率或人员数量。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "公司管理层",
+              "description": "负责CRM项目资源、跨部门协调和关键决策的管理者。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "CRM项目阶段性汇报与问题升级",
+              "description": "说明项目进度、延期原因、风险、下一步计划和管理层协调事项。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "获得管理层支持并明确行动",
+              "description": "推动数据标准、团队参与和试点资源问题得到解决。"
+            }
+          ],
+          "slide_count": [
+            8
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "简洁、直接的管理层项目汇报风格",
+              "description": "突出进度、偏差、风险、责任和行动。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "公司管理层",
+            "description": "负责CRM项目资源、跨部门协调和关键决策的管理者。"
+          },
+          "purpose": {
+            "label": "CRM项目阶段性汇报与问题升级",
+            "description": "说明项目进度、延期原因、风险、下一步计划和管理层协调事项。"
+          },
+          "desired_outcome": {
+            "label": "获得管理层支持并明确行动",
+            "description": "推动数据标准、团队参与和试点资源问题得到解决。"
+          },
+          "slide_count": 8,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "简洁、直接的管理层项目汇报风格",
+            "description": "突出进度、偏差、风险、责任和行动。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-012",
+      "brief": "请做一份8页的“咖啡店创业计划”PPT。项目计划在大学城附近开设一家面积约80平方米的社区咖啡店，目标顾客是附近学生、年轻职场人和自由职业者。产品包括意式咖啡、手冲、茶饮和少量烘焙食品。当前还没有确定租金、客流、具体定价和投资预算。页面结构按照以下思路展开：第1页项目愿景；第2页目标顾客；第3页门店定位；第4页产品与菜单；第5页获客方式；第6页日常运营；第7页主要风险；第8页未来90天行动计划。可以优化每页标题和故事线，但不要改变页面顺序，不要增加或删除页面，对缺失的金额和经营数据标记“待补充”。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请做一份8页的“咖啡店创业计划”PPT。项目计划在大学城附近开设一家面积约80平方米的社区咖啡店，目标顾客是附近学生、年轻职场人和自由职业者。产品包括意式咖啡、手冲、茶饮和少量烘焙食品。当前还没有确定租金、客流、具体定价和投资预算。页面结构按照以下思路展开：第1页项目愿景；第2页目标顾客；第3页门店定位；第4页产品与菜单；第5页获客方式；第6页日常运营；第7页主要风险；第8页未来90天行动计划。可以优化每页标题和故事线，但不要改变页面顺序，不要增加或删除页面，对缺失的金额和经营数据标记“待补充”。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "潜在合伙人或项目评审者",
+              "description": "评估咖啡店定位、运营思路、风险与近期准备计划的观众。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "咖啡店创业计划说明",
+              "description": "介绍项目愿景、顾客、定位、产品、获客、运营、风险和90天计划。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "形成可执行的开店准备框架",
+              "description": "明确当前设想、缺失信息和下一阶段验证任务。"
+            }
+          ],
+          "slide_count": [
+            8
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "温暖、年轻的轻商业计划风格",
+              "description": "体现社区咖啡店氛围，同时保持经营逻辑清晰。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "潜在合伙人或项目评审者",
+            "description": "评估咖啡店定位、运营思路、风险与近期准备计划的观众。"
+          },
+          "purpose": {
+            "label": "咖啡店创业计划说明",
+            "description": "介绍项目愿景、顾客、定位、产品、获客、运营、风险和90天计划。"
+          },
+          "desired_outcome": {
+            "label": "形成可执行的开店准备框架",
+            "description": "明确当前设想、缺失信息和下一阶段验证任务。"
+          },
+          "slide_count": 8,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "温暖、年轻的轻商业计划风格",
+            "description": "体现社区咖啡店氛围，同时保持经营逻辑清晰。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-013",
+      "brief": "我需要一份面向董事会的年度降本增效方案PPT，共10页。公司是一家拥有约300名员工的B2B软件企业，目前发现三个主要问题：多个团队重复采购相似的软件工具；客户交付项目经常重复制作相同文档；销售、实施和客服之间的信息交接依赖人工。初步方案包括统一软件采购、建设标准化交付模板库、使用AI辅助整理客户资料，以及建立跨部门交接清单。页面结构为：第1页管理层摘要；第2页当前成本和效率问题；第3页问题产生原因；第4页软件采购治理；第5页交付模板标准化；第6页AI辅助客户资料整理；第7页跨部门交接；第8页实施优先级；第9页风险与治理；第10页未来90天行动。不要自行添加具体节省金额、投资回报率或行业基准。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "我需要一份面向董事会的年度降本增效方案PPT，共10页。公司是一家拥有约300名员工的B2B软件企业，目前发现三个主要问题：多个团队重复采购相似的软件工具；客户交付项目经常重复制作相同文档；销售、实施和客服之间的信息交接依赖人工。初步方案包括统一软件采购、建设标准化交付模板库、使用AI辅助整理客户资料，以及建立跨部门交接清单。页面结构为：第1页管理层摘要；第2页当前成本和效率问题；第3页问题产生原因；第4页软件采购治理；第5页交付模板标准化；第6页AI辅助客户资料整理；第7页跨部门交接；第8页实施优先级；第9页风险与治理；第10页未来90天行动。不要自行添加具体节省金额、投资回报率或行业基准。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "公司董事会",
+              "description": "关注经营效率、资源投入、执行风险和治理机制的决策者。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "年度降本增效方案汇报",
+              "description": "说明现状、原因、改进方案、优先级、治理和90天行动计划。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "获得董事会对方向和治理机制的认可",
+              "description": "推动跨部门降本增效方案进入执行阶段。"
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "简洁、严谨的董事会决策风格",
+              "description": "突出问题、优先级、责任、风险和行动。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "公司董事会",
+            "description": "关注经营效率、资源投入、执行风险和治理机制的决策者。"
+          },
+          "purpose": {
+            "label": "年度降本增效方案汇报",
+            "description": "说明现状、原因、改进方案、优先级、治理和90天行动计划。"
+          },
+          "desired_outcome": {
+            "label": "获得董事会对方向和治理机制的认可",
+            "description": "推动跨部门降本增效方案进入执行阶段。"
+          },
+          "slide_count": 10,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "简洁、严谨的董事会决策风格",
+            "description": "突出问题、优先级、责任、风险和行动。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-014",
+      "brief": "请根据以下信息制作一份8页的投资小白周度资产复盘PPT，不进行Web Search。所有数据都是为内部培训构造的示例，不代表真实市场。已知数据：股票指数A本周上涨2.1%，股票指数B本周下跌1.4%，黄金上涨3.2%，原油下跌2.5%，短期债券基金上涨0.2%，美元指数下跌0.8%。页面结构为：第1页封面；第2页资产表现总览；第3页股票；第4页黄金与原油；第5页债券与现金类资产；第6页为什么不同资产表现不同；第7页给投资小白的风险管理原则；第8页总结。第2页必须完整展示六项数据；第3至第5页不得添加未提供的价格、指数名称和原因；第6页只能做一般性机制解释；第7页不能给出具体买卖标的；第8页必须注明“示例数据仅用于投资教育”。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请根据以下信息制作一份8页的投资小白周度资产复盘PPT，不进行Web Search。所有数据都是为内部培训构造的示例，不代表真实市场。已知数据：股票指数A本周上涨2.1%，股票指数B本周下跌1.4%，黄金上涨3.2%，原油下跌2.5%，短期债券基金上涨0.2%，美元指数下跌0.8%。页面结构为：第1页封面；第2页资产表现总览；第3页股票；第4页黄金与原油；第5页债券与现金类资产；第6页为什么不同资产表现不同；第7页给投资小白的风险管理原则；第8页总结。第2页必须完整展示六项数据；第3至第5页不得添加未提供的价格、指数名称和原因；第6页只能做一般性机制解释；第7页不能给出具体买卖标的；第8页必须注明“示例数据仅用于投资教育”。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "投资初学者与内部培训参与者",
+              "description": "缺乏投资经验、需要学习资产表现和风险管理基础的观众。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "使用虚构数据进行周度资产复盘教学",
+              "description": "解释不同资产的示例表现、一般机制和基础风险管理原则。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "建立基础复盘方法和风险意识",
+              "description": "让观众理解如何阅读资产表现，同时明确示例数据不构成投资建议。"
+            }
+          ],
+          "slide_count": [
+            8
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "亲和、清晰的投资教育风格",
+              "description": "使用简单对比和数据展示，明确区分示例与真实市场。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "投资初学者与内部培训参与者",
+            "description": "缺乏投资经验、需要学习资产表现和风险管理基础的观众。"
+          },
+          "purpose": {
+            "label": "使用虚构数据进行周度资产复盘教学",
+            "description": "解释不同资产的示例表现、一般机制和基础风险管理原则。"
+          },
+          "desired_outcome": {
+            "label": "建立基础复盘方法和风险意识",
+            "description": "让观众理解如何阅读资产表现，同时明确示例数据不构成投资建议。"
+          },
+          "slide_count": 8,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "亲和、清晰的投资教育风格",
+            "description": "使用简单对比和数据展示，明确区分示例与真实市场。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-015",
+      "brief": "请严格按照下面的内容制作6页PPT，不要改写我提供的页面标题和核心文字。\n\npage1：封面\n标题：让每一次会议都有结果\n副标题：AI会议助手产品介绍\n\npage2：问题\n标题：会议结束，不代表工作完成\n必须包含以下原文：\n“会议信息散落在录音、聊天和个人笔记中。”\n“负责人和完成时间经常没有被明确记录。”\n“下一次会议开始时，团队仍在寻找上一次的结论。”\n\npage3：解决方案\n标题：从录音到行动，只需要一次处理\n必须包含四项能力：录音转写、自动摘要、待办提取、责任人识别。\n页面核心文字必须是：“让AI承担整理工作，让团队专注于判断和执行。”\n\npage4：知识沉淀\n标题：重要信息可以被持续检索\n必须说明可以按照会议、人员、项目和关键词查找历史信息。不得添加搜索准确率和处理速度。\n\npage5：试用计划\n标题：先从一个团队开始试用\n试用分为三个阶段：选择试点团队、运行两周、收集反馈。不要自行增加试用人数、费用或日期。\n\npage6：结束页\n标题：让会议真正推动工作\n副标题：申请加入产品试用\n\n输出中文，整体风格简洁、现代。必须严格保持6页，不得增加目录、产品定价、客户案例或致谢页。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请严格按照下面的内容制作6页PPT，不要改写我提供的页面标题和核心文字。\n\npage1：封面\n标题：让每一次会议都有结果\n副标题：AI会议助手产品介绍\n\npage2：问题\n标题：会议结束，不代表工作完成\n必须包含以下原文：\n“会议信息散落在录音、聊天和个人笔记中。”\n“负责人和完成时间经常没有被明确记录。”\n“下一次会议开始时，团队仍在寻找上一次的结论。”\n\npage3：解决方案\n标题：从录音到行动，只需要一次处理\n必须包含四项能力：录音转写、自动摘要、待办提取、责任人识别。\n页面核心文字必须是：“让AI承担整理工作，让团队专注于判断和执行。”\n\npage4：知识沉淀\n标题：重要信息可以被持续检索\n必须说明可以按照会议、人员、项目和关键词查找历史信息。不得添加搜索准确率和处理速度。\n\npage5：试用计划\n标题：先从一个团队开始试用\n试用分为三个阶段：选择试点团队、运行两周、收集反馈。不要自行增加试用人数、费用或日期。\n\npage6：结束页\n标题：让会议真正推动工作\n副标题：申请加入产品试用\n\n输出中文，整体风格简洁、现代。必须严格保持6页，不得增加目录、产品定价、客户案例或致谢页。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "潜在企业客户和产品试用者",
+              "description": "关注会议整理、知识检索和任务跟进效率的团队管理者。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "AI会议助手产品介绍与试用邀请",
+              "description": "严格按照用户给定的6页内容介绍问题、方案、知识检索和试用计划。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "帮助观众理解产品并申请试用",
+              "description": "在不添加未经提供的产品或商业信息的情况下形成明确行动。"
+            }
+          ],
+          "slide_count": [
+            6
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "简洁、现代的企业级产品发布风格",
+              "description": "重点突出原始文案、产品流程和试用行动。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "潜在企业客户和产品试用者",
+            "description": "关注会议整理、知识检索和任务跟进效率的团队管理者。"
+          },
+          "purpose": {
+            "label": "AI会议助手产品介绍与试用邀请",
+            "description": "严格按照用户给定的6页内容介绍问题、方案、知识检索和试用计划。"
+          },
+          "desired_outcome": {
+            "label": "帮助观众理解产品并申请试用",
+            "description": "在不添加未经提供的产品或商业信息的情况下形成明确行动。"
+          },
+          "slide_count": 6,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "简洁、现代的企业级产品发布风格",
+            "description": "重点突出原始文案、产品流程和试用行动。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-016",
+      "brief": "制作一份公司内部销售周报，不要封面，直接进入内容，共5页。\n\n已知数据：\n- 本周新增线索126条，上周新增线索108条；\n- 本周完成客户会议34场，上周为29场；\n- 本周新增商机金额480万元；\n- 本周签约金额96万元；\n- 华东区域贡献45%的新增商机；\n- 华南区域贡献30%；\n- 其他区域合计贡献25%；\n- 当前有27条高意向线索超过3天没有联系；\n- 其中华东12条、华南9条、其他区域6条。\n\n页面安排：\npage1：本周核心结果。展示新增线索、客户会议、新增商机和签约金额。\npage2：线索与商机变化。可以计算新增线索和客户会议相对上周的变化，但必须保留原始数字。\npage3：区域表现。必须展示45%、30%和25%的区域贡献结构，不得猜测各区域的具体金额。\npage4：当前问题。重点说明27条高意向线索跟进超时，并展示区域分布。\npage5：下周行动。包括清理超时线索、明确负责人、建立每日跟进检查、复盘未转化原因。\n\n不要添加赢单率、客单价、销售人员排名、季度目标或没有提供的数据。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "制作一份公司内部销售周报，不要封面，直接进入内容，共5页。\n\n已知数据：\n- 本周新增线索126条，上周新增线索108条；\n- 本周完成客户会议34场，上周为29场；\n- 本周新增商机金额480万元；\n- 本周签约金额96万元；\n- 华东区域贡献45%的新增商机；\n- 华南区域贡献30%；\n- 其他区域合计贡献25%；\n- 当前有27条高意向线索超过3天没有联系；\n- 其中华东12条、华南9条、其他区域6条。\n\n页面安排：\npage1：本周核心结果。展示新增线索、客户会议、新增商机和签约金额。\npage2：线索与商机变化。可以计算新增线索和客户会议相对上周的变化，但必须保留原始数字。\npage3：区域表现。必须展示45%、30%和25%的区域贡献结构，不得猜测各区域的具体金额。\npage4：当前问题。重点说明27条高意向线索跟进超时，并展示区域分布。\npage5：下周行动。包括清理超时线索、明确负责人、建立每日跟进检查、复盘未转化原因。\n\n不要添加赢单率、客单价、销售人员排名、季度目标或没有提供的数据。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "公司销售管理层与销售团队",
+              "description": "需要快速了解本周销售结果、问题和下周行动的内部人员。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "销售周报与行动复盘",
+              "description": "展示核心结果、线索和会议变化、区域贡献、跟进问题及下周行动。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "推动高意向线索及时跟进",
+              "description": "让管理层掌握本周情况，并使团队明确需要处理的问题。"
+            }
+          ],
+          "slide_count": [
+            5
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "高密度、直接的内部经营看板风格",
+              "description": "不使用封面，重点展示数字、变化、问题和行动。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "公司销售管理层与销售团队",
+            "description": "需要快速了解本周销售结果、问题和下周行动的内部人员。"
+          },
+          "purpose": {
+            "label": "销售周报与行动复盘",
+            "description": "展示核心结果、线索和会议变化、区域贡献、跟进问题及下周行动。"
+          },
+          "desired_outcome": {
+            "label": "推动高意向线索及时跟进",
+            "description": "让管理层掌握本周情况，并使团队明确需要处理的问题。"
+          },
+          "slide_count": 5,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "高密度、直接的内部经营看板风格",
+            "description": "不使用封面，重点展示数字、变化、问题和行动。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-017",
+      "brief": "公司的一项在线服务今天出现了约40分钟不可用，需要制作一份内部事故复盘PPT，共7页，不要封面。\n\n已知情况：\n- 14:05，一名工程师提交认证服务配置变更；\n- 14:10，故障开始；\n- 14:18，客服首次报告多名用户无法登录；\n- 14:21，值班工程师开始排查；\n- 14:25，技术团队确认认证服务异常；\n- 14:32，团队决定回滚配置；\n- 14:42，配置回滚完成；\n- 14:50，服务恢复；\n- 15:20，确认主要功能恢复正常。\n\n当前只能确定配置变更触发了认证服务异常，根本原因仍在调查。尚未统计受影响用户数量和业务损失。\n\n页面顺序必须是：page1事故摘要；page2影响范围；page3事件时间线；page4初步原因；page5响应过程；page6暴露的问题；page7改进计划。\n\n第4页必须明确区分“已确认事实”“初步判断”和“待调查问题”。不得把初步原因写成最终根因。第6页可以提出监控、变更审核和响应协作方面的问题，但不能虚构团队没有执行的流程。第7页可以提出行动方向，但负责人和完成日期统一标记为“待确认”。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "公司的一项在线服务今天出现了约40分钟不可用，需要制作一份内部事故复盘PPT，共7页，不要封面。\n\n已知情况：\n- 14:05，一名工程师提交认证服务配置变更；\n- 14:10，故障开始；\n- 14:18，客服首次报告多名用户无法登录；\n- 14:21，值班工程师开始排查；\n- 14:25，技术团队确认认证服务异常；\n- 14:32，团队决定回滚配置；\n- 14:42，配置回滚完成；\n- 14:50，服务恢复；\n- 15:20，确认主要功能恢复正常。\n\n当前只能确定配置变更触发了认证服务异常，根本原因仍在调查。尚未统计受影响用户数量和业务损失。\n\n页面顺序必须是：page1事故摘要；page2影响范围；page3事件时间线；page4初步原因；page5响应过程；page6暴露的问题；page7改进计划。\n\n第4页必须明确区分“已确认事实”“初步判断”和“待调查问题”。不得把初步原因写成最终根因。第6页可以提出监控、变更审核和响应协作方面的问题，但不能虚构团队没有执行的流程。第7页可以提出行动方向，但负责人和完成日期统一标记为“待确认”。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "工程、运维、客服与相关管理者",
+              "description": "参与或监督在线服务稳定性和事故响应的内部人员。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "在线服务事故复盘",
+              "description": "梳理事故影响、时间线、初步原因、响应过程、问题和改进计划。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "形成可执行的事故改进方向",
+              "description": "在不提前确定根因的情况下，推动监控、变更和协作机制改善。"
+            }
+          ],
+          "slide_count": [
+            7
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "严谨、客观的技术事故复盘风格",
+              "description": "不使用封面，清楚区分事实、判断和待调查事项。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "工程、运维、客服与相关管理者",
+            "description": "参与或监督在线服务稳定性和事故响应的内部人员。"
+          },
+          "purpose": {
+            "label": "在线服务事故复盘",
+            "description": "梳理事故影响、时间线、初步原因、响应过程、问题和改进计划。"
+          },
+          "desired_outcome": {
+            "label": "形成可执行的事故改进方向",
+            "description": "在不提前确定根因的情况下，推动监控、变更和协作机制改善。"
+          },
+          "slide_count": 7,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "严谨、客观的技术事故复盘风格",
+            "description": "不使用封面，清楚区分事实、判断和待调查事项。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-018",
+      "brief": "请根据以下内容制作一份10页的连锁餐饮公司季度经营复盘PPT，面向公司管理层。必须保留所有已提供数字，并严格区分实际数据、目标数据和管理层判断。\n\npage1：封面\n标题：鲜味里 2026 Q2经营复盘\n副标题：从门店扩张转向单店效率提升\n日期：2026年7月\n\npage2：目录\n必须包含：经营结果、门店表现、产品与会员、问题与行动。\n\npage3：季度核心结论\n核心结论一：收入保持增长，但新增门店尚未达到成熟门店水平。\n核心结论二：外卖收入增长明显，但平台费用和促销投入压缩利润。\n核心结论三：会员规模增长，但复购改善有限。\n核心结论四：Q3重点从快速扩店调整为提升单店效率。\n\npage4：经营数字总览\n单位：万元。\n- Q2收入：4,860；Q1收入：4,320；Q2毛利润：1,604；Q2经营利润：286；Q2现金余额：1,120；\n- Q2新增门店：8家；Q2关闭门店：2家；期末门店总数：46家；\n- 成熟门店平均月收入：42万元；新增门店平均月收入：23万元。\n可以根据已有数据计算收入环比，但不能计算没有足够信息支持的同比、净利率或投资回收期。\n\npage5：门店表现分化\n- A类门店：12家，经营稳定，是当前利润基本盘；\n- B类门店：24家，收入稳定但人力和损耗仍有优化空间；\n- C类门店：10家，其中8家为新增门店，仍处于爬坡期。\n管理层判断：新增门店的核心问题不是客流完全不足，而是选址质量、开业营销和店长能力存在差异。该判断需要标记为“内部初步判断”。\n\npage6：产品结构\n招牌面食38%；米饭套餐26%；小吃18%；饮品12%；其他6%。新品“青椒牛肉面”上市6周，贡献季度收入4.5%，但暂未提供毛利率和复购数据。不要把收入贡献等同于用户喜爱度。\n\npage7：外卖与会员\n外卖收入占比由Q1的31%上升至Q2的38%；外卖平台费用和促销费用合计占外卖收入的18%；注册会员由18万人增长至23万人；月活跃会员约7.2万人；当前没有准确的会员复购率数据。\n核心问题：渠道收入增长没有完全转化为利润增长，会员增长也尚未被证明能够带来稳定复购。\n\npage8：主要问题\n必须覆盖：新增门店爬坡慢、店长能力差异、外卖利润承压、会员复购数据缺失、部分门店损耗偏高。不得自行给出问题影响金额。\n\npage9：Q3行动计划\n暂缓低确定性点位签约；对10家C类门店开展逐店诊断；建立店长培训和周度经营复盘；优化外卖促销并建立订单级利润分析；完善会员分层和复购指标；针对高损耗门店开展原材料专项检查。\n\npage10：管理层需要决定的事项\n是否将Q3新开门店目标从12家调整为6至8家；是否将部分开店预算转向店长培训和数字化运营；是否建立区域负责人对单店利润负责的机制。\n结束文字：“从规模扩张转向可持续的单店增长。”",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "请根据以下内容制作一份10页的连锁餐饮公司季度经营复盘PPT，面向公司管理层。必须保留所有已提供数字，并严格区分实际数据、目标数据和管理层判断。\n\npage1：封面\n标题：鲜味里 2026 Q2经营复盘\n副标题：从门店扩张转向单店效率提升\n日期：2026年7月\n\npage2：目录\n必须包含：经营结果、门店表现、产品与会员、问题与行动。\n\npage3：季度核心结论\n核心结论一：收入保持增长，但新增门店尚未达到成熟门店水平。\n核心结论二：外卖收入增长明显，但平台费用和促销投入压缩利润。\n核心结论三：会员规模增长，但复购改善有限。\n核心结论四：Q3重点从快速扩店调整为提升单店效率。\n\npage4：经营数字总览\n单位：万元。\n- Q2收入：4,860；Q1收入：4,320；Q2毛利润：1,604；Q2经营利润：286；Q2现金余额：1,120；\n- Q2新增门店：8家；Q2关闭门店：2家；期末门店总数：46家；\n- 成熟门店平均月收入：42万元；新增门店平均月收入：23万元。\n可以根据已有数据计算收入环比，但不能计算没有足够信息支持的同比、净利率或投资回收期。\n\npage5：门店表现分化\n- A类门店：12家，经营稳定，是当前利润基本盘；\n- B类门店：24家，收入稳定但人力和损耗仍有优化空间；\n- C类门店：10家，其中8家为新增门店，仍处于爬坡期。\n管理层判断：新增门店的核心问题不是客流完全不足，而是选址质量、开业营销和店长能力存在差异。该判断需要标记为“内部初步判断”。\n\npage6：产品结构\n招牌面食38%；米饭套餐26%；小吃18%；饮品12%；其他6%。新品“青椒牛肉面”上市6周，贡献季度收入4.5%，但暂未提供毛利率和复购数据。不要把收入贡献等同于用户喜爱度。\n\npage7：外卖与会员\n外卖收入占比由Q1的31%上升至Q2的38%；外卖平台费用和促销费用合计占外卖收入的18%；注册会员由18万人增长至23万人；月活跃会员约7.2万人；当前没有准确的会员复购率数据。\n核心问题：渠道收入增长没有完全转化为利润增长，会员增长也尚未被证明能够带来稳定复购。\n\npage8：主要问题\n必须覆盖：新增门店爬坡慢、店长能力差异、外卖利润承压、会员复购数据缺失、部分门店损耗偏高。不得自行给出问题影响金额。\n\npage9：Q3行动计划\n暂缓低确定性点位签约；对10家C类门店开展逐店诊断；建立店长培训和周度经营复盘；优化外卖促销并建立订单级利润分析；完善会员分层和复购指标；针对高损耗门店开展原材料专项检查。\n\npage10：管理层需要决定的事项\n是否将Q3新开门店目标从12家调整为6至8家；是否将部分开店预算转向店长培训和数字化运营；是否建立区域负责人对单店利润负责的机制。\n结束文字：“从规模扩张转向可持续的单店增长。”"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "连锁餐饮公司管理层",
+              "description": "负责经营、门店、产品、会员及资源配置的决策者。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "2026 Q2经营复盘与Q3决策汇报",
+              "description": "复盘经营结果、门店分化、产品结构、外卖、会员、问题和行动。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "推动经营重点转向单店效率提升",
+              "description": "帮助管理层理解当前问题，并对Q3开店目标和资源调整作出决定。"
+            }
+          ],
+          "slide_count": [
+            10
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "清晰、务实的经营管理汇报风格",
+              "description": "强调实际数据、目标、内部判断和管理层决策事项。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "连锁餐饮公司管理层",
+            "description": "负责经营、门店、产品、会员及资源配置的决策者。"
+          },
+          "purpose": {
+            "label": "2026 Q2经营复盘与Q3决策汇报",
+            "description": "复盘经营结果、门店分化、产品结构、外卖、会员、问题和行动。"
+          },
+          "desired_outcome": {
+            "label": "推动经营重点转向单店效率提升",
+            "description": "帮助管理层理解当前问题，并对Q3开店目标和资源调整作出决定。"
+          },
+          "slide_count": 10,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "清晰、务实的经营管理汇报风格",
+            "description": "强调实际数据、目标、内部判断和管理层决策事项。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-019",
+      "brief": "Create an 11-slide board presentation based strictly on the following material. Preserve the page order, all supplied figures, and all statements marked as management assumptions. Do not add external market data, customer names, or financial projections.\n\nPage 1 — Cover\nTitle: Northstar Cloud 2026 H1 Board Review\nSubtitle: Stabilizing the core business while validating the AI product line\nDate: July 2026\n\nPage 2 — Agenda\nSections: Executive conclusions; Core SaaS performance; AI product validation; H2 operating plan; Board decisions.\n\nPage 3 — H1 executive conclusions\nThe company operated through two business lines during H1. Core SaaS remained the primary source of contracted revenue and cash collection. The AI product line completed its first usable product, launched a closed beta, and began testing willingness to pay. It has not yet established repeatable revenue. Management conclusion: the core business protects operating stability, while the AI product line represents a controlled growth option. This is a management conclusion, not an independently validated fact.\n\nPage 4 — H1 financial overview\nUnit: USD thousands. Recognized revenue: 4,200; Gross profit: 2,310; Operating expenses: 2,060; Operating profit: 250; Cash collected: 3,760; Accounts receivable: 1,180; Closing cash balance: 3,400; Average monthly operating cash expense: 345. Do not calculate runway because future cash inflows and planned spending have not been provided.\n\nPage 5 — Core SaaS performance\nOpening customers: 126; New customers: 14; Customers lost: 9; Closing customers: 131; Enterprise customers represent 62% of contracted revenue; Three renewals were delayed into Q3; Two large customers requested additional security reviews. Do not invent ARR, churn rate, NRR, contract value, or customer identities.\n\nPage 6 — AI product validation\nThe AI workspace product supports meeting summaries, document search, task extraction, and shared project memory. Closed-beta users: 620; Weekly active users in the final week of June: 174; Teams invited: 42; Teams completing onboarding: 31; Teams using the product for four consecutive weeks: 11; Paid design partners: 3. Management believes document search and meeting follow-up currently show the strongest user value. This remains a preliminary interpretation.\n\nPage 7 — AI product business model assumptions\nPotential revenue components: Per-user subscription; Team workspace subscription; Usage-based AI credits; Enterprise security and administration package. Current unknowns: Sustainable acquisition cost; Long-term retention; Support cost per customer; Model and storage cost at scale; Willingness to pay outside design partners. Do not turn assumptions into confirmed pricing or revenue forecasts.\n\nPage 8 — H2 operating priorities\nCore SaaS: complete delayed renewals; improve enterprise security review materials; reduce implementation rework; maintain disciplined hiring. AI: open the product to a larger beta group; test two packaging options; improve onboarding and four-week retention; measure AI, storage, and support cost per active team.\n\nPage 9 — H2 milestones\nJuly–August: complete onboarding redesign and expand beta access. September: begin packaging and willingness-to-pay tests. October: review retention, support cost, and usage economics. November–December: decide whether to scale, narrow the product scope, or extend validation. These are internal targets and may change.\n\nPage 10 — Principal risks\nCore SaaS renewals take longer than expected; AI usage may not translate into retention or payment; Model and storage costs may reduce gross margin; The small team may become divided across two product lines; Enterprise security requirements may delay sales. No probability or financial impact has been quantified.\n\nPage 11 — Decisions requested from the board\nConfirm the dual-track operating strategy for H2; Approve the proposed hiring limit of four critical roles; Confirm the budget boundary for expanded beta testing; Review the October decision gate for the AI product line. Closing statement: Protect the core, validate the new, and scale only when evidence supports it.",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "Create an 11-slide board presentation based strictly on the following material. Preserve the page order, all supplied figures, and all statements marked as management assumptions. Do not add external market data, customer names, or financial projections.\n\nPage 1 — Cover\nTitle: Northstar Cloud 2026 H1 Board Review\nSubtitle: Stabilizing the core business while validating the AI product line\nDate: July 2026\n\nPage 2 — Agenda\nSections: Executive conclusions; Core SaaS performance; AI product validation; H2 operating plan; Board decisions.\n\nPage 3 — H1 executive conclusions\nThe company operated through two business lines during H1. Core SaaS remained the primary source of contracted revenue and cash collection. The AI product line completed its first usable product, launched a closed beta, and began testing willingness to pay. It has not yet established repeatable revenue. Management conclusion: the core business protects operating stability, while the AI product line represents a controlled growth option. This is a management conclusion, not an independently validated fact.\n\nPage 4 — H1 financial overview\nUnit: USD thousands. Recognized revenue: 4,200; Gross profit: 2,310; Operating expenses: 2,060; Operating profit: 250; Cash collected: 3,760; Accounts receivable: 1,180; Closing cash balance: 3,400; Average monthly operating cash expense: 345. Do not calculate runway because future cash inflows and planned spending have not been provided.\n\nPage 5 — Core SaaS performance\nOpening customers: 126; New customers: 14; Customers lost: 9; Closing customers: 131; Enterprise customers represent 62% of contracted revenue; Three renewals were delayed into Q3; Two large customers requested additional security reviews. Do not invent ARR, churn rate, NRR, contract value, or customer identities.\n\nPage 6 — AI product validation\nThe AI workspace product supports meeting summaries, document search, task extraction, and shared project memory. Closed-beta users: 620; Weekly active users in the final week of June: 174; Teams invited: 42; Teams completing onboarding: 31; Teams using the product for four consecutive weeks: 11; Paid design partners: 3. Management believes document search and meeting follow-up currently show the strongest user value. This remains a preliminary interpretation.\n\nPage 7 — AI product business model assumptions\nPotential revenue components: Per-user subscription; Team workspace subscription; Usage-based AI credits; Enterprise security and administration package. Current unknowns: Sustainable acquisition cost; Long-term retention; Support cost per customer; Model and storage cost at scale; Willingness to pay outside design partners. Do not turn assumptions into confirmed pricing or revenue forecasts.\n\nPage 8 — H2 operating priorities\nCore SaaS: complete delayed renewals; improve enterprise security review materials; reduce implementation rework; maintain disciplined hiring. AI: open the product to a larger beta group; test two packaging options; improve onboarding and four-week retention; measure AI, storage, and support cost per active team.\n\nPage 9 — H2 milestones\nJuly–August: complete onboarding redesign and expand beta access. September: begin packaging and willingness-to-pay tests. October: review retention, support cost, and usage economics. November–December: decide whether to scale, narrow the product scope, or extend validation. These are internal targets and may change.\n\nPage 10 — Principal risks\nCore SaaS renewals take longer than expected; AI usage may not translate into retention or payment; Model and storage costs may reduce gross margin; The small team may become divided across two product lines; Enterprise security requirements may delay sales. No probability or financial impact has been quantified.\n\nPage 11 — Decisions requested from the board\nConfirm the dual-track operating strategy for H2; Approve the proposed hiring limit of four critical roles; Confirm the budget boundary for expanded beta testing; Review the October decision gate for the AI product line. Closing statement: Protect the core, validate the new, and scale only when evidence supports it."
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "Northstar Cloud board members",
+              "description": "Directors reviewing H1 performance, operating risk, AI-product validation, and H2 resource decisions."
+            }
+          ],
+          "purpose": [
+            {
+              "label": "H1 board review and H2 decision support",
+              "description": "Present core SaaS performance, AI-product evidence, business-model assumptions, priorities, milestones, risks, and requested decisions."
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "Enable evidence-based H2 governance decisions",
+              "description": "Help the board protect the core business while deciding how far to continue AI-product validation."
+            }
+          ],
+          "slide_count": [
+            11
+          ],
+          "output_language": [
+            "English"
+          ],
+          "visual_tone": [
+            {
+              "label": "Disciplined board-report style",
+              "description": "Evidence-led, financially restrained, and explicit about assumptions, unknowns, and decision gates."
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "Northstar Cloud board members",
+            "description": "Directors reviewing H1 performance, operating risk, AI-product validation, and H2 resource decisions."
+          },
+          "purpose": {
+            "label": "H1 board review and H2 decision support",
+            "description": "Present core SaaS performance, AI-product evidence, business-model assumptions, priorities, milestones, risks, and requested decisions."
+          },
+          "desired_outcome": {
+            "label": "Enable evidence-based H2 governance decisions",
+            "description": "Help the board protect the core business while deciding how far to continue AI-product validation."
+          },
+          "slide_count": 11,
+          "output_language": "English",
+          "visual_tone": {
+            "label": "Disciplined board-report style",
+            "description": "Evidence-led, financially restrained, and explicit about assumptions, unknowns, and decision gates."
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "outline-020",
+      "brief": "根据以下文字制作PPT。以下公司、产品和数字全部为虚构内容，仅用于测试PPT生成能力。必须保留页面顺序、已提供数字、表格字段和管理层判断，不要添加外部资料。\n\npage1：封面\n星桥协同科技 2026 H1 董事会经营汇报\n核心业务稳健经营，新产品进入市场验证阶段\n2026年7月\n\npage2：目录\n1. H1经营结论\n2. 核心业务表现\n3. Nova协作平台进展\n4. H2经营规划\n5. 董事会决策事项\n\npage3：2026 H1核心结论与业务分化\n传统企业软件业务：【稳定交付 · 控制风险 · 保障现金流】\n- 聚焦大型企业及高续费可能性的存量客户；\n- 优先承接毛利和回款条件相对明确的项目；\n- 控制非标准定制和无明确预算的售前投入；\n- 不依赖大规模人员扩张；\n- 继续承担公司收入和现金流基本盘。\nNova智能协作业务：【产品完成 · 用户试用 · 场景验证 · 准备商业化】\n- Nova Workspace第一版产品形态已经形成；\n- 已完成文档检索、会议总结、任务提取和团队知识空间；\n- 累计注册试用用户约1,240名；注册团队86个；完成首次使用32个；连续使用四周13个；付费设计伙伴4个；\n- H2进入留存、定价、单位经济和商业化验证阶段。\n管理层判断：传统业务负责经营安全，Nova业务承担未来增长验证。该判断属于内部经营判断。\n\npage4：2026 H1核心经营数字总览\n单位：万元。H1确认收入2,680；H1毛利润1,126；H1经营利润184；H1回款2,230；期末应收账款860；期末现金余额1,920；月均现金运营支出约210。当前未提供未来回款和计划支出，因此不得计算现金可支撑月份。\nNova业务：注册试用用户约1,240名；注册团队86个；完成首次使用32个；连续使用四周13个；付费设计伙伴4个；内部功能模块9个；开发者测试社区约180人；当前仍未形成可重复的规模化收入。\n\npage5：传统企业软件业务现状\n期初客户74家；H1新增8家；H1流失5家；期末77家；大型企业客户贡献约68%的合同收入；5个续费项目推迟到H2；3个客户提出额外数据安全审查要求。\n经营原则：优先续费和扩容；减少无法标准化交付的定制项目；对长账期项目设置更严格审批；建立项目级毛利和回款复盘；控制新增交付人员。\n当前问题：大型客户销售周期延长；安全审查材料不统一；部分项目重复制作交付文档；销售、实施和客服之间的信息交接依赖人工。\n\npage6：Nova产品架构与商业逻辑\nNova Workspace包含会议录音与文字整理、自动摘要和待办提取、团队文档检索、项目知识空间、任务与责任人跟踪、团队权限和内容隔离。\nNova Modules包括Meeting、Documents、Tasks、Sales Brief、Customer Support、Project Review。\nDeveloper Toolkit提供模块开发框架、模型与工具调用接口、测试环境、模块发布与审核、团队内部分发、使用量和成本记录。\n长期商业模式假设：团队订阅和高级功能；用量型AI Credits；第三方模块收入分成；企业安全、管理和私有部署。均不得写成已实现收入。\n\npage7：同类产品路线与Nova的位置\n表头：产品路线｜任务执行｜独立模块｜持续工作空间｜开发者扩展｜企业管理｜当前成熟度\n通用AI助手A：★★★★★｜★★☆☆☆｜★★★☆☆｜★★☆☆☆｜★★★☆☆｜★★★★★\n自动化平台B：★★★★☆｜★★★☆☆｜★★★★★｜★★★★★｜★★☆☆☆｜★★★★★\n企业知识平台C：★★★☆☆｜★★★☆☆｜★★★★★｜★★★☆☆｜★★★★★｜★★★★☆\n垂直AI应用D：★★☆☆☆｜★★★★★｜★★☆☆☆｜★☆☆☆☆｜★★★☆☆｜★★★★★\nNova Workspace：★★★★☆｜★★★★☆｜★★★★★｜★★★★☆｜★★★★☆｜★★☆☆☆\n评分属于内部初步分析，不是客观行业排名。\n\npage8：重点应用场景与商业化测算\n场景｜典型用户｜使用频率｜核心价值\nMeeting｜企业团队、项目组｜高频｜会议总结、待办提取和跟进\nDocuments｜产品、实施、客服团队｜高频｜跨文档检索和知识复用\nSales Brief｜销售和售前团队｜中高频｜客户资料整理和方案准备\nCustomer Support｜客服和客户成功团队｜高频｜问题总结和历史案例检索\nProject Review｜项目经理和管理层｜中频｜项目状态、风险和行动复盘\nThird-party Modules｜企业开发者｜不确定｜扩展特定行业与工作场景\n商业化目标情景：Meeting 320个团队、399元、收入127,680元、成本51,100元、毛利润76,580元；Documents 240、499元、119,760元、41,900元、77,860元；Sales Brief 120、699元、83,880元、29,400元、54,480元；Customer Support 100、899元、89,900元、35,900元、54,000元；Project Review 80、599元、47,920元、16,800元、31,120元；第三方模块160、299元、47,840元、38,300元、9,540元；合计1,020个团队、收入517,000元、成本213,400元、毛利润303,600元。以上均为内部目标情景，不是已实现结果。\n\npage9：2026 H2运营规划\n传统业务：H2目标新增经营成果500万至800万元；优先回款和正向现金贡献；完成推迟的5个续费项目；统一安全审查材料；减少低毛利、长账期和高度定制项目；不进行大规模扩张。\nNova业务：扩大测试范围；优化首次使用和团队邀请；验证四周留存；测试两种团队套餐；建立AI、存储和支持成本记录；推进设计伙伴转正式付费客户。\nDeveloper Toolkit：开放模块开发文档；招募外部测试开发者；验证审核、安装和权限流程；暂不承诺公开应用市场日期。\n\npage10：Nova开发者挑战计划\n内部目标：招募500名开发者；形成80个可运行模块；筛选12个展示模块；孵化3至5个具备持续维护可能性的模块；引入模型、工具和云服务合作伙伴；扩大英文开发者社区。\n同时验证模块供给、独立开发与发布、权限和成本机制、用户增长、持续维护及对外展示价值。以上均为目标，不得写成已完成成果。\n\npage11：H2关键里程碑与董事会决策\n7—8月：产品新手引导改版、扩大测试、安全材料标准化、启动挑战筹备。\n9—10月：测试套餐和付费意愿、观察四周留存和支持成本、启动开发者挑战、评估设计伙伴转付费。\n11—12月：完成挑战、复盘留存收入和单位经济、决定2027年扩大投入、缩小范围或延长验证。\n需要董事会确认：是否继续双线经营；是否批准H2最多新增6个关键岗位；是否确认Nova验证预算边界；是否将10月底设置为阶段性决策节点；是否允许Developer Toolkit进入外部测试。\n结束语必须是：“守住经营基本盘，用真实验证决定下一阶段增长。”\n整份PPT必须为11页，不得增加致谢页、附录或额外总结页。",
+      "provided_requirements": {
+        "version": 1,
+        "status": "confirmed",
+        "source": {
+          "brief": "根据以下文字制作PPT。以下公司、产品和数字全部为虚构内容，仅用于测试PPT生成能力。必须保留页面顺序、已提供数字、表格字段和管理层判断，不要添加外部资料。\n\npage1：封面\n星桥协同科技 2026 H1 董事会经营汇报\n核心业务稳健经营，新产品进入市场验证阶段\n2026年7月\n\npage2：目录\n1. H1经营结论\n2. 核心业务表现\n3. Nova协作平台进展\n4. H2经营规划\n5. 董事会决策事项\n\npage3：2026 H1核心结论与业务分化\n传统企业软件业务：【稳定交付 · 控制风险 · 保障现金流】\n- 聚焦大型企业及高续费可能性的存量客户；\n- 优先承接毛利和回款条件相对明确的项目；\n- 控制非标准定制和无明确预算的售前投入；\n- 不依赖大规模人员扩张；\n- 继续承担公司收入和现金流基本盘。\nNova智能协作业务：【产品完成 · 用户试用 · 场景验证 · 准备商业化】\n- Nova Workspace第一版产品形态已经形成；\n- 已完成文档检索、会议总结、任务提取和团队知识空间；\n- 累计注册试用用户约1,240名；注册团队86个；完成首次使用32个；连续使用四周13个；付费设计伙伴4个；\n- H2进入留存、定价、单位经济和商业化验证阶段。\n管理层判断：传统业务负责经营安全，Nova业务承担未来增长验证。该判断属于内部经营判断。\n\npage4：2026 H1核心经营数字总览\n单位：万元。H1确认收入2,680；H1毛利润1,126；H1经营利润184；H1回款2,230；期末应收账款860；期末现金余额1,920；月均现金运营支出约210。当前未提供未来回款和计划支出，因此不得计算现金可支撑月份。\nNova业务：注册试用用户约1,240名；注册团队86个；完成首次使用32个；连续使用四周13个；付费设计伙伴4个；内部功能模块9个；开发者测试社区约180人；当前仍未形成可重复的规模化收入。\n\npage5：传统企业软件业务现状\n期初客户74家；H1新增8家；H1流失5家；期末77家；大型企业客户贡献约68%的合同收入；5个续费项目推迟到H2；3个客户提出额外数据安全审查要求。\n经营原则：优先续费和扩容；减少无法标准化交付的定制项目；对长账期项目设置更严格审批；建立项目级毛利和回款复盘；控制新增交付人员。\n当前问题：大型客户销售周期延长；安全审查材料不统一；部分项目重复制作交付文档；销售、实施和客服之间的信息交接依赖人工。\n\npage6：Nova产品架构与商业逻辑\nNova Workspace包含会议录音与文字整理、自动摘要和待办提取、团队文档检索、项目知识空间、任务与责任人跟踪、团队权限和内容隔离。\nNova Modules包括Meeting、Documents、Tasks、Sales Brief、Customer Support、Project Review。\nDeveloper Toolkit提供模块开发框架、模型与工具调用接口、测试环境、模块发布与审核、团队内部分发、使用量和成本记录。\n长期商业模式假设：团队订阅和高级功能；用量型AI Credits；第三方模块收入分成；企业安全、管理和私有部署。均不得写成已实现收入。\n\npage7：同类产品路线与Nova的位置\n表头：产品路线｜任务执行｜独立模块｜持续工作空间｜开发者扩展｜企业管理｜当前成熟度\n通用AI助手A：★★★★★｜★★☆☆☆｜★★★☆☆｜★★☆☆☆｜★★★☆☆｜★★★★★\n自动化平台B：★★★★☆｜★★★☆☆｜★★★★★｜★★★★★｜★★☆☆☆｜★★★★★\n企业知识平台C：★★★☆☆｜★★★☆☆｜★★★★★｜★★★☆☆｜★★★★★｜★★★★☆\n垂直AI应用D：★★☆☆☆｜★★★★★｜★★☆☆☆｜★☆☆☆☆｜★★★☆☆｜★★★★★\nNova Workspace：★★★★☆｜★★★★☆｜★★★★★｜★★★★☆｜★★★★☆｜★★☆☆☆\n评分属于内部初步分析，不是客观行业排名。\n\npage8：重点应用场景与商业化测算\n场景｜典型用户｜使用频率｜核心价值\nMeeting｜企业团队、项目组｜高频｜会议总结、待办提取和跟进\nDocuments｜产品、实施、客服团队｜高频｜跨文档检索和知识复用\nSales Brief｜销售和售前团队｜中高频｜客户资料整理和方案准备\nCustomer Support｜客服和客户成功团队｜高频｜问题总结和历史案例检索\nProject Review｜项目经理和管理层｜中频｜项目状态、风险和行动复盘\nThird-party Modules｜企业开发者｜不确定｜扩展特定行业与工作场景\n商业化目标情景：Meeting 320个团队、399元、收入127,680元、成本51,100元、毛利润76,580元；Documents 240、499元、119,760元、41,900元、77,860元；Sales Brief 120、699元、83,880元、29,400元、54,480元；Customer Support 100、899元、89,900元、35,900元、54,000元；Project Review 80、599元、47,920元、16,800元、31,120元；第三方模块160、299元、47,840元、38,300元、9,540元；合计1,020个团队、收入517,000元、成本213,400元、毛利润303,600元。以上均为内部目标情景，不是已实现结果。\n\npage9：2026 H2运营规划\n传统业务：H2目标新增经营成果500万至800万元；优先回款和正向现金贡献；完成推迟的5个续费项目；统一安全审查材料；减少低毛利、长账期和高度定制项目；不进行大规模扩张。\nNova业务：扩大测试范围；优化首次使用和团队邀请；验证四周留存；测试两种团队套餐；建立AI、存储和支持成本记录；推进设计伙伴转正式付费客户。\nDeveloper Toolkit：开放模块开发文档；招募外部测试开发者；验证审核、安装和权限流程；暂不承诺公开应用市场日期。\n\npage10：Nova开发者挑战计划\n内部目标：招募500名开发者；形成80个可运行模块；筛选12个展示模块；孵化3至5个具备持续维护可能性的模块；引入模型、工具和云服务合作伙伴；扩大英文开发者社区。\n同时验证模块供给、独立开发与发布、权限和成本机制、用户增长、持续维护及对外展示价值。以上均为目标，不得写成已完成成果。\n\npage11：H2关键里程碑与董事会决策\n7—8月：产品新手引导改版、扩大测试、安全材料标准化、启动挑战筹备。\n9—10月：测试套餐和付费意愿、观察四周留存和支持成本、启动开发者挑战、评估设计伙伴转付费。\n11—12月：完成挑战、复盘留存收入和单位经济、决定2027年扩大投入、缩小范围或延长验证。\n需要董事会确认：是否继续双线经营；是否批准H2最多新增6个关键岗位；是否确认Nova验证预算边界；是否将10月底设置为阶段性决策节点；是否允许Developer Toolkit进入外部测试。\n结束语必须是：“守住经营基本盘，用真实验证决定下一阶段增长。”\n整份PPT必须为11页，不得增加致谢页、附录或额外总结页。"
+        },
+        "candidates": {
+          "audience": [
+            {
+              "label": "星桥协同科技董事会",
+              "description": "负责审议公司经营表现、双线战略、资源投入和阶段性决策的董事及管理层。"
+            }
+          ],
+          "purpose": [
+            {
+              "label": "2026 H1经营汇报与H2决策支持",
+              "description": "汇报传统业务、Nova业务、商业模式假设、内部目标、开发者计划、H2里程碑和董事会决策事项。"
+            }
+          ],
+          "desired_outcome": [
+            {
+              "label": "支持董事会确认双线经营和Nova验证边界",
+              "description": "在区分实际结果、内部目标和管理层判断的基础上，决定H2资源与阶段性决策机制。"
+            }
+          ],
+          "slide_count": [
+            11
+          ],
+          "output_language": [
+            "Chinese"
+          ],
+          "visual_tone": [
+            {
+              "label": "严谨、清晰的董事会经营分析风格",
+              "description": "适合展示财务数据、业务架构、对比表、商业化测算、里程碑和决策事项。"
+            }
+          ]
+        },
+        "selections": {
+          "audience": {
+            "label": "星桥协同科技董事会",
+            "description": "负责审议公司经营表现、双线战略、资源投入和阶段性决策的董事及管理层。"
+          },
+          "purpose": {
+            "label": "2026 H1经营汇报与H2决策支持",
+            "description": "汇报传统业务、Nova业务、商业模式假设、内部目标、开发者计划、H2里程碑和董事会决策事项。"
+          },
+          "desired_outcome": {
+            "label": "支持董事会确认双线经营和Nova验证边界",
+            "description": "在区分实际结果、内部目标和管理层判断的基础上，决定H2资源与阶段性决策机制。"
+          },
+          "slide_count": 11,
+          "output_language": "Chinese",
+          "visual_tone": {
+            "label": "严谨、清晰的董事会经营分析风格",
+            "description": "适合展示财务数据、业务架构、对比表、商业化测算、里程碑和决策事项。"
+          },
+          "visual_style_preset": null
+        },
+        "research": {
+          "web": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: external Web Research is intentionally disabled.",
+            "enabled": false
+          },
+          "images": {
+            "recommended": false,
+            "reason": "Outline evaluation fixture: Image Research is intentionally disabled.",
+            "enabled": false
+          }
+        },
+        "updated_at": "2026-08-26T00:00:00.000Z",
+        "confirmed_at": "2026-08-26T00:00:00.000Z"
+      }
+    }
+  ]
+}

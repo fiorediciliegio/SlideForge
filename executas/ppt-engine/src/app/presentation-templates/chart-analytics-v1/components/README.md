@@ -1,0 +1,96 @@
+# Dark Analytics Charts 组件索引
+
+本目录存放 `chart-analytics-v1` 模板组的跨页复用视觉 Module。组件只负责稳定视觉单元和导出友好的结构；页面结构、字段映射和单页编排应放在 `blueprints/*.tsx` 或派生后的 `slides/*.tsx` 中。
+
+## 使用原则
+
+- 组件只做纯渲染，不内置业务文案。
+- 关键标题、主体名称、报告范围、发布方、日期等内容必须保持真实文本节点。
+- JSON 只承载内容，不承载页面结构决策。
+- 1280x720 是稳定布局基准；固定格式元素应给出明确宽高或 min/max 约束。
+- 不依赖 PPT 导出不稳定的 CSS 语义：不要用 `letter-spacing` 表达大字距标签，不要用负坐标或越界 shape 表达装饰，不要手写小行高 italic `vs` 文本盒。
+- 封面上的圆环装饰保留在封面蓝图里，不抽成通用组件；但必须使用画布内安全坐标，避免 PPT shape 越界。
+- 不新增只服务单页的组件；单页特殊结构直接写在对应 blueprint 或 slide 中。
+- 如果页面视觉和 PPT 导出发生冲突，优先选择 PPT 稳定结构，再近似还原 HTML 视觉意图。
+
+## 组件总览
+
+| Module | 类型 | 主要用途 | 适用页 |
+| --- | --- | --- | --- |
+| `AnalyticsCanvas` | 页面框架 | 固定 1280x720 画布、深色/浅色背景和基础字体 | 封面、结束页、后续内容页 |
+| `DarkAnalyticsBackdrop` | 背景层 | 图片洗底、深色遮罩、蓝色叠色和顶部强调线 | 封面、章节重置、thank-you 等低密度暗色页 |
+| `ExpandedLabel` | 标题原语 | PPT-safe 大字距 eyebrow / 系列标签 | 封面、章节页、结束页 |
+| `ComparisonDivider` | 标题原语 | PPT-safe `vs` 对比分隔行，包含左右线和基线补偿 | 双主体封面、对比章节页 |
+| `ComparisonHeroTitle` | 标题组合 | 上下双主体大标题 + `ComparisonDivider` | 对比报告封面 |
+| `ReportMetaFooter` | 页脚原语 | 左侧发布方/署名和右侧日期/版本 | 封面、报告收束页、章节重置页 |
+| `ExecutiveHeader` | 内容页页眉 | 深色报告页眉、eyebrow、标题、右侧元信息和图标 | 执行摘要、仪表盘、图表内容页 |
+| `AnalyticsSourceFooter` | 内容页脚 | 来源、保密标签、页码或 slide label 的稳定单行页脚 | 图表页、构成对比页、仪表盘页 |
+| `AnalyticsCardShell` | 卡片容器 | 白色或深色分析卡片、边框、阴影、顶部强调色 | KPI 卡、图表卡、洞察卡 |
+| `MetricHighlightCard` | 指标组合 | 大数字 KPI + 进度条、双值块或状态徽章 | 摘要仪表盘、KPI overview |
+| `ProgressMeter` | 度量原语 | 固定高度进度条 | KPI、成熟度、占比、状态面板 |
+| `StatusBadge` | 状态原语 | 短状态标签 | 风险、趋势、优先级、阶段标签 |
+| `ChartPanelShell` | 图表容器 | 图表标题、副标题、legend 和稳定内容区；legend label 使用显式文本节点便于 PPT 抽取 | Recharts 图表页 |
+| `AnalyticsGroupedBarChart` | 图表组件 | Recharts 分组柱状图，通过 DOM/SVG 直接参与导出 | 对比指标、采用率、结构占比 |
+| `AnalyticsLineChart` | 图表组件 | Recharts 多系列折线图，支持负值区间、0% 基线和截图导出边界 | 趋势对比、历史波动、长周期指标 |
+| `AnalyticsDonutChart` | 图表组件 | Recharts 环形构成图，中心指标固定在图内，自带截图导出边界 | 结构占比、年龄分布、市场份额、组合构成 |
+| `AnalyticsImageShowcasePanel` | 图片展示组件 | 主图片、标题、说明、来源、加载失败占位和 cover/contain 适配 | 图片证据页、截图页、地图/照片/产品图展示页 |
+| `TrendStatCard` | 指标组合 | 主体标签、状态徽章、两项关键指标和短解释 | 趋势对比、主体画像、左侧解释栏 |
+| `DarkInsightCard` | 深色洞察卡 | 标签、标题、短解释和背景图标水印 | 趋势解释、收束洞察、低密度解读卡 |
+| `StructureLegendBar` | 图例组合 | 居中胶囊图例，保留可编辑 label 文本 | 构成对比、份额对比、环图页 |
+| `StructureComparisonCard` | 指标+图表组合 | 实体身份、总量、环形结构图、中心指标和底部强调指标 | 双实体结构占比对比页 |
+| `AnalyticsIcons` | 图标原语 | 当前主题使用的轻量线性图标集合 | 页眉、KPI、洞察、面板标题 |
+| `OutlookPanel` | 深色洞察面板 | 时间段列表 + 底部进度指标 | 未来展望、风险判断、行动窗口 |
+| `CircularComparisonMetricCard` | 双主体环形指标卡 | 一个指标下的两组环形进度、主次强调和底部简短结论 | 技术能力、采用率、成熟度、覆盖率等双主体指标比较 |
+| `AdvantageBarList` | 双向优势条列表 | 左右主体分别从条形两端伸展，展示多个领域的相对优势 | sector dominance、能力矩阵、份额比较 |
+| `StrategicInsightPanel` | 战略洞察组合 | 深色洞察卡 + 底部关键统计卡 | 战略分歧、模式对比、行动启示 |
+| `ComparisonMatrixBoard` | 双实体矩阵 | 左侧维度列 + 两个实体列 + 行级对比观点 | 商业文化、运营模式、伙伴实践、定性 benchmark |
+| `HorizontalMilestoneTimeline` | 横向时间轴 | 贯穿轴、节点、竖向连接线和可编辑里程碑卡片 | 历史脉络、政策演进、项目路线图、关键转折点 |
+| `SummaryInsightCard` | 纵向总结卡 | 图标、编号、标题、短解释和 2-3 条对比/结论条目 | 结论页、key takeaways、执行摘要收束 |
+| `SummaryOutcomeCard` | 横向总结卡 | 图标、短结论、标签组或 kicker，可切换浅色/深色强调 | 结论页、建议页、未来展望、战略含义 |
+
+## 回收决策
+
+| 重复模式 | 处理 | 说明 |
+| --- | --- | --- |
+| 页面画布、暗色背景、内容页页眉、来源页脚、报告元信息页脚 | 上移到 `components/` | 跨封面、内容页、总结页和收束页复用，是稳定页面原语。 |
+| 白色/深色卡片壳、图表壳、KPI 卡、洞察面板 | 上移到 `components/` | 多个内容页都依赖相同边框、阴影、圆角、标题区和内容区规则。 |
+| 分组柱图、折线图、环图、双主体环形指标、优势条、结构对比卡 | 上移到 `components/` | 图表和对比模块需要稳定截图边界、文本抽取边界和固定尺寸约束。 |
+| 主图片、截图、地图、照片或视觉研究素材面板 | 上移到 `components/` | 图片加载、失败占位、标题/说明/来源和 fit 适配会被图片证据页、案例页和产品图页重复使用，不属于单页特化结构。 |
+| 双实体矩阵、横向里程碑时间轴、总结洞察卡、总结结果卡 | 上移到 `components/` | 新增蓝图和后续相似页面可直接复用这些布局系统。 |
+| 封面圆环装饰、结束页两个 callout | 留在对应 blueprint | 当前只服务单一页面，不应制造泛化组件。 |
+
+## Slot 适配
+
+| Slot 类型 | 推荐 Module | 不适合 |
+| --- | --- | --- |
+| `page-shell` | `AnalyticsCanvas` | 业务卡片、图表本体 |
+| `dark-background` | `DarkAnalyticsBackdrop` | 内容页普通浅色背景、复杂业务逻辑 |
+| `eyebrow-label` | `ExpandedLabel` | 长句、正文段落、超过 48 字的说明 |
+| `comparison-title` | `ComparisonHeroTitle` | 三个以上主体、长标题、普通内容页标题 |
+| `comparison-divider` | `ComparisonDivider` | 无对比语义的普通分割线 |
+| `footer-meta` | `ReportMetaFooter` | 多列联系方式、长版权声明、正文内容 |
+| `body-header` | `ExecutiveHeader` | 封面 hero 标题、章节大标题 |
+| `source-footer` | `AnalyticsSourceFooter` | 多段免责声明、正文解释、复杂联系方式 |
+| `metric-card` | `MetricHighlightCard` | 长正文说明、超过三组维度的矩阵 |
+| `chart-shell` | `ChartPanelShell` + `AnalyticsGroupedBarChart` / `AnalyticsLineChart` | 单页临时手写 Chart.js、纯装饰图 |
+| `composition-donut` | `StructureLegendBar` + `StructureComparisonCard` / `AnalyticsDonutChart` | 超过两个对象的拥挤环图、需要长解释段落的结构页 |
+| `image-showcase` | `AnalyticsImageShowcasePanel` | 多图相册、图片仅作装饰、需要复杂表格解释的页面 |
+| `trend-stat-card` | `TrendStatCard` | 长正文、超过两项核心指标的详细表格 |
+| `dark-insight-panel` | `OutlookPanel` / `DarkInsightCard` | 需要大段正文或复杂表格的内容 |
+| `paired-ring-metrics` | `CircularComparisonMetricCard` | 单实体 KPI、需要精确坐标轴的趋势图 |
+| `advantage-bars` | `AdvantageBarList` | 时间序列、超过两个主体的堆叠比较 |
+| `strategic-insight-summary` | `StrategicInsightPanel` | 长篇文本、复杂多列表格 |
+| `comparison-matrix` | `ComparisonMatrixBoard` | 超过两个主体、需要精确数值坐标轴的图表、长段落表格 |
+| `horizontal-timeline` | `HorizontalMilestoneTimeline` | 超过六个节点的详细年表、需要精确数值坐标轴的趋势图 |
+| `takeaway-card` | `SummaryInsightCard` | 长正文、超过三条结论、复杂图表 |
+| `summary-outcome` | `SummaryOutcomeCard` | 需要矩阵、时间轴或数值坐标轴的详细分析 |
+| `decoration` | 封面蓝图内的安全坐标圆环 | 任何关键事实、数字或结论 |
+
+## AI 修改规则
+
+- 改某一页的布局、列宽、栅格、字段映射：优先改 `slides/*.tsx`。
+- 改跨页共享的颜色、字体、阴影、圆角：改 `theme/tokens.ts`。
+- 改跨页共享的稳定视觉单元：改或新增 `components/*.tsx`，并同步更新本 README。
+- 实现图表页时，优先新增可复用图表容器和 Recharts 图表 Module，不要在 blueprint 中临时手写 Chart.js 或源 HTML 图表结构。
+- Recharts 图表组件应保持 SVG 和周边 DOM 结构清晰；图表标题、legend、解释文本放在图表容器外层，便于转换器分别处理。
+- 复用阈值：内容页脚、图表壳、跨页卡片、洞察面板、对比卡和时间线面板放在 `components/`；只服务一个源页的装饰、特殊 grid 和字段编排留在对应 blueprint。

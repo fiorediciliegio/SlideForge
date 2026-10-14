@@ -1,0 +1,13 @@
+{
+  "case_id": "B-023",
+  "size_class": "长",
+  "target_input_tokens": 15600,
+  "estimated_outline_input_tokens": 15679,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": true,
+  "image_enabled": true,
+  "attachment_mode": "No attachment",
+  "attachment_types": "None",
+  "content_strategies": "null",
+  "evaluation_risks": "1. Inventing temperature reductions; 2. Using undated pilot examples; 3. Treating correlation as causal proof; 4. Reusing generic skyline images; 5. Failing to explain climate and neighbourhood context."
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Proposal — Maple Ward Commons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Maple Ward Commons — proposal design system
+   Palette: white / off-white paper, ink text, single green accent + soft green tint.
+   Type: Source Serif 4 (display) + Archivo (UI/labels/data). Radius 4px. 1px rules. */
+
+:root{
+  --paper:      #FFFFFF;
+  --paper-2:    #F6F7F4;
+  --paper-3:    #EEF0EB;
+  --line:       #E2E6E1;
+  --line-2:     #C6CEC6;
+  --ink:        #131C17;
+  --ink-2:      #55615A;
+  --ink-3:      #86908A;
+  --green:      #1E7A46;
+  --green-2:    #3FA06A;
+  --green-3:    #6FBE8E;
+  --green-4:    #A8D8BC;
+  --green-5:    #D6EADE;
+  --green-soft: #E7F1EA;
+  --r: 4px;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--paper);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---- typography ---- */
+.k{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+    letter-spacing:.20em; text-transform:uppercase; color:var(--green); margin:0; }
+.d2{ font-family:'Source Serif 4',Georgia,serif; font-size:92px; font-weight:400;
+     line-height:1.10; letter-spacing:-.02em; color:var(--ink); margin:0; }
+.d1{ font-family:'Source Serif 4',Georgia,serif; font-size:76px; font-weight:400;
+     line-height:1.12; letter-spacing:-.015em; color:var(--ink); margin:0; }
+.h1{ font-family:'Source Serif 4',Georgia,serif; font-size:54px; font-weight:400;
+     line-height:1.16; letter-spacing:-.01em; color:var(--ink); margin:0; }
+.h2{ font-family:'Archivo',sans-serif; font-size:30px; font-weight:600;
+     line-height:1.30; color:var(--ink); margin:0; }
+.h3{ font-family:'Archivo',sans-serif; font-size:25px; font-weight:600;
+     line-height:1.34; color:var(--ink); margin:0; }
+.lead{ font-family:'Archivo',sans-serif; font-size:28px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.p{ font-family:'Archivo',sans-serif; font-size:24px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.sm{ font-family:'Archivo',sans-serif; font-size:22px; font-weight:400;
+     line-height:1.45; color:var(--ink-2); margin:0; }
+.lab{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+     letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.note{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:400;
+     line-height:1.4; color:var(--ink-3); margin:0; }
+.big{ font-family:'Source Serif 4',Georgia,serif; font-size:88px; font-weight:400;
+     line-height:1; letter-spacing:-.02em; color:var(--green); margin:0; }
+.quote{ font-family:'Source Serif 4',Georgia,serif; font-size:28px; font-weight:400;
+     font-style:italic; line-height:1.44; color:var(--ink); margin:0; }
+.g{ color:var(--green); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+
+/* ---- tables ---- */
+table.t{ width:100%; border-collapse:collapse; font-family:'Archivo',sans-serif; }
+table.t th{ font-size:20px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); text-align:left; padding:0 18px 14px 0; border-bottom:1px solid var(--line-2); }
+table.t td{ font-size:22px; font-weight:400; color:var(--ink-2); text-align:left;
+    padding:16px 18px 16px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+table.t td.strong{ font-weight:600; color:var(--ink); }
+table.t td.num{ font-variant-numeric:tabular-nums; font-weight:600; color:var(--ink); }
+table.t tr.last td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="04 Solution Overview" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:100px; width:900px; z-index:10;">
+    <p class="k">04 — The Proposal</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:150px; width:1000px; z-index:10;">
+    <h1 class="h1">One site, five zones, built in the order residents ranked them.</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1220px; top:162px; width:580px; z-index:10;">
+    <p class="p">A shaded, staffed, resident-governed commons on the vacant city parcel at Maple &amp; 8th — open dawn to dusk, free to enter, every day.</p>
+  </div>
+
+  <!-- site plan -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:344px; width:940px; height:566px; background:var(--paper-2); border-radius:4px; z-index:1; overflow:hidden;">
+
+    <!-- zone 1 shade grove -->
+    <div style="position:absolute; left:56px; top:56px; width:390px; height:236px; background:var(--green); border-radius:4px;">
+      <div style="position:absolute; left:24px; top:22px; width:44px; height:44px; border-radius:50%; background:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:22px; font-weight:700; color:#1E7A46;">1</div>
+      <div style="position:absolute; left:24px; bottom:22px; font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#FFFFFF;">Shade grove</div>
+    </div>
+
+    <!-- zone 2 play -->
+    <div style="position:absolute; left:474px; top:56px; width:410px; height:236px; background:var(--green-4); border-radius:4px;">
+      <div style="position:absolute; left:24px; top:22px; width:44px; height:44px; border-radius:50%; background:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:22px; font-weight:700; color:#1E7A46;">2</div>
+      <div style="position:absolute; left:24px; bottom:22px; font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17;">Play &amp; court</div>
+    </div>
+
+    <!-- zone 3 pavilion -->
+    <div style="position:absolute; left:56px; top:320px; width:280px; height:190px; background:#FFFFFF; border:2px solid var(--green); border-radius:4px;">
+      <div style="position:absolute; left:22px; top:20px; width:44px; height:44px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:22px; font-weight:700; color:#FFFFFF;">3</div>
+      <div style="position:absolute; left:22px; bottom:20px; font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17;">Pavilion</div>
+    </div>
+
+    <!-- zone 4 growing plots -->
+    <div style="position:absolute; left:364px; top:320px; width:236px; height:190px; background:var(--green-5); border-radius:4px;">
+      <div style="position:absolute; left:22px; top:20px; width:44px; height:44px; border-radius:50%; background:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:22px; font-weight:700; color:#1E7A46;">4</div>
+      <div style="position:absolute; left:22px; bottom:20px; font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17;">Growing plots</div>
+    </div>
+
+    <!-- zone 5 plaza -->
+    <div style="position:absolute; left:628px; top:320px; width:256px; height:190px; background:var(--paper-3); border-radius:4px;">
+      <div style="position:absolute; left:22px; top:20px; width:44px; height:44px; border-radius:50%; background:var(--green); display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:22px; font-weight:700; color:#FFFFFF;">5</div>
+      <div style="position:absolute; left:22px; bottom:20px; font-family:'Archivo',sans-serif; font-size:24px; font-weight:600; color:#131C17;">Entry plaza</div>
+    </div>
+
+    <!-- street labels -->
+    <div style="position:absolute; left:56px; top:526px; font-family:'Archivo',sans-serif; font-size:17px; font-weight:600; letter-spacing:.18em; color:var(--ink-3);">8TH AVENUE — MAIN ENTRANCE</div>
+    <div style="position:absolute; left:930px; top:56px; font-family:'Archivo',sans-serif; font-size:17px; font-weight:600; letter-spacing:.18em; color:var(--ink-3); transform:rotate(90deg); transform-origin:left top;">MAPLE STREET</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:296px; width:940px; z-index:10;">
+    <p class="lab">Concept site plan · 1.4 acres · Maple &amp; 8th</p>
+  </div>
+
+  <!-- zone descriptions -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:296px; width:680px; z-index:10;">
+    <p class="lab">What goes in each zone</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:344px; width:680px; z-index:10;">
+    <div style="display:flex; flex-direction:column;">
+
+      <div style="display:flex; gap:22px; padding:0 0 22px 0; border-bottom:1px solid var(--line);">
+        <span style="font-family:'Source Serif 4',Georgia,serif; font-size:32px; line-height:1.1; color:#1E7A46; width:34px; flex:none;">1</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:23px; line-height:1.42; color:#55615A;"><strong style="color:#131C17;">Shade grove.</strong> 34 semi-mature native trees, permeable paths, 18 benches.</span>
+      </div>
+
+      <div style="display:flex; gap:22px; padding:22px 0; border-bottom:1px solid var(--line);">
+        <span style="font-family:'Source Serif 4',Georgia,serif; font-size:32px; line-height:1.1; color:#1E7A46; width:34px; flex:none;">2</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:23px; line-height:1.42; color:#55615A;"><strong style="color:#131C17;">Play &amp; court.</strong> Under-12 play structure, half-court, sightlines from all sides.</span>
+      </div>
+
+      <div style="display:flex; gap:22px; padding:22px 0; border-bottom:1px solid var(--line);">
+        <span style="font-family:'Source Serif 4',Georgia,serif; font-size:32px; line-height:1.1; color:#1E7A46; width:34px; flex:none;">3</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:23px; line-height:1.42; color:#55615A;"><strong style="color:#131C17;">Pavilion.</strong> 90 m² all-weather room, washrooms, kitchenette, tool library.</span>
+      </div>
+
+      <div style="display:flex; gap:22px; padding:22px 0; border-bottom:1px solid var(--line);">
+        <span style="font-family:'Source Serif 4',Georgia,serif; font-size:32px; line-height:1.1; color:#1E7A46; width:34px; flex:none;">4</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:23px; line-height:1.42; color:#55615A;"><strong style="color:#131C17;">Growing plots.</strong> 40 raised beds, 12 reserved for the food bank harvest.</span>
+      </div>
+
+      <div style="display:flex; gap:22px; padding:22px 0 0 0;">
+        <span style="font-family:'Source Serif 4',Georgia,serif; font-size:32px; line-height:1.1; color:#1E7A46; width:34px; flex:none;">5</span>
+        <span style="font-family:'Archivo',sans-serif; font-size:23px; line-height:1.42; color:#55615A;"><strong style="color:#131C17;">Entry plaza.</strong> Step-free entrance, noticeboard, market stalls on Saturdays.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:966px; width:1680px; height:1px; background:var(--line); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:900px; z-index:10;">
+    <p class="note">Maple Ward Commons · Community Improvement Project Proposal</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:990px; width:200px; z-index:10;">
+    <p class="note" style="text-align:right;">04 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

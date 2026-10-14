@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Timeline, Rollout &amp; Risks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Maple Ward Commons — proposal design system
+   Palette: white / off-white paper, ink text, single green accent + soft green tint.
+   Type: Source Serif 4 (display) + Archivo (UI/labels/data). Radius 4px. 1px rules. */
+
+:root{
+  --paper:      #FFFFFF;
+  --paper-2:    #F6F7F4;
+  --paper-3:    #EEF0EB;
+  --line:       #E2E6E1;
+  --line-2:     #C6CEC6;
+  --ink:        #131C17;
+  --ink-2:      #55615A;
+  --ink-3:      #86908A;
+  --green:      #1E7A46;
+  --green-2:    #3FA06A;
+  --green-3:    #6FBE8E;
+  --green-4:    #A8D8BC;
+  --green-5:    #D6EADE;
+  --green-soft: #E7F1EA;
+  --r: 4px;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--paper);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---- typography ---- */
+.k{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+    letter-spacing:.20em; text-transform:uppercase; color:var(--green); margin:0; }
+.d2{ font-family:'Source Serif 4',Georgia,serif; font-size:92px; font-weight:400;
+     line-height:1.10; letter-spacing:-.02em; color:var(--ink); margin:0; }
+.d1{ font-family:'Source Serif 4',Georgia,serif; font-size:76px; font-weight:400;
+     line-height:1.12; letter-spacing:-.015em; color:var(--ink); margin:0; }
+.h1{ font-family:'Source Serif 4',Georgia,serif; font-size:54px; font-weight:400;
+     line-height:1.16; letter-spacing:-.01em; color:var(--ink); margin:0; }
+.h2{ font-family:'Archivo',sans-serif; font-size:30px; font-weight:600;
+     line-height:1.30; color:var(--ink); margin:0; }
+.h3{ font-family:'Archivo',sans-serif; font-size:25px; font-weight:600;
+     line-height:1.34; color:var(--ink); margin:0; }
+.lead{ font-family:'Archivo',sans-serif; font-size:28px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.p{ font-family:'Archivo',sans-serif; font-size:24px; font-weight:400;
+     line-height:1.50; color:var(--ink-2); margin:0; }
+.sm{ font-family:'Archivo',sans-serif; font-size:22px; font-weight:400;
+     line-height:1.45; color:var(--ink-2); margin:0; }
+.lab{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:600;
+     letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.note{ font-family:'Archivo',sans-serif; font-size:20px; font-weight:400;
+     line-height:1.4; color:var(--ink-3); margin:0; }
+.big{ font-family:'Source Serif 4',Georgia,serif; font-size:88px; font-weight:400;
+     line-height:1; letter-spacing:-.02em; color:var(--green); margin:0; }
+.quote{ font-family:'Source Serif 4',Georgia,serif; font-size:28px; font-weight:400;
+     font-style:italic; line-height:1.44; color:var(--ink); margin:0; }
+.g{ color:var(--green); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+
+/* ---- tables ---- */
+table.t{ width:100%; border-collapse:collapse; font-family:'Archivo',sans-serif; }
+table.t th{ font-size:20px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-3); text-align:left; padding:0 18px 14px 0; border-bottom:1px solid var(--line-2); }
+table.t td{ font-size:22px; font-weight:400; color:var(--ink-2); text-align:left;
+    padding:16px 18px 16px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+table.t td.strong{ font-weight:600; color:var(--ink); }
+table.t td.num{ font-variant-numeric:tabular-nums; font-weight:600; color:var(--ink); }
+table.t tr.last td{ border-bottom:none; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="09 Roadmap &amp; Risks" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:100px; width:900px; z-index:10;">
+    <p class="k">09 — Timeline &amp; Risks</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:150px; width:1180px; z-index:10;">
+    <h1 class="h1">Open in nine months. Fully built in eighteen.</h1>
+  </div>
+
+  <!-- timeline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:308px; width:1680px; z-index:10;">
+    <p class="lab">Delivery roadmap · from grant approval</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:404px; width:1680px; height:3px; background:var(--line-2); z-index:1;"></div>
+
+  <!-- phase 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:392px; width:27px; height:27px; border-radius:50%; background:var(--green); z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:352px; width:380px; z-index:10;">
+    <p class="k" style="font-size:19px;">Months 1–3</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:452px; width:370px; z-index:10;">
+    <h3 class="h3">Permits &amp; lease</h3>
+    <p class="sm" style="margin-top:12px; line-height:1.42;">Sign the 25-year lease, close remediation permits, appoint the stewardship board.</p>
+    <p class="note" style="margin-top:16px;">Milestone · lease executed</p>
+  </div>
+
+  <!-- phase 2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:540px; top:392px; width:27px; height:27px; border-radius:50%; background:var(--green); z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:540px; top:352px; width:380px; z-index:10;">
+    <p class="k" style="font-size:19px;">Months 4–8</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:540px; top:452px; width:370px; z-index:10;">
+    <h3 class="h3">Clear, plant, pave</h3>
+    <p class="sm" style="margin-top:12px; line-height:1.42;">Site clearing, 34 trees planted, paths and lighting in, four resident build days.</p>
+    <p class="note" style="margin-top:16px;">Milestone · grove planted</p>
+  </div>
+
+  <!-- phase 3 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:388px; width:35px; height:35px; border-radius:50%; background:#FFFFFF; border:5px solid var(--green); z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:352px; width:380px; z-index:10;">
+    <p class="k" style="font-size:19px;">Month 9</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:452px; width:370px; z-index:10;">
+    <h3 class="h3">Soft opening</h3>
+    <p class="sm" style="margin-top:12px; line-height:1.42;">Grove, plaza and growing plots open to the public. Homework club starts.</p>
+    <p class="note" style="margin-top:16px;">Milestone · gates open</p>
+  </div>
+
+  <!-- phase 4 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1380px; top:392px; width:27px; height:27px; border-radius:50%; background:var(--green-4); z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:352px; width:380px; z-index:10;">
+    <p class="k" style="font-size:19px; color:var(--ink-3);">Months 10–18</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:452px; width:390px; z-index:10;">
+    <h3 class="h3">Pavilion &amp; full program</h3>
+    <p class="sm" style="margin-top:12px; line-height:1.42;">Pavilion and court completed, full nine-program week running, first annual assembly.</p>
+    <p class="note" style="margin-top:16px;">Milestone · handover to board</p>
+  </div>
+
+  <!-- risks -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:690px; width:1680px; z-index:10;">
+    <p class="lab">Principal risks &amp; mitigations</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:734px; width:405px; height:212px; background:var(--paper-2); border-radius:4px; z-index:1;">
+    <div style="position:absolute; left:32px; top:28px; width:341px;">
+      <p class="lab" style="color:var(--green);">High · likely</p>
+      <p class="h3" style="margin-top:14px;">Soil contamination found</p>
+      <p class="sm" style="margin-top:12px; line-height:1.40;">Phase-1 survey done; $12k contingency and a city remediation commitment in the lease.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:545px; top:734px; width:405px; height:212px; background:var(--paper-2); border-radius:4px; z-index:1;">
+    <div style="position:absolute; left:32px; top:28px; width:341px;">
+      <p class="lab" style="color:var(--green);">High · possible</p>
+      <p class="h3" style="margin-top:14px;">Capital shortfall</p>
+      <p class="sm" style="margin-top:12px; line-height:1.40;">Pavilion is severable: grove and plaza open on schedule even if it slips a year.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:734px; width:405px; height:212px; background:var(--paper-2); border-radius:4px; z-index:1;">
+    <div style="position:absolute; left:32px; top:28px; width:341px;">
+      <p class="lab">Medium · possible</p>
+      <p class="h3" style="margin-top:14px;">Volunteer drop-off</p>
+      <p class="sm" style="margin-top:12px; line-height:1.40;">Paid 0.6 FTE coordinator holds the rota; 40-volunteer pool sized for 25% attrition.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1395px; top:734px; width:405px; height:212px; background:var(--paper-2); border-radius:4px; z-index:1;">
+    <div style="position:absolute; left:32px; top:28px; width:341px;">
+      <p class="lab">Medium · unlikely</p>
+      <p class="h3" style="margin-top:14px;">Neighbour noise concerns</p>
+      <p class="sm" style="margin-top:12px; line-height:1.40;">Dawn-to-dusk hours, court set back 40m from homes, complaints line from day one.</p>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:990px; width:1680px; height:1px; background:var(--line); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1014px; width:900px; z-index:10;">
+    <p class="note">Maple Ward Commons · Community Improvement Project Proposal</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:1014px; width:200px; z-index:10;">
+    <p class="note" style="text-align:right;">09 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

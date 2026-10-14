@@ -1,0 +1,234 @@
+import type { PageProgress, WorkspaceOutline } from "../../api/types";
+import type { Locale } from "../../i18n/messages";
+import {
+  isActivePageGenerationStatus,
+  isGenuinelyFailedPageGenerationStatus,
+  isResumablePageGenerationStatus,
+} from "./pageStatusPolicy";
+import {
+  ATTEMPT_LIMITS,
+  type DeckGenerationContext,
+  type DeckGenerationProgress,
+  type DeckGenerationProgressPage,
+  type DeckGenerationRuntime,
+  type DeckGenerationStep,
+  type DeckGenerationStream,
+  type DeckGenerationStreamSnapshot,
+  type ResearchDiscoveryProgress,
+} from "./types";
+import { generationText } from "./messages";
+
+function cloneResearchDiscoveryProgress(
+  progress?: ResearchDiscoveryProgress,
+): ResearchDiscoveryProgress | undefined {
+  if (!progress) return undefined;
+  return {
+    ...progress,
+    summary: { ...progress.summary },
+    records: progress.records.map((record) => ({
+      ...record,
+      queries: record.queries?.map((query) => ({
+        ...query,
+        sources: query.sources?.map((source) => ({ ...source })),
+      })),
+      sources: record.sources?.map((source) => ({ ...source })),
+      visualAssets: record.visualAssets?.map((asset) => ({ ...asset })),
+      activities: record.activities ? [...record.activities] : undefined,
+      lines: record.lines ? [...record.lines] : undefined,
+      gaps: record.gaps ? [...record.gaps] : undefined,
+      rejectedReasons: record.rejectedReasons ? [...record.rejectedReasons] : undefined,
+      counts: record.counts ? { ...record.counts } : undefined,
+    })),
+  };
+}
+
+export function mapProgress(
+  progress: PageProgress | null,
+  attemptLimits: typeof ATTEMPT_LIMITS = ATTEMPT_LIMITS,
+  outline?: WorkspaceOutline | null,
+): DeckGenerationProgressPage[] {
+  const outlineByPageId = new Map(
+    outline?.items.flatMap((item, index) => item.page_id ? [[item.page_id, { item, index }] as const] : []) ?? [],
+  );
+  return progress?.pages.map((page, index) => ({
+    page_id: page.page_id,
+    index: outlineByPageId.get(page.page_id)?.index ?? index,
+    title: outlineByPageId.get(page.page_id)?.item.title ?? page.page_id,
+    status: page.status,
+    render_attempts: page.render_attempts,
+    render_attempt_limit: attemptLimits.render,
+    visual_review_attempts: page.visual_review_attempts,
+    visual_review_attempt_limit: attemptLimits.visualReview,
+    agent_failures: page.agent_failures,
+    agent_failure_limit: attemptLimits.agent,
+    agent_infrastructure_failures: page.agent_infrastructure_failures,
+    last_error: page.last_error,
+    last_screenshot_path: page.last_screenshot_path,
+    last_html_path: page.last_html_path,
+    render_source_sha256: page.render_source_sha256,
+    snapshot_source_sha256: page.snapshot_source_sha256,
+  })) ?? [];
+}
+
+export function createProgress(
+  value: Omit<DeckGenerationProgress, "pages">,
+  progress: PageProgress | null,
+  stream?: DeckGenerationStream | null,
+  activeStreams?: Iterable<DeckGenerationStream>,
+  attemptLimits: typeof ATTEMPT_LIMITS = ATTEMPT_LIMITS,
+  researchDiscovery?: ResearchDiscoveryProgress,
+): DeckGenerationProgress {
+  const activeStreamList = activeStreams
+    ? Array.from(activeStreams).sort((left, right) => left.page_index - right.page_index)
+    : [];
+  return {
+    ...value,
+    pages: mapProgress(progress, attemptLimits),
+    stream: stream ?? undefined,
+    activeStreams: activeStreamList.length > 0 ? activeStreamList.map((item) => ({
+      ...item,
+      lines: [...item.lines],
+      activities: [...item.activities],
+    })) : undefined,
+    researchDiscovery: cloneResearchDiscoveryProgress(researchDiscovery),
+  };
+}
+
+export function emit(
+  input: Pick<DeckGenerationContext, "onProgress">
+    & Partial<Pick<DeckGenerationContext, "confirmedOutline">>
+    & { targetPageIds?: readonly string[] },
+  value: Omit<DeckGenerationProgress, "pages">,
+  progress: PageProgress | null,
+  stream?: DeckGenerationStream | null,
+  activeStreams?: Iterable<DeckGenerationStream>,
+  attemptLimits: typeof ATTEMPT_LIMITS = ATTEMPT_LIMITS,
+  researchDiscovery?: ResearchDiscoveryProgress,
+) {
+  const projected = createProgress(
+    value,
+    progress,
+    stream,
+    activeStreams,
+    attemptLimits,
+    researchDiscovery,
+  );
+  projected.pages = mapProgress(progress, attemptLimits, input.confirmedOutline);
+  if (input.targetPageIds) projected.targetPageIds = [...input.targetPageIds];
+  input.onProgress(projected);
+}
+
+export function pageProgressToDeckGenerationProgress(
+  storedProgress: PageProgress,
+  locale: Locale = "zh",
+  outline?: WorkspaceOutline | null,
+): DeckGenerationProgress {
+  const pages = [...storedProgress.pages];
+  const resumablePage = pages.find((item) => isResumablePageGenerationStatus(item.status));
+  const failedPage = pages.find((item) => isGenuinelyFailedPageGenerationStatus(item.status));
+  const activePageCandidate = pages.find((item) => isActivePageGenerationStatus(item.status));
+  const unfinishedPage = pages.find((item) => item.status !== "accepted");
+  const activePage =
+    unfinishedPage ??
+    resumablePage ??
+    failedPage ??
+    activePageCandidate ??
+    [...pages].reverse().find((item) => item.status !== "pending") ??
+    pages[0] ??
+    null;
+  const acceptedCount = pages.filter((item) => item.status === "accepted").length;
+  const allAccepted = pages.length > 0 && acceptedCount === pages.length;
+  const finalDeckRender = storedProgress.final_deck_render;
+  const finalDeckRenderCompleted =
+    !finalDeckRender || finalDeckRender.status === "completed";
+  const step: DeckGenerationStep = allAccepted && finalDeckRenderCompleted
+      ? "complete"
+      : allAccepted
+        ? "final-render"
+        : unfinishedPage
+        ? "interrupted"
+        : "page-authoring";
+  const message = step === "complete"
+      ? generationText(locale).complete
+      : step === "final-render"
+        ? finalDeckRender?.error || finalDeckRender?.message || generationText(locale).finalRender
+      : step === "interrupted"
+        ? failedPage?.last_error || generationText(locale).interrupted
+        : generationText(locale).resumed;
+
+  return {
+    step,
+    message,
+    currentPageIndex: activePage ? pages.findIndex((page) => page.page_id === activePage.page_id) : null,
+    totalPages: pages.length,
+    recoveryRunKind: storedProgress.recovery?.run_kind ?? (
+      step === "final-render" ? "final-deck-render" : undefined
+    ),
+    pages: mapProgress({
+      ...storedProgress,
+      pages,
+    }, ATTEMPT_LIMITS, outline),
+    researchDiscovery: cloneResearchDiscoveryProgress(storedProgress.research_discovery),
+  };
+}
+
+/** A concurrent neighbour's latest event cannot change this stream's identity. */
+export function generationStreamStageId(step: string, stream: DeckGenerationStream) {
+  const phase = stream.kind === "authoring" ? "page-authoring"
+    : stream.kind && stream.kind !== "page-html" ? stream.kind : step;
+  return `${phase}:${stream.page_id}:${stream.run_id ?? stream.kind ?? stream.status}`;
+}
+
+export function createDeckGenerationStreamSnapshot(
+  progress: DeckGenerationProgress,
+  locale: Locale = "zh",
+): DeckGenerationStreamSnapshot {
+  const id = progress.stream
+    ? generationStreamStageId(progress.step, progress.stream)
+    : `${progress.step}:global`;
+  return {
+    id,
+    phase: progress.step,
+    label: progress.stream
+      ? generationText(locale).streamLabel(
+          progress.stream.page_index,
+          progress.stream.kind ?? progress.step
+        )
+      : progress.message || progress.step,
+    kind: progress.stream?.kind,
+    page_id: progress.stream?.page_id,
+    page_index: progress.stream?.page_index,
+    status: progress.stream?.status ?? progress.message,
+    message: progress.message,
+    lines: progress.stream ? [...progress.stream.lines] : [],
+    activities: progress.stream ? [...progress.stream.activities] : [],
+    updated_at: new Date().toISOString(),
+  };
+}
+
+export function buildDeckGenerationSummary(
+  input: Pick<DeckGenerationContext, "locale">,
+  progress: PageProgress | null,
+  totalPages: number,
+) {
+  const pages = progress?.pages ?? [];
+  const accepted = pages.filter((page) => page.status === "accepted").length;
+  const failed = pages.filter((page) => isGenuinelyFailedPageGenerationStatus(page.status)).length;
+  const active = pages.filter((page) => isActivePageGenerationStatus(page.status)).length;
+  return generationText(input.locale).activeSummary({
+    active,
+    accepted,
+    failed,
+    total: totalPages,
+  });
+}
+
+export function emitRuntime(
+  input: DeckGenerationRuntime,
+  value: Omit<DeckGenerationProgress, "pages">,
+  progress: PageProgress | null,
+  stream?: DeckGenerationStream | null,
+  attemptLimits: typeof ATTEMPT_LIMITS = ATTEMPT_LIMITS,
+) {
+  emit(input, value, progress, stream, input.activeStreams.values(), attemptLimits, input.researchDiscoveryProgress);
+}

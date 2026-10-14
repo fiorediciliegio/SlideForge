@@ -1,0 +1,13 @@
+{
+  "case_id": "B-041",
+  "size_class": "边界",
+  "target_input_tokens": 22000,
+  "estimated_outline_input_tokens": 22055,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "多附件",
+  "attachment_types": "DOCX + TXT",
+  "content_strategies": "summarized_context + full_context",
+  "evaluation_risks": "1. 把人次当患者人数；2. 把27分钟应用于所有患者；3. 忽略问卷偏差；4. 把智能分诊写成上线；5. 推断医生个人绩效。"
+}

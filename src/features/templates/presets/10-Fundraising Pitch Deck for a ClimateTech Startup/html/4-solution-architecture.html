@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solution architecture</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --ink:#071714;
+  --ink-2:#0B211C;
+  --panel:#102A24;
+  --panel-2:#15352C;
+  --bone:#ECEFE6;
+  --bone-panel:#FBFCF8;
+  --bone-line:rgba(12,38,32,.16);
+  --line:rgba(233,242,236,.15);
+  --text:#E9F2EC;
+  --muted:#8CA69D;
+  --ink-text:#0C2620;
+  --ink-muted:#5C7A72;
+  --green:#1F9D62;
+  --green-300:#5FD39A;
+  --lime:#CFE86B;
+  --amber:#E8A33D;
+  --rust:#BF5B34;
+}
+
+body{ font-family:'Archivo', 'Helvetica Neue', sans-serif; }
+
+.mono{ font-family:'IBM Plex Mono', monospace; }
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:25px; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase;
+}
+
+.h1{ font-weight:700; letter-spacing:-.022em; }
+.h2{ font-weight:600; letter-spacing:-.015em; }
+.num{ font-family:'IBM Plex Mono', monospace; font-weight:500; letter-spacing:-.03em; }
+.chip{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:22px; letter-spacing:.06em; text-transform:uppercase;
+}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;">
+<div class="slide slide-container" data-screen-label="04 Solution architecture" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#071714;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:linear-gradient(90deg,#E8A33D 0%,#CFE86B 45%,#1F9D62 100%);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:86px;width:700px;z-index:10;">
+    <div class="eyebrow" style="color:#5FD39A;">04 · The solution</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:140px;width:1080px;z-index:10;">
+    <div class="h1" style="font-size:74px;line-height:1.06;color:#E9F2EC;">A thermal battery sitting<br>in front of the boiler.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1320px;top:150px;width:480px;z-index:10;">
+    <div style="font-size:29px;line-height:1.5;color:#8CA69D;">Calora installs upstream of existing plant infrastructure. The steam header, controls and gas boiler all stay in place — the boiler simply stops firing 90% of the time.</div>
+  </div>
+
+  <!-- system diagram -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:388px;width:1680px;height:392px;background:#0B211C;border:1px solid rgba(233,242,236,.15);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:152px;top:414px;width:600px;z-index:10;">
+    <div class="chip" style="color:#5C7A72;">System architecture · retrofit boundary</div>
+  </div>
+
+  <!-- node 1 grid -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:168px;top:496px;width:268px;height:196px;background:#15352C;border-top:3px solid #5FD39A;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:196px;top:520px;width:216px;z-index:10;">
+    <div class="mono" style="font-size:25px;color:#5FD39A;letter-spacing:.1em;">INPUT</div>
+    <div class="h2" style="font-size:31px;line-height:1.12;color:#E9F2EC;margin-top:10px;">Surplus grid power</div>
+    <div style="font-size:24px;line-height:1.32;color:#8CA69D;margin-top:8px;">Existing connection, off-peak hours</div>
+  </div>
+
+  <!-- arrow 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:452px;top:592px;width:104px;height:2px;background:#5FD39A;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:452px;top:548px;width:104px;z-index:10;">
+    <div class="mono" style="font-size:24px;color:#5FD39A;text-align:center;">charge</div>
+  </div>
+
+  <!-- node 2 resistive -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:572px;top:496px;width:268px;height:196px;background:#15352C;border-top:3px solid #CFE86B;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:600px;top:520px;width:216px;z-index:10;">
+    <div class="mono" style="font-size:25px;color:#CFE86B;letter-spacing:.1em;">CONVERT</div>
+    <div class="h2" style="font-size:31px;line-height:1.12;color:#E9F2EC;margin-top:10px;">Resistive heater array</div>
+    <div style="font-size:24px;line-height:1.32;color:#8CA69D;margin-top:8px;">Modular 2.5 MW blocks</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:856px;top:592px;width:104px;height:2px;background:#CFE86B;z-index:5;"></div>
+
+  <!-- node 3 core (emphasised) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:976px;top:466px;width:300px;height:256px;background:linear-gradient(180deg,#E8A33D 0%,#1F9D62 100%);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1006px;top:492px;width:244px;z-index:10;">
+    <div class="mono" style="font-size:25px;color:rgba(7,23,20,.75);letter-spacing:.1em;">STORE</div>
+    <div class="h2" style="font-size:33px;line-height:1.06;color:#071714;margin-top:8px;">Refractory brick core</div>
+    <div style="font-size:24px;line-height:1.28;color:rgba(7,23,20,.78);margin-top:6px;">Low-cost ceramic mass</div>
+    <div class="num" style="font-size:29px;color:#071714;margin-top:10px;">$12 / kWh</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1292px;top:592px;width:104px;height:2px;background:#E8A33D;z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1266px;top:548px;width:156px;z-index:10;">
+    <div class="mono" style="font-size:24px;color:#E8A33D;text-align:center;">discharge</div>
+  </div>
+
+  <!-- node 4 steam -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1412px;top:496px;width:268px;height:196px;background:#15352C;border-top:3px solid #E9F2EC;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1440px;top:520px;width:216px;z-index:10;">
+    <div class="mono" style="font-size:25px;color:#E9F2EC;letter-spacing:.1em;">OUTPUT</div>
+    <div class="h2" style="font-size:31px;line-height:1.12;color:#E9F2EC;margin-top:10px;">Steam to header</div>
+    <div style="font-size:24px;line-height:1.32;color:#8CA69D;margin-top:8px;">Up to 450 °C, 40 bar</div>
+  </div>
+
+  <!-- boiler bypass note -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:572px;top:722px;width:1108px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div style="width:100%;height:1px;background:repeating-linear-gradient(90deg,#5C7A72 0px,#5C7A72 10px,transparent 10px,transparent 20px);"></div>
+    </div>
+    <div class="mono" style="font-size:25px;color:#5C7A72;margin-top:12px;">EXISTING GAS BOILER RETAINED AS N+1 BACKUP — NO PROCESS RE-QUALIFICATION</div>
+  </div>
+
+  <!-- three claims -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:842px;width:520px;z-index:10;">
+    <div class="num" style="font-size:52px;color:#CFE86B;line-height:1;">No new fuel</div>
+    <div style="font-size:27px;line-height:1.45;color:#8CA69D;margin-top:12px;">No hydrogen supply chain, no CCS, no biomass logistics to underwrite.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:700px;top:842px;width:520px;z-index:10;">
+    <div class="num" style="font-size:52px;color:#CFE86B;line-height:1;">No new pipes</div>
+    <div style="font-size:27px;line-height:1.45;color:#8CA69D;margin-top:12px;">Ties into the existing steam header inside a scheduled maintenance window.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1280px;top:842px;width:520px;z-index:10;">
+    <div class="num" style="font-size:52px;color:#CFE86B;line-height:1;">No new grid</div>
+    <div style="font-size:27px;line-height:1.45;color:#8CA69D;margin-top:12px;">Sized to the existing connection by shifting load into off-peak hours.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1740px;top:1002px;width:60px;z-index:10;">
+    <div class="mono" style="font-size:25px;color:#5C7A72;text-align:right;">04</div>
+  </div>
+
+</div>
+</body>
+</html>

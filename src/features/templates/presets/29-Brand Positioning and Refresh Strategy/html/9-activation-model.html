@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How the refresh reaches the consumer</title>
+<style>
+/* AURELIA — Brand Positioning & Refresh Strategy
+   Design system: white paper + single red accent, editorial consulting grid.
+   Primary: Signal Red #C8102E · Secondary: Ink #17140F, Greige #EDEAE5 */
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #FFFFFF;
+  --paper-2: #F7F5F2;
+  --paper-3: #EDEAE5;
+  --ink: #17140F;
+  --ink-70: #55504A;
+  --ink-45: #8B847C;
+  --ink-25: #B9B2AA;
+  --line: #E3DED7;
+  --line-strong: #CFC8BF;
+  --red: #C8102E;
+  --red-tint: #FBEDEF;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body { margin: 0; padding: 0; overflow: hidden; background: var(--paper); }
+
+.slide-container {
+  font-family: var(--sans);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- type scale ---------- */
+.eyebrow {
+  font-family: var(--sans); font-size: 17px; font-weight: 600;
+  letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-45);
+}
+.h1 { font-family: var(--serif); font-weight: 400; font-size: 104px; line-height: 1.02; letter-spacing: -0.01em; }
+.h2 { font-family: var(--serif); font-weight: 400; font-size: 58px; line-height: 1.06; letter-spacing: -0.005em; }
+.h3 { font-family: var(--serif); font-weight: 400; font-size: 40px; line-height: 1.14; }
+.lead { font-family: var(--sans); font-size: 25px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.body { font-family: var(--sans); font-size: 21px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.body-s { font-family: var(--sans); font-size: 19px; font-weight: 400; line-height: 1.5; color: var(--ink-70); }
+.label { font-family: var(--sans); font-size: 16px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-45); }
+.label-red { font-family: var(--sans); font-size: 16px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
+.stat { font-family: var(--serif); font-weight: 400; font-size: 92px; line-height: 0.94; letter-spacing: -0.02em; }
+.stat-s { font-family: var(--serif); font-weight: 400; font-size: 60px; line-height: 0.96; letter-spacing: -0.02em; }
+.caption { font-family: var(--sans); font-size: 15px; font-weight: 400; line-height: 1.45; color: var(--ink-45); }
+.strong { font-weight: 600; color: var(--ink); }
+.red { color: var(--red); }
+.ital { font-style: italic; }
+
+/* ---------- primitives ---------- */
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 2px; }
+.card-fill { background: var(--paper-2); border: 1px solid var(--line); border-radius: 2px; }
+.tag {
+  display: inline-block; padding: 7px 14px; border: 1px solid var(--line-strong);
+  border-radius: 2px; font-size: 16px; font-weight: 500; letter-spacing: 0.06em;
+  color: var(--ink); background: var(--paper);
+}
+.num-marker {
+  font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--red);
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="09 Activation model" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:88px; width:900px; z-index:10;">
+    <div class="label-red">08 — Activation model</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:126px; width:1080px; z-index:10;">
+    <div class="h2">From proof to ritual:<br>the journey we are engineering</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:140px; width:500px; z-index:10;">
+    <div class="body-s">Each stage has one owner, one asset type and one measurable exit. The repeat loop — not acquisition — is where the positioning pays back.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:298px; width:1680px; height:1px; background:#CFC8BF; z-index:1;"></div>
+
+  <!-- journey rail -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:392px; width:1680px; height:2px; background:#E3DED7; z-index:1;"></div>
+
+  <!-- stage 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:154px; top:378px; width:30px; height:30px; border-radius:50%; background:#FFFFFF; border:3px solid #C8102E; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:330px; width:300px; z-index:10;">
+    <div class="label-red">Stage 01</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:444px; width:300px; height:340px; background:#F7F5F2; border:1px solid #E3DED7; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:476px; width:236px; z-index:10;">
+    <div class="h3" style="font-size:31px;">Provoke</div>
+    <div class="body-s" style="margin-top:14px; font-size:18px;">Creator-led “read the label with me” series. Category truth, not product ad.</div>
+    <div style="height:1px; background:#CFC8BF; margin:18px 0;"></div>
+    <div class="caption"><span class="strong">Owner</span> Brand comms<br><span class="strong">Exit</span> +18% aided consideration</div>
+  </div>
+
+  <!-- stage 2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:504px; top:378px; width:30px; height:30px; border-radius:50%; background:#FFFFFF; border:3px solid #C8102E; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:470px; top:330px; width:300px; z-index:10;">
+    <div class="label-red">Stage 02</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:470px; top:444px; width:300px; height:340px; background:#F7F5F2; border:1px solid #E3DED7; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:502px; top:476px; width:236px; z-index:10;">
+    <div class="h3" style="font-size:31px;">Prove</div>
+    <div class="body-s" style="margin-top:14px; font-size:18px;">Published clinical panel and open-formula page linked from every pack QR.</div>
+    <div style="height:1px; background:#CFC8BF; margin:18px 0;"></div>
+    <div class="caption"><span class="strong">Owner</span> R&amp;D + digital<br><span class="strong">Exit</span> 40% of buyers scan</div>
+  </div>
+
+  <!-- stage 3 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:854px; top:378px; width:30px; height:30px; border-radius:50%; background:#FFFFFF; border:3px solid #C8102E; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:820px; top:330px; width:300px; z-index:10;">
+    <div class="label-red">Stage 03</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:820px; top:444px; width:300px; height:340px; background:#F7F5F2; border:1px solid #E3DED7; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:852px; top:476px; width:236px; z-index:10;">
+    <div class="h3" style="font-size:31px;">Trial</div>
+    <div class="body-s" style="margin-top:14px; font-size:18px;">Redesigned hero pack at shelf plus a two-step starter set at entry price.</div>
+    <div style="height:1px; background:#CFC8BF; margin:18px 0;"></div>
+    <div class="caption"><span class="strong">Owner</span> Category sales<br><span class="strong">Exit</span> Trial 22% → 31%</div>
+  </div>
+
+  <!-- stage 4 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1204px; top:378px; width:30px; height:30px; border-radius:50%; background:#FFFFFF; border:3px solid #C8102E; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1170px; top:330px; width:300px; z-index:10;">
+    <div class="label-red">Stage 04</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1170px; top:444px; width:300px; height:340px; background:#F7F5F2; border:1px solid #E3DED7; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1202px; top:476px; width:236px; z-index:10;">
+    <div class="h3" style="font-size:31px;">Ritualise</div>
+    <div class="body-s" style="margin-top:14px; font-size:18px;">Routine planner and refill subscription; week-4 and week-12 check-ins.</div>
+    <div style="height:1px; background:#CFC8BF; margin:18px 0;"></div>
+    <div class="caption"><span class="strong">Owner</span> CRM<br><span class="strong">Exit</span> Repeat 9% → 17%</div>
+  </div>
+
+  <!-- stage 5 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1554px; top:378px; width:30px; height:30px; border-radius:50%; background:#C8102E; z-index:6;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1520px; top:330px; width:300px; z-index:10;">
+    <div class="label-red">Stage 05</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1520px; top:444px; width:280px; height:340px; background:#17140F; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1552px; top:476px; width:216px; z-index:10;">
+    <div class="h3" style="font-size:31px; color:#FFFFFF;">Advocate</div>
+    <div class="body-s" style="margin-top:14px; font-size:18px; color:#B9B2AA;">Customer routines become the campaign — real shelves, real counters, credited.</div>
+    <div style="height:1px; background:#55504A; margin:18px 0;"></div>
+    <div class="caption" style="color:#B9B2AA;"><span style="color:#FFFFFF; font-weight:600;">Owner</span> Community<br><span style="color:#FFFFFF; font-weight:600;">Exit</span> Advocacy 4% → 11%</div>
+  </div>
+
+  <!-- repeat loop callout -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1170px; top:824px; width:630px; height:2px; background:#C8102E; z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1170px; top:784px; width:2px; height:40px; background:#C8102E; z-index:2;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1798px; top:784px; width:2px; height:40px; background:#C8102E; z-index:2;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1170px; top:840px; width:630px; z-index:10;">
+    <div class="label-red">Repeat loop — the value driver</div>
+  </div>
+
+  <!-- bottom insight -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:840px; width:960px; z-index:10;">
+    <div class="lead">Every stage answers one pillar. If a tactic cannot name its pillar and its exit metric, it does not enter the plan.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:996px; width:1680px; height:1px; background:#E3DED7; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1016px; width:1200px; z-index:10;">
+    <div class="caption" style="letter-spacing:0.14em; text-transform:uppercase;">Consumer journey &amp; activation model — targets are FY27 planning assumptions</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1580px; top:1016px; width:220px; z-index:10; text-align:right;">
+    <div class="caption">09 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

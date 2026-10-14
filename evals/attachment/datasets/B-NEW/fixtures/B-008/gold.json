@@ -1,0 +1,13 @@
+{
+  "case_id": "B-008",
+  "size_class": "长",
+  "target_input_tokens": 13400,
+  "estimated_outline_input_tokens": 13464,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "多附件",
+  "attachment_types": "TXT + MD",
+  "content_strategies": "full_context + full_context",
+  "evaluation_risks": "1. 暴露手机号或令牌；2. 把配置不兼容描述成网络攻击；3. 混淆已完成和待完成动作；4. 时间线顺序错误；5. 遗漏影响窗口或失败请求口径。"
+}

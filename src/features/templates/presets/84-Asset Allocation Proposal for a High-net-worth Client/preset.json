@@ -1,0 +1,63 @@
+{
+  "id": "84-Asset Allocation Proposal for a High-net-worth Client",
+  "version": 1,
+  "ppt_number": 84,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "green",
+    "gold",
+    "gray"
+  ],
+  "name": "Asset Allocation Proposal for a High-net-worth Client",
+  "description": "Private-wealth design with near-black canvases, forest-green charts, muted gold accents, and refined serif typography.",
+  "user": "Business Professionals",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["resource-prioritization"],"industries":["finance"],"audiences":["client"],"formats":["proposal"],"primary_styles":["formal","dark"],"visual_traits":["formal","dark","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "近黑色、森林绿与哑金色封面采用左侧中部超大标题，一块几何面板与留白形成对照。"
+    },
+    {
+      "path": "images/2-client-goals-current-portfolio.webp",
+      "alt": "近黑色、森林绿与哑金色页面，三幅图表集中排布，组合信息强化对比。"
+    },
+    {
+      "path": "images/3-macro-assumptions.webp",
+      "alt": "近黑色、森林绿与哑金色页面，一幅图表集中排布，配置信息收束版面。"
+    },
+    {
+      "path": "images/4-recommended-allocation.webp",
+      "alt": "近黑色、森林绿与哑金色页面，两幅图表集中排布，财务信息形成重心。"
+    },
+    {
+      "path": "images/5-risk-control-rebalancing.webp",
+      "alt": "近黑色、森林绿与哑金色页面，两幅图表集中排布，风险信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页采用近黑色、森林绿与哑金色，超大标题锚定左侧中部；一块几何面板连接主体与边缘信息，留白保持画面张力。"
+    },
+    {
+      "path": "html/2-client-goals-current-portfolio.html",
+      "description": "近黑色、森林绿与哑金色画面，标题置于左上方；单一大面板承载主体信息，三幅图表落在右侧，项目卡、优先级与状态标签补充层级。"
+    },
+    {
+      "path": "html/3-macro-assumptions.html",
+      "description": "左上方标题锚定近黑色、森林绿与哑金色画面；留白与细线分隔出清晰阅读区，一幅图表落在左侧，两组表格位于右侧。"
+    },
+    {
+      "path": "html/4-recommended-allocation.html",
+      "description": "近黑色、森林绿与哑金色作为底色，标题落在左上方；单一大面板承载主体信息，两幅财务图表落在中央，一组表格位于中央。"
+    },
+    {
+      "path": "html/5-risk-control-rebalancing.html",
+      "description": "标题固定在左上方，近黑色、森林绿与哑金色分隔主体；留白与细线分隔出清晰阅读区，两幅风险图表落在左侧，一组表格位于右侧。"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "142-Spring Escape Travel Cover",
+  "version": 1,
+  "ppt_number": 142,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "blue",
+    "green",
+    "yellow"
+  ],
+  "name": "Spring Escape Travel Cover",
+  "description": "Spring travel cover with oversized blue circular fields, a bold sans-serif and italic serif title pairing, and fresh green and yellow accents.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["travel-guide"],"industries":["consumer","travel"],"audiences":["public"],"formats":["guide"],"primary_styles":["fresh"],"visual_traits":["fresh","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Spring travel cover with oversized blue circular fields, a bold sans-serif and italic serif title pairing, and fresh green and yellow accents."
+    },
+    {
+      "path": "images/2-spring-field-notes-02.webp",
+      "alt": "Spring Field Notes — 02 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-spring-field-notes-03.webp",
+      "alt": "Spring Field Notes — 03 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-spring-field-notes-04.webp",
+      "alt": "Spring Field Notes — 04 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-spring-field-notes-05.webp",
+      "alt": "Spring Field Notes — 05 reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Spring travel cover with oversized blue circular fields, a bold sans-serif and italic serif title pairing, and fresh green and yellow accents."
+    },
+    {
+      "path": "html/2-spring-field-notes-02.html",
+      "description": "Spring Field Notes — 02 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-spring-field-notes-03.html",
+      "description": "Spring Field Notes — 03 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-spring-field-notes-04.html",
+      "description": "Spring Field Notes — 04 reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-spring-field-notes-05.html",
+      "description": "Spring Field Notes — 05 reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "travel-spring-coast",
+      "name": "Spring Coast",
+      "swatches": [
+        "#EAF4FB",
+        "#123A5E",
+        "#3F8FD0",
+        "#7FD06A"
+      ],
+      "roles": {
+        "bg": "#EAF4FB",
+        "surface": "#F2F9FD",
+        "ink": "#123A5E",
+        "muted": "#5B7C98",
+        "accent_primary": "#3F8FD0",
+        "accent_secondary": "#7FD06A",
+        "accent_tertiary": "#FFD166",
+        "line": "#CFE4F5"
+      }
+    },
+    {
+      "id": "travel-sage-marigold",
+      "name": "Sage Marigold",
+      "swatches": [
+        "#F5F8F0",
+        "#26463C",
+        "#5E8F71",
+        "#A8CF75"
+      ],
+      "roles": {
+        "bg": "#F5F8F0",
+        "surface": "#FEFFF9",
+        "ink": "#26463C",
+        "muted": "#668076",
+        "accent_primary": "#5E8F71",
+        "accent_secondary": "#A8CF75",
+        "accent_tertiary": "#E7B84B",
+        "line": "#D9E7D5"
+      }
+    },
+    {
+      "id": "travel-ocean-coral",
+      "name": "Ocean Coral",
+      "swatches": [
+        "#ECF6F7",
+        "#173B4A",
+        "#3D9FB4",
+        "#F07B5D"
+      ],
+      "roles": {
+        "bg": "#ECF6F7",
+        "surface": "#FBFFFF",
+        "ink": "#173B4A",
+        "muted": "#5E7C86",
+        "accent_primary": "#3D9FB4",
+        "accent_secondary": "#F07B5D",
+        "accent_tertiary": "#F4C553",
+        "line": "#D3E8EA"
+      }
+    },
+    {
+      "id": "travel-lilac-lemon",
+      "name": "Lilac Lemon",
+      "swatches": [
+        "#F6F2FA",
+        "#40335F",
+        "#8070BC",
+        "#A8C76A"
+      ],
+      "roles": {
+        "bg": "#F6F2FA",
+        "surface": "#FFFCFF",
+        "ink": "#40335F",
+        "muted": "#786C90",
+        "accent_primary": "#8070BC",
+        "accent_secondary": "#A8C76A",
+        "accent_tertiary": "#F0C94B",
+        "line": "#E5DDF0"
+      }
+    }
+  ]
+}

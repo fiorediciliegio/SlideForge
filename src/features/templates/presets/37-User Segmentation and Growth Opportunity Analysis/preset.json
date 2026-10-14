@@ -1,0 +1,63 @@
+{
+  "id": "37-User Segmentation and Growth Opportunity Analysis",
+  "version": 1,
+  "ppt_number": 37,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "teal",
+    "orange",
+    "green"
+  ],
+  "name": "User Segmentation and Growth Opportunity Analysis",
+  "description": "Human-centered research design with warm cream backgrounds, deep teal panels, orange accents, and editorial photo mosaics.",
+  "user": "Sales & Marketing",
+  "use_case": "Reports & Analysis",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["growth-strategy"],"industries":["consumer"],"audiences":["client"],"formats":["research-presentation"],"primary_styles":["editorial"],"visual_traits":["editorial","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖奶油色、深青绿与活力橙封面以左侧中部超大标题开场，八幅图片与一块几何面板拉开层级。"
+    },
+    {
+      "path": "images/2-goal-and-method.webp",
+      "alt": "暖奶油色、深青绿与活力橙页面，五块卡片组成两列网格，流程信息强化对比。"
+    },
+    {
+      "path": "images/3-core-segments.webp",
+      "alt": "暖奶油色、深青绿与活力橙页面，两幅图片构成视觉重心，人群信息收束版面。"
+    },
+    {
+      "path": "images/4-size-value-opportunity.webp",
+      "alt": "暖奶油色、深青绿与活力橙页面，两幅图表集中排布，核心判断形成重心。"
+    },
+    {
+      "path": "images/5-priority-and-experiments.webp",
+      "alt": "暖奶油色、深青绿与活力橙页面，一幅图片构成视觉重心，选择信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖奶油色、深青绿与活力橙主导画面，左侧中部的超大标题形成第一视点；八幅图片与一块几何面板与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-goal-and-method.html",
+      "description": "左上方标题锚定暖奶油色、深青绿与活力橙画面；五块信息卡组成两列网格，步骤模块与连接关系顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-core-segments.html",
+      "description": "暖奶油色、深青绿与活力橙作为底色，标题落在左上方；单一大面板承载主体信息，两幅图片集中于右侧，一幅图表落在左侧。"
+    },
+    {
+      "path": "html/4-size-value-opportunity.html",
+      "description": "标题固定在左上方，暖奶油色、深青绿与活力橙分隔主体；留白与细线分隔出清晰阅读区，两幅图表落在中央，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/5-priority-and-experiments.html",
+      "description": "暖奶油色、深青绿与活力橙画面，标题置于左上方；单一大面板承载主体信息，一幅图片集中于左侧，一组表格位于右侧。"
+    }
+  ]
+}

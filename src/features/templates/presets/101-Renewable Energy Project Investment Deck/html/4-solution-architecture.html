@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solution Overview — Hybrid Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+  .amp{font-family:Georgia,'Times New Roman',serif;font-style:italic;}
+</style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;font-family:'Archivo',sans-serif;">
+<div class="slide" data-screen-label="04 Solution Architecture" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1E9;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:76px;width:26px;height:3px;background:#C87A1E;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:140px;top:64px;width:900px;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:.19em;text-transform:uppercase;color:#C87A1E;">04 · Solution overview</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1300px;top:64px;width:524px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:18px;letter-spacing:.14em;color:rgba(22,33,30,0.45);">SINGLE-LINE SYSTEM ARCHITECTURE</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:110px;width:1620px;z-index:10;">
+    <div style="font-size:50px;font-weight:600;color:#16211E;letter-spacing:-0.015em;line-height:1.1;">One interconnection, three assets, a single shaped delivery obligation</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:206px;width:1728px;height:1px;background:rgba(22,33,30,0.20);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:96px;top:240px;width:1728px;height:470px;z-index:10;">
+    <svg width="1728" height="470" viewBox="0 0 1728 470" xmlns="http://www.w3.org/2000/svg" font-family="'Archivo',sans-serif">
+      <!-- column headers -->
+      <g font-family="'IBM Plex Mono',monospace" font-size="14" letter-spacing="0.14em" fill="rgba(22,33,30,0.50)">
+        <text x="0" y="16">GENERATION</text>
+        <text x="486" y="16">COLLECTION</text>
+        <text x="946" y="16">GRID INTERFACE</text>
+        <text x="1330" y="16">MARKET / OFFTAKE</text>
+      </g>
+      <g stroke="rgba(22,33,30,0.12)" stroke-width="1">
+        <line x1="452" y1="0" x2="452" y2="462" stroke-dasharray="5 6"/>
+        <line x1="906" y1="0" x2="906" y2="462" stroke-dasharray="5 6"/>
+        <line x1="1292" y1="0" x2="1292" y2="462" stroke-dasharray="5 6"/>
+      </g>
+
+      <!-- WIND -->
+      <rect x="0" y="56" width="416" height="118" fill="rgba(74,110,120,0.10)" stroke="#4A6E78" stroke-width="1.4" rx="2"/>
+      <g transform="translate(30,86)" stroke="#4A6E78" stroke-width="2" fill="none">
+        <line x1="14" y1="58" x2="14" y2="24"/>
+        <circle cx="14" cy="20" r="3.4" fill="#4A6E78"/>
+        <path d="M14 20 L14 2 M14 20 L30 30 M14 20 L-2 30"/>
+      </g>
+      <text x="88" y="96" font-size="26" font-weight="600" fill="#16211E">Wind — 180 MW</text>
+      <text x="88" y="126" font-size="18" fill="rgba(22,33,30,0.68)">36 × 5.0 MW · 158 m rotor</text>
+      <text x="88" y="152" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#4A6E78">P50 703 GWh/yr · NCF 44.6%</text>
+
+      <!-- SOLAR -->
+      <rect x="0" y="200" width="416" height="118" fill="rgba(232,169,74,0.14)" stroke="#C87A1E" stroke-width="1.4" rx="2"/>
+      <g transform="translate(30,230)" stroke="#C87A1E" stroke-width="2" fill="none">
+        <rect x="0" y="18" width="30" height="22"/>
+        <line x1="0" y1="26" x2="30" y2="26"/><line x1="0" y1="33" x2="30" y2="33"/>
+        <line x1="15" y1="40" x2="15" y2="52"/>
+        <path d="M15 0 L15 10 M2 6 L8 12 M28 6 L22 12"/>
+      </g>
+      <text x="88" y="240" font-size="26" font-weight="600" fill="#16211E">Solar — 120 MWdc</text>
+      <text x="88" y="270" font-size="18" fill="rgba(22,33,30,0.68)">Single-axis tracker · 1.33 DC:AC</text>
+      <text x="88" y="296" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#C87A1E">P50 259 GWh/yr · NCF 28.1%</text>
+
+      <!-- BESS -->
+      <rect x="0" y="344" width="416" height="118" fill="rgba(110,138,86,0.12)" stroke="#6E8A56" stroke-width="1.4" rx="2"/>
+      <g transform="translate(30,374)" stroke="#6E8A56" stroke-width="2" fill="none">
+        <rect x="2" y="16" width="26" height="40" rx="2"/>
+        <line x1="10" y1="16" x2="10" y2="10"/><line x1="20" y1="16" x2="20" y2="10"/>
+        <path d="M15 24 L11 38 L19 38 L15 50" stroke-linejoin="round"/>
+      </g>
+      <text x="88" y="384" font-size="26" font-weight="600" fill="#16211E">Storage — 75 MW</text>
+      <text x="88" y="414" font-size="18" fill="rgba(22,33,30,0.68)">300 MWh · 4 h LFP · 20-yr aug.</text>
+      <text x="88" y="440" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#6E8A56">1 cycle/day · 87% RTE</text>
+
+      <!-- connectors gen -> collector -->
+      <g stroke="rgba(22,33,30,0.45)" stroke-width="1.6" fill="none">
+        <path d="M416 115 L452 115 L486 176"/>
+        <path d="M416 259 L486 259"/>
+        <path d="M416 403 L452 403 L486 342"/>
+      </g>
+      <g font-family="'IBM Plex Mono',monospace" font-size="13" fill="rgba(22,33,30,0.50)">
+        <text x="422" y="106">34.5 kV</text><text x="422" y="250">34.5 kV</text><text x="422" y="423">34.5 kV</text>
+      </g>
+
+      <!-- COLLECTOR -->
+      <rect x="486" y="176" width="356" height="166" fill="#16211E" rx="2"/>
+      <text x="514" y="214" font-size="25" font-weight="600" fill="#F4F1E9">Collector substation</text>
+      <text x="514" y="248" font-size="18" fill="rgba(244,241,233,0.72)">2 × 250 MVA · 34.5 / 345 kV</text>
+      <text x="514" y="276" font-size="18" fill="rgba(244,241,233,0.72)">Plant controller · AGC</text>
+      <text x="514" y="312" font-family="'IBM Plex Mono',monospace" font-size="14" fill="#E8A94A" letter-spacing="0.08em">DC-COUPLED BESS</text>
+
+      <!-- connector -->
+      <path d="M842 259 L946 259" stroke="rgba(22,33,30,0.45)" stroke-width="1.6"/>
+      <text x="894" y="250" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" fill="rgba(22,33,30,0.50)">345 kV</text>
+
+      <!-- POI -->
+      <rect x="946" y="196" width="272" height="126" fill="none" stroke="#16211E" stroke-width="1.6" rx="2"/>
+      <text x="974" y="240" font-size="24" font-weight="600" fill="#16211E">POI switchyard</text>
+      <text x="974" y="270" font-size="18" fill="rgba(22,33,30,0.68)">400 MW export right</text>
+      <text x="974" y="298" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#C87A1E">IA EXECUTED Q1 2026</text>
+
+      <!-- fan out to market -->
+      <g stroke="rgba(22,33,30,0.45)" stroke-width="1.6" fill="none">
+        <path d="M1218 259 L1292 259 L1330 132"/>
+        <path d="M1218 259 L1330 259"/>
+        <path d="M1218 259 L1292 259 L1330 386"/>
+      </g>
+
+      <rect x="1330" y="76" width="398" height="112" fill="rgba(74,110,120,0.10)" stroke="#4A6E78" stroke-width="1.4" rx="2"/>
+      <text x="1358" y="114" font-size="23" font-weight="600" fill="#16211E">Corporate PPA — 65%</text>
+      <text x="1358" y="144" font-size="18" fill="rgba(22,33,30,0.68)">15-yr fixed-shape, IG-rated</text>
+      <text x="1358" y="170" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#4A6E78">$41.50 / MWh</text>
+
+      <rect x="1330" y="204" width="398" height="112" fill="rgba(232,169,74,0.14)" stroke="#C87A1E" stroke-width="1.4" rx="2"/>
+      <text x="1358" y="242" font-size="23" font-weight="600" fill="#16211E">Utility PPA — 20%</text>
+      <text x="1358" y="272" font-size="18" fill="rgba(22,33,30,0.68)">12-yr shaped block, muni co-op</text>
+      <text x="1358" y="298" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#C87A1E">$44.20 / MWh</text>
+
+      <rect x="1330" y="332" width="398" height="112" fill="rgba(110,138,86,0.12)" stroke="#6E8A56" stroke-width="1.4" rx="2"/>
+      <text x="1358" y="370" font-size="23" font-weight="600" fill="#16211E">Merchant — 15%</text>
+      <text x="1358" y="400" font-size="18" fill="rgba(22,33,30,0.68)">ERCOT real-time, ECRS <tspan class="amp">&amp;</tspan> RRS</text>
+      <text x="1358" y="426" font-family="'IBM Plex Mono',monospace" font-size="15" fill="#6E8A56">$58.90 / MWh realised</text>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:756px;width:1728px;height:1px;background:rgba(22,33,30,0.18);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:786px;width:1728px;z-index:10;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+      <div style="padding-right:48px;">
+        <div class="mono" style="font-size:14px;letter-spacing:.15em;color:#C87A1E;">WHY HYBRID · 01</div>
+        <div style="font-size:25px;font-weight:600;color:#16211E;margin-top:12px;line-height:1.25;">Shared infrastructure cuts unit cost</div>
+        <div style="font-size:20px;line-height:1.45;color:rgba(22,33,30,0.68);margin-top:10px;">One substation, gen-tie and O<span class="amp">&amp;</span>M team across three assets — $61 M avoided vs. three standalone builds.</div>
+      </div>
+      <div style="padding-left:48px;padding-right:48px;border-left:1px solid rgba(22,33,30,0.18);">
+        <div class="mono" style="font-size:14px;letter-spacing:.15em;color:#C87A1E;">WHY HYBRID · 02</div>
+        <div style="font-size:25px;font-weight:600;color:#16211E;margin-top:12px;line-height:1.25;">Interconnection utilisation of 79%</div>
+        <div style="font-size:20px;line-height:1.45;color:rgba(22,33,30,0.68);margin-top:10px;">Anti-correlated profiles fill the same 400 MW export right that a single technology would leave idle.</div>
+      </div>
+      <div style="padding-left:48px;border-left:1px solid rgba(22,33,30,0.18);">
+        <div class="mono" style="font-size:14px;letter-spacing:.15em;color:#C87A1E;">WHY HYBRID · 03</div>
+        <div style="font-size:25px;font-weight:600;color:#16211E;margin-top:12px;line-height:1.25;">Storage converts volume into shape</div>
+        <div style="font-size:20px;line-height:1.45;color:rgba(22,33,30,0.68);margin-top:10px;">4-hour block lets us sell a firm evening product and underwrite a fixed-shape PPA instead of as-generated.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;background:rgba(22,33,30,0.14);z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1018px;width:1300px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.13em;color:rgba(22,33,30,0.45);text-transform:uppercase;">Renewable Energy Project Investment Deck · Illustrative template data</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1664px;top:1018px;width:160px;text-align:right;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:.13em;color:#C87A1E;">04 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

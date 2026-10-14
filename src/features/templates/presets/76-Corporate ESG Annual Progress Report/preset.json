@@ -1,0 +1,103 @@
+{
+  "id": "76-Corporate ESG Annual Progress Report",
+  "version": 1,
+  "ppt_number": 76,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "green",
+    "black",
+    "gold"
+  ],
+  "name": "Corporate ESG Annual Progress Report",
+  "description": "Corporate ESG report design with white analytical pages, layered green charts, restrained gold accents, and clear progress systems.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Industrial & Infrastructure",
+  "recommendation_profile": {"use_cases":["business-review"],"industries":["infrastructure"],"audiences":["public","executive"],"formats":["annual-report"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "左侧中部超大标题主导白色、层次绿与哑金色封面，几何色块与细线补充节奏。"
+    },
+    {
+      "path": "images/2-context-mandate.webp",
+      "alt": "白色、层次绿与哑金色页面，两组大号数字形成节奏，范围信息强化对比。"
+    },
+    {
+      "path": "images/3-materiality.webp",
+      "alt": "白色、层次绿与哑金色页面，一幅图表集中排布，对比信息收束版面。"
+    },
+    {
+      "path": "images/4-strategy-framework.webp",
+      "alt": "白色、层次绿与哑金色页面，四块卡片组成三列网格，框架信息形成重心。"
+    },
+    {
+      "path": "images/5-commitments-scorecard.webp",
+      "alt": "白色、层次绿与哑金色页面，一组表格压缩信息密度，商务信息拉开层级。"
+    },
+    {
+      "path": "images/6-environment-emissions.webp",
+      "alt": "白色、层次绿与哑金色页面，一幅图表集中排布，指标信息组织动线。"
+    },
+    {
+      "path": "images/7-social-people-community.webp",
+      "alt": "白色、层次绿与哑金色页面，双面板划分主体区域，社会信息强化对比。"
+    },
+    {
+      "path": "images/8-governance-risk.webp",
+      "alt": "白色、层次绿与哑金色页面，六块卡片组成四列网格，风险信息收束版面。"
+    },
+    {
+      "path": "images/9-assurance-benchmark.webp",
+      "alt": "白色、层次绿与哑金色页面，一组表格压缩信息密度，验证信息形成重心。"
+    },
+    {
+      "path": "images/10-fy2026-plan.webp",
+      "alt": "白色、层次绿与哑金色页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页由白色、层次绿与哑金色划分层次，左侧中部的超大标题占据主视区；几何色块与细线补充节奏，页脚细字稳定版面。"
+    },
+    {
+      "path": "html/2-context-mandate.html",
+      "description": "左上方标题锚定白色、层次绿与哑金色画面；留白与细线分隔出清晰阅读区，目标卡、范围块与关键数字顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-materiality.html",
+      "description": "白色、层次绿与哑金色作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅图表落在左侧，坐标、刻度与比较标记补充层级。"
+    },
+    {
+      "path": "html/4-strategy-framework.html",
+      "description": "标题固定在左上方，白色、层次绿与哑金色分隔主体；四块信息卡组成三列网格，框架模块与强调结论沿主区展开。"
+    },
+    {
+      "path": "html/5-commitments-scorecard.html",
+      "description": "白色、层次绿与哑金色画面，标题置于左上方；留白与细线分隔出清晰阅读区，一组表格位于中央，金额模块与承诺事项补充层级。"
+    },
+    {
+      "path": "html/6-environment-emissions.html",
+      "description": "左上方标题锚定白色、层次绿与哑金色画面；单一大面板承载主体信息，一幅指标图表落在左侧，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/7-social-people-community.html",
+      "description": "白色、层次绿与哑金色作为底色，标题落在左上方；两块主面板建立清晰分区，一幅图表落在右侧，人物指标与社区模块补充层级。"
+    },
+    {
+      "path": "html/8-governance-risk.html",
+      "description": "标题固定在左上方，白色、层次绿与哑金色分隔主体；六块信息卡组成四列网格，一组表格位于右侧，分级标签、状态色与风险标记补充层级。"
+    },
+    {
+      "path": "html/9-assurance-benchmark.html",
+      "description": "白色、层次绿与哑金色画面，标题置于左上方；单一大面板承载主体信息，一组表格位于左侧，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/10-fy2026-plan.html",
+      "description": "左上方标题锚定白色、层次绿与哑金色画面；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记贴合卡片边界。"
+    }
+  ]
+}

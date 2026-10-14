@@ -1,0 +1,146 @@
+{
+  "id": "144-Coffee Culture Editorial Cover",
+  "version": 1,
+  "ppt_number": 144,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "gold"
+  ],
+  "name": "Coffee Culture Editorial Cover",
+  "description": "Coffeehouse editorial cover with warm cream paper, oversized green serif typography, concentric gradient rings, gold accents, and a refined metadata grid.",
+  "user": "Business Professionals",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["marketing-campaign"],"industries":["consumer"],"audiences":["employee"],"formats":[],"primary_styles":["editorial","minimal"],"visual_traits":["editorial","minimal"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Coffeehouse editorial cover with warm cream paper, oversized green serif typography, concentric gradient rings, gold accents, and a refined metadata grid."
+    },
+    {
+      "path": "images/2-starbucks-brand-thesis.webp",
+      "alt": "Starbucks — Brand Thesis reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/3-starbucks-experience-roadmap.webp",
+      "alt": "Starbucks — Experience Roadmap reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/4-starbucks-data-insight.webp",
+      "alt": "Starbucks — Data Insight reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "images/5-starbucks-strategic-priorities.webp",
+      "alt": "Starbucks — Strategic Priorities reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Coffeehouse editorial cover with warm cream paper, oversized green serif typography, concentric gradient rings, gold accents, and a refined metadata grid."
+    },
+    {
+      "path": "html/2-starbucks-brand-thesis.html",
+      "description": "Starbucks — Brand Thesis reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/3-starbucks-experience-roadmap.html",
+      "description": "Starbucks — Experience Roadmap reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/4-starbucks-data-insight.html",
+      "description": "Starbucks — Data Insight reference page using the preset's visual system for structured presentation content."
+    },
+    {
+      "path": "html/5-starbucks-strategic-priorities.html",
+      "description": "Starbucks — Strategic Priorities reference page using the preset's visual system for structured presentation content."
+    }
+  ],
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "coffee-mint-editorial",
+      "name": "Mint Editorial",
+      "swatches": [
+        "#F8F6F1",
+        "#12332A",
+        "#00704A",
+        "#A2814C"
+      ],
+      "roles": {
+        "bg": "#F8F6F1",
+        "surface": "#FFFFFF",
+        "ink": "#12332A",
+        "muted": "#4A6157",
+        "accent_primary": "#00704A",
+        "accent_secondary": "#A2814C",
+        "accent_tertiary": "#7FB39F",
+        "line": "#DCE9E2"
+      }
+    },
+    {
+      "id": "coffee-coffee-terracotta",
+      "name": "Coffee Terracotta",
+      "swatches": [
+        "#F7F0E6",
+        "#35241E",
+        "#8A4B31",
+        "#C89656"
+      ],
+      "roles": {
+        "bg": "#F7F0E6",
+        "surface": "#FFFAF4",
+        "ink": "#35241E",
+        "muted": "#6D5748",
+        "accent_primary": "#8A4B31",
+        "accent_secondary": "#C89656",
+        "accent_tertiary": "#A87C56",
+        "line": "#E8D9C7"
+      }
+    },
+    {
+      "id": "coffee-olive-citron",
+      "name": "Olive Citron",
+      "swatches": [
+        "#F9F9F1",
+        "#23312C",
+        "#567C52",
+        "#C4A23A"
+      ],
+      "roles": {
+        "bg": "#F9F9F1",
+        "surface": "#FFFFFB",
+        "ink": "#23312C",
+        "muted": "#627368",
+        "accent_primary": "#567C52",
+        "accent_secondary": "#C4A23A",
+        "accent_tertiary": "#91B89A",
+        "line": "#E0E5D8"
+      }
+    },
+    {
+      "id": "coffee-plum-sand",
+      "name": "Plum Sand",
+      "swatches": [
+        "#FAF5F1",
+        "#3B2937",
+        "#81506E",
+        "#C49A62"
+      ],
+      "roles": {
+        "bg": "#FAF5F1",
+        "surface": "#FFFCFA",
+        "ink": "#3B2937",
+        "muted": "#715B6D",
+        "accent_primary": "#81506E",
+        "accent_secondary": "#C49A62",
+        "accent_tertiary": "#B69AAD",
+        "line": "#E9DCE2"
+      }
+    }
+  ]
+}

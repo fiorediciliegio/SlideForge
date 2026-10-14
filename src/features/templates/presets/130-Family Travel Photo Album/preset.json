@@ -1,0 +1,103 @@
+{
+  "id": "130-Family Travel Photo Album",
+  "version": 1,
+  "ppt_number": 130,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "mint",
+    "peach",
+    "blue"
+  ],
+  "name": "Family Travel Photo Album",
+  "description": "Gentle family travel album with taped photos, pastel notes, dotted routes, stamps, and generous whitespace.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["culture-story"],"industries":["consumer","travel"],"audiences":["public"],"formats":["guide"],"primary_styles":["fresh"],"visual_traits":["fresh","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "柔和封面左侧为旅行标题与日期，右侧胶带家庭照片配圆形印章形成相册首页，层级鲜明。"
+    },
+    {
+      "path": "images/2-meet-the-travelers.webp",
+      "alt": "三张人物拍立得卡横排，彩色便签与柔和圆形背景营造亲密家庭介绍，模块层级清楚而统一。"
+    },
+    {
+      "path": "images/3-travel-route.webp",
+      "alt": "白色路线卡以虚线连接六个旅行节点，红蓝编号和底部交通图例呈现闭环行程，阅读顺序明确。"
+    },
+    {
+      "path": "images/4-the-journey-begins.webp",
+      "alt": "左侧出发照片与右侧景点照片分置两端，中部彩色时间节点和便签记录首日行程，阅读顺序明确。"
+    },
+    {
+      "path": "images/5-shared-experiences.webp",
+      "alt": "右侧大幅峡谷合影占据主体，左侧标题与小照片形成不对称故事版，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/6-kids-favorite-moments.webp",
+      "alt": "两张儿童瞬间照片配右侧手写便签，彩色贴纸突出家庭视角，整体呈现鲜明的图文节奏。"
+    },
+    {
+      "path": "images/7-food-and-discoveries.webp",
+      "alt": "三张食物与发现照片横排，胶带边框和手写说明组成轻量旅行记录，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/8-fun-photo-wall.webp",
+      "alt": "四张倾斜照片横向排列成照片墙，彩色图钉与短句形成活泼节奏，图文层级清晰而有张力。"
+    },
+    {
+      "path": "images/9-moments-we-remember.webp",
+      "alt": "全幅夜间露营照片横跨页首，下方三张反思卡和圆形印章构成温暖总结，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-next-adventure.webp",
+      "alt": "左侧家庭照片卡配右侧下一站清单，黄色便签和大面积留白形成轻柔结尾，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖奶油白画布上，柔和封面左侧为旅行标题与日期，右侧胶带家庭照片配圆形印章形成相册首页，细线与留白强化层级。"
+    },
+    {
+      "path": "html/2-meet-the-travelers.html",
+      "description": "三张人物拍立得卡横排，彩色便签与柔和圆形背景营造亲密家庭介绍，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/3-travel-route.html",
+      "description": "暖白页面中央以虚线路线连接拉斯维加斯、锡安等六个节点，红蓝编号区分往返段，底部距离摘要和交通图例说明完整闭环。"
+    },
+    {
+      "path": "html/4-the-journey-begins.html",
+      "description": "暖白页面左侧放置出发拍立得，右侧以景点照片和黄色便签记录第一印象，中部三段彩色时间节点串联从夜晚到抵达的过程。"
+    },
+    {
+      "path": "html/5-shared-experiences.html",
+      "description": "暖奶油白画布上，右侧大幅峡谷合影占据主体，左侧标题与小照片形成不对称故事版，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/6-kids-favorite-moments.html",
+      "description": "暖奶油白画布上，两张儿童瞬间照片配右侧手写便签，彩色贴纸突出家庭视角，统一间距与留白进一步保持清晰阅读节奏。"
+    },
+    {
+      "path": "html/7-food-and-discoveries.html",
+      "description": "暖奶油白画布上，三张食物与发现照片横排，胶带边框和手写说明组成轻量旅行记录，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/8-fun-photo-wall.html",
+      "description": "暖奶油白画布上，四张倾斜照片横向排列成照片墙，彩色图钉与短句形成活泼节奏，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/9-moments-we-remember.html",
+      "description": "暖奶油白画布上，全幅夜间露营照片横跨页首，下方三张反思卡和圆形印章构成温暖总结，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/10-next-adventure.html",
+      "description": "左侧家庭照片卡配右侧下一站清单，黄色便签和大面积留白形成轻柔结尾，规则间距与细线边框共同保持稳定的模块秩序。"
+    }
+  ]
+}

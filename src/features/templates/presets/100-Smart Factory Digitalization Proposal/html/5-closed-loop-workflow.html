@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The closed loop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#14181C;}
+  .lbl{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+  .display{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.012em;}
+  .stepno{font-family:'Archivo',sans-serif;font-weight:700;font-size:44px;color:#E08A0F;line-height:1;}
+  .stepname{font-family:'Archivo',sans-serif;font-weight:600;font-size:31px;line-height:1.1;margin-top:14px;}
+  .stepbody{font-size:24px;line-height:1.34;color:#4E5459;margin-top:12px;}
+  .steptime{font-family:'IBM Plex Mono',monospace;font-size:22px;color:#14181C;border-top:1px solid #EAE5DA;padding-top:14px;margin-top:16px;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="05 Closed loop" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;background-image:linear-gradient(to right,rgba(20,24,28,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(20,24,28,.045) 1px,transparent 1px);background-size:80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:60px;width:1200px;z-index:10;font-size:24px;color:#6E7378;"><span style="color:#E08A0F;">05</span> &nbsp;/&nbsp; How it works</div>
+
+  <div data-object="true" data-object-type="textbox" class="display" style="position:absolute;left:96px;top:100px;width:1500px;z-index:10;font-size:62px;line-height:1.06;">Sense &rarr; act in six minutes, not forty-two</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:186px;width:1560px;z-index:10;font-size:30px;line-height:1.35;color:#5C6166;">The mechanism is a loop, not a dashboard: every detected loss is routed to an owner with a playbook, and every outcome trains the next detection.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:266px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:246px;top:478px;width:1428px;height:4px;z-index:1;background:#DED8CB;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:300px;width:300px;height:356px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-top:5px solid #14181C;border-radius:2px;padding:24px 26px;">
+    <div class="stepno">01</div>
+    <div class="stepname">Sense</div>
+    <div class="stepbody">62 assets stream state, cycle, tool and energy tags — no keystrokes.</div>
+    <div class="steptime">1.2 s tag rate</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:453px;top:300px;width:300px;height:356px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-top:5px solid #14181C;border-radius:2px;padding:24px 26px;">
+    <div class="stepno">02</div>
+    <div class="stepname">Contextualize</div>
+    <div class="stepbody">Signals bound to order, part, tool, operator and shift.</div>
+    <div class="steptime">&lt; 5 s to context</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:810px;top:300px;width:300px;height:356px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-top:5px solid #E08A0F;border-radius:2px;padding:24px 26px;">
+    <div class="stepno">03</div>
+    <div class="stepname">Detect</div>
+    <div class="stepbody">Rules and models raise one typed event per loss.</div>
+    <div class="steptime">14 event types</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1167px;top:300px;width:300px;height:356px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-top:5px solid #E08A0F;border-radius:2px;padding:24px 26px;">
+    <div class="stepno">04</div>
+    <div class="stepname">Act</div>
+    <div class="stepbody">Andon routes to the right role on the floor, playbook attached.</div>
+    <div class="steptime">&lt; 90 s to owner</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1524px;top:300px;width:300px;height:356px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-top:5px solid #1E6E62;border-radius:2px;padding:24px 26px;">
+    <div class="stepno">05</div>
+    <div class="stepname">Learn</div>
+    <div class="stepbody">Reason and result are logged; models retrain weekly.</div>
+    <div class="steptime">100% close-out</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:246px;top:676px;width:1428px;height:84px;z-index:1;border-left:4px solid #1E6E62;border-right:4px solid #1E6E62;border-bottom:4px solid #1E6E62;border-radius:0 0 2px 2px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:560px;top:778px;width:800px;z-index:10;text-align:center;font-size:27px;line-height:1.3;color:#1E6E62;font-family:'IBM Plex Mono',monospace;">Outcomes retrain thresholds and playbooks</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:840px;width:1728px;height:132px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:22px 32px;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+      <div><span class="lbl" style="font-size:21px;color:#6E7378;">Detect to action, today</span><div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:34px;margin-top:8px;">42 min</div></div>
+      <div style="border-left:1px solid #EAE5DA;padding-left:32px;"><span class="lbl" style="font-size:21px;color:#6E7378;">Target after Wave 1</span><div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:34px;margin-top:8px;color:#E08A0F;">&lt; 6 min</div></div>
+      <div style="border-left:1px solid #EAE5DA;padding-left:32px;"><span class="lbl" style="font-size:21px;color:#6E7378;">Manual entry removed</span><div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:34px;margin-top:8px;">1,100 h/mo</div></div>
+      <div style="border-left:1px solid #EAE5DA;padding-left:32px;"><span class="lbl" style="font-size:21px;color:#6E7378;">Events with an owner</span><div style="font-family:'Archivo',sans-serif;font-weight:600;font-size:34px;margin-top:8px;">100%</div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:992px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:1012px;width:1200px;z-index:10;font-size:24px;color:#8A857A;">Northline Works · Plant 2 · Digitalization proposal</div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1600px;top:1012px;width:224px;z-index:10;font-size:24px;color:#8A857A;text-align:right;">05 / 10</div>
+
+</div>
+</body>
+</html>

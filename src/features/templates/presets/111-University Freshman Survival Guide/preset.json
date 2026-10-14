@@ -1,0 +1,104 @@
+{
+  "id": "111-University Freshman Survival Guide",
+  "version": 1,
+  "ppt_number": 111,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "blue",
+    "orange",
+    "lime",
+    "purple",
+    "cream"
+  ],
+  "name": "University Freshman Survival Guide",
+  "description": "Playful campus handbook with bright sticker colors, rounded type, taped cards, and handwritten annotations.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson","training"],"industries":["education"],"audiences":["students"],"formats":["lesson","guide"],"primary_styles":["playful"],"visual_traits":["playful","colorful","cartoon","illustration"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "亮蓝斜置主板搭配手写大标题、橙色星章与贴纸装饰的校园手册封面，视觉醒目活泼。"
+    },
+    {
+      "path": "images/2-campus-map.webp",
+      "alt": "米色纸张地图以手绘道路、彩色图钉、罗盘和图例组织校园地点，呈现手绘导览感。"
+    },
+    {
+      "path": "images/3-classes-studying.webp",
+      "alt": "三张圆角学习卡配时间节奏、手写便签和贴纸提示，层级轻快清晰，营造轻松氛围。"
+    },
+    {
+      "path": "images/4-dorm-clubs-social.webp",
+      "alt": "三栏版式组合拍立得、环形社团标签与社交路线卡，呈现拼贴手账感，画面层次丰富。"
+    },
+    {
+      "path": "images/5-money-daily-tips.webp",
+      "alt": "预算饼图与六张彩色技巧贴纸左右分栏，辅以钱包和咖啡手绘图标，信息直观醒目。"
+    },
+    {
+      "path": "images/6-first-week-checklist.webp",
+      "alt": "七张任务卡沿周一至周日横向展开，彩色编号和底部规则带形成路线感，流程清楚紧凑。"
+    },
+    {
+      "path": "images/7-time-budget.webp",
+      "alt": "方格时间预算图搭配圆形时间分配图和醒目规则卡，像学生规划手册，信息层级分明。"
+    },
+    {
+      "path": "images/8-support-network.webp",
+      "alt": "以 YOU 为中心的同心圆支持网络，彩色人物标签和路由表环绕展开，关系清晰易读。"
+    },
+    {
+      "path": "images/9-semester-timeline.webp",
+      "alt": "横向学期甘特图以彩色任务条、月份网格和底部洞察便签组织节奏，结构明确有序。"
+    },
+    {
+      "path": "images/10-first-year-scorecard.webp",
+      "alt": "五项彩色进度条、情绪曲线与总结卡共同组成贴纸式年度计分板，复盘氛围轻松。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，米白纸张背景上放置大幅倾斜亮蓝面板，圆润手写标题居中叠加，橙色圆形星章、胶带、贴纸与页码标签散落四周。"
+    },
+    {
+      "path": "html/2-campus-map.html",
+      "description": "米色纸张画布以手绘道路和浅色区域构成校园地图，六枚彩色图钉分布其上，边缘配罗盘、图例和笔记贴纸。"
+    },
+    {
+      "path": "html/3-classes-studying.html",
+      "description": "页面主体横排三张不同色彩的圆角学习卡，搭配手写标题、学习节奏条、规则清单和便签式提示，卡片阴影营造纸张层次。"
+    },
+    {
+      "path": "html/4-dorm-clubs-social.html",
+      "description": "三栏拼贴版式分别使用倾斜拍立得、环形社团标签和路线式社交卡，手绘箭头、彩色芯片与红绿提示形成活泼校园手账。"
+    },
+    {
+      "path": "html/5-money-daily-tips.html",
+      "description": "左侧以高饱和三色饼图呈现预算比例，右侧排列六张错落技巧贴纸，钱包、咖啡与手绘线条装饰强化生活指南感。"
+    },
+    {
+      "path": "html/6-first-week-checklist.html",
+      "description": "七张圆角任务卡沿横向周历依次展开，彩色日期圆点和连接节奏引导阅读，底部三条规则以通栏便签集中收束。"
+    },
+    {
+      "path": "html/7-time-budget.html",
+      "description": "左侧使用彩色方格矩阵表现每周时间分配，右侧组合圆形统计、超大剩余小时数字和醒目规则卡，形成轻量信息图布局。"
+    },
+    {
+      "path": "html/8-support-network.html",
+      "description": "以中央 YOU 圆形为核心绘制多层同心轨道，内外圈分布彩色支持角色标签，右侧路由表用卡片化行列补充关系指引。"
+    },
+    {
+      "path": "html/9-semester-timeline.html",
+      "description": "横向月份网格承载多条不同长度的彩色甘特任务条，左侧对齐阶段标签，底部以大幅手写便签提炼关键节奏。"
+    },
+    {
+      "path": "html/10-first-year-scorecard.html",
+      "description": "五项维度以粗线彩色进度条纵向排列，右侧叠加情绪曲线、复盘卡和收尾色带，构成带手写批注的年度计分板。"
+    }
+  ]
+}

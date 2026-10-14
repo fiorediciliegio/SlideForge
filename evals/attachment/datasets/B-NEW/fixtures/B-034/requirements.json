@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Turn the attached case chronology into an 8-slide internal legal briefing. Preserve dates, procedural status, party labels, and disputed versus agreed facts. Do not provide legal advice beyond the document."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Internal executive and legal team",
+        "description": "Internal executive and legal team"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Case status briefing",
+        "description": "Case status briefing"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Understand chronology, current procedural status, disputed issues, and next date",
+        "description": "Understand chronology, current procedural status, disputed issues, and next date"
+      }
+    ],
+    "slide_count": [
+      8
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Neutral, confidential, precise",
+        "description": "Neutral, confidential, precise"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Internal executive and legal team",
+      "description": "Internal executive and legal team"
+    },
+    "purpose": {
+      "label": "Case status briefing",
+      "description": "Case status briefing"
+    },
+    "desired_outcome": {
+      "label": "Understand chronology, current procedural status, disputed issues, and next date",
+      "description": "Understand chronology, current procedural status, disputed issues, and next date"
+    },
+    "slide_count": 8,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Neutral, confidential, precise",
+      "description": "Neutral, confidential, precise"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><title>A Day in the Life of a Leaf</title><style>:root{
+  --bg:var(--theme-bg);--surface:var(--theme-surface);--ink:var(--theme-ink);--muted:var(--theme-muted);--green:var(--theme-accent-secondary);--sage:var(--theme-line);--orange:var(--theme-accent-tertiary);--mustard:var(--theme-accent-secondary);--line:var(--theme-line);
+  --display: Georgia,"Times New Roman",serif;--hand:"Comic Neue","Comic Sans MS",cursive;--sans:"Nimbus Sans","Trebuchet MS",Arial,sans-serif;
+  --page-x:150px;--border:3px solid var(--green);
+}
+@page{size:1920px 1080px;margin:0}*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--ink)}body{font-family:var(--sans)}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;isolation:isolate;background:
+  radial-gradient(ellipse at 82% 24%,rgba(130,156,107,.13),transparent 34%),
+  radial-gradient(ellipse at 18% 88%,rgba(224,184,77,.10),transparent 38%),
+  linear-gradient(135deg,var(--theme-bg) 0,var(--theme-bg) 48%,var(--theme-bg) 100%)}
+.grain{position:absolute;inset:0;z-index:0;opacity:.30;background-image:
+  repeating-linear-gradient(0deg,transparent 0 5px,rgba(39,49,38,.055) 5px 6px),
+  repeating-linear-gradient(112deg,transparent 0 34px,rgba(39,49,38,.025) 34px 36px),
+  radial-gradient(circle,rgba(39,49,38,.11) 1px,transparent 1.5px);background-size:auto,auto,31px 31px;mix-blend-mode:multiply}
+.margin{position:absolute;left:114px;top:0;width:4px;height:1080px;background:rgba(213,108,56,.43);z-index:1}
+.rules{position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(to bottom,transparent 0 96px,rgba(72,106,62,.12) 96px 98px,transparent 98px 100px);background-position:0 86px}
+.top{position:absolute;left:156px;top:67px;z-index:10;display:flex;align-items:center;gap:28px;width:1050px;white-space:nowrap;color:var(--green);font:900 18px/1 var(--sans);letter-spacing:5px;text-transform:uppercase}
+.top .brand{display:block;padding:11px 18px 10px;border:3px solid var(--green);background:rgba(255,250,240,.92);letter-spacing:3px;white-space:nowrap}.top .series{display:block;white-space:nowrap}
+.page-no{position:absolute;right:105px;top:78px;z-index:10;color:var(--green);font:700 19px/1 var(--sans);letter-spacing:3px}
+.chapter{font:italic 31px/1 var(--display);color:var(--orange)}
+.hero{position:absolute;left:150px;top:157px;z-index:6;right:110px}
+.hero h1{margin:18px 0 0;font:900 108px/.88 var(--display);letter-spacing:-4px;color:var(--ink)}
+.hero h1 em{font-weight:400;color:var(--green);font-style:italic}
+.hero .sub{margin-top:16px;font:36px/1.15 var(--hand);letter-spacing:.2px;color:var(--theme-ink)}
+.hero .sub strong{color:var(--orange)}
+.panel{position:relative;border:var(--border);background:linear-gradient(135deg,rgba(255,250,240,.95),rgba(248,242,223,.86));box-shadow:9px 10px 0 rgba(72,106,62,.12)}
+.ribbon{position:absolute;z-index:12;padding:10px 20px 9px;background:var(--orange);color:var(--theme-surface);box-shadow:5px 5px 0 rgba(72,106,62,.14);font:900 15px/1 var(--sans);letter-spacing:3px;text-transform:uppercase}
+.tape{position:absolute;z-index:12;width:170px;height:48px;background:rgba(224,184,77,.70);box-shadow:0 2px 5px rgba(39,49,38,.10)}
+.meta{font:900 14px/1 var(--sans);letter-spacing:4px;text-transform:uppercase;color:var(--green)}
+.hand{font-family:var(--hand)}
+.display{font-family:var(--display)}
+.footer{position:absolute;left:156px;right:105px;bottom:36px;z-index:9;display:flex;justify-content:space-between;align-items:center;color:var(--green);font:900 16px/1 var(--sans);letter-spacing:4px;text-transform:uppercase}
+.small-rule{height:2px;background:rgba(72,106,62,.22)}
+</style><style>
+.hero{top:157px;width:1060px}.hero h1{font-size:110px;line-height:.86;max-width:1000px}.hero h1 em{display:block;font-size:104px}.postcard{position:absolute;right:112px;top:128px;width:630px;height:305px;padding:30px 32px;background:var(--theme-surface);box-shadow:11px 13px 0 rgba(39,49,38,.18);transform:rotate(4deg);z-index:5}.postcard-inner{height:100%;padding:48px 45px;background:linear-gradient(135deg,var(--theme-bg),var(--theme-line));border:1px solid rgba(72,106,62,.08)}.postcard h3{margin:0 0 18px;font:900 23px/1 var(--sans);letter-spacing:6px;color:var(--green);text-transform:uppercase}.postcard .small-rule{margin-bottom:18px;background:rgba(72,106,62,.65)}.postcard p{margin:0;font:29px/1.18 var(--display)}.postcard .tape{width:180px;height:48px;left:115px;top:-22px;transform:rotate(-7deg)}
+.timeline{position:absolute;left:150px;right:358px;top:463px;height:372px;z-index:4}.axis{position:absolute;left:0;right:0;top:153px;height:4px;background:var(--green)}.axis:after{content:"";position:absolute;right:-1px;top:-16px;border-left:27px solid var(--green);border-top:18px solid transparent;border-bottom:18px solid transparent}.milestones{position:relative;height:100%;display:grid;grid-template-columns:repeat(4,1fr)}.mile{position:relative;text-align:center;padding:0 16px}.mile .num{font:700 58px/1 var(--display);color:rgba(72,106,62,.34)}.mile h3{margin:2px 0 21px;font:900 34px/1 var(--display);text-transform:uppercase}.node{position:absolute;left:50%;top:126px;width:52px;height:52px;transform:translateX(-50%);border-radius:50%;background:var(--theme-line);border:3px solid var(--green);box-shadow:inset 0 0 0 10px var(--theme-line)}.node:after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:var(--green);left:15px;top:15px}.stemline{position:absolute;left:50%;top:178px;width:2px;height:34px;background:var(--green)}.time{display:inline-block;margin-top:105px;min-width:164px;padding:10px 18px;background:linear-gradient(90deg,var(--theme-line),var(--theme-line));font:900 16px/1 var(--sans);letter-spacing:4px}.desc{margin:17px auto 0;max-width:250px;text-align:left;font:27px/1.15 var(--display)}
+.outcome{position:absolute;right:72px;top:542px;width:263px;height:228px;padding:48px 38px 22px;z-index:5}.outcome .ribbon{left:27px;top:-22px}.outcome p{margin:0;font:900 43px/.97 var(--display);color:var(--green)}.outcome:after{content:"";position:absolute;left:41px;bottom:28px;width:78px;height:4px;background:var(--orange)}
+.takeaway{position:absolute;left:145px;right:440px;top:915px;height:108px;z-index:5;padding:41px 48px 18px}.takeaway .ribbon{left:20px;top:-23px}.takeaway p{margin:0;font:28px/1.12 var(--display);white-space:nowrap}.slogan{position:absolute;right:112px;top:892px;width:290px;height:140px;padding:22px 0 0 55px;border-left:2px solid rgba(72,106,62,.45);font:italic 34px/1.15 var(--display);color:var(--green);z-index:5}.slogan:after{content:"";position:absolute;left:55px;bottom:15px;width:76px;height:4px;background:var(--orange)}
+</style><style data-semantic-theme-roles>:root{--theme-bg:#F8F2DF;--theme-surface:#FFFAF0;--theme-ink:#273126;--theme-muted:#786F5D;--theme-accent-primary:#486A3E;--theme-accent-secondary:#E0B84D;--theme-accent-tertiary:#D56C38;--theme-line:#D5DFBD;}</style></head><body><main class="slide"><div class="grain"></div><div class="rules"></div><div class="margin"></div>
+<header class="top"><span class="brand">Young Naturalist</span><span class="series">Field Journal / Botanical Study</span></header><div class="page-no">03 / 05</div>
+<section class="hero"><div class="chapter">A photosynthesis field guide</div><h1>A Day in the Life <em>of a Leaf</em></h1></section>
+<aside class="postcard"><div class="tape"></div><div class="postcard-inner"><h3>Same leaf. A brighter story.</h3><div class="small-rule"></div><p>As the day unfolds, a leaf captures light, uses air and water, and makes food for the plant.</p></div></aside>
+<section class="timeline"><div class="axis"></div><div class="milestones">
+<div class="mile"><div class="num">01</div><h3>Dawn</h3><div class="node"></div><div class="stemline"></div><div class="time">6:00 AM</div><div class="desc">Stomata open; light begins driving reactions.</div></div>
+<div class="mile"><div class="num">02</div><h3>Midday</h3><div class="node"></div><div class="stemline"></div><div class="time">12:00 PM</div><div class="desc">Peak light capture and strongest sugar production.</div></div>
+<div class="mile"><div class="num">03</div><h3>Afternoon</h3><div class="node"></div><div class="stemline"></div><div class="time">3:00 PM</div><div class="desc">Water balance moderates gas exchange.</div></div>
+<div class="mile"><div class="num">04</div><h3>Dusk</h3><div class="node"></div><div class="stemline"></div><div class="time">6:00 PM</div><div class="desc">Sugar moves toward storage and growth.</div></div>
+</div></section>
+<aside class="outcome panel"><div class="ribbon">Outcome</div><p>stored<br>chemical<br>energy</p></aside>
+<section class="takeaway panel"><div class="ribbon">Key Takeaway</div><p>Light, air and water work together all day so a leaf can make food — and fuel life.</p></section>
+<div class="slogan">Small leaves.<br>Big impact.</div>
+</main></body></html>

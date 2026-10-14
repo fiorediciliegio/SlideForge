@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "phase": "stage-3",
+  "production_prompt": "v1",
+  "candidate_prompt": "<final-shortlisted-prompt>",
+  "case_selection": "Pass approximately 10 high-risk case IDs through repeated --case flags.",
+  "target_stage": "image-research-completed",
+  "pipeline": ["requirements", "template-selection", "recommendResearch", "web/image-search", "outline"],
+  "thresholds": {
+    "mean_token_growth_max": 0.2,
+    "mean_latency_growth_max": 0.2
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Evaluation Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;background:#FFFFFF;font-family:'Plus Jakarta Sans','Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="05 Evaluation framework" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:78px;width:900px;z-index:10;">
+    <div class="mono" style="font-size:17px;font-weight:500;letter-spacing:2.6px;color:#1A56DB;text-transform:uppercase;">05 · Evaluation framework</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:118px;width:1240px;z-index:10;">
+    <div style="font-size:54px;line-height:1.14;font-weight:700;letter-spacing:-1.2px;color:#0E1A2B;">Five weighted dimensions, derived from what buyers actually score</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1420px;top:126px;width:380px;z-index:10;">
+    <div style="font-size:19px;line-height:1.5;color:#56657C;text-align:right;">Weights calibrated against 137 contested-deal scorecards</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:296px;width:1680px;height:1px;background:#E3E9F0;z-index:1;"></div>
+
+  <!-- framework architecture: 3 tiers -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:340px;width:300px;height:566px;background:#0E1A2B;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:152px;top:376px;width:240px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:1.8px;color:#8FAEE8;text-transform:uppercase;">Composite score</div>
+    <div style="font-size:34px;line-height:1.24;font-weight:700;color:#FFFFFF;margin-top:16px;">Competitive Fit Index</div>
+    <div style="font-size:19px;line-height:1.6;color:#C7D3E2;margin-top:20px;">A single 0–100 number per vendor, used consistently across slides 06 to 09.</div>
+    <div style="height:1px;background:#3A4A61;margin:28px 0 24px;"></div>
+    <div class="mono" style="font-size:15px;letter-spacing:1.6px;color:#8FAEE8;text-transform:uppercase;">Scoring scale</div>
+    <div style="font-size:19px;line-height:1.7;color:#C7D3E2;margin-top:14px;">1 = absent<br>3 = parity<br>5 = category-defining</div>
+  </div>
+
+  <!-- dimension rows -->
+  <div data-object="true" data-object-type="table" style="position:absolute;left:472px;top:340px;width:1328px;height:566px;z-index:10;">
+    <table style="width:1328px;border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th class="mono" style="width:74px;text-align:left;padding:0 0 16px;font-size:15px;font-weight:500;letter-spacing:1.6px;color:#9AA7B8;text-transform:uppercase;border-bottom:2px solid #0E1A2B;">Wt.</th>
+          <th style="width:360px;text-align:left;padding:0 0 16px 24px;font-size:15px;font-weight:600;letter-spacing:1.6px;color:#9AA7B8;text-transform:uppercase;border-bottom:2px solid #0E1A2B;">Dimension</th>
+          <th style="text-align:left;padding:0 0 16px 24px;font-size:15px;font-weight:600;letter-spacing:1.6px;color:#9AA7B8;text-transform:uppercase;border-bottom:2px solid #0E1A2B;">What we measure</th>
+          <th style="width:230px;text-align:left;padding:0 0 16px 24px;font-size:15px;font-weight:600;letter-spacing:1.6px;color:#9AA7B8;text-transform:uppercase;border-bottom:2px solid #0E1A2B;">Evidence source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono" style="padding:26px 0;font-size:30px;font-weight:500;color:#1A56DB;border-bottom:1px solid #EDF1F6;vertical-align:top;">30%</td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:24px;font-weight:700;color:#0E1A2B;">Automation depth</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:20px;line-height:1.5;color:#3A4A61;">Branching, loops, retries, error handling without code</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:19px;color:#56657C;">Hands-on build tests</div></td>
+        </tr>
+        <tr>
+          <td class="mono" style="padding:26px 0;font-size:30px;font-weight:500;color:#1A56DB;border-bottom:1px solid #EDF1F6;vertical-align:top;">25%</td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:24px;font-weight:700;color:#0E1A2B;">Integration breadth</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:20px;line-height:1.5;color:#3A4A61;">Native connector count, depth of write-back, API limits</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:19px;color:#56657C;">Public directories</div></td>
+        </tr>
+        <tr>
+          <td class="mono" style="padding:26px 0;font-size:30px;font-weight:500;color:#1A56DB;border-bottom:1px solid #EDF1F6;vertical-align:top;">20%</td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:24px;font-weight:700;color:#0E1A2B;">Time to first value</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:20px;line-height:1.5;color:#3A4A61;">Days from signup to a production workflow running</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:19px;color:#56657C;">Trial instrumentation</div></td>
+        </tr>
+        <tr>
+          <td class="mono" style="padding:26px 0;font-size:30px;font-weight:500;color:#1A56DB;border-bottom:1px solid #EDF1F6;vertical-align:top;">15%</td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:24px;font-weight:700;color:#0E1A2B;">Governance &amp; trust</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:20px;line-height:1.5;color:#3A4A61;">Audit logs, environments, role scoping, certifications</div></td>
+          <td style="padding:26px 0 26px 24px;border-bottom:1px solid #EDF1F6;vertical-align:top;"><div style="font-size:19px;color:#56657C;">Security questionnaires</div></td>
+        </tr>
+        <tr>
+          <td class="mono" style="padding:26px 0;font-size:30px;font-weight:500;color:#1A56DB;vertical-align:top;">10%</td>
+          <td style="padding:26px 0 26px 24px;vertical-align:top;"><div style="font-size:24px;font-weight:700;color:#0E1A2B;">Commercial clarity</div></td>
+          <td style="padding:26px 0 26px 24px;vertical-align:top;"><div style="font-size:20px;line-height:1.5;color:#3A4A61;">Predictability of three-year cost as volume scales</div></td>
+          <td style="padding:26px 0 26px 24px;vertical-align:top;"><div style="font-size:19px;color:#56657C;">Quote comparisons</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:472px;top:930px;width:1328px;height:1px;background:#E3E9F0;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:472px;top:944px;width:1328px;z-index:10;">
+    <div style="font-size:20px;color:#56657C;">Automation depth and integration breadth carry 55% of the weight — and are exactly where 62% of our losses originate.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1008px;width:1000px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:1.2px;color:#9AA7B8;">Product Competitive Landscape Analysis · Illustrative sample data</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1008px;width:140px;z-index:10;">
+    <div class="mono" style="font-size:15px;letter-spacing:1.2px;color:#9AA7B8;text-align:right;">05 / 10</div>
+  </div>
+
+</div>
+</body>
+</html>

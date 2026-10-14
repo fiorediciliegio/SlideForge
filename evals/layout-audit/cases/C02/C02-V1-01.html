@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Caerlaverock 89th Meeting Minutes Master Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'Noto Sans SC', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --c-primary: #0F1B2D;
+    --c-accent: #1D4ED8;
+    --c-muted: #5A6B84;
+    --c-border: #E3E7EE;
+    --c-bg-light: #F5F7FA;
+    --c-white: #FFFFFF;
+    --fs-title: 52px;
+    --fs-subtitle: 24px;
+    --fs-body: 21px;
+    --fs-caption: 18px;
+    --fs-tag: 16px;
+  }
+  html, body { margin:0; padding:0; overflow:hidden; background:#111; }
+  .slide {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    box-sizing: border-box;
+    background: var(--c-white);
+    font-family: var(--font-sans);
+    color: var(--c-primary);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .f-header { position: absolute; left: 96px; top: 80px; width: 1728px; z-index: 100; }
+  .f-tag { font-family: var(--font-mono); font-size: var(--fs-tag); font-weight: 600; letter-spacing: 3px; color: var(--c-accent); margin-bottom: 12px; text-transform: uppercase; }
+  .f-title { font-size: var(--fs-title); font-weight: 700; letter-spacing: -1px; color: var(--c-primary); line-height: 1.2; margin-bottom: 12px; }
+  .f-meta { font-size: var(--fs-caption); color: var(--c-muted); font-family: var(--font-sans); }
+  .f-divider { position: absolute; left: 96px; top: 270px; width: 1728px; height: 1px; background: var(--c-border); z-index: 90; }
+  .content-area { position: absolute; left: 96px; top: 310px; width: 1728px; height: 640px; z-index: 50; font-size: var(--fs-body); line-height: 1.6; }
+  .f-footer { position: absolute; left: 96px; bottom: 50px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--c-border); padding-top: 20px; z-index: 100; }
+  .f-foot-left { font-family: var(--font-mono); font-size: var(--fs-tag); letter-spacing: 1.5px; color: var(--c-muted); text-transform: uppercase; }
+  .f-foot-right { font-family: var(--font-mono); font-size: var(--fs-subtitle); font-weight: 600; color: var(--c-primary); }
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Fixed Header -->
+  <header class="f-header" data-fixed="true">
+    <div class="f-tag">089 · MEETING MINUTES REPORT</div>
+    <h1 class="f-title">第 89 次会议讨论事项、决定与行动项汇总</h1>
+    <div class="f-meta">Caerlaverock Game Management Group · Chairman: Stuart Graham · NatureScot & Wildfowling Associations</div>
+  </header>
+
+  <!-- Fixed Decorative Line -->
+  <div class="f-divider" data-fixed="true"></div>
+
+  <!-- Dynamic Content Area -->
+  <main class="content-area">
+    <div style="display: flex; gap: 50px; height: 100%; box-sizing: border-box;">
+      
+      <!-- Left Column: Meeting Metadata & Attendees -->
+      <div style="width: 430px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--c-border); padding-right: 40px; height: 100%; box-sizing: border-box;">
+        <div>
+          <!-- Meta Info Block -->
+          <div style="font-family: var(--font-mono); font-size: var(--fs-tag); color: var(--c-accent); font-weight: 600; margin-bottom: 12px; letter-spacing: 1.5px;">MEETING SCHEDULE</div>
+          <div style="font-size: 20px; color: var(--c-primary); line-height: 1.8; margin-bottom: 30px;">
+            <strong style="color: var(--c-primary);">会议日期：</strong>2025 年 4 月 16 日<br>
+            <strong style="color: var(--c-primary);">下次会议：</strong>2026 年 4 月
+          </div>
+
+          <!-- Attendees Block -->
+          <div style="font-family: var(--font-mono); font-size: var(--fs-tag); color: var(--c-accent); font-weight: 600; margin-bottom: 12px; letter-spacing: 1.5px;">PARTICIPANTS</div>
+          <div style="font-size: 19px; color: var(--c-muted); line-height: 1.7;">
+            <strong style="color: var(--c-primary);">主席：</strong>Stuart Graham (NatureScot)<br>
+            <strong style="color: var(--c-primary);">参会人员：</strong><br>
+            Suzanne McIntyre (NatureScot)<br>
+            Andrew Over (NatureScot)<br>
+            Susan Copeland (NatureScot, 记录)<br>
+            Graeme Dalby (CDWA)<br>
+            David Gilbert (SSWA)<br>
+            Cameron Balfour (BASC)<br>
+            <strong style="color: var(--c-primary); margin-top: 8px; display: inline-block;">请假缺席：</strong>Anna Austin (Caerlaverock Estate)
+          </div>
+        </div>
+
+        <!-- Core Focus Highlight Card -->
+        <div style="background: var(--c-bg-light); border-left: 4px solid var(--c-accent); padding: 20px; border-radius: 0 8px 8px 0; box-sizing: border-box;">
+          <div style="font-size: 15px; font-family: var(--font-mono); color: var(--c-accent); font-weight: 600; margin-bottom: 6px; letter-spacing: 1px;">CORE OBJECTIVE</div>
+          <div style="font-size: 17px; color: var(--c-primary); font-weight: 500; line-height: 1.5;">
+            通过结构化协作，明确落实新猎手支持机制、安全标识优化等 5 项核心行动(AP)负责人，确保后续工作平稳推进。
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Structured Table -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; height: 100%; box-sizing: border-box; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--c-primary); text-align: left; font-family: var(--font-mono); font-size: 16px; color: var(--c-muted); letter-spacing: 1px;">
+              <th style="width: 240px; padding-bottom: 12px; font-weight: 600;">讨论事项</th>
+              <th style="width: 480px; padding-bottom: 12px; font-weight: 600;">决定与结论</th>
+              <th style="padding-bottom: 12px; font-weight: 600;">后续行动项 (负责人 / 截止时间)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--c-border);">
+              <td style="padding: 14px 0; font-weight: 600; color: var(--c-primary); font-size: 19px; vertical-align: top;">
+                上届回顾与野禽报告
+              </td>
+              <td style="padding: 14px 15px 14px 0; color: var(--c-muted); font-size: 18px; line-height: 1.5; vertical-align: top;">
+                AP 88/2、88/4已完成；其余已在本次讨论。维持现有猎取管理水平，关注粉脚雁分布变化（总申请548份，使用率23%）。
+              </td>
+              <td style="padding: 14px 0; color: var(--c-muted); font-size: 18px; font-style: italic; vertical-align: top;">
+                无后续行动
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--c-border);">
+              <td style="padding: 14px 0; font-weight: 600; color: var(--c-primary); font-size: 19px; vertical-align: top;">
+                管理员报告与违规
+              </td>
+              <td style="padding: 14px 15px 14px 0; color: var(--c-muted); font-size: 18px; line-height: 1.5; vertical-align: top;">
+                确认连续两年无违规记录，维持现有监督模式。
+              </td>
+              <td style="padding: 14px 0; color: var(--c-primary); font-size: 18px; vertical-align: top; line-height: 1.5;">
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="background: #EFF6FF; color: var(--c-accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">SEND CARD</span>
+                  <span><strong>Susan Copeland</strong> 负责向 Graeme Dalby 邮寄下一季度管理员卡片</span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--c-border);">
+              <td style="padding: 14px 0; font-weight: 600; color: var(--c-primary); font-size: 19px; vertical-align: top;">
+                新猎手支持机制
+              </td>
+              <td style="padding: 14px 15px 14px 0; color: var(--c-muted); font-size: 18px; line-height: 1.5; vertical-align: top;">
+                由 CDWA 和 SSWA 继续为新猎手提供入场指导。
+              </td>
+              <td style="padding: 14px 0; color: var(--c-primary); font-size: 18px; vertical-align: top; line-height: 1.5;">
+                <div style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="background: #EFF6FF; color: var(--c-accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">AP 89/2</span>
+                  <span><strong>NatureScot</strong> 负责在预订表格中提供新猎手数据</span>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="background: #EFF6FF; color: var(--c-accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">AP 89/3</span>
+                  <span><strong>NatureScot</strong> 负责起草发给新猎手的支持建议信</span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--c-border);">
+              <td style="padding: 14px 0; font-weight: 600; color: var(--c-primary); font-size: 19px; vertical-align: top;">
+                预订缺席与猎季调整
+              </td>
+              <td style="padding: 14px 15px 14px 0; color: var(--c-muted); font-size: 18px; line-height: 1.5; vertical-align: top;">
+                对多次未取消预订者发提醒信。维持10月1日开始现状（因土地租赁、牲畜安全及候鸟恢复期），下届继续讨论。
+              </td>
+              <td style="padding: 14px 0; color: var(--c-primary); font-size: 18px; vertical-align: top; line-height: 1.5;">
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="background: #EFF6FF; color: var(--c-accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">AP 89/4</span>
+                  <span><strong>NatureScot</strong> 负责在需要时起草提醒信件</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 14px 0; font-weight: 600; color: var(--c-primary); font-size: 19px; vertical-align: top;">
+                安全与标识优化
+              </td>
+              <td style="padding: 14px 15px 14px 0; color: var(--c-muted); font-size: 18px; line-height: 1.5; vertical-align: top;">
+                在区域立柱上增加反光贴以辅助夜间撤离。
+              </td>
+              <td style="padding: 14px 0; color: var(--c-primary); font-size: 18px; vertical-align: top; line-height: 1.5;">
+                <div style="display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="background: #EFF6FF; color: var(--c-accent); font-family: var(--font-mono); font-size: 13px; font-weight: 600; padding: 2px 6px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">AP 89/5</span>
+                  <span><strong>NatureScot</strong> 负责采购并安装反光贴</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Fixed Footer -->
+  <footer class="f-footer" data-fixed="true">
+    <div class="f-foot-left">CAERLAVEROCK GAME MANAGEMENT GROUP &times; 89TH MEETING MINUTES</div>
+    <div class="f-foot-right">01</div>
+  </footer>
+</div>
+</body>
+</html>

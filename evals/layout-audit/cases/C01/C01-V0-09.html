@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Custom inner styles for layout */
+  .left-col { position: absolute; left: 0; top: 0; width: 680px; height: 644px; }
+  .divider { position: absolute; left: 756px; top: 0; width: 1px; height: 644px; background: var(--border); }
+  .right-col { position: absolute; left: 812px; top: 0; width: 916px; height: 644px; }
+  
+  .accent-bar { width: 72px; height: 6px; background: var(--primary); margin-bottom: 32px; }
+  .highlight-statement { font-size: 32px; font-weight: 600; line-height: 1.4; color: var(--primary); margin-bottom: 48px; }
+  
+  .challenge-box { background: var(--bg-card); border: 1px solid var(--border); padding: 32px; border-radius: 8px; }
+  .challenge-tag { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 12px; }
+  .challenge-title { font-size: 26px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+  .challenge-desc { font-size: var(--f-body); line-height: 1.5; color: var(--muted); margin: 0; }
+
+  .section-h2 { font-size: 32px; font-weight: 600; color: var(--dark); margin-bottom: 8px; }
+  .section-subtitle { font-size: var(--f-meta); color: var(--light); margin-bottom: 36px; }
+
+  .rowwrap { display: grid; grid-template-columns: 56px 1fr 180px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding-top: 20px; margin-bottom: 24px; }
+  .rowno { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 24px; color: var(--primary); }
+  .rowh { font-size: 24px; font-weight: 600; color: var(--dark); margin: 0 0 8px 0; }
+  .rowp { font-size: 20px; line-height: 1.5; color: var(--muted); margin: 0; }
+  .meterlab { font-size: var(--f-meta); font-weight: 500; color: var(--light); margin-bottom: 8px; text-align: right; text-transform: uppercase; letter-spacing: 0.05em; }
+  .seg { display: flex; gap: 6px; justify-content: flex-end; }
+  .seg i { display: block; width: 24px; height: 6px; background: var(--border); }
+  .seg i.on { background: var(--primary); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Problem Definition Slide">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <div class="content-area">
+    <!-- Left Column: Unique Core Message & Core Challenge Placeholder -->
+    <div class="left-col">
+      <div class="accent-bar"></div>
+      <div class="highlight-statement">
+        如何突破现有方案在效率与可扩展性上的局限，是推动可持续发展目标落实的关键痛点。
+      </div>
+      <div class="challenge-box">
+        <div class="challenge-tag">核心挑战 · CORE CHALLENGE</div>
+        <div class="challenge-title">[ 待补充 ]</div>
+        <p class="challenge-desc">
+          由于附件未提供具体的环境或社会问题描述，此处核心挑战内容处于待补充状态。在实际项目中，需在此处定义该方案所针对的特定可持续发展痛点。
+        </p>
+      </div>
+    </div>
+
+    <!-- Vertical Divider Line -->
+    <div class="divider"></div>
+
+    <!-- Right Column: Status Analysis & Urgency -->
+    <div class="right-col">
+      <h2 class="section-h2">现状分析与紧迫性评估</h2>
+      <p class="section-subtitle">基于现有解决方案的技术局限性与可持续发展目标 (SDGs) 的对标分析</p>
+
+      <!-- Row 1: Efficiency Bottleneck -->
+      <div class="rowwrap">
+        <div class="rowno">01</div>
+        <div>
+          <h3 class="rowh">现有方案运行效率低下</h3>
+          <p class="rowp">由于缺乏智能化与自动化工具，许多现有的可持续发展方案仍依赖传统人工或低效流程，无法实现实时响应与智能决策。</p>
+        </div>
+        <div>
+          <p class="meterlab">Urgency</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        </div>
+      </div>
+
+      <!-- Row 2: Scalability Issues -->
+      <div class="rowwrap">
+        <div class="rowno">02</div>
+        <div>
+          <h3 class="rowh">可扩展性存在严重局限</h3>
+          <p class="rowp">现有方案多为碎片化、定制化设计，缺乏标准化的底层架构支持，导致方案难以在不同区域、行业或场景中快速复制与推广。</p>
+        </div>
+        <div>
+          <p class="meterlab">Urgency</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+      </div>
+
+      <!-- Row 3: Urgency & SDGs Contribution -->
+      <div class="rowwrap">
+        <div class="rowno">03</div>
+        <div>
+          <h3 class="rowh">紧迫性与 SDGs 贡献路径</h3>
+          <p class="rowp">面对日益严峻的环境挑战，亟需通过技术创新提升解决效率，并明确其对联合国可持续发展目标（SDGs）的具体量化贡献。</p>
+        </div>
+        <div>
+          <p class="meterlab">Urgency</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+{
+  "id": "34-New Market Entry Strategy",
+  "version": 1,
+  "ppt_number": 34,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "black",
+    "red",
+    "gray"
+  ],
+  "name": "New Market Entry Strategy",
+  "description": "Strategy-consulting design with expansive white space, bold black headlines, red decision cues, and precise market diagrams.",
+  "user": "Founders & Leaders",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["strategy","market-entry"],"industries":["business"],"audiences":["executive"],"formats":["roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "白色、墨黑与决策红主导封面，超大标题位于左侧中部，几何色块与细线平衡画面。"
+    },
+    {
+      "path": "images/2-growth-gap.webp",
+      "alt": "白色、墨黑与决策红页面，一幅图表集中排布，诊断信息收束版面。"
+    },
+    {
+      "path": "images/3-market-screen.webp",
+      "alt": "白色、墨黑与决策红页面，一组表格压缩信息密度，人群信息形成重心。"
+    },
+    {
+      "path": "images/4-market-size.webp",
+      "alt": "白色、墨黑与决策红页面，两幅图表集中排布，人群信息拉开层级。"
+    },
+    {
+      "path": "images/5-customer-needs.webp",
+      "alt": "白色、墨黑与决策红页面，一幅图表集中排布，人群关系组织动线。"
+    },
+    {
+      "path": "images/6-competitive-landscape.webp",
+      "alt": "白色、墨黑与决策红页面，一幅图表集中排布，对比关系强化对比。"
+    },
+    {
+      "path": "images/7-entry-mode.webp",
+      "alt": "白色、墨黑与决策红页面，一幅图表集中排布，选择信息收束版面。"
+    },
+    {
+      "path": "images/8-commercial-engine.webp",
+      "alt": "白色、墨黑与决策红页面，标题、细线与留白划分层级，商务信息形成重心。"
+    },
+    {
+      "path": "images/9-phased-roadmap.webp",
+      "alt": "白色、墨黑与决策红页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    },
+    {
+      "path": "images/10-metrics-risks-ask.webp",
+      "alt": "白色、墨黑与决策红页面，一幅图表集中排布，风险信息组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页以白色、墨黑与决策红建立强对比，超大标题落在左侧中部；几何色块与细线占据主要视区，细线和页脚信息稳定边界。"
+    },
+    {
+      "path": "html/2-growth-gap.html",
+      "description": "白色、墨黑与决策红作为底色，标题落在左上方；三组大号数字拉开视觉节奏，一幅图表落在右侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/3-market-screen.html",
+      "description": "标题固定在左上方，白色、墨黑与决策红分隔主体；留白与细线分隔出清晰阅读区，一组表格位于左侧，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/4-market-size.html",
+      "description": "白色、墨黑与决策红画面，标题置于左上方；留白与细线分隔出清晰阅读区，两幅图表落在中央，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/5-customer-needs.html",
+      "description": "左上方标题锚定白色、墨黑与决策红画面；留白与细线分隔出清晰阅读区，一幅图表落在中央，角色节点与关系模块补充层级。"
+    },
+    {
+      "path": "html/6-competitive-landscape.html",
+      "description": "白色、墨黑与决策红作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/7-entry-mode.html",
+      "description": "标题固定在左上方，白色、墨黑与决策红分隔主体；留白与细线分隔出清晰阅读区，一幅图表落在左侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/8-commercial-engine.html",
+      "description": "白色、墨黑与决策红画面，标题置于左上方；留白与细线分隔出清晰阅读区，金额模块与承诺事项沿主区展开。"
+    },
+    {
+      "path": "html/9-phased-roadmap.html",
+      "description": "左上方标题锚定白色、墨黑与决策红画面；横向时间轴串联阶段节点与日期标记，一幅图表落在中央，阶段节点与时间标记补充层级。"
+    },
+    {
+      "path": "html/10-metrics-risks-ask.html",
+      "description": "白色、墨黑与决策红作为底色，标题落在左上方；单一大面板承载主体信息，一幅风险图表落在左侧，一组表格位于左侧。"
+    }
+  ]
+}

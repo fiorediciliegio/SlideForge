@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Route Map — Retro Road Trip Photo Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Courier+Prime:wght@400;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RETRO ROAD TRIP PHOTO JOURNAL — shared analog design system
+   One film stock, one paper, one caption logic, all 10 slides.
+   ============================================================ */
+
+*{box-sizing:border-box;}
+
+:root{
+  --cream:#EFE3CA;
+  --paper:#E7D8B9;
+  --paper-2:#DFCDA9;
+  --ink:#241C14;
+  --ink-80:rgba(36,28,20,.84);
+  --ink-65:rgba(36,28,20,.66);
+  --ink-45:rgba(36,28,20,.46);
+  --brown:#4B3626;
+  --orange:#C2551D;
+  --red:#7C2416;
+  --teal:#2C5B58;
+  --dark:#1B1610;
+  --lt:#F2E8D2;
+  --lt-80:rgba(242,232,210,.84);
+  --lt-60:rgba(242,232,210,.62);
+}
+
+body{margin:0;padding:0;overflow:hidden;background:var(--dark);}
+
+/* ---------- film grain + vignette, identical on every slide ---------- */
+.slide::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:78;
+  background:radial-gradient(120% 90% at 50% 45%,rgba(0,0,0,0) 48%,rgba(24,18,12,.30) 100%);
+}
+.slide::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:79;
+  opacity:.085;mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:220px 220px;
+}
+
+/* ---------- paper ---------- */
+.paper-bg{
+  background-color:var(--cream);
+  background-image:
+    repeating-linear-gradient(94deg,rgba(120,86,48,.028) 0 2px,rgba(0,0,0,0) 2px 7px),
+    repeating-linear-gradient(2deg,rgba(120,86,48,.022) 0 1px,rgba(0,0,0,0) 1px 6px),
+    radial-gradient(70% 60% at 22% 18%,rgba(255,250,236,.55),rgba(0,0,0,0) 70%);
+}
+.dark-bg{
+  background-color:var(--dark);
+  background-image:
+    radial-gradient(80% 70% at 78% 12%,rgba(124,36,22,.30),rgba(0,0,0,0) 66%),
+    radial-gradient(60% 60% at 8% 92%,rgba(44,91,88,.26),rgba(0,0,0,0) 70%);
+}
+
+/* ---------- one film stock for every photograph ---------- */
+.ph{filter:sepia(.24) saturate(.84) contrast(1.055) brightness(1.02);}
+
+/* ---------- film frame (printed edge) ---------- */
+.fr{background:#F4EBD7;padding:12px;box-shadow:0 12px 30px rgba(20,14,8,.34);position:relative;}
+.fr>img{display:block;width:100%;height:100%;object-fit:cover;}
+.fr.dk{background:#15110C;box-shadow:0 12px 30px rgba(0,0,0,.5);}
+.fr.strip{padding:10px 10px 34px;}
+.fr.strip .sn{
+  position:absolute;left:12px;right:12px;bottom:7px;
+  font:700 19px/1 'Courier Prime',monospace;letter-spacing:.11em;
+  color:var(--ink-65);display:flex;justify-content:space-between;
+}
+.fr.strip.dk .sn{color:var(--lt-60);}
+
+/* ---------- typography ---------- */
+.kick{font:700 22px/1 'Courier Prime',monospace;letter-spacing:.30em;color:var(--orange);text-transform:uppercase;display:block;}
+.ttl{font:400 76px/.95 'Alfa Slab One',serif;color:var(--ink);margin:0;letter-spacing:-.008em;text-wrap:pretty;}
+.sub{font:600 30px/1.35 'Spectral',serif;color:var(--red);margin:0;}
+.lead{font:400 29px/1.55 'Spectral',serif;color:var(--ink-80);margin:0;}
+.bd{font:400 25px/1.6 'Spectral',serif;color:var(--ink-80);margin:0;}
+.cap{font:400 24px/1.34 'Spectral',serif;color:var(--ink-65);margin:0;}
+.stamp{font:700 21px/1.2 'Courier Prime',monospace;letter-spacing:.15em;color:var(--red);text-transform:uppercase;}
+.hand{font:600 32px/1.25 'Caveat',cursive;color:var(--teal);margin:0;}
+.foot{font:400 20px/1 'Courier Prime',monospace;letter-spacing:.17em;color:var(--ink-45);text-transform:uppercase;display:block;}
+
+/* light-on-dark variants */
+.lt-ttl{color:var(--lt);}
+.lt-lead{color:var(--lt-80);}
+.lt-bd{color:var(--lt-80);}
+.lt-cap{color:var(--lt-60);}
+.lt-foot{color:rgba(242,232,210,.55);}
+.lt-kick{color:#E4883F;}
+.lt-hand{color:#7FB2AC;}
+
+/* ---------- marks ---------- */
+.rule{background:var(--orange);height:5px;}
+.rule-th{background:var(--ink);height:2px;opacity:.28;}
+.tag{
+  display:inline-block;padding:7px 15px 6px;
+  font:700 20px/1 'Courier Prime',monospace;letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.tag-red{background:var(--red);color:var(--cream);}
+.tag-teal{background:var(--teal);color:var(--cream);}
+.tag-out{border:2px solid var(--ink-45);color:var(--ink-65);}
+
+/* note / ephemera card */
+.note{
+  background:#F3E9D2;border:1px solid rgba(75,54,38,.30);
+  box-shadow:0 10px 24px rgba(20,14,8,.26);
+}
+.note-teal{background:#E4E8DF;border:1px solid rgba(44,91,88,.35);}
+
+ul.tick{margin:0;padding:0;list-style:none;}
+ul.tick li{
+  position:relative;padding-left:34px;margin-bottom:16px;
+  font:400 25px/1.5 'Spectral',serif;color:var(--ink-80);
+}
+ul.tick li:last-child{margin-bottom:0;}
+ul.tick li::before{
+  content:'';position:absolute;left:0;top:13px;width:18px;height:3px;background:var(--orange);
+}
+ul.tick.lt li{color:var(--lt-80);}
+ul.tick.lt li::before{background:#E4883F;}
+</style>
+</head>
+<body>
+<div class="slide paper-bg" data-screen-label="02 Route Map" style="position:relative;width:1920px;height:1080px;overflow:hidden;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:82px;width:1240px;padding-bottom:20px;z-index:10;">
+    <span class="kick" style="margin-bottom:16px;">The Route &middot; Folded Map No. 1</span>
+    <h1 class="ttl" style="font-size:74px;line-height:1.02;">Six Stops, 964 Miles West</h1>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:98px;top:222px;width:172px;height:5px;background:#C2551D;z-index:10;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1420px;top:88px;width:404px;text-align:right;z-index:10;">
+    <span class="foot" style="margin-bottom:9px;">Sheet 1 of 1 &middot; Scale Approx.</span>
+    <span class="stamp">Plotted Day 00</span>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:262px;width:1170px;height:700px;background-color:#E9DCBE;background-image:linear-gradient(90deg,rgba(75,54,38,.13) 0 1px,rgba(0,0,0,0) 1px 292px),linear-gradient(90deg,rgba(0,0,0,0) 0 291px,rgba(75,54,38,.13) 291px 292px),linear-gradient(180deg,rgba(0,0,0,0) 0 349px,rgba(75,54,38,.11) 349px 350px),radial-gradient(80% 70% at 20% 12%,rgba(255,250,236,.5),rgba(0,0,0,0) 70%);background-size:585px 100%,585px 100%,100% 100%,100% 100%;border:1px solid rgba(75,54,38,.34);box-shadow:0 14px 34px rgba(20,14,8,.20),inset 0 0 60px rgba(120,86,48,.16);z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:124px;top:290px;width:1114px;height:644px;z-index:10;">
+    <svg viewBox="0 0 1114 644" width="1114" height="644" style="display:block;">
+      <g stroke="rgba(75,54,38,.10)" stroke-width="1">
+        <line x1="0" y1="128" x2="1114" y2="128"/><line x1="0" y1="300" x2="1114" y2="300"/>
+        <line x1="0" y1="472" x2="1114" y2="472"/>
+        <line x1="222" y1="0" x2="222" y2="644"/><line x1="556" y1="0" x2="556" y2="644"/>
+        <line x1="890" y1="0" x2="890" y2="644"/>
+      </g>
+
+      <g fill="rgba(124,86,48,.15)">
+        <polygon points="330,232 392,150 452,232"/>
+        <polygon points="404,232 456,178 508,232"/>
+        <polygon points="908,596 972,506 1040,596"/>
+        <polygon points="700,608 752,540 806,608"/>
+      </g>
+      <g fill="rgba(44,91,88,.14)">
+        <polygon points="150,268 206,206 262,268"/>
+      </g>
+
+      <path d="M 20 596 C 180 574 300 618 452 588 C 604 558 700 596 860 566" fill="none" stroke="rgba(44,91,88,.42)" stroke-width="3" stroke-dasharray="12 10"/>
+      <path d="M 1010 420 C 1050 470 1064 520 1096 566" fill="none" stroke="rgba(44,91,88,.42)" stroke-width="3" stroke-dasharray="12 10"/>
+
+      <path d="M 86 548 C 150 500 205 452 268 408 C 330 428 390 470 446 486 C 520 452 580 350 648 300 C 712 322 790 372 836 396 C 900 330 950 232 1006 176" fill="none" stroke="rgba(124,36,22,.26)" stroke-width="11" stroke-linecap="round"/>
+      <path d="M 86 548 C 150 500 205 452 268 408 C 330 428 390 470 446 486 C 520 452 580 350 648 300 C 712 322 790 372 836 396 C 900 330 950 232 1006 176" fill="none" stroke="#7C2416" stroke-width="5" stroke-linecap="round"/>
+
+      <g fill="#7C2416">
+        <polygon points="0,-9 17,0 0,9" transform="translate(176,476) rotate(-40)"/>
+        <polygon points="0,-9 17,0 0,9" transform="translate(357,449) rotate(20)"/>
+        <polygon points="0,-9 17,0 0,9" transform="translate(548,386) rotate(-42)"/>
+        <polygon points="0,-9 17,0 0,9" transform="translate(742,350) rotate(27)"/>
+        <polygon points="0,-9 17,0 0,9" transform="translate(922,285) rotate(-48)"/>
+      </g>
+
+      <rect x="76" y="538" width="20" height="20" fill="#F4EBD7" stroke="#7C2416" stroke-width="4"/>
+      <g fill="#F4EBD7" stroke="#7C2416" stroke-width="4">
+        <circle cx="268" cy="408" r="10"/><circle cx="446" cy="486" r="10"/>
+        <circle cx="648" cy="300" r="10"/><circle cx="836" cy="396" r="10"/>
+      </g>
+      <circle cx="1006" cy="176" r="15" fill="none" stroke="#7C2416" stroke-width="4"/>
+      <circle cx="1006" cy="176" r="7" fill="#7C2416"/>
+
+      <g font-family="'Courier Prime',monospace" font-weight="700" font-size="24" letter-spacing="1.6" fill="#241C14">
+        <text x="86" y="590" text-anchor="start">[HOME CITY]</text>
+        <text x="268" y="374" text-anchor="middle">[DESERT JUNCTION]</text>
+        <text x="446" y="532" text-anchor="middle">[MESA TOWN]</text>
+        <text x="648" y="266" text-anchor="middle">[CANYON STATION]</text>
+        <text x="836" y="442" text-anchor="middle">[RIVER BEND]</text>
+        <text x="1006" y="146" text-anchor="end">[COAST CITY]</text>
+      </g>
+
+      <g font-family="'Courier Prime',monospace" font-weight="700" font-size="19" letter-spacing="1.5" fill="#7C2416">
+        <text x="86" y="620" text-anchor="start">DEPART &middot; MILE 0</text>
+        <text x="1006" y="112" text-anchor="end">ARRIVE &middot; MILE 964</text>
+      </g>
+
+      <g font-family="'Courier Prime',monospace" font-weight="700" font-size="21" letter-spacing="1.2" fill="rgba(36,28,20,.62)">
+        <text x="140" y="450" text-anchor="middle">186 MI</text>
+        <text x="368" y="424" text-anchor="middle">214 MI</text>
+        <text x="614" y="432" text-anchor="middle">158 MI</text>
+        <text x="780" y="318" text-anchor="middle">232 MI</text>
+        <text x="968" y="322" text-anchor="middle">174 MI</text>
+      </g>
+
+      <g transform="translate(72,112)">
+        <circle r="34" fill="none" stroke="rgba(36,28,20,.42)" stroke-width="2"/>
+        <polygon points="0,-27 8,4 0,-4 -8,4" fill="#7C2416"/>
+        <text x="0" y="-40" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="20" fill="rgba(36,28,20,.62)">N</text>
+      </g>
+
+      <g transform="translate(660,618)">
+        <line x1="0" y1="0" x2="150" y2="0" stroke="rgba(36,28,20,.52)" stroke-width="3"/>
+        <line x1="0" y1="-7" x2="0" y2="7" stroke="rgba(36,28,20,.52)" stroke-width="3"/>
+        <line x1="75" y1="-5" x2="75" y2="5" stroke="rgba(36,28,20,.52)" stroke-width="3"/>
+        <line x1="150" y1="-7" x2="150" y2="7" stroke="rgba(36,28,20,.52)" stroke-width="3"/>
+        <text x="75" y="26" text-anchor="middle" font-family="'Courier Prime',monospace" font-weight="700" font-size="18" letter-spacing="1.2" fill="rgba(36,28,20,.55)">APPROX. 200 MI</text>
+      </g>
+    </svg>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1330px;top:262px;width:494px;z-index:10;">
+    <div class="note" style="padding:30px 30px 28px;">
+      <span class="foot" style="margin-bottom:6px;">Itinerary &middot; Odometer</span>
+      <div class="rule-th" style="margin:16px 0 20px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:17px;">
+        <span style="font:400 24px/1.25 'Spectral',serif;color:#241C14;">Day 01 &middot; [Home City]</span>
+        <span style="font:700 20px/1 'Courier Prime',monospace;color:#7C2416;">0</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:17px;">
+        <span style="font:400 24px/1.25 'Spectral',serif;color:#241C14;">Day 02 &middot; [Desert Junction]</span>
+        <span style="font:700 20px/1 'Courier Prime',monospace;color:#7C2416;">186</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:17px;">
+        <span style="font:400 24px/1.25 'Spectral',serif;color:#241C14;">Day 03 &middot; [Mesa Town]</span>
+        <span style="font:700 20px/1 'Courier Prime',monospace;color:#7C2416;">214</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:17px;">
+        <span style="font:400 24px/1.25 'Spectral',serif;color:#241C14;">Day 05 &middot; [Canyon Station]</span>
+        <span style="font:700 20px/1 'Courier Prime',monospace;color:#7C2416;">158</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:17px;">
+        <span style="font:400 24px/1.25 'Spectral',serif;color:#241C14;">Day 07 &middot; [River Bend]</span>
+        <span style="font:700 20px/1 'Courier Prime',monospace;color:#7C2416;">232</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="font:400 24px/1.25 'Spectral',serif;color:#241C14;">Day 09 &middot; [Coast City]</span>
+        <span style="font:700 20px/1 'Courier Prime',monospace;color:#7C2416;">174</span>
+      </div>
+      <div class="rule-th" style="margin:22px 0 18px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span class="stamp" style="font-size:20px;">Total</span>
+        <span style="font:700 27px/1 'Courier Prime',monospace;color:#241C14;">964 MI &middot; 9 DAYS</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1330px;top:786px;width:494px;z-index:10;">
+    <p class="cap" style="font-size:23px;">Two lanes the whole way. We booked nothing past Day 03 and let the map stay a suggestion.</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1690px;top:988px;width:120px;text-align:right;z-index:10;">
+    <span class="foot">02 / 10</span>
+  </div>
+
+</div>
+</body>
+</html>

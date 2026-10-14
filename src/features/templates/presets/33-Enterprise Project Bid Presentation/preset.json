@@ -1,0 +1,103 @@
+{
+  "id": "33-Enterprise Project Bid Presentation",
+  "version": 1,
+  "ppt_number": 33,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "blue",
+    "navy",
+    "gray"
+  ],
+  "name": "Enterprise Project Bid Presentation",
+  "description": "Corporate bid design with white analytical pages, strong blue side panels, compact proof points, and precise commercial charts.",
+  "user": "Business Professionals",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["partnership"],"industries":["business"],"audiences":["client"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "左侧中部超大标题主导白色、皇家蓝与深海军蓝封面，几何色块与细线补充节奏。"
+    },
+    {
+      "path": "images/2-project-context.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，双面板划分主体区域，核心判断强化对比。"
+    },
+    {
+      "path": "images/3-requirements-analysis.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，一组表格压缩信息密度，分析图表收束版面。"
+    },
+    {
+      "path": "images/4-solution-architecture.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，五块卡片组成两列网格，产品信息形成重心。"
+    },
+    {
+      "path": "images/5-delivery-method.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，四块卡片组成四列网格，流程信息拉开层级。"
+    },
+    {
+      "path": "images/6-scope-scenarios.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，三块卡片纵向叠放，范围信息组织动线。"
+    },
+    {
+      "path": "images/7-implementation-roadmap.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，横向时间轴串联阶段节点，日期标记强化对比。"
+    },
+    {
+      "path": "images/8-proof-and-differentiation.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，一幅图表集中排布，验证信息收束版面。"
+    },
+    {
+      "path": "images/9-assurance-and-risk.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，六块卡片组成四列网格，风险信息形成重心。"
+    },
+    {
+      "path": "images/10-commercial-and-commitments.webp",
+      "alt": "白色、皇家蓝与深海军蓝页面，一幅图表集中排布，商务信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页由白色、皇家蓝与深海军蓝划分层次，左侧中部的超大标题占据主视区；几何色块与细线补充节奏，页脚细字稳定版面。"
+    },
+    {
+      "path": "html/2-project-context.html",
+      "description": "标题固定在左上方，白色、皇家蓝与深海军蓝分隔主体；两块主面板建立清晰分区，一幅图表落在右侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-requirements-analysis.html",
+      "description": "白色、皇家蓝与深海军蓝画面，标题置于左上方；留白与细线分隔出清晰阅读区，一组表格位于中央，对比图表与差异标记补充层级。"
+    },
+    {
+      "path": "html/4-solution-architecture.html",
+      "description": "左上方标题锚定白色、皇家蓝与深海军蓝画面；五块信息卡组成两列网格，功能模块与结构示意沿主区展开。"
+    },
+    {
+      "path": "html/5-delivery-method.html",
+      "description": "白色、皇家蓝与深海军蓝作为底色，标题落在左上方；四块信息卡横向并列，步骤模块与连接关系贴合卡片边界。"
+    },
+    {
+      "path": "html/6-scope-scenarios.html",
+      "description": "标题固定在左上方，白色、皇家蓝与深海军蓝分隔主体；三块信息卡纵向叠放，目标卡、范围块与关键数字集中在画面中部。"
+    },
+    {
+      "path": "html/7-implementation-roadmap.html",
+      "description": "白色、皇家蓝与深海军蓝画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，一幅图表落在中央，一组表格位于中央。"
+    },
+    {
+      "path": "html/8-proof-and-differentiation.html",
+      "description": "左上方标题锚定白色、皇家蓝与深海军蓝画面；单一大面板承载主体信息，一幅图表落在中央，一组表格位于左侧。"
+    },
+    {
+      "path": "html/9-assurance-and-risk.html",
+      "description": "白色、皇家蓝与深海军蓝作为底色，标题落在左上方；六块信息卡组成四列网格，一组表格位于左侧，分级标签、状态色与风险标记补充层级。"
+    },
+    {
+      "path": "html/10-commercial-and-commitments.html",
+      "description": "标题固定在左上方，白色、皇家蓝与深海军蓝分隔主体；单一大面板承载主体信息，一幅图表落在右侧，一组表格位于左侧。"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "115-University Club Recruitment Campaign",
+  "version": 1,
+  "ppt_number": 115,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "magenta",
+    "yellow",
+    "blue",
+    "red",
+    "black",
+    "white"
+  ],
+  "name": "University Club Recruitment Campaign",
+  "description": "Bold campus recruitment campaign with saturated colors, oversized type, hard-edged blocks, and geometric graphics.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["marketing-campaign"],"industries":["education"],"audiences":["students"],"formats":["proposal"],"primary_styles":["playful"],"visual_traits":["playful","colorful","cartoon","illustration","high-contrast"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "洋红黄蓝硬边色块与超粗标题构成高冲击力的校园招募海报封面，视觉大胆醒目。"
+    },
+    {
+      "path": "images/2-who-we-are.webp",
+      "alt": "超大数字、几何块和粗体宣言分区排列，呈现醒目的青年社群视觉，版面张力强烈。"
+    },
+    {
+      "path": "images/3-why-join.webp",
+      "alt": "三张红黄蓝利益卡以超大编号和粗体短句组成强节奏招募页，信息层级直接。"
+    },
+    {
+      "path": "images/4-activities-highlights.webp",
+      "alt": "红色底面叠加黄色活动卡、白色卡和钴蓝侧栏，形成海报式拼版，色块碰撞鲜明。"
+    },
+    {
+      "path": "images/5-member-stories.webp",
+      "alt": "三张粗黑边框人物引语卡置于洋红与亮黄色块上，对比强烈，呈现街头招贴感。"
+    },
+    {
+      "path": "images/6-find-your-track.webp",
+      "alt": "多条不同长度的洋红蓝红横向条形图配大号数字，直观展示方向，数据节奏强劲。"
+    },
+    {
+      "path": "images/7-time-commitment.webp",
+      "alt": "钴蓝全幅背景上的时间块状图，以亮黄标签和白字强调轻量投入，结构清楚醒目。"
+    },
+    {
+      "path": "images/8-first-90-days.webp",
+      "alt": "亮黄背景以四段彩色节点时间轴展示九十天路径，粗体标题醒目直接，进程清晰有力。"
+    },
+    {
+      "path": "images/9-straight-answers.webp",
+      "alt": "洋红底色上用黑白双栏对照误解与事实，亮黄标题强化答案区，对比明确有力。"
+    },
+    {
+      "path": "images/10-how-to-join.webp",
+      "alt": "大号步骤数字、二维码式信息块和行动按钮构成强烈的招募收尾页，行动指引集中醒目。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，洋红、亮黄、钴蓝和红色硬边几何块切分画布，超粗黑白标题以海报尺度占据主体，星形符号和倾斜装饰制造年轻动势。"
+    },
+    {
+      "path": "html/2-who-we-are.html",
+      "description": "非对称色块将宣言、超大数字和社群关键词分区排列，粗体标题与窄体标签形成强烈字号反差，黑色线条统一硬朗海报结构。"
+    },
+    {
+      "path": "html/3-why-join.html",
+      "description": "左侧深色标题区与右侧三张高饱和利益卡形成分栏，红黄蓝卡片分别使用超大编号、粗体短标题和紧凑说明建立节奏。"
+    },
+    {
+      "path": "html/4-activities-highlights.html",
+      "description": "红色全幅底面叠加顶部黄色通栏、右侧钴蓝竖栏和洋红斜切块，中部活动卡以黄、白等硬边色块拼成高密度海报网格。"
+    },
+    {
+      "path": "html/5-member-stories.html",
+      "description": "顶部洋红标题带与底部钴蓝、红色色块包围三张人物引语卡，卡片采用黑白反差、圆形头像符号和超大引号，呈现街头招贴感。"
+    },
+    {
+      "path": "html/6-find-your-track.html",
+      "description": "白色背景上纵向排列多条不同长度的洋红、钴蓝、红色粗条，每条内置方向名称和超大百分比，右侧窄栏补充选择提示。"
+    },
+    {
+      "path": "html/7-time-commitment.html",
+      "description": "钴蓝全幅背景承载横向时间块状图，亮黄色标签和白色文字标记活动时长，规则网格与大面积留白让信息一目了然。"
+    },
+    {
+      "path": "html/8-first-90-days.html",
+      "description": "亮黄背景上用一条粗黑横轴串联四个彩色圆形节点，上下交错排列阶段标题与行动卡，洋红、钴蓝、红色分别区分进程。"
+    },
+    {
+      "path": "html/9-straight-answers.html",
+      "description": "洋红全幅背景采用左右双栏对照，左侧黑色面板排列叉号条目，右侧白色面板排列亮黄与蓝色答案，形成强烈误解与事实对比。"
+    },
+    {
+      "path": "html/10-how-to-join.html",
+      "description": "超大步骤数字和高饱和色块构成从左到右的行动流程，联系信息、二维码式方块和黑色行动按钮集中于末端，形成明确招募收尾。"
+    }
+  ]
+}

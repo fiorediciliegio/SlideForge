@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Segments</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURA Pods Pro — FY26 Launch Deck
+   Design system: White + Blue accent (single primary, two secondaries)
+   Type: Manrope (display/UI) + IBM Plex Mono (labels, numbers)
+   Radius 4px · hairline 1px · no gradients · no glow
+   ============================================================ */
+
+:root{
+  --ink:      #0F1B2D;   /* primary text            */
+  --ink-2:    #5B6B82;   /* secondary text          */
+  --ink-3:    #93A1B5;   /* tertiary / chrome text  */
+  --line:     #E4E9F0;   /* hairline                */
+  --line-2:   #F0F3F8;   /* faint hairline          */
+  --blue:     #1A56DB;   /* PRIMARY accent          */
+  --blue-ink: #123FA0;   /* accent, pressed         */
+  --blue-soft:#EDF2FE;   /* accent wash             */
+  --wash:     #F6F8FB;   /* neutral surface         */
+  --white:    #FFFFFF;
+
+  --r: 4px;
+}
+
+*{ box-sizing:border-box; }
+body{ margin:0; padding:0; overflow:hidden; background:var(--white);
+      -webkit-font-smoothing:antialiased; }
+
+/* ---------- type roles (typography only; layout stays inline) ---------- */
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--blue); margin:0;
+}
+.h1{ font-family:'Manrope',sans-serif; font-weight:800; font-size:58px;
+     line-height:1.12; letter-spacing:-.022em; color:var(--ink); margin:0; }
+.h1-xl{ font-family:'Manrope',sans-serif; font-weight:800; font-size:112px;
+     line-height:1.0; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.h2{ font-family:'Manrope',sans-serif; font-weight:700; font-size:34px;
+     line-height:1.25; letter-spacing:-.012em; color:var(--ink); margin:0; }
+.h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:25px;
+     line-height:1.3; color:var(--ink); margin:0; }
+.lead{ font-family:'Manrope',sans-serif; font-weight:500; font-size:29px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.body{ font-family:'Manrope',sans-serif; font-weight:500; font-size:23px;
+     line-height:1.55; color:var(--ink-2); margin:0; }
+.small{ font-family:'Manrope',sans-serif; font-weight:500; font-size:20px;
+     line-height:1.5; color:var(--ink-2); margin:0; }
+.stat{ font-family:'Manrope',sans-serif; font-weight:800; font-size:88px;
+     line-height:.95; letter-spacing:-.035em; color:var(--ink); margin:0; }
+.stat-sm{ font-family:'Manrope',sans-serif; font-weight:800; font-size:60px;
+     line-height:1; letter-spacing:-.03em; color:var(--ink); margin:0; }
+
+.mono{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:18px;
+     letter-spacing:.04em; color:var(--ink-2); margin:0; }
+.tag{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+.tag-b{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:15px;
+     letter-spacing:.16em; text-transform:uppercase; color:var(--blue); margin:0; }
+.idx{ font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:17px;
+     letter-spacing:.1em; color:var(--blue); margin:0; }
+.foot{ font-family:'IBM Plex Mono',monospace; font-weight:400; font-size:15px;
+     letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin:0; }
+
+.accent{ color:var(--blue); }
+.ink{ color:var(--ink); }
+.dim{ color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="06 Segments" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#FFFFFF;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:96px;width:900px;z-index:10;">
+    <p class="eyebrow">05 &nbsp;/&nbsp; Market opportunity</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:150px;width:1000px;z-index:10;">
+    <h1 class="h1">Three segments, one<br>priority for launch.</h1>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1220px;top:162px;width:580px;z-index:10;">
+    <p class="body">We lead with the commuter professional — largest addressable base, highest willingness to pay, and the tightest fit with the adaptive story.</p>
+  </div>
+
+  <!-- table -->
+  <div data-object="true" data-object-type="table" style="position:absolute;left:120px;top:390px;width:1680px;z-index:10;">
+    <table style="width:1680px;border-collapse:collapse;font-family:'Manrope',sans-serif;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:0 0 16px 0;width:400px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#93A1B5;border-bottom:1px solid #0F1B2D;">Segment</th>
+          <th style="text-align:left;padding:0 24px 16px 24px;width:400px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#93A1B5;border-bottom:1px solid #0F1B2D;">Primary scenario</th>
+          <th style="text-align:right;padding:0 24px 16px 24px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#93A1B5;border-bottom:1px solid #0F1B2D;">Addressable</th>
+          <th style="text-align:right;padding:0 24px 16px 24px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#93A1B5;border-bottom:1px solid #0F1B2D;">Avg. spend</th>
+          <th style="text-align:right;padding:0 0 16px 24px;width:230px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#93A1B5;border-bottom:1px solid #0F1B2D;">Launch priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#EDF2FE;">
+          <td style="padding:26px 0 26px 20px;border-bottom:1px solid #E4E9F0;">
+            <span style="font-size:27px;font-weight:700;color:#0F1B2D;">Commuter professional</span><br>
+            <span style="font-size:20px;font-weight:500;color:#5B6B82;">28–45, metro, hybrid work</span>
+          </td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;font-size:22px;font-weight:500;color:#5B6B82;">Transit, focus blocks, back-to-back calls</td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;font-size:30px;font-weight:800;color:#0F1B2D;">18.4M</td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;font-size:30px;font-weight:800;color:#0F1B2D;">$232</td>
+          <td style="padding:26px 20px 26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;">
+            <span style="display:inline-block;padding:7px 16px;background:#1A56DB;color:#FFFFFF;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.12em;">TIER 1</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:26px 0 26px 20px;border-bottom:1px solid #E4E9F0;">
+            <span style="font-size:27px;font-weight:700;color:#0F1B2D;">Active everyday</span><br>
+            <span style="font-size:20px;font-weight:500;color:#5B6B82;">22–38, run &amp; gym routine</span>
+          </td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;font-size:22px;font-weight:500;color:#5B6B82;">Outdoor training, awareness mode</td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;font-size:30px;font-weight:800;color:#0F1B2D;">11.7M</td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;font-size:30px;font-weight:800;color:#0F1B2D;">$178</td>
+          <td style="padding:26px 20px 26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;">
+            <span style="display:inline-block;padding:7px 16px;background:#FFFFFF;color:#1A56DB;border:1px solid #1A56DB;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.12em;">TIER 2</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:26px 0 26px 20px;border-bottom:1px solid #E4E9F0;">
+            <span style="font-size:27px;font-weight:700;color:#0F1B2D;">Audio enthusiast</span><br>
+            <span style="font-size:20px;font-weight:500;color:#5B6B82;">25–50, spec-literate</span>
+          </td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;font-size:22px;font-weight:500;color:#5B6B82;">Critical listening, hi-res library</td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;font-size:30px;font-weight:800;color:#0F1B2D;">4.2M</td>
+          <td style="padding:26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;font-size:30px;font-weight:800;color:#0F1B2D;">$304</td>
+          <td style="padding:26px 20px 26px 24px;border-bottom:1px solid #E4E9F0;text-align:right;">
+            <span style="display:inline-block;padding:7px 16px;background:#FFFFFF;color:#93A1B5;border:1px solid #E4E9F0;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:.12em;">TIER 3</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- takeaway -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:120px;top:874px;width:4px;height:88px;background:var(--blue);z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:164px;top:872px;width:1000px;z-index:10;">
+    <p class="tag-b">Launch call</p>
+    <p class="h3" style="margin-top:10px;font-size:26px;">Tier 1 takes 70% of paid media. Tier 2 rides organic and retail demo.</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1380px;top:872px;width:420px;z-index:10;text-align:right;">
+    <p class="stat-sm" style="font-size:52px;">$4.3<span style="font-size:26px;">B</span></p>
+    <p class="tag" style="margin-top:8px;">Serviceable market, tier 1 + 2</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:120px;top:1002px;width:1100px;z-index:10;">
+    <p class="foot">AURA Pods Pro — FY26 launch &nbsp;·&nbsp; Illustrative sample data</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1660px;top:1002px;width:140px;z-index:10;text-align:right;">
+    <p class="foot">06 / 10</p>
+  </div>
+
+</div>
+</body>
+</html>

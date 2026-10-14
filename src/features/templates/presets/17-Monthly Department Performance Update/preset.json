@@ -1,0 +1,103 @@
+{
+  "id": "17-Monthly Department Performance Update",
+  "version": 1,
+  "ppt_number": 17,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "charcoal",
+    "cream",
+    "green",
+    "orange"
+  ],
+  "name": "Monthly Department Performance Update",
+  "description": "Operational review design with charcoal title panels, warm neutral dashboards, compact tables, and green progress cues.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review"],"industries":["business"],"audiences":["employee"],"formats":["status-update"],"primary_styles":["formal"],"visual_traits":["formal","data-dense","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "炭灰、暖米色与进度绿封面以左侧中部超大标题开场，几何色块与细线拉开层级。"
+    },
+    {
+      "path": "images/2-month-at-a-glance.webp",
+      "alt": "炭灰、暖米色与进度绿页面，左半区三组大数字，右侧两卡叠放，指标信息强化对比。"
+    },
+    {
+      "path": "images/3-goal-attainment.webp",
+      "alt": "炭灰、暖米色与进度绿页面，一组表格压缩信息密度，指标信息收束版面。"
+    },
+    {
+      "path": "images/4-gap-root-cause.webp",
+      "alt": "炭灰、暖米色与进度绿页面，双面板划分主体区域，诊断信息形成重心。"
+    },
+    {
+      "path": "images/5-project-portfolio.webp",
+      "alt": "炭灰、暖米色与进度绿页面，四块卡片组成两列网格，组合信息拉开层级。"
+    },
+    {
+      "path": "images/6-project-spotlight.webp",
+      "alt": "炭灰、暖米色与进度绿页面，五块卡片组成五列网格，重点项目组织动线。"
+    },
+    {
+      "path": "images/7-team-output-collaboration.webp",
+      "alt": "炭灰、暖米色与进度绿页面，四块卡片组成四列网格，人物卡强化对比。"
+    },
+    {
+      "path": "images/8-issues-and-resource-needs.webp",
+      "alt": "炭灰、暖米色与进度绿页面，七块卡片组成四列网格，指导信息收束版面。"
+    },
+    {
+      "path": "images/9-next-month-plan.webp",
+      "alt": "炭灰、暖米色与进度绿页面，横向时间轴串联阶段节点，日期标记形成重心。"
+    },
+    {
+      "path": "images/10-owners-and-action-ask.webp",
+      "alt": "炭灰、暖米色与进度绿页面，双面板划分主体区域，决策信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，炭灰、暖米色与进度绿主导画面，左侧中部的超大标题形成第一视点；几何色块与细线与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-month-at-a-glance.html",
+      "description": "标题固定在左上方，炭灰、暖米色与进度绿分隔主体；左半区以三组大号数字开场，右侧纵向排列两块卡片，一幅指标图表落在左侧，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/3-goal-attainment.html",
+      "description": "炭灰、暖米色与进度绿画面，标题置于左上方；留白与细线分隔出清晰阅读区，一组表格位于中央，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/4-gap-root-cause.html",
+      "description": "左上方标题锚定炭灰、暖米色与进度绿画面；两块主面板建立清晰分区，一幅图表落在右侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/5-project-portfolio.html",
+      "description": "炭灰、暖米色与进度绿作为底色，标题落在左上方；四块信息卡组成两列网格，项目卡、优先级与状态标签贴合卡片边界。"
+    },
+    {
+      "path": "html/6-project-spotlight.html",
+      "description": "标题固定在左上方，炭灰、暖米色与进度绿分隔主体；五块信息卡组成五列网格，一幅图表落在左侧，重点卡片与放大数字补充层级。"
+    },
+    {
+      "path": "html/7-team-output-collaboration.html",
+      "description": "炭灰、暖米色与进度绿画面，标题置于左上方；四块信息卡组成四列网格，一组表格位于左侧，人物信息与职责标签补充层级。"
+    },
+    {
+      "path": "html/8-issues-and-resource-needs.html",
+      "description": "左上方标题锚定炭灰、暖米色与进度绿画面；七块信息卡组成四列网格，说明卡、步骤标记与提示模块嵌入主体模块。"
+    },
+    {
+      "path": "html/9-next-month-plan.html",
+      "description": "炭灰、暖米色与进度绿作为底色，标题落在左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记沿主区展开。"
+    },
+    {
+      "path": "html/10-owners-and-action-ask.html",
+      "description": "标题固定在左上方，炭灰、暖米色与进度绿分隔主体；两块主面板建立清晰分区，一组表格位于左侧，行动卡与强调结论补充层级。"
+    }
+  ]
+}

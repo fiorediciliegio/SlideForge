@@ -1,0 +1,104 @@
+{
+  "id": "113-Kids’ Science Comic Lesson",
+  "version": 1,
+  "ppt_number": 113,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "yellow",
+    "red",
+    "blue",
+    "black",
+    "white"
+  ],
+  "name": "Kids' Science Comic Lesson",
+  "description": "Energetic science comic with bold outlines, halftone textures, panel layouts, speed lines, and speech bubbles.",
+  "user": "Education & Research",
+  "use_case": "Education & Training",
+  "industry": "Education & Public Sector",
+  "recommendation_profile": {"use_cases":["education-lesson"],"industries":["education"],"audiences":["children"],"formats":["lesson"],"primary_styles":["playful"],"visual_traits":["playful","cartoon","illustration","high-contrast","colorful"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "亮黄网点背景叠加红蓝标题条、爆炸星芒和人物分镜的漫画课程封面，动势强烈醒目。"
+    },
+    {
+      "path": "images/2-opening-question.webp",
+      "alt": "超大问题文字、漫画人物和对白气泡置于粗黑分镜中，开场冲击鲜明，视觉张力十足。"
+    },
+    {
+      "path": "images/3-science-principle.webp",
+      "alt": "红黄蓝信息面板搭配科学示意图、箭头和漫画标签，层次直接清楚，阅读路径明确。"
+    },
+    {
+      "path": "images/4-experiment.webp",
+      "alt": "四步实验分镜以粗黑框依次排列，编号爆炸章和手绘图示引导流程，节奏紧凑明快。"
+    },
+    {
+      "path": "images/5-electron-tug-of-war.webp",
+      "alt": "电子拔河示意占据中央，红蓝力量区和速度线强化对抗式解释，画面充满动感。"
+    },
+    {
+      "path": "images/6-static-vs-current.webp",
+      "alt": "静电与电流以红蓝左右分屏对照，图标、箭头和粗体标签区分概念，对比鲜明。"
+    },
+    {
+      "path": "images/7-comic-scenario.webp",
+      "alt": "连续漫画分镜通过人物动作、对白气泡和速度线讲解科学情境，叙事路径流畅。"
+    },
+    {
+      "path": "images/8-lightning-supersized.webp",
+      "alt": "巨大闪电主视觉配爆炸框、网点背景和尺度对比卡，具有英雄漫画感，冲击力强。"
+    },
+    {
+      "path": "images/9-static-on-the-job.webp",
+      "alt": "多张职业应用卡以漫画图标和高饱和标签排列，呈现实用科普画面，分组清晰醒目。"
+    },
+    {
+      "path": "images/10-quiz-summary.webp",
+      "alt": "三张测验卡与底部事件链分镜组合，用爆炸章和箭头完成漫画式总结，结构紧凑。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，亮黄半调网点铺满背景，红蓝倾斜标题条承载超大漫画字体，爆炸星芒、速度线和人物分镜围绕主标题制造强烈开场。"
+    },
+    {
+      "path": "html/2-opening-question.html",
+      "description": "粗黑边框将页面切分为问题区与人物分镜，超大提问文字配对白气泡、爆炸标签和高饱和红黄蓝色块，形成漫画开场悬念。"
+    },
+    {
+      "path": "html/3-science-principle.html",
+      "description": "多个红黄蓝漫画面板按阅读顺序铺排，中心科学示意图以粗线箭头和标签解释关系，半调底纹与黑色边框强化信息层级。"
+    },
+    {
+      "path": "html/4-experiment.html",
+      "description": "四个实验步骤以连续分镜横向或网格式排列，每格配高对比编号、手绘器材和短说明，爆炸章与粗黑连接箭头推动流程。"
+    },
+    {
+      "path": "html/5-electron-tug-of-war.html",
+      "description": "中央以拟人化电子拔河图形成视觉焦点，红蓝两侧代表相反力量，粗黑绳线、动作线和标签卡共同构成对抗式概念图。"
+    },
+    {
+      "path": "html/6-static-vs-current.html",
+      "description": "页面采用红蓝左右分屏，将两组概念分别置于粗黑描边面板，图标、箭头、属性条和中央对比标记形成鲜明二元结构。"
+    },
+    {
+      "path": "html/7-comic-scenario.html",
+      "description": "连续分镜按漫画阅读路径组织人物动作与场景变化，对白气泡、拟声词、速度线和反应特写共同推进情境叙事。"
+    },
+    {
+      "path": "html/8-lightning-supersized.html",
+      "description": "巨大闪电图形纵贯高饱和背景，周围放置爆炸式标题、尺寸对比卡和网点阴影，倾斜构图营造英雄漫画般的能量感。"
+    },
+    {
+      "path": "html/9-static-on-the-job.html",
+      "description": "多张职业应用卡以规则网格排列，每张卡结合漫画图标、粗体标题与彩色标签，底部总结带用强对比色统一收束。"
+    },
+    {
+      "path": "html/10-quiz-summary.html",
+      "description": "上半区横排三张粗边框测验卡，下半区用箭头串联一组事件链分镜，爆炸章、对错标记和红黄蓝色块完成漫画式总结。"
+    }
+  ]
+}

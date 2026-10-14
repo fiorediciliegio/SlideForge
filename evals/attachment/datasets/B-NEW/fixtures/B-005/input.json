@@ -1,0 +1,95 @@
+{
+  "case_id": "B-005",
+  "brief_id": "B-005",
+  "brief": "Turn the attached README into a 6-slide Kubernetes onboarding deck for engineers joining the infrastructure team. Use only what the README explicitly states. Architecture details, benchmark numbers, production recommendations, and security guidance not present in the attachment must be labeled as unavailable.",
+  "repetition": 1,
+  "total_repetitions": 3,
+  "provided_requirements": {
+    "version": 1,
+    "status": "confirmed",
+    "source": {
+      "brief": "Turn the attached README into a 6-slide Kubernetes onboarding deck for engineers joining the infrastructure team. Use only what the README explicitly states. Architecture details, benchmark numbers, production recommendations, and security guidance not present in the attachment must be labeled as unavailable."
+    },
+    "candidates": {
+      "audience": [
+        {
+          "label": "New infrastructure engineers",
+          "description": "New infrastructure engineers"
+        }
+      ],
+      "purpose": [
+        {
+          "label": "Technical onboarding",
+          "description": "Technical onboarding"
+        }
+      ],
+      "desired_outcome": [
+        {
+          "label": "Explain what Kubernetes is and where to start without adding unsupported engineering advice",
+          "description": "Explain what Kubernetes is and where to start without adding unsupported engineering advice"
+        }
+      ],
+      "slide_count": [
+        6
+      ],
+      "output_language": [
+        "English"
+      ],
+      "visual_tone": [
+        {
+          "label": "Technical, concise, trustworthy",
+          "description": "Technical, concise, trustworthy"
+        }
+      ]
+    },
+    "selections": {
+      "audience": {
+        "label": "New infrastructure engineers",
+        "description": "New infrastructure engineers"
+      },
+      "purpose": {
+        "label": "Technical onboarding",
+        "description": "Technical onboarding"
+      },
+      "desired_outcome": {
+        "label": "Explain what Kubernetes is and where to start without adding unsupported engineering advice",
+        "description": "Explain what Kubernetes is and where to start without adding unsupported engineering advice"
+      },
+      "slide_count": 6,
+      "output_language": "English",
+      "visual_tone": {
+        "label": "Technical, concise, trustworthy",
+        "description": "Technical, concise, trustworthy"
+      },
+      "visual_style_preset": null
+    },
+    "research": {
+      "web": {
+        "recommended": false,
+        "reason": "Disabled by the fixed evaluation Requirements.",
+        "enabled": false
+      },
+      "images": {
+        "recommended": false,
+        "reason": "Disabled by the fixed evaluation Requirements.",
+        "enabled": false
+      }
+    },
+    "updated_at": "2026-08-28T00:00:00.000Z",
+    "confirmed_at": "2026-08-28T00:00:00.000Z"
+  },
+  "provided_uploaded_source_analysis_context": [
+    {
+      "source_id": "b-005-source-1",
+      "filename": "kubernetes-readme.md",
+      "content_strategy": "full_context",
+      "original_reading_method": "document_read",
+      "content": "Kubernetes is an open-source system for managing containerized applications across multiple hosts and provides mechanisms for deployment, maintenance, and scaling. It is hosted by CNCF. New users are directed to kubernetes.io and a free scalable-microservices course. Contributors are directed to the community repository and developer documentation. Local builds can use a Go environment with make or a Docker environment with make quick-release. Support starts with the troubleshooting guide and community communication channels. Governance information is linked through the community and steering repositories; the enhancements repository is the Roadmap entry point.\n\n### B-005 Supporting Record 001\nImplementation note 1: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.\n\n### B-005 Supporting Record 002\nMeasurement note 2: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.\n\n### B-005 Supporting Record 003\nStatus note 3: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.\n\n### B-005 Supporting Record 004\nEvidence boundary 4: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.\n\n### B-005 Supporting Record 005\nCommunication log 5: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.\n\n### B-005 Supporting Record 006\nSupporting record 6: On 2025-07-07, workstream 2 completed a document-control review. The meeting confirmed scope, ownership, and a next review date only; it did not approve new budget, external commitments, or outcome figures. This operational note must not replace the authoritative results stated earlier.\n\n### B-005 Supporting Record 007\nImplementation note 7: Participants discussed several possible explanations for the observed issue, but no evidence-based root-cause conclusion was approved. Any outline reference to causes must remain explicitly unconfirmed rather than converting workshop discussion into fact.\n\n### B-005 Supporting Record 008\nMeasurement note 8: The record concerns tasks, service instances, or checkpoint observations and does not represent unique customers, unique beneficiaries, or final deliveries. Percentages, growth rates, and impact estimates must not be calculated without a stated denominator and method.\n\n### B-005 Supporting Record 009\nStatus note 9: An internal task entered preparation and has an owner, but completion still depends on approval, capacity, or external feedback. This entry does not change the formal baseline and is not evidence that the work is complete, launched, funded, contracted, or generating revenue.\n\n### B-005 Supporting Record 010\nEvidence boundary 10: This background operating detail is lower priority than a final finance summary, signed decision, approved baseline, or confirmed status. If sources differ, preserve the discrepancy and follow the source priority defined by the user instead of silently selecting the more favourable figure.\n\n### B-005 Supporting Record 011\nCommunication log 11: A future review was scheduled to confirm terminology, dates, and ownership. Invitations and discussion plans are not business outcomes and should not be added to the executive outline merely to fill space; included content must advance the requested narrative or decision.\n\n## Document-control closing note\nThis is the final section of B-005. The Outline must continue to follow the user brief and fixed Requirements, must not convert plans into completed results, must not invent unsupported causes, and must not expose original file paths.",
+      "key_facts": [],
+      "must_include": [],
+      "must_avoid": [],
+      "gaps": [],
+      "unread_content": []
+    }
+  ]
+}

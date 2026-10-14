@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Custom Page Layout Styles */
+  .col-left { position: absolute; left: 0; top: 0; width: 720px; height: 600px; }
+  .col-right { position: absolute; left: 840px; top: 0; width: 888px; height: 600px; }
+  .divider { position: absolute; left: 780px; top: 0; width: 1px; height: 560px; background: var(--border); }
+  
+  .section-tag { font-size: var(--f-meta); font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .section-tag::before { content: ''; display: inline-block; width: 12px; height: 12px; background: var(--primary); }
+  
+  .placeholder-card { background: var(--bg-card); border: 1px dashed var(--primary); padding: 28px; border-radius: 8px; margin-top: 16px; }
+  .placeholder-title { font-size: 20px; color: var(--primary); font-weight: 600; margin: 0 0 12px 0; letter-spacing: 0.05em; }
+  .placeholder-desc { font-size: 18px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  .urgency-box { margin-top: 40px; }
+  .urgency-title { font-size: 24px; font-weight: 600; color: var(--dark); margin: 0 0 12px 0; }
+  .urgency-desc { font-size: 20px; color: var(--muted); line-height: 1.6; margin: 0; }
+
+  .rowwrap { display: grid; grid-template-columns: 48px 1fr 140px; gap: 24px; align-items: start; border-top: 1px solid var(--border); padding-top: 20px; margin-bottom: 24px; }
+  .rowno { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; color: var(--primary); }
+  .rowh { font-size: 24px; font-weight: 600; line-height: 1.2; color: var(--dark); margin: 0; }
+  .rowp { font-size: 18px; line-height: 1.5; color: var(--muted); margin: 6px 0 0 0; }
+  .meterlab { font-size: 14px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; text-align: right; }
+  .seg { display: flex; gap: 4px; justify-content: flex-end; }
+  .seg i { display: block; width: 18px; height: 6px; background: var(--border); }
+  .seg i.on { background: var(--primary); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <div class="content-area">
+    <!-- Left Column: Core Challenge & Urgency -->
+    <div class="col-left">
+      <div class="section-tag">核心挑战 / Core Challenge</div>
+      <div class="placeholder-card">
+        <div class="placeholder-title">[ 核心挑战：待补充具体场景 ]</div>
+        <div class="placeholder-desc">
+          注：由于附件未提供具体的环境或社会问题描述，此处需根据您项目的实际应用场景（例如：碳减排追踪、水资源管理或智能农业等）填入具体的可持续发展痛点与业务挑战。
+        </div>
+      </div>
+
+      <div class="urgency-box">
+        <h3 class="urgency-title">解决该问题的紧迫性</h3>
+        <p class="urgency-desc">
+          应对全球气候变化与生态退化的窗口期正在迅速收窄。通过技术手段实现高效、可量化的解决方案，不仅是企业的合规要求，更是直接贡献于联合国可持续发展目标 (SDGs) 的关键路径。
+        </p>
+      </div>
+    </div>
+
+    <!-- Vertical Divider -->
+    <div class="divider"></div>
+
+    <!-- Right Column: Status Analysis & Limitations -->
+    <div class="col-right">
+      <div class="section-tag" style="margin-bottom: 24px;">现状分析 / Existing Limitations</div>
+      
+      <!-- Limitation 1 -->
+      <div class="rowwrap">
+        <div class="rowno">01</div>
+        <div>
+          <h3 class="rowh">传统方案效率瓶颈</h3>
+          <p class="rowp">现有手段多依赖人工数据收集与零散系统，缺乏实时监控与自动化流转能力，导致响应滞后、决策链条过长。</p>
+        </div>
+        <div>
+          <p class="meterlab">严重程度</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        </div>
+      </div>
+
+      <!-- Limitation 2 -->
+      <div class="rowwrap">
+        <div class="rowno">02</div>
+        <div>
+          <h3 class="rowh">系统可扩展性不足</h3>
+          <p class="rowp">多数既有工具采用本地化部署或定制化开发，缺乏云原生架构支撑，难以跨区域、跨行业进行快速复制与弹性扩展。</p>
+        </div>
+        <div>
+          <p class="meterlab">严重程度</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        </div>
+      </div>
+
+      <!-- Limitation 3 -->
+      <div class="rowwrap">
+        <div class="rowno">03</div>
+        <div>
+          <h3 class="rowh">前沿技术融合度低</h3>
+          <p class="rowp">未能深度整合生成式人工智能（如 IBM watsonx.ai）等前沿技术，无法对复杂的非结构化环境数据进行深度洞察与智能预测。</p>
+        </div>
+        <div>
+          <p class="meterlab">严重程度</p>
+          <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

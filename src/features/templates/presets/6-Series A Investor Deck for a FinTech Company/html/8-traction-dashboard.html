@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Traction Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Traction" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F5F7F9;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0px;top:0px;width:1920px;height:6px;background:#0B1B2B;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:62px;width:900px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.24em;color:#3E8AC7;">08 &nbsp;·&nbsp; TRACTION</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:96px;width:1300px;z-index:10;">
+    <div style="font-size:50px;font-weight:600;color:#0B1B2B;line-height:1.14;letter-spacing:-0.012em;">Eight quarters of compounding, driven by expansion</div>
+  </div>
+
+  <!-- KPI strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:186px;width:1728px;height:132px;background:#0B1B2B;border-radius:2px;z-index:1;">
+    <div style="display:flex;height:132px;">
+      <div style="width:288px;padding:24px 28px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">ARR</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:500;color:#FFFFFF;margin-top:10px;">$4.2M</div>
+        <div style="font-size:15px;color:#8FA6BA;margin-top:6px;">3.8× year over year</div>
+      </div>
+      <div style="width:288px;padding:24px 28px;border-left:1px solid #23415F;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">CUSTOMERS</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:500;color:#FFFFFF;margin-top:10px;">17</div>
+        <div style="font-size:15px;color:#8FA6BA;margin-top:6px;">11 banks · 4 CUs · 2 platforms</div>
+      </div>
+      <div style="width:288px;padding:24px 28px;border-left:1px solid #23415F;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">NET REVENUE RETENTION</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:500;color:#FFFFFF;margin-top:10px;">141%</div>
+        <div style="font-size:15px;color:#8FA6BA;margin-top:6px;">Module + volume expansion</div>
+      </div>
+      <div style="width:288px;padding:24px 28px;border-left:1px solid #23415F;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">DECISIONS PROCESSED</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:500;color:#FFFFFF;margin-top:10px;">6,200</div>
+        <div style="font-size:15px;color:#8FA6BA;margin-top:6px;">$1.9B in requested credit</div>
+      </div>
+      <div style="width:288px;padding:24px 28px;border-left:1px solid #23415F;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">GROSS MARGIN</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:500;color:#FFFFFF;margin-top:10px;">78%</div>
+        <div style="font-size:15px;color:#8FA6BA;margin-top:6px;">Up from 61% two years ago</div>
+      </div>
+      <div style="width:288px;padding:24px 28px;border-left:1px solid #23415F;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#7FB2DC;">EXAMS PASSED</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:40px;font-weight:500;color:#FFFFFF;margin-top:10px;">9</div>
+        <div style="font-size:15px;color:#8FA6BA;margin-top:6px;">Zero platform findings</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARR chart -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:352px;width:1100px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#0B1B2B;">ARR BUILD BY QUARTER · $000s</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:392px;width:1140px;height:410px;background:#FFFFFF;border:1px solid #DCE3EA;border-radius:2px;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:126px;top:412px;width:1080px;height:370px;z-index:10;">
+    <svg width="1080" height="370" viewBox="0 -16 1080 386" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Mono, monospace">
+      <!-- gridlines + y labels -->
+      <g stroke="#E6EBF0" stroke-width="1">
+        <line x1="86" y1="30" x2="1060" y2="30"/>
+        <line x1="86" y1="98" x2="1060" y2="98"/>
+        <line x1="86" y1="166" x2="1060" y2="166"/>
+        <line x1="86" y1="234" x2="1060" y2="234"/>
+        <line x1="86" y1="302" x2="1060" y2="302"/>
+      </g>
+      <g fill="#8496A6" font-size="13" text-anchor="end">
+        <text x="70" y="35">4,400</text>
+        <text x="70" y="103">3,300</text>
+        <text x="70" y="171">2,200</text>
+        <text x="70" y="239">1,100</text>
+        <text x="70" y="307">0</text>
+      </g>
+      <line x1="86" y1="302" x2="1060" y2="302" stroke="#C9D4DE" stroke-width="1"/>
+
+      <!-- stacked bars: base (existing) + expansion + new -->
+      <!-- Q1: 640 total -->
+      <g>
+        <rect x="122" y="262" width="72" height="40" fill="#215180"/>
+        <rect x="122" y="256" width="72" height="6" fill="#4A8CC4"/>
+        <rect x="122" y="248" width="72" height="8" fill="#7FB2DC"/>
+        <text x="158" y="238" fill="#0B1B2B" font-size="14" text-anchor="middle">640</text>
+      </g>
+      <!-- Q2: 880 -->
+      <g>
+        <rect x="242" y="248" width="72" height="54" fill="#215180"/>
+        <rect x="242" y="240" width="72" height="8" fill="#4A8CC4"/>
+        <rect x="242" y="228" width="72" height="12" fill="#7FB2DC"/>
+        <text x="278" y="218" fill="#0B1B2B" font-size="14" text-anchor="middle">880</text>
+      </g>
+      <!-- Q3: 1,180 -->
+      <g>
+        <rect x="362" y="230" width="72" height="72" fill="#215180"/>
+        <rect x="362" y="219" width="72" height="11" fill="#4A8CC4"/>
+        <rect x="362" y="229" width="0" height="0" fill="#7FB2DC"/>
+        <rect x="362" y="205" width="72" height="14" fill="#7FB2DC"/>
+        <text x="398" y="195" fill="#0B1B2B" font-size="14" text-anchor="middle">1,180</text>
+      </g>
+      <!-- Q4: 1,540 -->
+      <g>
+        <rect x="482" y="207" width="72" height="95" fill="#215180"/>
+        <rect x="482" y="194" width="72" height="13" fill="#4A8CC4"/>
+        <rect x="482" y="177" width="72" height="17" fill="#7FB2DC"/>
+        <text x="518" y="167" fill="#0B1B2B" font-size="14" text-anchor="middle">1,540</text>
+      </g>
+      <!-- Q5: 2,050 -->
+      <g>
+        <rect x="602" y="176" width="72" height="126" fill="#215180"/>
+        <rect x="602" y="159" width="72" height="17" fill="#4A8CC4"/>
+        <rect x="602" y="137" width="72" height="22" fill="#7FB2DC"/>
+        <text x="638" y="127" fill="#0B1B2B" font-size="14" text-anchor="middle">2,050</text>
+      </g>
+      <!-- Q6: 2,720 -->
+      <g>
+        <rect x="722" y="135" width="72" height="167" fill="#215180"/>
+        <rect x="722" y="113" width="72" height="22" fill="#4A8CC4"/>
+        <rect x="722" y="86" width="72" height="27" fill="#7FB2DC"/>
+        <text x="758" y="76" fill="#0B1B2B" font-size="14" text-anchor="middle">2,720</text>
+      </g>
+      <!-- Q7: 3,410 -->
+      <g>
+        <rect x="842" y="93" width="72" height="209" fill="#215180"/>
+        <rect x="842" y="66" width="72" height="27" fill="#4A8CC4"/>
+        <rect x="842" y="42" width="72" height="24" fill="#7FB2DC"/>
+        <text x="878" y="32" fill="#0B1B2B" font-size="14" text-anchor="middle">3,410</text>
+      </g>
+      <!-- Q8: 4,200 -->
+      <g>
+        <rect x="962" y="44" width="72" height="258" fill="#215180"/>
+        <rect x="962" y="20" width="72" height="24" fill="#4A8CC4"/>
+        <rect x="962" y="2" width="72" height="18" fill="#7FB2DC"/>
+        <text x="998" y="-8" fill="#0B1B2B" font-size="14" text-anchor="middle">4,200</text>
+      </g>
+
+      <!-- x labels -->
+      <g fill="#6B7F92" font-size="13" text-anchor="middle">
+        <text x="158" y="326">Q1'25</text>
+        <text x="278" y="326">Q2'25</text>
+        <text x="398" y="326">Q3'25</text>
+        <text x="518" y="326">Q4'25</text>
+        <text x="638" y="326">Q1'26</text>
+        <text x="758" y="326">Q2'26</text>
+        <text x="878" y="326">Q3'26</text>
+        <text x="998" y="326">Q4'26</text>
+      </g>
+
+      <!-- legend -->
+      <g font-size="13" fill="#4A5F73">
+        <rect x="122" y="348" width="14" height="14" fill="#215180"/>
+        <text x="144" y="360">Retained base</text>
+        <rect x="292" y="348" width="14" height="14" fill="#4A8CC4"/>
+        <text x="314" y="360">Expansion</text>
+        <rect x="442" y="348" width="14" height="14" fill="#7FB2DC"/>
+        <text x="464" y="360">New logos</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- customer proof -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1272px;top:352px;width:552px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.22em;color:#0B1B2B;">CUSTOMER EVIDENCE</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1272px;top:392px;width:552px;height:196px;background:#FFFFFF;border:1px solid #DCE3EA;border-radius:2px;z-index:1;">
+    <div style="padding:24px 26px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#3E8AC7;">CASE · $12B ASSET REGIONAL BANK</div>
+      <div style="font-size:20px;font-weight:600;color:#0B1B2B;margin-top:10px;line-height:1.3;">SMB originations up 2.4× with the same credit headcount</div>
+      <div style="font-size:16px;color:#4A5F73;line-height:1.5;margin-top:10px;">Went live in 11 weeks on term loans, then added lines of credit in month 9. Passed its next examination with no platform findings.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1272px;top:606px;width:552px;height:196px;background:#FFFFFF;border:1px solid #DCE3EA;border-radius:2px;z-index:1;">
+    <div style="padding:24px 26px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#3E8AC7;">CASE · EQUIPMENT-SERVICES SAAS</div>
+      <div style="font-size:20px;font-weight:600;color:#0B1B2B;margin-top:10px;line-height:1.3;">Launched embedded financing in one quarter</div>
+      <div style="font-size:16px;color:#4A5F73;line-height:1.5;margin-top:10px;">Cadence's control pack satisfied the sponsor bank's third-party review, cutting go-live diligence from months to weeks.</div>
+    </div>
+  </div>
+
+  <!-- pipeline bar -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:838px;width:1728px;height:124px;background:#FFFFFF;border:1px solid #DCE3EA;border-left:4px solid #3E8AC7;border-radius:2px;z-index:1;">
+    <div style="padding:22px 32px;display:flex;align-items:center;gap:40px;">
+      <div style="flex:1;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.2em;color:#3E8AC7;">FORWARD PIPELINE</div>
+        <div style="font-size:23px;font-weight:400;color:#0B1B2B;margin-top:10px;line-height:1.35;">Six institutions in contracting, weighted at $2.1M of incremental ARR, with a median sales cycle of 5.4 months.</div>
+      </div>
+      <div style="width:220px;text-align:right;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:38px;font-weight:500;color:#0B1B2B;">$2.1M</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.16em;color:#8496A6;margin-top:6px;">WEIGHTED PIPELINE</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:1000px;width:1728px;height:1px;background:#DCE3EA;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1018px;width:1728px;z-index:10;">
+    <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#8496A6;">
+      <span>CADENCE · SERIES A · CONFIDENTIAL</span><span>ILLUSTRATIVE FIGURES · 08 / 10</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

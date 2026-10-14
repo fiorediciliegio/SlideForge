@@ -1,0 +1,103 @@
+{
+  "id": "8-Fundraising Pitch Deck for a DTC Consumer Brand",
+  "version": 1,
+  "ppt_number": 8,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "brown",
+    "orange"
+  ],
+  "name": "Fundraising Pitch Deck for a DTC Consumer Brand",
+  "description": "Refined consumer editorial design with warm cream backgrounds, elegant typography, earthy accents, and lifestyle photography.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["consumer"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["formal"],"visual_traits":["formal"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖奶油色、森林绿与陶土棕封面以左侧上方超大标题开场，一幅图片拉开层级。"
+    },
+    {
+      "path": "images/2-consumer-insight.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，双面板划分主体区域，核心观点组织动线。"
+    },
+    {
+      "path": "images/3-audience-personas.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，三块卡片横向并列，人群信息强化对比。"
+    },
+    {
+      "path": "images/4-brand-positioning.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，一幅图表集中排布，对比关系收束版面。"
+    },
+    {
+      "path": "images/5-product-portfolio.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，一幅图片构成视觉重心，组合信息形成重心。"
+    },
+    {
+      "path": "images/6-market-and-channels.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，两幅图表集中排布，人群信息拉开层级。"
+    },
+    {
+      "path": "images/7-unit-economics.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，四块卡片组成四列网格，财务信息组织动线。"
+    },
+    {
+      "path": "images/8-traction-metrics.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，双面板划分主体区域，绩效信息强化对比。"
+    },
+    {
+      "path": "images/9-expansion-roadmap.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，横向时间轴串联阶段节点，日期标记收束版面。"
+    },
+    {
+      "path": "images/10-team-and-use-of-funds.webp",
+      "alt": "暖奶油色、森林绿与陶土棕页面，双面板划分主体区域，财务信息形成重心。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖奶油色、森林绿与陶土棕主导画面，左侧上方的超大标题形成第一视点；一幅图片与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-consumer-insight.html",
+      "description": "左上方标题锚定暖奶油色、森林绿与陶土棕画面；两块主面板建立清晰分区，核心观点与醒目标记集中在画面中部。"
+    },
+    {
+      "path": "html/3-audience-personas.html",
+      "description": "暖奶油色、森林绿与陶土棕作为底色，标题落在左上方；三块信息卡横向并列，三幅图片集中于中央，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/4-brand-positioning.html",
+      "description": "标题固定在左上方，暖奶油色、森林绿与陶土棕分隔主体；单一大面板承载主体信息，一幅图表落在左侧，对比模块与坐标标记补充层级。"
+    },
+    {
+      "path": "html/5-product-portfolio.html",
+      "description": "暖奶油色、森林绿与陶土棕画面，标题置于左上方；单一大面板承载主体信息，一幅图片集中于左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/6-market-and-channels.html",
+      "description": "左上方标题锚定暖奶油色、森林绿与陶土棕画面；留白与细线分隔出清晰阅读区，两幅图表落在中央，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/7-unit-economics.html",
+      "description": "暖奶油色、森林绿与陶土棕作为底色，标题落在左上方；四块信息卡横向并列，两幅财务图表落在中央，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/8-traction-metrics.html",
+      "description": "标题固定在左上方，暖奶油色、森林绿与陶土棕分隔主体；两块主面板建立清晰分区，一幅图表落在左侧，指标数字与趋势标记补充层级。"
+    },
+    {
+      "path": "html/9-expansion-roadmap.html",
+      "description": "暖奶油色、森林绿与陶土棕画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记嵌入主体模块。"
+    },
+    {
+      "path": "html/10-team-and-use-of-funds.html",
+      "description": "左上方标题锚定暖奶油色、森林绿与陶土棕画面；两块主面板建立清晰分区，三幅图片集中于左侧，金额数字、占比与变化标记补充层级。"
+    }
+  ]
+}

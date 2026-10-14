@@ -1,0 +1,103 @@
+{
+  "id": "107-Retro Road Trip Photo Journal",
+  "version": 1,
+  "ppt_number": 107,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "brown",
+    "orange"
+  ],
+  "name": "Retro Road Trip Photo Journal",
+  "description": "Cinematic road-trip journal with warm photography, bold serif type, route maps, and ticket-like details.",
+  "user": "Creative & Personal",
+  "use_case": "Portfolios & Storytelling",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["travel-guide"],"industries":["consumer","travel"],"audiences":["public"],"formats":["guide"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic","muted"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "全幅荒漠公路照片作为封面背景，粗重白色标题和橙色小字叠加出电影片头感，层级鲜明。"
+    },
+    {
+      "path": "images/2-route-map.webp",
+      "alt": "米色路线页以中央折叠地图和红色路径为核心，右侧行程表模拟公路手册，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/3-departure-story.webp",
+      "alt": "大标题与三张出发照片拼贴并列，右上票据卡和手写引语增强旅行日记感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-roads-and-landscapes.webp",
+      "alt": "宽幅荒漠公路照片横贯上方，下方深色文字区与两张小景照片组成旅途记录，图文层级明确。"
+    },
+    {
+      "path": "images/5-small-towns.webp",
+      "alt": "右侧大幅小镇街景照片占据半页，左侧文字与下方两张小照片形成不对称拼贴，图文层级明确。"
+    },
+    {
+      "path": "images/6-motels-and-roadside-stops.webp",
+      "alt": "左右对分的霓虹与旅馆照片占据主体，黑色背景和票据卡强化夜间公路氛围，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-diners-and-road-food.webp",
+      "alt": "顶部餐馆照片配下方清单、菜单票据和照片拼贴，呈现复古餐厅剪贴页，版面层次清晰有序。"
+    },
+    {
+      "path": "images/8-unexpected-moments.webp",
+      "alt": "乌云公路大图横跨页面，底部暗色照片卡和焦橙统计票据突出突发事件，版面层次清晰有序。"
+    },
+    {
+      "path": "images/9-analog-photo-wall.webp",
+      "alt": "黑色背景上排布八张等宽照片缩略图，右侧胶卷统计卡形成暗房照片墙，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-journey-reflection.webp",
+      "alt": "黄昏公路照片左右分屏，超大白色结语与半透明票据卡营造克制终章，主视觉层级鲜明有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，全幅荒漠公路照片作为封面背景，粗重白色标题和橙色小字叠加出电影片头感，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/2-route-map.html",
+      "description": "米色路线页以中央折叠地图和红色路径为核心，右侧行程表模拟公路手册，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/3-departure-story.html",
+      "description": "暖米色画布上，大标题与三张出发照片拼贴并列，右上票据卡和手写引语增强旅行日记感，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/4-roads-and-landscapes.html",
+      "description": "上半页用宽幅荒漠公路照片建立场景，下半页以深色底承载旅行文字和两张小景照片，右侧浅色统计卡突出距离与时间。"
+    },
+    {
+      "path": "html/5-small-towns.html",
+      "description": "暖米色页面右侧放置大幅小镇街景照片，左侧上方为标题和短文、下方并排两张店铺照片，右下引语卡叠加在主图上。"
+    },
+    {
+      "path": "html/6-motels-and-roadside-stops.html",
+      "description": "左右对分的霓虹与旅馆照片占据主体，黑色背景和票据卡强化夜间公路氛围，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/7-diners-and-road-food.html",
+      "description": "暖米色画布上，顶部餐馆照片配下方清单、菜单票据和照片拼贴，呈现复古餐厅剪贴页，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/8-unexpected-moments.html",
+      "description": "乌云公路大图横跨页面，底部暗色照片卡和焦橙统计票据突出突发事件，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/9-analog-photo-wall.html",
+      "description": "黑色背景上排布八张等宽照片缩略图，右侧胶卷统计卡形成暗房照片墙，细线边框、短标签和留白共同保持清晰的图文关系。"
+    },
+    {
+      "path": "html/10-journey-reflection.html",
+      "description": "黄昏公路照片左右分屏，超大白色结语与半透明票据卡营造克制终章，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    }
+  ]
+}

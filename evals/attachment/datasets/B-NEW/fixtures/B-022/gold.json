@@ -1,0 +1,13 @@
+{
+  "case_id": "B-022",
+  "size_class": "中",
+  "target_input_tokens": 4900,
+  "estimated_outline_input_tokens": 4996,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "单附件",
+  "attachment_types": "DOCX",
+  "content_strategies": "full_context",
+  "evaluation_risks": "1. 把8周做成10个教学周；2. 修改评分权重；3. 强制学生编程；4. 编造教材；5. 漏掉无障碍材料和同伴反馈。"
+}

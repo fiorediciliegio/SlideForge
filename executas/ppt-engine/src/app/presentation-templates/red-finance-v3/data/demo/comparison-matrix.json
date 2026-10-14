@@ -1,0 +1,61 @@
+{
+  "title": "Comparison Matrix",
+  "metaLabel": "BLUEPRINT / MATRIX",
+  "footerText": "Business Professional | Comparison Matrix",
+  "pageNumber": "06",
+  "variant": "entity-first",
+  "density": "high",
+  "matrixTitle": "Comparison matrix",
+  "matrixSubtitle": "structured comparison",
+  "rowHeaderLabel": "Dimension",
+  "columns": [
+    { "label": "China" },
+    { "label": "US" },
+    { "label": "Gap" }
+  ],
+  "rows": [
+    {
+      "header": "Scale",
+      "cells": [
+        { "lead": "Large", "support": "broad ecosystem" },
+        { "lead": "Large", "support": "deep market" },
+        { "lead": "Medium", "support": "different structure" }
+      ]
+    },
+    {
+      "header": "Data",
+      "cells": [
+        { "lead": "Strong", "support": "platform depth" },
+        { "lead": "Strong", "support": "capital depth" },
+        { "lead": "High", "support": "different stack" }
+      ]
+    },
+    {
+      "header": "Regulation",
+      "cells": [
+        { "lead": "Tight", "support": "policy-led" },
+        { "lead": "Mixed", "support": "multi-agency" },
+        { "lead": "High", "support": "compliance focus" }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "badge": "01",
+      "title": "Key takeaway",
+      "description": "A matrix slide should explain a few key differences, not become a large table."
+    },
+    {
+      "badge": "02",
+      "title": "Use case",
+      "description": "Useful for market, capability, option, or scoring comparisons."
+    },
+    {
+      "badge": "03",
+      "title": "Decision lens",
+      "description": "Use the final column to make the comparison actionable for the next choice."
+    }
+  ],
+  "interpretationTitle": "Interpretation",
+  "summary": "Best for multi-dimensional comparison; avoid using it for a single argument."
+}

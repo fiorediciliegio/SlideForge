@@ -1,0 +1,25 @@
+{
+  "slug": "batch-writer",
+  "name": "Batch Output Writer",
+  "version": "0.1.0",
+  "executa_type": "tool",
+  "description": "Writes batch session-test results to an absolute local directory. Exists because a static-spa iframe cannot write arbitrary local paths.",
+
+  "tool_id": "tool-test-batch-writer-b1a2c3d4",
+  "type": "node",
+  "command": ["node", "plugin.js"],
+  "enabled": true,
+
+  "distribution": {
+    "active": "local",
+    "profiles": {
+      "local": {
+        "type": "local",
+        "supports_protocol": true,
+        "capabilities": ["ensure_output_dir", "write_text_file"]
+      }
+    }
+  },
+
+  "_comment": "Dev-only Executa for the Session Lifecycle Test app's batch tab; it is never published, so only the `local` distribution profile exists. The dev fields (tool_id/type/command/enabled) are what `anna-app dev` reads; `tool_id` here MUST match the DEV_FALLBACK_TOOL_ID in src/batch-writer-client.js, which is used only when bundle/anna-tool-ids.js is absent. This dir is the `batch-writer` handle referenced by app.json#bundled_executas, so manifest.json refers to it as `bundled:batch-writer`."
+}

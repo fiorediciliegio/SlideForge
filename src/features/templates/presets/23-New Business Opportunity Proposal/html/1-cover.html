@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New Business Opportunity Proposal — Cover</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ============================================================
+   New Business Opportunity Proposal — shared design system
+   Editorial business-proposal aesthetic (warm sand / ink green)
+   Only fonts + tokens live here. All layout is inline per slide.
+   ============================================================ */
+
+:root {
+  /* surfaces */
+  --sand:        #F3EEE6;   /* page background */
+  --sand-deep:   #E8E0D3;   /* alt band */
+  --card:        #FBF8F3;   /* card fill */
+  --ink:         #14201C;   /* primary text / dark panels */
+  --ink-soft:    #1B2C26;   /* dark panel alt */
+
+  /* accents */
+  --terra:       #C15A2B;   /* primary accent */
+  --terra-soft:  #EBC8B2;
+  --pine:        #1F4D3F;   /* secondary accent */
+  --pine-soft:   #BFD3C8;
+  --clay:        #A8977F;   /* tertiary / labels */
+
+  /* text */
+  --t-strong:    #14201C;
+  --t-body:      #3E4B45;
+  --t-muted:     #8A7E6B;
+  --t-invert:    #F3EEE6;
+
+  /* lines */
+  --rule:        #D8CFC0;
+  --rule-dark:   #3A4A43;
+
+  /* type */
+  --f-display: 'Archivo', 'Helvetica Neue', sans-serif;
+  --f-body:    'IBM Plex Sans', sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+
+  /* geometry */
+  --r-card: 4px;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 0; overflow: hidden; }
+table { border-collapse: collapse; }
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="01 Cover" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:var(--sand); font-family:var(--f-body);">
+
+  <!-- dark panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1200px; top:0px; width:720px; height:1080px; background:var(--ink); z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1194px; top:0px; width:6px; height:1080px; background:var(--terra); z-index:1;"></div>
+
+  <!-- faint grid accent on sand side -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1194px; height:1080px; background:repeating-linear-gradient(90deg, rgba(20,32,28,0.045) 0px, rgba(20,32,28,0.045) 1px, transparent 1px, transparent 68px); z-index:1;"></div>
+
+  <!-- eyebrow -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:146px; width:900px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:22px; font-weight:600; letter-spacing:0.24em; color:var(--terra);">GATE&nbsp;1 &nbsp;·&nbsp; CONCEPT APPROVAL REQUEST</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:194px; width:132px; height:4px; background:var(--terra); z-index:1;"></div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:248px; width:1010px; z-index:10;">
+    <h1 style="margin:0; font-family:var(--f-display); font-weight:800; font-size:102px; line-height:1.04; letter-spacing:-0.025em; color:var(--t-strong);">New Business<br>Opportunity<br>Proposal</h1>
+  </div>
+
+  <!-- subtitle -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:608px; width:920px; z-index:10;">
+    <p style="margin:0; font-size:29px; line-height:1.48; color:var(--t-body);"><strong style="color:var(--pine); font-weight:600;">Connected Field Services</strong> — building a recurring-revenue uptime business on top of our existing industrial equipment channel.</p>
+  </div>
+
+  <!-- meta row -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:790px; width:920px; height:1px; background:var(--rule); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:818px; width:940px; z-index:10;">
+    <div style="display:flex; gap:64px; font-family:var(--f-mono); font-size:17px; line-height:1.7;">
+      <div><div style="color:var(--t-muted); letter-spacing:0.12em;">OWNER</div><div style="color:var(--t-strong); font-weight:600;">Business Development</div></div>
+      <div><div style="color:var(--t-muted); letter-spacing:0.12em;">STAGE</div><div style="color:var(--t-strong); font-weight:600;">Concept → Validation</div></div>
+      <div><div style="color:var(--t-muted); letter-spacing:0.12em;">DECISION</div><div style="color:var(--terra); font-weight:600;">$1.8M seed budget</div></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:962px; width:920px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:15px; letter-spacing:0.14em; color:var(--t-muted);">INTERNAL · FOR INVESTMENT COMMITTEE REVIEW</div>
+  </div>
+
+  <!-- dark panel: headline numbers -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1272px; top:146px; width:576px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:19px; font-weight:600; letter-spacing:0.2em; color:var(--pine-soft);">THE CASE IN THREE NUMBERS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1272px; top:242px; width:576px; z-index:10;">
+    <div style="font-family:var(--f-display); font-weight:700; font-size:88px; line-height:1; color:var(--t-invert); letter-spacing:-0.03em;">$18.4M</div>
+    <div style="margin-top:14px; font-size:21px; line-height:1.45; color:rgba(243,238,230,0.66);">Annual recurring revenue by Year 5, at 1,450 connected assets</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1272px; top:432px; width:576px; height:1px; background:var(--rule-dark); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1272px; top:482px; width:576px; z-index:10;">
+    <div style="font-family:var(--f-display); font-weight:700; font-size:88px; line-height:1; color:var(--t-invert); letter-spacing:-0.03em;">71%</div>
+    <div style="margin-top:14px; font-size:21px; line-height:1.45; color:rgba(243,238,230,0.66);">Gross margin at scale — service software, not hardware resale</div>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1272px; top:672px; width:576px; height:1px; background:var(--rule-dark); z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1272px; top:722px; width:576px; z-index:10;">
+    <div style="font-family:var(--f-display); font-weight:700; font-size:88px; line-height:1; color:var(--terra-soft); letter-spacing:-0.03em;">9 mo</div>
+    <div style="margin-top:14px; font-size:21px; line-height:1.45; color:rgba(243,238,230,0.66);">From approval to first paid pilot contract signed</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1272px; top:944px; width:576px; z-index:10;">
+    <div style="font-family:var(--f-mono); font-size:15px; line-height:1.6; color:rgba(243,238,230,0.42);">Figures are illustrative planning estimates prepared for concept review.</div>
+  </div>
+
+</div>
+</body>
+</html>

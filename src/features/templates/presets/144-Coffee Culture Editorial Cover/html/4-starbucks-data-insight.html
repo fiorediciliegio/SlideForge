@@ -1,0 +1,259 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Starbucks — Data Insight</title><style>
+:root{
+  --bg:var(--theme-bg);--surface:var(--theme-surface);--ink:var(--theme-ink);--muted:var(--theme-muted);--accent:var(--theme-accent-primary);--support:var(--theme-accent-secondary);--highlight:var(--theme-accent-tertiary);--line:var(--theme-line);
+  --soft-green:rgb(from var(--theme-accent-tertiary) r g b / 0.18);--hair:rgb(from var(--theme-ink) r g b / 0.24);
+  --font-display:'Bodoni Moda', Georgia, serif;--font-body:'Archivo', Arial, sans-serif;--font-mono:'IBM Plex Mono', monospace;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);overflow:hidden}.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:
+ radial-gradient(1200px 850px at 79% 35%,rgb(from var(--theme-accent-primary) r g b / 0.11),rgb(from var(--theme-accent-primary) r g b / 0.025) 48%,transparent 74%),
+ radial-gradient(700px 520px at 0% 100%,rgb(from var(--theme-accent-secondary) r g b / 0.11),transparent 70%),
+ linear-gradient(155deg,var(--theme-bg) 0%,var(--theme-bg) 50%,var(--theme-bg) 100%);color:var(--ink)}
+.slide:before{content:"";position:absolute;inset:0;z-index:0;background-image:repeating-linear-gradient(to right,rgb(from var(--theme-ink) r g b / 0.055) 0 1px,transparent 1px 236px);opacity:.8;pointer-events:none}
+.slide:after{content:"";position:absolute;left:0;right:0;top:76px;height:1px;background:linear-gradient(90deg,transparent,rgb(from var(--theme-ink) r g b / 0.25) 8%,rgb(from var(--theme-ink) r g b / 0.12) 70%,transparent);z-index:1}
+.grain{position:absolute;inset:0;z-index:1;opacity:.035;background-image:radial-gradient(rgb(from var(--theme-ink) r g b / 0.7) .55px,transparent .75px);background-size:5px 5px;pointer-events:none}
+.header{position:absolute;left:150px;top:104px;z-index:10;display:flex;align-items:center;gap:22px;font:600 25px/1 var(--font-mono);letter-spacing:.28em;text-transform:uppercase;white-space:nowrap}.brand-dot{width:13px;height:13px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--ink));box-shadow:0 4px 12px rgb(from var(--theme-accent-primary) r g b / 0.28)}.header .sub{font-weight:400;letter-spacing:.31em}
+.palette{position:absolute;right:310px;top:116px;z-index:10;display:flex;gap:7px;align-items:center}.sw{width:38px;height:28px;border-radius:3px}.sw.a{background:linear-gradient(145deg,var(--accent),var(--ink))}.sw.b{background:linear-gradient(145deg,var(--theme-line),var(--highlight))}.sw.c{background:linear-gradient(145deg,var(--theme-line),var(--theme-accent-secondary))}.sw.d{background:var(--theme-bg);border:1px solid rgb(from var(--theme-ink) r g b / 0.16)}.palette:after{content:"";width:1px;height:30px;margin-left:14px;background:linear-gradient(transparent,rgb(from var(--theme-ink) r g b / 0.25),transparent)}
+.page-index{position:absolute;right:84px;top:112px;z-index:10;font:500 30px/1 var(--font-mono);letter-spacing:.04em;color:var(--ink)}.page-index span{color:var(--theme-muted);font-size:22px;margin-left:8px}
+.rail{position:absolute;left:63px;top:386px;height:480px;z-index:10;writing-mode:vertical-rl;font:500 22px/1 var(--font-body);letter-spacing:.36em;text-transform:uppercase;color:rgb(from var(--theme-accent-tertiary) r g b / 0.72)}
+.tickset{position:absolute;left:58px;top:208px;z-index:5;width:46px;height:100px}.tickset i{position:absolute;left:0;height:1px;background:rgb(from var(--theme-ink) r g b / 0.25);display:block}.tickset i:nth-child(1){top:8px;width:42px}.tickset i:nth-child(2){top:44px;width:24px}.tickset i:nth-child(3){top:75px;width:24px}
+.title{position:absolute;left:148px;top:164px;z-index:9;white-space:nowrap}.title .roman{font:700 166px/.90 var(--font-display);letter-spacing:-.045em;color:var(--ink)}.title .italic{font:400 italic 166px/.90 var(--font-display);letter-spacing:-.04em;background:linear-gradient(92deg,var(--accent),var(--theme-accent-primary) 55%,var(--highlight));-webkit-background-clip:text;background-clip:text;color:transparent}.subtitle{position:absolute;left:154px;top:320px;z-index:9;display:flex;align-items:center;gap:28px;max-width:1220px;font:500 24px/1.1 var(--font-mono);letter-spacing:.18em;color:var(--theme-ink)}.subtitle:before{content:"";width:52px;height:1px;background:var(--ink);opacity:.7}.footer{position:absolute;left:58px;right:58px;bottom:31px;height:82px;border-top:1px solid rgb(from var(--theme-ink) r g b / 0.45);z-index:20;display:flex;align-items:center}.footer-title{width:335px;font:600 20px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}.footer-items{display:flex;height:100%;align-items:center;gap:0}.footer-item{height:36px;display:flex;align-items:center;gap:20px;padding:0 55px;border-left:1px solid rgb(from var(--theme-ink) r g b / 0.24);font:400 20px/1 var(--font-body);color:var(--theme-muted);white-space:nowrap}.footer-meta{margin-left:auto;font:400 17px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--theme-accent-tertiary);white-space:nowrap}.footer-icon{width:34px;height:34px;position:relative;flex:0 0 34px;color:var(--accent)}
+/* deterministic icon family */
+.icon{position:relative;width:44px;height:44px;flex:0 0 44px;color:var(--ink)}.icon *{position:absolute;box-sizing:border-box}.icon.bean .oval{left:8px;top:8px;width:28px;height:30px;border:3px solid currentColor;border-radius:55% 45% 55% 45%;transform:rotate(28deg)}.icon.bean .slash{left:21px;top:8px;width:3px;height:30px;border-left:3px solid currentColor;border-radius:50%;transform:rotate(28deg)}
+.icon.cup .body{left:7px;top:15px;width:28px;height:20px;border:3px solid currentColor;border-top-width:3px;border-radius:3px 3px 9px 9px}.icon.cup .rim{left:5px;top:12px;width:32px;height:3px;border-top:3px solid currentColor}.icon.cup .steam.s1{left:12px;top:1px;width:5px;height:8px;border-left:2px solid currentColor;border-radius:50%;transform:rotate(9deg)}.icon.cup .steam.s2{left:21px;top:0;width:5px;height:9px;border-left:2px solid currentColor;border-radius:50%;transform:rotate(9deg)}.icon.cup .steam.s3{left:30px;top:2px;width:5px;height:7px;border-left:2px solid currentColor;border-radius:50%;transform:rotate(9deg)}
+.icon.people .head.h1{left:17px;top:4px;width:10px;height:10px;border:3px solid currentColor;border-radius:50%}.icon.people .head.h2{left:4px;top:11px;width:8px;height:8px;border:3px solid currentColor;border-radius:50%}.icon.people .head.h3{right:4px;top:11px;width:8px;height:8px;border:3px solid currentColor;border-radius:50%}.icon.people .body.b1{left:11px;top:18px;width:22px;height:18px;border:3px solid currentColor;border-bottom:0;border-radius:14px 14px 0 0}.icon.people .body.b2{left:0;top:24px;width:11px;height:13px;border:3px solid currentColor;border-right:0;border-bottom:0;border-radius:10px 0 0 0}.icon.people .body.b3{right:0;top:24px;width:11px;height:13px;border:3px solid currentColor;border-left:0;border-bottom:0;border-radius:0 10px 0 0}
+.icon.phone .frame{left:11px;top:4px;width:23px;height:36px;border:3px solid currentColor;border-radius:4px}.icon.phone .dot{left:20px;top:33px;width:4px;height:4px;border-radius:50%;background:currentColor}
+.icon.leaf .stem{left:21px;top:17px;width:3px;height:23px;background:currentColor;transform:rotate(31deg);transform-origin:50% 100%}.icon.leaf .l1{left:6px;top:16px;width:19px;height:12px;border:3px solid currentColor;border-radius:100% 0 100% 0;transform:rotate(34deg)}.icon.leaf .l2{left:20px;top:7px;width:20px;height:13px;border:3px solid currentColor;border-radius:0 100% 0 100%;transform:rotate(-18deg)}
+.icon.store .roof{left:4px;top:9px;width:36px;height:11px;border:3px solid currentColor;clip-path:polygon(12% 100%,23% 0,77% 0,88% 100%)}.icon.store .body{left:7px;top:19px;width:30px;height:20px;border:3px solid currentColor}.icon.store .door{left:20px;top:26px;width:8px;height:13px;border:2px solid currentColor;border-bottom:0}.icon.store .bar{left:8px;top:22px;width:28px;height:3px;background:currentColor}
+.icon.heart .shape{left:8px;top:8px;width:28px;height:25px;transform:rotate(-45deg);border-left:3px solid currentColor;border-bottom:3px solid currentColor;border-radius:0 0 0 7px}.icon.heart .shape:before,.icon.heart .shape:after{content:"";position:absolute;border:3px solid currentColor;border-bottom:0;border-right:0;border-radius:50%}.icon.heart .shape:before{width:14px;height:14px;left:-3px;top:-10px;transform:rotate(45deg)}.icon.heart .shape:after{width:14px;height:14px;left:10px;top:3px;transform:rotate(45deg)}
+.icon.star .shape{left:5px;top:5px;width:34px;height:34px;background:currentColor;clip-path:polygon(50% 0,61% 34%,98% 34%,68% 55%,79% 92%,50% 70%,21% 92%,32% 55%,2% 34%,39% 34%)}.icon.star .shape:after{content:"";position:absolute;inset:4px;background:var(--theme-bg);clip-path:inherit}
+.icon.person .head{left:16px;top:3px;width:12px;height:12px;border:3px solid currentColor;border-radius:50%}.icon.person .body{left:7px;top:20px;width:30px;height:20px;border:3px solid currentColor;border-bottom:0;border-radius:18px 18px 0 0}
+.icon.bars .axis{left:6px;bottom:7px;width:32px;height:3px;background:currentColor}.icon.bars .bar1{left:9px;bottom:10px;width:6px;height:12px;border:3px solid currentColor}.icon.bars .bar2{left:19px;bottom:10px;width:6px;height:21px;border:3px solid currentColor}.icon.bars .bar3{left:29px;bottom:10px;width:6px;height:29px;border:3px solid currentColor}
+.icon-bubble{width:92px;height:92px;border-radius:50%;background:linear-gradient(145deg,rgb(from var(--theme-accent-tertiary) r g b / 0.24),rgb(from var(--theme-line) r g b / 0.62));display:flex;align-items:center;justify-content:center;color:var(--ink)}.icon-bubble .icon{transform:scale(1.1)}
+.small-rule{width:48px;height:1px;background:rgb(from var(--theme-ink) r g b / 0.55);margin:12px 0 16px}.mono-label{font:600 17px/1 var(--font-mono);letter-spacing:.25em;text-transform:uppercase;color:var(--accent)}
+/* ring system */
+.ring-system{position:absolute;z-index:4;width:560px;height:560px;border-radius:50%;pointer-events:none}.ring-system .outer{position:absolute;inset:0;border:1px dotted rgb(from var(--theme-accent-primary) r g b / 0.45);border-radius:50%}.ring-system .r1{position:absolute;inset:32px;border:1px solid rgb(from var(--theme-ink) r g b / 0.11);border-radius:50%}.ring-system .r2{position:absolute;inset:78px;border-radius:50%;border:5px solid transparent;border-top-color:rgb(from var(--theme-accent-secondary) r g b / 0.72);border-right-color:rgb(from var(--theme-ink) r g b / 0.62);border-bottom-color:rgb(from var(--theme-accent-primary) r g b / 0.82);border-left-color:rgb(from var(--theme-accent-tertiary) r g b / 0.78);transform:rotate(-18deg)}.ring-system .r3{position:absolute;inset:102px;border-radius:50%;border:9px solid transparent;border-top-color:rgb(from var(--theme-accent-secondary) r g b / 0.34);border-right-color:rgb(from var(--theme-ink) r g b / 0.44);border-bottom-color:rgb(from var(--theme-accent-primary) r g b / 0.48);border-left-color:rgb(from var(--theme-accent-tertiary) r g b / 0.48);transform:rotate(24deg)}.ring-system .core{position:absolute;left:50%;top:50%;width:192px;height:192px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 40% 25%,rgb(from var(--theme-surface) r g b / 0.9),rgb(from var(--theme-accent-tertiary) r g b / 0.18) 50%,rgb(from var(--theme-accent-primary) r g b / 0.18));box-shadow:0 18px 50px rgb(from var(--theme-ink) r g b / 0.12)}
+.quote-mark{font:400 82px/.65 Georgia,serif;color:rgb(from var(--theme-accent-tertiary) r g b / 0.38)}
+</style>
+<style data-semantic-theme-roles>:root{--theme-bg:#F8F6F1;--theme-surface:#FFFFFF;--theme-ink:#12332A;--theme-muted:#4A6157;--theme-accent-primary:#00704A;--theme-accent-secondary:#A2814C;--theme-accent-tertiary:#7FB39F;--theme-line:#DCE9E2;}</style><style data-external-template-fonts>
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLySOxK-vA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeNbcW2BO.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeMTcW2BO.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeKTcW2BO.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeKrcWw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJT2SKjEXw.woff2) format('woff2');
+  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJTkSKjEXw.woff2) format('woff2');
+  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSESKjEXw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iAq129k.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1iEq129k.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl1FgtIU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgtIU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl9FgtIU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwl5FgtIU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwl1FgtIU.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlRFgtIU.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwl9FgtIU.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwl5FgtIU.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexmono/v20/-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head><body>
+<style>
+.s4 .title{top:164px}.s4 .subtitle{top:320px;width:1480px;max-width:1480px;font-size:20px;letter-spacing:.14em}.s4 .kpis{position:absolute;left:142px;right:78px;top:370px;height:190px;display:grid;grid-template-columns:1fr 1fr 1fr;z-index:9}.s4 .kpi{display:grid;grid-template-columns:110px 1fr;align-items:center;padding:0 42px 0 0}.s4 .kpi+.kpi{border-left:1px solid rgb(from var(--theme-ink) r g b / 0.18);padding-left:42px}.s4 .knum{font:400 72px/.9 Georgia,serif;color:var(--ink);letter-spacing:-.03em}.s4 .klabel{font:600 17px/1.3 var(--font-mono);letter-spacing:.23em;text-transform:uppercase;color:var(--accent);margin-top:14px}.s4 .kdesc{font:400 19px/1.3 var(--font-body);color:var(--theme-muted);margin-top:11px}.s4 .charts{position:absolute;left:165px;right:55px;top:590px;height:350px;border-top:1px solid rgb(from var(--theme-ink) r g b / 0.28);z-index:9;display:grid;grid-template-columns:1.36fr 1.1fr .7fr}.s4 .chart{padding:25px 28px 0 4px}.s4 .chart+.chart{border-left:1px solid rgb(from var(--theme-ink) r g b / 0.13);padding-left:34px}.s4 .ctitle{font:600 18px/1 var(--font-mono);letter-spacing:.23em;text-transform:uppercase}.s4 .csub{font:400 18px/1 var(--font-body);color:var(--theme-accent-tertiary);margin-top:8px}.s4 .linechart{position:relative;margin-top:30px;height:210px;border-left:1px solid rgb(from var(--theme-ink) r g b / 0.34);border-bottom:1px solid rgb(from var(--theme-ink) r g b / 0.34);background:repeating-linear-gradient(to bottom,rgb(from var(--theme-ink) r g b / 0.08) 0 1px,transparent 1px 42px)}.s4 .ylabel{position:absolute;left:-48px;font:400 16px/1 var(--font-body);color:var(--theme-muted)}.s4 .linechart .ylabel:nth-of-type(1){top:-5px}.s4 .linechart .ylabel:nth-of-type(2){top:37px}.s4 .linechart .ylabel:nth-of-type(3){top:79px}.s4 .linechart .ylabel:nth-of-type(4){top:121px}.s4 .linechart .ylabel:nth-of-type(5){top:163px}.s4 .linechart .ylabel:nth-of-type(6){top:205px}.s4 .plot{position:absolute;left:40px;right:30px;top:10px;bottom:0}.s4 .seg{position:absolute;height:3px;background:var(--accent);transform-origin:0 50%}.s4 .pt{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%)}.s4 .pt b{position:absolute;left:-10px;top:-29px;width:34px;text-align:center;font:600 17px/1 var(--font-body);color:var(--ink)}.s4 .xlab{position:absolute;bottom:-34px;transform:translateX(-50%);font:400 17px/1 var(--font-body);color:var(--theme-muted)}.s4 .barchart{height:210px;margin-top:30px;border-left:1px solid rgb(from var(--theme-ink) r g b / 0.34);border-bottom:1px solid rgb(from var(--theme-ink) r g b / 0.34);display:flex;align-items:flex-end;justify-content:space-around;padding:0 14px;background:repeating-linear-gradient(to bottom,rgb(from var(--theme-ink) r g b / 0.065) 0 1px,transparent 1px 42px)}.s4 .barwrap{width:22%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}.s4 .barwrap b{font:600 18px/1 var(--font-body);margin-bottom:8px}.s4 .bar{width:78%;min-width:58px}.s4 .bar.b1{height:145px;background:linear-gradient(var(--accent),var(--theme-accent-primary))}.s4 .bar.b2{height:104px;background:linear-gradient(var(--theme-line),var(--highlight))}.s4 .bar.b3{height:82px;background:linear-gradient(var(--theme-line),var(--theme-accent-secondary))}.s4 .bar.b4{height:66px;background:linear-gradient(var(--theme-bg),var(--theme-line))}.s4 .barlab{position:absolute;top:224px;width:120px;text-align:center;font:400 16px/1.15 var(--font-body);color:var(--theme-muted)}.s4 .trend{padding-right:0}.s4 .trendrow{display:flex;gap:18px;align-items:flex-start;margin-top:28px}.s4 .trend p{font:400 17px/1.45 var(--font-body);color:var(--theme-muted);margin:0}.s4 .trend .quote-mark{margin-top:18px}.s4 .trend blockquote{margin:-8px 0 0 58px;font:400 italic 27px/1.03 var(--font-display);color:var(--theme-ink)}.s4 .trend .small-rule{margin-left:58px;width:160px}.s4 .footer-title{width:325px}
+</style><div class="slide s4"><div class="grain"></div><div class="header"><span class="brand-dot"></span><span>Starbucks</span><span>·</span><span class="sub">Performance Signals</span></div><div class="palette"><span class="sw a"></span><span class="sw b"></span><span class="sw c"></span><span class="sw d"></span></div><div class="page-index">04<span>/ 05</span></div><div class="rail">Coffee · Culture · Craft</div><div class="tickset"><i></i><i></i><i></i></div><div class="title" style="top:164px"><span class="roman" style="font-size:166px">Data</span><span class="italic" style="font-size:166px"> Insight</span></div><div class="subtitle" style="top:324px">Operational consistency and digital engagement are reinforcing visit frequency.</div><div class="kpis">
+<div class="kpi"><div class="icon-bubble"><div class="icon people"><span class="head h1"></span><span class="head h2"></span><span class="head h3"></span><span class="body b1"></span><span class="body b2"></span><span class="body b3"></span></div></div><div><div class="knum">+18%</div><div class="klabel">Active Rewards Members</div><div class="kdesc">Year-over-year growth in active<br>Starbucks® Rewards members.</div></div></div>
+<div class="kpi"><div class="icon-bubble"><div class="icon cup"><span class="body"></span><span class="rim"></span><span class="steam s1"></span><span class="steam s2"></span><span class="steam s3"></span></div></div><div><div class="knum">42%</div><div class="klabel">Orders with Customization</div><div class="kdesc">Nearly half of all orders include<br>at least one customization.</div></div></div>
+<div class="kpi"><div class="icon-bubble"><div class="icon star"><span class="shape"></span></div></div><div><div class="knum">4.6/5</div><div class="klabel">Avg. Store Experience Score</div><div class="kdesc">Customers continue to rate their<br>in-store experience highly.</div></div></div>
+</div><div class="charts"><div class="chart"><div class="ctitle">Visit Frequency by Quarter</div><div class="csub">Monthly visits per member</div><div class="linechart"><span class="ylabel">6.0</span><span class="ylabel">5.0</span><span class="ylabel">4.0</span><span class="ylabel">3.0</span><span class="ylabel">2.0</span><span class="ylabel">0.0</span><div class="plot"><span class="seg" style="left:35px;top:92px;width:110.7px;transform:rotate(-6.23deg)"></span><span class="seg" style="left:145px;top:80px;width:110.7px;transform:rotate(-6.23deg)"></span><span class="seg" style="left:255px;top:68px;width:110.5px;transform:rotate(-5.19deg)"></span><span class="seg" style="left:365px;top:58px;width:110.8px;transform:rotate(-6.74deg)"></span><span class="seg" style="left:475px;top:45px;width:110.5px;transform:rotate(-5.19deg)"></span><span class="pt" style="left:35px;top:92px"><b>3.1</b></span><span class="xlab" style="left:35px">Q1</span><span class="pt" style="left:145px;top:80px"><b>3.4</b></span><span class="xlab" style="left:145px">Q2</span><span class="pt" style="left:255px;top:68px"><b>3.7</b></span><span class="xlab" style="left:255px">Q3</span><span class="pt" style="left:365px;top:58px"><b>3.9</b></span><span class="xlab" style="left:365px">Q4</span><span class="pt" style="left:475px;top:45px"><b>4.2</b></span><span class="xlab" style="left:475px">Q5</span><span class="pt" style="left:585px;top:35px"><b>4.4</b></span><span class="xlab" style="left:585px">Q6</span></div></div></div>
+<div class="chart"><div class="ctitle">Contribution to Growth</div><div class="csub">Share of incremental visits</div><div class="barchart"><div class="barwrap"><b>38%</b><div class="bar b1"></div><div class="barlab">Loyalty</div></div><div class="barwrap"><b>26%</b><div class="bar b2"></div><div class="barlab">Beverage<br>Innovation</div></div><div class="barwrap"><b>20%</b><div class="bar b3"></div><div class="barlab">Store<br>Experience</div></div><div class="barwrap"><b>16%</b><div class="bar b4"></div><div class="barlab">Digital<br>Convenience</div></div></div></div>
+<div class="chart trend"><div class="ctitle">Reading the Trend</div><div class="trendrow"><div class="icon-bubble" style="width:72px;height:72px;flex:0 0 72px"><div class="icon bars"><span class="axis"></span><span class="bar1"></span><span class="bar2"></span><span class="bar3"></span></div></div><p>Personalization and convenience are increasing frequency, while store quality sustains satisfaction.</p></div><div class="quote-mark">“</div><div class="small-rule"></div><blockquote>More personal<br>moments lead to<br>more everyday visits.”</blockquote></div></div><div class="footer"><div class="footer-title">Key Touchpoints</div><div class="footer-items"><div class="footer-item"><div class="icon person"><span class="head"></span><span class="body"></span></div><span>Membership</span></div><div class="footer-item"><div class="icon cup"><span class="body"></span><span class="rim"></span><span class="steam s1"></span><span class="steam s2"></span><span class="steam s3"></span></div><span>Customization</span></div><div class="footer-item"><div class="icon heart"><span class="shape"></span></div><span>Retention</span></div></div><div class="footer-meta">Brand Study&nbsp;&nbsp; Vol. 01</div></div></div></body></html>

@@ -1,0 +1,103 @@
+{
+  "id": "15-Annual Business Review and Next-year Plan",
+  "version": 1,
+  "ppt_number": 15,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "black",
+    "brown",
+    "orange"
+  ],
+  "name": "Annual Business Review and Next-year Plan",
+  "description": "Annual-report editorial design with warm ivory space, refined serif headlines, bronze accents, and modular business summaries.",
+  "user": "Founders & Leaders",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review","strategy","growth-strategy","resource-prioritization"],"industries":["business"],"audiences":["executive"],"formats":["annual-report","roadmap"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "象牙白、墨黑与古铜橙封面以左侧中部超大标题开场，几何色块与细线拉开层级。"
+    },
+    {
+      "path": "images/2-year-in-context.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，三组大号数字形成节奏，核心判断强化对比。"
+    },
+    {
+      "path": "images/3-objectives-scorecard.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，一组表格压缩信息密度，范围信息收束版面。"
+    },
+    {
+      "path": "images/4-financial-performance.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，一幅图表集中排布，财务信息形成重心。"
+    },
+    {
+      "path": "images/5-growth-quality.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，两幅图表集中排布，数据分析拉开层级。"
+    },
+    {
+      "path": "images/6-customer-product-timeline.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，横向时间轴串联阶段节点，日期标记组织动线。"
+    },
+    {
+      "path": "images/7-team-operating-model.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，三组大号数字形成节奏，人物卡强化对比。"
+    },
+    {
+      "path": "images/8-challenges-lessons.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，四块卡片纵向叠放，复盘信息收束版面。"
+    },
+    {
+      "path": "images/9-next-year-strategy-map.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，双面板划分主体区域，框架信息形成重心。"
+    },
+    {
+      "path": "images/10-roadmap-and-asks.webp",
+      "alt": "象牙白、墨黑与古铜橙页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，象牙白、墨黑与古铜橙主导画面，左侧中部的超大标题形成第一视点；几何色块与细线与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-year-in-context.html",
+      "description": "标题固定在左上方，象牙白、墨黑与古铜橙分隔主体；三组大号数字拉开视觉节奏，问题陈述与强调数字顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-objectives-scorecard.html",
+      "description": "象牙白、墨黑与古铜橙画面，标题置于左上方；四组大号数字拉开视觉节奏，一组表格位于中央，目标卡、范围块与关键数字补充层级。"
+    },
+    {
+      "path": "html/4-financial-performance.html",
+      "description": "左上方标题锚定象牙白、墨黑与古铜橙画面；四组大号数字拉开视觉节奏，一幅财务图表落在左侧，关键数字与数据标记补充层级。"
+    },
+    {
+      "path": "html/5-growth-quality.html",
+      "description": "象牙白、墨黑与古铜橙作为底色，标题落在左上方；单一大面板承载主体信息，两幅分析图表落在左侧，关键数字、趋势图与注释标记补充层级。"
+    },
+    {
+      "path": "html/6-customer-product-timeline.html",
+      "description": "标题固定在左上方，象牙白、墨黑与古铜橙分隔主体；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记集中在画面中部。"
+    },
+    {
+      "path": "html/7-team-operating-model.html",
+      "description": "象牙白、墨黑与古铜橙画面，标题置于左上方；单一大面板承载主体信息，人物信息与职责标签顺着版面动线分布。"
+    },
+    {
+      "path": "html/8-challenges-lessons.html",
+      "description": "左上方标题锚定象牙白、墨黑与古铜橙画面；四块信息卡纵向叠放，结论卡与行动标记嵌入主体模块。"
+    },
+    {
+      "path": "html/9-next-year-strategy-map.html",
+      "description": "象牙白、墨黑与古铜橙作为底色，标题落在左上方；两块主面板建立清晰分区，框架模块与强调结论沿主区展开。"
+    },
+    {
+      "path": "html/10-roadmap-and-asks.html",
+      "description": "标题固定在左上方，象牙白、墨黑与古铜橙分隔主体；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记贴合卡片边界。"
+    }
+  ]
+}

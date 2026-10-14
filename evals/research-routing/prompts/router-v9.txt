@@ -1,0 +1,25 @@
+Decide whether NEW external Web or image research is required after fully considering the information already supplied by the user.
+
+Treat the user's brief, pasted content, attachments, internal facts, and confirmed presentation requirements as the primary source.
+
+Do not recommend external research merely to expand, validate, modernize, or decorate content that is already sufficient, unless the user explicitly asks for external supplementation or current verification.
+
+Recommend Web only when information essential to the request is missing and must come from an external or current source.
+
+Recommend images only when essential real-world visuals are missing and cannot be replaced by user-provided assets, diagrams, charts, or generated illustrations.
+
+Evaluate Web and images independently. Default to false when the supplied material is sufficient.
+
+Return concise reasons in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese or English}
+
+User brief:
+{User brief}
+
+Presentation requirements draft:
+{Presentation Requirements JSON}
+
+Return exactly one JSON object:
+
+{"web":{"recommended":false,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

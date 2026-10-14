@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Custom Content Layout for Page 2 */
+  .problem-grid {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: stretch;
+  }
+  .left-col {
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .divider {
+    width: 1px;
+    background: var(--border);
+    height: 100%;
+    align-self: center;
+  }
+  .right-col {
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+  .challenge-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 48px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(31, 107, 74, 0.1);
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  .challenge-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 24px 0 16px 0;
+  }
+  .challenge-desc {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--muted);
+    flex-grow: 1;
+  }
+  .challenge-tip {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 18px;
+    color: var(--light);
+    border-top: 1px dashed var(--border);
+    padding-top: 24px;
+    line-height: 1.4;
+  }
+  .section-subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+  .row-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .rowwrap {
+    display: grid;
+    grid-template-columns: 56px 1fr 172px;
+    gap: 24px;
+    align-items: start;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .rowno {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  .rowh {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 8px 0;
+  }
+  .rowp {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+  }
+  .meterlab {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--light);
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    text-align: right;
+  }
+  .seg {
+    display: flex;
+    gap: 4px;
+    justify-content: flex-end;
+  }
+  .seg i {
+    display: block;
+    width: 20px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 2px;
+  }
+  .seg i.on {
+    background: var(--primary);
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  <div class="content-area">
+    <div class="problem-grid">
+      <!-- Left Column: Core Challenge Placeholder -->
+      <div class="left-col">
+        <div class="challenge-card">
+          <div>
+            <div class="badge ar">CORE CHALLENGE</div>
+            <h2 class="challenge-title">核心挑战定位</h2>
+            <p class="challenge-desc">
+              [ 待补充：请结合具体申报项目的实际应用场景，在此补充具体的环境或社会痛点描述 ]
+            </p>
+          </div>
+          <div class="challenge-tip">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span>提示：建议在此提炼 2-3 句话，清晰交代本技术方案所致力解决的、具有真实世界影响力的可持续发展问题。</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vertical Divider -->
+      <div class="divider"></div>
+
+      <!-- Right Column: Situation & Urgency & SDG -->
+      <div class="right-col">
+        <h2 class="section-subtitle">痛点剖析与方案切入维度</h2>
+        
+        <div class="row-list">
+          <!-- Row 1: Situation Analysis -->
+          <div class="rowwrap">
+            <div class="rowno">01</div>
+            <div>
+              <h3 class="rowh">现有解决方案的效率与扩展性局限</h3>
+              <p class="rowp">传统或现有应对手段往往存在高度碎片化、数据孤岛及人工依赖等瓶颈，在面对高维度可持续发展数据时，难以实现低延迟、高可扩展性（Scalability）的规模化部署。</p>
+            </div>
+            <div>
+              <p class="meterlab">瓶颈程度</p>
+              <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+            </div>
+          </div>
+
+          <!-- Row 2: Urgency -->
+          <div class="rowwrap">
+            <div class="rowno">02</div>
+            <div>
+              <h3 class="rowh">解决该问题的现实紧迫性</h3>
+              <p class="rowp">环境与气候挑战正呈现非线性加速趋势，传统模式的响应窗口期正快速关闭。亟需通过新型数字化与智能化手段，在合规与实际生态效益上实现即时突破。</p>
+            </div>
+            <div>
+              <p class="meterlab">紧迫指数</p>
+              <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+            </div>
+          </div>
+
+          <!-- Row 3: SDG Contribution -->
+          <div class="rowwrap">
+            <div class="rowno">03</div>
+            <div>
+              <h3 class="rowh">对联合国可持续发展目标（SDGs）的贡献</h3>
+              <p class="rowp">方案设计需紧密呼应特定 SDG 指标（如绿色能源、循环经济或气候行动）。通过开源生态与技术赋能，将社会责任转化为可量化的环境与社会效益。</p>
+            </div>
+            <div>
+              <p class="meterlab">关联价值</p>
+              <div class="seg"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

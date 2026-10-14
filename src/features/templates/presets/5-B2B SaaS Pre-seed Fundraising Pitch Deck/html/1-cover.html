@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Threadline — Pre-seed</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#15181B;
+  --ink-2:#39414A;
+  --muted:#767C82;
+  --line:#D8D4CB;
+  --canvas:#F5F3EF;
+  --panel:#FFFFFF;
+  --panel-alt:#EBE8E0;
+  --accent:#B8492B;
+  --accent-soft:#F1DED6;
+  --slate:#1B2429;
+  --slate-2:#2C3A41;
+  --ok:#4C7358;
+  --warn:#9C7A22;
+}
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background:var(--canvas);
+  font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.kicker{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:21px; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+}
+.kicker-d{ color:#D98E74; }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:600;
+  font-size:62px; line-height:1.06; letter-spacing:-.02em; color:var(--ink);
+}
+.h2{ font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.2; letter-spacing:-.01em; }
+.h3{ font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; line-height:1.25; }
+.lead{ font-size:27px; line-height:1.42; color:var(--ink-2); }
+.body{ font-size:23px; line-height:1.5; color:var(--ink-2); }
+.small{ font-size:21px; line-height:1.45; color:var(--muted); }
+
+.label{
+  font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.num{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  letter-spacing:-.03em; line-height:1; color:var(--ink);
+}
+
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:4px; }
+.card-alt{ background:var(--panel-alt); border:1px solid var(--line); border-radius:4px; }
+.card-d{ background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14); border-radius:4px; }
+
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:16px 20px; border-bottom:1px solid var(--line);
+}
+table.grid td{
+  font-size:23px; color:var(--ink-2); padding:20px;
+  border-bottom:1px solid var(--line); vertical-align:middle;
+}
+table.grid td.k{ color:var(--ink); font-weight:500; }
+
+.chip{
+  display:inline-block; border:1px solid var(--line); border-radius:3px;
+  background:#fff; color:var(--ink-2);
+  font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:.04em;
+  padding:9px 14px; margin:0 8px 10px 0;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="01 Cover" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#1B2429;">
+
+  <!-- background -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:1080px; background:#1B2429; z-index:1;"></div>
+
+  <!-- accent rule top -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#B8492B; z-index:1;"></div>
+
+  <!-- faint grid motif -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:150px; width:1640px; height:1px; background:rgba(255,255,255,.10); z-index:1;"></div>
+
+  <!-- wordmark -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:88px; width:900px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:26px; font-weight:500; letter-spacing:.34em; color:#FFFFFF;">THREADLINE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:88px; width:480px; text-align:right; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:500; letter-spacing:.16em; color:#D98E74;">PRE-SEED ROUND · 2026</div>
+  </div>
+
+  <!-- headline -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:296px; width:920px; z-index:10;">
+    <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:90px; line-height:1.05; letter-spacing:-.025em; color:#FFFFFF;">
+      The order-to-cash<br>operations layer for<br>mid-market B2B.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:646px; width:560px; height:2px; background:#B8492B; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:686px; width:880px; z-index:10;">
+    <div style="font-size:28px; line-height:1.45; color:#B9C1C6;">
+      We turn invoicing, collections and revenue reconciliation from a
+      spreadsheet ritual spread across four tools into one auditable workflow
+      that finance owns end to end.
+    </div>
+  </div>
+
+  <!-- meta row -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:868px; width:920px; z-index:10;">
+    <div style="display:flex; gap:56px; font-family:'IBM Plex Mono',monospace; font-size:21px; letter-spacing:.08em; color:#8C979E;">
+      <span>RAISING&nbsp; <span style="color:#fff;">$2.5M</span></span>
+      <span>DESIGN PARTNERS&nbsp; <span style="color:#fff;">11</span></span>
+      <span>ARR&nbsp; <span style="color:#fff;">$310K</span></span>
+    </div>
+  </div>
+
+  <!-- proof panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:262px; width:640px; height:600px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.16); border-radius:4px; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1188px; top:306px; width:544px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#D98E74; padding-bottom:26px; border-bottom:1px solid rgba(255,255,255,.16);">DESIGN-PARTNER BASELINE → DAY 90</div>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; padding:30px 0 26px; border-bottom:1px solid rgba(255,255,255,.10);">
+      <div style="font-size:22px; color:#8C979E; max-width:230px; line-height:1.3;">Days sales outstanding</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:44px; letter-spacing:-.03em; color:#fff;">68 <span style="color:#5D6A72;">→</span> 41</div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; padding:26px 0; border-bottom:1px solid rgba(255,255,255,.10);">
+      <div style="font-size:22px; color:#8C979E; max-width:230px; line-height:1.3;">Manual touches per invoice</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:44px; letter-spacing:-.03em; color:#fff;">9 <span style="color:#5D6A72;">→</span> 1</div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; padding:26px 0 0;">
+      <div style="font-size:22px; color:#8C979E; max-width:230px; line-height:1.3;">Revenue close cycle</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:44px; letter-spacing:-.03em; color:#fff;">11d <span style="color:#5D6A72;">→</span> 4d</div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:986px; width:1640px; height:1px; background:rgba(255,255,255,.14); z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:1010px; width:900px; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#6E7A81;">CONFIDENTIAL · FOR INVESTOR REVIEW</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1640px; top:1010px; width:140px; text-align:right; z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:19px; letter-spacing:.14em; color:#6E7A81;">01</div>
+  </div>
+
+</div>
+</body>
+</html>

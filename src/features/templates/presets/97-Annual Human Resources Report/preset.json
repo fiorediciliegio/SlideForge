@@ -1,0 +1,103 @@
+{
+  "id": "97-Annual Human Resources Report",
+  "version": 1,
+  "ppt_number": 97,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "orange",
+    "black"
+  ],
+  "name": "Annual Human Resources Report",
+  "description": "Structured HR report with forest green panels, bold metrics, analytical charts, and phased roadmaps.",
+  "user": "Business Professionals",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review"],"industries":["business"],"audiences":["employee"],"formats":["annual-report"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深绿封面采用左右分栏，左侧报告标题，右侧四组纵向关键数字形成正式年报结构，层级鲜明。"
+    },
+    {
+      "path": "images/2-year-context.webp",
+      "alt": "米色页面以三段背景说明配四块数据卡，底部深绿问题条强化年度语境，版面层次清晰有序。"
+    },
+    {
+      "path": "images/3-diagnosis.webp",
+      "alt": "左右分栏组合岗位风险卡与关键指标卡，橙绿数字和浅色标签区分诊断层级，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-talent-strategy.webp",
+      "alt": "深绿背景上以橙色战略横条和三张白色支柱卡构成人才架构总览，整体呈现鲜明的视觉节奏。"
+    },
+    {
+      "path": "images/5-hiring-engine.webp",
+      "alt": "中央绿色招聘漏斗配右侧白色效率指标卡，橙色底层阶段突出转化流失，版面层次清晰有序。"
+    },
+    {
+      "path": "images/6-workforce-mix.webp",
+      "alt": "分组柱状图、右侧深绿留任表和底部岗位明细表组成高密度劳动力分析页，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-perform-grow-succeed.webp",
+      "alt": "四张白色成长阶段卡横排，下方大指标卡与进度条连接绩效和继任主题，版面层次清晰有序。"
+    },
+    {
+      "path": "images/8-engagement-experience.webp",
+      "alt": "深绿页面以四块顶部指标卡和五张体验卡构成模块化员工旅程仪表盘，强化清晰的数据节奏。"
+    },
+    {
+      "path": "images/9-fy2027-roadmap.webp",
+      "alt": "四条彩色季度路线带横向推进，下方决策卡用时间轴式结构呈现年度计划，顺序层级清晰有序。"
+    },
+    {
+      "path": "images/10-resource-ask.webp",
+      "alt": "深绿收尾页左侧预算表，右侧三张决策卡，底部指标带集中承载资源请求，版面层次清晰有序。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，深绿封面采用左右分栏，左侧报告标题，右侧四组纵向关键数字形成正式年报结构，强调色进一步突出重心。"
+    },
+    {
+      "path": "html/2-year-context.html",
+      "description": "米色页面以三段背景说明配四块数据卡，底部深绿问题条强化年度语境，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/3-diagnosis.html",
+      "description": "左右分栏组合岗位风险卡与关键指标卡，橙绿数字和浅色标签区分诊断层级，规则间距与细线边框共同保持稳定的模块秩序。"
+    },
+    {
+      "path": "html/4-talent-strategy.html",
+      "description": "深绿背景上以橙色战略横条和三张白色支柱卡构成人才架构总览，统一卡片间距、细线边框和强调色进一步建立清晰阅读层级。"
+    },
+    {
+      "path": "html/5-hiring-engine.html",
+      "description": "中央绿色招聘漏斗配右侧白色效率指标卡，橙色底层阶段突出转化流失，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/6-workforce-mix.html",
+      "description": "分组柱状图、右侧深绿留任表和底部岗位明细表组成高密度劳动力分析页，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/7-perform-grow-succeed.html",
+      "description": "四张白色成长阶段卡横排，下方大指标卡与进度条连接绩效和继任主题，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/8-engagement-experience.html",
+      "description": "深绿页面以四块顶部指标卡和五张体验卡构成模块化员工旅程仪表盘，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/9-fy2027-roadmap.html",
+      "description": "暖白画布上，四条彩色季度路线带横向推进，下方决策卡用时间轴式结构呈现年度计划，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/10-resource-ask.html",
+      "description": "深绿收尾页左侧预算表，右侧三张决策卡，底部指标带集中承载资源请求，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "91-Film or Series Project Pitch Deck",
+  "version": 1,
+  "ppt_number": 91,
+  "score": 9,
+  "theme": "dark",
+  "color": [
+    "black",
+    "cream",
+    "gold",
+    "blue"
+  ],
+  "name": "Film or Series Project Pitch Deck",
+  "description": "Dark cinematic editorial design with high-contrast serif type, amber accents, and precise data cards.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Media & Entertainment",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["media"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["dark","editorial"],"visual_traits":["dark","editorial","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "炭黑封面以超大衬线片名为中心，右侧渐变剧照卡与金色细线营造电影感，版面层次清晰有序。"
+    },
+    {
+      "path": "images/2-logline.webp",
+      "alt": "深色双栏版式以大段斜体引语和描边项目信息表形成叙事与数据对照，强化清晰的数据节奏。"
+    },
+    {
+      "path": "images/3-why-now.webp",
+      "alt": "左侧三组琥珀色大数字配右侧横向进度条，暗色卡片构成紧凑市场仪表盘，版面层次清晰有序。"
+    },
+    {
+      "path": "images/4-positioning.webp",
+      "alt": "左侧二维定位散点图突出金色项目节点，右侧三张深色原则卡解释市场位置，阅读顺序明确。"
+    },
+    {
+      "path": "images/5-the-world.webp",
+      "alt": "左侧深蓝文字栏介绍港口世界观，右侧四张规则卡与底部暖金引语卡构成设定页，信息对比清楚。"
+    },
+    {
+      "path": "images/6-characters.webp",
+      "alt": "四张竖向人物卡横排在炭黑背景上，低饱和色块与细边框统一角色档案，版面层次清晰有序。"
+    },
+    {
+      "path": "images/7-story-beat-map.webp",
+      "alt": "金色折线横跨上半页，底部六张章节卡连续排列，形成清晰的故事节奏，重点关系直观明确。"
+    },
+    {
+      "path": "images/8-visual-tone.webp",
+      "alt": "三块宽幅色调样本占据上方，下方双栏色板与场景表延续暗调电影风格，版面层次清晰有序。"
+    },
+    {
+      "path": "images/9-audience-market.webp",
+      "alt": "左侧环形图与右侧渠道列表组成市场分析区，底部四块指标卡横向收束，版面层次清晰有序。"
+    },
+    {
+      "path": "images/10-team-budget-ask.webp",
+      "alt": "左上四张团队成员卡与右上预算条形表并列，下方资金请求、关键数字和行动清单分区排布。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，炭黑封面以超大衬线片名为中心，右侧渐变剧照卡与金色细线营造电影感，细线分隔和强调色进一步强化页面层级。"
+    },
+    {
+      "path": "html/2-logline.html",
+      "description": "深色双栏版式以大段斜体引语和描边项目信息表形成叙事与数据对照，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/3-why-now.html",
+      "description": "左侧三组琥珀色大数字配右侧横向进度条，暗色卡片构成紧凑市场仪表盘，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/4-positioning.html",
+      "description": "炭黑页面左侧用二维散点图呈现类型与规模定位，金色节点突出项目位置，右侧三张深色原则卡依次解释差异化策略。"
+    },
+    {
+      "path": "html/5-the-world.html",
+      "description": "炭黑页面左侧以深蓝竖栏和大号衬线标题介绍港口世界观，右侧四张规则卡组成二乘二网格，底部暖金引语卡强化核心设定。"
+    },
+    {
+      "path": "html/6-characters.html",
+      "description": "四张竖向人物卡横排在炭黑背景上，低饱和色块与细边框统一角色档案，精细对齐、留白和底部注释共同建立完整的编辑层级。"
+    },
+    {
+      "path": "html/7-story-beat-map.html",
+      "description": "金色折线横跨上半页，底部六张章节卡连续排列，形成清晰的故事节奏，统一刻度、留白和强调色让多组数据保持稳定层级。"
+    },
+    {
+      "path": "html/8-visual-tone.html",
+      "description": "炭黑画布上，三块宽幅色调样本占据上方，下方双栏色板与场景表延续暗调电影风格，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/9-audience-market.html",
+      "description": "炭黑画布上，左侧环形图与右侧渠道列表组成市场分析区，底部四块指标卡横向收束，辅助标签和强调色共同补足画面层次。"
+    },
+    {
+      "path": "html/10-team-budget-ask.html",
+      "description": "炭黑页面左上排列四张团队成员卡，右上以横向条形表拆分预算，下方依次放置资金请求卡、三组关键数字和下一步清单。"
+    }
+  ]
+}

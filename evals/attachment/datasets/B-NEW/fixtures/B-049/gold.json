@@ -1,0 +1,13 @@
+{
+  "case_id": "B-049",
+  "size_class": "边界",
+  "target_input_tokens": 28000,
+  "estimated_outline_input_tokens": 28072,
+  "estimate_method": "CJK characters × 0.72 + other characters ÷ 4; replace with provider-reported usage after execution.",
+  "web_enabled": false,
+  "image_enabled": false,
+  "attachment_mode": "多附件",
+  "attachment_types": "TXT + DOCX",
+  "content_strategies": "full_context + summarized_context",
+  "evaluation_risks": "1. 把92%写成主体结构完成；2. 把夜间施工写成已批准；3. 将9月9日作为新合同基准；4. 把待审820万元计入已批准成本；5. 夸大或隐藏安全事件。"
+}

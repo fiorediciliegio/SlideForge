@@ -1,0 +1,288 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Implementation Roadmap</title><style>
+:root{
+ --page-width:1920px; --page-height:1080px;
+ --canvas: var(--theme-bg); --surface: var(--theme-surface); --ink: var(--theme-ink); --muted: var(--theme-muted);
+ --accent: var(--theme-accent-primary); --accent-bright: rgb(from var(--theme-accent-primary) calc(r + 24) calc(g + 11) calc(b + 11) / 1); --accent-deep: rgb(from var(--theme-accent-primary) calc(r - 38) calc(g - 3) calc(b - 10) / 1); --secondary: var(--theme-accent-secondary);
+ --line: var(--theme-line); --soft-blue:var(--theme-line); --green:var(--theme-muted); --amber:var(--theme-accent-tertiary); --status-gray:var(--theme-accent-secondary);
+ --mx:88px; --top-safe:38px; --footer-y:1018px;
+ --title-size:76px; --body-size:24px; --meta-size:15px;
+}
+@page{size:1920px 1080px;margin:0}\n*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:var(--theme-bg)}
+body{font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif}
+.t{font-family:'Archivo','Helvetica Neue',Arial,sans-serif}
+.b{font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif}
+.slide{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--canvas);color:var(--ink)}
+.slide:before{content:"";position:absolute;inset:0;z-index:0;background:
+ radial-gradient(circle at 76% 20%, rgba(10,47,107,.12) 0, rgba(10,47,107,.045) 28%, transparent 51%),
+ radial-gradient(circle at 5% 91%, rgba(200,16,46,.105) 0, rgba(200,16,46,.035) 30%, transparent 52%)}
+.bg-dots{position:absolute;inset:0;z-index:0;background-image:radial-gradient(rgba(10,47,107,.17) 1.15px,transparent 1.15px);background-size:24px 24px;opacity:.52}
+.bg-ring{position:absolute;border:1.5px solid rgba(10,47,107,.11);border-radius:50%;z-index:0}
+.bg-ring.r1{left:-310px;top:615px;width:780px;height:780px}.bg-ring.r2{left:-205px;top:724px;width:560px;height:560px;border-color:rgba(200,16,46,.10)}
+.corner-wedge{position:absolute;right:0;top:0;width:128px;height:150px;background:linear-gradient(210deg,rgba(200,16,46,.16),rgba(200,16,46,.03));clip-path:polygon(34% 0,100% 0,100% 100%);z-index:0}
+.ghost-q4{position:absolute;right:168px;top:130px;width:560px;z-index:0;font:900 312px/.82 'Archivo','Helvetica Neue',sans-serif;letter-spacing:-18px;color:rgba(10,47,107,.035);-webkit-text-stroke:0 transparent;white-space:nowrap}
+.header{position:absolute;left:var(--mx);right:var(--mx);top:38px;height:82px;z-index:5;border-bottom:1px solid rgba(10,47,107,.14)}
+.brand-bar{position:absolute;left:0;top:0;width:10px;height:36px;background:linear-gradient(var(--theme-accent-primary),var(--theme-accent-primary))}
+.brand{position:absolute;left:30px;top:-2px}.brand .name{font-size:23px;font-weight:600;letter-spacing:6px}.brand .office{margin-top:5px;font-size:15px;letter-spacing:3.5px;color:var(--secondary)}
+.header-meta{position:absolute;right:126px;top:1px;text-align:right;font-size:15px;line-height:1.55;letter-spacing:3px;color:var(--theme-accent-secondary)}.page-no{position:absolute;right:0;top:11px;font-size:16px;letter-spacing:2.2px;color:var(--theme-accent-secondary)}.page-no strong{color:var(--accent);font-weight:600}.meta-divider{position:absolute;right:96px;top:0;width:2px;height:48px;background:linear-gradient(var(--accent),var(--ink))}
+.dots-cluster{position:absolute;left:var(--mx);top:137px;display:flex;gap:7px;z-index:4}.dots-cluster i{display:block;width:9px;height:9px;background:var(--accent)}.dots-cluster i:nth-child(2){background:var(--theme-accent-secondary)}.dots-cluster i:nth-child(3){background:var(--theme-line)}
+.edge-words{position:absolute;right:71px;top:245px;z-index:3;font-size:14px;line-height:2.2;letter-spacing:4px;color:var(--theme-accent-secondary)}.edge-words:after{content:"";display:block;margin-top:9px;width:62px;height:2px;background:linear-gradient(90deg,var(--accent),var(--ink))}
+.eyebrow{position:absolute;left:var(--mx);top:165px;width:704px;height:44px;z-index:4;background:linear-gradient(90deg,rgba(200,16,46,.13),rgba(200,16,46,.10));border-left:4px solid var(--accent);display:flex;align-items:center;padding-left:22px;font-size:17px;font-weight:600;letter-spacing:5px;color:var(--accent-deep);white-space:nowrap}
+.title-area{position:absolute;left:var(--mx);right:390px;top:224px;z-index:4}.title{margin:0;font:800 var(--title-size)/.98 'Archivo','Helvetica Neue',sans-serif;letter-spacing:-1.7px;color:var(--ink);white-space:nowrap}.title .red{background:none;color:var(--accent);-webkit-text-fill-color:var(--accent)}.subtitle{margin-top:14px;max-width:1240px;font-size:25px;line-height:1.32;color:var(--theme-muted)}.short-rule{margin-top:16px;width:176px;height:6px;background:linear-gradient(90deg,var(--accent) 0 42%,var(--ink) 42% 100%)}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(248,250,253,.98));border:1px solid var(--theme-line);box-shadow:0 18px 40px -28px rgba(10,47,107,.3)}
+.grad-top{position:relative;border-top:4px solid var(--ink)}
+.footer-left{position:absolute;left:var(--mx);top:1022px;z-index:4;font-size:14px;letter-spacing:2.1px;color:var(--theme-accent-secondary);white-space:nowrap}.footer-right{position:absolute;right:110px;top:1023px;z-index:4;font-size:13px;letter-spacing:2.1px;color:var(--theme-accent-secondary);white-space:nowrap}.footer-right:after{content:"";display:inline-block;width:58px;height:3px;margin-left:24px;vertical-align:middle;background:linear-gradient(90deg,var(--accent),var(--ink))}.bottom-bar{position:absolute;left:0;bottom:0;width:100%;height:12px;background:linear-gradient(90deg,var(--ink),var(--theme-ink) 52%,var(--accent));z-index:6}
+.cards-grid{position:absolute;left:var(--mx);right:var(--mx);z-index:4;display:grid;gap:16px}
+.card{min-width:0}.card-head{display:grid;grid-template-columns:112px 1fr;gap:18px;align-items:center;padding:20px 26px 14px}.icon-circle{width:104px;height:104px;border-radius:50%;background:linear-gradient(145deg,var(--theme-ink),var(--theme-ink));display:flex;align-items:center;justify-content:center;box-shadow:0 10px 18px -13px rgba(10,47,107,.8);position:relative;overflow:hidden}.icon-circle.red{background:linear-gradient(145deg,var(--theme-accent-primary),var(--theme-accent-primary))}
+.card-num{font-size:16px;letter-spacing:2px;color:var(--accent);margin-bottom:10px}.card-num:after{content:"";display:inline-block;width:35px;height:1px;margin-left:16px;vertical-align:middle;background:var(--accent)}.card-title{font-size:21px;font-weight:700;line-height:1.15;letter-spacing:1.8px;color:var(--ink)}
+.card-divider{height:1px;background:var(--theme-line);margin:0 28px}.bullets{list-style:none;margin:14px 28px 0;padding:0;display:grid;gap:11px}.bullets li{position:relative;padding-left:37px;font-size:20px;line-height:1.24;color:var(--theme-muted)}.bullets li:before{content:"";position:absolute;left:2px;top:.48em;width:11px;height:11px;background:var(--theme-accent-primary)}
+/* CSS icons */
+.ico-bars{position:relative;width:60px;height:58px}.ico-bars i{position:absolute;bottom:6px;width:12px;border:3px solid var(--theme-bg)}.ico-bars i:nth-child(1){left:5px;height:18px}.ico-bars i:nth-child(2){left:23px;height:31px}.ico-bars i:nth-child(3){left:41px;height:45px}.ico-bars:after{content:"";position:absolute;width:38px;height:3px;background:var(--theme-bg);left:10px;top:15px;transform:rotate(-39deg);transform-origin:left center}.ico-bars:before{content:"";position:absolute;right:6px;top:7px;width:10px;height:10px;border-top:3px solid var(--theme-bg);border-right:3px solid var(--theme-bg);transform:rotate(5deg)}
+.ico-gear{position:relative;width:54px;height:54px;border:4px solid var(--theme-bg);border-radius:50%}.ico-gear:before{content:"";position:absolute;inset:10px;border:4px solid var(--theme-bg);border-radius:50%}.ico-gear:after{content:"";position:absolute;left:22px;top:-11px;width:4px;height:68px;background:var(--theme-bg);box-shadow:0 0 0 0 var(--theme-bg);transform:rotate(45deg);clip-path:polygon(0 0,100% 0,100% 12%,0 12%,0 44%,100% 44%,100% 56%,0 56%,0 88%,100% 88%,100% 100%,0 100%)}
+.ico-cube{position:relative;width:50px;height:50px;border:3px solid var(--theme-bg);transform:rotate(30deg) skew(-4deg)}.ico-cube:before,.ico-cube:after{content:"";position:absolute;background:var(--theme-bg)}.ico-cube:before{left:22px;top:-1px;width:3px;height:49px}.ico-cube:after{left:-1px;top:22px;width:49px;height:3px}
+.ico-shield{position:relative;width:49px;height:58px;background:var(--theme-bg);clip-path:polygon(50% 0,88% 13%,88% 53%,76% 75%,50% 100%,24% 75%,12% 53%,12% 13%)}.ico-shield:before{content:"";position:absolute;inset:4px;background:var(--theme-accent-primary);clip-path:inherit}.ico-shield:after{content:"";position:absolute;left:18px;top:24px;width:14px;height:8px;border-left:3px solid var(--theme-bg);border-bottom:3px solid var(--theme-bg);transform:rotate(-45deg)}
+.ico-calendar{position:relative;width:54px;height:48px;border:3px solid var(--theme-bg);border-radius:4px}.ico-calendar:before{content:"";position:absolute;left:7px;right:7px;top:10px;height:3px;background:var(--theme-bg);box-shadow:0 11px 0 rgba(255,255,255,.95),0 21px 0 rgba(255,255,255,.8)}.ico-calendar:after{content:"";position:absolute;left:11px;top:-9px;width:3px;height:13px;background:var(--theme-bg);box-shadow:25px 0 0 var(--theme-bg)}
+.ico-rocket{position:relative;width:57px;height:57px;transform:rotate(-43deg)}.ico-rocket:before{content:"";position:absolute;left:18px;top:4px;width:22px;height:41px;border:3px solid var(--theme-bg);border-radius:50% 50% 12px 12px}.ico-rocket:after{content:"";position:absolute;left:24px;top:13px;width:9px;height:9px;border:3px solid var(--theme-bg);border-radius:50%;box-shadow:-14px 25px 0 -4px var(--theme-bg),14px 25px 0 -4px var(--theme-bg)}
+.ico-doc{position:relative;width:42px;height:54px;border:3px solid var(--theme-bg);border-radius:3px}.ico-doc:before{content:"";position:absolute;right:-3px;top:-3px;width:14px;height:14px;border-left:3px solid var(--theme-bg);border-bottom:3px solid var(--theme-bg);background:rgba(255,255,255,.15)}.ico-doc:after{content:"";position:absolute;left:8px;right:8px;top:25px;height:2px;background:var(--theme-bg);box-shadow:0 8px 0 var(--theme-bg),0 16px 0 rgba(255,255,255,.75)}
+
+/* renderer-stable icon refinements */
+.ico-bars{position:relative;width:50px;height:45px;box-sizing:border-box}
+.ico-bars i{display:block;position:absolute;bottom:2px;width:10px;border:2.5px solid var(--theme-bg);box-sizing:border-box;background:transparent;z-index:1}.ico-bars i:nth-child(1){left:4px;height:15px}.ico-bars i:nth-child(2){left:18px;height:24px}.ico-bars i:nth-child(3){left:32px;height:36px}.ico-bars:after{content:"";position:absolute;left:4px;top:28px;width:42px;height:2.5px;background:var(--theme-bg);transform:rotate(-32deg);transform-origin:left center;border-radius:2px;z-index:2}.ico-bars:before{content:"";position:absolute;right:1px;top:1px;width:9px;height:9px;border-top:2.5px solid var(--theme-bg);border-right:2.5px solid var(--theme-bg);box-sizing:border-box;z-index:2}
+.ico-gear{border:0;width:62px;height:62px}.ico-gear:before{content:"⚙";position:absolute;inset:0;border:0;border-radius:0;display:flex;align-items:center;justify-content:center;font:400 58px/1 Arial,sans-serif;color:var(--theme-bg)}.ico-gear:after{display:none}
+.ico-shield{width:46px;height:55px;background:transparent;clip-path:none;border:3px solid var(--theme-bg);border-radius:20px 20px 26px 26px}.ico-shield:before{display:none}.ico-shield:after{left:14px;top:22px;width:13px;height:8px}
+.ico-rocket{transform:none;width:56px;height:56px}.ico-rocket:before{content:"↗";inset:0;width:auto;height:auto;border:0;border-radius:0;display:flex;align-items:center;justify-content:center;font:400 52px/1 Arial,sans-serif;color:var(--theme-bg)}.ico-rocket:after{display:none}
+
+.status-dot{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:13px;vertical-align:-1px}.status-dot.green{background:var(--green)}.status-dot.amber{background:var(--amber)}.status-dot.gray{background:var(--status-gray)}
+</style><style data-semantic-theme-roles>
+  :root {
+    --theme-bg: #FDFDFE;
+    --theme-surface: #F7F9FC;
+    --theme-ink: #0A2F6B;
+    --theme-muted: #3E5573;
+    --theme-accent-primary: #C8102E;
+    --theme-accent-secondary: #7889A0;
+    --theme-accent-tertiary: #FF6B7F;
+    --theme-line: #E4EAF3;
+  }
+</style>
+<style data-external-template-fonts>
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLySOxK-vA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ibmplexsans/v23/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head><body>
+<div class="slide">
+<div class="bg-dots"></div><div class="bg-ring r1"></div><div class="bg-ring r2"></div><div class="corner-wedge"></div><div class="ghost-q4 t">Q4</div>
+<div class="header"><div class="brand-bar"></div><div class="brand"><div class="name">[COMPANY LOGO]</div><div class="office">CORPORATE STRATEGY OFFICE</div></div><div class="header-meta">Q4 STRATEGIC PLAN<br>OCT – DEC 2026</div><div class="meta-divider"></div><div class="page-no"><strong>02</strong> / 04</div></div>
+<div class="dots-cluster"><i></i><i></i><i></i></div><div class="edge-words">PEOPLE<br>PLANS<br>PROGRESS</div>
+<div class="eyebrow">Q4 DELIVERY TIMELINE</div><div class="title-area"><h1 class="title">IMPLEMENTATION <span class="red">ROADMAP</span></h1><div class="subtitle">The quarter is organized into four execution phases to deliver key outcomes,<br>maintain momentum and position the business for continued growth.</div><div class="short-rule"></div></div>
+
+<style>
+.roadmap{position:absolute;left:var(--mx);right:var(--mx);top:419px;height:445px;z-index:4;padding:0;overflow:hidden}.roadmap-grid{display:grid;grid-template-columns:repeat(4,1fr);height:318px;position:relative}.phase{position:relative;padding:14px 24px 0;border-right:1px dashed var(--theme-line)}.phase:last-child{border-right:0}.phase-top{display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:center}.phase-badge{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:500 28px/1 'IBM Plex Sans';letter-spacing:1px;color:var(--theme-bg);background:linear-gradient(145deg,var(--theme-accent-primary),var(--theme-accent-primary))}.phase:nth-child(even) .phase-badge{background:linear-gradient(145deg,var(--theme-ink),var(--theme-ink))}.phase-name{font-size:18px;font-weight:700;letter-spacing:2.1px;color:var(--ink);white-space:nowrap}.phase-date{font-size:15px;letter-spacing:2px;color:var(--theme-accent-secondary);margin-top:8px;white-space:nowrap}.axis{position:absolute;left:68px;right:30px;top:125px;height:3px;background:linear-gradient(90deg,var(--accent),var(--ink) 35%,var(--ink))}.axis:after{content:"";position:absolute;right:-1px;top:-8px;width:16px;height:16px;border-top:3px solid var(--ink);border-right:3px solid var(--ink);transform:rotate(45deg)}.node{position:absolute;left:47px;top:105px;width:44px;height:44px;border-radius:50%;background:var(--theme-surface);border:3px solid rgba(200,16,46,.28);display:flex;align-items:center;justify-content:center;z-index:2}.node:after{content:"";width:20px;height:20px;border-radius:50%;background:var(--accent)}.phase:nth-child(even) .node{border-color:rgba(10,47,107,.25)}.phase:nth-child(even) .node:after{background:var(--ink)}.phase-list{list-style:none;margin:56px 0 0 8px;padding:0;display:grid;gap:7px}.phase-list li{position:relative;padding-left:42px;font-size:17px;line-height:1.2;color:var(--theme-muted)}.phase-list li:before{content:"";position:absolute;left:0;top:.45em;width:10px;height:10px;background:var(--theme-accent-primary)}
+.milestones{height:126px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:0 0 0 0}.milestone{margin:0 0 0 0;border:1px solid var(--theme-line);background:linear-gradient(180deg,var(--theme-bg),var(--theme-bg));display:grid;grid-template-columns:92px 1fr;align-items:center;padding:10px 18px}.milestone .icon-circle{width:76px;height:76px}.milestone .icon-circle .ico-calendar{transform:scale(.75)}.milestone .icon-circle .ico-rocket{transform:rotate(-43deg) scale(.78)}.milestone .icon-circle .ico-bars{transform:translateY(-1px) scale(.84)}.milestone .icon-circle .ico-doc{transform:scale(.74)}.mile-date{font-size:14px;font-weight:600;letter-spacing:2.5px;color:var(--accent)}.mile-date:after{content:"";display:inline-block;width:35px;height:1px;background:var(--accent);margin-left:17px;vertical-align:middle}.mile-title{font-size:16px;font-weight:700;letter-spacing:1.6px;margin-top:7px}.mile-sub{font-size:15px;color:var(--theme-accent-secondary);margin-top:8px;white-space:nowrap}
+.success{position:absolute;left:var(--mx);right:var(--mx);top:883px;height:111px;z-index:4;display:grid;grid-template-columns:280px repeat(3,1fr);align-items:center}.success .label{height:100%;display:block;padding:28px 0 0 35px;background:linear-gradient(90deg,rgba(200,16,46,.10),rgba(200,16,46,.04));font-size:17px;font-weight:600;line-height:1.55;letter-spacing:4px;color:var(--accent);white-space:nowrap}.crit{height:62%;display:grid;grid-template-columns:68px 1fr;align-items:center;padding:0 30px;border-left:3px solid var(--ink)}.crit-badge{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--theme-accent-primary),var(--theme-accent-primary));font-size:19px;color:var(--theme-bg)}.crit-text{font-size:18px;line-height:1.25;color:var(--theme-muted)}
+</style>
+<div class="roadmap panel">
+<div class="axis"></div>
+<div class="roadmap-grid">
+ <div class="phase"><div class="phase-top"><div class="phase-badge">01</div><div><div class="phase-name">ALIGN &amp; MOBILIZE</div><div class="phase-date">OCT 1 – OCT 15</div></div></div><div class="node"></div><ul class="phase-list"><li>Finalize detailed plans<br>and resource allocation</li><li>Align cross-functional teams<br>and governance</li><li>Confirm key vendor and<br>partner readiness</li></ul></div>
+ <div class="phase"><div class="phase-top"><div class="phase-badge">02</div><div><div class="phase-name">BUILD &amp; EXECUTE</div><div class="phase-date">OCT 16 – NOV 15</div></div></div><div class="node"></div><ul class="phase-list"><li>Execute core initiatives<br>and product development</li><li>Drive go-to-market activities</li><li>Monitor progress and<br>remove roadblocks</li></ul></div>
+ <div class="phase"><div class="phase-top"><div class="phase-badge">03</div><div><div class="phase-name">SCALE &amp; OPTIMIZE</div><div class="phase-date">NOV 16 – DEC 15</div></div></div><div class="node"></div><ul class="phase-list"><li>Scale successful pilots<br>and expand coverage</li><li>Optimize operations<br>and cost efficiency</li><li>Incorporate customer feedback<br>and refine solutions</li></ul></div>
+ <div class="phase"><div class="phase-top"><div class="phase-badge">04</div><div><div class="phase-name">REVIEW &amp; PREPARE</div><div class="phase-date">DEC 16 – DEC 31</div></div></div><div class="node"></div><ul class="phase-list"><li>Assess results against targets</li><li>Capture lessons learned<br>and document best practices</li><li>Prepare FY27 planning<br>inputs and handoff</li></ul></div>
+</div>
+<div class="milestones">
+ <div class="milestone"><div class="icon-circle red"><div class="ico-calendar"></div></div><div><div class="mile-date">OCT 10</div><div class="mile-title">Q4 BUDGET APPROVAL</div><div class="mile-sub">Funding and resources confirmed</div></div></div>
+ <div class="milestone"><div class="icon-circle"><div class="ico-rocket"></div></div><div><div class="mile-date">NOV 1</div><div class="mile-title">MARKET LAUNCH</div><div class="mile-sub">Initial release to key segments</div></div></div>
+ <div class="milestone"><div class="icon-circle red"><div class="ico-bars"><i></i><i></i><i></i></div></div><div><div class="mile-date">DEC 10</div><div class="mile-title">Q4 OPERATING REVIEW</div><div class="mile-sub">Performance assessment</div></div></div>
+ <div class="milestone"><div class="icon-circle"><div class="ico-doc"></div></div><div><div class="mile-date">DEC 31</div><div class="mile-title">FY27 PLANNING HANDOFF</div><div class="mile-sub">Strategic inputs delivered</div></div></div>
+</div></div>
+<div class="success panel grad-top"><div class="label">KEY SUCCESS<br>CRITERIA</div><div class="crit"><div class="crit-badge">1</div><div class="crit-text">Deliver key products and initiatives<br>on time and within budget</div></div><div class="crit"><div class="crit-badge">2</div><div class="crit-text">Achieve targeted business<br>and customer impact</div></div><div class="crit"><div class="crit-badge">3</div><div class="crit-text">Build momentum for FY27<br>with clear priorities and plans</div></div></div>
+
+<div class="footer-left">FOR INTERNAL DISCUSSION ONLY – NOT FOR DISTRIBUTION</div><div class="footer-right">EXECUTE TODAY. A STRONGER TOMORROW.</div><div class="bottom-bar"></div>
+</div></body></html>

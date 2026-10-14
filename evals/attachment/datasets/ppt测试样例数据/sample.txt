@@ -1,0 +1,20 @@
+Sample Plain Text File
+======================
+
+This is a simple plain text file demonstrating UTF-8 encoded content.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+ea commodo consequat.
+
+Common uses for plain text files:
+  - Configuration files
+  - Log files
+  - Documentation drafts
+  - Data exchange
+  - Code source files
+
+Special characters work fine: café, naïve, 你好, مرحبا, привет, 🎉
+
+End of sample text file.

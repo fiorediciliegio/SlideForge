@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1F6B4A;
+    --dark: #14201A;
+    --muted: #5A675F;
+    --light: #93A09A;
+    --bg-card: #F4F8F5;
+    --border: #E2E6E3;
+    --f-title: 54px;
+    --f-sub: 32px;
+    --f-body: 22px;
+    --f-meta: 18px;
+    --f-eye: 20px;
+  }
+  body { margin: 0; padding: 0; overflow: hidden; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  .slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #ffffff; box-sizing: border-box; font-family: 'IBM Plex Sans SC', sans-serif; }
+  .ar { font-family: 'Archivo', sans-serif; }
+  .fixed-header { position: absolute; left: 96px; top: 72px; width: 1728px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+  .eyebrow { font-size: var(--f-eye); font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--primary); }
+  .header-meta { font-size: var(--f-meta); font-weight: 500; color: var(--muted); letter-spacing: .05em; }
+  .title-area { position: absolute; left: 96px; top: 148px; width: 1728px; }
+  .main-title { font-size: var(--f-title); font-weight: 700; line-height: 1.15; letter-spacing: -.01em; color: var(--dark); margin: 0; }
+  .content-area { position: absolute; left: 96px; top: 256px; width: 1728px; height: 644px; overflow: hidden; }
+  .fixed-footer { position: absolute; left: 96px; top: 940px; width: 1728px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 24px; }
+  .footer-text { font-size: var(--f-meta); color: var(--light); font-weight: 400; }
+  .page-num { font-size: var(--f-meta); font-weight: 600; color: var(--primary); letter-spacing: .08em; }
+
+  /* Page Specific Layout */
+  .problem-grid { display: grid; grid-template-columns: 700px 1fr; gap: 48px; height: 100%; align-items: stretch; }
+  .col-left { display: flex; flex-direction: column; height: 100%; }
+  .col-right { display: flex; flex-direction: column; gap: 28px; height: 100%; }
+  
+  /* Card Design */
+  .card { box-sizing: border-box; border-radius: 12px; padding: 40px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+  .highlight-card { background: var(--bg-card); border: 1px solid var(--border); height: 100%; }
+  .standard-card { background: #ffffff; border: 1px solid var(--border); flex: 1; }
+  
+  /* Pending/Dashed Card Style */
+  .pending-card { border: 2px dashed #C0D0C6; background: #FAFDFB; }
+  
+  /* Card Elements */
+  .card-tag { font-family: 'Archivo', sans-serif; font-size: 16px; font-weight: 600; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .card-title { font-size: 36px; font-weight: 600; color: var(--dark); margin: 0 0 20px 0; line-height: 1.3; }
+  .card-subtitle { font-size: 26px; font-weight: 600; color: var(--dark); margin: 0; line-height: 1.3; }
+  .card-desc { font-size: 21px; line-height: 1.55; color: var(--muted); margin: 0 0 24px 0; }
+  
+  /* Status Badge */
+  .status-container { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 20px; background: #FFFBEB; border: 1px solid #FDE68A; color: #D97706; font-size: 18px; font-weight: 600; letter-spacing: 0.05em; }
+  .status-badge.info { background: #EFF6FF; border: 1px solid #BFDBFE; color: #2563EB; }
+
+  /* Placeholder Styling */
+  .placeholder-box { background: rgba(255, 255, 255, 0.8); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: flex; gap: 16px; align-items: flex-start; }
+  .placeholder-box.dark-bg { background: rgba(20, 32, 26, 0.03); border: 1px dashed var(--light); }
+  .placeholder-icon { font-size: 24px; color: var(--light); line-height: 1; }
+  .placeholder-text { font-size: 18px; line-height: 1.5; color: var(--muted); }
+  .placeholder-text strong { color: var(--dark); }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="Call for Code Slide Master">
+  <div class="fixed-header" data-fixed="true">
+    <span class="eyebrow ar">2024 CALL FOR CODE</span>
+    <span class="header-meta ar">GLOBAL CHALLENGE</span>
+  </div>
+  <div class="title-area" data-fixed="true">
+    <h1 class="main-title">问题定义：当前面临的可持续发展痛点</h1>
+  </div>
+  
+  <div class="content-area">
+    <div class="problem-grid">
+      <!-- Left Column: Core Challenge (Marked as Pending based on strict truth rule) -->
+      <div class="col-left">
+        <div class="card highlight-card pending-card">
+          <div>
+            <div class="status-container">
+              <span class="card-tag">01 / CORE CHALLENGE</span>
+              <span class="status-badge">待补充 · PENDING</span>
+            </div>
+            <h2 class="card-title">核心挑战：环境或社会问题定义</h2>
+            <p class="card-desc">
+              本项目的具体可持续发展问题领域（如气候、水资源、减碳或生态保护等）在附件中未提供具体的环境或社会问题描述，需在后续步骤中确立唯一核心信息。
+            </p>
+          </div>
+          
+          <div class="placeholder-box dark-bg">
+            <span class="placeholder-icon">✏️</span>
+            <span class="placeholder-text">
+              <strong>完善指引：</strong>请在 README 文件的 <code>The issue we are hoping to solve</code> 部分替换占位符，补充 2-3 句具体的可持续发展痛点描述。
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Situation Analysis & Urgency -->
+      <div class="col-right">
+        <!-- Card 2: Situation Analysis -->
+        <div class="card standard-card pending-card">
+          <div>
+            <div class="status-container">
+              <span class="card-tag">02 / SITUATION ANALYSIS</span>
+              <span class="status-badge">待补充 · PENDING</span>
+            </div>
+            <h3 class="card-subtitle" style="margin-bottom: 16px;">现状分析：现有解决方案的局限性</h3>
+            <p class="card-desc" style="margin-bottom: 0;">
+              当前主流应对方案在<strong>效率（Efficiency）</strong>或<strong>可扩展性（Scalability）</strong>方面存在局限性，需结合具体技术背景定义瓶颈，以突显本方案的改进空间。
+            </p>
+          </div>
+          <div class="placeholder-box" style="padding: 16px; margin-top: 16px;">
+            <span class="placeholder-text">
+              <strong>提示：</strong>可在 README 的 <code>Our idea</code> 区域详述现有技术的痛点，并阐明本方案为何是更优的替代方案。
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 3: Urgency & SDG -->
+        <div class="card standard-card pending-card">
+          <div>
+            <div class="status-container">
+              <span class="card-tag">03 / URGENCY & SDG IMPACT</span>
+              <span class="status-badge">待补充 · PENDING</span>
+            </div>
+            <h3 class="card-subtitle" style="margin-bottom: 16px;">解决紧迫性与可持续发展目标（SDGs）贡献</h3>
+            <p class="card-desc" style="margin-bottom: 0;">
+              阐明立即行动的必要性，并明确本技术方案对联合国可持续发展目标（SDGs）的具体贡献路径。
+            </p>
+          </div>
+          <div class="placeholder-box" style="padding: 16px; margin-top: 16px;">
+            <span class="placeholder-text">
+              <strong>提示：</strong>建议关联具体的联合国 SDG 指标（如 Goal 13 气候行动等）以增强方案的学术与社会说服力。
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="fixed-footer" data-fixed="true">
+    <span class="footer-text">2024 Call for Code 全球挑战赛项目方案汇报 &nbsp;·&nbsp; Tech for Sustainable Future</span>
+    <span class="page-num ar">02 / 08</span>
+  </div>
+</div>
+</body>
+</html>

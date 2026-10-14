@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Opening Question</title>
+<style>
+/* ==== COMIC BOOK DESIGN SYSTEM ==== */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bowlby+One&family=Luckiest+Guy&family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap');
+
+:root {
+  --red: #ED1C24;
+  --yellow: #FFDE17;
+  --sky: #29ABE2;
+  --white: #FFFFFF;
+  --black: #111111;
+  --paper: #FFF8E7;
+
+  --font-title: 'Bangers', 'Bowlby One', sans-serif;
+  --font-pow: 'Luckiest Guy', 'Bangers', sans-serif;
+  --font-body: 'Comic Neue', 'Comic Sans MS', sans-serif;
+  --font-hand: 'Permanent Marker', cursive;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  color: var(--black);
+}
+
+/* Halftone dot pattern */
+.halftone-red {
+  background-image: radial-gradient(circle, var(--red) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-yellow {
+  background-image: radial-gradient(circle, var(--yellow) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+.halftone-black {
+  background-image: radial-gradient(circle, var(--black) 2px, transparent 2.5px);
+  background-size: 18px 18px;
+}
+.halftone-sky {
+  background-image: radial-gradient(circle, var(--sky) 2.5px, transparent 3px);
+  background-size: 16px 16px;
+}
+
+/* Diagonal speed lines */
+.speedlines {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--black) 0 3px,
+    transparent 3px 22px
+  );
+}
+.speedlines-white {
+  background: repeating-linear-gradient(
+    -25deg,
+    var(--white) 0 4px,
+    transparent 4px 26px
+  );
+}
+
+/* Radial burst */
+.burst-lines {
+  background: repeating-conic-gradient(
+    from 0deg,
+    var(--black) 0deg 3deg,
+    transparent 3deg 12deg
+  );
+}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="02 Opening Question" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#29ABE2;">
+
+  <!-- speed lines background -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1; background: repeating-linear-gradient(-25deg, rgba(255,255,255,0.35) 0 4px, transparent 4px 30px);"></div>
+
+  <!-- Top banner: HEY KIDS! -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:50px; width:1760px; z-index:10; transform: rotate(-1deg);">
+    <div style="background:#ED1C24; border:8px solid #111; padding:14px 40px; box-shadow: 10px 10px 0 #111; text-align:center;">
+      <div style="font-family: var(--font-title); font-size:72px; color:#FFDE17; letter-spacing:4px; -webkit-text-stroke: 2px #111;">HEY KIDS... HAVE YOU EVER WONDERED?</div>
+    </div>
+  </div>
+
+  <!-- LEFT PANEL: kid rubbing balloon -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:80px; top:220px; width:820px; height:560px; z-index:5; background:#FFF8E7; border:10px solid #111; box-shadow: 12px 12px 0 #111; overflow:hidden;">
+    <!-- halftone floor -->
+    <div style="position:absolute; left:0; bottom:0; width:100%; height:180px; background-image: radial-gradient(circle, #ED1C24 3px, transparent 3.5px); background-size: 20px 20px; opacity:0.4;"></div>
+
+    <svg style="position:absolute; left:60px; top:60px; width:700px; height:450px;" viewBox="0 0 700 450">
+      <!-- Kid rubbing balloon on head -->
+      <!-- body -->
+      <path d="M240,300 Q225,420 275,440 L400,440 Q450,420 435,300 Z" fill="#ED1C24" stroke="#111" stroke-width="7"/>
+      <rect x="240" y="340" width="200" height="20" fill="#FFDE17" stroke="#111" stroke-width="5"/>
+      <!-- head -->
+      <ellipse cx="337" cy="220" rx="95" ry="100" fill="#FFD9B3" stroke="#111" stroke-width="7"/>
+      <!-- crazy hair spikes -->
+      <path d="M255,160 L235,90 L275,150 L260,80 L295,145 L305,70 L330,140 L340,60 L360,140 L380,75 L390,150 L410,90 L410,155" fill="#111" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <!-- eyes squinting happy -->
+      <path d="M290,215 Q305,205 320,215" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M360,215 Q375,205 390,215" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <!-- mouth open o -->
+      <ellipse cx="337" cy="265" rx="20" ry="24" fill="#111"/>
+      <ellipse cx="337" cy="272" rx="10" ry="10" fill="#ED1C24"/>
+      <!-- cheeks -->
+      <circle cx="255" cy="255" r="14" fill="#ED1C24" opacity="0.55"/>
+      <circle cx="420" cy="255" r="14" fill="#ED1C24" opacity="0.55"/>
+      <!-- arm going up with balloon -->
+      <path d="M420,320 Q490,240 510,180" fill="none" stroke="#ED1C24" stroke-width="26" stroke-linecap="round"/>
+      <path d="M420,320 Q490,240 510,180" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="510" cy="175" r="24" fill="#FFD9B3" stroke="#111" stroke-width="6"/>
+
+      <!-- Balloon being rubbed on hair -->
+      <ellipse cx="470" cy="130" rx="75" ry="85" fill="#FFDE17" stroke="#111" stroke-width="7"/>
+      <ellipse cx="450" cy="105" rx="14" ry="20" fill="#fff" opacity="0.7"/>
+      <path d="M470,210 L465,225 L480,225 Z" fill="#FFDE17" stroke="#111" stroke-width="5"/>
+
+      <!-- motion arcs (rubbing) -->
+      <path d="M370,150 Q380,120 400,110" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M365,175 Q380,145 405,135" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M540,100 Q560,90 575,105" stroke="#111" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+      <!-- sparks -->
+      <path d="M600,140 L620,130 L605,155 L625,150" stroke="#FFDE17" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </svg>
+
+    <!-- Rub sound effect -->
+    <div style="position:absolute; right:30px; bottom:40px; transform: rotate(6deg);">
+      <div style="background:#FFDE17; border:5px solid #111; padding:6px 18px; font-family: var(--font-pow); font-size:34px; color:#111; box-shadow: 5px 5px 0 #111;">RUB RUB!</div>
+    </div>
+
+    <!-- panel corner label -->
+    <div style="position:absolute; left:0; top:0; background:#111; color:#FFDE17; font-family: var(--font-title); font-size:32px; padding:6px 16px; letter-spacing:2px;">PANEL A</div>
+  </div>
+
+  <!-- RIGHT PANEL: hair standing up -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1000px; top:220px; width:840px; height:560px; z-index:5; background:#FFF8E7; border:10px solid #111; box-shadow: 12px 12px 0 #111; overflow:hidden;">
+    <!-- burst behind -->
+    <div style="position:absolute; left:50%; top:50%; width:900px; height:900px; transform: translate(-50%,-50%); background: repeating-conic-gradient(from 0deg, rgba(41,171,226,0.35) 0deg 4deg, transparent 4deg 12deg);"></div>
+
+    <svg style="position:absolute; left:120px; top:50px; width:600px; height:470px;" viewBox="0 0 600 470">
+      <!-- body -->
+      <path d="M210,300 Q195,420 245,440 L370,440 Q420,420 405,300 Z" fill="#29ABE2" stroke="#111" stroke-width="7"/>
+      <rect x="210" y="340" width="200" height="20" fill="#FFFFFF" stroke="#111" stroke-width="5"/>
+      <!-- head -->
+      <ellipse cx="307" cy="210" rx="100" ry="105" fill="#FFD9B3" stroke="#111" stroke-width="7"/>
+      <!-- HAIR STANDING WAY UP -->
+      <path d="M220,145 L200,10 L245,130 L235,0 L275,125 L280,-5 L310,120 L320,-10 L345,120 L360,0 L375,125 L400,10 L400,145 Z" fill="#111" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+      <!-- eyes: wide surprised -->
+      <circle cx="270" cy="205" r="20" fill="#fff" stroke="#111" stroke-width="6"/>
+      <circle cx="345" cy="205" r="20" fill="#fff" stroke="#111" stroke-width="6"/>
+      <circle cx="275" cy="210" r="9" fill="#111"/>
+      <circle cx="350" cy="210" r="9" fill="#111"/>
+      <!-- mouth: shocked O -->
+      <ellipse cx="307" cy="265" rx="22" ry="30" fill="#111"/>
+      <!-- cheeks -->
+      <circle cx="225" cy="245" r="15" fill="#ED1C24" opacity="0.55"/>
+      <circle cx="390" cy="245" r="15" fill="#ED1C24" opacity="0.55"/>
+
+      <!-- Balloon stuck on top of head -->
+      <ellipse cx="307" cy="60" rx="70" ry="78" fill="#FFDE17" stroke="#111" stroke-width="7"/>
+      <ellipse cx="288" cy="35" rx="12" ry="18" fill="#fff" opacity="0.7"/>
+    </svg>
+
+    <!-- zap zag sparks around balloon -->
+    <svg style="position:absolute; left:0; top:0; width:100%; height:100%; pointer-events:none;" viewBox="0 0 840 560">
+      <path d="M340,80 L320,60 L345,65 L325,45" stroke="#ED1C24" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M480,80 L500,55 L475,60 L495,40" stroke="#ED1C24" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M300,30 L285,10" stroke="#ED1C24" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </svg>
+
+    <!-- HUH?! speech bubble -->
+    <div style="position:absolute; right:20px; top:60px; transform: rotate(6deg);">
+      <div style="background:#FFFFFF; border:6px solid #111; border-radius:70% 30% 60% 40% / 60% 40% 60% 40%; padding:20px 34px; font-family: var(--font-pow); font-size:52px; color:#ED1C24; -webkit-text-stroke:2px #111; box-shadow: 6px 6px 0 #111;">HUH?!</div>
+    </div>
+
+    <div style="position:absolute; left:0; top:0; background:#111; color:#FFDE17; font-family: var(--font-title); font-size:32px; padding:6px 16px; letter-spacing:2px;">PANEL B</div>
+  </div>
+
+  <!-- Bottom yellow question banner -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1760px; z-index:10; transform: rotate(1deg);">
+    <div style="background:#FFDE17; border:10px solid #111; padding:24px 40px; box-shadow: 12px 12px 0 #111; text-align:center;">
+      <div style="font-family: var(--font-title); font-size:78px; color:#111; letter-spacing:3px; line-height:1;">WHY does your hair go &nbsp;<span style="color:#ED1C24; -webkit-text-stroke:2px #111;">WILD</span>&nbsp; when the balloon touches it?!</div>
+    </div>
+  </div>
+
+  <!-- page num -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1720px; top:960px; width:140px; height:100px; z-index:10; background:#111; border:6px solid #111; transform: rotate(-4deg); display:flex; align-items:center; justify-content:center;">
+    <div style="font-family: var(--font-title); font-size:56px; color:#FFDE17; letter-spacing:2px;">02</div>
+  </div>
+
+</div>
+</body>
+</html>

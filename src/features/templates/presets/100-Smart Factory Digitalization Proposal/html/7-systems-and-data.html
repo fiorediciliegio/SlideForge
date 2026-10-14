@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Equipment, data and systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;overflow:hidden;font-family:'IBM Plex Sans',sans-serif;color:#14181C;}
+  .lbl{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;}
+  .display{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:-.012em;}
+  .num{font-family:'Archivo',sans-serif;font-weight:600;font-variant-numeric:tabular-nums;}
+  table{border-collapse:collapse;width:100%;}
+  th{font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:#6E7378;text-align:left;padding:0 16px 14px 16px;border-bottom:2px solid #14181C;font-weight:500;}
+  td{font-size:24px;padding:22px 16px;border-bottom:1px solid #EAE5DA;vertical-align:middle;line-height:1.2;}
+  .mono{font-family:'IBM Plex Mono',monospace;font-size:23px;}
+  .pill{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.06em;padding:6px 12px;border-radius:2px;}
+  /* one shared scale for BOTH side panels */
+  .panel-label{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;font-size:21px;}
+  .panel-rows{flex:1;display:flex;flex-direction:column;margin-top:14px;}
+  .panel-row{flex:1;display:flex;align-items:center;gap:16px;font-size:22px;line-height:1.28;}
+  .panel-key{font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;font-size:19px;width:92px;flex:none;}
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="07 Systems and data" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F4F1EC;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:0;top:0;width:1920px;height:1080px;z-index:1;background-image:linear-gradient(to right,rgba(20,24,28,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(20,24,28,.045) 1px,transparent 1px);background-size:80px 80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:60px;width:1200px;z-index:10;font-size:24px;color:#6E7378;"><span style="color:#E08A0F;">07</span> &nbsp;/&nbsp; Equipment, data &amp; systems</div>
+
+  <div data-object="true" data-object-type="textbox" class="display" style="position:absolute;left:96px;top:100px;width:1500px;z-index:10;font-size:62px;line-height:1.06;">What gets connected, and how</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:186px;width:1500px;z-index:10;font-size:30px;line-height:1.35;color:#5C6166;">Every asset class has a named connection method and a named owner. No machine is left as a black box.</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:256px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+
+  <!-- LEFT: asset table, 96 → 1256 (1160w), 300 → 948 (648h) -->
+  <div data-object="true" data-object-type="table" style="position:absolute;left:96px;top:300px;width:1160px;height:648px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:30px 24px;display:flex;flex-direction:column;">
+    <table>
+      <thead>
+        <tr><th style="width:320px;">Asset class</th><th style="width:90px;">Qty</th><th style="width:360px;">Connection method</th><th style="width:140px;">Tags each</th><th>Wave</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CNC machining centres</td><td class="mono">38</td><td>OPC UA, native</td><td class="mono">22</td><td><span class="pill" style="background:#F3E2CB;color:#8A5209;">W1</span></td></tr>
+        <tr><td>Legacy presses</td><td class="mono">16</td><td>Retrofit IO, current clamp</td><td class="mono">9</td><td><span class="pill" style="background:#F3E2CB;color:#8A5209;">W1</span></td></tr>
+        <tr><td>Operator terminals</td><td class="mono">18</td><td>Web client, shop WLAN</td><td class="mono">&mdash;</td><td><span class="pill" style="background:#F3E2CB;color:#8A5209;">W1</span></td></tr>
+        <tr><td>Vision inspection cells</td><td class="mono">8</td><td>REST and image drop</td><td class="mono">14</td><td><span class="pill" style="background:#DCE4E7;color:#2A414E;">W2</span></td></tr>
+        <tr><td>Vibration / temp kits</td><td class="mono">44</td><td>Wireless gateway, LoRa</td><td class="mono">6</td><td><span class="pill" style="background:#DCE4E7;color:#2A414E;">W2</span></td></tr>
+        <tr><td style="border-bottom:none;">Energy submeters</td><td class="mono" style="border-bottom:none;">12</td><td style="border-bottom:none;">Modbus TCP</td><td class="mono" style="border-bottom:none;">4</td><td style="border-bottom:none;"><span class="pill" style="background:#D6E4E0;color:#155048;">W3</span></td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin:auto 16px 0 16px;padding-top:26px;border-top:2px solid #14181C;display:flex;align-items:center;gap:24px;">
+      <span style="font-family:'Archivo',sans-serif;font-weight:600;font-size:24px;">Total connected points</span>
+      <span class="num" style="font-size:36px;line-height:1;">136</span>
+      <span style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:22px;color:#6E7378;">&asymp; 1,850 live tags at 1.2 s</span>
+    </div>
+  </div>
+
+  <!-- RIGHT TOP: 1288 → 1824 (536w), 300 → 608 (308h) -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1288px;top:300px;width:536px;height:308px;z-index:10;background:#14181C;border-radius:2px;padding:28px;display:flex;flex-direction:column;">
+    <div class="panel-label" style="color:#8E979D;">System landscape</div>
+    <div class="panel-rows">
+      <div class="panel-row" style="border-bottom:1px solid rgba(255,255,255,.22);"><span class="panel-key" style="color:#1E9E86;">Keep</span><span style="color:#E6E2DA;">SAP ECC, Maximo, LIMS</span></div>
+      <div class="panel-row" style="border-bottom:1px solid rgba(255,255,255,.22);"><span class="panel-key" style="color:#E08A0F;">Extend</span><span style="color:#E6E2DA;">Maximo API, SAP order feed</span></div>
+      <div class="panel-row"><span class="panel-key" style="color:#F7F4EE;">Add</span><span style="color:#E6E2DA;">Gateways, historian, analytics</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT BOTTOM: 1288 → 1824 (536w), 640 → 948 (308h), 32px gutter matches horizontal -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1288px;top:640px;width:536px;height:308px;z-index:10;background:#FFFFFF;border:1px solid #D8D2C5;border-radius:2px;padding:28px;display:flex;flex-direction:column;">
+    <div class="panel-label" style="color:#6E7378;">Data foundation rules</div>
+    <div class="panel-rows">
+      <div class="panel-row" style="border-bottom:1px solid #EAE5DA;"><span>One ISA-95 asset ID hierarchy</span></div>
+      <div class="panel-row" style="border-bottom:1px solid #EAE5DA;"><span>14 loss types, 48 reason codes</span></div>
+      <div class="panel-row"><span>Written once at source; ERP is the record</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:992px;width:1728px;height:1px;z-index:1;background:#D8D2C5;"></div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:96px;top:1012px;width:1200px;z-index:10;font-size:24px;color:#8A857A;">Northline Works · Plant 2 · Digitalization proposal</div>
+  <div data-object="true" data-object-type="textbox" class="lbl" style="position:absolute;left:1600px;top:1012px;width:224px;z-index:10;font-size:24px;color:#8A857A;text-align:right;">07 / 10</div>
+
+</div>
+</body>
+</html>

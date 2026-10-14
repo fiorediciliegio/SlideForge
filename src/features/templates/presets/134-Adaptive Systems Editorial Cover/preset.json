@@ -1,0 +1,147 @@
+{
+  "id": "134-Adaptive Systems Editorial Cover",
+  "version": 1,
+  "ppt_number": 134,
+  "score": 9,
+  "catalog_cohort": "new",
+  "theme": "light",
+  "color": [
+    "cream",
+    "green",
+    "blue",
+    "amber"
+  ],
+  "name": "Adaptive Systems Editorial Cover",
+  "description": "Editorial systems cover with refined botanical neutrals, typographic contrast, and geometric registration details.",
+  "user": "Business Professionals",
+  "use_case": "Plans & Roadmaps",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["strategy"],"industries":["business"],"audiences":["employee"],"formats":["roadmap"],"primary_styles":["minimal"],"visual_traits":["minimal","muted","editorial"]},
+  "theme_mode": "semantic-v1",
+  "color_variants": [
+    {
+      "id": "botanical-ledger",
+      "name": "Botanical Ledger",
+      "swatches": [
+        "#F5F2E9",
+        "#1B2620",
+        "#4F5E43",
+        "#B4914A"
+      ],
+      "roles": {
+        "bg": "#F5F2E9",
+        "surface": "#F3F0E7",
+        "ink": "#1B2620",
+        "muted": "#5C665D",
+        "accent_primary": "#4F5E43",
+        "accent_secondary": "#B4914A",
+        "accent_tertiary": "#8C9FB2",
+        "line": "#A3AC9E"
+      }
+    },
+    {
+      "id": "atlantic-marigold",
+      "name": "Atlantic Marigold",
+      "swatches": [
+        "#F3F6F4",
+        "#13323A",
+        "#25706D",
+        "#D4923B"
+      ],
+      "roles": {
+        "bg": "#F3F6F4",
+        "surface": "#FFFFFF",
+        "ink": "#13323A",
+        "muted": "#55747A",
+        "accent_primary": "#25706D",
+        "accent_secondary": "#D4923B",
+        "accent_tertiary": "#7FAFC2",
+        "line": "#B8D3D4"
+      }
+    },
+    {
+      "id": "oxblood-sage",
+      "name": "Oxblood Sage",
+      "swatches": [
+        "#F8F4F0",
+        "#35212D",
+        "#6B425A",
+        "#C78654"
+      ],
+      "roles": {
+        "bg": "#F8F4F0",
+        "surface": "#FFFFFF",
+        "ink": "#35212D",
+        "muted": "#765C69",
+        "accent_primary": "#6B425A",
+        "accent_secondary": "#C78654",
+        "accent_tertiary": "#9DB8A8",
+        "line": "#D5C8C5"
+      }
+    },
+    {
+      "id": "ink-citron",
+      "name": "Ink Citron",
+      "swatches": [
+        "#F7F7F0",
+        "#202D33",
+        "#3C6370",
+        "#C4A032"
+      ],
+      "roles": {
+        "bg": "#F7F7F0",
+        "surface": "#FFFFFF",
+        "ink": "#202D33",
+        "muted": "#596B70",
+        "accent_primary": "#3C6370",
+        "accent_secondary": "#C4A032",
+        "accent_tertiary": "#A4B992",
+        "line": "#C9D4C5"
+      }
+    }
+  ],
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "Soft editorial cover with adaptive systems typography, botanical neutral tones, and an architectural prism motif."
+    },
+    {
+      "path": "images/2-system-overview.webp",
+      "alt": "Editorial systems overview with a central capability map, modular annotation panels, and botanical architectural accents."
+    },
+    {
+      "path": "images/3-performance-insights.webp",
+      "alt": "Editorial performance insights page with comparative metrics, a structured data display, and restrained botanical color fields."
+    },
+    {
+      "path": "images/4-implementation-roadmap.webp",
+      "alt": "Editorial implementation roadmap with phased milestones, operational workstreams, and a precise systems grid."
+    },
+    {
+      "path": "images/5-strategic-priorities.webp",
+      "alt": "Editorial strategic priorities page with ranked initiatives, directional connectors, and layered systems geometry."
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "Editorial cover page with oversized display typography, subtle grid texture, layered geometric elements, and a calm natural palette."
+    },
+    {
+      "path": "html/2-system-overview.html",
+      "description": "Systems overview page with a central capability map, modular annotations, and balanced editorial structure."
+    },
+    {
+      "path": "html/3-performance-insights.html",
+      "description": "Performance insights page with comparative metrics, structured data groups, and restrained editorial hierarchy."
+    },
+    {
+      "path": "html/4-implementation-roadmap.html",
+      "description": "Implementation roadmap page with phased milestones, workstreams, and a disciplined systems grid."
+    },
+    {
+      "path": "html/5-strategic-priorities.html",
+      "description": "Strategic priorities page with ranked initiatives, directional relationships, and layered geometric rhythm."
+    }
+  ]
+}

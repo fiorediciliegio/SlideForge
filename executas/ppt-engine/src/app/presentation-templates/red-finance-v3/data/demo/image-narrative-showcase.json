@@ -1,0 +1,36 @@
+{
+  "title": "Image Narrative Showcase",
+  "metaLabel": "BLUEPRINT / IMAGE",
+  "footerText": "Business Professional | Image Narrative Showcase",
+  "pageNumber": "09",
+  "variant": "image-left-narrative-right",
+  "density": "medium",
+  "image": {
+    "url": "",
+    "title": "Primary visual asset",
+    "caption": "Use this area for one photo, product screenshot, map, evidence image, or generated visual that should dominate the page.",
+    "source": "SOURCE: DEMO VISUAL",
+    "alt": "Abstract finance dashboard visual",
+    "fit": "cover"
+  },
+  "narrativeTitle": "Visual evidence",
+  "narrativeSummary": "The image owns the page; supporting text should only frame what the audience should notice.",
+  "narrativeItems": [
+    {
+      "icon": "image",
+      "title": "Primary visual",
+      "description": "Keep one strong image as the anchor instead of crowding the page with several assets."
+    },
+    {
+      "icon": "lightbulb",
+      "title": "Interpretation",
+      "description": "Use compact supporting points to explain why the visual matters."
+    },
+    {
+      "icon": "shield",
+      "title": "Evidence note",
+      "description": "Preserve image source or credit without turning it into the main message."
+    }
+  ],
+  "conclusion": "Best for photo, product screenshot, map, evidence image, or one visual asset that needs concise explanation."
+}

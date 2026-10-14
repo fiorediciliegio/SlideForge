@@ -1,0 +1,103 @@
+{
+  "id": "29-Brand Positioning and Refresh Strategy",
+  "version": 1,
+  "ppt_number": 29,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "cream",
+    "red",
+    "black",
+    "beige"
+  ],
+  "name": "Brand Positioning and Refresh Strategy",
+  "description": "Luxury brand-strategy design with warm cream space, elegant serif typography, vivid red bands, and refined product imagery.",
+  "user": "Sales & Marketing",
+  "use_case": "Marketing & Campaigns",
+  "industry": "Consumer & Lifestyle",
+  "recommendation_profile": {"use_cases":["strategy","marketing-campaign"],"industries":["consumer"],"audiences":["client"],"formats":["roadmap","proposal"],"primary_styles":["editorial"],"visual_traits":["editorial","photographic"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "暖奶油色、正红与墨黑封面以左侧中部超大标题开场，一幅图片与一块几何面板拉开层级。"
+    },
+    {
+      "path": "images/2-market-shift.webp",
+      "alt": "暖奶油色、正红与墨黑页面，四组大号数字形成节奏，人群信息强化对比。"
+    },
+    {
+      "path": "images/3-brand-diagnosis.webp",
+      "alt": "暖奶油色、正红与墨黑页面，一幅图表集中排布，诊断信息收束版面。"
+    },
+    {
+      "path": "images/4-consumer-insight.webp",
+      "alt": "暖奶油色、正红与墨黑页面，双面板划分主体区域，核心观点形成重心。"
+    },
+    {
+      "path": "images/5-positioning-territory.webp",
+      "alt": "暖奶油色、正红与墨黑页面，四块卡片组成三列网格，对比关系拉开层级。"
+    },
+    {
+      "path": "images/6-value-proposition.webp",
+      "alt": "暖奶油色、正红与墨黑页面，四块卡片组成三列网格，价值信息组织动线。"
+    },
+    {
+      "path": "images/7-portfolio-scope.webp",
+      "alt": "暖奶油色、正红与墨黑页面，一组表格压缩信息密度，范围信息强化对比。"
+    },
+    {
+      "path": "images/8-identity-system.webp",
+      "alt": "暖奶油色、正红与墨黑页面，五块卡片组成五列网格，框架信息收束版面。"
+    },
+    {
+      "path": "images/9-activation-model.webp",
+      "alt": "暖奶油色、正红与墨黑页面，五块卡片组成五列网格，方案层级形成重心。"
+    },
+    {
+      "path": "images/10-roadmap-measurement.webp",
+      "alt": "暖奶油色、正红与墨黑页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，暖奶油色、正红与墨黑主导画面，左侧中部的超大标题形成第一视点；一幅图片与一块几何面板与大面积留白相互制衡，底部信息条完成收束。"
+    },
+    {
+      "path": "html/2-market-shift.html",
+      "description": "左上方标题锚定暖奶油色、正红与墨黑画面；单一大面板承载主体信息，分类标签与数据卡顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-brand-diagnosis.html",
+      "description": "暖奶油色、正红与墨黑作为底色，标题落在左上方；单一大面板承载主体信息，一幅图表落在左侧，对照模块与因果标记补充层级。"
+    },
+    {
+      "path": "html/4-consumer-insight.html",
+      "description": "标题固定在顶部中央，暖奶油色、正红与墨黑分隔主体；两块主面板建立清晰分区，一幅图片集中于左侧，核心观点与醒目标记补充层级。"
+    },
+    {
+      "path": "html/5-positioning-territory.html",
+      "description": "暖奶油色、正红与墨黑画面，标题置于左上方；四块信息卡组成三列网格，对比模块与坐标标记贴合卡片边界。"
+    },
+    {
+      "path": "html/6-value-proposition.html",
+      "description": "左上方标题锚定暖奶油色、正红与墨黑画面；四块信息卡组成三列网格，核心文案与价值支柱集中在画面中部。"
+    },
+    {
+      "path": "html/7-portfolio-scope.html",
+      "description": "暖奶油色、正红与墨黑作为底色，标题落在左上方；单一大面板承载主体信息，一组表格位于左侧，目标卡、范围块与关键数字补充层级。"
+    },
+    {
+      "path": "html/8-identity-system.html",
+      "description": "标题固定在左上方，暖奶油色、正红与墨黑分隔主体；五块信息卡组成五列网格，三幅图片集中于左侧，框架模块与强调结论补充层级。"
+    },
+    {
+      "path": "html/9-activation-model.html",
+      "description": "暖奶油色、正红与墨黑画面，标题置于左上方；五块信息卡横向并列，分层模块与价格数字沿主区展开。"
+    },
+    {
+      "path": "html/10-roadmap-measurement.html",
+      "description": "左上方标题锚定暖奶油色、正红与墨黑画面；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记贴合卡片边界。"
+    }
+  ]
+}

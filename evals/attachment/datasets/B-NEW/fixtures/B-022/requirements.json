@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "把课程设计文档整理成10页教师培训PPT，说明课程目标、八周结构、作业、评分和课堂支持。不要增加文档没有的教学理论或软件要求。"
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "承担该课程的教师",
+        "description": "承担该课程的教师"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "课程实施培训",
+        "description": "课程实施培训"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "统一目标、节奏、评价和支持要求",
+        "description": "统一目标、节奏、评价和支持要求"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "简体中文"
+    ],
+    "visual_tone": [
+      {
+        "label": "教育性、结构清晰、包容",
+        "description": "教育性、结构清晰、包容"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "承担该课程的教师",
+      "description": "承担该课程的教师"
+    },
+    "purpose": {
+      "label": "课程实施培训",
+      "description": "课程实施培训"
+    },
+    "desired_outcome": {
+      "label": "统一目标、节奏、评价和支持要求",
+      "description": "统一目标、节奏、评价和支持要求"
+    },
+    "slide_count": 10,
+    "output_language": "简体中文",
+    "visual_tone": {
+      "label": "教育性、结构清晰、包容",
+      "description": "教育性、结构清晰、包容"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

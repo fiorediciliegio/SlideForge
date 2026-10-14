@@ -1,0 +1,103 @@
+{
+  "id": "7-Investor Pitch Deck for a HealthTech Startup",
+  "version": 1,
+  "ppt_number": 7,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "navy",
+    "teal",
+    "orange",
+    "white"
+  ],
+  "name": "Investor Pitch Deck for a HealthTech Startup",
+  "description": "Clinical technology design alternating navy anchors with clean evidence pages, teal graphics, and orange highlights.",
+  "user": "Founders & Leaders",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Healthcare & Wellness",
+  "recommendation_profile": {"use_cases":["fundraising"],"industries":["healthcare"],"audiences":["investor"],"formats":["pitch-deck"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "深海军蓝、青绿与亮橙构成封面底色，左侧中部超大标题与两幅图表前后呼应。"
+    },
+    {
+      "path": "images/2-problem-burden.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，五幅图表集中排布，核心判断收束版面。"
+    },
+    {
+      "path": "images/3-problem-journey.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，三幅图表集中排布，流程关系形成重心。"
+    },
+    {
+      "path": "images/4-solution-overview.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，四幅图表集中排布，概览信息拉开层级。"
+    },
+    {
+      "path": "images/5-how-it-works.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，四幅图表集中排布，流程信息组织动线。"
+    },
+    {
+      "path": "images/6-market-opportunity.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，三幅图表集中排布，人群信息强化对比。"
+    },
+    {
+      "path": "images/7-business-model.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，两幅图表集中排布，方案层级收束版面。"
+    },
+    {
+      "path": "images/8-validation-evidence.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，三幅图表集中排布，验证信息形成重心。"
+    },
+    {
+      "path": "images/9-roadmap-compliance.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，横向时间轴串联阶段节点，日期标记拉开层级。"
+    },
+    {
+      "path": "images/10-team-and-ask.webp",
+      "alt": "深海军蓝、青绿与亮橙页面，三幅图表集中排布，人物卡组织动线。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，左侧中部以超大标题建立焦点，深海军蓝、青绿与亮橙贯穿背景与强调元素；两幅图表和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-problem-burden.html",
+      "description": "深海军蓝、青绿与亮橙画面，标题置于左上方；留白与细线分隔出清晰阅读区，五幅图表落在中央，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/3-problem-journey.html",
+      "description": "左上方标题锚定深海军蓝、青绿与亮橙画面；留白与细线分隔出清晰阅读区，三幅图表落在中央，步骤节点与连接线补充层级。"
+    },
+    {
+      "path": "html/4-solution-overview.html",
+      "description": "深海军蓝、青绿与亮橙作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，四幅图表落在中央，摘要数字与概览模块补充层级。"
+    },
+    {
+      "path": "html/5-how-it-works.html",
+      "description": "标题固定在左上方，深海军蓝、青绿与亮橙分隔主体；留白与细线分隔出清晰阅读区，四幅图表落在中央，步骤模块与连接关系补充层级。"
+    },
+    {
+      "path": "html/6-market-opportunity.html",
+      "description": "深海军蓝、青绿与亮橙画面，标题置于左上方；留白与细线分隔出清晰阅读区，三幅图表落在中央，分类标签与数据卡补充层级。"
+    },
+    {
+      "path": "html/7-business-model.html",
+      "description": "左上方标题锚定深海军蓝、青绿与亮橙画面；留白与细线分隔出清晰阅读区，两幅图表落在右侧，一组表格位于左侧。"
+    },
+    {
+      "path": "html/8-validation-evidence.html",
+      "description": "深海军蓝、青绿与亮橙作为底色，标题落在左上方；留白与细线分隔出清晰阅读区，三幅图表落在中央，验证数字、证据卡与对照标记补充层级。"
+    },
+    {
+      "path": "html/9-roadmap-compliance.html",
+      "description": "标题固定在左上方，深海军蓝、青绿与亮橙分隔主体；横向时间轴串联阶段节点与日期标记，两幅图表落在中央，阶段节点与时间标记补充层级。"
+    },
+    {
+      "path": "html/10-team-and-ask.html",
+      "description": "深海军蓝、青绿与亮橙画面，标题置于左上方；留白与细线分隔出清晰阅读区，三幅图表落在右侧，人物信息与职责标签补充层级。"
+    }
+  ]
+}

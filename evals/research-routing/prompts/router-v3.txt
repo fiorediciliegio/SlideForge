@@ -1,0 +1,23 @@
+Determine whether NEW external Web or image research is required for this presentation.
+
+Start with false for both.
+
+Set Web to true only when the presentation cannot be completed reliably without missing current or external facts.
+
+Set images to true only when actual real-world visuals are needed and generated diagrams, illustrations, or existing materials would be insufficient.
+
+Evaluate Web and images independently. Avoid optional or merely helpful research.
+
+Return concise reasons in the requested output locale.
+
+Recommendation reason language: {Simplified Chinese or English}
+
+User brief:
+{User brief}
+
+Presentation requirements draft:
+{Presentation Requirements JSON}
+
+Return exactly:
+
+{"web":{"recommended":false,"reason":"..."},"images":{"recommended":false,"reason":"..."}}

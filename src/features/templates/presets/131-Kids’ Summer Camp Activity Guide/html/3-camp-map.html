@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Camp Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; overflow:hidden; background:#ffffff; }
+</style>
+</head>
+<body>
+<div class="slide" data-screen-label="03 Camp Map" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#FFFFFF;">
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:84px; width:1300px; height:140px; z-index:10;">
+    <span style="font-family:'Baloo 2',cursive; font-weight:800; font-size:82px; color:#0B3FA6;">Find Your Way Around Camp</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:200px; width:1300px; height:52px; z-index:10;">
+    <span style="font-family:'Nunito',sans-serif; font-weight:700; font-size:30px; color:#14224F;">Follow the yellow arrows from the gate — your crew visits every zone in order.</span>
+  </div>
+
+  <!-- map field -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:110px; top:266px; width:1300px; height:634px; background:#FFF6DA; border:8px solid #14224F; border-radius:44px; box-sizing:border-box; z-index:1;"></div>
+
+  <!-- zones row 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:160px; top:314px; width:252px; height:216px; background:#FF3B30; border-radius:28px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:476px; top:314px; width:252px; height:216px; background:#FFC800; border-radius:126px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:792px; top:314px; width:252px; height:216px; background:#1B6BE3; border-radius:28px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1108px; top:314px; width:252px; height:216px; background:#7B3FE4; border-radius:126px 126px 28px 28px; z-index:1;"></div>
+
+  <!-- zones row 2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:160px; top:626px; width:357px; height:216px; background:#1B6BE3; border-radius:28px 108px 28px 108px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:581px; top:626px; width:357px; height:216px; background:#FFC800; border-radius:28px; z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1002px; top:626px; width:357px; height:216px; background:#FFFFFF; border:8px solid #14224F; border-radius:28px; box-sizing:border-box; z-index:1;"></div>
+
+  <!-- route arrows (in the gaps between zones only) -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:110px; top:266px; width:1300px; height:634px; z-index:5;">
+    <svg viewBox="0 0 1300 634" width="1300" height="634">
+      <g stroke="#14224F" stroke-width="10" stroke-linecap="round" fill="#14224F">
+        <!-- row 1: left to right -->
+        <path d="M306 156 h26" fill="none"/><polygon points="336,146 360,156 336,166"/>
+        <path d="M622 156 h26" fill="none"/><polygon points="652,146 676,156 652,166"/>
+        <path d="M938 156 h26" fill="none"/><polygon points="968,146 992,156 968,166"/>
+        <!-- turn down on the right -->
+        <path d="M1124 274 v56" fill="none"/><polygon points="1112,334 1124,358 1136,334"/>
+        <!-- row 2: right to left -->
+        <path d="M892 468 h-26" fill="none"/><polygon points="862,458 838,468 862,478"/>
+        <path d="M471 468 h-26" fill="none"/><polygon points="441,458 417,468 441,478"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- zone symbols, one per zone, top-left inside each block -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:188px; top:336px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7" stroke-linejoin="round"><rect x="6" y="12" width="52" height="40" rx="8" fill="#FFFFFF"/><path d="M23 12 v40 M41 12 v40"/></g></svg>
+  </div>
+  <div data-object="true" data-object-type="image" style="position:absolute; left:504px; top:336px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M16 58 V6"/><polygon points="16,8 58,18 16,30" fill="#FF3B30"/></g></svg>
+  </div>
+  <div data-object="true" data-object-type="image" style="position:absolute; left:820px; top:336px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7" stroke-linejoin="round"><path d="M32 6 q24 30 24 42 a24 24 0 0 1 -48 0 q0 -12 24 -42 z" fill="#FFFFFF"/></g></svg>
+  </div>
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1136px; top:336px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M10 54 L36 28" stroke-width="10"/><polygon points="34,24 52,10 58,28 42,38" fill="#FFC800"/></g></svg>
+  </div>
+  <div data-object="true" data-object-type="image" style="position:absolute; left:188px; top:648px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7"><circle cx="32" cy="32" r="25" fill="#FFC800"/><path d="M10 24 q22 12 44 0 M10 42 q22 -12 44 0" fill="none"/></g></svg>
+  </div>
+  <div data-object="true" data-object-type="image" style="position:absolute; left:609px; top:648px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M32 58 v-14"/><polygon points="32,6 54,44 10,44" fill="#1B6BE3"/></g></svg>
+  </div>
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1030px; top:648px; width:64px; height:64px; z-index:10;">
+    <svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#14224F" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M6 40 h52 M14 40 v16 M50 40 v16 M10 28 h44" fill="none"/><rect x="10" y="10" width="24" height="16" rx="4" fill="#FF3B30"/></g></svg>
+  </div>
+
+  <!-- zone labels -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:188px; top:412px; width:210px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#FFFFFF;">1 · WELCOME GATE</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#FFE9A8;">Sign in &amp; pick up</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:504px; top:412px; width:200px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#14224F;">2 · FLAGPOLE CIRCLE</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#5A3E00;">Meeting point</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:820px; top:412px; width:200px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#FFFFFF;">3 · SPLASH YARD</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#CFE3FF;">Water play area</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1136px; top:412px; width:200px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#FFFFFF;">4 · MAKER BARN</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#E7D6FF;">Craft studio</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:188px; top:724px; width:300px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#FFFFFF;">7 · MEADOW ARENA</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#CFE3FF;">Games &amp; relays</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:609px; top:724px; width:300px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#14224F;">6 · FOREST TRAIL LOOP</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#5A3E00;">Nature walks</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:724px; width:300px; height:104px; z-index:10;">
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; font-size:31px; line-height:1.02; color:#0B3FA6;">5 · SHADY REST GROVE</div>
+    <div style="font-family:'Nunito',sans-serif; font-weight:700; font-size:22px; color:#14224F;">Snacks, water, restrooms</div>
+  </div>
+
+  <!-- map key -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1446px; top:266px; width:378px; height:340px; background:#0B3FA6; border-radius:32px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1486px; top:292px; width:300px; height:68px; z-index:10;">
+    <span style="font-family:'Baloo 2',cursive; font-weight:800; font-size:40px; color:#FFC800;">MAP KEY</span>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1486px; top:362px; width:300px; height:214px; z-index:10;">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+      <div style="display:flex; align-items:center; gap:16px;"><span style="width:24px;height:24px;background:#FF3B30;border-radius:50%;display:inline-block;flex:0 0 auto;"></span><span style="font-family:'Nunito',sans-serif; font-weight:700; font-size:24px; color:#FFFFFF;">Meeting point</span></div>
+      <div style="display:flex; align-items:center; gap:16px;"><span style="width:24px;height:24px;background:#FFFFFF;border-radius:6px;display:inline-block;flex:0 0 auto;"></span><span style="font-family:'Nunito',sans-serif; font-weight:700; font-size:24px; color:#FFFFFF;">First aid &amp; restrooms</span></div>
+      <div style="display:flex; align-items:center; gap:16px;"><span style="width:24px;height:24px;background:#FFC800;display:inline-block;flex:0 0 auto;clip-path:polygon(50% 0,100% 100%,0 100%);"></span><span style="font-family:'Nunito',sans-serif; font-weight:700; font-size:24px; color:#FFFFFF;">Boundary flag — stop</span></div>
+      <div style="display:flex; align-items:center; gap:16px;"><span style="width:24px;height:24px;background:#7B3FE4;display:inline-block;flex:0 0 auto;clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%);"></span><span style="font-family:'Nunito',sans-serif; font-weight:700; font-size:24px; color:#FFFFFF;">Follow the arrows</span></div>
+    </div>
+  </div>
+
+  <!-- compass -->
+  <div data-object="true" data-object-type="image" style="position:absolute; left:1524px; top:648px; width:222px; height:222px; z-index:5;">
+    <svg viewBox="0 0 222 222" width="222" height="222">
+      <circle cx="111" cy="118" r="94" fill="#FFC800" stroke="#14224F" stroke-width="9"/>
+      <polygon points="111,44 136,120 111,102 86,120" fill="#FF3B30" stroke="#14224F" stroke-width="8" stroke-linejoin="round"/>
+      <polygon points="111,192 86,120 111,138 136,120" fill="#FFFFFF" stroke="#14224F" stroke-width="8" stroke-linejoin="round"/>
+      <text x="111" y="26" text-anchor="middle" font-family="Baloo 2, cursive" font-weight="800" font-size="30" fill="#0B3FA6">N</text>
+    </svg>
+  </div>
+
+  <!-- chrome -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:96px; top:968px; width:800px; height:40px; z-index:10;">
+    <span style="font-family:'Nunito',sans-serif; font-weight:800; font-size:24px; letter-spacing:4px; color:#0B3FA6;">SUNBURST TRAILS DAY CAMP</span>
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1760px; top:952px; width:64px; height:64px; border-radius:50%; background:#1B6BE3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1760px; top:952px; width:64px; height:64px; z-index:10; display:flex; align-items:center; justify-content:center;">
+    <span style="font-family:'Baloo 2',cursive; font-weight:800; font-size:30px; color:#FFFFFF;">03</span>
+  </div>
+
+</div>
+</body>
+</html>

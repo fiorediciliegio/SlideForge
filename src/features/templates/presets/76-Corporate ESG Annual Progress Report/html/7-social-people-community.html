@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  body{margin:0;padding:0;overflow:hidden;background:#ffffff;}
+  h1,h2,h3,p{margin:0;}
+  .ar{font-family:'Archivo',sans-serif;}
+  .px{font-family:'IBM Plex Sans',sans-serif;}
+  .eyebrow{font-family:'Archivo',sans-serif;font-weight:600;font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:#1F6B4A;}
+  .title{font-family:'Archivo',sans-serif;font-weight:600;font-size:58px;line-height:1.1;letter-spacing:-.02em;color:#14201A;}
+  .foot{font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:18px;color:#93A09A;letter-spacing:.02em;}
+  .pg{font-family:'Archivo',sans-serif;font-weight:600;font-size:18px;color:#1F6B4A;letter-spacing:.08em;}
+  .sect{font-family:'Archivo',sans-serif;font-weight:600;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#7C8A82;}
+  .mrow{display:grid;grid-template-columns:1fr 132px 108px;gap:14px;align-items:baseline;border-bottom:1px solid #EBEFEC;padding:15px 0;}
+  .ml{font-family:'IBM Plex Sans',sans-serif;font-size:22px;color:#14201A;}
+  .mv{font-family:'Archivo',sans-serif;font-weight:600;font-size:26px;color:#14201A;text-align:right;letter-spacing:-.01em;}
+  .md{font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:19px;text-align:right;}
+  .up{color:#1F6B4A;} .dn{color:#A8503C;} .fl{color:#93A09A;}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Social" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#ffffff;">
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:92px;width:900px;z-index:10;">
+    <p class="eyebrow">06 &mdash; Social</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:132px;width:1150px;z-index:10;">
+    <h1 class="title">Safer sites, stronger pipeline, one honest gap</h1>
+  </div>
+
+  <!-- left: people metrics -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:262px;width:820px;z-index:10;">
+    <p class="sect">Our people &nbsp;·&nbsp; 18,420 employees, 27 countries</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:306px;width:820px;z-index:10;">
+    <div style="border-top:2px solid #1F6B4A;">
+      <div class="mrow"><span class="ml">Total recordable injury rate (TRIR)</span><span class="mv">0.41</span><span class="md up">&minus;18% YoY</span></div>
+      <div class="mrow"><span class="ml">Work-related fatalities</span><span class="mv">0</span><span class="md fl">Third year</span></div>
+      <div class="mrow"><span class="ml">Voluntary attrition</span><span class="mv">11.3%</span><span class="md up">&minus;2.1 pts</span></div>
+      <div class="mrow"><span class="ml">Engagement score</span><span class="mv">78</span><span class="md up">+4 pts</span></div>
+      <div class="mrow"><span class="ml">Learning hours per employee</span><span class="mv">34h</span><span class="md up">+6h</span></div>
+      <div class="mrow" style="border-bottom:none;"><span class="ml">Gender pay gap, like-for-like roles</span><span class="mv">1.8%</span><span class="md up">&minus;0.7 pts</span></div>
+    </div>
+  </div>
+
+  <!-- leadership gap callout -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:678px;width:820px;height:260px;background:#FBF6EC;border-left:5px solid #C0842E;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:140px;top:678px;width:736px;height:260px;z-index:10;display:flex;flex-direction:column;justify-content:center;">
+    <p class="ar" style="font-weight:600;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#8F6318;">The gap we are not hiding</p>
+    <p class="ar" style="font-weight:600;font-size:26px;line-height:1.25;color:#14201A;margin-top:10px;">Women in senior leadership reached 33% against a 34% milestone.</p>
+    <p class="px" style="font-size:19px;line-height:1.4;color:#5A675F;margin-top:10px;">Senior external hires reached 38% female, but internal promotion parity slipped in two regions.</p>
+  </div>
+
+  <!-- right: community -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:980px;top:262px;width:1px;height:676px;background:#E2E6E3;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1032px;top:262px;width:792px;z-index:10;">
+    <p class="sect">Community investment &nbsp;·&nbsp; &euro;8.6m deployed</p>
+  </div>
+
+  <div data-object="true" data-object-type="chart" style="position:absolute;left:1032px;top:318px;width:300px;height:300px;z-index:10;">
+    <canvas id="comm" width="300" height="300"></canvas>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1116px;top:426px;width:132px;z-index:10;">
+    <p class="ar" style="font-weight:700;font-size:38px;line-height:1;color:#14201A;text-align:center;">&euro;8.6m</p>
+    <p class="px" style="font-size:18px;color:#7C8A82;text-align:center;margin-top:6px;">total</p>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1392px;top:330px;width:432px;z-index:10;">
+    <div style="display:grid;grid-template-columns:16px 1fr 84px;gap:12px 14px;align-items:center;">
+      <span style="width:14px;height:14px;background:#1F6B4A;display:block;"></span>
+      <p class="px" style="font-size:21px;color:#14201A;">STEM &amp; skills education</p>
+      <p class="ar" style="font-weight:600;font-size:21px;color:#14201A;text-align:right;">42%</p>
+      <span style="width:14px;height:14px;background:#4C8E6C;display:block;"></span>
+      <p class="px" style="font-size:21px;color:#14201A;">Local climate resilience</p>
+      <p class="ar" style="font-weight:600;font-size:21px;color:#14201A;text-align:right;">26%</p>
+      <span style="width:14px;height:14px;background:#8FB79F;display:block;"></span>
+      <p class="px" style="font-size:21px;color:#14201A;">Health &amp; wellbeing access</p>
+      <p class="ar" style="font-weight:600;font-size:21px;color:#14201A;text-align:right;">19%</p>
+      <span style="width:14px;height:14px;background:#C0842E;display:block;"></span>
+      <p class="px" style="font-size:21px;color:#14201A;">Disaster relief matching</p>
+      <p class="ar" style="font-weight:600;font-size:21px;color:#14201A;text-align:right;">13%</p>
+    </div>
+    <p class="px" style="font-size:20px;line-height:1.4;color:#5A675F;margin-top:24px;border-top:1px solid #E2E6E3;padding-top:16px;">31,400 employee volunteering hours &mdash; 1.7 hours per employee, up from 1.2.</p>
+  </div>
+
+  <!-- impact story -->
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:1032px;top:678px;width:792px;height:260px;background:#F4F8F5;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1076px;top:714px;width:704px;z-index:10;">
+    <p class="ar" style="font-weight:600;font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:#1F6B4A;">Impact story &nbsp;·&nbsp; Guanajuato, Mexico</p>
+    <p class="ar" style="font-weight:600;font-size:30px;line-height:1.25;color:#14201A;margin-top:12px;">A technical apprenticeship that fills our own vacancies</p>
+    <p class="px" style="font-size:21px;line-height:1.45;color:#5A675F;margin-top:12px;">Three years in, the programme has trained 620 young technicians with a local college. 71% were hired into our plants or our tier-1 suppliers within six months of graduating &mdash; and regional attrition is now our lowest.</p>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:982px;width:1728px;height:1px;background:#E2E6E3;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1004px;width:1200px;z-index:10;">
+    <p class="foot">Corporate ESG Annual Progress Report &nbsp;·&nbsp; FY2025 &nbsp;·&nbsp; Group Sustainability Office</p>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1004px;width:200px;z-index:10;">
+    <p class="pg" style="text-align:right;">07 / 10</p>
+  </div>
+</div>
+<script>
+  new Chart(document.getElementById('comm'), {
+    type:'doughnut',
+    data:{labels:['STEM','Climate','Health','Relief'],
+      datasets:[{data:[42,26,19,13],backgroundColor:['#1F6B4A','#4C8E6C','#8FB79F','#C0842E'],borderColor:'#ffffff',borderWidth:3}]},
+    options:{responsive:false,animation:false,cutout:'68%',plugins:{legend:{display:false},tooltip:{enabled:false}}}
+  });
+</script>
+</body>
+</html>

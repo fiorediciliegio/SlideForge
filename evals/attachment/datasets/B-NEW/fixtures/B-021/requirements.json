@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "status": "confirmed",
+  "source": {
+    "brief": "Create a 10-slide merger-integration steering-committee update. Use the HR plan for people milestones and the IT note for system dependencies. Distinguish completed, in progress, at risk, and not started. Do not speculate about layoffs or synergy savings."
+  },
+  "candidates": {
+    "audience": [
+      {
+        "label": "Merger integration steering committee",
+        "description": "Merger integration steering committee"
+      }
+    ],
+    "purpose": [
+      {
+        "label": "Integration status review",
+        "description": "Integration status review"
+      }
+    ],
+    "desired_outcome": [
+      {
+        "label": "Expose milestones, dependencies, risks, and decisions without unsupported workforce or savings claims",
+        "description": "Expose milestones, dependencies, risks, and decisions without unsupported workforce or savings claims"
+      }
+    ],
+    "slide_count": [
+      10
+    ],
+    "output_language": [
+      "English"
+    ],
+    "visual_tone": [
+      {
+        "label": "Structured, candid, programme-management oriented",
+        "description": "Structured, candid, programme-management oriented"
+      }
+    ]
+  },
+  "selections": {
+    "audience": {
+      "label": "Merger integration steering committee",
+      "description": "Merger integration steering committee"
+    },
+    "purpose": {
+      "label": "Integration status review",
+      "description": "Integration status review"
+    },
+    "desired_outcome": {
+      "label": "Expose milestones, dependencies, risks, and decisions without unsupported workforce or savings claims",
+      "description": "Expose milestones, dependencies, risks, and decisions without unsupported workforce or savings claims"
+    },
+    "slide_count": 10,
+    "output_language": "English",
+    "visual_tone": {
+      "label": "Structured, candid, programme-management oriented",
+      "description": "Structured, candid, programme-management oriented"
+    },
+    "visual_style_preset": null
+  },
+  "research": {
+    "web": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    },
+    "images": {
+      "recommended": false,
+      "reason": "Disabled by the fixed evaluation Requirements.",
+      "enabled": false
+    }
+  },
+  "updated_at": "2026-08-28T00:00:00.000Z",
+  "confirmed_at": "2026-08-28T00:00:00.000Z"
+}

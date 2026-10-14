@@ -1,0 +1,107 @@
+{
+  "eyebrow": "Strategic Overview",
+  "title": "Executive Summary: China vs Japan",
+  "headerMetaLabel": "Comparison",
+  "headerMetaValue": "2026 Forecast",
+  "headerIcon": "chart-pie",
+  "metricCards": [
+    {
+      "icon": "scale",
+      "label": "Economic Scale Gap",
+      "value": "4.6x",
+      "qualifier": "China Larger",
+      "progressItems": [
+        {
+          "label": "China ($20.65T)",
+          "valueLabel": "82%",
+          "value": 82
+        },
+        {
+          "label": "Japan ($4.46T)",
+          "valueLabel": "18%",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "icon": "wallet",
+      "label": "Per Capita Income",
+      "value": "2.5x",
+      "qualifier": "Japan Lead",
+      "valueTiles": [
+        {
+          "label": "Japan",
+          "value": "$34K",
+          "note": "High income"
+        },
+        {
+          "label": "China",
+          "value": "$14K",
+          "note": "Upper middle"
+        }
+      ]
+    },
+    {
+      "icon": "users",
+      "label": "Aging Crisis",
+      "value": "65+",
+      "qualifier": "Key Challenge",
+      "statusItems": [
+        {
+          "title": "Japan Status",
+          "description": "Super-aged society",
+          "badge": "Critical"
+        },
+        {
+          "title": "China Trend",
+          "description": "Births < 8M (2025)",
+          "badge": "Declining"
+        }
+      ]
+    }
+  ],
+  "chartTitle": "Technology & Innovation Landscape",
+  "chartSubtitle": "Comparison of adoption rates and strategic focus areas",
+  "chartLabels": ["AI Usage", "Mobile Payment", "5G Adoption", "R&D % GDP"],
+  "chartSeries": [
+    {
+      "label": "China",
+      "values": [81, 92, 75, 2.4]
+    },
+    {
+      "label": "Japan",
+      "values": [26.7, 45, 50, 3.3]
+    }
+  ],
+  "minValue": 0,
+  "maxValue": 100,
+  "ticks": [0, 25, 50, 75, 100],
+  "tickSuffix": "",
+  "chartInsights": [
+    {
+      "icon": "bolt",
+      "title": "China Speed",
+      "description": "Rapid deployment model drives broad AI adoption and faster commercial rollout."
+    },
+    {
+      "icon": "shield",
+      "title": "Japan Trust",
+      "description": "Reliability, safety standards, and social consensus shape the adoption pace."
+    }
+  ],
+  "outlookTitle": "Future Outlook",
+  "outlookIcon": "binoculars",
+  "outlookItems": [
+    {
+      "period": "2026-2028",
+      "text": "China growth normalization vs Japan structural reforms."
+    },
+    {
+      "period": "2028-2030",
+      "text": "AI impact on productivity to offset labor shrinkage."
+    }
+  ],
+  "progressLabel": "Trade Interdependence",
+  "progressValueLabel": "High",
+  "progressValue": 85
+}

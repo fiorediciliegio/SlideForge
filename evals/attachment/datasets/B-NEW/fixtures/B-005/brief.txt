@@ -1,0 +1,1 @@
+Turn the attached README into a 6-slide Kubernetes onboarding deck for engineers joining the infrastructure team. Use only what the README explicitly states. Architecture details, benchmark numbers, production recommendations, and security guidance not present in the attachment must be labeled as unavailable.

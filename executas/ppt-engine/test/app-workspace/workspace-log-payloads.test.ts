@@ -1,0 +1,112 @@
+import { runWithDiagnosticLogging } from "../../src/diagnostic-logging.ts";
+import test from "node:test";
+import assert from "node:assert/strict";
+import { mkdtemp, readFile, rm, stat } from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
+
+async function readJsonLine(filePath: string): Promise<Record<string, unknown>> {
+  const line = (await readFile(filePath, "utf8")).trim().split(/\r?\n/)[0];
+  return JSON.parse(line) as Record<string, unknown>;
+}
+
+test("workspace interaction logs support sidecar payloads", () => runWithDiagnosticLogging(true, async () => {
+  const previousHome = process.env.HOME;
+  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-workspace-log-home-"));
+  process.env.HOME = homeDir;
+  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+
+  const { createAppWorkspace, appendAppWorkspaceLog } = await import("../../src/app-workspace/index.ts");
+
+  try {
+    const unusedWorkspaceDir = path.join(homeDir, "disabled-workspace");
+    const skipped = await runWithDiagnosticLogging(false, () => appendAppWorkspaceLog({
+      workspace_dir: unusedWorkspaceDir,
+      channel: "ai-outline-interactions",
+      entry: { request: { toJSON() { throw new Error("must not serialize"); } } },
+      payload_keys: ["request"],
+      inline_payload_max_bytes: 1,
+    }));
+    assert.deepEqual(skipped, { workspace_dir: unusedWorkspaceDir, log_file: "", appended: false });
+    await assert.rejects(stat(unusedWorkspaceDir), { code: "ENOENT" });
+
+    const workspace = await createAppWorkspace({ title: "Log payloads" });
+    const payloadText = "x".repeat(2048);
+    const result = await appendAppWorkspaceLog({
+      workspace_dir: workspace.workspace_dir,
+      channel: "ai-outline-interactions",
+      entry: {
+        event: "ai.outline.interaction.started",
+        schema_version: 1,
+        request: { text: payloadText },
+      },
+      payload_keys: ["request"],
+      inline_payload_max_bytes: 32,
+    });
+
+    assert.equal(result.appended, true);
+    assert.equal(path.basename(result.log_file), "ai-outline-interactions.jsonl");
+
+    const entry = await readJsonLine(result.log_file);
+    const ref = entry.request as Record<string, unknown>;
+    assert.equal(ref.__workspace_log_payload, true);
+    assert.equal(typeof ref.path, "string");
+    assert.equal(typeof ref.relative_path, "string");
+    assert.equal(typeof ref.sha256, "string");
+    assert.equal(typeof ref.size, "number");
+
+    const payload = JSON.parse(await readFile(String(ref.path), "utf8")) as { text?: string };
+    assert.equal(payload.text, payloadText);
+
+    const researchWebResult = await appendAppWorkspaceLog({
+      workspace_dir: workspace.workspace_dir,
+      channel: "research-web-interactions",
+      entry: {
+        event: "research.web.interaction.finished",
+        schema_version: 1,
+        status: "succeeded",
+        raw_response: {
+          get_url: "https://download.example.test/image?signature=original",
+          content: payloadText,
+        },
+      },
+      payload_keys: ["raw_response"],
+      inline_payload_max_bytes: 32,
+    });
+    assert.equal(path.basename(researchWebResult.log_file), "research-web-interactions.jsonl");
+    const researchWebEntry = await readJsonLine(researchWebResult.log_file);
+    const researchWebRef = researchWebEntry.raw_response as Record<string, unknown>;
+    const researchWebPayload = JSON.parse(await readFile(String(researchWebRef.path), "utf8")) as { get_url?: string };
+    assert.equal(researchWebPayload.get_url, "https://download.example.test/image?signature=original");
+
+    const storageResult = await appendAppWorkspaceLog({
+      workspace_dir: workspace.workspace_dir,
+      channel: "storage-transport",
+      entry: {
+        event: "storage.transfer.confirm",
+        schema_version: 1,
+        transfer_id: "transfer-1",
+        r2_key: "r2/key",
+      },
+    });
+    assert.equal(path.basename(storageResult.log_file), "storage-transport.jsonl");
+    const storageEntry = await readJsonLine(storageResult.log_file);
+    assert.equal(storageEntry.transfer_id, "transfer-1");
+    assert.equal(storageEntry.r2_key, "r2/key");
+    const before = await readFile(storageResult.log_file, "utf8");
+    await runWithDiagnosticLogging(false, () => appendAppWorkspaceLog({
+      workspace_dir: workspace.workspace_dir, channel: "storage-transport", entry: { event: "disabled" },
+    }));
+    assert.equal(await readFile(storageResult.log_file, "utf8"), before);
+  } finally {
+    if (previousHome === undefined) {
+      delete process.env.HOME;
+    } else {
+      process.env.HOME = previousHome;
+      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
+      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    }
+    await rm(homeDir, { recursive: true, force: true });
+  }
+}));

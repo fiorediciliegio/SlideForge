@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Business model</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink:#15181B;
+  --ink-2:#39414A;
+  --muted:#767C82;
+  --line:#D8D4CB;
+  --canvas:#F5F3EF;
+  --panel:#FFFFFF;
+  --panel-alt:#EBE8E0;
+  --accent:#B8492B;
+  --accent-soft:#F1DED6;
+  --slate:#1B2429;
+  --slate-2:#2C3A41;
+  --ok:#4C7358;
+  --warn:#9C7A22;
+}
+
+body{
+  margin:0; padding:0; overflow:hidden;
+  background:var(--canvas);
+  font-family:'IBM Plex Sans','Helvetica Neue',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+
+.kicker{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:21px; font-weight:500; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--accent);
+}
+.kicker-d{ color:#D98E74; }
+
+.h1{
+  font-family:'Archivo',sans-serif; font-weight:600;
+  font-size:62px; line-height:1.06; letter-spacing:-.02em; color:var(--ink);
+}
+.h2{ font-family:'Archivo',sans-serif; font-weight:600; font-size:30px; line-height:1.2; letter-spacing:-.01em; }
+.h3{ font-family:'Archivo',sans-serif; font-weight:600; font-size:25px; line-height:1.25; }
+.lead{ font-size:27px; line-height:1.42; color:var(--ink-2); }
+.body{ font-size:23px; line-height:1.5; color:var(--ink-2); }
+.small{ font-size:21px; line-height:1.45; color:var(--muted); }
+
+.label{
+  font-family:'IBM Plex Mono',monospace; font-size:20px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+}
+.num{
+  font-family:'Archivo',sans-serif; font-weight:700;
+  letter-spacing:-.03em; line-height:1; color:var(--ink);
+}
+
+.card{ background:var(--panel); border:1px solid var(--line); border-radius:4px; }
+.card-alt{ background:var(--panel-alt); border:1px solid var(--line); border-radius:4px; }
+.card-d{ background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14); border-radius:4px; }
+
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{
+  font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
+  text-align:left; padding:16px 20px; border-bottom:1px solid var(--line);
+}
+table.grid td{
+  font-size:23px; color:var(--ink-2); padding:20px;
+  border-bottom:1px solid var(--line); vertical-align:middle;
+}
+table.grid td.k{ color:var(--ink); font-weight:500; }
+
+.chip{
+  display:inline-block; border:1px solid var(--line); border-radius:3px;
+  background:#fff; color:var(--ink-2);
+  font-family:'IBM Plex Mono',monospace; font-size:20px; letter-spacing:.04em;
+  padding:9px 14px; margin:0 8px 10px 0;
+}
+</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="07 Business Model" style="position:relative; width:1920px; height:1080px; overflow:hidden; background:#F5F3EF;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0px; top:0px; width:1920px; height:6px; background:#B8492B; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:104px; width:1100px; z-index:10;">
+    <div class="kicker">06 · BUSINESS MODEL</div>
+    <div class="h2" style="font-size:46px; margin-top:20px;">Priced against the headcount we replace.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:112px; width:480px; text-align:right; z-index:10;">
+    <div class="label">BLENDED ACV · SIGNED TO DATE</div>
+    <div class="num" style="font-size:64px; margin-top:12px;">$41K</div>
+  </div>
+
+  <!-- pricing table -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:264px; width:1080px; height:552px; background:#FFFFFF; border:1px solid #D8D4CB; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="table" style="position:absolute; left:180px; top:298px; width:1000px; z-index:10;">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th style="width:250px; padding:14px 0;">Plan</th>
+          <th style="width:210px; padding:14px 0;">Annual price</th>
+          <th style="padding:14px 0;">Fits</th>
+          <th style="width:130px; padding:14px 0; text-align:right;">Signed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="k" style="padding:15px 0;">Core<div class="small" style="font-size:19px; margin-top:6px;">Billing engine + invoicing</div></td>
+          <td style="padding:15px 0;">$18,000</td>
+          <td style="padding:15px 0;">$10M–$20M ARR, single entity</td>
+          <td style="padding:15px 0; text-align:right;">4</td>
+        </tr>
+        <tr>
+          <td class="k" style="padding:15px 0;">Operate<div class="small" style="font-size:19px; margin-top:6px;">+ collections &amp; cash application</div></td>
+          <td style="padding:15px 0;">$42,000</td>
+          <td style="padding:15px 0;">$20M–$40M ARR, usage billing</td>
+          <td style="padding:15px 0; text-align:right;">5</td>
+        </tr>
+        <tr>
+          <td class="k" style="padding:15px 0;">Close<div class="small" style="font-size:19px; margin-top:6px;">+ rev-rec, multi-entity, audit pack</div></td>
+          <td style="padding:15px 0;">$78,000</td>
+          <td style="padding:15px 0;">$40M+ ARR, audited, multi-currency</td>
+          <td style="padding:15px 0; text-align:right;">2</td>
+        </tr>
+        <tr>
+          <td class="k" style="padding:15px 0; border-bottom:none;">Platform fee<div class="small" style="font-size:19px; margin-top:6px;">Usage above included volume</div></td>
+          <td style="padding:15px 0; border-bottom:none;">$0.40 / invoice</td>
+          <td style="padding:15px 0; border-bottom:none;">All plans, above 2,500 invoices</td>
+          <td style="padding:15px 0; border-bottom:none; text-align:right;">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- unit economics panel -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:264px; width:520px; height:552px; background:#1B2429; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1304px; top:302px; width:432px; z-index:10;">
+    <div class="label" style="font-size:18px; color:#8C979E;">EARLY UNIT ECONOMICS</div>
+
+    <div style="display:flex; justify-content:space-between; align-items:baseline; padding:34px 0 28px; border-bottom:1px solid rgba(255,255,255,.12);">
+      <div style="font-size:22px; color:#B9C1C6;">Gross margin</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:36px; color:#fff; letter-spacing:-.03em;">81%</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(255,255,255,.12);">
+      <div style="font-size:22px; color:#B9C1C6;">CAC · founder-led</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:36px; color:#fff; letter-spacing:-.03em;">$9.2K</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(255,255,255,.12);">
+      <div style="font-size:22px; color:#B9C1C6;">Payback</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:36px; color:#fff; letter-spacing:-.03em;">7 mo</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; padding:28px 0; border-bottom:1px solid rgba(255,255,255,.12);">
+      <div style="font-size:22px; color:#B9C1C6;">Sales cycle</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:36px; color:#fff; letter-spacing:-.03em;">38 d</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; padding:28px 0 0;">
+      <div style="font-size:22px; color:#B9C1C6;">Net revenue retention</div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:36px; color:#D98E74; letter-spacing:-.03em;">114%</div>
+    </div>
+  </div>
+
+  <!-- value logic strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:848px; width:1640px; height:126px; background:#F1DED6; border:1px solid #E0C6BA; border-radius:4px; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:188px; top:878px; width:1544px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:34px;">
+      <div class="label" style="flex:none; color:#B8492B;">VALUE LOGIC</div>
+      <div style="flex:1; display:flex; align-items:center; gap:26px; font-size:24px; color:#6B4436;">
+        <span>One AR analyst · <strong style="color:#15181B;">$96K loaded</strong></span>
+        <span style="color:#C79C8B;">→</span>
+        <span>Operate plan · <strong style="color:#15181B;">$42K</strong></span>
+        <span style="color:#C79C8B;">→</span>
+        <span>Plus <strong style="color:#15181B;">$1.9M</strong> working capital released</span>
+        <span style="color:#C79C8B;">→</span>
+        <span><strong style="color:#B8492B;">4.6× hard ROI</strong> in year one</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:1006px; width:1640px; height:1px; background:#D8D4CB; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:1026px; width:900px; z-index:10;">
+    <div class="label" style="font-size:18px;">THREADLINE · PRE-SEED 2026</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1640px; top:1026px; width:140px; text-align:right; z-index:10;">
+    <div class="label" style="font-size:18px;">07</div>
+  </div>
+
+</div>
+</body>
+</html>

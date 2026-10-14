@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Release plan — features, metrics, dependencies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;padding:0;overflow:hidden;background:#F6F4F0;-webkit-font-smoothing:antialiased;}</style>
+</head>
+<body>
+<div class="slide slide-container" data-screen-label="08 Release plan" style="position:relative;width:1920px;height:1080px;overflow:hidden;background:#F6F4F0;font-family:'IBM Plex Sans',sans-serif;">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:52px;width:56px;height:4px;background:#E0552B;z-index:1;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:988px;width:1728px;height:1px;background:#DFD9D0;z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:76px;width:900px;font-family:'IBM Plex Mono',monospace;font-size:15px;letter-spacing:2.2px;text-transform:uppercase;color:#E0552B;z-index:10;">07 · Release plan</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:108px;width:1200px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:54px;line-height:1.12;letter-spacing:-1.2px;color:#15171C;z-index:10;">Release train: what ships, when, gated by what</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1420px;top:120px;width:404px;text-align:right;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#8B8D95;">Cadence</div>
+    <div style="font-size:20px;color:#3C4048;line-height:1.45;margin-top:8px;">Two-week trains · quarterly GA gate</div>
+  </div>
+
+  <div data-object="true" data-object-type="table" style="position:absolute;left:96px;top:236px;width:1728px;z-index:10;">
+    <table style="width:1728px;border-collapse:collapse;font-size:19px;">
+      <thead>
+        <tr style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:#8B8D95;background:#EFEBE4;">
+          <th style="text-align:left;padding:16px 20px;font-weight:500;width:150px;">Release</th>
+          <th style="text-align:left;padding:16px 20px;font-weight:500;width:390px;">Headline capability</th>
+          <th style="text-align:left;padding:16px 20px;font-weight:500;width:230px;">Owner</th>
+          <th style="text-align:left;padding:16px 20px;font-weight:500;width:400px;">Success metric</th>
+          <th style="text-align:left;padding:16px 20px;font-weight:500;width:330px;">Hard dependency</th>
+          <th style="text-align:left;padding:16px 20px;font-weight:500;width:150px;">Status</th>
+        </tr>
+      </thead>
+      <tbody style="color:#15171C;">
+        <tr style="border-bottom:1px solid #E7E2DA;background:#FFFFFF;">
+          <td style="padding:20px;font-family:'IBM Plex Mono',monospace;">R1 · Oct ’26</td>
+          <td style="padding:20px;">Template gallery &amp; connector wizard</td>
+          <td style="padding:20px;color:#6C6F78;">Growth pod</td>
+          <td style="padding:20px;">First-workflow rate 48% → 58%</td>
+          <td style="padding:20px;color:#6C6F78;">Connector SDK v2</td>
+          <td style="padding:20px;"><span style="background:#E8F0EE;color:#2F6F63;border-radius:4px;padding:6px 12px;font-size:16px;">In build</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #E7E2DA;background:#FBFAF8;">
+          <td style="padding:20px;font-family:'IBM Plex Mono',monospace;">R2 · Dec ’26</td>
+          <td style="padding:20px;">Approvals, retries &amp; exception routing</td>
+          <td style="padding:20px;color:#6C6F78;">Workflow pod</td>
+          <td style="padding:20px;">Manual handoffs 34 → 18 per team</td>
+          <td style="padding:20px;color:#B4860F;">Scheduler rewrite ⚑</td>
+          <td style="padding:20px;"><span style="background:#FBF1D9;color:#B4860F;border-radius:4px;padding:6px 12px;font-size:16px;">At risk</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #E7E2DA;background:#FFFFFF;">
+          <td style="padding:20px;font-family:'IBM Plex Mono',monospace;">R3 · Mar ’27</td>
+          <td style="padding:20px;">Run timeline, replay &amp; alerting</td>
+          <td style="padding:20px;color:#6C6F78;">Platform pod</td>
+          <td style="padding:20px;">Break detection 2.4 days → 15 min</td>
+          <td style="padding:20px;color:#6C6F78;">Event bus capacity +40%</td>
+          <td style="padding:20px;"><span style="background:#EFEBE4;color:#6C6F78;border-radius:4px;padding:6px 12px;font-size:16px;">Scoped</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #E7E2DA;background:#FBFAF8;">
+          <td style="padding:20px;font-family:'IBM Plex Mono',monospace;">R4 · Jun ’27</td>
+          <td style="padding:20px;">Impact reporting &amp; hours-saved ledger</td>
+          <td style="padding:20px;color:#6C6F78;">Insights pod</td>
+          <td style="padding:20px;">NRR 104% → 112% on renewals</td>
+          <td style="padding:20px;color:#6C6F78;">R3 run telemetry</td>
+          <td style="padding:20px;"><span style="background:#EFEBE4;color:#6C6F78;border-radius:4px;padding:6px 12px;font-size:16px;">Scoped</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #E7E2DA;background:#FFFFFF;">
+          <td style="padding:20px;font-family:'IBM Plex Mono',monospace;">R5 · Sep ’27</td>
+          <td style="padding:20px;">SSO / SCIM, role scoping, audit export</td>
+          <td style="padding:20px;color:#6C6F78;">Trust pod</td>
+          <td style="padding:20px;">Security-blocked stalls 41% → 12%</td>
+          <td style="padding:20px;color:#B4860F;">SOC 2 Type II audit ⚑</td>
+          <td style="padding:20px;"><span style="background:#EFEBE4;color:#6C6F78;border-radius:4px;padding:6px 12px;font-size:16px;">Planned</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #E7E2DA;background:#FBFAF8;">
+          <td style="padding:20px;font-family:'IBM Plex Mono',monospace;">R6 · Dec ’27</td>
+          <td style="padding:20px;">EU residency &amp; AI workflow drafting</td>
+          <td style="padding:20px;color:#6C6F78;">Trust + AI pods</td>
+          <td style="padding:20px;">Enterprise win rate 22% → 34%</td>
+          <td style="padding:20px;color:#6C6F78;">Frankfurt region live</td>
+          <td style="padding:20px;"><span style="background:#EFEBE4;color:#6C6F78;border-radius:4px;padding:6px 12px;font-size:16px;">Planned</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute;left:96px;top:822px;width:1728px;height:132px;background:#FFFFFF;border:1px solid #E7E2DA;border-radius:4px;z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:128px;top:850px;width:520px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#E0552B;">Critical path ⚑</div>
+    <div style="font-size:20px;color:#3C4048;line-height:1.45;margin-top:10px;">Scheduler rewrite must land by 15 Nov or R2 slips a full quarter.</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:712px;top:850px;width:520px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#B4860F;">External dependency</div>
+    <div style="font-size:20px;color:#3C4048;line-height:1.45;margin-top:10px;">SOC 2 Type II window opens Apr ’27 — audit slot booked, evidence owner named.</div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1296px;top:850px;width:496px;z-index:10;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#2F6F63;">Quality gate</div>
+    <div style="font-size:20px;color:#3C4048;line-height:1.45;margin-top:10px;">No GA without 98.5% run success across a two-week beta cohort.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:96px;top:1004px;width:900px;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8B8D95;z-index:10;">Atlas Ops Cloud · Product Roadmap &amp; Release Plan</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute;left:1624px;top:1004px;width:200px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:14px;color:#8B8D95;z-index:10;">08 / 10</div>
+
+</div>
+</body>
+</html>

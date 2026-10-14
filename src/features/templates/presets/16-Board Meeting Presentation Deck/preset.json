@@ -1,0 +1,103 @@
+{
+  "id": "16-Board Meeting Presentation Deck",
+  "version": 1,
+  "ppt_number": 16,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "black",
+    "cream",
+    "orange",
+    "green"
+  ],
+  "name": "Board Meeting Presentation Deck",
+  "description": "Boardroom design alternating dark decision panels with cream analysis pages, orange blocks, and concise financial dashboards.",
+  "user": "Founders & Leaders",
+  "use_case": "Reports & Analysis",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["business-review"],"industries":["business"],"audiences":["executive"],"formats":["status-update"],"primary_styles":["formal"],"visual_traits":["formal","data-dense","dark"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "炭黑、奶油白与决策橙构成封面底色，右侧中部超大标题与一块几何面板前后呼应。"
+    },
+    {
+      "path": "images/2-executive-summary.webp",
+      "alt": "炭黑、奶油白与决策橙页面，左半区三组大数字，右侧两卡叠放，概览信息形成重心。"
+    },
+    {
+      "path": "images/3-operating-context.webp",
+      "alt": "炭黑、奶油白与决策橙页面，双面板划分主体区域，核心判断拉开层级。"
+    },
+    {
+      "path": "images/4-strategic-response.webp",
+      "alt": "炭黑、奶油白与决策橙页面，三块卡片横向并列，流程信息组织动线。"
+    },
+    {
+      "path": "images/5-operating-mechanism.webp",
+      "alt": "炭黑、奶油白与决策橙页面，五块卡片组成五列网格，流程信息强化对比。"
+    },
+    {
+      "path": "images/6-market-scope.webp",
+      "alt": "炭黑、奶油白与决策橙页面，一幅图表集中排布，范围信息收束版面。"
+    },
+    {
+      "path": "images/7-initiative-portfolio.webp",
+      "alt": "炭黑、奶油白与决策橙页面，四块卡片纵向叠放，组合信息形成重心。"
+    },
+    {
+      "path": "images/8-performance-dashboard.webp",
+      "alt": "炭黑、奶油白与决策橙页面，五块卡片组成两列网格，指标信息拉开层级。"
+    },
+    {
+      "path": "images/9-risk-register.webp",
+      "alt": "炭黑、奶油白与决策橙页面，五块卡片纵向叠放，风险信息组织动线。"
+    },
+    {
+      "path": "images/10-decisions-next-steps.webp",
+      "alt": "炭黑、奶油白与决策橙页面，横向时间轴串联阶段节点，日期标记强化对比。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页，右侧中部以超大标题建立焦点，炭黑、奶油白与决策橙贯穿背景与强调元素；一块几何面板和底部信息条完成构图。"
+    },
+    {
+      "path": "html/2-executive-summary.html",
+      "description": "炭黑、奶油白与决策橙作为底色，标题落在左上方；左半区以三组大号数字开场，右侧纵向排列两块卡片，摘要数字与概览模块沿主区展开。"
+    },
+    {
+      "path": "html/3-operating-context.html",
+      "description": "标题固定在左上方，炭黑、奶油白与决策橙分隔主体；两块主面板建立清晰分区，一幅图表落在左侧，问题陈述与强调数字补充层级。"
+    },
+    {
+      "path": "html/4-strategic-response.html",
+      "description": "炭黑、奶油白与决策橙画面，标题置于左上方；三块信息卡横向并列，一幅图表落在中央，步骤模块与连接关系补充层级。"
+    },
+    {
+      "path": "html/5-operating-mechanism.html",
+      "description": "左上方标题锚定炭黑、奶油白与决策橙画面；五块信息卡横向并列，一幅图表落在中央，步骤模块与连接关系补充层级。"
+    },
+    {
+      "path": "html/6-market-scope.html",
+      "description": "炭黑、奶油白与决策橙作为底色，标题落在左上方；单一大面板承载主体信息，一幅图表落在左侧，一组表格位于右侧。"
+    },
+    {
+      "path": "html/7-initiative-portfolio.html",
+      "description": "标题固定在左上方，炭黑、奶油白与决策橙分隔主体；四块信息卡纵向叠放，四幅图表落在左侧，项目卡、优先级与状态标签补充层级。"
+    },
+    {
+      "path": "html/8-performance-dashboard.html",
+      "description": "炭黑、奶油白与决策橙画面，标题置于左上方；五块信息卡组成两列网格，一幅指标图表落在左侧，摘要指标与数据图形补充层级。"
+    },
+    {
+      "path": "html/9-risk-register.html",
+      "description": "左上方标题锚定炭黑、奶油白与决策橙画面；五块信息卡纵向叠放，一幅风险图表落在左侧，分级标签、状态色与风险标记补充层级。"
+    },
+    {
+      "path": "html/10-decisions-next-steps.html",
+      "description": "炭黑、奶油白与决策橙作为底色，标题落在左上方；横向时间轴串联阶段节点与日期标记，一幅图表落在中央，阶段节点与时间标记补充层级。"
+    }
+  ]
+}

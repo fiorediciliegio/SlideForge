@@ -1,0 +1,103 @@
+{
+  "id": "25-Management Consulting Project Proposal",
+  "version": 1,
+  "ppt_number": 25,
+  "score": 9,
+  "theme": "light",
+  "color": [
+    "white",
+    "black",
+    "red",
+    "gray"
+  ],
+  "name": "Management Consulting Project Proposal",
+  "description": "Premium consulting design with sharp white space, oversized serif typography, crimson rules, and rigorous workplan tables.",
+  "user": "Business Professionals",
+  "use_case": "Pitch Decks & Proposals",
+  "industry": "Business & Finance",
+  "recommendation_profile": {"use_cases":["partnership"],"industries":["business"],"audiences":["client"],"formats":["proposal"],"primary_styles":["formal"],"visual_traits":["formal","data-dense"]},
+  "preview_images": [
+    {
+      "path": "images/1-cover.webp",
+      "alt": "左侧中部超大标题主导白色、墨黑与深红色封面，几何色块与细线补充节奏。"
+    },
+    {
+      "path": "images/2-client-context.webp",
+      "alt": "白色、墨黑与深红色页面，四组大号数字形成节奏，核心判断强化对比。"
+    },
+    {
+      "path": "images/3-problem-definition.webp",
+      "alt": "白色、墨黑与深红色页面，标题、细线与留白划分层级，核心判断收束版面。"
+    },
+    {
+      "path": "images/4-objectives-key-questions.webp",
+      "alt": "白色、墨黑与深红色页面，三组大号数字形成节奏，范围信息形成重心。"
+    },
+    {
+      "path": "images/5-approach-phases.webp",
+      "alt": "白色、墨黑与深红色页面，四块卡片组成四列网格，流程信息拉开层级。"
+    },
+    {
+      "path": "images/6-workstreams-methodology.webp",
+      "alt": "白色、墨黑与深红色页面，一组表格压缩信息密度，流程信息组织动线。"
+    },
+    {
+      "path": "images/7-project-plan-timeline.webp",
+      "alt": "白色、墨黑与深红色页面，横向时间轴串联阶段节点，日期标记强化对比。"
+    },
+    {
+      "path": "images/8-value-at-stake.webp",
+      "alt": "白色、墨黑与深红色页面，两幅图表集中排布，财务信息收束版面。"
+    },
+    {
+      "path": "images/9-team-governance.webp",
+      "alt": "白色、墨黑与深红色页面，四块卡片纵向叠放，人物卡形成重心。"
+    },
+    {
+      "path": "images/10-commercial-next-steps.webp",
+      "alt": "白色、墨黑与深红色页面，一组表格压缩信息密度，商务信息拉开层级。"
+    }
+  ],
+  "reference_html_pages": [
+    {
+      "path": "html/1-cover.html",
+      "description": "封面页由白色、墨黑与深红色划分层次，左侧中部的超大标题占据主视区；几何色块与细线补充节奏，页脚细字稳定版面。"
+    },
+    {
+      "path": "html/2-client-context.html",
+      "description": "标题固定在左上方，白色、墨黑与深红色分隔主体；单一大面板承载主体信息，问题陈述与强调数字顺着版面动线分布。"
+    },
+    {
+      "path": "html/3-problem-definition.html",
+      "description": "白色、墨黑与深红色画面，标题置于左上方；单一大面板承载主体信息，问题陈述与强调数字嵌入主体模块。"
+    },
+    {
+      "path": "html/4-objectives-key-questions.html",
+      "description": "左上方标题锚定白色、墨黑与深红色画面；单一大面板承载主体信息，目标卡、范围块与关键数字沿主区展开。"
+    },
+    {
+      "path": "html/5-approach-phases.html",
+      "description": "白色、墨黑与深红色作为底色，标题落在左上方；四块信息卡横向并列，步骤模块与连接关系贴合卡片边界。"
+    },
+    {
+      "path": "html/6-workstreams-methodology.html",
+      "description": "标题固定在左上方，白色、墨黑与深红色分隔主体；单一大面板承载主体信息，一组表格位于中央，步骤模块与连接关系补充层级。"
+    },
+    {
+      "path": "html/7-project-plan-timeline.html",
+      "description": "白色、墨黑与深红色画面，标题置于左上方；横向时间轴串联阶段节点与日期标记，阶段节点与时间标记顺着版面动线分布。"
+    },
+    {
+      "path": "html/8-value-at-stake.html",
+      "description": "左上方标题锚定白色、墨黑与深红色画面；四组大号数字拉开视觉节奏，两幅财务图表落在中央，金额数字、占比与变化标记补充层级。"
+    },
+    {
+      "path": "html/9-team-governance.html",
+      "description": "白色、墨黑与深红色作为底色，标题落在左上方；四块信息卡纵向叠放，人物信息与职责标签沿主区展开。"
+    },
+    {
+      "path": "html/10-commercial-next-steps.html",
+      "description": "标题固定在左上方，白色、墨黑与深红色分隔主体；单一大面板承载主体信息，一组表格位于左侧，金额模块与承诺事项补充层级。"
+    }
+  ]
+}

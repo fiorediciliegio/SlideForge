@@ -1,0 +1,50 @@
+{
+  "slug": "ppt-engine",
+  "name": "ppt-engine",
+  "version": "4.4.2",
+  "executa_type": "tool",
+  "description": "Anna Executa plugin for Workspace Authoring Kit setup, manifest-based deck HTML generation, and backend PPTX export.",
+  "tool_id": "tool-lightvoss-ppt-engine-kqhra9hy",
+  "type": "node",
+  "command": [
+    "node",
+    "app_stdio.js"
+  ],
+  "enabled": true,
+  "distribution": {
+    "active": "binary",
+    "profiles": {
+      "local": {
+        "type": "local",
+        "supports_protocol": true
+      },
+      "binary": {
+        "type": "binary",
+        "supports_protocol": true,
+        "binary_urls": {
+          "darwin-arm64": {
+            "url": "https://github.com/wuyyyyyou/ppt-sdk/releases/download/ppt-engine-v4.4.2/ppt-engine-v4.4.2-darwin-arm64.tar.gz",
+            "entrypoint": "ppt-engine",
+            "format": "tar.gz"
+          },
+          "darwin-x86_64": {
+            "url": "https://github.com/wuyyyyyou/ppt-sdk/releases/download/ppt-engine-v4.4.2/ppt-engine-v4.4.2-darwin-x86_64.tar.gz",
+            "entrypoint": "ppt-engine",
+            "format": "tar.gz"
+          },
+          "linux-x86_64": {
+            "url": "https://github.com/wuyyyyyou/ppt-sdk/releases/download/ppt-engine-v4.4.2/ppt-engine-v4.4.2-linux-x86_64.tar.gz",
+            "entrypoint": "ppt-engine",
+            "format": "tar.gz"
+          },
+          "windows-x86_64": {
+            "url": "https://github.com/wuyyyyyou/ppt-sdk/releases/download/ppt-engine-v4.4.2/ppt-engine-v4.4.2-windows-x86_64.zip",
+            "entrypoint": "ppt-engine.exe",
+            "format": "zip"
+          }
+        }
+      }
+    }
+  },
+  "_comment": "Publish metadata (slug/name/version/executa_type/description) is read by `anna-app apps push` / `anna-app executa publish`; the dev fields (tool_id/type/command/enabled) are read by `anna-app dev`. The `distribution` block uses the switchable multi-profile form: `profiles` declares `local` and `binary` side by side, and `active` selects which one the publish flow forwards to the server. `active: \"binary\"` (the production default) ships the self-contained SEA binary per platform via the direct-upload PUSH model: `binary_artifacts` point at LOCAL archives under bundle/ (built by build_binary.sh — `<binary-name>-v<version>-<platform>.<ext>`, tar.gz on POSIX / zip on Windows; the packaged binary is named `ppt-engine`, which is also the archive prefix and the entrypoint), and `anna-app apps cut` auto-uploads them straight into Anna storage (content-addressed by sha256, binary_sha256 pinned). No GitHub Release, no public URL. The `{version}` placeholder in each path is expanded at upload time, so `version` here MUST equal manifest.json `version` (the value build_binary.sh embeds in the archive name). Bump both together. For local dev, DON'T flip `active` on disk — run `anna-app apps push --profile local` to select the `local` profile for that push only (writes a `~/.anna/executa/bin/<minted-tool_id>` shim so 'Rediscover Local' turns the Executa Running). This dir is the `ppt-engine` handle referenced by app.json#bundled_executas, so manifest.json references it as `bundled:ppt-engine` and the publish flow substitutes the server-minted tool_id."
+}
