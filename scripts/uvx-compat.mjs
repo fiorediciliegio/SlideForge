@@ -1,15 +1,15 @@
 // uvx 兼容垫片（preload，随 --import 注入 CLI 进程）。
 // 背景：部分运行环境（如 Kimi 内置运行时）只提供 uv.exe、不提供 uvx.exe，
 // 且该 uv 构建不做 "uvx" 多路复用检测（复制为 uvx.exe 仍按 uv 主命令解析）。
-// anna-app CLI 的 python bridge 硬编码 spawn("uvx", ["--from", pkg, cmd])，
+// slideforge-app CLI 的 python bridge 硬编码 spawn("uvx", ["--from", pkg, cmd])，
 // 这里在进程级把 uvx 调用改写为完全等价的 `uv tool run`
 // （uvx 本身就是 uv tool run 的官方别名）。
-// 可用 ANNA_UV_BIN 环境变量指定 uv 路径，默认从 PATH 解析 "uv"。
+// 可用 SLIDEFORGE_UV_BIN 环境变量指定 uv 路径，默认从 PATH 解析 "uv"。
 import childProcess from "node:child_process";
 import { syncBuiltinESMExports } from "node:module";
 
 const origSpawn = childProcess.spawn;
-const UV_BIN = process.env.ANNA_UV_BIN || "uv";
+const UV_BIN = process.env.SLIDEFORGE_UV_BIN || "uv";
 
 function isUvx(file) {
   const base = String(file).split(/[\\/]/).pop().toLowerCase();

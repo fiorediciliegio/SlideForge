@@ -124,7 +124,7 @@ export function App() {
         }}
       />
       ) : null}
-    <main className="anna-stage" style={{ display: showManualEditor || showPageRegeneration ? "none" : undefined }}>
+    <main className="slideforge-stage" style={{ display: showManualEditor || showPageRegeneration ? "none" : undefined }}>
       <button
         data-performance-id="app.panel.open"
         className={`launcher-btn ${state.panelMode === "closed" ? "visible" : ""}`}

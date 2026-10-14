@@ -136,7 +136,7 @@ async function requestToFile(input: {
   return new Promise((resolve, reject) => {
     const req = request(input.url, {
       method: "GET",
-      headers: { Accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8", "User-Agent": "Anna-PPT-Research/1.0" },
+      headers: { Accept: "image/avif,image/webp,image/apng,image/*,*/*;q=0.8", "User-Agent": "SlideForge-Research/1.0" },
       signal: input.signal,
       ...(isIP(tlsHostname) ? {} : { servername: tlsHostname }),
       lookup: createPinnedResearchImageLookup(resolved),

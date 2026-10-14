@@ -10,10 +10,10 @@ function candidate(label: string) {
 
 test("authoring-kit-v1 persists style guide, Page Sources, and minimal Page Progress", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-authoring-generation-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const api = await import("../../src/app-workspace/index.ts");
   const kit = await import("../../src/authoring-kit-workspace/index.ts");
   try {
@@ -22,7 +22,7 @@ test("authoring-kit-v1 persists style guide, Page Sources, and minimal Page Prog
     assert.equal(task.workspace_format, "authoring-kit-v1");
     await assert.rejects(() => readFile(path.join(created.workspace_dir, "pages.json"), "utf8"), /ENOENT/);
     await assert.rejects(() => readFile(path.join(created.workspace_dir, "page-plan.json"), "utf8"), /ENOENT/);
-    const legacyDir = path.join(homeDir, "anna-workspace", "ppt", "ppt-20260718-000001");
+    const legacyDir = path.join(homeDir, "slideforge-workspace", "ppt", "ppt-20260718-000001");
     await mkdir(legacyDir, { recursive: true });
     await writeFile(path.join(legacyDir, "task.json"), `${JSON.stringify({ title: "Legacy" })}\n`, "utf8");
     await assert.rejects(
@@ -119,8 +119,8 @@ test("authoring-kit-v1 persists style guide, Page Sources, and minimal Page Prog
   } finally {
     if (previousHome === undefined) delete process.env.HOME;
     else process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(homeDir, { recursive: true, force: true });
   }
 });

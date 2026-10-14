@@ -6,10 +6,10 @@ import test from "node:test";
 
 test("duplicating a workspace produces an independent copy with its own identity", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-workspace-duplicate-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const api = await import("../../src/app-workspace/index.ts");
   try {
     const source = await api.createAppWorkspace({ title: "季度复盘" });
@@ -71,18 +71,18 @@ test("duplicating a workspace produces an independent copy with its own identity
   } finally {
     if (previousHome === undefined) delete process.env.HOME;
     else process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(homeDir, { recursive: true, force: true });
   }
 });
 
 test("duplicating falls back to a copy suffix and refuses an active generation run", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-workspace-duplicate-guard-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const api = await import("../../src/app-workspace/index.ts");
   try {
     const source = await api.createAppWorkspace({ title: "Quarterly review" });
@@ -103,8 +103,8 @@ test("duplicating falls back to a copy suffix and refuses an active generation r
   } finally {
     if (previousHome === undefined) delete process.env.HOME;
     else process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(homeDir, { recursive: true, force: true });
   }
 });

@@ -1,11 +1,11 @@
 import { withOrdinaryInvokeTransport } from "../helpers/invokeRuntime";
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAnnaPptBackend } from "../../src/api/annaPptBackend.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import { createAnnaPptBackend } from "../../src/api/hostPptBackend.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
-function backend(invoke: AnnaRuntime["tools"]["invoke"]) {
-  Object.defineProperty(globalThis, "window", { configurable: true, value: { __ANNA_TOOL_IDS__: { "ppt-engine": "engine" } } });
+function backend(invoke: HostRuntime["tools"]["invoke"]) {
+  Object.defineProperty(globalThis, "window", { configurable: true, value: { __BUNDLED_TOOL_IDS__: { "ppt-engine": "engine" } } });
   return createAnnaPptBackend({ tools: { invoke: withOrdinaryInvokeTransport(invoke) }, llm: { complete: async () => ({}) }, agent: { session: async () => { throw new Error("unused"); } } });
 }
 const run = { root_dir: "/test/batch", cases: [], padding: "中文😀\\\"".repeat(10_000) };

@@ -37,8 +37,8 @@ function buildThemeLogContext(input: EnsureWorkspaceThemeTokenInput): AiOperatio
     operation,
     operation_id: input.aiLogger.createOperationId("theme", operation),
     kind: input.runKind,
-    provider: "anna",
-    runtime_mode: "anna",
+    provider: "host",
+    runtime_mode: "host",
   };
 }
 

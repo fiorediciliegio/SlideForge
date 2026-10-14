@@ -6,10 +6,10 @@ import path from "node:path";
 
 test("uploaded source material persists identities, active state, and analysis artifacts", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-uploaded-source-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   const {
     createAppWorkspace,
@@ -216,8 +216,8 @@ test("uploaded source material persists identities, active state, and analysis a
     );
   } finally {
     process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(homeDir, { recursive: true, force: true });
   }
 });

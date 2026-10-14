@@ -7,8 +7,8 @@ import {
 } from "../../src/ai/visualStylePresetSelectionPrompt";
 import { sampleVisualStylePresetsByColor } from "../../src/features/templates/visualStylePresetSampling";
 import type { VisualStylePresetSelectionCandidate } from "../../src/ai/types";
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
+import type { HostRuntime } from "../../src/runtime/hostRuntime";
 
 const candidates: VisualStylePresetSelectionCandidate[] = [
   {
@@ -93,7 +93,7 @@ test("retries and cleans fenced JSON for both selection calls", async () => {
     { content: { type: "text", text: "```json\n{\"preset_id\":\"two\"}\n```" } },
   ];
   let index = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => responses[index++] },
     agent: { session: async () => { throw new Error("not used"); } },

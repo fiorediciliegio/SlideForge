@@ -2,7 +2,7 @@ import { getResearchImageDownloadUrl } from "../../api/researchImageUrl";
 import type { Locale } from "../../i18n/locales";
 import { formatWebResearchRequirements } from "../../ai/requirementsFormatting";
 import { runResearchSession, withResearchLiveProgress, researchProgressForPersistence, rememberResearchImagePreview } from "./researchLiveProgress";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import {
   isAgentRunCancelledError,
   type AgentImageResearchSession,
@@ -222,7 +222,7 @@ export interface LinearResearchCheckpoint {
       strategy?: {
         version: 2;
         key: "sha256";
-        source: "anna.web.image_fetch";
+        source: "slideforge.web.image_fetch";
       };
       statistics: {
         fetched_candidates: number;
@@ -889,7 +889,7 @@ function errorMessage(error: unknown) {
 function researchImageErrorMessage(error: unknown) {
   const message = errorMessage(error);
   const status = message.match(/\bHTTP\s+(\d{3})\b/i)?.[1];
-  if (status) return `Anna image_fetch failed with HTTP ${status}.`;
+  if (status) return `SlideForge image_fetch failed with HTTP ${status}.`;
   const compact = message.replace(/<!doctype html[\s\S]*$/i, "").replace(/<html[\s\S]*$/i, "").trim();
   return compact.length > 500 ? `${compact.slice(0, 497)}...` : compact;
 }
@@ -916,8 +916,8 @@ function researchLogContext(runtime: DeckGenerationRuntime, operation: string, k
     operation,
     operation_id: runtime.aiLogger.createOperationId("research", operation),
     ...(kind ? { kind } : {}),
-    provider: "anna",
-    runtime_mode: "anna",
+    provider: "host",
+    runtime_mode: "host",
   };
 }
 
@@ -1063,11 +1063,11 @@ async function fetchResearchImageCandidate(
           researchWebCallContext(runtime, operationId),
         ),
         { candidate_id: candidate.candidate_id },
-        "anna-web",
+        "slideforge-web",
       );
     }
     if (!fetched.path || !fetched.mime_type || !fetched.sha256 || !Number.isFinite(fetched.bytes_size) || fetched.bytes_size <= 0) {
-      throw new Error(`Anna image_fetch returned an incomplete artifact for ${candidate.candidate_id}`);
+      throw new Error(`SlideForge image_fetch returned an incomplete artifact for ${candidate.candidate_id}`);
     }
     Object.assign(candidate, {
       aps_path: fetched.path,
@@ -1527,7 +1527,7 @@ export async function runImageResearchSession(input: {
             ...(attachments?.length ? { attachments } : {}),
           }),
           { round: turn, search_count: searchCount, session_attempt: decision.session_attempt ?? 1 },
-          "anna-agent",
+          "slideforge-agent",
         );
         try {
           const parsed = (input.policy?.parseAction ?? parseImageResearchAgentAction)(rawText);
@@ -1807,7 +1807,7 @@ export async function runImageResearchSession(input: {
       }
       image.content_deduplication = {
         status: "completed",
-        strategy: { version: 2, key: "sha256", source: "anna.web.image_fetch" },
+        strategy: { version: 2, key: "sha256", source: "slideforge.web.image_fetch" },
         statistics: {
           fetched_candidates: candidates.filter((candidate) => candidate.aps_fetch_status === "completed").length,
           unique_content: contentGroups.size,
@@ -1915,7 +1915,7 @@ async function finishWebResearchAtRoundLimit(input: {
         isCancelled: runtime.isCancelled,
       }),
       { round, session_attempt: input.sessionAttempt, round_limit_finish: true },
-      "anna-agent",
+      "slideforge-agent",
     );
     let action: WebResearchAgentAction;
     try {
@@ -2144,7 +2144,7 @@ export async function runLinearSharedResearch(runtime: DeckGenerationRuntime, in
               isCancelled: runtime.isCancelled,
             }),
             { round, session_attempt: sessionAttempt },
-            "anna-agent",
+            "slideforge-agent",
           );
           let action: WebResearchAgentAction;
           try {

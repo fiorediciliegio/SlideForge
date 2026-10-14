@@ -1,5 +1,5 @@
 import { mainWorkflowAttachmentContext } from "./attachmentBriefPolicy";
-import type { LlmCompleteInput } from "../runtime/annaRuntime";
+import type { LlmCompleteInput } from "../runtime/hostRuntime";
 import type { AttachmentContext } from "../api/types";
 import {
   buildRequirementsRepairPrompt,

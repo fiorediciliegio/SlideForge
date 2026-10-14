@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
-import type { AnnaLlmCompleteInput, AnnaRuntime } from "../../src/runtime/annaRuntime";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
+import type { AnnaLlmCompleteInput, HostRuntime } from "../../src/runtime/hostRuntime";
 import type { PlanDeckRefinementInput } from "../../src/ai/types";
 
 const input: PlanDeckRefinementInput = {
@@ -40,7 +40,7 @@ test("Deck Refinement Planning tolerates fenced JSON and recovers from an invali
       ], reason: "Proceed",
     }) } },
   ];
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async (request) => { requests.push(request); return responses[requests.length - 1]; } },
     agent: { session: async () => { throw new Error("not used"); } },

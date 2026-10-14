@@ -1,6 +1,6 @@
 # `presenton-template-engine-executa`
 
-`presenton-template-engine` 是本仓库内部维护的 Anna Executa 工具包。它 vendored 了 Presenton template engine 能力，并提供 `ppt-engine` 插件入口。
+`presenton-template-engine` 是本仓库内部维护的 SlideForge Executa 工具包。它 vendored 了 Presenton template engine 能力，并提供 `ppt-engine` 插件入口。
 
 这个包采用 ESM-only 构建和导出契约。不要为 runtime/SDK 产物重新引入 CommonJS 输出或 `require` 导出分支。`scripts/sea-bootstrap.cjs` 是 Node SEA 二进制启动器例外，不代表包级 CommonJS 支持。
 
@@ -10,7 +10,7 @@
 - 根据 Page Source manifest 渲染 Deck HTML；App 页面只持久化静态 HTML，会话截图按需临时生成。
 - 在后端受管 Chrome 中将整体静态 Deck HTML 直接转换为 `.pptx`。
 - 提供 app-facing 工作区工具和任务状态机工具。
-- 作为 Anna Executa 插件响应 JSON-RPC `describe`、`health` 和 `invoke`。
+- 作为 SlideForge Executa 插件响应 JSON-RPC `describe`、`health` 和 `invoke`。
 
 旧的模板发现、模板选择和模板 fork 能力仍暂时保留，供 PPT App 前端切换前使用，不属于新的创作主路径。
 
@@ -54,7 +54,7 @@ npm run start:plugin
 
 ## 二进制打包
 
-当前提供基于 Node.js SEA 的 Anna Binary 分发包打包脚本：
+当前提供基于 Node.js SEA 的 SlideForge Binary 分发包打包脚本：
 
 ```bash
 ./build_binary.sh --test
@@ -62,8 +62,8 @@ npm run start:plugin
 
 生成产物：
 
-- `bundle/<binary-name>-v<manifest.version>-<anna-platform-key>.tar.gz`
-- `bundle/<binary-name>-v<manifest.version>-<anna-platform-key>.tar.gz.sha256`
+- `bundle/<binary-name>-v<manifest.version>-<slideforge-platform-key>.tar.gz`
+- `bundle/<binary-name>-v<manifest.version>-<slideforge-platform-key>.tar.gz.sha256`
 - Windows 平台生成 `.zip` 和 `.zip.sha256`
 
 说明：
@@ -72,9 +72,9 @@ npm run start:plugin
 - 大仓的 `publish-ppt-engine.yml` workflow 会构建 `darwin-x86_64`、`darwin-arm64`、`windows-x86_64` 和 `linux-x86_64`，然后通过 `apps push` / `apps cut` 的 Direct Upload（直接上传）流程发布。`ppt-engine` 暂不发布 `linux-aarch64`，其他 Executa 的平台范围不受影响。
 - `bundle/` 只保留最终 archive 和 sha256，不再保留中间裸二进制。
 - archive 内部包含 bootstrap-only SEA（仅含启动器的 SEA）`bin/ppt-engine`、原样安装的 `lib/app/` 应用运行时、`lib/browser/` 下与固定 Puppeteer revision 匹配的完整 Chrome for Testing、`data/` 和顶层 binary distribution `manifest.json`。运行时不要求目标机器预装 Node.js 或 Chrome，也不会首次联网下载浏览器。
-- `manifest.json` 名称有两层含义：本目录下的 Executa tool manifest 是 `describe` 的来源；archive 顶层 manifest 是 Anna Binary 分发入口配置。
+- `manifest.json` 名称有两层含义：本目录下的 Executa tool manifest 是 `describe` 的来源；archive 顶层 manifest 是 SlideForge Binary 分发入口配置。
 - 打包脚本的 `--test` 会解压最终 archive，校验 binary distribution manifest、`lib/app/`、vendored dom-to-pptx bundle 和浏览器资源，并发启动多个 `describe` 进程，并通过真实 JSON-RPC 调用完成 HTML 与 PNG 冒烟。
-- SEA 只提供 Node.js runtime 和最小启动器；启动器通过 `process.execPath` 定位相邻的 `lib/app/example_plugin.js` 并直接加载。应用文件由 Anna Binary 安装过程随 archive 一次解压，不再在首次启动时生成 SEA 二次解包缓存。
+- SEA 只提供 Node.js runtime 和最小启动器；启动器通过 `process.execPath` 定位相邻的 `lib/app/example_plugin.js` 并直接加载。应用文件由 SlideForge Binary 安装过程随 archive 一次解压，不再在首次启动时生成 SEA 二次解包缓存。
 - `linux-x86_64` 的运行基线是 Ubuntu 22.04 兼容的 glibc Linux。Binary 提供 Chrome，但不捆绑 glibc、NSS、GTK、GBM 等系统动态库，也不支持 Alpine/musl 或缺少 Chrome 基础运行库的极简镜像。
 
 ## 主要工具能力
@@ -127,7 +127,7 @@ Page Source HTML 是从权威 Page Source 重建的机器产物，不应直接�
 - Tailwind 使用随 ppt-engine 和 SEA 二进制发布的固定 `@tailwindcss/browser` 4.3.2，正式 HTML 不加载 Tailwind CDN 或携带 Tailwind runtime。
 - 截图和 PPTX 导出从重新打开的同一静态 HTML 生成。
 
-`manifest_path` 和 `output_dir` 必须是绝对路径。源码模式需要本机有可用的 Chrome / Chrome for Testing；Anna Binary 模式默认使用 archive 内置浏览器，缺失或启动失败时直接报错，不隐式回退系统 Chrome。
+`manifest_path` 和 `output_dir` 必须是绝对路径。源码模式需要本机有可用的 Chrome / Chrome for Testing；SlideForge Binary 模式默认使用 archive 内置浏览器，缺失或启动失败时直接报错，不隐式回退系统 Chrome。
 
 ### App 预览与会话截图
 

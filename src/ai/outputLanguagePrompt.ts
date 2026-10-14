@@ -1,4 +1,4 @@
-import type { LlmCompleteInput } from "../runtime/annaRuntime";
+import type { LlmCompleteInput } from "../runtime/hostRuntime";
 
 export const OUTPUT_LANGUAGE_JSON_SHAPE = `{
   "output_language": "<language>"

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
-import type { AnnaLlmCompleteInput, AnnaRuntime } from "../../src/runtime/annaRuntime";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
+import type { AnnaLlmCompleteInput, HostRuntime } from "../../src/runtime/hostRuntime";
 
 test("output language detection retries invalid JSON with the exact original request", async () => {
   const requests: AnnaLlmCompleteInput[] = [];
@@ -9,7 +9,7 @@ test("output language detection retries invalid JSON with the exact original req
     { content: { type: "text", text: "not json" } },
     { content: { type: "text", text: "```json\n{\"output_language\":\"English\"}\n```" } },
   ];
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: {
       complete: async (input) => {

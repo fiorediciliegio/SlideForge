@@ -1,4 +1,4 @@
-import type { AnnaFilesDownloadInput, AnnaRuntime } from "./annaRuntime";
+import type { FilesDownloadInput, HostRuntime } from "./hostRuntime";
 
 export type HostFileDownloadOutcome = "downloaded" | "unsupported";
 
@@ -8,7 +8,7 @@ export interface AppHostFileDownloadClient {
    * Host build has no `files.download`, which is the caller's cue to fall back
    * to a presigned URL rather than to report a failure.
    */
-  download(input: AnnaFilesDownloadInput): Promise<HostFileDownloadOutcome>;
+  download(input: FilesDownloadInput): Promise<HostFileDownloadOutcome>;
 }
 
 const UNSUPPORTED_JSON_RPC_CODES = new Set([
@@ -38,7 +38,7 @@ export function isUnsupportedHostDownload(error: unknown): boolean {
 }
 
 export function createAppHostFileDownloadClient(
-  runtime: AnnaRuntime,
+  runtime: HostRuntime,
 ): AppHostFileDownloadClient {
   return {
     async download(input) {

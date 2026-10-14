@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { AiOutlineGenerationError, createAnnaAiClient } from "../../src/ai/annaAiClient.ts";
+import { AiOutlineGenerationError, createAnnaAiClient } from "../../src/ai/hostAiClient.ts";
 import type { AgentRunOptions } from "../../src/agent/agentClient.ts";
 import type { PresentationRequirements } from "../../src/api/types.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 function requirements(count = 60): PresentationRequirements {
   return {
@@ -40,7 +40,7 @@ function harness(respond: (session: number, turn: number, prompt: string) => str
   const prompts: string[][] = [];
   const options: AgentRunOptions[] = [];
   let closed = 0;
-  const client = createAnnaAiClient({} as AnnaRuntime, {
+  const client = createAnnaAiClient({} as HostRuntime, {
     createOutlineSession: async (system, creation) => {
       assert.ok(system.length > 0);
       assert.equal(creation?.manageFreshSessionRetries, false);

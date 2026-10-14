@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
 import {
   parseVisualStylePresetRecommendationIntentResponse,
 } from "../../src/ai/visualStylePresetRecommendationIntent";
-import type { AnnaLlmCompleteInput, AnnaRuntime } from "../../src/runtime/annaRuntime";
+import type { AnnaLlmCompleteInput, HostRuntime } from "../../src/runtime/hostRuntime";
 
 test("template intent parser accepts only the controlled response schema", () => {
   const parsed = parseVisualStylePresetRecommendationIntentResponse({
@@ -26,7 +26,7 @@ test("template intent parser accepts only the controlled response schema", () =>
 
 test("template intent analysis performs at most three total attempts", async () => {
   const requests: AnnaLlmCompleteInput[] = [];
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: {
       complete: async (input) => {

@@ -865,7 +865,7 @@ export interface Messages {
     defaultWorkspaceTitle: string;
     preferences: string;
     runtimeInfoTitle: string;
-    annaDeckVersion: string;
+    appVersion: string;
     pptEngineVersion: string;
     runtimeInfoUnavailable: string;
     agentResourceInfoTitle: string;

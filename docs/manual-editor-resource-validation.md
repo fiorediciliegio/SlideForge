@@ -15,7 +15,7 @@
 在 `apps/ppt-app` 执行前端定向测试：
 
 ```sh
-node --import tsx/esm --test tests/api/annaPptBackend.test.ts tests/api/manualPageTransport.test.ts tests/manual-page-editor/resources.test.ts tests/manual-page-editor/fonts.test.ts tests/manual-page-editor/localization.test.ts tests/deck-generation/pageGenerationRunnerAttachments.test.ts tests/deck-workspace/pageHtmlPreview.test.ts
+node --import tsx/esm --test tests/api/hostPptBackend.test.ts tests/api/manualPageTransport.test.ts tests/manual-page-editor/resources.test.ts tests/manual-page-editor/fonts.test.ts tests/manual-page-editor/localization.test.ts tests/deck-generation/pageGenerationRunnerAttachments.test.ts tests/deck-workspace/pageHtmlPreview.test.ts
 ```
 
 在 `apps/ppt-app/executas/ppt-engine` 执行后端定向测试和真实渲染集成：

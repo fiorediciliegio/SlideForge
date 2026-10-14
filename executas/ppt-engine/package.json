@@ -1,7 +1,7 @@
 {
-  "name": "presenton-template-engine-executa",
+  "name": "slideforge-engine",
   "version": "6.0.13",
-  "description": "Presenton template engine vendored into an Anna Executa plugin",
+  "description": "SlideForge template engine: HTML slide workspace, rasterization and PPTX export",
   "private": true,
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -43,7 +43,6 @@
     "tool-lightvoss-ppt-engine-kqhra9hy": "./example_plugin.js"
   },
   "scripts": {
-    "sync:tool-manifests": "node ../../scripts/sync-tool-manifests.mjs",
     "sync:engine-manifest": "node ../../scripts/sync-ppt-engine-manifest.mjs",
     "validate:manifest": "node ./scripts/tool-manifest-validation.mjs ./manifest.json ./invoke-tools.json",
     "prebuild": "npm run sync:engine-manifest && npm run validate:manifest",

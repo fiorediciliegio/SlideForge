@@ -6,10 +6,10 @@ import path from "node:path";
 import test, { after } from "node:test";
 
 const previousHome = process.env.HOME;
-const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
 const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-export-mirror-home-"));
 process.env.HOME = homeDir;
-process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 const {
   commitAppExportArtifactMirror,
   createAppExportArtifactSnapshot,
@@ -21,7 +21,7 @@ const {
   startAppExportArtifactPublish,
   writeAppExportArtifactPublishJob,
 } = await import("../../src/app-workspace/index.js");
-const isolatedWorkspaceRoot = path.join(homeDir, "anna-workspace", "ppt");
+const isolatedWorkspaceRoot = path.join(homeDir, "slideforge-workspace", "ppt");
 const workspaceDirs: string[] = [];
 
 async function createAppWorkspace(input: Parameters<typeof createWorkspace>[0]) {
@@ -36,8 +36,8 @@ after(async () => {
   await Promise.all(workspaceDirs.map((workspace_dir) => publishAppWorkspaceSnapshot({ workspace_dir })));
   if (previousHome === undefined) delete process.env.HOME;
   else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
   await rm(homeDir, { recursive: true, force: true });
 });
 

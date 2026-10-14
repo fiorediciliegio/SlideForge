@@ -49,7 +49,7 @@ import type {
   SaveManualPageRevisionResult,
 } from "../../api/types";
 import { createAppHostUploadClient, type AppHostUploadClient } from "../../runtime/appHostUploadClient";
-import { connectAnnaRuntime } from "../../runtime/annaRuntime";
+import { connectHostRuntime } from "../../runtime/hostRuntime";
 import { formatMessage, type Messages } from "../../i18n/messages";
 import {
   DRAG_THRESHOLD_PX,
@@ -572,7 +572,7 @@ export function ManualPageEditorShell(props: Props) {
 
   useEffect(() => {
     let cancelled = false;
-    void Promise.all([createPptBackend(), connectAnnaRuntime()]).then(([nextBackend, runtime]) => {
+    void Promise.all([createPptBackend(), connectHostRuntime()]).then(([nextBackend, runtime]) => {
       if (cancelled) return;
       setBackend(nextBackend);
       setUploadClient(createAppHostUploadClient(runtime));

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
-import type { AnnaLlmCompleteInput, AnnaRuntime } from "../../src/runtime/annaRuntime";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
+import type { AnnaLlmCompleteInput, HostRuntime } from "../../src/runtime/hostRuntime";
 
 test("requirements retry sends the exact original request again", async () => {
   const requests: AnnaLlmCompleteInput[] = [];
@@ -11,7 +11,7 @@ test("requirements retry sends the exact original request again", async () => {
       slide_count: [5],
     }) } },
   ];
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: {
       complete: async (input) => {

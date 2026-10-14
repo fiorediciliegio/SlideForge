@@ -6,7 +6,7 @@ import os, sys, time, glob
 # ships a broken package until the engine exhausts its internal verify attempts
 # and the publish job fails. Works across every workspace: whichever one the
 # engine is actively generating for becomes the newest target.
-snap_root = os.environ.get("ANNA_SNAPSHOT_SYNC_ROOT", r"<workspace-snapshot-sync-root>")
+snap_root = os.environ.get("SLIDEFORGE_SNAPSHOT_SYNC_ROOT", r"<workspace-snapshot-sync-root>")
 duration = float(sys.argv[1]) if len(sys.argv) > 1 else 600.0
 deadline = time.time() + duration
 last = None

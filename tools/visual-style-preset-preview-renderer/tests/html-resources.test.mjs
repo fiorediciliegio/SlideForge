@@ -6,7 +6,7 @@ import test from "node:test";
 import { assertSelfContainedHtml, localResourceReferences } from "../src/html-resources.mjs";
 
 test("self-contained HTML rejects local resources that are not published", async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-preview-renderer-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-preview-renderer-"));
   try {
     const htmlPath = join(root, "page.html");
     await writeFile(htmlPath, '<img src="../assets/image.png"><style>.x{background:url(../assets/image.png)}</style>');

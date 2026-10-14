@@ -1,10 +1,10 @@
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime";
+import type { HostRuntime } from "../../src/runtime/hostRuntime";
 import {
   decodeInvokePayload, encodeInvokePayload, INVOKE_INLINE_BYTES, INVOKE_TRANSPORT_TOOL, jsonBytes,
 } from "../../executas/ppt-engine/invoke-transport.js";
 
 /** Adapt business-level test doubles to the real ordinary-invoke wire protocol. */
-export function withOrdinaryInvokeTransport(invoke: AnnaRuntime["tools"]["invoke"]): AnnaRuntime["tools"]["invoke"] {
+export function withOrdinaryInvokeTransport(invoke: HostRuntime["tools"]["invoke"]): HostRuntime["tools"]["invoke"] {
   return async (input, options) => {
     if (input.method !== INVOKE_TRANSPORT_TOOL) return invoke(input, options);
     const { tool, payload } = input.args as any;

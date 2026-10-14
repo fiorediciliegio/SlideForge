@@ -7,7 +7,7 @@ const originalWindow = (globalThis as typeof globalThis & { window?: Window }).w
 
 function setToolIds(toolIds: Record<string, string> | undefined) {
   (globalThis as typeof globalThis & { window?: Window }).window = {
-    __ANNA_TOOL_IDS__: toolIds,
+    __BUNDLED_TOOL_IDS__: toolIds,
   } as Window;
 }
 
@@ -16,7 +16,7 @@ describe("Bundled tool ids", () => {
     (globalThis as typeof globalThis & { window?: Window }).window = originalWindow;
   });
 
-  it("resolves the required PPT tool ids from the Anna sidecar", () => {
+  it("resolves the required PPT tool ids from the SlideForge sidecar", () => {
     setToolIds({
       "ppt-engine": "tool-engine",
     });
@@ -26,18 +26,18 @@ describe("Bundled tool ids", () => {
     });
   });
 
-  it("fails when the Anna tool id sidecar is missing", () => {
+  it("fails when the SlideForge tool id sidecar is missing", () => {
     setToolIds(undefined);
 
     assert.throws(
       () => resolvePptBundledToolIds(),
-      /Missing Anna bundled tool id for "ppt-engine"/,
+      /Missing SlideForge bundled tool id for "ppt-engine"/,
     );
   });
 
   it("does not substitute a test-export handle for the required engine", () => {
     setToolIds({ "ppt-engine-test-export": "tool-test-engine" });
-    assert.throws(() => resolvePptBundledToolIds(), /Missing Anna bundled tool id for "ppt-engine"/);
+    assert.throws(() => resolvePptBundledToolIds(), /Missing SlideForge bundled tool id for "ppt-engine"/);
   });
 
 });

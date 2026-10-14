@@ -2579,7 +2579,7 @@ function readAppWorkspaceListPageLimit(limit: unknown): number {
 /**
  * Bounded wire representation for app_list_workspaces.
  *
- * The local Anna bridge reads one JSON-RPC line at a time and has a ~64 KiB
+ * The local SlideForge bridge reads one JSON-RPC line at a time and has a ~64 KiB
  * limit. Do not return duplicated legacy task aliases here: callers can page
  * through this canonical workspace list without ever crossing that boundary.
  */

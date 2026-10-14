@@ -6,9 +6,9 @@ import test from "node:test";
 import sharp from "sharp";
 
 test("outline images survive save, confirmation and reopen; invalid images and unsafe previews are rejected", async () => {
-  const previous = process.env.ANNA_WORKSPACE_DIR;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-outline-images-"));
-  process.env.ANNA_WORKSPACE_DIR = root;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   const engine = await import("../../src/app-workspace/index.ts");
   try {
     const created = await engine.createAppWorkspace({ title: "Images" });
@@ -61,7 +61,7 @@ test("outline images survive save, confirmation and reopen; invalid images and u
     await assert.rejects(engine.resolveAppOutlineImage({ workspace_dir, asset_id: "portrait" }), /belong to this workspace/);
     for (const size of ["thumbnail", "large"] as const) await assert.rejects(engine.getAppOutlineImagePreview({ workspace_dir, asset_id: "portrait", size }), /belong to this workspace/);
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

@@ -22,7 +22,7 @@ function manifestWithParameter(parameter: Record<string, unknown>) {
   };
 }
 
-test("current ppt-engine manifest satisfies the Anna parameter schema requirements", async () => {
+test("current ppt-engine manifest satisfies the SlideForge parameter schema requirements", async () => {
   const manifest = JSON.parse(await readFile(path.join(PROJECT_DIR, "manifest.json"), "utf8"));
   assert.equal(validateToolManifest(manifest), manifest);
 });

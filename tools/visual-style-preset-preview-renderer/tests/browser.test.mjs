@@ -6,12 +6,12 @@ import test from "node:test";
 import sharp from "sharp";
 import { renderPreviews } from "../src/operations.mjs";
 
-const browserExecutable = process.env.ANNA_PREVIEW_BROWSER_EXECUTABLE;
+const browserExecutable = process.env.SLIDEFORGE_PREVIEW_BROWSER_EXECUTABLE;
 
 test("render creates and publishes a WebP with real Chromium", {
-  skip: browserExecutable ? false : "ANNA_PREVIEW_BROWSER_EXECUTABLE is not set",
+  skip: browserExecutable ? false : "SLIDEFORGE_PREVIEW_BROWSER_EXECUTABLE is not set",
 }, async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-preview-browser-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-preview-browser-"));
   try {
     const sourceRoot = join(root, "source");
     const outputRoot = join(root, "output");

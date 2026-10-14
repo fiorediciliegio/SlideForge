@@ -1,6 +1,6 @@
 import type { Locale } from "../i18n/messages";
 import { pickLocale } from "../i18n/locales";
-import type { LlmCompleteInput, AnnaRuntime } from "../runtime/annaRuntime";
+import type { LlmCompleteInput, HostRuntime } from "../runtime/hostRuntime";
 import type { AiOperationLogContext } from "./interactionLog";
 import { executeLlmRequest, type LlmRequestAttempt } from "./llmRequestExecutor";
 import { parseStructuredJson } from "./structuredJson";
@@ -107,7 +107,7 @@ function responseMetadata(response: unknown): { actual_model: string | null; tok
   };
 }
 
-export function createPageRefinementClassifier(runtime: AnnaRuntime): PageRefinementClassifier {
+export function createPageRefinementClassifier(runtime: HostRuntime): PageRefinementClassifier {
   return {
     async classifyForEvaluation(input) {
       const startedAt = performance.now();
@@ -119,7 +119,7 @@ export function createPageRefinementClassifier(runtime: AnnaRuntime): PageRefine
         request,
         logContext: input.logContext,
         timeoutMs: 600_000,
-        performanceLayer: "anna-page-refinement-classification-evaluation",
+        performanceLayer: "slideforge-page-refinement-classification-evaluation",
         accept: (rawText) => normalizeClassification(parseStructuredJson<unknown>(rawText)),
       });
       const failedAttempts = result.attempts.filter((attempt) => attempt.status === "retry");

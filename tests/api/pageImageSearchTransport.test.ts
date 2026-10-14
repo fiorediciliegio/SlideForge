@@ -1,9 +1,9 @@
 import { withOrdinaryInvokeTransport } from "../helpers/invokeRuntime";
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAnnaPptBackend } from "../../src/api/annaPptBackend";
+import { createAnnaPptBackend } from "../../src/api/hostPptBackend";
 import type { PageImageSearchRequest, PageImageSearchTask } from "../../src/api/pageImageSearchTypes";
-import type { AnnaRuntime, AnnaToolInvokeInput } from "../../src/runtime/annaRuntime";
+import type { HostRuntime, ToolInvokeInput } from "../../src/runtime/hostRuntime";
 import { readCheckpoint } from "../../src/features/deck-generation/linearResearchWorkflow";
 import { confirmedRequirements } from "../fixtures/imageRequirements";
 
@@ -11,16 +11,16 @@ test("按页任务超过旧阈值仍提交原始对象，由普通 invoke 统一
   const previousWindow = Object.getOwnPropertyDescriptor(globalThis, "window");
   const previousFetch = globalThis.fetch;
   Object.defineProperty(globalThis, "window", { configurable: true, value: {
-    __ANNA_TOOL_IDS__: { "ppt-engine": "tool-ppt-engine" },
+    __BUNDLED_TOOL_IDS__: { "ppt-engine": "tool-ppt-engine" },
   } });
-  const calls: AnnaToolInvokeInput[] = [];
+  const calls: ToolInvokeInput[] = [];
   const uploads: string[] = [];
   let negotiatedSize = 0;
   globalThis.fetch = async (_url, options) => {
     uploads.push(await new Response(options?.body).text());
     return new Response("", { status: 200 });
   };
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: withOrdinaryInvokeTransport(async (input) => { calls.push(input); return { success: true, data: {} }; }) },
     llm: { complete: async () => ({}) },
     agent: { session: async () => { throw new Error("not used"); } },

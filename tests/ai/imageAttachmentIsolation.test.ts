@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type { AttachmentBrief, AttachmentContext, UploadedSourceMaterial, WorkspaceResult } from "../../src/api/types";
 import type { PptBackend } from "../../src/api/pptBackend";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime";
+import type { HostRuntime } from "../../src/runtime/hostRuntime";
 import { buildPresentationRequirementsRequest } from "../../src/ai/requirementsPrompt";
 import { formatAttachmentSourcesForPrompt } from "../../src/ai/attachmentSourceText";
 import { formatUserProvidedAttachmentContextForPrompt } from "../../src/ai/attachmentContextPrompt";
@@ -75,7 +75,7 @@ test("独立图片分析支持无文字图片，并沿用同会话格式修复",
       },
       delete: async () => { closed++; },
     };
-  } } } as unknown as AnnaRuntime;
+  } } } as unknown as HostRuntime;
   const result = await createImageAttachmentBriefClient(runtime).complete({
     filename: "avatar.png", userBrief: "使用原图",
     attachment: { type: "image/png", url: "https://example.test/avatar.png", filename: "avatar.png" },

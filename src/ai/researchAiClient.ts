@@ -2,7 +2,7 @@ import { requirementsForPrompt } from "./requirementsFormatting";
 import type { AttachmentContext, PresentationRequirements, PresentationResearchRequirements } from "../api/types";
 import type { Locale } from "../i18n/messages";
 import { pickLocale } from "../i18n/locales";
-import type { LlmCompleteInput, AnnaRuntime } from "../runtime/annaRuntime";
+import type { LlmCompleteInput, HostRuntime } from "../runtime/hostRuntime";
 import type { AiOperationLogContext } from "./interactionLog";
 import { parseStructuredJson } from "./structuredJson";
 import { executeLlmRequest, LlmRequestExecutionError, type LlmRequestAttempt } from "./llmRequestExecutor";
@@ -60,7 +60,7 @@ export interface ResearchAiClient {
 }
 
 async function completeJson<T>(
-  runtime: AnnaRuntime,
+  runtime: HostRuntime,
   messages: LlmCompleteInput["messages"],
   accept: (value: unknown) => T,
   logContext?: AiOperationLogContext,
@@ -74,7 +74,7 @@ async function completeJson<T>(
     request,
     logContext,
     timeoutMs: 600_000,
-    performanceLayer: "anna-research-llm",
+    performanceLayer: "slideforge-research-llm",
     accept: (rawText) => accept(parseStructuredJson<unknown>(rawText)),
   });
   return result.value;
@@ -149,7 +149,7 @@ function normalizeResearchRecommendation(value: unknown): PresentationResearchRe
   return { web: choice("web"), images: choice("images") };
 }
 
-export function createResearchAiClient(runtime: AnnaRuntime): ResearchAiClient {
+export function createResearchAiClient(runtime: HostRuntime): ResearchAiClient {
   return {
     async recommendResearch(input) {
       const recommendationLanguage = pickLocale(input.locale, RESEARCH_REASON_LANGUAGE);
@@ -201,7 +201,7 @@ export function createResearchAiClient(runtime: AnnaRuntime): ResearchAiClient {
         request,
         logContext: input.logContext,
         timeoutMs: 600_000,
-        performanceLayer: "anna-research-llm-evaluation",
+        performanceLayer: "slideforge-research-llm-evaluation",
         accept: (rawText) => normalizeResearchRecommendation(parseStructuredJson<unknown>(rawText)),
       });
       const failedAttempts = result.attempts.filter((attempt) => attempt.status === "retry");

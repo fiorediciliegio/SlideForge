@@ -62,7 +62,7 @@ async function startPluginProcess(workspaceRoot: string): Promise<PluginProcess>
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("../..", import.meta.url)),
     stdio: ["pipe", "pipe", "pipe"],
-    env: { ...process.env, ANNA_WORKSPACE_DIR: workspaceRoot },
+    env: { ...process.env, SLIDEFORGE_WORKSPACE_DIR: workspaceRoot },
   });
   child.stderr.resume();
   return new PluginProcess(child);
@@ -70,8 +70,8 @@ async function startPluginProcess(workspaceRoot: string): Promise<PluginProcess>
 
 test("app_list_user_templates returns metadata only and never touches the network", { timeout: 60000 }, async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "user-template-list-metadata-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   const plugin = await startPluginProcess(temporary);
   try {
     // Seed one ready template directly through the storage layer.
@@ -111,8 +111,8 @@ test("app_list_user_templates returns metadata only and never touches the networ
     assert.ok(elapsed < 15000, `list took ${elapsed}ms`);
   } finally {
     await plugin.close();
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

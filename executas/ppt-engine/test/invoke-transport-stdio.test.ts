@@ -26,7 +26,7 @@ test("real stdio enforces the gateway and carries large responses, gzip and uplo
   assert.ok(address && typeof address === "object");
   const child = spawn(process.execPath, ["app_stdio.js"], {
     cwd: fileURLToPath(new URL("..", import.meta.url)),
-    env: { ...process.env, HOME: directory, ANNA_WORKSPACE_DIR: path.join(directory, "workspaces") },
+    env: { ...process.env, HOME: directory, SLIDEFORGE_WORKSPACE_DIR: path.join(directory, "workspaces") },
     stdio: ["pipe", "pipe", "pipe"],
   });
   const exited = once(child, "exit");

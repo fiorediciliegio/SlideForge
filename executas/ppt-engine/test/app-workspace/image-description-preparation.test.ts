@@ -8,8 +8,8 @@ import sharp from "sharp";
 
 test("空描述素材可保存选图和快照；描述按来源保存，运行恢复复用，放弃后的写入隔离", async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-description-preparation-"));
-  const previous = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = root;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   try {
     const api = await import("../../src/app-workspace/index");
     const workspace = await api.createAppWorkspace({ title: "图片准备" });
@@ -72,7 +72,7 @@ test("空描述素材可保存选图和快照；描述按来源保存，运行�
     assert.ok(zip.file("research/image-description-preparation.json"));
     assert.ok(zip.file(`uploaded-sources/asset/manual/${path.basename(manual.file_path)}`));
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

@@ -131,7 +131,7 @@ test("concurrent transport channel uploads preserve their parent invoke context"
 
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("..", import.meta.url)),
-    env: { ...process.env, HOME: homeDir, ANNA_WORKSPACE_DIR: path.join(homeDir, "anna-workspace") },
+    env: { ...process.env, HOME: homeDir, SLIDEFORGE_WORKSPACE_DIR: path.join(homeDir, "slideforge-workspace") },
     stdio: ["pipe", "pipe", "pipe"],
   });
   child.stderr.resume();

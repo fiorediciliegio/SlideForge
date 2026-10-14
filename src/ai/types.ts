@@ -1,5 +1,5 @@
 import type { OutlineDetail, Slide } from "../data/mockDeck";
-import type { LlmCompleteInput } from "../runtime/annaRuntime";
+import type { LlmCompleteInput } from "../runtime/hostRuntime";
 import type {
   PresentationRequirements,
   PresentationRequirementsGeneratedCandidates,

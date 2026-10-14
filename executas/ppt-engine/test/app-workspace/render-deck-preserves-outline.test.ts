@@ -52,15 +52,15 @@ async function waitForProgress(
 
 function createWorkspaceDir(homeDir: string) {
   const suffix = String(randomInt(0, 1_000_000)).padStart(6, "0");
-  return path.join(homeDir, "anna-workspace", "ppt", `ppt-20260602-${suffix}`);
+  return path.join(homeDir, "slideforge-workspace", "ppt", `ppt-20260602-${suffix}`);
 }
 
 test("renderAppWorkspaceDeckHtml preserves the confirmed outline artifact", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-render-outline-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
     const engine = await import("../../src/app-workspace/index.ts");
     const { renderAppWorkspaceDeckHtml } = engine;
@@ -182,8 +182,8 @@ test("renderAppWorkspaceDeckHtml preserves the confirmed outline artifact", asyn
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }
@@ -191,10 +191,10 @@ test("renderAppWorkspaceDeckHtml preserves the confirmed outline artifact", asyn
 
 test("renderAppWorkspacePagePreview includes stable slide id in preview filenames", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-page-preview-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   const engine = await import(`../../src/app-workspace/index.ts?preview=${Date.now()}`);
   const { renderAppWorkspacePagePreview } = engine;
@@ -270,8 +270,8 @@ test("renderAppWorkspacePagePreview includes stable slide id in preview filename
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }
@@ -279,10 +279,10 @@ test("renderAppWorkspacePagePreview includes stable slide id in preview filename
 
 test("renderAppWorkspacePagePreview typechecks canonical string slide sources before rendering", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-page-preview-typecheck-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   const engine = await import(`../../src/app-workspace/index.ts?typecheck=${Date.now()}`);
   const { renderAppWorkspacePagePreview } = engine;
@@ -333,8 +333,8 @@ test("renderAppWorkspacePagePreview typechecks canonical string slide sources be
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }

@@ -16,15 +16,15 @@ async function readJson<T>(filePath: string): Promise<T> {
 
 function createWorkspaceDir(homeDir: string) {
   const suffix = String(randomInt(0, 1_000_000)).padStart(6, "0");
-  return path.join(homeDir, "anna-workspace", "ppt", "tasks", `ppt-20260601-${suffix}`);
+  return path.join(homeDir, "slideforge-workspace", "ppt", "tasks", `ppt-20260601-${suffix}`);
 }
 
 test("PPTX export status reads fixed status file and fails an interrupted job", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-pptx-status-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   const {
     getAppExportArtifact,
@@ -117,8 +117,8 @@ test("PPTX export status reads fixed status file and fails an interrupted job", 
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }

@@ -6,12 +6,12 @@ import {
   executeLlmRequest,
   LlmRequestExecutionError,
 } from "../../src/ai/llmRequestExecutor.ts";
-import type { AnnaLlmCompleteInput, AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { AnnaLlmCompleteInput, HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 function runtimeWithResponses(
   requests: AnnaLlmCompleteInput[],
   responses: Array<unknown | Error>,
-): AnnaRuntime {
+): HostRuntime {
   return {
     tools: { invoke: async () => ({}) },
     llm: {

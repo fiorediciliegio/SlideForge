@@ -81,8 +81,8 @@ async function ensureVisualMaster(input: RunDeckGenerationInput) {
           domain: "style_guide",
           operation: "select_aesthetic_reference",
           operation_id: input.aiLogger.createOperationId("style_guide", "select_aesthetic_reference"),
-          provider: "anna",
-          runtime_mode: "anna",
+          provider: "host",
+          runtime_mode: "host",
         } : undefined,
       });
       await input.backend.recordWorkspaceAestheticReferenceSelection({ workspace_dir: input.workspace.workspace_dir, target: "visual-master", path: selectedPath });
@@ -102,8 +102,8 @@ async function ensureVisualMaster(input: RunDeckGenerationInput) {
       domain: "style_guide",
       operation: "generate_visual_master_html",
       operation_id: input.aiLogger.createOperationId("style_guide", "generate_visual_master_html"),
-      provider: "anna",
-      runtime_mode: "anna",
+      provider: "host",
+      runtime_mode: "host",
     } : undefined,
   });
   return input.backend.commitWorkspaceVisualMasterHtml({ workspace_dir: input.workspace.workspace_dir, content: result.html });

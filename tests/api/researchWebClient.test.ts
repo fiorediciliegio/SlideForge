@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
 import { createResearchWebClient } from "../../src/api/researchWebClient.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 describe("Research Web Client", () => {
   it("uses the official host Web API with the confirmed limits", async () => {
@@ -41,7 +41,7 @@ describe("Research Web Client", () => {
           get_url: `https://aps.example/${(input as { path: string }).path}`,
         }),
       },
-    } as unknown as AnnaRuntime;
+    } as unknown as HostRuntime;
     const client = createResearchWebClient(runtime, {
       appendWorkspaceLog: async (input) => {
         logWrites.push({ channel: input.channel, entry: structuredClone(input.entry), payload_keys: input.payload_keys });
@@ -97,7 +97,7 @@ describe("Research Web Client", () => {
       web: {
         search: async () => ({ unexpected: true }),
         fetch: async () => {
-          const error = new Error("Anna fetch failed", { cause: new Error("Provider timeout") }) as Error & {
+          const error = new Error("SlideForge fetch failed", { cause: new Error("Provider timeout") }) as Error & {
             code?: string;
             data?: Record<string, unknown>;
           };
@@ -108,7 +108,7 @@ describe("Research Web Client", () => {
         },
         image_search: async () => ({ results: [] }),
       },
-    } as unknown as AnnaRuntime;
+    } as unknown as HostRuntime;
     const client = createResearchWebClient(runtime, {
       appendWorkspaceLog: async (input) => { logWrites.push(structuredClone(input.entry)); },
     });
@@ -124,7 +124,7 @@ describe("Research Web Client", () => {
 
     await assert.rejects(
       () => client.fetch({ urls: ["https://example.com"] }, context()),
-      /Anna fetch failed/,
+      /SlideForge fetch failed/,
     );
     const invokeFailure = logWrites.find((entry) => entry.method === "fetch" && entry.status === "failed");
     const error = invokeFailure?.error as Record<string, unknown>;
@@ -145,7 +145,7 @@ describe("Research Web Client", () => {
         fetch: async () => ({ pages: [] }),
         image_search: async () => ({ results: [] }),
       },
-    } as unknown as AnnaRuntime;
+    } as unknown as HostRuntime;
     const originalWarn = console.warn;
     console.warn = () => undefined;
     try {

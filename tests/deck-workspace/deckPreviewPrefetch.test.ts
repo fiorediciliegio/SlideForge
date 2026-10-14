@@ -29,8 +29,8 @@ function mountDeck(workspaceDir: string) {
   }> = [];
   const preparations: Array<{ pageId: string; priority: string }> = [];
   const unexpected: string[] = [];
-  window.__ANNA_TOOL_IDS__ = { "ppt-engine": "test-engine" };
-  window.AnnaAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
+  window.__BUNDLED_TOOL_IDS__ = { "ppt-engine": "test-engine" };
+  window.HostAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
     const args = input.args as GetWorkspacePageHtmlInput & { priority: string; kind?: string };
     if (input.method === "app_prepare_workspace_page_preview") {
       if (args.kind !== "thumbnail") preparations.push({ pageId: args.page_id!, priority: args.priority });

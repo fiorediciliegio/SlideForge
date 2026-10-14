@@ -32,8 +32,8 @@ async function saveMaster(temporary: string, id: string, html: string) {
 
 test("master two-slot versioning and ready re-publish", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "master-versioning-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     const coverPath = await staged(temporary, "cover.png", PNG_BYTES);
     const record = await createImageUserTemplate({ files: [{ filename: "cover.png", staging_file_path: coverPath, size_bytes: PNG_BYTES.length }] });
@@ -88,7 +88,7 @@ test("master two-slot versioning and ready re-publish", async () => {
     assert.match(pageHtmls.previous_html ?? "", /v1|slide/);
     await assert.rejects(getUserTemplateHtmls(id, 99), /Unknown/);
   } finally {
-    process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

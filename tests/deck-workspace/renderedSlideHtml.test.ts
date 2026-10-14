@@ -101,8 +101,8 @@ test("资源解析超时时显示重试入口，不打开页面恢复弹窗", as
   const workspaceDir = "/timeout-result-preview";
   const pageId = "timeout-page";
   let recoveryChecks = 0;
-  window.__ANNA_TOOL_IDS__ = { "ppt-engine": "test-engine" };
-  window.AnnaAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
+  window.__BUNDLED_TOOL_IDS__ = { "ppt-engine": "test-engine" };
+  window.HostAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
     if (input.method === "app_prepare_workspace_page_preview") return { success: true, data: {
       task_id: "prepared", workspace_dir: workspaceDir, page_id: pageId, status: "ready", input_version: "current",
     } };
@@ -150,8 +150,8 @@ test("确认恢复后可编辑和优化，取消保留入口，不自动展示�
   let clicked = 0;
   const events: string[] = [];
   const calls: string[] = [];
-  window.__ANNA_TOOL_IDS__ = { "ppt-engine": "test-engine" };
-  window.AnnaAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
+  window.__BUNDLED_TOOL_IDS__ = { "ppt-engine": "test-engine" };
+  window.HostAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
     calls.push(input.method);
     if (input.method === "app_run_workspace_snapshot_publish_dedicated_invoke") return { success: true, data: { status: "completed" } };
     if (input.method === "app_prepare_workspace_page_preview") return { success: true, data: {

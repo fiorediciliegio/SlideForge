@@ -7,8 +7,8 @@ import { SLIDE_FORMATS, slideFormatFromHtml } from "../../src/slide-format.js";
 
 test("page size persists through requirements and source uploads, and cannot change after authoring", async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-format-requirements-"));
-  const previous = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = root;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   const api = await import("../../src/app-workspace/index.js");
   try {
     for (const aspect_ratio of Object.keys(SLIDE_FORMATS)) {
@@ -59,8 +59,8 @@ test("page size persists through requirements and source uploads, and cannot cha
       requirements: { ...requirements, selections: { ...requirements.selections, aspect_ratio: "4:3" } },
       template_reference_staging_file_path: snapshotPath, template_reference_expected_size_bytes: Buffer.byteLength(snapshot) }), /Page size is fixed/);
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

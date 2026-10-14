@@ -62,7 +62,7 @@ async function inspectTemplatePage(browser, presetDirectory, reference, label, o
 }
 
 async function createStagingRoot(outputRoot) {
-  return mkdtemp(join(dirname(outputRoot), ".anna-deck-preview-staging-"));
+  return mkdtemp(join(dirname(outputRoot), ".slideforge-deck-preview-staging-"));
 }
 
 async function discardDirectory(path) {
@@ -165,7 +165,7 @@ async function countLegacyImages(presetDirectory) {
 }
 
 async function publishStaging(stagingRoot, outputRoot, sourcePresets, report) {
-  const backupRoot = await mkdtemp(join(dirname(outputRoot), ".anna-deck-preview-backup-"));
+  const backupRoot = await mkdtemp(join(dirname(outputRoot), ".slideforge-deck-preview-backup-"));
   const published = [];
   try {
     for (const sourcePreset of sourcePresets) {

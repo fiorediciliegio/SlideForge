@@ -1,5 +1,5 @@
 import { beginPerformanceSpan } from "../performance/performanceRecorder";
-import type { LlmCompleteInput, AnnaRuntime } from "../runtime/annaRuntime";
+import type { LlmCompleteInput, HostRuntime } from "../runtime/hostRuntime";
 import type { AiOperationLogContext } from "./interactionLog";
 import { shortLogHash } from "./interactionLog";
 
@@ -64,7 +64,7 @@ interface CompletionResult {
 }
 
 export interface ExecuteLlmRequestInput<T> {
-  runtime: AnnaRuntime;
+  runtime: HostRuntime;
   request: LlmCompleteInput;
   accept: (rawText: string, rawResponse: unknown) => T | Promise<T>;
   logContext?: AiOperationLogContext;

@@ -65,8 +65,8 @@ export const initialDeck: Slide[] = [
     subtitle: "Repeated workflows can become reusable AI capabilities."
   },
   {
-    title: "How Anna Executes Across Tools",
-    subtitle: "Anna connects reasoning, local execution, and approved tools."
+    title: "How SlideForge Executes Across Tools",
+    subtitle: "SlideForge connects reasoning, local execution, and approved tools."
   },
   {
     title: "Business Development Example",
@@ -87,7 +87,7 @@ export const outlineDetails: OutlineDetail[] = [
   {
     page_type: "cover",
     title: "AI Agents That Do the Work",
-    content: "Contrast chat-based AI with agents that execute workflows. Explain how repeated processes become reusable AI skills. Position Anna as the system that turns instructions into executable work."
+    content: "Contrast chat-based AI with agents that execute workflows. Explain how repeated processes become reusable AI skills. Position SlideForge as the system that turns instructions into executable work."
   },
   {
     page_type: "standard",
@@ -101,7 +101,7 @@ export const outlineDetails: OutlineDetail[] = [
   },
   {
     page_type: "standard",
-    title: "How Anna Executes Across Tools",
+    title: "How SlideForge Executes Across Tools",
     content: "Introduce local tools, browser actions, and approved services. Separate conversational reasoning from execution. Emphasize that users remain in control."
   },
   {
@@ -117,7 +117,7 @@ export const outlineDetails: OutlineDetail[] = [
   {
     page_type: "standard",
     title: "Build Your First AI Skill",
-    content: "Choose one repeated process. Define its inputs and outputs. Package it so Anna can run it again."
+    content: "Choose one repeated process. Define its inputs and outputs. Package it so SlideForge can run it again."
   }
 ];
 

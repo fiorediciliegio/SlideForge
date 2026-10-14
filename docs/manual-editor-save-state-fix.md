@@ -60,7 +60,7 @@ node --import tsx/esm --test tests/manual-page-editor/interactions.test.ts tests
 
 ## 本地运行注意事项
 
-本地 Harness 的会话只对当前开发服务进程有效。若 5180 端口被其他工作区的 `anna-app dev` 占用，刷新后可能看到 `unknown session_id`。测试当前分支前应确保只有当前工作区使用 5180 端口，并重新打开：
+本地 Harness 的会话只对当前开发服务进程有效。若 5180 端口被其他工作区的 `slideforge-app dev` 占用，刷新后可能看到 `unknown session_id`。测试当前分支前应确保只有当前工作区使用 5180 端口，并重新打开：
 
 ```text
 http://localhost:5180/

@@ -1,4 +1,4 @@
-import type { AnnaRuntime } from "../runtime/annaRuntime";
+import type { HostRuntime } from "../runtime/hostRuntime";
 import type { AppendWorkspaceLogInput } from "./types";
 import { beginPerformanceSpan } from "../performance/performanceRecorder";
 
@@ -383,8 +383,8 @@ function responseForLog(method: ResearchWebMethod, value: unknown) {
   return { ...value, get_url: "[redacted: short-lived APS URL]" };
 }
 
-export function createResearchWebClient(runtime: AnnaRuntime, options: ResearchWebClientOptions): ResearchWebClient {
-  if (!runtime.web) throw new Error("Anna Runtime does not expose the official web namespace.");
+export function createResearchWebClient(runtime: HostRuntime, options: ResearchWebClientOptions): ResearchWebClient {
+  if (!runtime.web) throw new Error("SlideForge Runtime does not expose the official web namespace.");
   const web = runtime.web;
 
   async function appendLog(
@@ -425,8 +425,8 @@ export function createResearchWebClient(runtime: AnnaRuntime, options: ResearchW
       operation_id: input.context.operation_id,
       interaction_id: interactionId,
       method: input.method,
-      provider: "anna",
-      runtime_mode: "anna",
+      provider: "host",
+      runtime_mode: "host",
     };
     const callerInputSnapshot = snapshotForLog(input.callerInput, "$.input");
     const runtimeRequestSnapshot = snapshotForLog(input.runtimeRequest, "$.runtime_request");
@@ -450,7 +450,7 @@ export function createResearchWebClient(runtime: AnnaRuntime, options: ResearchW
     const performanceSpan = beginPerformanceSpan({
       operationName: input.method === "image_search" ? "image.search" : input.method === "image_fetch" ? "image.fetch" : `web.${input.method}`,
       workspaceId: input.context.workspace_dir.split(/[\\/]/).filter(Boolean).at(-1),
-      attributes: { layer: "anna-web" },
+      attributes: { layer: "slideforge-web" },
     });
     try {
       rawResponse = await input.call();
@@ -559,7 +559,7 @@ export function createResearchWebClient(runtime: AnnaRuntime, options: ResearchW
     async getImageDownloadUrl(path) {
       const files = runtime.files;
       if (!files || typeof files.download_url !== "function") {
-        throw new Error("Anna Runtime does not expose files.download_url for APS image recovery");
+        throw new Error("SlideForge Runtime does not expose files.download_url for APS image recovery");
       }
       const result = await files.download_url({ path, ttl_seconds: 1800 });
       if (!result || typeof result.get_url !== "string" || result.get_url.length === 0) {

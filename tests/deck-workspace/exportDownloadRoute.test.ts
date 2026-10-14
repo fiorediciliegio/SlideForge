@@ -51,12 +51,4 @@ describe("export download route", () => {
     assert.match(source, /artifact\.mirrorStatus !== "ready" \|\| !artifact\.mirrorPath/);
   });
 
-  it("declares the files.download host API in the App manifest", async () => {
-    const manifest = JSON.parse(await readFile(path.resolve("manifest.json"), "utf8")) as {
-      ui: { host_api: { files?: string[] } };
-    };
-
-    assert.ok(manifest.ui.host_api.files?.includes("download"));
-    assert.ok(manifest.ui.host_api.files?.includes("download_url"));
-  });
 });

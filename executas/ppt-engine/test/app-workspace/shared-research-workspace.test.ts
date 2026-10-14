@@ -7,10 +7,10 @@ import path from "node:path";
 
 test("shared research artifacts retain only reusable imported image assets", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-shared-research-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const {
     createAppWorkspace,
     getAppSharedResearchContext,
@@ -181,7 +181,7 @@ test("shared research artifacts retain only reusable imported image assets", asy
     assert.match(await readFile(context.web_summary_path, "utf8"), /Useful summary/);
   } finally {
     process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
   }
 });

@@ -96,7 +96,7 @@ export async function generatePageAlternatives(input: {
         logContext: input.logger ? {
           logger: input.logger, workspace_dir: workspaceDir, domain: "page_agent", operation: beautify ? "beautify_page_alternative" : "generate_page_alternative",
           operation_id: input.logger.createOperationId("page_agent", beautify ? "beautify_page_alternative" : "generate_page_alternative"),
-          page_id: page.page_id, page_index: page.index, provider: "anna", runtime_mode: "anna",
+          page_id: page.page_id, page_index: page.index, provider: "host", runtime_mode: "host",
         } : undefined,
       }, !beautify && isPageHtmlGenerationSystemPromptEnabled() ? HTML_GENERATION_SYSTEM_PROMPT : undefined);
       await input.backend.pageRegeneration({ action: "submit", workspace_dir: workspaceDir, batch_id: batch.id,

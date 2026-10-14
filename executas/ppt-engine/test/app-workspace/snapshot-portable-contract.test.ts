@@ -6,16 +6,16 @@ import test, { after } from "node:test";
 import { createHash } from "node:crypto";
 
 const previousHome = process.env.HOME;
-const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
 const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-snapshot-portable-contract-"));
 process.env.HOME = homeDir;
-process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 const api = await import("../../src/app-workspace/index.ts");
 
 after(async () => {
   if (previousHome === undefined) delete process.env.HOME; else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
   await rm(homeDir, { recursive: true, force: true });
 });
 

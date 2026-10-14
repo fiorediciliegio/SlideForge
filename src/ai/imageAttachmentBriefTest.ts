@@ -1,5 +1,5 @@
 import { executeAgentSession } from "../agent/agentSessionExecutor";
-import type { AgentImageAttachment, AgentRunFrame, AnnaRuntime } from "../runtime/annaRuntime";
+import type { AgentImageAttachment, AgentRunFrame, HostRuntime } from "../runtime/hostRuntime";
 
 export const DEFAULT_IMAGE_ATTACHMENT_BRIEF_MODEL = "google/gemini-3-flash-preview";
 
@@ -161,7 +161,7 @@ function parseBrief(rawText: string, filename: string): ImageAttachmentBrief {
   };
 }
 
-export function createImageAttachmentBriefClient(runtime: AnnaRuntime): ImageAttachmentBriefClient {
+export function createImageAttachmentBriefClient(runtime: HostRuntime): ImageAttachmentBriefClient {
   return {
     async complete(input) {
       let telemetry = {

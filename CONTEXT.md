@@ -158,7 +158,7 @@ User-facing Chinese label: 收束/下一步页
 _Avoid_: Thank-you Page, Empty Closing
 
 **Presentation Identity**:
-The presenter or organization identity shown on a Formal Presentation Cover. User-provided identity takes precedence; when the user provides neither, the default Presentation Identity is ANNA AI.
+The presenter or organization identity shown on a Formal Presentation Cover. User-provided identity takes precedence; when the user provides neither, the default Presentation Identity is SlideForge.
 User-facing Chinese label: 演示身份
 _Avoid_: Author, Owner, Speaker Note
 
@@ -650,7 +650,7 @@ Dev: "Can the support action be called Log Export if it includes the whole Works
 
 Expert: "No. Call it a Workspace Diagnostic Bundle so users understand that uploaded sources, authoring files, logs, and generated artifacts may all be included."
 
-Dev: "Anna image search returned a candidate, but the image never reached the Workspace. Is the Research Log enough to locate the failure?"
+Dev: "SlideForge image search returned a candidate, but the image never reached the Workspace. Is the Research Log enough to locate the failure?"
 
 Expert: "No. The Research Log shows the external image-search interaction; use the shared operation identifier with the Workspace Storage Transfer Log to distinguish the later safe HTTPS download and Host Upload stages."
 

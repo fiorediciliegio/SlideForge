@@ -20,7 +20,7 @@ export interface DownloadSinkHost {
  * into an offscreen frame rather than the app's own document means an expired
  * URL renders its error body somewhere invisible instead of navigating the app
  * away, and no popup is left behind when the host blocks the download outright
- * (see ADR-0025: the Anna Host iframe has no `allow-downloads`).
+ * (see ADR-0025: the SlideForge Host iframe has no `allow-downloads`).
  */
 export function startBrowserDownload(
   href: string,

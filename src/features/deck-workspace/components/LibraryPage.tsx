@@ -1,6 +1,6 @@
 import { Archive, ChevronDown, Cpu, Download, Edit3, Layers, MemoryStick, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
-import appManifest from "../../../../app.json";
+import appManifest from "../../../../src/appMeta";
 import type {
   GetWorkspaceSnapshotInfoResult,
   PptAgentResourceInfo,
@@ -194,7 +194,7 @@ export function LibraryPage({
 
       <div className="runtime-info-box">
         <div className="runtime-info-header"><strong>{t.library.runtimeInfoTitle}</strong></div>
-        <div className="pref-row"><span>{t.library.annaDeckVersion}</span><strong>{appManifest.version}</strong></div>
+        <div className="pref-row"><span>{t.library.appVersion}</span><strong>{appManifest.version}</strong></div>
         <div className="pref-row"><span>{t.library.pptEngineVersion}</span><strong>{runtimeInfo?.ppt_engine_version ?? "—"}</strong></div>
         {runtimeInfoError ? <div className="runtime-info-error" title={runtimeInfoError}>{t.library.runtimeInfoUnavailable}</div> : null}
       </div>

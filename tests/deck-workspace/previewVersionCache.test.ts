@@ -21,7 +21,7 @@ describe("manual-save preview cache key", () => {
   it("applyManualPageUpdate stamps a per-save preview version", async () => {
     const hook = await readFile(join(SRC, "features/deck-workspace/hooks/useDeckWorkspace.ts"), "utf8");
     const apply = hook.slice(hook.indexOf("function applyManualPageUpdate"), hook.indexOf("function ", hook.indexOf("function applyManualPageUpdate") + 10));
-    // anna-ppt keys previews off the server-provided fingerprint for the freshly
+    // slideforge-ppt keys previews off the server-provided fingerprint for the freshly
     // saved HTML, so the manual-save path keeps that fingerprint instead of
     // clearing it; the per-save version below still has to lead the cache-key
     // chain (see the consumer test).

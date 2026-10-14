@@ -16,8 +16,8 @@ async function staged(temporary: string, name: string, bytes: Buffer) {
 
 test("image sources create a template whose references are the images themselves", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "image-template-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     await assert.rejects(createImageUserTemplate({ files: [] }), /between 1 and 6/);
     await assert.rejects(createImageUserTemplate({ files: Array.from({ length: 7 }, (_, i) => ({ filename: `${i}.png`, staging_file_path: path.join(temporary, "missing"), size_bytes: 1 })) }), /between 1 and 6/);
@@ -63,8 +63,8 @@ test("image sources create a template whose references are the images themselves
     const pptxRecord = await createUserTemplate({ filename: "deck.pptx", staging_file_path: pptx.staging_file_path, size_bytes: pptx.size_bytes });
     assert.equal(pptxRecord.source_kind, undefined);
   } finally {
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

@@ -35,8 +35,8 @@ test("validateDesignProfile enforces schema bounds", () => {
 
 test("saveUserTemplateProfile persists, hydrates and locks after publish", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "design-profile-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     const source = path.join(temporary, "source.pptx");
     await writeFile(source, "PKsource");
@@ -73,8 +73,8 @@ test("saveUserTemplateProfile persists, hydrates and locks after publish", async
     assert.equal(published.profile_ready, true, "profile survives publication");
     await assert.rejects(saveUserTemplateProfile(record.id, validProfile), /immutable/);
   } finally {
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

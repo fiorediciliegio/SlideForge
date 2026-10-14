@@ -130,7 +130,7 @@ async function runBinaryRelease(args: string[], input?: string) {
   });
 }
 
-test("write-manifest writes the Anna binary distribution manifest", async () => {
+test("write-manifest writes the SlideForge binary distribution manifest", async () => {
   const dir = await makeTempDir();
   const toolManifestPath = await writeToolManifest(dir);
   const outputPath = path.join(dir, "stage", "manifest.json");

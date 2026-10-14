@@ -60,7 +60,7 @@ describe("message bundles", () => {
 
   it("translates all functional sections in ja/de without English fallback", () => {
     // 全功能域已翻译：ja/de 不再依赖 ...en 垫底，抽查此前最后覆盖的域
-    assert.equal(messages.ja.brief.title, "Anna にどんなデッキを作成させますか？");
+    assert.equal(messages.ja.brief.title, "SlideForge にどんなデッキを作成させますか？");
     assert.notEqual(messages.de.brief.title, en.brief.title);
     assert.notEqual(messages.ja.batchTesting.title, en.batchTesting.title);
     assert.notEqual(messages.de.manualEditor.title, en.manualEditor.title);

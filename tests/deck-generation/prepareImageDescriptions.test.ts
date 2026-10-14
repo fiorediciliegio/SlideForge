@@ -3,7 +3,7 @@ import test from "node:test";
 import { AgentRunCancelledError, createAgentClient } from "../../src/agent/agentClient";
 import type { PptBackend } from "../../src/api/pptBackend";
 import type { SharedResearchContextResult, SharedResearchImageAsset } from "../../src/api/types";
-import type { AnnaAgentSessionRunInput, AnnaRuntime } from "../../src/runtime/annaRuntime";
+import type { AnnaAgentSessionRunInput, HostRuntime } from "../../src/runtime/hostRuntime";
 import { prepareSelectedImageDescriptions } from "../../src/features/deck-generation/prepareImageDescriptions";
 
 const asset = (index: number, description = ""): SharedResearchImageAsset => ({
@@ -24,7 +24,7 @@ async function harness(images: SharedResearchImageAsset[], respond: (input: Anna
   const attemptedByRun = new Map<string, Set<string>>();
   let sessions = 0;
   let closed = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) }, llm: { complete: async () => ({}) },
     agent: { session: async () => {
       sessions++;

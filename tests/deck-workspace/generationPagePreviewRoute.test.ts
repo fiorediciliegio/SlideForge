@@ -4,7 +4,7 @@ import path from "node:path";
 import { describe, it } from "node:test";
 
 const HOOK = "src/features/deck-workspace/hooks/useDeckWorkspace.ts";
-const ADAPTER = "src/api/annaPptBackend.ts";
+const ADAPTER = "src/api/hostPptBackend.ts";
 const ENGINE_MANIFEST = "executas/ppt-engine/invoke-tools.json";
 
 async function readSource(relativePath: string): Promise<string> {

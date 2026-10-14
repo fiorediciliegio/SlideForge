@@ -1,6 +1,6 @@
 import { isAgentRunCancelledError, type AgentClient, type AgentStreamEvent } from "../../agent/agentClient";
 import type { PptBackend } from "../../api/pptBackend";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import type {
   UploadedSourceAnalysisDraftFingerprint,
   UploadedSourceMaterial,

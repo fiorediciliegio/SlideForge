@@ -34,10 +34,10 @@ function confirmedRequirements(preset: {
 
 test("template reference RPC reads metadata and selected HTML separately", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-template-reference-access-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   const {
     confirmAppWorkspaceRequirements,
@@ -147,8 +147,8 @@ test("template reference RPC reads metadata and selected HTML separately", async
   } finally {
     if (previousHome === undefined) delete process.env.HOME;
     else process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(homeDir, { recursive: true, force: true });
   }
 });

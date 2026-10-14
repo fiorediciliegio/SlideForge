@@ -16,7 +16,7 @@ async function readJson<T>(filePath: string): Promise<T> {
 
 async function createRenderedWorkspace(homeDir: string) {
   const suffix = String(randomInt(0, 1_000_000)).padStart(6, "0");
-  const workspaceDir = path.join(homeDir, "anna-workspace", "ppt", `ppt-20260630-${suffix}`);
+  const workspaceDir = path.join(homeDir, "slideforge-workspace", "ppt", `ppt-20260630-${suffix}`);
   const outputDir = path.join(workspaceDir, "output", "app-render");
   const manifestPath = path.join(workspaceDir, "manifest.json");
   const htmlPath = path.join(outputDir, "slide-1.html");
@@ -80,10 +80,10 @@ async function createRenderedWorkspace(homeDir: string) {
 
 test("getRenderedAppWorkspaceDeckHtml reads complete HTML pages even when screenshots are missing", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-get-rendered-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   try {
     const { getRenderedAppWorkspaceDeckHtml, prepareAppWorkspacePagePreview,
@@ -132,8 +132,8 @@ test("getRenderedAppWorkspaceDeckHtml reads complete HTML pages even when screen
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }

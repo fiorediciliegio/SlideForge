@@ -26,8 +26,8 @@ async function staged(temporary: string, name: string, bytes: Buffer) {
 
 test("profile assets store under assets/ with validation and safe readback", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "profile-asset-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     const record = await createImageUserTemplate({ files: [await staged(temporary, "cover.png", PNG_BYTES)] });
     const id = record.id;
@@ -72,7 +72,7 @@ test("profile assets store under assets/ with validation and safe readback", asy
     await publishUserTemplate(id, { name: "Brand", description: "With logo.", pages: [{ page_number: 1, description: "Cover." }] });
     await assert.rejects(saveUserTemplateProfileAsset({ id, filename: "late.png", ...(await staged(temporary, "late.png", PNG_BYTES)) }), /immutable/);
   } finally {
-    process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

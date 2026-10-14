@@ -5,17 +5,17 @@ import {
   createAppHostFileDownloadClient,
   isUnsupportedHostDownload,
 } from "../../src/runtime/appHostFileDownload.ts";
-import type { AnnaFilesDownloadInput, AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { FilesDownloadInput, HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 function runtimeWith(
-  download?: (input: AnnaFilesDownloadInput) => Promise<unknown>,
-): AnnaRuntime {
+  download?: (input: FilesDownloadInput) => Promise<unknown>,
+): HostRuntime {
   return {
     tools: { invoke: async () => undefined },
     llm: { complete: async () => undefined },
     agent: { session: async () => { throw new Error("unused"); } },
     ...(download ? { files: { download } } : {}),
-  } as AnnaRuntime;
+  } as HostRuntime;
 }
 
 class RpcError extends Error {
@@ -28,7 +28,7 @@ class RpcError extends Error {
 
 describe("host mediated file download", () => {
   it("hands the Host a path instead of a signed URL", async () => {
-    const calls: AnnaFilesDownloadInput[] = [];
+    const calls: FilesDownloadInput[] = [];
     const client = createAppHostFileDownloadClient(runtimeWith(async (input) => {
       calls.push(input);
       return { ok: true };
@@ -49,7 +49,7 @@ describe("host mediated file download", () => {
   });
 
   it("omits the optional fields the caller left empty", async () => {
-    const calls: AnnaFilesDownloadInput[] = [];
+    const calls: FilesDownloadInput[] = [];
     const client = createAppHostFileDownloadClient(runtimeWith(async (input) => {
       calls.push(input);
     }));

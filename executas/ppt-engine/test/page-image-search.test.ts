@@ -7,8 +7,8 @@ import path from "node:path";
 
 test("按页搜索独立持久化，工作区互斥、不可变快照与预算及租约归属", async () => {
   const directory = await mkdtemp(path.join(os.tmpdir(), "ppt-page-search-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = directory;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = directory;
   try {
     const { appPageImageSearch, createAppWorkspace, prepareAppSharedResearchWorkspace, getAppSharedResearchContext, getAppWorkspaceSnapshotSyncState } = await import("../src/app-workspace/index.js");
     const workspace = await createAppWorkspace({ title: "按页补图" });
@@ -45,7 +45,7 @@ test("按页搜索独立持久化，工作区互斥、不可变快照与预算�
     assert.equal(await appPageImageSearch({ workspace_dir: workspace.workspace_dir, action: "get", target_key: "different-page" }), null);
     await assert.rejects(appPageImageSearch({ ...input, action: "acquire", task: { ...task, id: "../../escape" } }), /Invalid/);
   } finally {
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(directory, { recursive: true, force: true });
   }
 });

@@ -7,7 +7,7 @@ import sharp from "sharp";
 import { convertImageToWebp } from "../src/image.mjs";
 
 test("validated WebPs do not keep a staged preset directory locked", async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-deck-preview-image-lock-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-deck-preview-image-lock-"));
   try {
     const sourcePath = join(root, "source.png");
     const stagedPreset = join(root, "staging", "preset");

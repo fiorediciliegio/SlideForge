@@ -11,10 +11,10 @@ import { fileURLToPath } from "node:url";
 
 test("Workspace Diagnostic Bundle uses APS Files without Host Upload and regenerates on every call", { timeout: 20_000 }, async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-diagnostic-plugin-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const { createAppWorkspace } = await import("../src/app-workspace/index.js");
   const created = await createAppWorkspace({ title: "Diagnostic plugin" });
   const { createUserTemplateDraft } = await import("../src/user-templates/index.js");
@@ -23,8 +23,8 @@ test("Workspace Diagnostic Bundle uses APS Files without Host Upload and regener
   await writeFile(path.join(created.workspace_dir, ".log", "agent.jsonl"), "plugin-diagnostic\n");
   if (previousHome === undefined) delete process.env.HOME;
   else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
 
   const uploadedBodies: Buffer[] = [];
   const uploadedDispositions: string[] = [];
@@ -42,7 +42,7 @@ test("Workspace Diagnostic Bundle uses APS Files without Host Upload and regener
 
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("..", import.meta.url)),
-    env: { ...process.env, HOME: homeDir, ANNA_WORKSPACE_DIR: path.join(homeDir, "anna-workspace") },
+    env: { ...process.env, HOME: homeDir, SLIDEFORGE_WORKSPACE_DIR: path.join(homeDir, "slideforge-workspace") },
     stdio: ["pipe", "pipe", "pipe"],
   });
   child.stderr.resume();

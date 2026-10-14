@@ -24,7 +24,7 @@ import type {
 import type { PptBackend } from "../../api/pptBackend";
 import type { Locale } from "../../i18n/messages";
 import type { AppHostUploadClient } from "../../runtime/appHostUploadClient";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import type { ResearchWebClient } from "../../api/researchWebClient";
 
 export const ATTEMPT_LIMITS = {

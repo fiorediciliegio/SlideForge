@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
+import type { HostRuntime } from "../../src/runtime/hostRuntime";
 
 const requirements = {
   version: 1 as const,
@@ -16,7 +16,7 @@ const requirements = {
 
 test("uses the only aesthetic reference without asking the LLM", async () => {
   let completionCalls = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => { completionCalls += 1; throw new Error("LLM must not be called"); } },
     agent: { session: async () => { throw new Error("not used"); } },

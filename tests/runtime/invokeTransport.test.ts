@@ -9,7 +9,7 @@ import {
   type InvokePayload, type InvokeUpload,
 } from "../../executas/ppt-engine/invoke-transport.js";
 import { createInvokeTransport } from "../../src/runtime/invokeTransport.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 import { createInvokeTransportChannel } from "../../executas/ppt-engine/invoke-transport-server.js";
 
 const envelope = (payload: InvokePayload) => ({ tool_id: "engine", method: "app_invoke_transport", args: { tool: "save", payload } });
@@ -68,7 +68,7 @@ for (const cors of [false, true]) {
   test(`large ordinary requests and responses round-trip with ${cors ? "CORS chunk relay" : "fresh-key upload and download retries"}`, async (t) => {
     const directory = await mkdtemp(path.join(os.tmpdir(), "ppt-invoke-browser-"));
     const windowBefore = Object.getOwnPropertyDescriptor(globalThis, "window");
-    Object.defineProperty(globalThis, "window", { configurable: true, value: { __ANNA_TOOL_IDS__: { "ppt-engine": "engine" } } });
+    Object.defineProperty(globalThis, "window", { configurable: true, value: { __BUNDLED_TOOL_IDS__: { "ppt-engine": "engine" } } });
     const stored = new Map<string, Uint8Array<ArrayBuffer>>();
     let sequence = 0;
     let confirmations = 0;
@@ -119,7 +119,7 @@ for (const cors of [false, true]) {
         if (++confirmations === 1) throw Object.assign(new Error("temporary confirmation failure"), { code: -32208 });
         return { download_url: reference(r2_key).url, r2_key, size_bytes: stored.get(r2_key)!.length };
       },
-    } } as unknown as AnnaRuntime;
+    } } as unknown as HostRuntime;
     const value = { html: randomBytes(3 * 1024 * 1024).toString("base64"), base_revision: 7, workspace_dir: "/workspace/中文" };
     assert.deepEqual(await createInvokeTransport(runtime)("engine", "save", value), value);
     assert.equal(businessCalls, 1);
@@ -150,7 +150,7 @@ test("request and response use the same codec and business errors execute only o
     const outcome = input.args.tool === "fail" ? { error: { code: -32602, message: "invalid content", data: { reason: "test" } } }
       : { result: { success: true, data: result, tool: input.args.tool } };
     return { success: true, data: await encodeInvokePayload(outcome, { fits, upload: noUpload }) };
-  } } } as unknown as AnnaRuntime;
+  } } } as unknown as HostRuntime;
   const invoke = createInvokeTransport(runtime);
   assert.deepEqual(await invoke("engine", "save", { content: result.html }, { timeoutMs: 12345 }), result);
   await assert.rejects(invoke("engine", "fail", { content: result.html }, { timeoutMs: 12345 }), { code: -32602, message: "invalid content" });

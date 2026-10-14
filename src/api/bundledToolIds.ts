@@ -5,10 +5,10 @@ export interface PptBundledToolIds {
 }
 
 function readBundledToolId(handle: string): string {
-  const toolIds = typeof window !== "undefined" ? window.__ANNA_TOOL_IDS__ : undefined;
+  const toolIds = typeof window !== "undefined" ? window.__BUNDLED_TOOL_IDS__ : undefined;
   const toolId = toolIds?.[handle];
   if (typeof toolId !== "string" || toolId.length === 0) {
-    throw new Error(`Missing Anna bundled tool id for "${handle}".`);
+    throw new Error(`Missing SlideForge bundled tool id for "${handle}".`);
   }
   return toolId;
 }

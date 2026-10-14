@@ -125,8 +125,8 @@ export function createAgentRunTracker(input: {
         page_id: input.page.page_id,
         page_index: input.page.index,
         kind: input.kind,
-        provider: "anna",
-        runtime_mode: "anna",
+        provider: "host",
+        runtime_mode: "host",
       }
     : undefined;
   const stream: DeckGenerationStream = {

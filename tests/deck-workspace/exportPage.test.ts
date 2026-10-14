@@ -116,7 +116,7 @@ describe("ExportPage", () => {
   it("asks for a download in one press, without a preparation step", () => {
     const html = renderExportPage({
       type: "PPTX",
-      path: "/Users/leyouming/anna-workspace/ppt/demo/output/deck.pptx",
+      path: "/Users/leyouming/slideforge-workspace/ppt/demo/output/deck.pptx",
       fileName: "deck.pptx",
       updatedAt: "2026-07-18T10:00:00Z",
       mirrorStatus: "ready",
@@ -125,14 +125,14 @@ describe("ExportPage", () => {
     assert.match(html, /<button [^>]*class="export-download-btn" type="button" aria-busy="false">/);
     assert.match(html, /下载 PPTX/);
     assert.doesNotMatch(html, /准备下载/);
-    assert.doesNotMatch(html, /anna-workspace/);
+    assert.doesNotMatch(html, /slideforge-workspace/);
     assert.doesNotMatch(html, /href=/);
   });
 
   it("still downloads in one press when the mirror has to be published first", () => {
     const html = renderExportPage({
       type: "PPTX",
-      path: "/Users/leyouming/anna-workspace/ppt/demo/output/deck.pptx",
+      path: "/Users/leyouming/slideforge-workspace/ppt/demo/output/deck.pptx",
       fileName: "deck.pptx",
       updatedAt: "2026-07-18T10:00:00Z",
       mirrorStatus: "missing",
@@ -140,13 +140,13 @@ describe("ExportPage", () => {
 
     assert.match(html, /<button [^>]*class="export-download-btn" type="button" aria-busy="false">/);
     assert.match(html, /下载 PPTX/);
-    assert.doesNotMatch(html, /anna-workspace/);
+    assert.doesNotMatch(html, /slideforge-workspace/);
   });
 
   it("keeps the button and adds the URL as a fallback once one exists", () => {
     const html = renderExportPage({
       type: "PPTX",
-      path: "/Users/leyouming/anna-workspace/ppt/demo/output/deck.pptx",
+      path: "/Users/leyouming/slideforge-workspace/ppt/demo/output/deck.pptx",
       fileName: "deck.pptx",
       updatedAt: "2026-07-18T10:00:00Z",
       mirrorStatus: "ready",
@@ -168,13 +168,13 @@ describe("ExportPage", () => {
       html.indexOf("export-modal-download-link") > html.indexOf("export-progress-row"),
     );
     assert.doesNotMatch(html, /<a[^>]+storage\.example/);
-    assert.doesNotMatch(html, /anna-workspace/);
+    assert.doesNotMatch(html, /slideforge-workspace/);
   });
 
   it("offers a retry that goes straight back to downloading", () => {
     const html = renderExportPage({
       type: "PPTX",
-      path: "/Users/leyouming/anna-workspace/ppt/demo/output/deck.pptx",
+      path: "/Users/leyouming/slideforge-workspace/ppt/demo/output/deck.pptx",
       fileName: "deck.pptx",
       updatedAt: "2026-07-18T10:00:00Z",
       mirrorStatus: "ready",

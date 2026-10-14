@@ -114,7 +114,7 @@ describe("额度耗尽提示", () => {
   it("识别 LLM 和 Session 的额度错误，并在四种语言显示专用摘要", () => {
     for (const raw of [
       'transport HTTP 429: {"errorCode":"APP_QUOTA_EXCEEDED","data":{"remainingCu":0.0}}',
-      'Agent stream error: Quota exhausted, unable to continue using Anna service.',
+      'Agent stream error: Quota exhausted, unable to continue using SlideForge service.',
       'rpc.stream payload {"error_type":"quota_exhausted"}',
     ]) {
       assert.equal(classifyUserFacingError(raw), "quotaExceeded");

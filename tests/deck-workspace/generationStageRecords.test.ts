@@ -63,7 +63,7 @@ describe("Page Generation Stage Records", () => {
 
   it("页面会话额度耗尽显示额度提示，保留诊断错误", () => {
     const progress = makeProgress({ step: "failed", activeStreams: [] });
-    const raw = "Agent stream error: Quota exhausted, unable to continue using Anna service.";
+    const raw = "Agent stream error: Quota exhausted, unable to continue using SlideForge service.";
     progress.pages[0].status = "agent_infrastructure_failed";
     progress.pages[0].last_error = raw;
     for (const locale of ["zh", "en", "ja", "de"] as const) {

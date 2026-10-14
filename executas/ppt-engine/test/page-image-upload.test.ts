@@ -7,8 +7,8 @@ import sharp from "sharp";
 
 test("手动配图独立入库、重试、去重、并发和快照恢复，不改变附件及大纲", async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-manual-images-"));
-  const previous = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = root;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   try {
     const api = await import("../src/app-workspace/index.js");
     const store = await import("../src/app-workspace/page-image-upload.js");
@@ -65,7 +65,7 @@ test("手动配图独立入库、重试、去重、并发和快照恢复，不�
     await writeFile(uploaded.file_path, "corrupted");
     await assert.rejects(api.appPageImageUpload({ workspace_dir, action: "prepare", asset_id: uploaded.asset_id }), /CHANGED/);
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

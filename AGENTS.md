@@ -13,13 +13,13 @@
 
 ## 仓库概览
 
-当前主线是当前 App 根目录：把现有 PPT 生成链路包装成可交互的 Anna App 工作台。
+当前主线是当前 App 根目录：把现有 PPT 生成链路包装成可交互的 SlideForge App 工作台。
 
 相关子项目都收敛在 `executas/` 下：
 
 - [`executas/ppt-engine/`](executas/ppt-engine/)：HTML Page Source 工作区能力、模板参考快照、HTML 静态化、PPTX model 转换和任务状态机。
 - [`third_party/dom-to-pptx/`](third_party/dom-to-pptx/)：仓库内直接维护的 HTML 到 PPTX 权威源码。
-- Web 和图片研究由 Anna Host 官方 Web API 提供，不再使用本地搜索 Executa。
+- Web 和图片研究由 SlideForge Host 官方 Web API 提供，不再使用本地搜索 Executa。
 
 完整链路仍然是：
 
@@ -34,7 +34,7 @@ manifest.json -> deck.html -> .pptx
 - `src/app/`：应用入口、路由和整体壳子。
 - `src/features/`：按业务域切分的功能层，主要有 `deck-workspace`、`outline`、`requirements`、`templates`、`review`、`export`、`task`、`pages`。
 - `src/api/`：前端后端适配层，React 页面只通过 `PptBackend` 调用。
-- `src/runtime/`：Anna runtime 连接与模式识别。
+- `src/runtime/`：SlideForge runtime 连接与模式识别。
 - `src/ai/`、`src/agent/`：LLM 提示词、解析和 agent 相关逻辑。
 - `src/state/`：本地状态管理。
 
@@ -51,7 +51,7 @@ manifest.json -> deck.html -> .pptx
 ## 关键边界
 
 - React 页面组件只调用 `PptBackend`。
-- Anna Runtime / standalone 的差异只放在 adapter 层。
+- SlideForge Runtime / standalone 的差异只放在 adapter 层。
 - 工作区文件读写和 gate 判断放在 `ppt-engine` app-facing tools。
 - `ppt-engine` 持有完整的 Deck HTML 到 PPTX 后端导出作业。
 - 前端不能直接读写本地文件系统。
@@ -60,7 +60,7 @@ manifest.json -> deck.html -> .pptx
 ## Tool ID 不变量
 
 App manifest 使用 `bundled:<handle>` 引用 Executa，前端只从
-`window.__ANNA_TOOL_IDS__` 读取运行时生成的真实 tool id；缺失 sidecar 或 handle
+`window.__BUNDLED_TOOL_IDS__` 读取运行时生成的真实 tool id；缺失 sidecar 或 handle
 应直接失败，不要回退到 `.env` 或硬编码真实 id。
 
 以下位置必须通过 [`scripts/sync-tool-manifests.mjs`](scripts/sync-tool-manifests.mjs)
@@ -85,7 +85,7 @@ ppt-engine:  tool-lightvoss-ppt-engine-kqhra9hy
 
 ## 开发与运行
 
-- 默认不要自己启动 `npm run dev` 或 `anna-app dev`。
+- 默认不要自己启动 `npm run dev` 或 `slideforge-app dev`。
 - 一般由用户自己在本机启动 dev server，并打开 `http://localhost:5180/`。
 - 如果需要看 UI 或复现 bug，优先用 Chrome DevTools MCP 操作用户已经打开的 `http://localhost:5180/`。
 - 如果发现用户没有启动 dev server，就直接提醒用户启动，不要代为拉起。
@@ -102,7 +102,7 @@ npm run dev:mock-llm
 npm run dev:mock-llm:retry
 ```
 
-`npm run dev` 仍然是正式的本地入口，并固定使用 `anna-app dev --storage aps` 连接真实 APS；只在用户明确要求时配合使用。
+`npm run dev` 仍然是正式的本地入口，并固定使用 `slideforge-app dev --storage aps` 连接真实 APS；只在用户明确要求时配合使用。
 
 `ppt-engine` 里常用命令是：
 
@@ -152,9 +152,9 @@ cd executas/ppt-engine && npm run start:plugin
 
 - 个人模板在上传前创建 `user-templates/<id>/` 草稿目录；模板日志和排查包通过模板 ID 专用接口访问，不能放宽普通作品目录校验或初始化作品文件。诊断规则见 [ADR-0074](docs/adr/0074-personal-template-diagnostics.md)。
 
-## Anna Runtime 与 tool 返回值
+## SlideForge Runtime 与 tool 返回值
 
-- Anna runtime 目前还不能原生理解 `__file_transport` pointer response。
+- SlideForge runtime 目前还不能原生理解 `__file_transport` pointer response。
 - `executas/ppt-engine/app_stdio.js` 会把 pointer file 内联回 stdout，原生支持 pointer 之前不要删除它。
 - 普通 `invoke` 统一经 `src/runtime/invokeTransport.ts` → `app_invoke_transport`。按完整消息 JSON 的 UTF-8 字节数，使用 **3 MiB（3,145,728 字节）**预算，为平台的 4 MiB 上限留余量。
 - 请求与响应使用同一协议：预算内直接传；超限只做一次 gzip + Base64 压缩；仍超限才走 Host Upload。业务层传原始对象或文本，禁止再添加业务专用阈值、压缩或大内容上传分支。
@@ -167,7 +167,7 @@ cd executas/ppt-engine && npm run start:plugin
 
 - `executas/ppt-engine` runtime/SDK 产物采用 ESM-only 构建；路径解析优先使用 `import.meta.url`，不要为这些产物重新引入 CJS 输出兼容。`scripts/sea-bootstrap.cjs` 是 Node SEA 启动器例外，不代表包级 CommonJS 支持。
 - GitHub Actions 的 Windows runner 可能把文本文件 checkout 成 CRLF。同步脚本如果解析 `pyproject.toml`、`uv.lock`、manifest 等文本文件，不能把 `\n` 当作唯一换行；要么先归一化行尾，要么用 `\r?\n`，并加 CRLF 回归测试。否则 Windows job 里 `npm run sync:tool-manifests && git diff --exit-code` 会因为误改文件失败。
-- Windows release zip 不要依赖 PowerShell `Compress-Archive` 保留空目录。`ppt-engine` 的 Anna Binary archive 需要顶层 `bin/`、`lib/`、`data/`，其中 `lib/`、`data/` 可能为空；Windows zip 打包必须显式创建目录 entry，不能用 placeholder 文件污染包内容。
+- Windows release zip 不要依赖 PowerShell `Compress-Archive` 保留空目录。`ppt-engine` 的 SlideForge Binary archive 需要顶层 `bin/`、`lib/`、`data/`，其中 `lib/`、`data/` 可能为空；Windows zip 打包必须显式创建目录 entry，不能用 placeholder 文件污染包内容。
 - Puppeteer 相关命令可能需要本机 Chrome / Chrome for Testing。
 - HTML v1 的权威页面源是 `<workspace>/slides/<page_id>.html`；Agent Session 只返回 HTML，不直接写文件，PPT App 提取唯一完整 HTML 后交由后端持久化。
 - `AGENTS.md` 是本仓库 canonical 的 agent guidance；不要把新约束写回别的旧指导文件。

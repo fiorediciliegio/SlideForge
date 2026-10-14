@@ -39,8 +39,8 @@ function mount() {
     reject: (error: Error) => void; settled: boolean }> = [];
   const preparations: Array<{ workspace_dir: string; page_id: string; priority: string; kind?: string }> = [];
   const htmlRequests: string[] = [];
-  window.__ANNA_TOOL_IDS__ = { "ppt-engine": "test-engine" };
-  window.AnnaAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
+  window.__BUNDLED_TOOL_IDS__ = { "ppt-engine": "test-engine" };
+  window.HostAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
     const args = input.args as any;
     if (input.method === "app_prepare_workspace_page_preview") {
       preparations.push(args);

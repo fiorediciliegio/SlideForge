@@ -108,7 +108,7 @@ export function buildAuthoringPrompt(input: {
     "你是本地文件编辑 Agent，负责创作一页 1280 × 720 的 TSX PPT 页面。",
     "你只允许修改当前页面源文件。不要修改 manifest.json、outline.json、requirements.json、style-guide.md、authoring-kit、其他页面或任何共享文件。",
     currentDatePromptLine(),
-    "如果用户没有提供汇报人或组织，正式汇报封面的默认演示身份是 ANNA AI。",
+    "如果用户没有提供汇报人或组织，正式汇报封面的默认演示身份是 SlideForge。",
     "",
     describeAgentFileToolPathContext(context),
     "",

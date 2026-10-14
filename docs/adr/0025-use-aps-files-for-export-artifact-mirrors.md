@@ -10,20 +10,20 @@ Workspace 持有的 PPTX 或 PDF 是权威 Export Artifact（导出产物）。P
 
 导出页的「下载」按钮一次点击完成全部动作：必要时发布镜像，然后按下面的顺序取第一条能走通的路径。
 
-1. **Host 中介下载**（默认路径）。调用 `anna.files.download({ path, scope, filename })`，把镜像的 APS path 交给 Host；Host 自己解析对象、校验授权、在顶层浏览上下文触发下载，并处理 attachment disposition 和非 ASCII 文件名。签名 URL 完全不进入 App 的状态和 DOM，这是这条路径优先的原因。App manifest 必须声明 `ui.host_api.files: ["download"]`。
+1. **Host 中介下载**（默认路径）。调用 `slideforge.files.download({ path, scope, filename })`，把镜像的 APS path 交给 Host；Host 自己解析对象、校验授权、在顶层浏览上下文触发下载，并处理 attachment disposition 和非 ASCII 文件名。签名 URL 完全不进入 App 的状态和 DOM，这是这条路径优先的原因。App manifest 必须声明 `ui.host_api.files: ["download"]`。
 2. **签名 URL + offscreen frame**（兜底）。Host 没有 `files.download`（旧版本或未授权该 namespace）时，退回 `app_get_export_artifact_download_url`，把短期 URL 加载进一个隐藏 frame 让浏览器按 attachment 保存，同时在按钮下方显示只读 URL 输入框和复制按钮。
 
 只有「方法不存在 / 未授权」才降级；路径不存在、会话过期这类真实失败必须直接报错，不能悄悄改走签名 URL 把问题盖掉。
 
-设置页的问题排查包 ZIP 走同一顺序：`app_prepare_workspace_diagnostic_bundle` 除短期 URL 外还返回对象引用（`mirror.path`、`mirror.scope`），前端先交给 `anna.files.download`，不可用时再退回 offscreen frame 加签名 URL。区别在于这个 ZIP 是一次性的：每次点击都重新打包并覆盖写入固定 APS path，引用只存在于当次响应和当前前端状态里，不写进 Workspace，也没有「镜像是否仍然有效」这个概念。
+设置页的问题排查包 ZIP 走同一顺序：`app_prepare_workspace_diagnostic_bundle` 除短期 URL 外还返回对象引用（`mirror.path`、`mirror.scope`），前端先交给 `slideforge.files.download`，不可用时再退回 offscreen frame 加签名 URL。区别在于这个 ZIP 是一次性的：每次点击都重新打包并覆盖写入固定 APS path，引用只存在于当次响应和当前前端状态里，不写进 Workspace，也没有「镜像是否仍然有效」这个概念。
 
 选择 offscreen frame 而不是 `<a download>` 或弹窗，是因为它的失败方式最轻：签名 URL 过期时错误响应渲染在不可见的 frame 里，既不会把 App 自己的页面导航走，也不会留下空白弹窗。
 
 ### 历史：为什么曾经必须手动复制 URL
 
-Anna App 运行在 sandboxed iframe（沙箱 iframe）中，早期 Host 给的 sandbox 是 `allow-scripts allow-same-origin allow-forms allow-popups`，没有 `allow-downloads`。当时排查确认 APS 签名 URL 返回 HTTP 200、正确的 PPTX MIME、文件字节和 `Content-Disposition: attachment`，问题不在 APS 或 R2：浏览器会拦掉这个 iframe 发起的一切下载，`target="_blank"` 只是创建继承同一 sandbox 的页面，Blob URL 配合隐藏 `<a download>` 也被静默拦截。因此那一版只提供只读 URL 输入框，让用户粘贴到顶层地址栏。
+SlideForge App 运行在 sandboxed iframe（沙箱 iframe）中，早期 Host 给的 sandbox 是 `allow-scripts allow-same-origin allow-forms allow-popups`，没有 `allow-downloads`。当时排查确认 APS 签名 URL 返回 HTTP 200、正确的 PPTX MIME、文件字节和 `Content-Disposition: attachment`，问题不在 APS 或 R2：浏览器会拦掉这个 iframe 发起的一切下载，`target="_blank"` 只是创建继承同一 sandbox 的页面，Blob URL 配合隐藏 `<a download>` 也被静默拦截。因此那一版只提供只读 URL 输入框，让用户粘贴到顶层地址栏。
 
-平台后来同时补上了两件事：App iframe 启用 `allow-downloads`（hosted App 与 `anna-app dev` 本地 harness 行为一致），以及新增 `anna.files.download`。所以现在直接下载可用，兜底路径只为兼容旧 Host 保留。
+平台后来同时补上了两件事：App iframe 启用 `allow-downloads`（hosted App 与 `slideforge-app dev` 本地 harness 行为一致），以及新增 `slideforge.files.download`。所以现在直接下载可用，兜底路径只为兼容旧 Host 保留。
 
 ## 约束与后果
 

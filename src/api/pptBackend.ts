@@ -169,10 +169,10 @@ import type {
   , ListBatchTestRunsResult
   , PrepareBatchTestBundleResult
 } from "./types";
-import { createAnnaPptBackend } from "./annaPptBackend";
+import { createAnnaPptBackend } from "./hostPptBackend";
 import type { UserTemplateBackend } from "../features/user-templates/types";
-import { connectAnnaRuntime } from "../runtime/annaRuntime";
-import type { AnnaToolJobSnapshot } from "../runtime/annaRuntime";
+import { connectHostRuntime } from "../runtime/hostRuntime";
+import type { ToolJobSnapshot } from "../runtime/hostRuntime";
 import { detectRuntimeMode } from "../runtime/runtimeMode";
 
 export interface CreateBatchTestRunInput {
@@ -466,7 +466,7 @@ export interface PptBackend extends UserTemplateBackend {
   listExportJobs(input: {
     workspace_dir: string;
     artifact_type?: "pptx" | "pdf";
-  }): Promise<Array<AnnaToolJobSnapshot>>;
+  }): Promise<Array<ToolJobSnapshot>>;
   awaitExportJob<T = unknown>(input: {
     job_id: string;
     signal?: AbortSignal;
@@ -488,9 +488,9 @@ export interface PptBackend extends UserTemplateBackend {
 export async function createPptBackend(): Promise<PptBackend> {
   const mode = detectRuntimeMode();
 
-  if (mode === "anna") {
-    return createAnnaPptBackend(await connectAnnaRuntime());
+  if (mode === "host") {
+    return createAnnaPptBackend(await connectHostRuntime());
   }
 
-  throw new Error("PptBackend is only available inside Anna runtime.");
+  throw new Error("PptBackend is only available inside SlideForge runtime.");
 }

@@ -83,7 +83,7 @@ async function startPluginProcess(workspaceRoot?: string): Promise<PluginProcess
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("../..", import.meta.url)),
     stdio: ["pipe", "pipe", "pipe"],
-    ...(workspaceRoot ? { env: { ...process.env, ANNA_WORKSPACE_DIR: workspaceRoot } } : {}),
+    ...(workspaceRoot ? { env: { ...process.env, SLIDEFORGE_WORKSPACE_DIR: workspaceRoot } } : {}),
   });
   child.stderr.resume();
   return new PluginProcess(child);
@@ -342,11 +342,11 @@ test(
   { skip: patchSettingsInvokeSkip, timeout: 15_000 },
   async () => {
     const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-plugin-settings-home-"));
-    const workspaceDir = path.join(homeDir, "anna-workspace", "ppt", "ppt-20260710-000001");
+    const workspaceDir = path.join(homeDir, "slideforge-workspace", "ppt", "ppt-20260710-000001");
     const previousHome = process.env.HOME;
-    const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+    const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
     process.env.HOME = homeDir;
-    process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+    process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
     const plugin = await startPluginProcess();
 
     try {
@@ -376,8 +376,8 @@ test(
         delete process.env.HOME;
       } else {
         process.env.HOME = previousHome;
-        if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-        else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+        if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+        else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
       }
       await rm(homeDir, { recursive: true, force: true });
     }
@@ -690,11 +690,11 @@ test("first-page HTML cover stays bounded without a screenshot or Host Upload", 
 
 test("app_append_workspace_log plugin wrapper accepts attachment, research web, theme, style-guide, and storage log channels", { skip: pluginInvokeSkip }, async () => {
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-plugin-theme-log-home-"));
-  const workspaceDir = path.join(homeDir, "anna-workspace", "ppt", "ppt-20260701-000002");
+  const workspaceDir = path.join(homeDir, "slideforge-workspace", "ppt", "ppt-20260701-000002");
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const plugin = await startPluginProcess();
 
   try {
@@ -748,8 +748,8 @@ test("app_append_workspace_log plugin wrapper accepts attachment, research web, 
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }

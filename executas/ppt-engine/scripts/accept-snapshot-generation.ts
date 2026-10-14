@@ -3,7 +3,7 @@
  * increment 1: no APS upload).
  *
  * Runs entirely against a scratch Workspace created under the PPT workspace
- * root, asserts the idempotent snapshot behavior, then cleans up. No Anna
+ * root, asserts the idempotent snapshot behavior, then cleans up. No SlideForge
  * runtime or login required.
  *
  * Zip inspection uses the engine's own dependency-free parser

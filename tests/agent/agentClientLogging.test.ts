@@ -3,7 +3,7 @@ import { describe, it } from "node:test";
 
 import { createAiInteractionLogger, type AiOperationLogContext } from "../../src/ai/interactionLog.ts";
 import { createAgentClient, isAgentRunCancelledError } from "../../src/agent/agentClient.ts";
-import type { AnnaAgentRunFrame, AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { AnnaAgentRunFrame, HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 describe("AgentClient AI Interaction Log", () => {
   for (const enabled of [true, false]) it(`preserves Agent output with logging ${enabled ? "on" : "off"}`, async () => {
@@ -15,7 +15,7 @@ describe("AgentClient AI Interaction Log", () => {
         logs.push(input);
       },
     });
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: { complete: async () => ({}) },
       agent: {
@@ -86,7 +86,7 @@ function diagnosticFixture(runs: Array<{ frames: AnnaAgentRunFrame[]; hang?: boo
     appendWorkspaceLog: async (input) => { logs.push(input); },
   });
   const context: AiOperationLogContext = { logger, workspace_dir: "/tmp/workspace", domain: "research", operation: "research", operation_id: "research-test" };
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) }, llm: { complete: async () => ({}) },
     agent: { session: async () => {
       sessionCount += 1;

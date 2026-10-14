@@ -11,11 +11,11 @@ import { fileURLToPath } from "node:url";
 
 test("dedicated snapshot invokes upload through the established queue and retain their invoke context", { timeout: 20_000 }, async () => {
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-dedicated-snapshot-"));
-  const workspaceRoot = path.join(homeDir, "anna-workspace");
+  const workspaceRoot = path.join(homeDir, "slideforge-workspace");
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = workspaceRoot;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = workspaceRoot;
   // Exercise the same compiled engine module loaded by example_plugin.js;
   // source TypeScript is not directly executable in a production plugin test.
   const { createAppWorkspace } = await import("../../dist/index.js");
@@ -23,8 +23,8 @@ test("dedicated snapshot invokes upload through the established queue and retain
   const workspaceDir = created.workspace_dir;
   if (previousHome === undefined) delete process.env.HOME;
   else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
 
   const uploads = new Map<string, Buffer>();
   const uploadServer = createServer(async (request, response) => {
@@ -49,7 +49,7 @@ test("dedicated snapshot invokes upload through the established queue and retain
 
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("../..", import.meta.url)),
-    env: { ...process.env, HOME: homeDir, ANNA_WORKSPACE_DIR: workspaceRoot },
+    env: { ...process.env, HOME: homeDir, SLIDEFORGE_WORKSPACE_DIR: workspaceRoot },
     stdio: ["pipe", "pipe", "pipe"],
   });
   child.stderr.resume();

@@ -17,8 +17,8 @@ async function staged(temporary: string, name: string, content: string) {
 
 test("composeImageSlots fills the photo placeholder with the page's reference raster", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "image-slots-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     // A real photograph-like raster so the sharp compression path runs.
     const photo = await sharp({ create: { width: 1920, height: 1080, channels: 3, background: { r: 24, g: 90, b: 160 } } })
@@ -58,15 +58,15 @@ test("composeImageSlots fills the photo placeholder with the page's reference ra
     const reSaveCount = (resaved.match(/data-photo-dedup/g) ?? []).length;
     assert.equal(reSaveCount, 1, "dedup style must not duplicate on re-save");
   } finally {
-    process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });
 
 test("P4 dedup spares asset slots while hiding the redraw layer", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "image-slots-dedup-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     const photo = await sharp({ create: { width: 640, height: 360, channels: 3, background: { r: 60, g: 60, b: 60 } } }).png().toBuffer();
     const record = await createImageUserTemplate({ files: [{ filename: "photo.png", staging_file_path: await staged(temporary, "photo.png", photo), size_bytes: photo.length }] });
@@ -87,7 +87,7 @@ test("P4 dedup spares asset slots while hiding the redraw layer", async () => {
     assert.match(saved, /:not\(\.asset-slot\)/);
     assert.match(saved, /:not\(\[data-composed-asset\]\)/);
   } finally {
-    process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

@@ -6,9 +6,9 @@ import { buildGenerateOutlineLlmRequest, buildReviseOutlineLlmRequest } from "..
 import { buildVisualStylePresetColorRequest, buildVisualStylePresetRequest } from "../../src/ai/visualStylePresetSelectionPrompt";
 import { buildVisualMasterHtmlPrompt } from "../../src/features/deck-generation/htmlPrompts";
 import { createResearchAiClient } from "../../src/ai/researchAiClient";
-import { createAnnaAiClient } from "../../src/ai/annaAiClient";
+import { createAnnaAiClient } from "../../src/ai/hostAiClient";
 import type { WorkspaceOutline } from "../../src/api/types";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime";
+import type { HostRuntime } from "../../src/runtime/hostRuntime";
 
 const removed = ["audience", "purpose", "desired_outcome", "visual_tone"];
 const legacyFields = Object.fromEntries(removed.map((field) => [field, { label: "REMOVED_CONTENT_GOAL", description: "REMOVED_DESCRIPTION" }]));
@@ -60,7 +60,7 @@ test("研究推荐和美学参考选择不会透传旧内容目标", async () =>
         ? '{"web":{"recommended":false,"reason":"No"},"images":{"recommended":false,"reason":"No"}}'
         : '{"path":"html/reference.html"}' };
     } },
-  } as AnnaRuntime;
+  } as HostRuntime;
   await createResearchAiClient(runtime).recommendResearch({ brief: requirements.source!.brief, requirements, locale: "zh" });
   await createAnnaAiClient(runtime).selectDominantAestheticReference({
     requirements, outline, target: "visual-master",

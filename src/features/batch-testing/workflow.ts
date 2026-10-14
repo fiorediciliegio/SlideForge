@@ -122,8 +122,8 @@ function logContext(
     domain,
     operation,
     operation_id: logger.createOperationId(domain, operation),
-    provider: "anna",
-    runtime_mode: "anna",
+    provider: "host",
+    runtime_mode: "host",
   };
 }
 

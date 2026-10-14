@@ -3,7 +3,7 @@ import { slideFormat, slideFormatFromHtml, type SlideAspectRatio } from "../../s
 import type { PageLayoutAuditResult } from "../../api/types";
 import type { Locale } from "../../i18n/messages";
 import { generationText } from "./messages";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 
 export function buildPageLayoutRewritePrompt(html: string, aspectRatio?: SlideAspectRatio, requirements?: { global_creation_requirements?: string; creation_requirements?: string; refinementRequest?: string }): string {
   const { width, height } = aspectRatio ? slideFormat(aspectRatio) : slideFormatFromHtml(html);

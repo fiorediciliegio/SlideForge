@@ -46,8 +46,8 @@ test("composeAssetSlots fills named-region slots and survives the unknowns", asy
 
 test("saveUserTemplateHtml composites asset slots for the master and pages via assets/", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "asset-save-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     const png = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 1, 2, 3, 4, 5, 6, 7, 8]);
     const stagedPng = path.join(temporary, "logo.png");
@@ -77,7 +77,7 @@ test("saveUserTemplateHtml composites asset slots for the master and pages via a
     const degraded = await readFile(path.join(temporary, "ppt", "user-templates", id, "html", "master.html"), "utf8");
     assert.match(degraded, /asset-missing-marker/);
   } finally {
-    process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

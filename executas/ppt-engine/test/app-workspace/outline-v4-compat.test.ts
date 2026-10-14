@@ -6,10 +6,10 @@ import test from "node:test";
 
 test("v4 outline preserves plain content and drops known legacy fields", async () => {
   const previousHome = process.env.HOME;
-  const previousAnnaWorkspaceDir = process.env.ANNA_WORKSPACE_DIR;
+  const previousAnnaWorkspaceDir = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-outline-v4-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = homeDir;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = homeDir;
 
   const {
     createAppWorkspace,
@@ -65,8 +65,8 @@ test("v4 outline preserves plain content and drops known legacy fields", async (
   } finally {
     if (previousHome === undefined) delete process.env.HOME;
     else process.env.HOME = previousHome;
-    if (previousAnnaWorkspaceDir === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousAnnaWorkspaceDir;
+    if (previousAnnaWorkspaceDir === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousAnnaWorkspaceDir;
     await rm(homeDir, { recursive: true, force: true });
   }
 });

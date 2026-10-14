@@ -1,6 +1,6 @@
 import type { HostUploadRef } from "../api/types";
 import { resolvePptBundledToolIds } from "../api/bundledToolIds";
-import type { AnnaRuntime } from "./annaRuntime";
+import type { HostRuntime } from "./hostRuntime";
 import { relayHostUpload } from "./invokeTransportChannel";
 import { beginPerformanceSpan } from "../performance/performanceRecorder";
 import {
@@ -63,13 +63,13 @@ function readUploadMimeType(file: File, filename: string, explicitMimeType?: str
   return mimeType;
 }
 
-function assertUploadRuntime(runtime: AnnaRuntime): NonNullable<AnnaRuntime["upload"]> {
+function assertUploadRuntime(runtime: HostRuntime): NonNullable<HostRuntime["upload"]> {
   if (
     !runtime.upload ||
     typeof runtime.upload.negotiate !== "function" ||
     typeof runtime.upload.confirm !== "function"
   ) {
-    throw new Error("Anna runtime upload.negotiate/upload.confirm is not available.");
+    throw new Error("SlideForge runtime upload.negotiate/upload.confirm is not available.");
   }
   return runtime.upload;
 }
@@ -115,7 +115,7 @@ function errorRecord(error: unknown): Record<string, unknown> {
 }
 
 export function createAppHostUploadClient(
-  runtime: AnnaRuntime,
+  runtime: HostRuntime,
   options: { appendWorkspaceLog?: (event: StorageTransferLogEvent) => Promise<unknown> } = {},
 ): AppHostUploadClient {
   return {
@@ -140,7 +140,7 @@ export function createAppHostUploadClient(
       const performanceSpan = beginPerformanceSpan({
         operationName: "host_upload",
         workspaceId: workspaceDir.split(/[\\/]/).filter(Boolean).at(-1),
-        attributes: { layer: "anna-host-upload", size_bytes: file.size },
+        attributes: { layer: "slideforge-host-upload", size_bytes: file.size },
       });
       const filename = (input.filename || file.name || "upload").trim();
       if (!filename) {

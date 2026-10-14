@@ -66,7 +66,7 @@ function extractErrorCodes(error: unknown): string {
 export function classifyUserFacingError(detail: string): UserFacingErrorKind {
   const value = detail.toLowerCase();
   if (!value) return "unknown";
-  if (/(?:app[\s_-]*quota[\s_-]*exceeded|quota[\s_-]*(?:is[\s_-]*)?(?:exhausted|exceeded)|remaining[\s_-]*cu[\"':=\s]*0(?:\.0+)?|unable to continue using anna service)/i.test(value)) {
+  if (/(?:app[\s_-]*quota[\s_-]*exceeded|quota[\s_-]*(?:is[\s_-]*)?(?:exhausted|exceeded)|remaining[\s_-]*cu[\"':=\s]*0(?:\.0+)?|unable to continue using slideforge service)/i.test(value)) {
     return "quotaExceeded";
   }
   // Classify model failures only at the display boundary; retain raw errors

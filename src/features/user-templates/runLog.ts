@@ -201,7 +201,7 @@ export function formatRunLog(log: RunLog): string {
   return lines.join("\n");
 }
 
-const STORAGE_KEY = "anna.user-templates.run-log";
+const STORAGE_KEY = "slideforge.user-templates.run-log";
 
 export interface StoredRunLog { saved_at: string; log: RunLog }
 

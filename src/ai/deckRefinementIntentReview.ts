@@ -1,5 +1,5 @@
 import { requirementsForPrompt } from "./requirementsFormatting";
-import type { LlmCompleteInput } from "../runtime/annaRuntime";
+import type { LlmCompleteInput } from "../runtime/hostRuntime";
 import type {
   DeckRefinementOutlineOperation,
   DeckRefinementPlan,

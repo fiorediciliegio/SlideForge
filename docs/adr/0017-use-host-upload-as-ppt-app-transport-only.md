@@ -24,9 +24,9 @@ Screenshot `HostUploadRef` values are active-run transport state only. PPT App m
 
 Small, bounded control-plane results may return inline through JSON-RPC. In particular, `CreateWorkspaceResult` is a versioned creation receipt rather than a Workspace artifact or full Workspace snapshot, so `app_create_workspace` returns it inline and does not use Host Upload. Full Workspace snapshots and results whose size grows with Workspace content continue to use Host Upload.
 
-`app_stdio.js` may remain temporarily as a compatibility wrapper while app-facing file transport is removed, but it must transparently pass Executa v2 reverse-RPC traffic; the target state is for `ppt-engine` to run without the wrapper once Anna App no longer depends on `__file_transport`.
+`app_stdio.js` may remain temporarily as a compatibility wrapper while app-facing file transport is removed, but it must transparently pass Executa v2 reverse-RPC traffic; the target state is for `ppt-engine` to run without the wrapper once SlideForge App no longer depends on `__file_transport`.
 
-当已确认的 `application/json` Host Upload 引用因 CORS（跨域限制）无法被浏览器直接下载时，Anna adapter（适配层）通过 `app_resolve_host_upload_json_reference` 回退读取。Executa 校验 MIME 类型和声明的字节数；小 JSON 的序列化响应最多 48 KiB，大 JSON 通过 `byte_offset` 分块返回 UTF-8 文本，每块包含当前位置、下一位置和总字节数，单块序列化后也不超过 48 KiB。前端验证位置连续性和字节数，重组后解析 JSON，禁止将完整大 JSON 再塞回 RPC。
+当已确认的 `application/json` Host Upload 引用因 CORS（跨域限制）无法被浏览器直接下载时，SlideForge adapter（适配层）通过 `app_resolve_host_upload_json_reference` 回退读取。Executa 校验 MIME 类型和声明的字节数；小 JSON 的序列化响应最多 48 KiB，大 JSON 通过 `byte_offset` 分块返回 UTF-8 文本，每块包含当前位置、下一位置和总字节数，单块序列化后也不超过 48 KiB。前端验证位置连续性和字节数，重组后解析 JSON，禁止将完整大 JSON 再塞回 RPC。
 
 分块回退最多读取 16 MiB 的 JSON。后端只在进程内短暂缓存已下载内容，最多保留 32 MiB、五分钟，最后一块返回后移除该缓存；缓存丢失时可重新下载原引用。缓存不改变 Workspace 文件的权威性，也不持久化短期下载地址。非 JSON 文件不使用此回退，平台仍应优先提供允许跨域或同源的下载地址。
 

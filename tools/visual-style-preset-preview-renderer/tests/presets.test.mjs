@@ -58,7 +58,7 @@ test("output changes only the preview extension", () => {
 });
 
 test("an empty source root fails instead of reporting a no-op success", async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-empty-preview-root-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-empty-preview-root-"));
   try {
     await assert.rejects(() => loadPresets(root), /does not contain any preset directories/);
   } finally {

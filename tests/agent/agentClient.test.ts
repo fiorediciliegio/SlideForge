@@ -12,8 +12,8 @@ import {
 import type {
   AnnaAgentRunFrame,
   AnnaAgentSession,
-  AnnaRuntime,
-} from "../../src/runtime/annaRuntime.ts";
+  HostRuntime,
+} from "../../src/runtime/hostRuntime.ts";
 import { createAiInteractionLogger } from "../../src/ai/interactionLog.ts";
 
 const SESSION_ERROR_MESSAGE = "no cached app_session token; create a new session";
@@ -45,7 +45,7 @@ function createRuntime(
   let sessionCreations = 0;
   let sessionDeletes = 0;
 
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: {
       invoke: async () => ({}),
     },
@@ -88,7 +88,7 @@ function createRuntimeFromStreams(streams: Array<() => AsyncIterable<AnnaAgentRu
   let sessionCreations = 0;
   let sessionDeletes = 0;
 
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: {
       invoke: async () => ({}),
     },
@@ -124,7 +124,7 @@ function createRuntimeFromStreams(streams: Array<() => AsyncIterable<AnnaAgentRu
 it("creates restricted filesystem sessions and prefers Gemini 3.8 Flash on every run", async () => {
   let createInput: unknown;
   let runInput: unknown;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -167,7 +167,7 @@ it("creates restricted filesystem sessions and prefers Gemini 3.8 Flash on every
 
 it("only grants specialized tools to the run that explicitly requests them", async () => {
   let createInput: unknown;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -204,7 +204,7 @@ it("creates one Web research Session with a system prompt and reuses it across r
   let createInput: unknown;
   const runInputs: unknown[] = [];
   let deletes = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -256,7 +256,7 @@ it("creates a tool-free Outline Session with its system prompt and run-scoped mo
   let createInput: unknown;
   const runInputs: unknown[] = [];
   let deletes = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => { throw new Error("outline must not call llm.complete"); } },
     agent: {
@@ -335,7 +335,7 @@ it("allows a held research Session to restart twice within its fresh-session bud
 });
 
 it("surfaces a Web research Session deletion failure", async () => {
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -355,7 +355,7 @@ it("creates one Image research Session and carries attachments on each held run"
   const runInputs: Array<{ content: string; attachments?: unknown[] }> = [];
   let createInput: unknown;
   let deletes = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -394,7 +394,7 @@ it("creates one Image research Session and carries attachments on each held run"
 
 it("creates a tool-free HTML Session for visual master and page generation", async () => {
   let createInput: unknown;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -427,7 +427,7 @@ it("creates a tool-free HTML Session for visual master and page generation", asy
 it("repairs template selection JSON in one session with only doc_read allowed", async () => {
   const creations: unknown[] = [];
   const prompts: string[] = [];
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: { session: async (input) => {
@@ -455,7 +455,7 @@ it("repairs invalid HTML in the same Session without a fresh replay", async () =
   let runs = 0;
   let sessionCreations = 0;
   let sessionDeletes = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) },
     llm: { complete: async () => ({}) },
     agent: {
@@ -580,7 +580,7 @@ describe("AgentClient unified Session retry", () => {
     const cancelledRunIds: string[] = [];
     const cleanupOrder: string[] = [];
     let sessionDeletes = 0;
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: { complete: async () => ({}) },
       agent: {
@@ -635,7 +635,7 @@ describe("AgentClient unified Session retry", () => {
       [{ event: "message", text: '{"changed":true,"blocked":false,"summary":"A clear title above three readable cards on a light canvas."}' }, { event: "complete" }],
     ] as AnnaAgentRunFrame[][];
     let runCount = 0;
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: { complete: async () => ({}) },
       agent: {
@@ -1064,7 +1064,7 @@ describe("Agent run completion semantics", () => {
 it("still repairs invalid business output in the same session after task completion", async () => {
   let runs = 0;
   let sessions = 0;
-  const runtime: AnnaRuntime = {
+  const runtime: HostRuntime = {
     tools: { invoke: async () => ({}) }, llm: { complete: async () => ({}) },
     agent: { session: async () => {
       sessions += 1;

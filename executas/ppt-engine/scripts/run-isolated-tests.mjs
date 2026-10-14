@@ -3,14 +3,14 @@ import os from "node:os";
 import path from "node:path";
 import { spawn } from "node:child_process";
 
-const workspaceRoot = await mkdtemp(path.join(os.tmpdir(), "anna-ppt-engine-test-workspace-"));
+const workspaceRoot = await mkdtemp(path.join(os.tmpdir(), "slideforge-ppt-engine-test-workspace-"));
 const args = ["--import", "tsx/esm", "--test", "test/*.test.ts", "test/**/*.test.ts"];
 
 const child = spawn(process.execPath, args, {
   stdio: "inherit",
   env: {
     ...process.env,
-    ANNA_WORKSPACE_DIR: workspaceRoot,
+    SLIDEFORGE_WORKSPACE_DIR: workspaceRoot,
   },
 });
 

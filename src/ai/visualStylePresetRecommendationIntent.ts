@@ -1,4 +1,4 @@
-import type { LlmCompleteInput } from "../runtime/annaRuntime";
+import type { LlmCompleteInput } from "../runtime/hostRuntime";
 import {
   type RecommendationAxis,
   VISUAL_STYLE_PRESET_RECOMMENDATION_TAG_IDS,

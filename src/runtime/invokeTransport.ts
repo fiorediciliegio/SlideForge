@@ -1,4 +1,4 @@
-import type { AnnaRuntime } from "./annaRuntime";
+import type { HostRuntime } from "./hostRuntime";
 import { createAppHostUploadClient } from "./appHostUploadClient";
 import { readInvokeUploadThroughEngine, sendInvokeFrame, unwrapInvokeResult } from "./invokeTransportChannel";
 import { assertStorageResponseOk, runWithStorageRetry } from "../../executas/ppt-engine/storage-retry.js";
@@ -8,7 +8,7 @@ import {
 } from "../../executas/ppt-engine/invoke-transport.js";
 
 /** Ordinary calls only. Async jobs deliberately continue to use their original protocol. */
-export function createInvokeTransport(runtime: AnnaRuntime) {
+export function createInvokeTransport(runtime: HostRuntime) {
   const uploads = createAppHostUploadClient(runtime);
   return async function invoke<T>(toolId: string, method: string, args: object, options?: { timeoutMs?: number }): Promise<T> {
     const message = (payload: InvokePayload) => ({

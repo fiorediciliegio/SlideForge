@@ -10,10 +10,10 @@ async function readJson(filePath: string) {
 
 test("authoring-kit-v1 settings persist globally and workspace setting files are ignored", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-workspace-settings-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const {
     createAppWorkspace,
     getAppWorkspaceDefaults,
@@ -55,7 +55,7 @@ test("authoring-kit-v1 settings persist globally and workspace setting files are
 
     await assert.rejects(readFile(path.join(created.workspace_dir, "setting.json")));
     const defaults = await getAppWorkspaceDefaults();
-    assert.deepEqual(defaults.setting, await readJson(path.join(homeDir, "anna-workspace", "ppt", "setting.json")));
+    assert.deepEqual(defaults.setting, await readJson(path.join(homeDir, "slideforge-workspace", "ppt", "setting.json")));
 
     const inherited = await createAppWorkspace({ title: "Inherited" });
     assert.equal(inherited.setting.page_generation_concurrency, 10);
@@ -69,8 +69,8 @@ test("authoring-kit-v1 settings persist globally and workspace setting files are
   } finally {
     if (previousHome === undefined) delete process.env.HOME;
     else process.env.HOME = previousHome;
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(homeDir, { recursive: true, force: true });
   }
 });

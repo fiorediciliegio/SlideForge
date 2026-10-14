@@ -28,7 +28,7 @@ const enCopy = {
   found: "Last task found",
   missing: "No existing task found",
   createRequired: "Create a new PPT task",
-  createHint: "Anna will initialize an html-authoring-v1 Workspace with standalone HTML page sources.",
+  createHint: "SlideForge will initialize an html-authoring-v1 Workspace with standalone HTML page sources.",
   open: "Open project",
   recent: "Recent projects",
   noRecent: "No recent tasks",
@@ -113,7 +113,7 @@ export function WorkspaceDialog({
           <h2>{text.title}</h2>
           <p>
             {text.rootPrefix}
-            <strong>{scan?.task_root ?? scan?.workspace_root ?? "~/anna-workspace/ppt"}</strong>
+            <strong>{scan?.task_root ?? scan?.workspace_root ?? "~/slideforge-workspace/ppt"}</strong>
           </p>
         </header>
 

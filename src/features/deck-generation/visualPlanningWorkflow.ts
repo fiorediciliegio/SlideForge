@@ -8,7 +8,7 @@ import { throwIfCancelled } from "./runtimeSupport";
 
 function logContext(input: RunDeckGenerationInput, domain: "visual_rhythm" | "page_visual_plan", operation: string) {
   const logger = input.aiLogger as AiInteractionLogger | null | undefined;
-  return logger ? { logger, workspace_dir: input.workspace.workspace_dir, domain, operation, operation_id: logger.createOperationId(domain, operation), provider: "anna", runtime_mode: "anna" } : undefined;
+  return logger ? { logger, workspace_dir: input.workspace.workspace_dir, domain, operation, operation_id: logger.createOperationId(domain, operation), provider: "host", runtime_mode: "host" } : undefined;
 }
 
 async function ensureRhythm(input: RunDeckGenerationInput, outline: WorkspaceOutline, research: SharedResearchContextResult, forceRewrite = false) {

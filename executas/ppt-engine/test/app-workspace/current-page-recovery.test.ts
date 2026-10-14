@@ -16,8 +16,8 @@ async function json(file: string, value: unknown) {
 
 test("恢复后的人工修订、预览指纹和整份演示使用同一当前版本", async (t) => {
   const root = await realpath(await mkdtemp(path.join(os.tmpdir(), "ppt-current-page-recovery-")));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = root;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   const api = await import("../../src/app-workspace/index.js");
   const { buildStaticDeckHtml } = await import("../../src/render/build-deck.js");
   const { resolveCurrentPageSnapshot } = await import("../../src/page-html-preview/current-page.js");
@@ -186,8 +186,8 @@ test("恢复后的人工修订、预览指纹和整份演示使用同一当前�
       assert.match(await readFile(path.join(f.workspaceDir, "slides", `${ids[1]}.html`), "utf8"), /原始内容 2/);
     });
   } finally {
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(root, { recursive: true, force: true });
   }
 });

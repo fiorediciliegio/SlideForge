@@ -8,8 +8,8 @@ import { rasterizePptxToImages } from "../../src/pptx-rasterization/index.ts";
 
 test("personal template publication requires all previews and produces a complete reusable snapshot", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "personal-template-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   try {
     const source = path.join(temporary, "source.pptx");
     await writeFile(source, "PKsource");
@@ -67,8 +67,8 @@ test("personal template publication requires all previews and produces a complet
     assert.equal((await listUserTemplates()).length, 0);
     await assert.rejects(deleteUserTemplate(record.id), /Unknown/);
   } finally {
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(temporary, { recursive: true, force: true });
   }
 });

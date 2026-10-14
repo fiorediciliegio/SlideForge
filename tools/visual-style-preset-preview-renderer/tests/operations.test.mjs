@@ -35,7 +35,7 @@ async function createSourcePreset(sourceRoot, html) {
 }
 
 test("convert-images publishes a complete WebP preset", async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-preview-publish-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-preview-publish-"));
   try {
     const sourceRoot = join(root, "source");
     const outputRoot = join(root, "output");
@@ -60,7 +60,7 @@ test("convert-images publishes a complete WebP preset", async () => {
 });
 
 test("a failed staging validation preserves the published preset", async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-preview-rollback-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-preview-rollback-"));
   try {
     const sourceRoot = join(root, "source");
     const outputRoot = join(root, "output");

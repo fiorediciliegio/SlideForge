@@ -10,9 +10,9 @@ const PNG = Buffer.from(
 );
 
 test("an uploaded image is promoted through Engine-owned research staging", async () => {
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const workspaceRoot = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-uploaded-image-"));
-  process.env.ANNA_WORKSPACE_DIR = workspaceRoot;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = workspaceRoot;
   try {
     const {
       createAppWorkspace,
@@ -37,16 +37,16 @@ test("an uploaded image is promoted through Engine-owned research staging", asyn
     assert.deepEqual(await readFile(imported.file_path), PNG);
     assert.equal(imported.sha256, uploaded.material.sha256);
   } finally {
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(workspaceRoot, { recursive: true, force: true });
   }
 });
 
 test("a classified uploaded image is copied into the persistent uploaded asset catalog", async () => {
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const workspaceRoot = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-uploaded-asset-"));
-  process.env.ANNA_WORKSPACE_DIR = workspaceRoot;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = workspaceRoot;
   try {
     const {
       createAppWorkspace,
@@ -81,23 +81,23 @@ test("a classified uploaded image is copied into the persistent uploaded asset c
     assert.equal(context.uploaded_asset_catalog_path, path.join(workspace.workspace_dir, "uploaded-sources", "asset", "catalog.json"));
     assert.equal((context.uploaded_asset_catalog as { assets?: Array<{ file_path?: string }> }).assets?.[0]?.file_path, copied.file_path);
   } finally {
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(workspaceRoot, { recursive: true, force: true });
   }
 });
 
 async function withImageWorkspace(run: (api: typeof import("../src/app-workspace/index.js"), workspaceDir: string) => Promise<void>) {
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const workspaceRoot = await mkdtemp(path.join(os.tmpdir(), "ppt-image-lifecycle-"));
-  process.env.ANNA_WORKSPACE_DIR = workspaceRoot;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = workspaceRoot;
   try {
     const api = await import("../src/app-workspace/index.js");
     const workspace = await api.createAppWorkspace({ title: "图片生命周期" });
     await run(api, workspace.workspace_dir);
   } finally {
-    if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-    else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+    if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+    else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     await rm(workspaceRoot, { recursive: true, force: true });
   }
 }

@@ -7,8 +7,8 @@ import { mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
 // The library resolves its persistent root at module-evaluation time. Give the
 // test an isolated root before importing it so it never reads or writes a
 // developer's real shared font cache.
-const testRoot = await mkdtemp(path.join(os.tmpdir(), "anna-font-library-"));
-process.env.ANNA_WORKSPACE_DIR = testRoot;
+const testRoot = await mkdtemp(path.join(os.tmpdir(), "slideforge-font-library-"));
+process.env.SLIDEFORGE_WORKSPACE_DIR = testRoot;
 const {
   commitManagedFontUpload,
   inspectManagedFontFile,

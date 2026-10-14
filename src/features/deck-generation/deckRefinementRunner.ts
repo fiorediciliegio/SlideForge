@@ -145,8 +145,8 @@ export async function runDeckRefinementWorkflow(input: RunDeckRefinementInput, i
       domain: "outline",
       operation: "deck_refinement_planning",
       operation_id: input.aiLogger.createOperationId("outline", "deck_refinement_planning"),
-      provider: "anna",
-      runtime_mode: "anna",
+      provider: "host",
+      runtime_mode: "host",
     } : undefined;
     const { plan } = await input.aiClient.planDeckRefinement({
       instruction,
@@ -205,8 +205,8 @@ export async function runDeckRefinementWorkflow(input: RunDeckRefinementInput, i
           domain: "style_guide",
           operation: "regenerate_style_guide_for_deck_refinement",
           operation_id: input.aiLogger.createOperationId("style_guide", "regenerate_style_guide_for_deck_refinement"),
-          provider: "anna",
-          runtime_mode: "anna",
+          provider: "host",
+          runtime_mode: "host",
         } : undefined,
       });
       if (!markdown.trim()) throw new Error("Workspace Style Guide generation returned empty Markdown");

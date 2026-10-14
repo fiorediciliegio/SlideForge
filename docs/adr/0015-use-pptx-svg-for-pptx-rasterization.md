@@ -4,7 +4,7 @@ PPT App will use `pptx-svg` as the first PPTX Rasterization backend for turning 
 
 **Considered Options**
 
-- Use local LibreOffice / `soffice`. Rejected for the first version because it adds an external desktop-suite dependency that is awkward to bundle into Anna Binary distributions.
+- Use local LibreOffice / `soffice`. Rejected for the first version because it adds an external desktop-suite dependency that is awkward to bundle into SlideForge Binary distributions.
 - Use `pptx-svg`. Accepted because it runs in Node/browser without a LibreOffice dependency and can render PPTX slides to SVG, which can then be converted into PNG Reference Slide Images.
 - Build a custom PPTX renderer. Rejected because high-fidelity PowerPoint rendering is too broad for this feature phase.
 

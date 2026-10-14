@@ -220,7 +220,7 @@ function replaceDocxHtmlTables(html: string, tables: DocxTableRender[]) {
     const end = findElementEnd(html, match.index, "table");
     if (end < 0) break;
     output += html.slice(cursor, match.index);
-    output += tables[index] ? `@@ANNA-DOCX-TABLE-${index}@@` : html.slice(match.index, end);
+    output += tables[index] ? `@@DOCX-TABLE-${index}@@` : html.slice(match.index, end);
     cursor = end;
     index += 1;
     matcher.lastIndex = end;
@@ -238,7 +238,7 @@ function createDocxMarkdown(html: string, tables: DocxTableRender[]) {
   const tableReadyHtml = replaceDocxHtmlTables(sanitizeDocxHtml(html), tables);
   let markdown = service.turndown(tableReadyHtml).replace(/\r\n?/g, "\n");
   for (const [index, table] of tables.entries()) {
-    markdown = markdown.replace(`@@ANNA-DOCX-TABLE-${index}@@`, table.markdown);
+    markdown = markdown.replace(`@@DOCX-TABLE-${index}@@`, table.markdown);
   }
   return markdown.trim();
 }

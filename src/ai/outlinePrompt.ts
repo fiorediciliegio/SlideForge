@@ -1,5 +1,5 @@
 import { normalizeSlideAspectRatio } from "../slideFormat";
-import type { LlmCompleteInput } from "../runtime/annaRuntime";
+import type { LlmCompleteInput } from "../runtime/hostRuntime";
 import type {
   AttachmentContext,
   PresentationRequirements,

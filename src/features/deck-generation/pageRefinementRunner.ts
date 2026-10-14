@@ -1,5 +1,5 @@
 import { pickLocale } from "../../i18n/locales";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import type { PageProgress } from "../../api/types";
 import { createProgress } from "./progressProjection";
 import { failedCompletion } from "./deckGenerationCompletion";

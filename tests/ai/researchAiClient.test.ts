@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 
 import { createResearchAiClient } from "../../src/ai/researchAiClient.ts";
 import { DEFAULT_LLM_MAX_ATTEMPTS, LlmRequestExecutionError } from "../../src/ai/llmRequestExecutor.ts";
-import type { AnnaLlmCompleteInput, AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { AnnaLlmCompleteInput, HostRuntime } from "../../src/runtime/hostRuntime.ts";
 import type { AttachmentContext, PresentationRequirements } from "../../src/api/types.ts";
 import { currentDatePromptLine } from "../../src/ai/promptContext.ts";
 import { formatUserProvidedAttachmentContextForPrompt } from "../../src/ai/attachmentContextPrompt.ts";
@@ -45,7 +45,7 @@ describe("Research AI Client", () => {
     const runtime = { llm: { complete: async (input: AnnaLlmCompleteInput) => {
       request = input;
       return { text: '{"web":{"recommended":false,"reason":"No"},"images":{"recommended":false,"reason":"No"}}' };
-    } } } as AnnaRuntime;
+    } } } as HostRuntime;
     for (let version = 1; version <= 10; version += 1) {
       const promptTemplate = readFileSync(new URL(`../../evals/research-routing/prompts/router-v${version}.txt`, import.meta.url), "utf8").trimEnd();
       const expected = promptTemplate
@@ -92,7 +92,7 @@ describe("Research AI Client", () => {
     const runtime = { llm: { complete: async (input: AnnaLlmCompleteInput) => {
       request = input;
       return { text: '{"web":{"recommended":false,"reason":"No"},"images":{"recommended":false,"reason":"No"}}' };
-    } } } as AnnaRuntime;
+    } } } as HostRuntime;
     for (const context of [null, attachmentContext]) {
       const date = currentDatePromptLine();
       await createResearchAiClient(runtime).recommendResearchForEvaluation({
@@ -139,7 +139,7 @@ describe("Research AI Client", () => {
 
   it("moves only the JSON constraint into the system prompt for v11 evaluation", async () => {
     const requests: AnnaLlmCompleteInput[] = [];
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: {
         complete: async (request) => {
@@ -169,7 +169,7 @@ describe("Research AI Client", () => {
 
   it("uses the shared LLM retry framework for evaluation responses", async () => {
     const requests: AnnaLlmCompleteInput[] = [];
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: {
         complete: async (request) => {
@@ -313,7 +313,7 @@ describe("Research AI Client", () => {
       { text: '{"web":{"recommended":false,"reason":""},"images":{"recommended":false,"reason":"不需要图片。"}}' },
       { text: '{"web":{"recommended":false,"reason":"不需要网页研究。"},"images":{"recommended":false,"reason":"不需要图片。"}}' },
     ];
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: {
         complete: async (request) => {

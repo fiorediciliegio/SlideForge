@@ -135,8 +135,8 @@ export function createUploadedSourceAnalysisAgentRunLogger(input: {
         operation: input.operation,
         operation_id: operationId,
         kind: input.kind,
-        provider: "anna",
-        runtime_mode: "anna",
+        provider: "host",
+        runtime_mode: "host",
       }
     : undefined;
   const streamEvents: Array<Record<string, unknown>> = [];

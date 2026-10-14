@@ -11,10 +11,10 @@ import { fileURLToPath } from "node:url";
 
 test("export artifact publish jobs use APS Files and mint links without Host Upload", { timeout: 15_000 }, async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-aps-plugin-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const { createAppWorkspace } = await import("../src/app-workspace/index.js");
   const created = await createAppWorkspace({ title: "APS plugin" });
   const pptxPath = path.join(created.workspace_dir, "output", "deck.pptx");
@@ -32,8 +32,8 @@ test("export artifact publish jobs use APS Files and mint links without Host Upl
   }, null, 2)}\n`);
   if (previousHome === undefined) delete process.env.HOME;
   else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
 
   let uploaded = Buffer.alloc(0);
   let uploadedContentDisposition = "";
@@ -51,7 +51,7 @@ test("export artifact publish jobs use APS Files and mint links without Host Upl
 
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("..", import.meta.url)),
-    env: { ...process.env, HOME: homeDir, ANNA_WORKSPACE_DIR: path.join(homeDir, "anna-workspace") },
+    env: { ...process.env, HOME: homeDir, SLIDEFORGE_WORKSPACE_DIR: path.join(homeDir, "slideforge-workspace") },
     stdio: ["pipe", "pipe", "pipe"],
   });
   child.stderr.resume();

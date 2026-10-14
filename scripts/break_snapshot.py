@@ -1,5 +1,5 @@
 import os, sys, time, glob
-snap_dir = os.environ.get("ANNA_SNAPSHOT_SNAP_DIR", r"<workspace-snapshot-snapshots-dir>")
+snap_dir = os.environ.get("SLIDEFORGE_SNAPSHOT_SNAP_DIR", r"<workspace-snapshot-snapshots-dir>")
 known = set(glob.glob(os.path.join(snap_dir, "*.zip")))
 print("watching", snap_dir, "known zips:", sorted(known), flush=True)
 for _ in range(12000):                     # ~5 分钟窗口

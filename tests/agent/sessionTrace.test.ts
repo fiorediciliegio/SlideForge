@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createAgentClient } from "../../src/agent/agentClient.ts";
 import { createSessionRunTrace, type SessionTraceContext } from "../../src/agent/sessionTrace.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 function fixture(enabled = true) {
   const entries: Array<{ channel: string; entry: Record<string, any> }> = [];
@@ -28,7 +28,7 @@ test("template tracing preserves all raw frames, requests and session lifecycle"
         })();
       }, delete: async () => {} };
     } },
-  } as unknown as AnnaRuntime;
+  } as unknown as HostRuntime;
   const client = await createAgentClient(runtime);
   assert.deepEqual(await client.runStructuredPrompt("Read https://example.test/a?X-Amz-Signature=SECRET", (x) => x, {
     sessionTrace: trace, sessionTools: ["doc_read"], attachments: [{ type: "image/png", url: "https://secret.test/image", filename: "page-001.png" }],
@@ -62,7 +62,7 @@ test("creation failure and same-session validation repairs retain separate evide
     return { id: "session-2", run: () => (async function* () {
       yield { event: "message", text: ++runs === 1 ? "not json" : '{"ok":true}' };
     })(), delete: async () => {} };
-  } } } as unknown as AnnaRuntime;
+  } } } as unknown as HostRuntime;
   const client = await createAgentClient(runtime);
   await client.runStructuredPrompt("initial", (x) => x, { sessionTrace: trace });
   assert.equal(creates, 2); assert.equal(runs, 2);
@@ -103,7 +103,7 @@ test("stream logging failure is reported without changing a successful model res
 
 test("disabled tracing collects no requests or raw frames", async () => {
   const { trace, entries } = fixture(false);
-  const runtime = { agent: { session: async () => ({ run: () => (async function* () { yield { event: "message", text: "{}" }; })(), delete: async () => {} }) } } as unknown as AnnaRuntime;
+  const runtime = { agent: { session: async () => ({ run: () => (async function* () { yield { event: "message", text: "{}" }; })(), delete: async () => {} }) } } as unknown as HostRuntime;
   await (await createAgentClient(runtime)).runStructuredPrompt("run", (x) => x, { sessionTrace: trace });
   assert.deepEqual(entries, []);
   assert.equal(createSessionRunTrace(trace, {}), undefined);

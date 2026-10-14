@@ -9,8 +9,8 @@ import { runWithDiagnosticLogging } from "../../src/diagnostic-logging.ts";
 
 test("drafts own upload failures, append-only diagnostics and a complete scoped ZIP", async () => {
   const temporary = await mkdtemp(path.join(os.tmpdir(), "ppt-template-diagnostics-test-"));
-  const previous = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = temporary;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = temporary;
   let archive = "";
   try {
     const draft = await createUserTemplateDraft({ filename: "source.pptx" });
@@ -60,7 +60,7 @@ test("drafts own upload failures, append-only diagnostics and a complete scoped 
       await assert.rejects(prepareUserTemplateDiagnosticBundle({ id: draft.id }), /Invalid template log directory/);
     }
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(temporary, { recursive: true, force: true });
     if (archive) await rm(archive, { force: true });
   }

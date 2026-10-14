@@ -16,9 +16,9 @@ test("恢复确认的失败保护、去重及晚到结果", async (t) => {
   }
   window.HTMLElement.prototype.showModal = function () { this.setAttribute("open", ""); };
   window.HTMLElement.prototype.close = function () { this.removeAttribute("open"); };
-  window.__ANNA_TOOL_IDS__ = { "ppt-engine": "test-engine" };
+  window.__BUNDLED_TOOL_IDS__ = { "ppt-engine": "test-engine" };
   let invoke: (input: any) => Promise<any>;
-  window.AnnaAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
+  window.HostAppRuntime = { connect: async () => ({ tools: { invoke: withOrdinaryInvokeTransport(async (input) => {
     if (input.method === "app_run_workspace_snapshot_publish_dedicated_invoke") return { success: true, data: { status: "completed" } };
     if (input.method === "app_append_workspace_log") return { success: true, data: { appended: true } };
     return { success: true, data: await invoke(input) };

@@ -5,9 +5,9 @@ import path from "node:path";
 import test from "node:test";
 
 test("49 张图片时并发上传仅剩一个名额，删除后可补充，文档不占图片名额", async () => {
-  const previous = process.env.ANNA_WORKSPACE_DIR;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-image-limit-"));
-  process.env.ANNA_WORKSPACE_DIR = root;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   const engine = await import("../../src/app-workspace/index.ts");
   try {
     const { workspace_dir } = await engine.createAppWorkspace({ title: "图片数量边界" });
@@ -35,7 +35,7 @@ test("49 张图片时并发上传仅剩一个名额，删除后可补充，文�
     assert.equal(listed.active.filter((item) => item.extension.toLowerCase() === ".png").length, 50);
     assert.equal(listed.active.length, 51);
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

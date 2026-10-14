@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { afterEach, describe, it, mock } from "node:test";
 
 import { createAppHostUploadClient } from "../../src/runtime/appHostUploadClient.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 const originalFetch = globalThis.fetch;
 const originalWindow = (globalThis as Record<string, unknown>).window;
@@ -17,7 +17,7 @@ afterEach(() => {
   mock.restoreAll();
 });
 
-function runtimeWithUpload(): AnnaRuntime {
+function runtimeWithUpload(): HostRuntime {
   return {
     tools: {
       invoke: async () => ({}),
@@ -206,13 +206,13 @@ describe("AppHostUploadClient", () => {
     }) as typeof fetch;
 
     const client = createAppHostUploadClient(runtimeWithUpload());
-    // Node test env has no window.__ANNA_TOOL_IDS__, so resolvePptBundledToolIds
+    // Node test env has no window.__BUNDLED_TOOL_IDS__, so resolvePptBundledToolIds
     // throws and the relay is skipped with that reason spelled out.
     await assert.rejects(
       () => client.uploadFile(new File(["hello"], "source.txt", { type: "text/plain" }), {
         purpose: "user_artifact",
       }),
-      /Host upload failed: Failed to fetch\. ppt-engine relay failed: Missing Anna bundled tool id for "ppt-engine"\./,
+      /Host upload failed: Failed to fetch\. ppt-engine relay failed: Missing SlideForge bundled tool id for "ppt-engine"\./,
     );
   });
 
@@ -223,7 +223,7 @@ describe("AppHostUploadClient", () => {
     // Provide the bundled tool id so resolvePptBundledToolIds succeeds and the
     // relay actually reaches runtime.tools.invoke.
     (globalThis as Record<string, unknown>).window = {
-      __ANNA_TOOL_IDS__: { "ppt-engine": "tool-test-engine" },
+      __BUNDLED_TOOL_IDS__: { "ppt-engine": "tool-test-engine" },
     };
 
     const runtime = runtimeWithUpload();

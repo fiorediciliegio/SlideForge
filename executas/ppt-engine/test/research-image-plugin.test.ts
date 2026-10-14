@@ -29,16 +29,16 @@ async function waitForStorageLog(workspaceDir: string) {
 
 test("research images use safe HTTPS download staging, Host Upload, and local import", { timeout: 15_000 }, async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-engine-research-image-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
   const { createAppWorkspace } = await import("../src/app-workspace/index.js");
   const created = await createAppWorkspace({ title: "Research images" });
   if (previousHome === undefined) delete process.env.HOME;
   else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
 
   let uploadedBytes = Buffer.alloc(0);
   const uploadServer = createServer((request, response) => {
@@ -57,7 +57,7 @@ test("research images use safe HTTPS download staging, Host Upload, and local im
 
   const child = spawn(process.execPath, ["example_plugin.js"], {
     cwd: fileURLToPath(new URL("..", import.meta.url)),
-    env: { ...process.env, HOME: homeDir, ANNA_WORKSPACE_DIR: path.join(homeDir, "anna-workspace") },
+    env: { ...process.env, HOME: homeDir, SLIDEFORGE_WORKSPACE_DIR: path.join(homeDir, "slideforge-workspace") },
     stdio: ["pipe", "pipe", "pipe"],
   });
   child.stderr.resume();

@@ -1,4 +1,4 @@
-import type { AnnaRuntime, AnnaToolInvokeInput } from "./annaRuntime";
+import type { HostRuntime, ToolInvokeInput } from "./hostRuntime";
 import type { HostUploadRef } from "../api/types";
 import {
   INVOKE_CHANNEL_TOOL, INVOKE_CHUNK_BYTES, INVOKE_INLINE_BYTES, INVOKE_MAX_BYTES,
@@ -6,7 +6,7 @@ import {
 } from "../../executas/ppt-engine/invoke-transport.js";
 
 /** The only ordinary runtime invoke boundary, including bounded transfer controls. */
-export async function sendInvokeFrame(runtime: AnnaRuntime, input: AnnaToolInvokeInput, options?: { timeoutMs?: number }): Promise<unknown> {
+export async function sendInvokeFrame(runtime: HostRuntime, input: ToolInvokeInput, options?: { timeoutMs?: number }): Promise<unknown> {
   if (jsonBytes(input).length > INVOKE_INLINE_BYTES) throw new Error("Invoke message exceeds 3 MiB");
   return runtime.tools.invoke(input, options);
 }
@@ -18,14 +18,14 @@ export function unwrapInvokeResult<T>(value: unknown): T {
   return value as T;
 }
 
-async function control<T>(runtime: AnnaRuntime, toolId: string, args: object): Promise<T> {
+async function control<T>(runtime: HostRuntime, toolId: string, args: object): Promise<T> {
   return unwrapInvokeResult<T>(await sendInvokeFrame(runtime, {
     tool_id: toolId, method: INVOKE_CHANNEL_TOOL, args, timeoutMs: 600_000,
   }, { timeoutMs: 600_000 }));
 }
 
 /** CORS relay never calls the payload encoder/upload client, so it cannot recurse. */
-export async function relayHostUpload(runtime: AnnaRuntime, toolId: string, file: File, input: {
+export async function relayHostUpload(runtime: HostRuntime, toolId: string, file: File, input: {
   filename: string; mimeType: string; purpose: string; metadata?: Record<string, unknown>;
 }): Promise<HostUploadRef> {
   if (file.size < 1 || file.size > INVOKE_MAX_BYTES) throw new Error("Invalid invoke relay file size");
@@ -49,7 +49,7 @@ export async function relayHostUpload(runtime: AnnaRuntime, toolId: string, file
 }
 
 /** Download controls return bounded bytes, never another upload reference. */
-export async function readInvokeUploadThroughEngine(runtime: AnnaRuntime, toolId: string, upload: InvokeUpload): Promise<Uint8Array<ArrayBuffer>> {
+export async function readInvokeUploadThroughEngine(runtime: HostRuntime, toolId: string, upload: InvokeUpload): Promise<Uint8Array<ArrayBuffer>> {
   if (!Number.isSafeInteger(upload.size_bytes) || upload.size_bytes < 1 || upload.size_bytes > INVOKE_MAX_BYTES) {
     throw new Error("Invalid invoke download size");
   }

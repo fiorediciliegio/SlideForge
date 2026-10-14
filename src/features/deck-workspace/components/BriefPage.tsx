@@ -838,7 +838,7 @@ export function BriefPage({
           aria-modal="true"
           aria-label={currentPreviewPreset.name}
           onClick={(event) => {
-            // Do not rely on bubbling semantics across the Anna event bridge:
+            // Do not rely on bubbling semantics across the SlideForge event bridge:
             // only a click that starts on the backdrop may dismiss the modal.
             if (event.target === event.currentTarget) setPreview(null);
           }}

@@ -14,4 +14,4 @@ PPT App 使用显式启用的 Performance Testing（性能测试）能力记录�
 
 App 内查看报告时，`ppt-engine` 复用现有 Host Upload 传输本地 `report.html`，并按当前 Host Upload MIME 白名单使用 `text/plain`；前端获取文本后在独立报告页的无脚本沙箱 iframe 中通过 `srcDoc` 渲染。Host Upload URL 是短期传输状态，不写入运行记录；本地报告生成成功即表示 Performance Run 完成，后续报告上传失败只允许重试传输，不倒推运行失败。HTML 使用所有有效事件完成全量聚合，但不复制全部原始 JSONL，明细受文件大小上限约束并明确标注省略数量；报告语言取结束记录时的 App Locale（界面语言）并持久化以支持一致重生成。
 
-第一阶段不引入 OpenTelemetry Collector、Sentry、PostHog 等大型第三方平台。事件与 Trace/Span 模型借鉴 OpenTelemetry（开放遥测），保留未来增加 Exporter（导出器）的空间，但本地 JSONL、静态报告和当前 Anna Runtime 边界保持自有轻量实现。
+第一阶段不引入 OpenTelemetry Collector、Sentry、PostHog 等大型第三方平台。事件与 Trace/Span 模型借鉴 OpenTelemetry（开放遥测），保留未来增加 Exporter（导出器）的空间，但本地 JSONL、静态报告和当前 SlideForge Runtime 边界保持自有轻量实现。

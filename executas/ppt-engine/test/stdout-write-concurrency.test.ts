@@ -19,7 +19,7 @@ test("concurrent invokes with large responses keep every frame intact", { timeou
   const directory = await mkdtemp(path.join(os.tmpdir(), "ppt-stdio-concurrency-"));
   const child = spawn(process.execPath, ["app_stdio.js"], {
     cwd: fileURLToPath(new URL("..", import.meta.url)),
-    env: { ...process.env, HOME: directory, ANNA_WORKSPACE_DIR: path.join(directory, "workspaces") },
+    env: { ...process.env, HOME: directory, SLIDEFORGE_WORKSPACE_DIR: path.join(directory, "workspaces") },
     stdio: ["pipe", "pipe", "pipe"],
   });
   let exited = false;

@@ -1,5 +1,5 @@
 {
-  "name": "@anna-apps/ppt-visual-style-preset-preview-renderer",
+  "name": "@slideforge/ppt-visual-style-preset-preview-renderer",
   "version": "0.1.0",
   "private": true,
   "description": "Independent Chromium renderer and validator for PPT App visual style preset WebP previews.",

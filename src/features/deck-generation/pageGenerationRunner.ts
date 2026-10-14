@@ -48,8 +48,8 @@ async function ensurePageReference(input: DeckGenerationRuntime, page: Authoring
           domain: "page_agent",
           operation: "select_aesthetic_reference",
           operation_id: input.aiLogger.createOperationId("page_agent", "select_aesthetic_reference"),
-          provider: "anna",
-          runtime_mode: "anna",
+          provider: "host",
+          runtime_mode: "host",
         } : undefined,
       });
       await input.backend.recordWorkspaceAestheticReferenceSelection({
@@ -213,8 +213,8 @@ async function runPageGenerationInternal(input: DeckGenerationRuntime, authoring
               operation_id: input.aiLogger.createOperationId("page_agent", rewriteContext ? "rewrite_page_layout" : "generate_page_html"),
               page_id: page.page_id,
               page_index: page.index,
-              provider: "anna",
-              runtime_mode: "anna",
+              provider: "host",
+              runtime_mode: "host",
             } : undefined,
           };
           const generated = !rewriteContext && isPageHtmlGenerationSystemPromptEnabled()

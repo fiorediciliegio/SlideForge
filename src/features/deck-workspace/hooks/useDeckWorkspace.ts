@@ -11,7 +11,7 @@ import { createPageImageSearchService, type PageImageSearchService } from "../..
 import { usePageRegeneration } from "../../page-regeneration/usePageRegeneration";
 import { createPageImageUploadService, type PageImageUploadService } from "../../page-image-upload/service";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import appManifest from "../../../../app.json";
+import appManifest from "../../../../src/appMeta";
 import { createAgentClient, type AgentClient } from "../../../agent/agentClient";
 import { resolveAgentToolAccessPolicy } from "../../../agent/agentToolAccessPolicy";
 import { createAiClient, type AiAttemptLog, type AiClient, type LlmContextRow } from "../../../ai/aiClient";
@@ -30,7 +30,7 @@ import { createPptBackend, toPerfReportLocale, type PptBackend } from "../../../
 import { createResearchWebClient, type ResearchWebClient } from "../../../api/researchWebClient";
 import { startBrowserDownload } from "../browserDownload";
 import { hasActiveDownloadUrl } from "../downloadUrl";
-import { connectAnnaRuntime } from "../../../runtime/annaRuntime";
+import { connectHostRuntime } from "../../../runtime/hostRuntime";
 import {
   createAppHostFileDownloadClient,
   type AppHostFileDownloadClient,
@@ -941,8 +941,8 @@ export function useDeckWorkspace(t: Messages, locale: Locale) {
       workspace_dir: workspace.workspace_dir,
       domain,
       operation,
-      provider: "anna",
-      runtime_mode: "anna",
+      provider: "host",
+      runtime_mode: "host",
       ...extra,
     };
   }
@@ -1912,7 +1912,7 @@ export function useDeckWorkspace(t: Messages, locale: Locale) {
       try {
         const [nextBackend, runtime] = await Promise.all([
           createPptBackend(),
-          connectAnnaRuntime()
+          connectHostRuntime()
         ]);
         // Start the cheap, user-visible workspace scan before Agent client
         // setup. The My Works list should not wait for unrelated AI plumbing.
@@ -5473,7 +5473,7 @@ export function useDeckWorkspace(t: Messages, locale: Locale) {
         ...slide,
         html_path: htmlPath,
         render_source_fingerprint: sourceFingerprint ?? slide.render_source_fingerprint,
-        // anna-ppt made screenshots transient and keys previews off the
+        // slideforge-ppt made screenshots transient and keys previews off the
         // server-provided fingerprint; the manual-save discriminator below is
         // still consumed by the outer preview cache (see previewVersionCache).
         screenshot_path: "",

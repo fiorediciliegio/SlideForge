@@ -4,15 +4,15 @@ import os from "node:os";
 import path from "node:path";
 import test, { after } from "node:test";
 
-const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
 const testDir = await mkdtemp(path.join(os.tmpdir(), "ppt-delete-corrupt-"));
-process.env.ANNA_WORKSPACE_DIR = path.join(testDir, "anna-workspace");
+process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(testDir, "slideforge-workspace");
 const api = await import("../../src/app-workspace/index.ts");
 let workspaceNumber = 0;
 
 after(async () => {
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
   await rm(testDir, { recursive: true, force: true });
 });
 

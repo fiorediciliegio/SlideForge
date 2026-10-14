@@ -5,9 +5,9 @@ import path from "node:path";
 import test from "node:test";
 
 test("创作要求经过保存、确认、重排、重开和旧字段读取仍保持原文", async () => {
-  const previous = process.env.ANNA_WORKSPACE_DIR;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-creation-requirements-"));
-  process.env.ANNA_WORKSPACE_DIR = root;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   const engine = await import("../../src/app-workspace/index.ts");
   try {
     const { workspace_dir } = await engine.createAppWorkspace({ title: "指令保留" });
@@ -55,7 +55,7 @@ test("创作要求经过保存、确认、重排、重开和旧字段读取仍�
     assert.equal(cleared.global_creation_requirements, "");
     assert.ok(!Object.hasOwn(cleared.items[0], "creation_requirements"));
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

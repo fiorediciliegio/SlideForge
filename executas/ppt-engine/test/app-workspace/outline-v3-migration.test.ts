@@ -5,9 +5,9 @@ import path from "node:path";
 import test from "node:test";
 
 test("历史 v3 大纲迁移保留正文、页面标识和确认状态，重复读取不再改变", async () => {
-  const previous = process.env.ANNA_WORKSPACE_DIR;
+  const previous = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const root = await mkdtemp(path.join(os.tmpdir(), "ppt-outline-v3-"));
-  process.env.ANNA_WORKSPACE_DIR = root;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = root;
   const engine = await import("../../src/app-workspace/index.ts");
   try {
     const workspace = await engine.createAppWorkspace({ title: "历史作品" });
@@ -42,7 +42,7 @@ test("历史 v3 大纲迁移保留正文、页面标识和确认状态，重复�
       }
     }
   } finally {
-    if (previous === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previous;
+    if (previous === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previous;
     await rm(root, { recursive: true, force: true });
   }
 });

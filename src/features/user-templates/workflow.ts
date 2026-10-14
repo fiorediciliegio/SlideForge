@@ -1,6 +1,6 @@
 import type { AgentClient } from "../../agent/agentClient";
 import type { AppHostUploadClient } from "../../runtime/appHostUploadClient";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import type { HostUploadRef } from "../../api/types";
 import type { TemplatePageProgress, TemplateProgress, TemplateStepDetailDrift, UserTemplate, UserTemplateBackend, UserTemplateMetadata, DesignProfile } from "./types";
 import type { Locale } from "../../i18n/messages";

@@ -6,10 +6,10 @@ import { isWorkspaceDeckStale } from "../../src/features/deck-workspace/utils.ts
 
 function makeWorkspace(overrides: Partial<WorkspaceResult> = {}): WorkspaceResult {
   return {
-    workspace_root: "/tmp/anna-workspace/ppt",
-    task_root: "/tmp/anna-workspace/ppt",
-    workspace_dir: "/tmp/anna-workspace/ppt/ppt-20260602-114351",
-    task_dir: "/tmp/anna-workspace/ppt/ppt-20260602-114351",
+    workspace_root: "/tmp/slideforge-workspace/ppt",
+    task_root: "/tmp/slideforge-workspace/ppt",
+    workspace_dir: "/tmp/slideforge-workspace/ppt/ppt-20260602-114351",
+    task_dir: "/tmp/slideforge-workspace/ppt/ppt-20260602-114351",
     workspace_id: "ppt-20260602-114351",
     task_id: "ppt-20260602-114351",
     initialized: true,
@@ -46,7 +46,7 @@ function makeWorkspace(overrides: Partial<WorkspaceResult> = {}): WorkspaceResul
       source: {
         outline_updated_at: "2026-06-02T03:44:57.562Z",
         template_group: "template",
-        template_manifest_path: "/tmp/anna-workspace/ppt/ppt-20260602-114351/template/manifest.json",
+        template_manifest_path: "/tmp/slideforge-workspace/ppt/ppt-20260602-114351/template/manifest.json",
         generated_by: "llm.complete",
       },
       pages: [

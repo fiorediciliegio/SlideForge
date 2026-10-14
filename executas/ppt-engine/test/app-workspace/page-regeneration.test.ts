@@ -15,8 +15,8 @@ async function json(file: string, value: unknown) { await mkdir(path.dirname(fil
 
 test("single-page regeneration persistence and adoption", async (t) => {
   const directory = await mkdtemp(path.join(os.tmpdir(), "ppt-page-alternatives-test-"));
-  const previousRoot = process.env.ANNA_WORKSPACE_DIR;
-  process.env.ANNA_WORKSPACE_DIR = directory;
+  const previousRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
+  process.env.SLIDEFORGE_WORKSPACE_DIR = directory;
   const api = await import("../../src/app-workspace/index.ts");
   let sequence = 100000;
   async function fixture() {
@@ -181,7 +181,7 @@ test("single-page regeneration persistence and adoption", async (t) => {
       await assert.rejects(api.adoptAppPageRegeneration({ workspace_dir: another.workspaceDir, batch_id: altered.id, candidate_id: altered.candidates[0].id }), /CONFLICT/);
     });
   } finally {
-    if (previousRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR; else process.env.ANNA_WORKSPACE_DIR = previousRoot;
+    if (previousRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR; else process.env.SLIDEFORGE_WORKSPACE_DIR = previousRoot;
     await rm(directory, { recursive: true, force: true });
   }
 });

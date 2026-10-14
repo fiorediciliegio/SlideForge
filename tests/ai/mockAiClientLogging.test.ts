@@ -21,8 +21,8 @@ describe("MockAiClient AI Interaction Log", () => {
       workspace_dir: "/tmp/workspace",
       domain: "outline",
       operation: "generate_outline",
-      provider: "anna",
-      runtime_mode: "anna",
+      provider: "host",
+      runtime_mode: "host",
     };
 
     const client = createMockAiClient();

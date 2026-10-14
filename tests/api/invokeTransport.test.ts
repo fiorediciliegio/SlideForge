@@ -1,12 +1,12 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { createAnnaPptBackend } from "../../src/api/annaPptBackend.ts";
+import { createAnnaPptBackend } from "../../src/api/hostPptBackend.ts";
 import { withOrdinaryInvokeTransport } from "../helpers/invokeRuntime.ts";
 import { INVOKE_INLINE_BYTES, jsonBytes } from "../../executas/ppt-engine/invoke-transport.js";
 
 test("business text and JSON calls use ordinary transport without per-feature upload fields", async (t) => {
   const previous = Object.getOwnPropertyDescriptor(globalThis, "window");
-  Object.defineProperty(globalThis, "window", { configurable: true, value: { __ANNA_TOOL_IDS__: { "ppt-engine": "engine" } } });
+  Object.defineProperty(globalThis, "window", { configurable: true, value: { __BUNDLED_TOOL_IDS__: { "ppt-engine": "engine" } } });
   t.after(() => { if (previous) Object.defineProperty(globalThis, "window", previous); else Reflect.deleteProperty(globalThis, "window"); });
   const workspace_dir = "/workspace/中文";
   const text = '中文😀"\\\n'.repeat(400_000);

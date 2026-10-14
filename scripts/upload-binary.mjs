@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Concurrent + self-refreshing uploader for Anna executa binary artifacts.
+ * Concurrent + self-refreshing uploader for SlideForge executa binary artifacts.
  *
- * Why this exists: `anna-app executa publish` uploads parts strictly one at a
+ * Why this exists: `slideforge-app executa publish` uploads parts strictly one at a
  * time, and the short-lived upload token (~15 min) can expire before a large
  * artifact set finishes on a slow uplink, producing
  *   `401 UPLOAD_TOKEN_INVALID: invalid upload token: Signature has expired.`
@@ -13,17 +13,17 @@
  *      re-send bytes the server already has.
  *
  * Protocol (same endpoints the CLI uses):
- *   POST /api/v1/anna-apps/dev/upload-session/mint        (PAT auth) -> upload_token
- *   POST /api/v1/anna-apps/dev/executas/{toolId}/binaries/init          -> upload_id + per-platform plan
- *   POST /api/v1/anna-apps/dev/executas/{toolId}/binaries/{uploadId}/part?platform=&index=
- *   POST /api/v1/anna-apps/dev/executas/{toolId}/binaries/{uploadId}/finalize
+ *   POST /api/v1/slideforge/dev/upload-session/mint        (PAT auth) -> upload_token
+ *   POST /api/v1/slideforge/dev/executas/{toolId}/binaries/init          -> upload_id + per-platform plan
+ *   POST /api/v1/slideforge/dev/executas/{toolId}/binaries/{uploadId}/part?platform=&index=
+ *   POST /api/v1/slideforge/dev/executas/{toolId}/binaries/{uploadId}/finalize
  *
  * Memory: peak is roughly `--concurrency` x part_size (part_size is server
  * driven, 64 MiB today). Use --concurrency 2 on memory-constrained machines.
  *
  * Usage:
  *   node scripts/upload-binary.mjs [--cwd executas/ppt-engine] [--concurrency 4]
- *                                  [--dry-run] [--host https://staging.anna.partners]
+ *                                  [--dry-run] [--host https://staging.slideforge.partners]
  *                                  [--tool-id tool-xxxx]
  */
 
@@ -59,7 +59,7 @@ function parseArgs(argv) {
 }
 
 function readCredentials() {
-  const path = resolve(homedir(), ".config", "anna", "credentials.json");
+  const path = resolve(homedir(), ".config", "host", "credentials.json");
   if (!existsSync(path)) throw new Error(`credentials not found: ${path}`);
   return JSON.parse(readFileSync(path, "utf8"));
 }
@@ -67,21 +67,21 @@ function readCredentials() {
 function resolveAccount(credentials, host) {
   const accounts = credentials.accounts ?? {};
   const key = host ?? credentials.current ?? Object.keys(accounts)[0];
-  if (!key) throw new Error("no Anna account found in credentials.json");
+  if (!key) throw new Error("no SlideForge account found in credentials.json");
   const account = accounts[key];
   if (!account) throw new Error(`no credentials for host ${key}`);
-  if (!account.pat) throw new Error(`account ${key} has no PAT — run \`anna-app login\``);
+  if (!account.pat) throw new Error(`account ${key} has no PAT — run \`slideforge-app login\``);
   return { host: account.host ?? key, pat: account.pat };
 }
 
 function resolveToolId(cwd, explicit) {
   if (explicit) return explicit;
-  const cache = resolve(cwd, ".anna", "executa.json");
+  const cache = resolve(cwd, ".slideforge", "executa.json");
   if (existsSync(cache)) {
     const parsed = JSON.parse(readFileSync(cache, "utf8"));
     if (parsed.tool_id) return parsed.tool_id;
   }
-  throw new Error("no tool_id — pass --tool-id or run from a directory with .anna/executa.json");
+  throw new Error("no tool_id — pass --tool-id or run from a directory with .slideforge/executa.json");
 }
 
 function resolveArtifacts(manifest) {
@@ -198,7 +198,7 @@ function createTransport(host, initialToken, refresh) {
 }
 
 async function mintUploadToken(host, pat, toolId) {
-  const response = await fetch(`${host}/api/v1/anna-apps/dev/upload-session/mint`, {
+  const response = await fetch(`${host}/api/v1/slideforge/dev/upload-session/mint`, {
     method: "POST",
     headers: { authorization: `Bearer ${pat}`, "content-type": "application/json", accept: "application/json" },
     body: JSON.stringify({ tool_id: toolId }),
@@ -274,7 +274,7 @@ async function main() {
   const assets = {};
   for (const entry of plan) assets[entry.platform] = entry.decl;
 
-  const init = await liveTransport.post(`/api/v1/anna-apps/dev/executas/${encodeURIComponent(toolId)}/binaries/init`, {
+  const init = await liveTransport.post(`/api/v1/slideforge/dev/executas/${encodeURIComponent(toolId)}/binaries/init`, {
     executa_version: version,
     assets,
     dry_run: args.dryRun === true,
@@ -332,7 +332,7 @@ async function main() {
         for (let attempt = 1; attempt <= PART_RETRIES; attempt += 1) {
           try {
             await liveTransport.post(
-              `/api/v1/anna-apps/dev/executas/${encodeURIComponent(toolId)}/binaries/${encodeURIComponent(init.upload_id)}/part` +
+              `/api/v1/slideforge/dev/executas/${encodeURIComponent(toolId)}/binaries/${encodeURIComponent(init.upload_id)}/part` +
                 `?platform=${encodeURIComponent(job.platform)}&index=${job.index}`,
               undefined,
               bytes,
@@ -372,7 +372,7 @@ async function main() {
   }
 
   const finalized = await liveTransport.post(
-    `/api/v1/anna-apps/dev/executas/${encodeURIComponent(toolId)}/binaries/${encodeURIComponent(init.upload_id)}/finalize`,
+    `/api/v1/slideforge/dev/executas/${encodeURIComponent(toolId)}/binaries/${encodeURIComponent(init.upload_id)}/finalize`,
     {},
   );
   console.log("finalized:");

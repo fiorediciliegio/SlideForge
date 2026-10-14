@@ -1,4 +1,4 @@
-import type { LlmCompleteInput, AnnaRuntime } from "../runtime/annaRuntime";
+import type { LlmCompleteInput, HostRuntime } from "../runtime/hostRuntime";
 import type { AiOperationLogContext } from "./interactionLog";
 import { executeLlmRequest, type LlmRequestAttempt } from "./llmRequestExecutor";
 
@@ -81,7 +81,7 @@ function buildAttachmentBriefValidationRetryFeedback(errors: string[]) {
   ].join("\n");
 }
 
-export function createAttachmentBriefCompletionClient(runtime: AnnaRuntime): AttachmentBriefCompletionClient {
+export function createAttachmentBriefCompletionClient(runtime: HostRuntime): AttachmentBriefCompletionClient {
   return {
     async complete<T>(input: AttachmentBriefCompletionInput<T>): Promise<AttachmentBriefCompletionResult<T>> {
       const request: LlmCompleteInput = {

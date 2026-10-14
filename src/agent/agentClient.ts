@@ -3,8 +3,8 @@ import { pickLocale } from "../i18n/locales";
 import type {
   AgentImageAttachment,
   HostAgentSession,
-  AnnaRuntime,
-} from "../runtime/annaRuntime";
+  HostRuntime,
+} from "../runtime/hostRuntime";
 import { beginPerformanceSpan } from "../performance/performanceRecorder";
 import {
   AGENT_TOOLS_UNAVAILABLE_MESSAGE,
@@ -22,7 +22,7 @@ import {
 import type { AiOperationLogContext } from "../ai/interactionLog";
 import type { Locale } from "../i18n/messages";
 
-export const HTML_GENERATION_SYSTEM_PROMPT = `你是 Anna PPT App 的 HTML 演示页面生成 Agent（代理）。你只负责当前页，需要根据用户整体 Brief、当前页大纲、整套演示描述、全局视觉母版、主导美学参考、Web 研究资料、图片目录，以及可选的原始 HTML 和修改意见，生成或精修当前页。
+export const HTML_GENERATION_SYSTEM_PROMPT = `你是 SlideForge 的 HTML 演示页面生成 Agent（代理）。你只负责当前页，需要根据用户整体 Brief、当前页大纲、整套演示描述、全局视觉母版、主导美学参考、Web 研究资料、图片目录，以及可选的原始 HTML 和修改意见，生成或精修当前页。
 
 【事实边界，优先级最高】
 1. 只能使用本次输入明确提供的信息，包括 Brief、当前页内容和 Web 研究资料；不得依赖模型记忆、联网搜索、常识补全或自行创作新的日期、数字、人物、机构、地点、事件、因果、预测和来源。
@@ -76,8 +76,8 @@ const AGENT_RUN_TIMEOUT_MS = 600_000;
 const AGENT_STREAM_IDLE_TIMEOUT_MS = 180_000;
 /** Hot-switch companion to the model preference: raise the stream idle budget
  *  when the upstream provider is slow (e.g. long time-to-first-token):
- *  localStorage.setItem("anna.agent.idle-timeout-ms", "600000") */
-const STREAM_IDLE_TIMEOUT_STORAGE_KEY = "anna.agent.idle-timeout-ms";
+ *  localStorage.setItem("slideforge.agent.idle-timeout-ms", "600000") */
+const STREAM_IDLE_TIMEOUT_STORAGE_KEY = "slideforge.agent.idle-timeout-ms";
 function resolveStreamIdleTimeoutMs(override?: number): number {
   if (override) return override;
   try {
@@ -92,8 +92,8 @@ export const AGENT_SESSION_MODEL_PREFERENCE = "google/gemini-3.8-flash";
 /** Hot-switch hook for local diagnosis: read per-run so the console can
  *  redirect the next Session without a rebuild. Short aliases keep the
  *  console one-liner friendly:
- *  localStorage.setItem("anna.agent.model-preference", "gemini" | "kimi" | "<full/model-name>") */
-const MODEL_PREFERENCE_STORAGE_KEY = "anna.agent.model-preference";
+ *  localStorage.setItem("slideforge.agent.model-preference", "gemini" | "kimi" | "<full/model-name>") */
+const MODEL_PREFERENCE_STORAGE_KEY = "slideforge.agent.model-preference";
 const MODEL_PREFERENCE_ALIASES: Record<string, string> = {
   gemini: "google/gemini-3.8-flash",
   kimi: "moonshotai/kimi-k2.6",
@@ -830,7 +830,7 @@ async function readSessionHistory(session: HostAgentSession | null): Promise<unk
 }
 
 export async function createAgentClient(
-  runtime: AnnaRuntime,
+  runtime: HostRuntime,
   clientOptions: AgentClientOptions = {},
 ): Promise<AgentClient> {
   const activeSessions = new Set<HostAgentSession>();

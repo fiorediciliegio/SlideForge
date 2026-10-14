@@ -16,7 +16,7 @@ async function readJson<T>(filePath: string): Promise<T> {
 
 function createWorkspaceDir(homeDir: string) {
   const suffix = String(randomInt(0, 1_000_000)).padStart(6, "0");
-  return path.join(homeDir, "anna-workspace", "ppt", "ppt-20260601-1" + suffix.slice(1));
+  return path.join(homeDir, "slideforge-workspace", "ppt", "ppt-20260601-1" + suffix.slice(1));
 }
 
 async function createProgressWorkspace(homeDir: string) {
@@ -103,10 +103,10 @@ async function createProgressWorkspace(homeDir: string) {
 
 test("recordAppPageProgress preserves concurrent updates in one workspace", async () => {
   const previousHome = process.env.HOME;
-  const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+  const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
   const homeDir = await mkdtemp(path.join(os.tmpdir(), "presenton-page-progress-home-"));
   process.env.HOME = homeDir;
-  process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+  process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 
   const { recordAppPageProgress } = await import("../../src/app-workspace/index.ts");
 
@@ -219,8 +219,8 @@ test("recordAppPageProgress preserves concurrent updates in one workspace", asyn
       delete process.env.HOME;
     } else {
       process.env.HOME = previousHome;
-      if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-      else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+      if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+      else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
     }
     await rm(homeDir, { recursive: true, force: true });
   }

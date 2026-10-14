@@ -6,7 +6,7 @@ import test from "node:test";
 import { assertDisjointDirectories } from "../src/files.mjs";
 
 test("source and output roots must be separate and non-nested", async () => {
-  const root = await mkdtemp(join(tmpdir(), "anna-preview-paths-"));
+  const root = await mkdtemp(join(tmpdir(), "slideforge-preview-paths-"));
   try {
     const source = join(root, "source");
     const output = join(root, "output");

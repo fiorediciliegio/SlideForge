@@ -3,12 +3,12 @@ import { describe, it } from "node:test";
 
 import { createAgentClient, AGENT_SESSION_MODEL_PREFERENCE } from "../../src/agent/agentClient.ts";
 import type { AgentStreamEvent } from "../../src/agent/agentClient.ts";
-import type { AnnaRuntime } from "../../src/runtime/annaRuntime.ts";
+import type { HostRuntime } from "../../src/runtime/hostRuntime.ts";
 
 describe("AgentClient RPC lifecycle diagnostics", () => {
   it("emits session.create and session.run frames before any stream output", async () => {
     const diagnostics: AgentStreamEvent[] = [];
-    const runtime: AnnaRuntime = {
+    const runtime: HostRuntime = {
       tools: { invoke: async () => ({}) },
       llm: { complete: async () => ({}) },
       agent: {

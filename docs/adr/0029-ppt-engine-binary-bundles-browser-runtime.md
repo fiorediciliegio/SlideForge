@@ -1,12 +1,12 @@
 # ppt-engine Binary 随包提供浏览器运行时
 
-`ppt-engine` 的每个受支持平台 Anna Binary 分发包都必须包含版本固定且可用的浏览器运行时，目标机器不需要预装 Chrome，首次运行也不依赖联网下载。环境变量指定的浏览器和系统 Chrome 只作为显式覆盖或开发兼容能力；选择随包分发是为了让离线部署、渲染结果和故障定位保持确定性，代价是各平台分发包体积明显增加。
+`ppt-engine` 的每个受支持平台 SlideForge Binary 分发包都必须包含版本固定且可用的浏览器运行时，目标机器不需要预装 Chrome，首次运行也不依赖联网下载。环境变量指定的浏览器和系统 Chrome 只作为显式覆盖或开发兼容能力；选择随包分发是为了让离线部署、渲染结果和故障定位保持确定性，代价是各平台分发包体积明显增加。
 
 `ppt-engine` 暂停发布 `linux-aarch64` 二进制，因为 Chrome for Testing 没有对应的原生浏览器产物；当前受支持的 Binary 平台是 `darwin-x86_64`、`darwin-arm64`、`windows-x86_64` 和 `linux-x86_64`。这个范围调整只适用于 `ppt-engine`，不改变其他 Executa 的发布平台。
 
 受支持平台统一随包提供与固定 Puppeteer 版本匹配的完整 Chrome for Testing，暂不使用体积更小的 Chrome Headless Shell。完整 Chrome 优先是为了保持当前新版 headless 渲染语义以及 CSS、SVG、字体测量、截图和 HTML 到 PPTX Model 转换的一致性；只有在真实 Deck 的视觉与转换回归通过后，才考虑切换到 Headless Shell。
 
-Chrome for Testing 作为 Anna Binary archive 中与 `bin/ppt-engine` 并列的 `lib/browser/` 运行时资源分发，不进入 SEA blob。这样由 Anna Binary 安装过程完成一次解压，避免增加启动成本和临时目录磁盘占用。
+Chrome for Testing 作为 SlideForge Binary archive 中与 `bin/ppt-engine` 并列的 `lib/browser/` 运行时资源分发，不进入 SEA blob。这样由 SlideForge Binary 安装过程完成一次解压，避免增加启动成本和临时目录磁盘占用。
 
 运行时使用 Node `isSea()` 区分 Binary 模式与源码模式，并在 Binary 模式下通过 `process.execPath` 定位相邻的 `lib/browser`，不能使用 `lib/app` 内部模块路径定位分发资源。显式 launch 参数或浏览器路径环境变量可以覆盖默认选择；没有显式覆盖时，Binary 模式必须使用随包浏览器，缺失或启动失败应直接报告分发包损坏或运行环境不兼容，不得隐式回退到系统 Chrome 或用户 Puppeteer 缓存；源码模式继续允许这些本地回退。
 

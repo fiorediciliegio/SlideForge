@@ -1,5 +1,5 @@
 import type { PptBackend } from "../../api/pptBackend";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import { resolveOutlineImage, type OutlineImageAsset } from "../outline/images";
 import { PAGE_IMAGE_ATTACHMENT_LIMIT } from "../outline/imageAttachmentLimit";
 

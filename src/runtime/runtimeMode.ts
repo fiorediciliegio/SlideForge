@@ -1,14 +1,14 @@
-export type RuntimeMode = "anna" | "mock";
+export type RuntimeMode = "host" | "mock";
 
 export function detectRuntimeMode(): RuntimeMode {
-  if (typeof window !== "undefined" && "AnnaAppRuntime" in window) {
-    return "anna";
+  if (typeof window !== "undefined" && "HostAppRuntime" in window) {
+    return "host";
   }
 
   if (typeof window !== "undefined") {
     const params = new URLSearchParams(window.location.search);
     if (params.has("wid") && params.has("t")) {
-      return "anna";
+      return "host";
     }
   }
 
@@ -17,6 +17,6 @@ export function detectRuntimeMode(): RuntimeMode {
   }
 
   throw new Error(
-    "AnnaAppRuntime is not available. Run the app with `npm run dev`, `npm run dev:mock-llm`, or inside the Anna host."
+    "HostAppRuntime is not available. Run the app with `npm run dev`, `npm run dev:mock-llm`, or inside the SlideForge host."
   );
 }

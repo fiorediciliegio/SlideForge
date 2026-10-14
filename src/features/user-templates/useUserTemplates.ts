@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { AgentClient } from "../../agent/agentClient";
 import type { PptBackend } from "../../api/pptBackend";
 import type { AppHostUploadClient } from "../../runtime/appHostUploadClient";
-import type { AgentImageAttachment } from "../../runtime/annaRuntime";
+import type { AgentImageAttachment } from "../../runtime/hostRuntime";
 import type { Messages, Locale } from "../../i18n/messages";
 import type { DesignProfile, TemplateProgress, TemplateStep, UserTemplateListEntry } from "./types";
 import type { ProfileAssetMeta } from "./types";

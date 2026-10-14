@@ -6,17 +6,17 @@ import path from "node:path";
 import test, { after } from "node:test";
 
 const previousHome = process.env.HOME;
-const previousWorkspaceRoot = process.env.ANNA_WORKSPACE_DIR;
+const previousWorkspaceRoot = process.env.SLIDEFORGE_WORKSPACE_DIR;
 const homeDir = await mkdtemp(path.join(os.tmpdir(), "ppt-refinement-home-"));
 process.env.HOME = homeDir;
-process.env.ANNA_WORKSPACE_DIR = path.join(homeDir, "anna-workspace");
+process.env.SLIDEFORGE_WORKSPACE_DIR = path.join(homeDir, "slideforge-workspace");
 const { commitAppDeckRefinement, prepareAppPageRefinement } = await import("../../src/app-workspace/index.ts");
 const PAGE_ONE = "page-11111111-1111-4111-8111-111111111111";
 const PAGE_TWO = "page-22222222-2222-4222-8222-222222222222";
 after(async () => {
   if (previousHome === undefined) delete process.env.HOME; else process.env.HOME = previousHome;
-  if (previousWorkspaceRoot === undefined) delete process.env.ANNA_WORKSPACE_DIR;
-  else process.env.ANNA_WORKSPACE_DIR = previousWorkspaceRoot;
+  if (previousWorkspaceRoot === undefined) delete process.env.SLIDEFORGE_WORKSPACE_DIR;
+  else process.env.SLIDEFORGE_WORKSPACE_DIR = previousWorkspaceRoot;
   await rm(homeDir, { recursive: true, force: true });
 });
 
@@ -25,7 +25,7 @@ async function writeJson(filePath: string, value: unknown) {
 }
 
 async function createWorkspace(homeDir: string) {
-  const workspaceDir = path.join(homeDir, "anna-workspace", "ppt", `ppt-20260719-${String(randomInt(0, 1_000_000)).padStart(6, "0")}`);
+  const workspaceDir = path.join(homeDir, "slideforge-workspace", "ppt", `ppt-20260719-${String(randomInt(0, 1_000_000)).padStart(6, "0")}`);
   await mkdir(path.join(workspaceDir, "slides"), { recursive: true });
   await writeJson(path.join(workspaceDir, "task.json"), { title: "Deck", updated_at: null });
   await writeJson(path.join(workspaceDir, "setting.json"), {});
