@@ -9,3 +9,5 @@ legacy-large-screenshot-templates/
 .anna/
 .anna-tool-ids.cache.js
 executa.json
+executas/ppt-engine/src/pptx-export/vendor/
+.eval-results/
