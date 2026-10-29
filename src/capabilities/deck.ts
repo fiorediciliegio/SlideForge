@@ -1,0 +1,246 @@
+/**
+ * M1-2 · 能力层：create_deck / regenerate_page / export_deck。
+ * CLI（scripts/m0-generate.ts）与 MCP Server 共用这一层，禁止 UI 专用后门。
+ */
+import path from "node:path";
+import { existsSync } from "node:fs";
+import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
+import os from "node:os";
+
+import { llmComplete } from "../../scripts/m0/llmClient.js";
+import { buildOutlineMessages, buildPageMessages } from "../../scripts/m0/prompts.js";
+import { extractHtmlDocument, splitSlideDocument, buildDeckHtml } from "../../scripts/m0/deck.js";
+import {
+  validateSlideHtmlFile,
+  validateDeckHtmlFile,
+  closeValidatorBrowser,
+  type SlideIssue,
+} from "../../scripts/m0/validatePage.js";
+import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
+
+export interface OutlinePage { title: string; bullets: string[] }
+export interface Outline { title: string; pages: OutlinePage[] }
+
+export interface DeckEvent {
+  stage: "outline" | "page" | "assemble" | "export" | "done" | "regenerate";
+  message: string;
+  page?: number;
+  totalPages?: number;
+}
+
+export interface CreateDeckInput {
+  brief: string;
+  pageCount?: number;
+  concurrency?: number;
+  decksRoot?: string;
+  onEvent?: (event: DeckEvent) => void;
+}
+
+export interface CreateDeckResult {
+  deckId: string;
+  runDir: string;
+  outline: Outline;
+  overflowWarnings: Array<{ page: number; issues: SlideIssue[] }>;
+}
+
+export interface ExportDeckResult {
+  outPath: string;
+  slideCount: number;
+  sizeBytes: number;
+  warnings: string[];
+}
+
+function defaultDecksRoot(): string {
+  return path.resolve(import.meta.dirname, "..", "..", "artifacts", "decks");
+}
+
+function ensureRuntimeEnv() {
+  if (!process.env.CHROME_PATH) {
+    const candidates = [
+      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+      "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+    ];
+    for (const candidate of candidates) {
+      if (existsSync(candidate)) { process.env.CHROME_PATH = candidate; break; }
+    }
+  }
+  process.env.SLIDEFORGE_WORKSPACE_DIR ??= path.join(os.tmpdir(), "slideforge-m0-workspace");
+}
+
+async function generateOutline(brief: string, pageCount: number): Promise<Outline> {
+  const result = await llmComplete(buildOutlineMessages(brief, pageCount));
+  let json = result.text.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
+  const begin = json.indexOf("{");
+  const end = json.lastIndexOf("}");
+  if (begin >= 0 && end > begin) json = json.slice(begin, end + 1);
+  const outline = JSON.parse(json) as Outline;
+  if (!Array.isArray(outline.pages) || outline.pages.length !== pageCount) {
+    throw new Error(`大纲页数不符：期望 ${pageCount}，实际 ${outline.pages?.length}`);
+  }
+  return outline;
+}
+
+interface PageContext {
+  brief: string;
+  outline: Outline;
+  runDir: string;
+  pageCount: number;
+  onEvent?: (event: DeckEvent) => void;
+}
+
+async function generatePage(
+  ctx: PageContext,
+  index: number,
+  overflowWarnings: Array<{ page: number; issues: SlideIssue[] }>,
+  instruction?: string,
+): Promise<{ styles: string; body: string }> {
+  const page = ctx.outline.pages[index];
+  let lastError: unknown;
+  let lastIssues: SlideIssue[] = [];
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const messages = buildPageMessages({
+        deckTitle: ctx.outline.title,
+        brief: ctx.brief,
+        outlineJson: JSON.stringify(ctx.outline),
+        pageIndex: index,
+        pageCount: ctx.pageCount,
+        pageTitle: page.title,
+        bullets: page.bullets,
+      });
+      if (instruction) {
+        messages.push({ role: "user", content: `用户对这一页的修改要求：${instruction}。请在遵守全部约束的前提下输出修改后的完整 HTML 文档。` });
+      }
+      if (lastIssues.length > 0) {
+        messages.push({
+          role: "user",
+          content: `上一次输出内容溢出了 1920×1080 画布：${lastIssues.map((i) => i.detail).join("；")}。请压缩内容量、字号与间距，确保所有元素都在画布内，重新输出完整 HTML 文档。`,
+        });
+      }
+      const result = await llmComplete(messages);
+      const html = extractHtmlDocument(result.text);
+      const parts = splitSlideDocument(html);
+      const pageFile = path.join(ctx.runDir, `page-${index + 1}.html`);
+      await writeFile(pageFile, html, "utf8");
+
+      const validation = await validateSlideHtmlFile(pageFile);
+      if (!validation.ok) {
+        lastIssues = validation.issues;
+        if (attempt === 0) {
+          ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页溢出，定向重生成` });
+          continue;
+        }
+        overflowWarnings.push({ page: index + 1, issues: validation.issues });
+      }
+      ctx.onEvent?.({ stage: "page", page: index + 1, totalPages: ctx.pageCount, message: `第 ${index + 1} 页完成「${page.title}」` });
+      return parts;
+    } catch (error) {
+      lastError = error;
+      ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页第 ${attempt + 1} 次失败` });
+    }
+  }
+  throw new Error(`第 ${index + 1} 页生成失败：${lastError instanceof Error ? lastError.message : lastError}`);
+}
+
+async function assembleDeck(runDir: string, title: string, pageCount: number): Promise<void> {
+  const slides = [];
+  for (let i = 1; i <= pageCount; i++) {
+    const html = await readFile(path.join(runDir, `page-${i}.html`), "utf8");
+    slides.push(splitSlideDocument(html));
+  }
+  await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title, slides }), "utf8");
+}
+
+export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResult> {
+  ensureRuntimeEnv();
+  const pageCount = Math.max(2, Math.min(20, input.pageCount ?? 8));
+  const concurrency = Math.max(1, Math.min(5, input.concurrency ?? 3));
+  const decksRoot = input.decksRoot ?? defaultDecksRoot();
+  const deckId = `deck-${Date.now()}`;
+  const runDir = path.join(decksRoot, deckId);
+  await mkdir(runDir, { recursive: true });
+
+  const emit = input.onEvent ?? (() => {});
+  emit({ stage: "outline", message: `生成大纲（${pageCount} 页）` });
+  const outline = await generateOutline(input.brief, pageCount);
+  await writeFile(path.join(runDir, "outline.json"), JSON.stringify(outline, null, 2), "utf8");
+  await writeFile(path.join(runDir, "brief.txt"), input.brief, "utf8");
+
+  const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+  const ctx: PageContext = { brief: input.brief, outline, runDir, pageCount, onEvent: emit };
+  const slides: Array<{ styles: string; body: string }> = new Array(pageCount);
+  let cursor = 0;
+  const worker = async () => {
+    while (cursor < pageCount) {
+      const index = cursor++;
+      slides[index] = await generatePage(ctx, index, overflowWarnings);
+    }
+  };
+  await Promise.all(Array.from({ length: concurrency }, worker));
+
+  emit({ stage: "assemble", message: "组装 deck.html" });
+  await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title: outline.title, slides }), "utf8");
+  await writeFile(path.join(runDir, "run-report.json"), JSON.stringify({ brief: input.brief, pageCount, outline, overflowWarnings }, null, 2), "utf8");
+  await closeValidatorBrowser();
+  return { deckId, runDir, outline, overflowWarnings };
+}
+
+export async function regeneratePage(input: {
+  runDir: string;
+  page: number;
+  instruction: string;
+  onEvent?: (event: DeckEvent) => void;
+}): Promise<{ overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> }> {
+  ensureRuntimeEnv();
+  input = { ...input, runDir: path.resolve(input.runDir) };
+  const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
+  const brief = await readFile(path.join(input.runDir, "brief.txt"), "utf8");
+  const index = input.page - 1;
+  if (index < 0 || index >= outline.pages.length) {
+    throw new Error(`页码越界：${input.page}（共 ${outline.pages.length} 页）`);
+  }
+  const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+  const emit = input.onEvent ?? (() => {});
+  emit({ stage: "regenerate", page: input.page, message: `重生成第 ${input.page} 页` });
+  await generatePage(
+    { brief, outline, runDir: input.runDir, pageCount: outline.pages.length, onEvent: emit },
+    index,
+    overflowWarnings,
+    input.instruction,
+  );
+  await assembleDeck(input.runDir, outline.title, outline.pages.length);
+  await closeValidatorBrowser();
+  return { overflowWarnings };
+}
+
+export async function exportDeck(input: {
+  runDir: string;
+  outPath: string;
+}): Promise<ExportDeckResult> {
+  ensureRuntimeEnv();
+  input = { ...input, runDir: path.resolve(input.runDir), outPath: path.resolve(input.outPath) };
+  const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
+  await mkdir(path.dirname(input.outPath), { recursive: true });
+  const result = await runExportOnly({
+    request_id: `export-${Date.now()}`,
+    format: "pptx",
+    source_root: input.runDir,
+    deck_html_file: "deck.html",
+    expected_slide_count: outline.pages.length,
+    title: outline.title,
+    output_dir: path.dirname(input.outPath),
+  });
+  if (result.status !== "completed") {
+    throw new Error(`导出失败：${result.error?.message ?? "unknown"}`);
+  }
+  if (result.output_path !== input.outPath) {
+    await rename(result.output_path!, input.outPath);
+  }
+  return {
+    outPath: input.outPath,
+    slideCount: result.slide_count,
+    sizeBytes: result.size_bytes ?? 0,
+    warnings: result.warnings,
+  };
+}
