@@ -16,6 +16,7 @@ import os from "node:os";
 import { llmComplete } from "./m0/llmClient.js";
 import { buildOutlineMessages, buildPageMessages } from "./m0/prompts.js";
 import { extractHtmlDocument, splitSlideDocument, buildDeckHtml } from "./m0/deck.js";
+import { validateSlideHtmlFile, closeValidatorBrowser, type SlideIssue } from "./m0/validatePage.js";
 import { runExportOnly } from "../executas/ppt-engine/src/export-only/index.js";
 
 // ── 参数 ──
@@ -72,13 +73,16 @@ async function generateOutline(): Promise<Outline> {
 }
 
 // ── 逐页生成 ──
+const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+
 async function generatePage(outline: Outline, index: number): Promise<{ styles: string; body: string }> {
   const page = outline.pages[index];
   const outlineJson = JSON.stringify(outline);
   let lastError: unknown;
+  let lastIssues: SlideIssue[] = [];
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const result = await llmComplete(buildPageMessages({
+      const messages = buildPageMessages({
         deckTitle: outline.title,
         brief,
         outlineJson,
@@ -86,10 +90,31 @@ async function generatePage(outline: Outline, index: number): Promise<{ styles: 
         pageCount,
         pageTitle: page.title,
         bullets: page.bullets,
-      }));
+      });
+      // M1-1：把上次溢出的具体元素反馈给模型，定向修复
+      if (lastIssues.length > 0) {
+        messages.push({
+          role: "user" as const,
+          content: `上一次输出内容溢出了 1920×1080 画布：${lastIssues.map((i) => i.detail).join("；")}。请压缩内容量、字号与间距，确保所有元素都在画布内，重新输出完整 HTML 文档。`,
+        });
+      }
+      const result = await llmComplete(messages);
       const html = extractHtmlDocument(result.text);
       const parts = splitSlideDocument(html);
-      await writeFile(path.join(runDir, `page-${index + 1}.html`), html, "utf8");
+      const pageFile = path.join(runDir, `page-${index + 1}.html`);
+      await writeFile(pageFile, html, "utf8");
+
+      // 确定性版面闸门
+      const validation = await validateSlideHtmlFile(pageFile);
+      if (!validation.ok) {
+        lastIssues = validation.issues;
+        if (attempt === 0) {
+          console.warn(`  ↻ 第 ${index + 1} 页溢出（${validation.issues.map((i) => i.detail).join("；")}），定向重生成…`);
+          continue;
+        }
+        overflowWarnings.push({ page: index + 1, issues: validation.issues });
+        console.warn(`  ⚠ 第 ${index + 1} 页重生成后仍溢出，接受并记录：${validation.issues.map((i) => i.detail).join("；")}`);
+      }
       console.log(`  ✔ 第 ${index + 1} 页「${page.title}」（tokens: ${result.usage?.total_tokens ?? "?"}）`);
       return parts;
     } catch (error) {
@@ -144,3 +169,12 @@ await rename(result.output_path!, outPath);
 console.log(`\n✅ 完成：${outPath}`);
 console.log(`页数=${result.slide_count} · 大小=${result.size_bytes}B · 警告=${result.warning_count}`);
 if (result.warning_count > 0) console.log("警告：", result.warnings.slice(0, 5));
+if (overflowWarnings.length > 0) {
+  console.log(`\n⚠ 版面溢出遗留 ${overflowWarnings.length} 页：${overflowWarnings.map((w) => `第${w.page}页`).join("、")}`);
+}
+await writeFile(
+  path.join(runDir, "run-report.json"),
+  JSON.stringify({ brief, pageCount, outline, overflowWarnings, export: { status: result.status, warnings: result.warnings } }, null, 2),
+  "utf8",
+);
+await closeValidatorBrowser();

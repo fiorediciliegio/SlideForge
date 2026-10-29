@@ -31,6 +31,27 @@ export function splitSlideDocument(html: string): { styles: string; body: string
   return { styles, body: bodyMatch[1].trim() };
 }
 
+/**
+ * 把单页 CSS 作用域限定到对应 deck shell，杜绝跨页类名串台。
+ * 处理：普通选择器加 shell 前缀；body/html/:root 映射为 shell 自身；@keyframes 保留。
+ */
+export function scopeCss(css: string, pageId: string): string {
+  const shell = `[data-presenton-page-id="${pageId}"]`;
+  return css.replace(/([^{}@]+)\{([^{}]*)\}/g, (match, selectorPart: string, body: string) => {
+    const selectors = selectorPart
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((sel) => {
+        if (/^(html|body|:root)$/.test(sel)) return shell;
+        if (/^(html|body)\b/.test(sel)) return sel.replace(/^(html|body)\b/, shell);
+        return `${shell} ${sel}`;
+      });
+    if (selectors.length === 0) return match;
+    return `${selectors.join(", ")} {${body}}`;
+  });
+}
+
 export function buildDeckHtml(input: {
   title: string;
   slides: Array<{ styles: string; body: string }>;
@@ -54,7 +75,7 @@ body { font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif; color: 
     .join("\n");
 
   return `<!doctype html><html lang="zh-CN" data-presenton-render-document="static"><head><meta charset="utf-8"/><meta name="viewport" content="width=1920, initial-scale=1"/><title>${input.title}</title><style>${baseCss}</style>
-${input.slides.map((s) => s.styles).join("\n")}
+${input.slides.map((s, i) => scopeCss(s.styles, `page-${i + 1}`)).join("\n")}
 </head><body><div id="presentation-slides-wrapper" data-presenton-render-status="ready">
 ${shells}
 </div></body></html>`;
