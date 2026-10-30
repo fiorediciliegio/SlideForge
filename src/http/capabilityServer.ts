@@ -28,6 +28,10 @@ import {
   runWithBilling,
   settleDeck,
   chargeFixed,
+  listKeys,
+  issueKey,
+  rechargeKey,
+  readLedger,
   type BillingContext,
 } from "../billing/index.js";
 
@@ -63,6 +67,35 @@ const server = createServer(async (req, res) => {
 
     if (req.method === "GET" && url.pathname === "/healthz") {
       return json(res, 200, { ok: true, service: "slideforge-capabilities", jobs: jobs.size });
+    }
+
+    // ── M3 控制台（本机管理界面，生产部署需加管理员鉴权）──
+    if (req.method === "GET" && url.pathname === "/console") {
+      const { readFile } = await import("node:fs/promises");
+      const html = await readFile(new URL("./console.html", import.meta.url), "utf8");
+      res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+      return res.end(html);
+    }
+    if (url.pathname === "/admin/keys" && req.method === "GET") {
+      return json(res, 200, await listKeys());
+    }
+    if (url.pathname === "/admin/keys" && req.method === "POST") {
+      const body = await readBody(req);
+      const name = String(body.name ?? "").trim();
+      if (!name) return json(res, 400, { error: "name 不能为空" });
+      return json(res, 200, await issueKey(name, Number(body.points ?? 100)));
+    }
+    if (url.pathname === "/admin/keys/recharge" && req.method === "POST") {
+      const body = await readBody(req);
+      return json(res, 200, await rechargeKey(String(body.key), Number(body.points ?? 100)));
+    }
+    if (url.pathname === "/admin/ledger" && req.method === "GET") {
+      return json(res, 200, await readLedger());
+    }
+    if (url.pathname === "/admin/decks" && req.method === "GET") {
+      return json(res, 200, [...jobs.values()].map((job) => ({
+        deck_id: job.id, title: job.title, status: job.status, recent_events: job.events.slice(-2),
+      })));
     }
 
     if (req.method === "POST" && url.pathname === "/decks") {

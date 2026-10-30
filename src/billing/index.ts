@@ -133,3 +133,50 @@ export async function chargeFixed(apiKey: string | undefined, deckId: string, ki
   });
   return { points, balance: record.balance };
 }
+
+// ── M3 控制台管理接口 ──
+
+export async function listKeys(): Promise<Array<{ key: string; name: string; balance: number }>> {
+  if (!billingEnabled()) return [];
+  const keys = await readKeys();
+  return Object.entries(keys).map(([key, record]) => ({ key, name: record.name, balance: record.balance }));
+}
+
+export async function issueKey(name: string, points: number): Promise<{ key: string; balance: number }> {
+  const { randomBytes } = await import("node:crypto");
+  const keys = await readKeys();
+  const key = `sk-${randomBytes(16).toString("hex")}`;
+  keys[key] = { name, balance: points };
+  await writeKeys(keys);
+  return { key, balance: points };
+}
+
+export async function rechargeKey(key: string, points: number): Promise<{ balance: number }> {
+  const keys = await readKeys();
+  if (!keys[key]) throw new Error("key 不存在");
+  keys[key].balance += points;
+  await writeKeys(keys);
+  return { balance: keys[key].balance };
+}
+
+export interface LedgerEntry {
+  ts: string;
+  type: string;
+  deck_id: string;
+  key_name: string;
+  prompt_tokens?: number;
+  completion_tokens?: number;
+  points: number;
+  balance: number;
+}
+
+export async function readLedger(limit = 50): Promise<{ entries: LedgerEntry[]; totalPoints: number; totalTokens: number }> {
+  if (!existsSync(LEDGER_FILE)) return { entries: [], totalPoints: 0, totalTokens: 0 };
+  const lines = (await readFile(LEDGER_FILE, "utf8")).trim().split("\n").filter(Boolean);
+  const entries = lines.map((line) => JSON.parse(line) as LedgerEntry);
+  return {
+    entries: entries.slice(-limit).reverse(),
+    totalPoints: entries.reduce((sum, e) => sum + e.points, 0),
+    totalTokens: entries.reduce((sum, e) => sum + (e.prompt_tokens ?? 0) + (e.completion_tokens ?? 0), 0),
+  };
+}

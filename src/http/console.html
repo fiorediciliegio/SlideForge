@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SlideForge 控制台</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Microsoft YaHei", sans-serif; background: #f7f8fb; color: #182033; }
+    header { background: #1e40af; color: #fff; padding: 16px 28px; display: flex; align-items: center; gap: 24px; }
+    header h1 { font-size: 18px; }
+    nav button { background: none; border: 0; color: #c7d2fe; font-size: 14px; cursor: pointer; padding: 6px 2px; }
+    nav button.active { color: #fff; border-bottom: 2px solid #f59e0b; }
+    main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+    .card { background: #fff; border-radius: 14px; padding: 20px; box-shadow: 0 2px 10px rgba(25,33,61,.06); margin-bottom: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stat { text-align: center; }
+    .stat b { display: block; font-size: 28px; color: #1e40af; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eef1f6; }
+    th { color: #697386; font-weight: 500; }
+    input { padding: 8px 10px; border: 1px solid #d5dbe7; border-radius: 8px; }
+    button.primary { background: #1e40af; color: #fff; border: 0; border-radius: 8px; padding: 8px 16px; cursor: pointer; }
+    button.mini { background: #eef2ff; color: #1e40af; border: 0; border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .muted { color: #697386; font-size: 12px; }
+    .tab { display: none; }
+    .tab.active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SlideForge 控制台</h1>
+    <nav>
+      <button data-tab="keys" class="active">API Keys</button>
+      <button data-tab="usage">用量</button>
+      <button data-tab="decks">Decks</button>
+    </nav>
+  </header>
+  <main>
+    <section id="keys" class="tab active">
+      <div class="card">
+        <div class="row">
+          <input id="newName" placeholder="使用者名称（如：张三）" />
+          <input id="newPoints" type="number" value="100" style="width:100px" />
+          <button class="primary" onclick="issue()">签发 key</button>
+          <span id="issueResult" class="muted"></span>
+        </div>
+      </div>
+      <div class="card"><table id="keyTable"><thead><tr><th>名称</th><th>Key</th><th>余额</th><th>操作</th></tr></thead><tbody></tbody></table></div>
+    </section>
+    <section id="usage" class="tab">
+      <div class="card stats">
+        <div class="stat"><b id="totalPoints">-</b>累计消耗点数</div>
+        <div class="stat"><b id="totalTokens">-</b>累计 tokens</div>
+        <div class="stat"><b id="totalKeys">-</b>已签发 keys</div>
+      </div>
+      <div class="card"><table id="ledgerTable"><thead><tr><th>时间</th><th>类型</th><th>使用者</th><th>tokens</th><th>点数</th><th>余额</th></tr></thead><tbody></tbody></table></div>
+    </section>
+    <section id="decks" class="tab">
+      <div class="card"><table id="deckTable"><thead><tr><th>Deck</th><th>标题</th><th>状态</th><th>最近事件</th></tr></thead><tbody></tbody></table></div>
+    </section>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const api = (path, options) => fetch(path, { headers: { "content-type": "application/json" }, ...options }).then(r => r.json());
+
+    document.querySelectorAll("nav button").forEach(btn => btn.addEventListener("click", () => {
+      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      btn.classList.add("active");
+      $(btn.dataset.tab).classList.add("active");
+      if (btn.dataset.tab === "usage") loadUsage();
+      if (btn.dataset.tab === "decks") loadDecks();
+    }));
+
+    async function loadKeys() {
+      const keys = await api("/admin/keys");
+      $("totalKeys").textContent = keys.length;
+      $("keyTable").querySelector("tbody").innerHTML = keys.map(k =>
+        `<tr><td>${k.name}</td><td class="muted">${k.key.slice(0, 12)}…</td><td>${k.balance}</td>
+         <td><button class="mini" onclick="recharge('${k.key}')">+100</button></td></tr>`).join("");
+    }
+    async function issue() {
+      const result = await api("/admin/keys", { method: "POST", body: JSON.stringify({ name: $("newName").value, points: Number($("newPoints").value) }) });
+      $("issueResult").textContent = `已签发 ${result.key}`;
+      loadKeys();
+    }
+    async function recharge(key) {
+      await api("/admin/keys/recharge", { method: "POST", body: JSON.stringify({ key, points: 100 }) });
+      loadKeys();
+    }
+    async function loadUsage() {
+      const data = await api("/admin/ledger");
+      $("totalPoints").textContent = data.totalPoints;
+      $("totalTokens").textContent = data.totalTokens.toLocaleString();
+      $("ledgerTable").querySelector("tbody").innerHTML = data.entries.map(e =>
+        `<tr><td class="muted">${e.ts.slice(5, 16).replace("T", " ")}</td><td>${e.type}</td><td>${e.key_name}</td>
+         <td>${(e.prompt_tokens ?? 0) + (e.completion_tokens ?? 0) || "-"}</td><td>${e.points}</td><td>${e.balance}</td></tr>`).join("");
+    }
+    async function loadDecks() {
+      const decks = await api("/admin/decks");
+      $("deckTable").querySelector("tbody").innerHTML = decks.map(d =>
+        `<tr><td class="muted">${d.deck_id}</td><td>${d.title ?? "-"}</td><td>${d.status}</td>
+         <td class="muted">${(d.recent_events ?? []).at(-1) ?? ""}</td></tr>`).join("");
+    }
+    loadKeys();
+  </script>
+</body>
+</html>
