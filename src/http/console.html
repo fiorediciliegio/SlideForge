@@ -63,7 +63,18 @@
   </main>
   <script>
     const $ = (id) => document.getElementById(id);
-    const api = (path, options) => fetch(path, { headers: { "content-type": "application/json" }, ...options }).then(r => r.json());
+    const adminToken = (() => {
+      let token = localStorage.getItem("sf-admin-token");
+      if (token === null) {
+        token = prompt("管理员 token（未配置 SLIDEFORGE_ADMIN_TOKEN 时留空即可）") ?? "";
+        localStorage.setItem("sf-admin-token", token);
+      }
+      return token;
+    })();
+    const api = (path, options) => fetch(path, {
+      headers: { "content-type": "application/json", "x-admin-token": adminToken },
+      ...options,
+    }).then(r => r.json());
 
     document.querySelectorAll("nav button").forEach(btn => btn.addEventListener("click", () => {
       document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));

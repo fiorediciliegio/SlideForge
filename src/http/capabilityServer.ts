@@ -34,19 +34,18 @@ import {
   readLedger,
   type BillingContext,
 } from "../billing/index.js";
+import { deckJobs } from "../server/jobs.js";
+import { createSlideForgeMcpServer } from "../mcp/tools.js";
+import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 
-interface DeckJob {
-  id: string;
-  runDir?: string;
-  title?: string;
-  status: "creating" | "ready" | "error";
-  events: string[];
-  error?: string;
-  overflowPages: number[];
-  billing?: { points: number; balance?: number };
+const jobs = deckJobs;
+const ADMIN_TOKEN = process.env.SLIDEFORGE_ADMIN_TOKEN?.trim();
+
+function adminAuthorized(req: import("node:http").IncomingMessage): boolean {
+  if (!ADMIN_TOKEN) return true; // 未配置 = 本机开发模式
+  return req.headers["x-admin-token"] === ADMIN_TOKEN;
 }
 
-const jobs = new Map<string, DeckJob>();
 const PORT = Number(process.env.PORT ?? 3210);
 
 function json(res: import("node:http").ServerResponse, status: number, payload: unknown) {
@@ -69,7 +68,10 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ok: true, service: "slideforge-capabilities", jobs: jobs.size });
     }
 
-    // ── M3 控制台（本机管理界面，生产部署需加管理员鉴权）──
+    // ── M3 控制台（生产部署设置 SLIDEFORGE_ADMIN_TOKEN 启用鉴权）──
+    if (url.pathname === "/console" || url.pathname.startsWith("/admin/")) {
+      if (!adminAuthorized(req)) return json(res, 401, { error: "admin unauthorized" });
+    }
     if (req.method === "GET" && url.pathname === "/console") {
       const { readFile } = await import("node:fs/promises");
       const html = await readFile(new URL("./console.html", import.meta.url), "utf8");
@@ -184,6 +186,16 @@ const server = createServer(async (req, res) => {
         const charge = await chargeFixed(apiKey, job.id, "export");
         return json(res, 200, { ...result, billing: charge });
       }
+    }
+
+    // ── MCP Streamable HTTP（远程 AI 客户端接入点，无状态模式）──
+    if (url.pathname === "/mcp") {
+      const mcpServer = createSlideForgeMcpServer();
+      const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
+      await mcpServer.connect(transport);
+      const body = req.method === "POST" ? await readBody(req) : undefined;
+      await transport.handleRequest(req, res, body);
+      return;
     }
 
     return json(res, 404, { error: "not found", path: url.pathname });

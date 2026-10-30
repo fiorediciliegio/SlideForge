@@ -103,7 +103,13 @@ node --import tsx/esm scripts/keys.ts list
 - 台账：`data/billing/ledger.jsonl`（每笔含 tokens、点数、余额）
 - `data/` 已 gitignore，key 与台账不会进仓库。
 
-## 六、验证清单（部署后自检）
+## 六、生产化配置（2026-10-30 起）
+
+- **管理员鉴权**：设置 `SLIDEFORGE_ADMIN_TOKEN=<随机串>` 后，`/console` 与 `/admin/*` 需 `X-Admin-Token` 请求头（控制台页面会提示输入并记忆）；未设置 = 本机开发模式全放行。
+- **MCP 远程接入**：HTTP 服务同时挂载 `POST /mcp`（Streamable HTTP，无状态模式）。远程 AI 客户端直接指向 `http://<主机>:3210/mcp` 即可使用全部 5 个工具，与 stdio 共用任务存储（HTTP 建的 deck，MCP 可操作）。
+- 生产部署建议：仅暴露 3210 给可信网络，管理员 token 与客户端 key 分开管理。
+
+## 七、验证清单（部署后自检）
 
 1. `npm run generate -- --brief "测试" --pages 2 --out artifacts/test.pptx` 出文件；
 2. `curl http://localhost:3210/healthz` 返回 ok；
