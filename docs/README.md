@@ -43,7 +43,8 @@
 
 | 文档 | 说明 | 状态 |
 |---|---|---|
-| [product-tech-charter.md](product-tech-charter.md) | 产品与技术总纲（定位/垂直/计费/架构/路线） | active · 2026-10-14 |
+| [product-tech-charter.md](product-tech-charter.md) | 产品与技术总纲（定位/垂直/计费/架构/路线） | active · 2026-10-30 盘点 |
+| [current-state.md](current-state.md) | **系统全景与下一步（协作者交接首选）** | active · 2026-10-30 |
 | [plans/20261026-M0最小闭环.md](plans/20261026-M0最小闭环.md) | M0：brief → pptx 最小闭环（4 天） | done · 2026-10-29 |
 | [notes/20261026-M0-spike-引擎独立导出.md](notes/20261026-M0-spike-引擎独立导出.md) | 第 0 步 spike 通过：引擎可独立导出 | done · 2026-10-26 |
 | [deployment.md](deployment.md) | 部署运行手册（安装/三种启动/计费 key 管理） | active · 2026-10-30 |
