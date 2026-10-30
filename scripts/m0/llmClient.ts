@@ -14,6 +14,8 @@ export interface LlmClientOptions {
   maxRetries?: number;
 }
 
+import { reportUsage } from "../../src/billing/index.js";
+
 const DEFAULT_TIMEOUT_MS = 240_000;
 const DEFAULT_RETRIES = 2;
 
@@ -65,6 +67,7 @@ export async function llmComplete(
         };
         const text = data.choices?.[0]?.message?.content;
         if (!text) throw new Error("LLM returned empty content");
+        reportUsage(data.usage);
         return { text, usage: data.usage };
       } finally {
         clearTimeout(timer);

@@ -23,6 +23,13 @@ import {
   getDeckPreview,
   type DeckEvent,
 } from "../capabilities/deck.js";
+import {
+  checkKey,
+  runWithBilling,
+  settleDeck,
+  chargeFixed,
+  type BillingContext,
+} from "../billing/index.js";
 
 interface DeckJob {
   id: string;
@@ -32,6 +39,7 @@ interface DeckJob {
   events: string[];
   error?: string;
   overflowPages: number[];
+  billing?: { points: number; balance?: number };
 }
 
 const jobs = new Map<string, DeckJob>();
@@ -61,24 +69,29 @@ const server = createServer(async (req, res) => {
       const body = await readBody(req);
       const brief = String(body.brief ?? "").trim();
       if (!brief) return json(res, 400, { error: "brief 不能为空" });
+      const apiKey = req.headers["x-api-key"] as string | undefined;
+      const auth = await checkKey(apiKey);
+      if (!auth.ok) return json(res, 402, { error: auth.reason });
       const jobId = `deck-${randomUUID().slice(0, 8)}`;
       const job: DeckJob = { id: jobId, status: "creating", events: [], overflowPages: [] };
       jobs.set(jobId, job);
       const onEvent = (event: DeckEvent) => {
         job.events.push(`[${event.stage}]${event.page ? ` p${event.page}` : ""} ${event.message}`);
       };
+      const billingCtx: BillingContext = { apiKey: apiKey ?? "", deckId: jobId, promptTokens: 0, completionTokens: 0 };
       void (async () => {
         try {
-          const deck = await createDeck({
+          const deck = await runWithBilling(billingCtx, () => createDeck({
             brief,
             pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
             concurrency: 4,
             onEvent,
-          });
+          }));
           job.runDir = deck.runDir;
           job.title = deck.outline.title;
           job.overflowPages = deck.overflowWarnings.map((w) => w.page);
           job.status = "ready";
+          job.billing = await settleDeck(billingCtx);
         } catch (error) {
           job.status = "error";
           job.error = error instanceof Error ? error.message : String(error);
@@ -100,6 +113,7 @@ const server = createServer(async (req, res) => {
           title: job.title,
           recent_events: job.events.slice(-8),
           overflow_pages: job.overflowPages,
+          billing: job.billing,
           error: job.error,
         });
       }
@@ -128,10 +142,14 @@ const server = createServer(async (req, res) => {
 
       if (req.method === "POST" && action === "export") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
+        const apiKey = req.headers["x-api-key"] as string | undefined;
+        const auth = await checkKey(apiKey);
+        if (!auth.ok) return json(res, 402, { error: auth.reason });
         const body = await readBody(req);
         const outPath = typeof body.out_path === "string" ? body.out_path : path.join(job.runDir, "deck.pptx");
         const result = await exportDeck({ runDir: job.runDir, outPath });
-        return json(res, 200, result);
+        const charge = await chargeFixed(apiKey, job.id, "export");
+        return json(res, 200, { ...result, billing: charge });
       }
     }
 
