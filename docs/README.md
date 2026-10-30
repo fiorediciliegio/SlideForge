@@ -46,6 +46,9 @@
 | [product-tech-charter.md](product-tech-charter.md) | 产品与技术总纲（定位/垂直/计费/架构/路线） | active · 2026-10-14 |
 | [plans/20261026-M0最小闭环.md](plans/20261026-M0最小闭环.md) | M0：brief → pptx 最小闭环（4 天） | done · 2026-10-29 |
 | [notes/20261026-M0-spike-引擎独立导出.md](notes/20261026-M0-spike-引擎独立导出.md) | 第 0 步 spike 通过：引擎可独立导出 | done · 2026-10-26 |
+| [deployment.md](deployment.md) | 部署运行手册（安装/三种启动/计费 key 管理） | active · 2026-10-30 |
+| [notes/20261030-M2交付记录.md](notes/20261030-M2交付记录.md) | M2：预览/HTTP/计费三项交付 | done · 2026-10-30 |
+| [notes/20261030-人工验收清单.md](notes/20261030-人工验收清单.md) | 人工验收逐项检查表（待用户逐项打勾） | active · 2026-10-30 |
 | [adr/](adr/) | 架构决策记录（0001–0071 为历史决策） | active |
 | `plans/` | 开发计划 | — |
 | `notes/` | 调研与踩坑笔记 | — |
