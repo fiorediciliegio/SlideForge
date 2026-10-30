@@ -203,6 +203,16 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   await writeFile(path.join(runDir, "brief.txt"), effectiveBrief, "utf8");
 
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+  // M5 零选择启动：未指定模板/品牌时自动推荐
+  let templateId = input.templateId;
+  if (!templateId && !input.brandProfile) {
+    const { recommendTemplate } = await import("../templates/recommend.js");
+    const recommendation = await recommendTemplate(input.brief);
+    if (recommendation) {
+      templateId = recommendation.templateId;
+      emit({ stage: "outline", message: `自动选择模板：${recommendation.templateName}（${recommendation.reason}）` });
+    }
+  }
   const ctx: PageContext = {
     brief: effectiveBrief,
     outline,
@@ -210,10 +220,10 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
     pageCount,
     visualSpec: input.brandProfile
       ? brandVisualSpec(input.brandProfile)
-      : input.templateId
+      : templateId
         ? "视觉规范：以下方【风格参照】参考页的视觉风格为唯一标准（配色/字体/布局/卡片语言），不得套用其他风格。"
         : undefined,
-    referenceHtml: input.templateId ? await getTemplateReference(input.templateId) : undefined,
+    referenceHtml: templateId ? await getTemplateReference(templateId) : undefined,
     onEvent: emit,
   };
   const slides: Array<{ styles: string; body: string }> = new Array(pageCount);
