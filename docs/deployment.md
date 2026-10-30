@@ -88,6 +88,21 @@ curl -X POST http://localhost:3210/decks/<deck_id>/export -H "X-API-Key: <客户
 - **未创建 `data/api-keys.json` = 本地开发模式**：全部放行、不计费；
 - 一旦签发第一个 key（自动生成该文件），HTTP 接口立即启用鉴权 + 点数结算。
 
+## 五-A、生成入口参数（M4/M5 新增）
+
+| 参数（HTTP `POST /decks` / MCP `create_deck`） | 用途 |
+|---|---|
+| `brief` | 一句话需求（必填） |
+| `attachment_base64` + `filename`（HTTP）/ `source_text`（MCP） | 文档附件，作为唯一事实来源 |
+| `brand_id` | 自有品牌模板（色/字/logo），`POST /brands` 上传 pptx+logo 获得 |
+| `template_id` | 98 套内置预设之一，`GET /templates` 查看 |
+| （都不传风格） | 自动模板推荐（确定性规则，零选择启动） |
+
+相关接口：`POST /brands`、`GET /brands`、`GET /templates`；
+`regenerate_page` 响应含 `drift_report`（改动可审计的确定性 diff）。
+
+## 五-B、计费与 key 管理
+
 ```bash
 # 签发（初始 200 点）
 node --import tsx/esm scripts/keys.ts issue --name "张三" --points 200
