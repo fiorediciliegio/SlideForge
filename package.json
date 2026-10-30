@@ -22,6 +22,7 @@
     "mcp": "node --import tsx/esm src/mcp/server.ts",
     "serve": "node --import tsx/esm src/http/capabilityServer.ts",
     "mcp:smoke": "node --import tsx/esm scripts/mcp-smoke.ts",
+    "ci:fidelity": "node --import tsx/esm scripts/ci-fidelity.ts",
     "check": "tsc --noEmit",
     "test:unit": "node --import tsx/esm --test tests/**/*.test.ts"
   },
