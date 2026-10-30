@@ -19,6 +19,7 @@ import {
 import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
 import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
 import { computePageDrift } from "./drift.js";
+import { validateHtmlDialect } from "../../scripts/m0/dialect.js";
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR } from "../brand/store.js";
 import { getTemplateReference } from "../templates/library.js";
@@ -129,12 +130,24 @@ async function generatePage(
       if (lastIssues.length > 0) {
         messages.push({
           role: "user",
-          content: `上一次输出内容溢出了 1920×1080 画布：${lastIssues.map((i) => i.detail).join("；")}。请压缩内容量、字号与间距，确保所有元素都在画布内，重新输出完整 HTML 文档。`,
+          content: `上一次输出存在以下问题：${lastIssues.map((i) => i.detail).join("；")}。请修复后重新输出完整 HTML 文档（所有元素在 1920×1080 画布内，且遵守方言契约：无 script/外链/远程资源/fixed/filter/blend/动画）。`,
         });
       }
       const result = await llmComplete(messages);
       const html = extractHtmlDocument(result.text);
       const parts = splitSlideDocument(html);
+
+      // D2 方言静态校验（结构/外部资源/不可映射 CSS）
+      const dialect = validateHtmlDialect(html);
+      if (!dialect.ok) {
+        lastIssues = dialect.errors.map((e) => ({ kind: "overflow-y" as const, detail: `${e.rule}: ${e.detail}` }));
+        if (attempt === 0) {
+          ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页违反方言契约，定向重生成` });
+          continue;
+        }
+        overflowWarnings.push({ page: index + 1, issues: lastIssues });
+      }
+
       const pageFile = path.join(ctx.runDir, `page-${index + 1}.html`);
       await writeFile(pageFile, html, "utf8");
 
