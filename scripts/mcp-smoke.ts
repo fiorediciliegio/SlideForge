@@ -64,6 +64,22 @@ console.log("[4] export_deck…");
 const exported = parse(await client.callTool({ name: "export_deck", arguments: { deck_id: created.deck_id } }));
 console.log("  →", JSON.stringify(exported, null, 2));
 
+console.log("[5] get_deck_preview（图片消息）…");
+const preview = await client.callTool({ name: "get_deck_preview", arguments: { deck_id: created.deck_id, pages: [1, 2] } });
+const { writeFile, mkdir } = await import("node:fs/promises");
+const previewDir = path.join(repoRoot, "artifacts", "mcp-preview");
+await mkdir(previewDir, { recursive: true });
+let imageCount = 0;
+for (const block of preview.content as Array<{ type: string; data?: string }>) {
+  if (block.type === "image" && block.data) {
+    imageCount++;
+    const file = path.join(previewDir, `preview-${imageCount}.jpg`);
+    await writeFile(file, Buffer.from(block.data, "base64"));
+    console.log(`  → 图片 ${imageCount} 已保存 ${file}`);
+  }
+}
+if (imageCount === 0) throw new Error("未收到任何图片消息");
+
 await client.close();
-console.log("\n✅ MCP 全链路 smoke 通过");
+console.log("\n✅ MCP 全链路 smoke 通过（含图片预览）");
 process.exit(0);

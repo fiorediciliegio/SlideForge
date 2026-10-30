@@ -44,6 +44,11 @@ export async function closeValidatorBrowser() {
   }
 }
 
+/** 共享浏览器实例（缩略图渲染等复用）。 */
+export async function getSharedBrowser() {
+  return getBrowser();
+}
+
 export interface SlideIssue {
   kind: "overflow-y" | "overflow-x";
   detail: string;

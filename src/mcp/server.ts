@@ -11,7 +11,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-import { createDeck, regeneratePage, exportDeck, type DeckEvent } from "../capabilities/deck.js";
+import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
 
 interface DeckJob {
   id: string;
@@ -98,6 +98,30 @@ server.tool(
       overflow_warnings: result.overflowWarnings,
       hint: "调用 export_deck 导出最新版本",
     });
+  },
+);
+
+server.tool(
+  "get_deck_preview",
+  "获取 deck 页面缩略图（JPEG 图片消息），用于在对话中直接预览 PPT 效果。",
+  {
+    deck_id: z.string(),
+    pages: z.array(z.number().min(1)).max(4).optional().describe("页码列表，默认前 4 页，最多 4 页"),
+  },
+  async ({ deck_id, pages }) => {
+    const job = jobs.get(deck_id);
+    if (!job?.runDir) return text({ error: "deck 不存在或尚未 ready" });
+    const images = await getDeckPreview({ runDir: job.runDir, pages });
+    return {
+      content: [
+        { type: "text" as const, text: `共 ${images.length} 页预览：${images.map((i) => `第${i.page}页`).join("、")}` },
+        ...images.map((image) => ({
+          type: "image" as const,
+          data: image.base64,
+          mimeType: image.mimeType,
+        })),
+      ],
+    };
   },
 );
 

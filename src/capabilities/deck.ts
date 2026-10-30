@@ -17,6 +17,7 @@ import {
   type SlideIssue,
 } from "../../scripts/m0/validatePage.js";
 import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
+import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
 
 export interface OutlinePage { title: string; bullets: string[] }
 export interface Outline { title: string; pages: OutlinePage[] }
@@ -243,4 +244,31 @@ export async function exportDeck(input: {
     sizeBytes: result.size_bytes ?? 0,
     warnings: result.warnings,
   };
+}
+
+export interface DeckPreviewImage {
+  page: number;
+  base64: string;
+  mimeType: "image/jpeg";
+}
+
+/** 渲染 deck 页面缩略图（默认前 4 页），供 MCP 图片消息回传。 */
+export async function getDeckPreview(input: {
+  runDir: string;
+  pages?: number[];
+  maxPages?: number;
+}): Promise<DeckPreviewImage[]> {
+  ensureRuntimeEnv();
+  const maxPages = input.maxPages ?? 4;
+  const pages = input.pages?.slice(0, maxPages) ?? Array.from({ length: maxPages }, (_, i) => i + 1);
+  const thumbs = await renderDeckThumbnails(input.runDir, pages);
+  const images: DeckPreviewImage[] = [];
+  for (const thumb of thumbs) {
+    images.push({
+      page: thumb.page,
+      base64: (await readFile(thumb.filePath)).toString("base64"),
+      mimeType: "image/jpeg",
+    });
+  }
+  return images;
 }
