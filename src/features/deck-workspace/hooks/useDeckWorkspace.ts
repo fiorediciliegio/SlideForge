@@ -1,4 +1,5 @@
 import { useTemplateDiagnosticBundle } from "../../user-templates/useTemplateDiagnosticBundle";
+import { formatWorkspaceDate, clampSlideIndex, appendBounded, appendStreamText } from "./utils";
 import { normalizeSlideAspectRatio, type SlideAspectRatio } from "../../../slideFormat";
 import { useProcessProgress } from "../../process-progress/useProcessProgress";
 import { attachmentPreparationInsight, attachmentPreparationLabel } from "../../requirements/attachmentPreparationProgress";
@@ -311,23 +312,6 @@ async function assembleMeasuredReviewRender(input: Parameters<typeof assembleRev
   }
 }
 
-function padDatePart(value: number) {
-  return String(value).padStart(2, "0");
-}
-
-function formatWorkspaceDate(date = new Date()) {
-  return [
-    date.getFullYear(),
-    padDatePart(date.getMonth() + 1),
-    padDatePart(date.getDate())
-  ].join("-");
-}
-
-function clampSlideIndex(index: number, slideCount: number) {
-  const maxIndex = Math.max(0, slideCount - 1);
-  return Math.min(Math.max(0, index), maxIndex);
-}
-
 function uploadedSourceDependencyMatchesActiveSources(input: {
   dependency?: UploadedSourceAnalysisDependency;
   uploadedSources: UploadedSourceMaterial[];
@@ -395,21 +379,6 @@ function updateStyleProfileStage(
   patch: Partial<StyleProfileCreationStageRecord>,
 ) {
   return stages.map((stage) => stage.id === id ? { ...stage, ...patch } : stage);
-}
-
-function appendBounded(items: string[], value: string, limit: number) {
-  const trimmed = value.trim();
-  if (!trimmed) return items;
-  return [...items, trimmed].slice(-limit);
-}
-
-function appendStreamText(lines: string[], text: string) {
-  if (!text) return lines;
-  const current = lines.length > 0 ? lines.slice() : [""];
-  const parts = text.split(/\r?\n/);
-  current[current.length - 1] = `${current[current.length - 1]}${parts[0] ?? ""}`;
-  for (const part of parts.slice(1)) current.push(part);
-  return current.slice(-80);
 }
 
 function applyStyleProfileCreationEvent(

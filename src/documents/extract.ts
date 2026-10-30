@@ -6,7 +6,7 @@ import { createRequire } from "node:module";
 
 const engineRequire = createRequire(
   new URL("../../executas/ppt-engine/package.json", import.meta.url),
-);
+) as (id: string) => any;
 
 export interface ExtractedDocument {
   text: string;
@@ -19,19 +19,19 @@ export async function extractDocumentText(buffer: Buffer, filename: string): Pro
   const lower = filename.toLowerCase();
 
   if (lower.endsWith(".docx")) {
-    const mammoth = engineRequire("mammoth") as typeof import("mammoth");
+    const mammoth = engineRequire("mammoth");
     const result = await mammoth.extractRawText({ buffer });
     return { text: result.value.trim(), chars: result.value.trim().length, kind: "docx" };
   }
 
   if (lower.endsWith(".pdf")) {
-    const pdfjs = engineRequire("pdfjs-dist") as typeof import("pdfjs-dist");
+    const pdfjs = engineRequire("pdfjs-dist");
     const doc = await pdfjs.getDocument({ data: new Uint8Array(buffer), isEvalSupported: false }).promise;
     const parts: string[] = [];
     for (let i = 1; i <= doc.numPages; i++) {
       const page = await doc.getPage(i);
       const content = await page.getTextContent();
-      const line = content.items.map((item) => ("str" in item ? item.str : "")).join(" ").trim();
+      const line = content.items.map((item: { str?: string }) => ("str" in item ? item.str : "")).join(" ").trim();
       if (line) parts.push(`[第 ${i} 页] ${line}`);
     }
     const text = parts.join("\n");

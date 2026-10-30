@@ -9,8 +9,8 @@ import { createRequire } from "node:module";
 
 const engineRequire = createRequire(
   new URL("../../executas/ppt-engine/package.json", import.meta.url),
-);
-const puppeteer = engineRequire("puppeteer-core") as typeof import("puppeteer-core");
+) as (id: string) => any;
+const puppeteer = engineRequire("puppeteer-core");
 
 const CHROME_CANDIDATES = [
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
@@ -26,7 +26,7 @@ function chromePath(): string {
   throw new Error("No Chrome/Edge executable found; set CHROME_PATH");
 }
 
-let browserPromise: Promise<import("puppeteer-core").Browser> | null = null;
+let browserPromise: Promise<any> | null = null;
 async function getBrowser() {
   browserPromise ??= puppeteer.launch({
     executablePath: chromePath(),

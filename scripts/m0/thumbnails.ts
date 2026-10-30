@@ -34,7 +34,7 @@ export async function renderDeckThumbnails(
       if (pageNumber < 1 || pageNumber > shellCount) continue;
       const handle = await page.$(`[data-presenton-page-id="page-${pageNumber}"]`);
       if (!handle) continue;
-      await handle.evaluate((el) => el.scrollIntoView());
+      await handle.evaluate((el: any) => el.scrollIntoView());
       const filePath = path.join(outDir, `page-${pageNumber}.jpg`);
       await handle.screenshot({ path: filePath, type: "jpeg", quality: 85 });
       results.push({ page: pageNumber, filePath });

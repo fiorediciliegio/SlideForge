@@ -5,8 +5,8 @@ import { createRequire } from "node:module";
 
 const engineRequire = createRequire(
   new URL("../../executas/ppt-engine/package.json", import.meta.url),
-);
-const JSZip = engineRequire("jszip") as typeof import("jszip");
+) as (id: string) => any;
+const JSZip = engineRequire("jszip");
 
 export interface BrandProfile {
   name: string;

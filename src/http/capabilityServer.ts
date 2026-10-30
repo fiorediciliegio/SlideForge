@@ -37,7 +37,7 @@ import {
   readLedger,
   type BillingContext,
 } from "../billing/index.js";
-import { deckJobs } from "../server/jobs.js";
+import { deckJobs, type DeckJob } from "../server/jobs.js";
 import { extractBrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR, loadBrand } from "../brand/store.js";
 import { createSlideForgeMcpServer } from "../mcp/tools.js";

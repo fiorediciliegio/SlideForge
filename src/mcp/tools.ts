@@ -7,7 +7,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
 import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
-import { deckJobs } from "../server/jobs.js";
+import { deckJobs, type DeckJob } from "../server/jobs.js";
 import { loadBrand } from "../brand/store.js";
 
 function text(payload: unknown) {
@@ -31,7 +31,7 @@ export function createSlideForgeMcpServer(): McpServer {
       const brandProfile = brand_id ? await loadBrand(brand_id) : null;
       if (brand_id && !brandProfile) return text({ error: `brand_id 不存在：${brand_id}` });
       const jobId = `deck-${randomUUID().slice(0, 8)}`;
-      const job = { id: jobId, status: "creating" as const, events: [] as string[], overflowPages: [] as number[] };
+      const job: DeckJob = { id: jobId, status: "creating", events: [], overflowPages: [] };
       deckJobs.set(jobId, job);
       const onEvent = (event: DeckEvent) => {
         job.events.push(`[${event.stage}]${event.page ? ` p${event.page}` : ""} ${event.message}`);
