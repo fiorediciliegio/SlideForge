@@ -21,6 +21,7 @@ import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
 import { computePageDrift } from "./drift.js";
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR } from "../brand/store.js";
+import { getTemplateReference } from "../templates/library.js";
 
 export interface OutlinePage { title: string; bullets: string[] }
 export interface Outline { title: string; pages: OutlinePage[] }
@@ -40,6 +41,8 @@ export interface CreateDeckInput {
   brandProfile?: BrandProfile;
   /** 附件提取文本（作为唯一事实来源注入生成） */
   sourceText?: string;
+  /** 内置模板 id（98 套 Visual Style Preset 之一），作为风格参照 */
+  templateId?: string;
   onEvent?: (event: DeckEvent) => void;
 }
 
@@ -94,6 +97,7 @@ interface PageContext {
   runDir: string;
   pageCount: number;
   visualSpec?: string;
+  referenceHtml?: string;
   onEvent?: (event: DeckEvent) => void;
 }
 
@@ -117,6 +121,7 @@ async function generatePage(
         pageTitle: page.title,
         bullets: page.bullets,
         visualSpec: ctx.visualSpec,
+        referenceHtml: ctx.referenceHtml,
       });
       if (instruction) {
         messages.push({ role: "user", content: `用户对这一页的修改要求：${instruction}。请在遵守全部约束的前提下输出修改后的完整 HTML 文档。` });
@@ -203,7 +208,12 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
     outline,
     runDir,
     pageCount,
-    visualSpec: input.brandProfile ? brandVisualSpec(input.brandProfile) : undefined,
+    visualSpec: input.brandProfile
+      ? brandVisualSpec(input.brandProfile)
+      : input.templateId
+        ? "视觉规范：以下方【风格参照】参考页的视觉风格为唯一标准（配色/字体/布局/卡片语言），不得套用其他风格。"
+        : undefined,
+    referenceHtml: input.templateId ? await getTemplateReference(input.templateId) : undefined,
     onEvent: emit,
   };
   const slides: Array<{ styles: string; body: string }> = new Array(pageCount);

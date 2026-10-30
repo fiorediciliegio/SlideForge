@@ -39,6 +39,7 @@ export function buildPageMessages(input: {
   pageTitle: string;
   bullets: string[];
   visualSpec?: string;
+  referenceHtml?: string;
 }) {
   return [
     {
@@ -64,6 +65,7 @@ export function buildPageMessages(input: {
 【页码标注】右下角显示 "${input.pageIndex + 1} / ${input.pageCount}"。
 ${input.pageIndex === 0 ? "【封面页】主标题 + 副标题 + 日期占位，视觉突出，不要堆砌要点。" : ""}
 ${input.visualSpec ?? VISUAL_SPEC}
+${input.referenceHtml ? `【风格参照】以下参考页 HTML 仅供学习视觉风格（配色/字体/布局/卡片语言），禁止复制其中的文字内容：\n${input.referenceHtml}` : ""}
 【输出】只输出完整 HTML 文档。`,
     },
   ];

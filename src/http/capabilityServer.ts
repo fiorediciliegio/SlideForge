@@ -107,6 +107,12 @@ const server = createServer(async (req, res) => {
       })));
     }
 
+    // ── M5 内置模板库 ──
+    if (req.method === "GET" && url.pathname === "/templates") {
+      const { listTemplates } = await import("../templates/library.js");
+      return json(res, 200, await listTemplates());
+    }
+
     // ── M4 品牌模板：上传 pptx → 提取品牌档案 ──
     if (req.method === "POST" && url.pathname === "/brands") {
       const body = await readBody(req);
@@ -190,6 +196,7 @@ const server = createServer(async (req, res) => {
             concurrency: DECK_CONCURRENCY,
             brandProfile: brandProfile ?? undefined,
             sourceText,
+            templateId: typeof body.template_id === "string" ? body.template_id : undefined,
             onEvent,
           }));
           job.runDir = deck.runDir;
