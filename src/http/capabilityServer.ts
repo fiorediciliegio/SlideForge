@@ -167,6 +167,21 @@ const server = createServer(async (req, res) => {
       if (typeof body.brand_id === "string" && !brandProfile) {
         return json(res, 404, { error: `brand_id 不存在：${body.brand_id}` });
       }
+      // M4 附件解析：提取文本作为生成的事实来源
+      let sourceText: string | undefined;
+      if (typeof body.attachment_base64 === "string" && body.attachment_base64.length > 0) {
+        try {
+          const { extractDocumentText } = await import("../documents/extract.js");
+          const extracted = await extractDocumentText(
+            Buffer.from(body.attachment_base64, "base64"),
+            String(body.filename ?? "attachment"),
+          );
+          sourceText = extracted.text;
+          job.events.push(`[attachment] 解析完成（${extracted.kind}，${extracted.chars} 字符）`);
+        } catch (error) {
+          return json(res, 400, { error: error instanceof Error ? error.message : String(error) });
+        }
+      }
       void (async () => {
         try {
           const deck = await runWithBilling(billingCtx, () => createDeck({
@@ -174,6 +189,7 @@ const server = createServer(async (req, res) => {
             pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
             concurrency: DECK_CONCURRENCY,
             brandProfile: brandProfile ?? undefined,
+            sourceText,
             onEvent,
           }));
           job.runDir = deck.runDir;

@@ -37,6 +37,8 @@ export interface CreateDeckInput {
   concurrency?: number;
   decksRoot?: string;
   brandProfile?: BrandProfile;
+  /** 附件提取文本（作为唯一事实来源注入生成） */
+  sourceText?: string;
   onEvent?: (event: DeckEvent) => void;
 }
 
@@ -185,14 +187,18 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   }
 
   const emit = input.onEvent ?? (() => {});
+  const sourceBlock = input.sourceText?.trim()
+    ? `\n\n【用户提供的原始文档，所有事实与数据必须以此为准，不得编造文档外信息】\n${input.sourceText.trim().slice(0, 12000)}`
+    : "";
+  const effectiveBrief = input.brief + sourceBlock;
   emit({ stage: "outline", message: `生成大纲（${pageCount} 页）` });
-  const outline = await generateOutline(input.brief, pageCount);
+  const outline = await generateOutline(effectiveBrief, pageCount);
   await writeFile(path.join(runDir, "outline.json"), JSON.stringify(outline, null, 2), "utf8");
-  await writeFile(path.join(runDir, "brief.txt"), input.brief, "utf8");
+  await writeFile(path.join(runDir, "brief.txt"), effectiveBrief, "utf8");
 
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
   const ctx: PageContext = {
-    brief: input.brief,
+    brief: effectiveBrief,
     outline,
     runDir,
     pageCount,
