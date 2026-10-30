@@ -20,6 +20,7 @@
     "build": "vite build --outDir bundle",
     "generate": "node --import tsx/esm scripts/m0-generate.ts",
     "mcp": "node --import tsx/esm src/mcp/server.ts",
+    "serve": "node --import tsx/esm src/http/capabilityServer.ts",
     "mcp:smoke": "node --import tsx/esm scripts/mcp-smoke.ts",
     "check": "tsc --noEmit",
     "test:unit": "node --import tsx/esm --test tests/**/*.test.ts"
