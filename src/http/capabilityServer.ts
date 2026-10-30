@@ -15,6 +15,9 @@
 import { createServer } from "node:http";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
+import { loadDotEnv } from "../server/env.js";
+
+loadDotEnv();
 
 import {
   createDeck,
@@ -40,6 +43,8 @@ import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/
 
 const jobs = deckJobs;
 const ADMIN_TOKEN = process.env.SLIDEFORGE_ADMIN_TOKEN?.trim();
+// 小内存主机用 DECK_CONCURRENCY=1 或 2 降配（每个生成页都需 LLM+渲染开销）
+const DECK_CONCURRENCY = Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 4)));
 
 function adminAuthorized(req: import("node:http").IncomingMessage): boolean {
   if (!ADMIN_TOKEN) return true; // 未配置 = 本机开发模式
@@ -119,7 +124,7 @@ const server = createServer(async (req, res) => {
           const deck = await runWithBilling(billingCtx, () => createDeck({
             brief,
             pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
-            concurrency: 4,
+            concurrency: DECK_CONCURRENCY,
             onEvent,
           }));
           job.runDir = deck.runDir;

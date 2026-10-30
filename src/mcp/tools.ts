@@ -32,7 +32,7 @@ export function createSlideForgeMcpServer(): McpServer {
       };
       void (async () => {
         try {
-          const deck = await createDeck({ brief, pageCount: page_count, concurrency: 4, onEvent });
+          const deck = await createDeck({ brief, pageCount: page_count, concurrency: Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 4))), onEvent });
           job.runDir = deck.runDir;
           job.title = deck.outline.title;
           job.overflowPages = deck.overflowWarnings.map((w) => w.page);

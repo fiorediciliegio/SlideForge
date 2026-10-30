@@ -13,3 +13,5 @@ executas/ppt-engine/src/pptx-export/vendor/
 .eval-results/
 artifacts/
 data/
+.env
+.env.local

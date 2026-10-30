@@ -6,6 +6,9 @@
  */
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { createSlideForgeMcpServer } from "./tools.js";
+import { loadDotEnv } from "../server/env.js";
+
+loadDotEnv();
 
 const transport = new StdioServerTransport();
 await createSlideForgeMcpServer().connect(transport);

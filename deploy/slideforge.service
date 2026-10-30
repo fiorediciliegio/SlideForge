@@ -1,0 +1,16 @@
+[Unit]
+Description=SlideForge capability server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/slideforge
+EnvironmentFile=/opt/slideforge/.env
+ExecStart=/usr/bin/node --import tsx/esm src/http/capabilityServer.ts
+Restart=always
+RestartSec=5
+# 小内存主机保护：进程内存上限 1.5G（超限自动重启）
+MemoryMax=1536M
+
+[Install]
+WantedBy=multi-user.target
