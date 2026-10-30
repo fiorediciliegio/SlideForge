@@ -8,6 +8,7 @@ import { z } from "zod";
 
 import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
 import { deckJobs } from "../server/jobs.js";
+import { loadBrand } from "../brand/store.js";
 
 function text(payload: unknown) {
   return { content: [{ type: "text" as const, text: JSON.stringify(payload, null, 2) }] };
@@ -22,8 +23,11 @@ export function createSlideForgeMcpServer(): McpServer {
     {
       brief: z.string().describe("演示需求描述，越具体越好（主题、受众、关键数据）"),
       page_count: z.number().min(2).max(20).optional().describe("页数，默认 8"),
+      brand_id: z.string().optional().describe("品牌模板 id（/brands 上传后获得），带上品牌色/字体/logo"),
     },
-    async ({ brief, page_count }) => {
+    async ({ brief, page_count, brand_id }) => {
+      const brandProfile = brand_id ? await loadBrand(brand_id) : null;
+      if (brand_id && !brandProfile) return text({ error: `brand_id 不存在：${brand_id}` });
       const jobId = `deck-${randomUUID().slice(0, 8)}`;
       const job = { id: jobId, status: "creating" as const, events: [] as string[], overflowPages: [] as number[] };
       deckJobs.set(jobId, job);
@@ -32,7 +36,7 @@ export function createSlideForgeMcpServer(): McpServer {
       };
       void (async () => {
         try {
-          const deck = await createDeck({ brief, pageCount: page_count, concurrency: Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 4))), onEvent });
+          const deck = await createDeck({ brief, pageCount: page_count, concurrency: Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 4))), brandProfile: brandProfile ?? undefined, onEvent });
           job.runDir = deck.runDir;
           job.title = deck.outline.title;
           job.overflowPages = deck.overflowWarnings.map((w) => w.page);

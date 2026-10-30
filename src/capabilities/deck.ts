@@ -19,6 +19,7 @@ import {
 import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
 import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
+import { BRANDS_DIR } from "../brand/store.js";
 
 export interface OutlinePage { title: string; bullets: string[] }
 export interface Outline { title: string; pages: OutlinePage[] }
@@ -154,7 +155,12 @@ async function assembleDeck(runDir: string, title: string, pageCount: number): P
     const html = await readFile(path.join(runDir, `page-${i}.html`), "utf8");
     slides.push(splitSlideDocument(html));
   }
-  await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title, slides }), "utf8");
+  let logo: { src: string; position?: "top-right" | "top-left" | "bottom-right" | "bottom-left" } | undefined;
+  try {
+    const brand = JSON.parse(await readFile(path.join(runDir, "brand.json"), "utf8"));
+    logo = brand.logo;
+  } catch { /* 无品牌资产 */ }
+  await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title, slides, logo }), "utf8");
 }
 
 export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResult> {
@@ -165,6 +171,18 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   const deckId = `deck-${Date.now()}`;
   const runDir = path.join(decksRoot, deckId);
   await mkdir(runDir, { recursive: true });
+
+  // M4 固定资产：logo 拷贝进工作区，组装时确定性合成（不经模型）
+  let logo: { src: string; position?: "top-right" | "top-left" | "bottom-right" | "bottom-left" } | undefined;
+  const brand = input.brandProfile as (BrandProfile & { brand_id?: string; logoFile?: string; logoPosition?: "top-right" | "top-left" | "bottom-right" | "bottom-left" }) | undefined;
+  if (brand?.logoFile && brand.brand_id) {
+    const ext = brand.logoFile.split(".").pop();
+    await mkdir(path.join(runDir, "assets"), { recursive: true });
+    const { copyFile } = await import("node:fs/promises");
+    await copyFile(path.join(BRANDS_DIR, brand.brand_id, brand.logoFile), path.join(runDir, "assets", `logo.${ext}`));
+    logo = { src: `assets/logo.${ext}`, position: brand.logoPosition };
+    await writeFile(path.join(runDir, "brand.json"), JSON.stringify({ logo }), "utf8");
+  }
 
   const emit = input.onEvent ?? (() => {});
   emit({ stage: "outline", message: `生成大纲（${pageCount} 页）` });
@@ -192,7 +210,7 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   await Promise.all(Array.from({ length: concurrency }, worker));
 
   emit({ stage: "assemble", message: "组装 deck.html" });
-  await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title: outline.title, slides }), "utf8");
+  await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title: outline.title, slides, logo }), "utf8");
   await writeFile(path.join(runDir, "run-report.json"), JSON.stringify({ brief: input.brief, pageCount, outline, overflowWarnings }, null, 2), "utf8");
   await closeValidatorBrowser();
   return { deckId, runDir, outline, overflowWarnings };

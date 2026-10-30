@@ -38,20 +38,10 @@ import {
   type BillingContext,
 } from "../billing/index.js";
 import { deckJobs } from "../server/jobs.js";
-import { extractBrandProfile, type BrandProfile } from "../brand/profile.js";
+import { extractBrandProfile } from "../brand/profile.js";
+import { BRANDS_DIR, loadBrand } from "../brand/store.js";
 import { createSlideForgeMcpServer } from "../mcp/tools.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
-
-const BRANDS_DIR = path.resolve(import.meta.dirname, "..", "..", "data", "brands");
-
-async function loadBrand(brandId: string): Promise<BrandProfile | null> {
-  try {
-    const { readFile } = await import("node:fs/promises");
-    return JSON.parse(await readFile(path.join(BRANDS_DIR, brandId, "profile.json"), "utf8")) as BrandProfile;
-  } catch {
-    return null;
-  }
-}
 
 const jobs = deckJobs;
 const ADMIN_TOKEN = process.env.SLIDEFORGE_ADMIN_TOKEN?.trim();
@@ -130,6 +120,19 @@ const server = createServer(async (req, res) => {
       const buffer = Buffer.from(base64, "base64");
       await writeFile(path.join(dir, "source.pptx"), buffer);
       const profile = await extractBrandProfile(buffer, name);
+      Object.assign(profile, { brand_id: brandId });
+      // M4 固定资产：logo 原样保存，生成时确定性合成（不经模型）
+      if (typeof body.logo_base64 === "string" && body.logo_base64.length > 0) {
+        const ext = typeof body.logo_ext === "string" && /^[a-z]{3,4}$/.test(body.logo_ext) ? body.logo_ext : "png";
+        const logoFile = `logo.${ext}`;
+        await writeFile(path.join(dir, logoFile), Buffer.from(body.logo_base64, "base64"));
+        Object.assign(profile, {
+          logoFile,
+          logoPosition: ["top-right", "top-left", "bottom-right", "bottom-left"].includes(String(body.logo_position))
+            ? String(body.logo_position)
+            : "top-right",
+        });
+      }
       await writeFile(path.join(dir, "profile.json"), JSON.stringify(profile, null, 2), "utf8");
       return json(res, 200, { brand_id: brandId, profile });
     }

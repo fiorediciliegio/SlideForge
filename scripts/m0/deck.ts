@@ -55,6 +55,7 @@ export function scopeCss(css: string, pageId: string): string {
 export function buildDeckHtml(input: {
   title: string;
   slides: Array<{ styles: string; body: string }>;
+  logo?: { src: string; position?: "top-right" | "top-left" | "bottom-right" | "bottom-left" };
 }): string {
   const baseCss = `
 * { box-sizing: border-box; }
@@ -70,7 +71,12 @@ body { font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif; color: 
   const shells = input.slides
     .map((slide, i) => {
       const pageId = `page-${i + 1}`;
-      return `<div data-presenton-slide-shell="true" data-presenton-page-id="${pageId}" data-layout="${pageId}" data-presenton-page-current="${i + 1}" data-presenton-page-total="${input.slides.length}">${slide.body}</div>`;
+      const pos = input.logo?.position ?? "top-right";
+      const posCss = `${pos.includes("bottom") ? "bottom:32px" : "top:32px"};${pos.includes("left") ? "left:48px" : "right:48px"}`;
+      const logoImg = input.logo
+        ? `<img src="${input.logo.src}" alt="brand logo" style="position:absolute;${posCss};height:48px;max-width:220px;object-fit:contain;z-index:50" />`
+        : "";
+      return `<div data-presenton-slide-shell="true" data-presenton-page-id="${pageId}" data-layout="${pageId}" data-presenton-page-current="${i + 1}" data-presenton-page-total="${input.slides.length}">${slide.body}${logoImg}</div>`;
     })
     .join("\n");
 
