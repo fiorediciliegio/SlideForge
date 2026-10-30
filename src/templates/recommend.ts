@@ -32,14 +32,15 @@ async function loadMetas(): Promise<PresetMeta[]> {
   return metas;
 }
 
-/** 文本 → 字符二元组集合（中文按字、英文按词根小写） */
+/** 文本 → 特征集合：英文/数字按整词，中文按字符二元组（避免 "an" 这类噪音二元组） */
 function bigrams(text: string): Set<string> {
-  const normalized = text.toLowerCase().replace(/\s+/g, " ");
+  const normalized = text.toLowerCase();
   const grams = new Set<string>();
-  for (let i = 0; i < normalized.length - 1; i++) {
-    const pair = normalized.slice(i, i + 2);
-    if (/[a-z0-9\u4e00-\u9fff]{2}/.test(pair)) grams.add(pair);
+  for (const word of normalized.match(/[a-z0-9]+/g) ?? []) {
+    if (word.length >= 2) grams.add(word);
   }
+  const cjkOnly = normalized.replace(/[a-z0-9\s]/g, "");
+  for (let i = 0; i < cjkOnly.length - 1; i++) grams.add(cjkOnly.slice(i, i + 2));
   return grams;
 }
 
