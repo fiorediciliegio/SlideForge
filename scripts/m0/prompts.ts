@@ -38,6 +38,7 @@ export function buildPageMessages(input: {
   pageCount: number;
   pageTitle: string;
   bullets: string[];
+  visualSpec?: string;
 }) {
   return [
     {
@@ -62,7 +63,7 @@ export function buildPageMessages(input: {
 【本页要点】${input.bullets.map((b) => `- ${b}`).join("\n")}
 【页码标注】右下角显示 "${input.pageIndex + 1} / ${input.pageCount}"。
 ${input.pageIndex === 0 ? "【封面页】主标题 + 副标题 + 日期占位，视觉突出，不要堆砌要点。" : ""}
-${VISUAL_SPEC}
+${input.visualSpec ?? VISUAL_SPEC}
 【输出】只输出完整 HTML 文档。`,
     },
   ];

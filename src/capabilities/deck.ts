@@ -18,6 +18,7 @@ import {
 } from "../../scripts/m0/validatePage.js";
 import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
 import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
+import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 
 export interface OutlinePage { title: string; bullets: string[] }
 export interface Outline { title: string; pages: OutlinePage[] }
@@ -34,6 +35,7 @@ export interface CreateDeckInput {
   pageCount?: number;
   concurrency?: number;
   decksRoot?: string;
+  brandProfile?: BrandProfile;
   onEvent?: (event: DeckEvent) => void;
 }
 
@@ -87,6 +89,7 @@ interface PageContext {
   outline: Outline;
   runDir: string;
   pageCount: number;
+  visualSpec?: string;
   onEvent?: (event: DeckEvent) => void;
 }
 
@@ -109,6 +112,7 @@ async function generatePage(
         pageCount: ctx.pageCount,
         pageTitle: page.title,
         bullets: page.bullets,
+        visualSpec: ctx.visualSpec,
       });
       if (instruction) {
         messages.push({ role: "user", content: `用户对这一页的修改要求：${instruction}。请在遵守全部约束的前提下输出修改后的完整 HTML 文档。` });
@@ -169,7 +173,14 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   await writeFile(path.join(runDir, "brief.txt"), input.brief, "utf8");
 
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
-  const ctx: PageContext = { brief: input.brief, outline, runDir, pageCount, onEvent: emit };
+  const ctx: PageContext = {
+    brief: input.brief,
+    outline,
+    runDir,
+    pageCount,
+    visualSpec: input.brandProfile ? brandVisualSpec(input.brandProfile) : undefined,
+    onEvent: emit,
+  };
   const slides: Array<{ styles: string; body: string }> = new Array(pageCount);
   let cursor = 0;
   const worker = async () => {

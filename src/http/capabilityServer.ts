@@ -38,8 +38,20 @@ import {
   type BillingContext,
 } from "../billing/index.js";
 import { deckJobs } from "../server/jobs.js";
+import { extractBrandProfile, type BrandProfile } from "../brand/profile.js";
 import { createSlideForgeMcpServer } from "../mcp/tools.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+
+const BRANDS_DIR = path.resolve(import.meta.dirname, "..", "..", "data", "brands");
+
+async function loadBrand(brandId: string): Promise<BrandProfile | null> {
+  try {
+    const { readFile } = await import("node:fs/promises");
+    return JSON.parse(await readFile(path.join(BRANDS_DIR, brandId, "profile.json"), "utf8")) as BrandProfile;
+  } catch {
+    return null;
+  }
+}
 
 const jobs = deckJobs;
 const ADMIN_TOKEN = process.env.SLIDEFORGE_ADMIN_TOKEN?.trim();
@@ -105,6 +117,35 @@ const server = createServer(async (req, res) => {
       })));
     }
 
+    // ── M4 品牌模板：上传 pptx → 提取品牌档案 ──
+    if (req.method === "POST" && url.pathname === "/brands") {
+      const body = await readBody(req);
+      const name = String(body.name ?? "").trim();
+      const base64 = String(body.pptx_base64 ?? "");
+      if (!name || !base64) return json(res, 400, { error: "name 与 pptx_base64 必填" });
+      const brandId = `brand-${randomUUID().slice(0, 8)}`;
+      const dir = path.join(BRANDS_DIR, brandId);
+      const { mkdir, writeFile } = await import("node:fs/promises");
+      await mkdir(dir, { recursive: true });
+      const buffer = Buffer.from(base64, "base64");
+      await writeFile(path.join(dir, "source.pptx"), buffer);
+      const profile = await extractBrandProfile(buffer, name);
+      await writeFile(path.join(dir, "profile.json"), JSON.stringify(profile, null, 2), "utf8");
+      return json(res, 200, { brand_id: brandId, profile });
+    }
+    if (req.method === "GET" && url.pathname === "/brands") {
+      const { readdir } = await import("node:fs/promises");
+      const { existsSync } = await import("node:fs");
+      if (!existsSync(BRANDS_DIR)) return json(res, 200, []);
+      const entries = await readdir(BRANDS_DIR);
+      const brands = [];
+      for (const id of entries) {
+        const profile = await loadBrand(id);
+        if (profile) brands.push({ brand_id: id, ...profile });
+      }
+      return json(res, 200, brands);
+    }
+
     if (req.method === "POST" && url.pathname === "/decks") {
       const body = await readBody(req);
       const brief = String(body.brief ?? "").trim();
@@ -119,12 +160,17 @@ const server = createServer(async (req, res) => {
         job.events.push(`[${event.stage}]${event.page ? ` p${event.page}` : ""} ${event.message}`);
       };
       const billingCtx: BillingContext = { apiKey: apiKey ?? "", deckId: jobId, promptTokens: 0, completionTokens: 0 };
+      const brandProfile = typeof body.brand_id === "string" ? await loadBrand(body.brand_id) : null;
+      if (typeof body.brand_id === "string" && !brandProfile) {
+        return json(res, 404, { error: `brand_id 不存在：${body.brand_id}` });
+      }
       void (async () => {
         try {
           const deck = await runWithBilling(billingCtx, () => createDeck({
             brief,
             pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
             concurrency: DECK_CONCURRENCY,
+            brandProfile: brandProfile ?? undefined,
             onEvent,
           }));
           job.runDir = deck.runDir;
