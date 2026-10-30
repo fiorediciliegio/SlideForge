@@ -231,7 +231,7 @@ const server = createServer(async (req, res) => {
           page: Number(body.page),
           instruction: String(body.instruction ?? ""),
         });
-        return json(res, 200, { deck_id: job.id, status: "regenerated", overflow_warnings: result.overflowWarnings });
+        return json(res, 200, { deck_id: job.id, status: "regenerated", overflow_warnings: result.overflowWarnings, drift_report: result.drift });
       }
 
       if (req.method === "GET" && action === "preview") {

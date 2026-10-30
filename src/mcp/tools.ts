@@ -82,7 +82,7 @@ export function createSlideForgeMcpServer(): McpServer {
       const job = deckJobs.get(deck_id);
       if (!job?.runDir) return text({ error: "deck 不存在或尚未 ready" });
       const result = await regeneratePage({ runDir: job.runDir, page, instruction });
-      return text({ deck_id, page, status: "regenerated", overflow_warnings: result.overflowWarnings, hint: "调用 export_deck 导出最新版本" });
+      return text({ deck_id, page, status: "regenerated", overflow_warnings: result.overflowWarnings, drift_report: result.drift, hint: "调用 export_deck 导出最新版本" });
     },
   );
 

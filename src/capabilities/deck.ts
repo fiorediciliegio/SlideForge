@@ -18,6 +18,7 @@ import {
 } from "../../scripts/m0/validatePage.js";
 import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
 import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
+import { computePageDrift } from "./drift.js";
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR } from "../brand/store.js";
 
@@ -227,7 +228,10 @@ export async function regeneratePage(input: {
   page: number;
   instruction: string;
   onEvent?: (event: DeckEvent) => void;
-}): Promise<{ overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> }> {
+}): Promise<{
+  overflowWarnings: Array<{ page: number; issues: SlideIssue[] }>;
+  drift?: ReturnType<typeof computePageDrift>;
+}> {
   ensureRuntimeEnv();
   input = { ...input, runDir: path.resolve(input.runDir) };
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
@@ -236,6 +240,11 @@ export async function regeneratePage(input: {
   if (index < 0 || index >= outline.pages.length) {
     throw new Error(`页码越界：${input.page}（共 ${outline.pages.length} 页）`);
   }
+  // 偏离度报告：改动前留档
+  const pageFile = path.join(input.runDir, `page-${input.page}.html`);
+  let oldHtml = "";
+  try { oldHtml = await readFile(pageFile, "utf8"); } catch { /* 首次生成 */ }
+
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
   const emit = input.onEvent ?? (() => {});
   emit({ stage: "regenerate", page: input.page, message: `重生成第 ${input.page} 页` });
@@ -246,8 +255,19 @@ export async function regeneratePage(input: {
     input.instruction,
   );
   await assembleDeck(input.runDir, outline.title, outline.pages.length);
+
+  let drift: ReturnType<typeof computePageDrift> | undefined;
+  if (oldHtml) {
+    const newHtml = await readFile(pageFile, "utf8");
+    drift = computePageDrift(oldHtml, newHtml);
+    await writeFile(
+      path.join(input.runDir, `drift-report-page-${input.page}.json`),
+      JSON.stringify(drift, null, 2),
+      "utf8",
+    );
+  }
   await closeValidatorBrowser();
-  return { overflowWarnings };
+  return { overflowWarnings, drift };
 }
 
 export async function exportDeck(input: {
