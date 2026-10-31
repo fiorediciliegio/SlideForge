@@ -118,6 +118,23 @@ const server = createServer(async (req, res) => {
       const { listTemplates } = await import("../templates/library.js");
       return json(res, 200, await listTemplates());
     }
+    // 模板封面图（presets/<id>/images/ 下第一张 webp）
+    const coverMatch = url.pathname.match(/^\/template-cover\/(.+)$/);
+    if (req.method === "GET" && coverMatch) {
+      const { readdir, readFile } = await import("node:fs/promises");
+      const presetId = decodeURIComponent(coverMatch[1]);
+      if (presetId.includes("..")) return json(res, 400, { error: "bad id" });
+      try {
+        const dir = path.resolve(import.meta.dirname, "..", "features", "templates", "presets", presetId, "images");
+        const file = (await readdir(dir)).find((name) => name.endsWith(".webp"));
+        if (!file) return json(res, 404, { error: "no cover" });
+        const data = await readFile(path.join(dir, file));
+        res.writeHead(200, { "content-type": "image/webp", "cache-control": "public, max-age=86400" });
+        return res.end(data);
+      } catch {
+        return json(res, 404, { error: "no cover" });
+      }
+    }
 
     // ── M4 品牌模板：上传 pptx → 提取品牌档案 ──
     if (req.method === "POST" && url.pathname === "/brands") {
