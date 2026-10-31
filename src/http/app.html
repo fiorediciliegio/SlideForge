@@ -426,6 +426,10 @@
         $("status").textContent = `${job.status === "ready" ? "✅ 全部完成" : "生成中"} · ${(job.recent_events ?? []).slice(-1).join("")}`;
         await pullNewPreviews();
         if (job.status === "ready") {
+          // 全部页面补齐预览（分批拉取，避免只显示前 4 页）
+          while (state.shown.size < state.pageCount) {
+            await pullNewPreviews();
+          }
           $("exportBtn").style.display = "inline-flex";
           break;
         }
