@@ -212,7 +212,7 @@ const server = createServer(async (req, res) => {
       return json(res, 202, { deck_id: jobId, status: job.status });
     }
 
-    const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export))?$/);
+    const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport))?$/);
     if (match) {
       const job = jobs.get(match[1]);
       if (!job) return json(res, 404, { error: "deck 不存在" });
@@ -250,6 +250,16 @@ const server = createServer(async (req, res) => {
           return res.end(Buffer.from(images[0].base64, "base64"));
         }
         return json(res, 200, { deck_id: job.id, images });
+      }
+
+      if (req.method === "POST" && action === "reimport") {
+        if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
+        const body = await readBody(req);
+        const base64 = String(body.pptx_base64 ?? "");
+        if (!base64) return json(res, 400, { error: "pptx_base64 必填" });
+        const { reimportDeck } = await import("../capabilities/deck.js");
+        const result = await reimportDeck({ runDir: job.runDir, pptxBuffer: Buffer.from(base64, "base64") });
+        return json(res, 200, { deck_id: job.id, status: "reimported", ...result, hint: "调用 export 导出新版本" });
       }
 
       if (req.method === "POST" && action === "export") {

@@ -20,6 +20,7 @@ import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.j
 import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
 import { computePageDrift } from "./drift.js";
 import { validateHtmlDialect } from "../../scripts/m0/dialect.js";
+import { extractPptxSlideTexts, normalizeTextSet } from "../documents/pptxText.js";
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR } from "../brand/store.js";
 import { getTemplateReference } from "../templates/library.js";
@@ -301,6 +302,81 @@ export async function regeneratePage(input: {
   }
   await closeValidatorBrowser();
   return { overflowWarnings, drift };
+}
+
+function extractTextLinesLocal(html: string): string[] {
+  const body = html.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] ?? html;
+  return body
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<[^>]+>/g, "\n")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+}
+
+/**
+ * D3 · 回传续改：用户在 WPS 改过的 pptx 传回来。
+ * 分支语义：不做格式同步，而是逐页识别用户改动 → 仅对改动页做语义吸收式重生成 → 重组装。
+ */
+export async function reimportDeck(input: {
+  runDir: string;
+  pptxBuffer: Buffer;
+  onEvent?: (event: DeckEvent) => void;
+}): Promise<{
+  changedPages: number[];
+  unchangedPages: number[];
+  report: Array<{ page: number; added: number; removed: number }>;
+}> {
+  ensureRuntimeEnv();
+  input = { ...input, runDir: path.resolve(input.runDir) };
+  const emit = input.onEvent ?? (() => {});
+  const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
+  const brief = await readFile(path.join(input.runDir, "brief.txt"), "utf8");
+  const slideTexts = await extractPptxSlideTexts(input.pptxBuffer);
+  if (slideTexts.length !== outline.pages.length) {
+    throw new Error(`页数不一致：原 deck ${outline.pages.length} 页，回传文件 ${slideTexts.length} 页`);
+  }
+
+  const changedPages: number[] = [];
+  const unchangedPages: number[] = [];
+  const report: Array<{ page: number; added: number; removed: number }> = [];
+  const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+
+  for (let index = 0; index < outline.pages.length; index++) {
+    const pageNumber = index + 1;
+    const oldHtml = await readFile(path.join(input.runDir, `page-${pageNumber}.html`), "utf8");
+    const oldSet = normalizeTextSet(extractTextLinesLocal(oldHtml));
+    const newSet = normalizeTextSet(slideTexts[index]);
+    const added = [...newSet].filter((text) => !oldSet.has(text));
+    const removed = [...oldSet].filter((text) => !newSet.has(text));
+
+    if (added.length === 0 && removed.length === 0) {
+      unchangedPages.push(pageNumber);
+      continue;
+    }
+    changedPages.push(pageNumber);
+    report.push({ page: pageNumber, added: added.length, removed: removed.length });
+    emit({ stage: "regenerate", page: pageNumber, message: `吸收 WPS 手工改动（新增 ${added.length} 条/删除 ${removed.length} 条）` });
+
+    const instruction = `用户已在 WPS 中手工修改了此页，以下是修改后的页面文本（以其为准完整吸收，保留所有修改，不得回退到旧文本）：
+${slideTexts[index].join("；").slice(0, 1500)}
+请保持原有的版式结构、配色与品牌风格，仅按上述新文本更新内容。`;
+    await generatePage(
+      { brief, outline, runDir: input.runDir, pageCount: outline.pages.length, onEvent: emit },
+      index,
+      overflowWarnings,
+      instruction,
+    );
+  }
+
+  await assembleDeck(input.runDir, outline.title, outline.pages.length);
+  await writeFile(
+    path.join(input.runDir, "reimport-report.json"),
+    JSON.stringify({ changedPages, unchangedPages, report, overflowWarnings, ts: new Date().toISOString() }, null, 2),
+    "utf8",
+  );
+  await closeValidatorBrowser();
+  return { changedPages, unchangedPages, report };
 }
 
 export async function exportDeck(input: {
