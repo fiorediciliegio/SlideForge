@@ -61,7 +61,8 @@
     .msg.assistant { align-self: flex-start; background: #f1f5f9; color: var(--ink); border-bottom-left-radius: 4px; }
     .msg .meta { font-size: 10px; opacity: .7; margin-bottom: 4px; }
     .composer { border-top: 1px solid var(--line); padding-top: 14px; }
-    .composer textarea { height: 76px; }
+    .composer textarea { height: 120px; min-height: 76px; max-height: 320px; resize: vertical; transition: height .2s; }
+    .composer textarea.tall { height: 240px; }
     .composer .row { display: flex; gap: 10px; align-items: center; margin-top: 10px; }
     .composer .row select { width: auto; flex: 1; font-size: 12px; padding: 7px 9px; }
     .composer .row input[type=number] { width: 64px; padding: 7px 9px; font-size: 12px; }
@@ -289,6 +290,10 @@
       headers: { "content-type": "application/json", "x-api-key": apiKey }, ...options,
     }).then(r => r.json());
     const state = { deckId: null, pageCount: 8, shown: new Set(), templates: [], pageImages: new Map(), editingPage: null };
+    // 输入区：默认加高、可拖拽，长文档自动撑大
+    $("brief").addEventListener("input", () => {
+      $("brief").classList.toggle("tall", $("brief").value.length > 200);
+    });
     const toBase64 = (file) => new Promise((resolve) => {
       const reader = new FileReader();
       reader.onload = () => resolve(reader.result.split(",")[1]);
