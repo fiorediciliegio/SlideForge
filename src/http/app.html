@@ -342,14 +342,27 @@
         doc.body.style.width = "1920px";
         frame.style.height = `${Math.ceil(1080 * scale)}px`;
         const style = doc.createElement("style");
+        style.id = "__editor-style";
         style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text}";
         doc.head.appendChild(style);
-        $("editorStatus").textContent = "可直接点击文字编辑，改完点「保存手动修改」";
+        // F2 布局级拖拽：Ctrl/Cmd 点选元素，拖动移动、右下角手柄缩放
+        const script = doc.createElement("script");
+        script.id = "__dnd-script";
+        script.src = `${location.origin}/editor-dnd.js?v=${Date.now()}`;
+        doc.body.appendChild(script);
+        $("editorStatus").textContent = "点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放，改完点保存";
       };
     }
     $("saveManual").addEventListener("click", async () => {
       const frame = $("manualFrame");
-      const html = frame.contentDocument.documentElement.outerHTML;
+      const doc = frame.contentDocument;
+      // 保存前剥离编辑器注入物：DND 脚本、选择框/手柄、编辑样式、缩放
+      for (const id of ["__dnd-script", "__dnd-outline", "__dnd-handle", "__editor-style"]) {
+        doc.getElementById(id)?.remove();
+      }
+      doc.body.style.transform = "";
+      doc.body.style.width = "";
+      const html = doc.documentElement.outerHTML;
       $("saveManual").disabled = true;
       $("editorStatus").textContent = "保存中…";
       const result = await api(`/decks/${state.deckId}/page-html`, {

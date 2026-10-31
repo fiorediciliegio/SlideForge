@@ -51,6 +51,28 @@ function extractStyleRules(html: string): Map<string, Map<string, string>> {
 
 const LIMIT = 20;
 
+function extractInlineStyles(html: string): Map<string, Map<string, string>> {
+  const result = new Map<string, Map<string, string>>();
+  let index = 0;
+  for (const match of html.matchAll(/<(\w+)([^>]*?)style="([^"]+)"/g)) {
+    const tag = match[1].toLowerCase();
+    const attrs = match[2];
+    const className = (attrs.match(/class="([^"]+)"/)?.[1] ?? "").split(" ")[0];
+    // 每个元素独立键，避免无 class 元素互相覆盖导致改动漏报
+    const key = `${tag}.${className}#${index++}`;
+    const props = new Map<string, string>();
+    for (const decl of match[3].split(";")) {
+      const idx = decl.indexOf(":");
+      if (idx < 1) continue;
+      const prop = decl.slice(0, idx).trim();
+      const value = decl.slice(idx + 1).trim().replace(/\s+/g, " ");
+      if (prop) props.set(prop, value);
+    }
+    if (props.size > 0) result.set(key, props);
+  }
+  return result;
+}
+
 export function computePageDrift(oldHtml: string, newHtml: string): PageDrift {
   const oldText = new Set(extractTextLines(oldHtml));
   const newText = new Set(extractTextLines(newHtml));
@@ -68,6 +90,20 @@ export function computePageDrift(oldHtml: string, newHtml: string): PageDrift {
       const oldValue = oldProps.get(prop);
       if (oldValue !== undefined && oldValue !== value) {
         styleChanges.push({ selector, property: prop, from: oldValue, to: value });
+      }
+    }
+  }
+
+  // 内联样式（拖拽/手动编辑直接改 style 属性）也纳入审计
+  const oldInline = extractInlineStyles(oldHtml);
+  const newInline = extractInlineStyles(newHtml);
+  for (const [key, props] of newInline) {
+    const oldProps = oldInline.get(key);
+    if (!oldProps) continue;
+    for (const [prop, value] of props) {
+      const oldValue = oldProps.get(prop);
+      if (oldValue !== undefined && oldValue !== value) {
+        styleChanges.push({ selector: `${key}[inline]`, property: prop, from: oldValue, to: value });
       }
     }
   }

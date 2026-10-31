@@ -79,6 +79,12 @@ const server = createServer(async (req, res) => {
     if (url.pathname.startsWith("/admin/")) {
       if (!adminAuthorized(req)) return json(res, 401, { error: "admin unauthorized" });
     }
+    if (req.method === "GET" && url.pathname === "/editor-dnd.js") {
+      const { readFile } = await import("node:fs/promises");
+      const js = await readFile(new URL("./editor-dnd.js", import.meta.url), "utf8");
+      res.writeHead(200, { "content-type": "application/javascript; charset=utf-8" });
+      return res.end(js);
+    }
     if (req.method === "GET" && url.pathname === "/console") {
       const { readFile } = await import("node:fs/promises");
       const html = await readFile(new URL("./console.html", import.meta.url), "utf8");
