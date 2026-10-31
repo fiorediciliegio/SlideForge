@@ -85,6 +85,12 @@ const server = createServer(async (req, res) => {
       res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
       return res.end(html);
     }
+    if (req.method === "GET" && (url.pathname === "/app" || url.pathname === "/")) {
+      const { readFile } = await import("node:fs/promises");
+      const html = await readFile(new URL("./app.html", import.meta.url), "utf8");
+      res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+      return res.end(html);
+    }
     if (url.pathname === "/admin/keys" && req.method === "GET") {
       return json(res, 200, await listKeys());
     }

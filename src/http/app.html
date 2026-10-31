@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SlideForge · AI PPT</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Microsoft YaHei", sans-serif; background: #f7f8fb; color: #182033; }
+    header { background: #1e40af; color: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 22px; }
+    header h1 { font-size: 17px; }
+    nav button { background: none; border: 0; color: #c7d2fe; font-size: 14px; cursor: pointer; padding: 4px 2px; }
+    nav button.active { color: #fff; border-bottom: 2px solid #f59e0b; }
+    nav a { color: #c7d2fe; font-size: 12px; text-decoration: none; margin-left: auto; }
+    main { max-width: 1000px; margin: 20px auto; padding: 0 16px; }
+    .card { background: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 2px 10px rgba(25,33,61,.06); margin-bottom: 16px; }
+    textarea { width: 100%; height: 90px; padding: 10px; border: 1px solid #d5dbe7; border-radius: 10px; font-family: inherit; resize: vertical; }
+    select, input[type=number], input[type=file], input[type=text] { padding: 8px 10px; border: 1px solid #d5dbe7; border-radius: 8px; }
+    button.primary { background: #1e40af; color: #fff; border: 0; border-radius: 8px; padding: 9px 20px; cursor: pointer; }
+    button:disabled { opacity: .5; cursor: wait; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+    .muted { color: #697386; font-size: 12px; }
+    .tab { display: none; }
+    .tab.active { display: block; }
+    #status { white-space: pre-wrap; font-size: 12px; color: #697386; line-height: 1.7; margin-top: 10px; }
+    #previews { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 12px; }
+    #previews img { width: 100%; border-radius: 10px; border: 1px solid #e3e8f0; }
+    .brand-item, .tpl-item { padding: 10px 12px; border: 1px solid #e3e8f0; border-radius: 10px; margin-bottom: 8px; cursor: pointer; }
+    .brand-item:hover, .tpl-item:hover { border-color: #1e40af; }
+    .brand-item b, .tpl-item b { display: block; font-size: 14px; }
+    .brand-item.selected, .tpl-item.selected { border-color: #1e40af; background: #eef2ff; }
+    .swatches { display: inline-flex; gap: 4px; margin-left: 8px; vertical-align: middle; }
+    .swatches i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SlideForge</h1>
+    <nav>
+      <button data-tab="create" class="active">生成 PPT</button>
+      <button data-tab="brands">我的品牌</button>
+      <button data-tab="templates">模板库</button>
+      <a href="/console" target="_blank">运营控制台 ↗</a>
+    </nav>
+  </header>
+  <main>
+    <!-- 生成 -->
+    <section id="create" class="tab active">
+      <div class="card">
+        <textarea id="brief" placeholder="一句话或粘贴文档内容：例如「Q3 销售复盘：销售额 1200 万，同比 +15%，新客户 86 家」"></textarea>
+        <div class="row">
+          <label>页数 <input id="pages" type="number" value="8" min="2" max="20" /></label>
+          <label>品牌 <select id="brandSelect"><option value="">不使用</option></select></label>
+          <label>模板 <select id="templateSelect"><option value="">自动推荐</option></select></label>
+          <button class="primary" id="generate">生成</button>
+        </div>
+        <div id="status"></div>
+      </div>
+      <div class="card" id="resultCard" style="display:none">
+        <div class="row"><b id="deckTitle"></b><button class="primary" id="exportBtn">导出 PPTX</button><span id="exportResult" class="muted"></span></div>
+        <div id="previews"></div>
+      </div>
+    </section>
+
+    <!-- 品牌 -->
+    <section id="brands" class="tab">
+      <div class="card">
+        <b>上传品牌模板（PPTX 提取色/字体，logo 可选）</b>
+        <div class="row">
+          <input id="brandName" type="text" placeholder="品牌名称（如：数澜科技）" />
+          <label>PPTX <input id="brandPptx" type="file" accept=".pptx" /></label>
+          <label>Logo <input id="brandLogo" type="file" accept=".png,.jpg,.jpeg,.webp" /></label>
+          <button class="primary" id="uploadBrand">上传</button>
+        </div>
+        <div id="brandStatus" class="muted"></div>
+      </div>
+      <div id="brandList"></div>
+    </section>
+
+    <!-- 模板 -->
+    <section id="templates" class="tab">
+      <div class="card muted">98 套内置视觉预设，点选后用于下次生成（在"生成 PPT"页的模板下拉里也会同步选中）。</div>
+      <div id="templateList"></div>
+    </section>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const api = (path, options) => fetch(path, { headers: { "content-type": "application/json" }, ...options }).then(r => r.json());
+    const adminToken = localStorage.getItem("sf-admin-token") ?? "";
+    const apiAdmin = (path, options) => fetch(path, { headers: { "content-type": "application/json", "x-admin-token": adminToken }, ...options }).then(r => r.json());
+    const state = { deckId: null, brandId: "", templateId: "" };
+
+    document.querySelectorAll("nav button").forEach(btn => btn.addEventListener("click", () => {
+      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+      btn.classList.add("active");
+      $(btn.dataset.tab).classList.add("active");
+    }));
+
+    const toBase64 = (file) => new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(",")[1]);
+      reader.readAsDataURL(file);
+    });
+
+    // ── 品牌 ──
+    async function loadBrands() {
+      const brands = await api("/brands");
+      $("brandSelect").innerHTML = '<option value="">不使用</option>' + brands.map(b => `<option value="${b.brand_id}">${b.name}</option>`).join("");
+      $("brandList").innerHTML = brands.map(b => `
+        <div class="brand-item" data-id="${b.brand_id}">
+          <b>${b.name}<span class="swatches"><i style="background:#${b.primary}"></i><i style="background:#${b.accent}"></i><i style="background:#${b.text}"></i></span></b>
+          <span class="muted">${b.brand_id} · ${b.fontFamily.split(",")[0]}${b.logoFile ? " · 含 logo" : ""}</span>
+        </div>`).join("");
+      document.querySelectorAll(".brand-item").forEach(el => el.addEventListener("click", () => {
+        document.querySelectorAll(".brand-item").forEach(x => x.classList.remove("selected"));
+        el.classList.add("selected");
+        $("brandSelect").value = el.dataset.id;
+      }));
+    }
+    $("uploadBrand").addEventListener("click", async () => {
+      const pptx = $("brandPptx").files[0];
+      if (!$("brandName").value.trim() || !pptx) return $("brandStatus").textContent = "请填写品牌名并选择 pptx 文件";
+      $("brandStatus").textContent = "上传解析中…";
+      const payload = { name: $("brandName").value.trim(), pptx_base64: await toBase64(pptx) };
+      const logo = $("brandLogo").files[0];
+      if (logo) { payload.logo_base64 = await toBase64(logo); payload.logo_ext = logo.name.split(".").pop(); }
+      const result = await api("/brands", { method: "POST", body: JSON.stringify(payload) });
+      $("brandStatus").textContent = result.brand_id ? `已创建品牌 ${result.brand_id}（主色 #${result.profile.primary}）` : JSON.stringify(result);
+      loadBrands();
+    });
+
+    // ── 模板 ──
+    async function loadTemplates() {
+      const templates = await api("/templates");
+      $("templateSelect").innerHTML = '<option value="">自动推荐</option>' + templates.map(t => `<option value="${t.id}">${t.id}</option>`).join("");
+      $("templateList").innerHTML = templates.map(t => `
+        <div class="tpl-item" data-id="${t.id}"><b>${t.name}</b><span class="muted">${t.theme} · ${t.description.slice(0, 80)}</span></div>`).join("");
+      document.querySelectorAll(".tpl-item").forEach(el => el.addEventListener("click", () => {
+        document.querySelectorAll(".tpl-item").forEach(x => x.classList.remove("selected"));
+        el.classList.add("selected");
+        $("templateSelect").value = el.dataset.id;
+      }));
+    }
+
+    // ── 生成 ──
+    $("generate").addEventListener("click", async () => {
+      const brief = $("brief").value.trim();
+      if (!brief) return $("status").textContent = "请先输入需求";
+      $("generate").disabled = true;
+      $("resultCard").style.display = "none";
+      $("status").textContent = "创建任务…";
+      const created = await api("/decks", { method: "POST", body: JSON.stringify({
+        brief, page_count: Number($("pages").value),
+        brand_id: $("brandSelect").value || undefined,
+        template_id: $("templateSelect").value || undefined,
+      }) });
+      state.deckId = created.deck_id;
+      for (let round = 0; round < 90; round++) {
+        await new Promise(r => setTimeout(r, 4000));
+        const job = await api(`/decks/${state.deckId}`);
+        $("status").textContent = `状态：${job.status}\n${(job.recent_events ?? []).slice(-2).join("\n")}`;
+        if (job.status === "ready") break;
+        if (job.status === "error") { $("status").textContent = "失败：" + job.error; $("generate").disabled = false; return; }
+      }
+      $("deckTitle").textContent = "已完成，可预览与导出";
+      $("resultCard").style.display = "block";
+      const previews = await api(`/decks/${state.deckId}/preview?pages=1,2,3,4`);
+      if (previews.images) {
+        $("previews").innerHTML = previews.images.map(img => `<img src="data:image/jpeg;base64,${img.base64}" alt="第${img.page}页" />`).join("");
+      }
+      $("generate").disabled = false;
+    });
+    $("exportBtn").addEventListener("click", async () => {
+      $("exportResult").textContent = "导出中…";
+      const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: "{}" });
+      $("exportResult").textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
+    });
+
+    loadBrands();
+    loadTemplates();
+  </script>
+</body>
+</html>
