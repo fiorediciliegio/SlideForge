@@ -278,6 +278,9 @@
     function openEditor(page) {
       if (!state.deckId) return;
       state.editingPage = page;
+      const grid = document.querySelector(".editor-grid");
+      grid.style.gridTemplateColumns = "1.2fr 1fr";
+      grid.children[0].style.display = "block";
       $("editorTitle").textContent = `编辑第 ${page} 页`;
       $("editorImage").src = `data:image/jpeg;base64,${state.pageImages.get(page)}`;
       $("editorInstruction").value = "";
@@ -308,10 +311,18 @@
       $("manualTab").classList.toggle("active", !ai);
       $("aiPane").style.display = ai ? "block" : "none";
       $("manualPane").style.display = ai ? "none" : "block";
+      // 手动模式已改为整页通栏，切回 AI 时恢复双栏
+      const grid = document.querySelector(".editor-grid");
+      grid.style.gridTemplateColumns = ai ? "1.2fr 1fr" : "1fr";
+      grid.children[0].style.display = ai ? "block" : "none";
       if (!ai) loadManualFrame();
     }
     async function loadManualFrame() {
       $("editorStatus").textContent = "加载页面…";
+      // 手动编辑时编辑区占满弹窗宽度，隐藏左侧图片预览
+      const grid = document.querySelector(".editor-grid");
+      grid.style.gridTemplateColumns = "1fr";
+      grid.children[0].style.display = "none";
       const response = await fetch(`/decks/${state.deckId}/page-html?page=${state.editingPage}`, { headers: { "x-api-key": apiKey } });
       const html = await response.text();
       const frame = $("manualFrame");
@@ -319,6 +330,12 @@
       frame.onload = () => {
         const doc = frame.contentDocument;
         doc.designMode = "on";
+        // 整页等比缩放：1920×1080 幻灯片完整适配弹窗宽度，无滚动条
+        const scale = frame.clientWidth / 1920;
+        doc.body.style.transform = `scale(${scale})`;
+        doc.body.style.transformOrigin = "top left";
+        doc.body.style.width = "1920px";
+        frame.style.height = `${Math.ceil(1080 * scale)}px`;
         const style = doc.createElement("style");
         style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text}";
         doc.head.appendChild(style);
