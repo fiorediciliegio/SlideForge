@@ -86,7 +86,18 @@
 
   <script>
     const $ = (id) => document.getElementById(id);
-    const api = (path, options) => fetch(path, { headers: { "content-type": "application/json" }, ...options }).then(r => r.json());
+    const apiKey = (() => {
+      let key = localStorage.getItem("sf-api-key");
+      if (key === null) {
+        key = prompt("API Key（本机未启用计费时留空即可；启用后找管理员签发）") ?? "";
+        localStorage.setItem("sf-api-key", key);
+      }
+      return key;
+    })();
+    const api = (path, options) => fetch(path, {
+      headers: { "content-type": "application/json", "x-api-key": apiKey },
+      ...options,
+    }).then(r => r.json());
     const adminToken = localStorage.getItem("sf-admin-token") ?? "";
     const apiAdmin = (path, options) => fetch(path, { headers: { "content-type": "application/json", "x-admin-token": adminToken }, ...options }).then(r => r.json());
     const state = { deckId: null, brandId: "", templateId: "" };
@@ -157,9 +168,19 @@
         template_id: $("templateSelect").value || undefined,
       }) });
       state.deckId = created.deck_id;
+      if (!state.deckId) {
+        $("status").textContent = `创建失败：${created.error ?? "未知错误"}（请检查 API Key 是否正确/点数是否充足）`;
+        $("generate").disabled = false;
+        return;
+      }
       for (let round = 0; round < 90; round++) {
         await new Promise(r => setTimeout(r, 4000));
         const job = await api(`/decks/${state.deckId}`);
+        if (job.error && !job.status) {
+          $("status").textContent = `失败：${job.error}`;
+          $("generate").disabled = false;
+          return;
+        }
         $("status").textContent = `状态：${job.status}\n${(job.recent_events ?? []).slice(-2).join("\n")}`;
         if (job.status === "ready") break;
         if (job.status === "error") { $("status").textContent = "失败：" + job.error; $("generate").disabled = false; return; }
