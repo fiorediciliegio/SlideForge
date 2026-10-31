@@ -49,7 +49,32 @@
     .topbar h1 { font-family: var(--serif); font-size: 24px; font-weight: 700; letter-spacing: -.4px; color: var(--navy); }
     .topbar .sub { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
     .content { padding: 26px 30px; overflow: auto; flex: 1; }
-    .layout { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 24px; align-items: start; }
+    /* ── 首页（创建） ── */
+    .home { max-width: 880px; margin: 0 auto; }
+    .hero { text-align: center; margin-bottom: 26px; }
+    .hero h2 { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--navy); letter-spacing: -.5px; }
+    .hero p { color: var(--ink-2); margin-top: 8px; font-size: 14px; }
+    .hero-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+      box-shadow: var(--shadow-md); padding: 26px; }
+    .hero-card textarea { height: 150px; font-size: 15px; }
+    .hero-controls { display: flex; gap: 12px; align-items: center; margin-top: 14px; }
+    .hero-controls select { flex: 1; font-size: 12px; }
+    .hero-controls input[type=number] { width: 72px; }
+    .hero-controls .btn { padding: 12px 26px; }
+
+    /* ── 工作台 ── */
+    .workspace { display: grid; grid-template-columns: 220px minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
+    .page-list { display: flex; flex-direction: column; gap: 10px; max-height: calc(100vh - 150px); overflow-y: auto; }
+    .page-thumb { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #fff;
+      cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+    .page-thumb:hover { border-color: var(--navy); box-shadow: var(--shadow-md); }
+    .page-thumb.active { border: 2px solid var(--navy); }
+    .page-thumb img { width: 100%; display: block; }
+    .page-thumb .cap { font-size: 11px; color: var(--ink-2); padding: 5px 8px; }
+    .workspace-preview img { width: 100%; border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; }
+    .edit-panel { display: flex; flex-direction: column; gap: 12px; }
+    .edit-panel .card { padding: 18px; }
+    .edit-panel h3 { font-family: var(--serif); font-size: 16px; color: var(--navy); margin-bottom: 10px; }
     .tab { display: none; }
     .tab.active { display: block; }
     .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
@@ -175,6 +200,7 @@
         </div>
       </div>
       <button class="nav-item active" data-tab="create"><span class="ico">✨</span><span>生成演示</span></button>
+      <button class="nav-item" data-tab="workspace"><span class="ico">🗂</span><span>工作台</span></button>
       <button class="nav-item" data-tab="templates"><span class="ico">🎨</span><span>模板库</span></button>
       <button class="nav-item" data-tab="brands"><span class="ico">🏢</span><span>我的品牌</span></button>
       <div class="sidebar-foot"><a href="/console" target="_blank">运营控制台 ↗</a></div>
@@ -189,35 +215,40 @@
       </div>
       <div class="content">
         <section id="create" class="tab active">
-          <div class="layout">
-            <div class="card chat">
-              <div class="card-title">对话</div>
-              <div class="chat-list" id="chatList">
-                <div class="msg assistant"><div class="meta">SlideForge</div>告诉我你想做什么演示——一句话、一个主题，或者粘贴一份文档。</div>
-              </div>
-              <div class="composer">
-                <textarea id="brief" placeholder="输入需求，例如：Q3 销售复盘：销售额 1200 万，同比 +15%"></textarea>
-                <div class="row">
-                  <input id="pages" type="number" value="8" min="2" max="20" title="页数" />
-                  <select id="brandSelect" title="品牌"><option value="">无品牌</option></select>
-                  <select id="templateSelect" title="模板"><option value="">自动推荐</option></select>
-                  <button class="btn" id="generate">发送 ✨</button>
-                </div>
-              </div>
-              <div id="status" class="muted" style="margin-top:8px"></div>
+          <div class="home">
+            <div class="hero">
+              <h2>今天想做什么演示？</h2>
+              <p>一句话或一份文档，AI 生成可编辑的专业 PPT，随时再改。</p>
             </div>
+            <div class="hero-card">
+              <textarea id="brief" placeholder="输入需求，例如：Q3 销售复盘：销售额 1200 万，同比 +15%，新客户 86 家"></textarea>
+              <div class="hero-controls">
+                <input id="pages" type="number" value="8" min="2" max="20" title="页数" />
+                <select id="brandSelect" title="品牌"><option value="">无品牌</option></select>
+                <select id="templateSelect" title="模板"><option value="">自动推荐</option></select>
+                <button class="btn" id="generate">生成演示 ✨</button>
+              </div>
+              <div id="status" class="muted" style="margin-top:10px"></div>
+            </div>
+            <div class="muted" style="margin:16px 0 10px">也可以先从模板选一种风格：</div>
+            <div class="gallery" id="homeGallery"></div>
+          </div>
+        </section>
+
+        <section id="workspace" class="tab">
+          <div class="workspace">
+            <div class="page-list" id="pageList"></div>
             <div class="card">
               <div class="canvas-head">
-                <h2>画布</h2>
+                <h2 id="workspaceTitle">第 1 页</h2>
                 <div class="canvas-actions">
-                  <select id="themeSelect" style="width:auto;display:none"><option value="">换肤…</option></select>
-                  <button class="btn ghost sm" id="reimportBtn" style="display:none">回传修改</button>
-                  <button class="btn ghost sm" id="exportPdfBtn" style="display:none">导出 PDF</button>
-                  <button class="btn sm" id="exportBtn" style="display:none">导出 PPTX</button>
+                  <select id="themeSelect" style="width:auto"><option value="">换肤…</option></select>
+                  <button class="btn ghost sm" id="reimportBtn">回传修改</button>
+                  <button class="btn ghost sm" id="exportPdfBtn">导出 PDF</button>
+                  <button class="btn sm" id="exportBtn">导出 PPTX</button>
                 </div>
               </div>
-              <div class="empty" id="emptyState"><div class="big">🎬</div>输入需求后点击「生成演示」，页面会逐张在这里长出来</div>
-              <div class="shots" id="previews"></div>
+              <div class="workspace-preview"><img id="workspaceImage" alt="当前页预览" /></div>
               <div id="exportResult" class="muted" style="margin-top:10px"></div>
               <div id="reimportBox" style="display:none;margin-top:14px">
                 <label class="label">上传你在 WPS 里改过的 PPTX（逐页识别改动并吸收）</label>
@@ -225,6 +256,26 @@
                 <button class="btn ghost sm" id="doReimport" style="margin-top:8px">识别并续改</button>
                 <div id="reimportResult" class="muted" style="margin-top:8px"></div>
               </div>
+            </div>
+            <div class="edit-panel">
+              <div class="card">
+                <div class="edit-tabs">
+                  <button id="aiTab" class="active">AI 修改</button>
+                  <button id="manualTab">手动编辑</button>
+                </div>
+                <div id="aiPane">
+                  <label class="label">修改指令（只改这一页）</label>
+                  <textarea id="editorInstruction" placeholder="例如：改成左右两栏，左侧数据、右侧图表；标题换成深蓝"></textarea>
+                  <button class="btn block" id="applyEdit">重新生成此页</button>
+                </div>
+                <div id="manualPane" style="display:none">
+                  <div class="muted" style="margin-bottom:8px">点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放</div>
+                  <iframe id="manualFrame" title="手动编辑页面"></iframe>
+                  <button class="btn block" id="saveManual" style="margin-top:10px">保存手动修改</button>
+                </div>
+                <div id="editorStatus" class="muted" style="margin-top:8px"></div>
+              </div>
+              <div class="card drift" id="driftBox" style="display:none"></div>
             </div>
           </div>
         </section>
@@ -252,37 +303,6 @@
           </div>
           <div id="brandList"></div>
         </section>
-      </div>
-    </div>
-  </div>
-
-  <div class="drawer-mask" id="editorMask"></div>
-  <div class="drawer" id="editorDrawer">
-    <div class="drawer-head">
-      <h2 id="editorTitle">编辑第 N 页</h2>
-      <button class="drawer-close" id="editorClose">×</button>
-    </div>
-    <div class="drawer-body">
-      <div class="edit-tabs">
-        <button id="aiTab" class="active">AI 修改</button>
-        <button id="manualTab">手动编辑</button>
-      </div>
-      <div class="drawer-grid" id="editorGrid">
-        <div><img id="editorImage" alt="当前页预览" /></div>
-        <div>
-          <div id="aiPane">
-            <label class="label">修改指令（只改这一页，其他页不动）</label>
-            <textarea id="editorInstruction" placeholder="例如：改成左右两栏，左侧数据、右侧图表；标题换成深蓝"></textarea>
-            <button class="btn block" id="applyEdit">重新生成此页</button>
-          </div>
-          <div id="manualPane" style="display:none">
-            <div class="muted" style="margin-bottom:8px">点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放，改完点保存</div>
-            <iframe id="manualFrame" title="手动编辑页面"></iframe>
-            <button class="btn block" id="saveManual" style="margin-top:10px">保存手动修改</button>
-          </div>
-          <div id="editorStatus" class="muted" style="margin-top:10px"></div>
-          <div class="drift" id="driftBox" style="display:none"></div>
-        </div>
       </div>
     </div>
   </div>
@@ -327,15 +347,11 @@
       setTimeout(() => item.remove(), 4200);
     }
     function addMessage(role, text) {
-      const list = $("chatList");
-      const msg = document.createElement("div");
-      msg.className = `msg ${role}`;
-      msg.innerHTML = `<div class="meta">${role === "user" ? "我" : "SlideForge"}</div>${text}`;
-      list.appendChild(msg);
-      list.scrollTop = list.scrollHeight;
+      // 对话面板已移除，消息统一走状态行（保留调用点，避免遗漏）
+      if (role === "assistant") $("status").textContent = text;
     }
 
-    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"] };
+    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], workspace: ["工作台", "逐页预览、编辑、导出"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"] };
     document.querySelectorAll(".nav-item").forEach(btn => btn.addEventListener("click", () => {
       document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
       document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -413,13 +429,16 @@
     });
 
     // ── 模板画廊 ──
-    function renderGallery(filter = "all") {
-      const items = state.templates.filter(t => filter === "all" || t.theme === filter);
-      $("templateGallery").innerHTML = items.map(t => `
-        <div class="tpl" data-id="${t.id}">
+    function tplCard(t) {
+      return `<div class="tpl" data-id="${t.id}">
           <img src="/template-cover/${encodeURIComponent(t.id)}" loading="lazy" alt="${t.name}" onerror="this.style.display='none'" />
           <div class="meta"><b>${t.name}</b><span>${t.theme === "dark" ? "深色" : "浅色"}</span></div>
-        </div>`).join("");
+        </div>`;
+    }
+    function renderGallery(filter = "all") {
+      const items = state.templates.filter(t => filter === "all" || t.theme === filter);
+      $("templateGallery").innerHTML = items.map(t => tplCard(t)).join("");
+      $("homeGallery").innerHTML = items.slice(0, 8).map(t => tplCard(t)).join("");
       document.querySelectorAll(".tpl").forEach(el => el.addEventListener("click", () => {
         document.querySelectorAll(".tpl").forEach(x => x.classList.remove("selected"));
         el.classList.add("selected");
@@ -446,12 +465,16 @@
         if (state.shown.has(img.page)) continue;
         state.shown.add(img.page);
         state.pageImages.set(img.page, img.base64);
-        $("emptyState").style.display = "none";
-        const shot = document.createElement("div");
-        shot.className = "shot";
-        shot.innerHTML = `<img src="data:image/jpeg;base64,${img.base64}" alt="第${img.page}页" /><div class="cap"><span>第 ${img.page} 页</span><b>点击编辑</b></div>`;
-        shot.addEventListener("click", () => openEditor(img.page));
-        $("previews").appendChild(shot);
+        const thumb = document.createElement("div");
+        thumb.className = "page-thumb";
+        thumb.dataset.page = img.page;
+        thumb.innerHTML = `<img src="data:image/jpeg;base64,${img.base64}" alt="第${img.page}页" /><div class="cap">第 ${img.page} 页</div>`;
+        thumb.addEventListener("click", () => openEditor(img.page));
+        $("pageList").appendChild(thumb);
+        if (state.shown.size === 1) {
+          $("workspaceImage").src = `data:image/jpeg;base64,${img.base64}`;
+          $("workspaceTitle").textContent = `第 ${img.page} 页`;
+        }
       }
     }
     async function fetchSinglePreview(page) {
@@ -481,9 +504,6 @@
       const brief = $("brief").value.trim();
       if (!brief) return toast("请先输入需求", "error");
       $("generate").disabled = true;
-      $("previews").innerHTML = "";
-      $("emptyState").style.display = "block";
-      $("emptyState").innerHTML = "<div class='big'>⏳</div>正在生成，页面会逐张出现…";
       state.shown = new Set();
       state.pageCount = Number($("pages").value);
       $("status").textContent = "创建任务…";
@@ -508,12 +528,20 @@
         $("status").textContent = `${job.status === "ready" ? "✅ 全部完成" : "生成中"} · ${(job.recent_events ?? []).slice(-1).join("")}`;
         await pullNewPreviews();
         if (job.status === "ready") {
-          while (state.shown.size < state.pageCount) await pullNewPreviews();
+          // 全部页面补齐预览（分批拉取；无新图即停，避免空转死循环）
+          let attempts = 0;
+          while (state.shown.size < state.pageCount && attempts < 12) {
+            const before = state.shown.size;
+            await pullNewPreviews();
+            attempts++;
+            if (state.shown.size === before) break;
+          }
           $("exportBtn").style.display = "inline-flex";
           $("exportPdfBtn").style.display = "inline-flex";
           $("themeSelect").style.display = "inline-block";
           $("reimportBtn").style.display = "inline-flex";
           addMessage("assistant", "✅ 全部页面已生成。你可以点击任意一页继续编辑，也可以直接导出 PPTX / PDF。");
+          document.querySelector('[data-tab="workspace"]').click();
           toast("演示已生成，可编辑或导出", "success");
           break;
         }
@@ -575,23 +603,14 @@
     function openEditor(page) {
       if (!state.deckId) return;
       state.editingPage = page;
-      const grid = $("editorGrid");
-      grid.style.gridTemplateColumns = "1fr";
-      grid.children[0].style.display = "block";
-      $("editorTitle").textContent = `编辑第 ${page} 页`;
-      $("editorImage").src = `data:image/jpeg;base64,${state.pageImages.get(page)}`;
+      document.querySelectorAll(".page-thumb").forEach(el => el.classList.toggle("active", Number(el.dataset.page) === page));
+      $("workspaceTitle").textContent = `第 ${page} 页`;
+      $("workspaceImage").src = `data:image/jpeg;base64,${state.pageImages.get(page)}`;
       $("editorInstruction").value = "";
       $("editorStatus").textContent = "";
       $("driftBox").style.display = "none";
-      $("editorMask").classList.add("open");
-      $("editorDrawer").classList.add("open");
+      document.querySelector('[data-tab="workspace"]').click();
     }
-    function closeEditor() {
-      $("editorMask").classList.remove("open");
-      $("editorDrawer").classList.remove("open");
-    }
-    $("editorClose").addEventListener("click", closeEditor);
-    $("editorMask").addEventListener("click", closeEditor);
 
     function renderDrift(drift) {
       if (!drift) return "";
@@ -617,7 +636,7 @@
         const base64 = await fetchSinglePreview(state.editingPage);
         state.pageImages.set(state.editingPage, base64);
         $("editorImage").src = `data:image/jpeg;base64,${base64}`;
-        const shotImgs = $("previews").querySelectorAll(".shot");
+        const shotImgs = $("pageList").querySelectorAll(".page-thumb");
         const index = state.editingPage - 1;
         if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
         $("editorStatus").textContent = "✅ 已更新此页，其他页未动";
@@ -635,9 +654,6 @@
       $("manualTab").classList.toggle("active", !ai);
       $("aiPane").style.display = ai ? "block" : "none";
       $("manualPane").style.display = ai ? "none" : "block";
-      const grid = $("editorGrid");
-      grid.style.gridTemplateColumns = "1fr";
-      grid.children[0].style.display = ai ? "block" : "none";
       if (!ai) loadManualFrame();
     }
     async function loadManualFrame() {
@@ -685,7 +701,7 @@
       } else {
         const base64 = await fetchSinglePreview(state.editingPage);
         state.pageImages.set(state.editingPage, base64);
-        const shotImgs = $("previews").querySelectorAll(".shot");
+        const shotImgs = $("pageList").querySelectorAll(".page-thumb");
         const index = state.editingPage - 1;
         if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
         $("editorStatus").textContent = "✅ 手动修改已保存";
