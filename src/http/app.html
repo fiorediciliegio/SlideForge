@@ -6,173 +6,245 @@
   <title>SlideForge · AI 演示工作台</title>
   <style>
     :root {
-      --primary: #1e40af; --accent: #f59e0b; --ink: #182033; --muted: #697386;
-      --bg: #f4f6fb; --card: #fff; --line: #e5eaf3;
+      --primary: #2563eb; --primary-dark: #1d4ed8; --accent: #f59e0b;
+      --ink: #0f172a; --ink-2: #475569; --muted: #94a3b8;
+      --bg: #f6f7fb; --card: #ffffff; --line: #e6eaf2;
+      --sidebar: #0e1526; --sidebar-ink: #94a3b8;
+      --shadow-sm: 0 1px 2px rgba(15,23,42,.05);
+      --shadow-md: 0 6px 20px rgba(15,23,42,.08);
+      --shadow-lg: 0 18px 50px rgba(15,23,42,.16);
+      --r-sm: 8px; --r-md: 12px; --r-lg: 16px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: var(--bg); color: var(--ink); }
-    header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 28px; height: 60px;
-      display: flex; align-items: center; gap: 28px; position: sticky; top: 0; z-index: 10; }
-    .logo { font-size: 19px; font-weight: 800; color: var(--primary); letter-spacing: -.5px; }
-    nav { display: flex; gap: 4px; }
-    nav button { background: none; border: 0; color: var(--muted); font-size: 14px; cursor: pointer;
-      padding: 8px 12px; border-radius: 8px; }
-    nav button.active { color: var(--primary); background: #eef2ff; font-weight: 600; }
-    nav a { color: var(--muted); font-size: 12px; text-decoration: none; margin-left: auto; align-self: center; }
-    main { max-width: 1360px; margin: 24px auto; padding: 0 24px; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: var(--bg); color: var(--ink); font-size: 14px; line-height: 1.55;
+    }
+    .shell { display: grid; grid-template-columns: 232px 1fr; min-height: 100vh; }
+
+    /* ── 左侧导航 ── */
+    .sidebar { background: var(--sidebar); color: var(--sidebar-ink); display: flex; flex-direction: column; padding: 20px 14px; }
+    .brand { display: flex; align-items: center; gap: 10px; padding: 4px 10px 22px; }
+    .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--primary);
+      display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px; }
+    .brand-name { color: #fff; font-size: 17px; font-weight: 700; letter-spacing: -.3px; }
+    .brand-sub { font-size: 10px; color: var(--sidebar-ink); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-item { display: flex; align-items: center; gap: 11px; padding: 10px 12px; border-radius: 10px;
+      color: var(--sidebar-ink); background: none; border: 0; width: 100%; text-align: left;
+      font-size: 13.5px; cursor: pointer; transition: background .15s, color .15s; }
+    .nav-item:hover { background: rgba(255,255,255,.06); color: #e2e8f0; }
+    .nav-item.active { background: var(--primary); color: #fff; font-weight: 600; }
+    .nav-item .ico { width: 18px; text-align: center; font-size: 15px; }
+    .sidebar-foot { margin-top: auto; font-size: 11px; color: #64748b; padding: 10px 12px; }
+    .sidebar-foot a { color: #94a3b8; text-decoration: none; }
+    .sidebar-foot a:hover { color: #fff; }
+
+    /* ── 主区 ── */
+    .main { display: flex; flex-direction: column; min-width: 0; }
+    .topbar { height: 62px; background: var(--card); border-bottom: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 26px; }
+    .topbar h1 { font-size: 17px; font-weight: 700; letter-spacing: -.2px; }
+    .topbar .sub { font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+    .content { padding: 24px 26px; overflow: auto; flex: 1; }
+    .layout { display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 22px; align-items: start; }
     .tab { display: none; }
     .tab.active { display: block; }
-    .layout { display: grid; grid-template-columns: 360px 1fr; gap: 22px; align-items: start; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
-    .card h2 { font-size: 17px; margin-bottom: 16px; }
-    textarea { width: 100%; height: 130px; padding: 12px; border: 1px solid var(--line); border-radius: 12px;
-      font-family: inherit; font-size: 14px; line-height: 1.6; resize: vertical; background: #fbfcfe; }
-    textarea:focus { outline: 2px solid #c7d2fe; border-color: var(--primary); }
-    .field { margin-top: 14px; }
-    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
-    select, input[type=number], input[type=text] { width: 100%; padding: 9px 10px; border: 1px solid var(--line);
-      border-radius: 10px; background: #fff; font-size: 13px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+      box-shadow: var(--shadow-sm); padding: 22px; }
+    .card-title { font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+    .muted { color: var(--ink-2); font-size: 12px; }
+    .label { display: block; font-size: 12px; color: var(--ink-2); margin: 14px 0 6px; font-weight: 500; }
+    textarea, select, input[type=text], input[type=number] {
+      width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r-md);
+      background: #fff; font-size: 13px; font-family: inherit; color: var(--ink);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    textarea { height: 128px; resize: vertical; line-height: 1.6; }
+    textarea:focus, select:focus, input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--primary); color: #fff; border: 0; border-radius: 12px; padding: 12px 22px;
-      font-size: 14px; font-weight: 600; cursor: pointer; }
-    .btn:disabled { opacity: .5; cursor: wait; }
+      background: var(--primary); color: #fff; border: 0; border-radius: var(--r-md);
+      padding: 11px 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+      transition: background .15s, box-shadow .15s, transform .05s; }
+    .btn:hover { background: var(--primary-dark); box-shadow: var(--shadow-md); }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { opacity: .55; cursor: not-allowed; box-shadow: none; }
     .btn.block { width: 100%; margin-top: 18px; }
     .btn.ghost { background: #eef2ff; color: var(--primary); }
-    #status { margin-top: 14px; font-size: 12px; color: var(--muted); line-height: 1.8; white-space: pre-wrap; }
-    .canvas-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-    .canvas-head h2 { font-size: 17px; }
-    .empty { border: 2px dashed var(--line); border-radius: 14px; padding: 64px 20px; text-align: center; color: var(--muted); }
-    .empty .big { font-size: 40px; margin-bottom: 12px; }
-    #previews { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    #previews .shot { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff;
-      animation: fadeIn .5s ease; cursor: pointer; }
-    #previews .shot:hover { border-color: var(--primary); box-shadow: 0 4px 14px rgba(25,33,61,.12); }
-    #previews .shot img { width: 100%; display: block; }
-    #previews .shot .cap { font-size: 11px; color: var(--muted); padding: 6px 10px; }
-    .editor-mask { position: fixed; inset: 0; background: rgba(15,23,42,.55); z-index: 50;
-      display: flex; align-items: center; justify-content: center; padding: 30px; }
-    .editor { background: #fff; border-radius: 18px; width: 1000px; max-width: 96vw; max-height: 92vh;
-      overflow: auto; padding: 22px; }
-    .editor-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-    .editor-head h2 { font-size: 17px; }
-    .editor-close { background: none; border: 0; font-size: 22px; color: var(--muted); cursor: pointer; }
-    .editor-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
-    .editor-grid img { width: 100%; border: 1px solid var(--line); border-radius: 12px; }
-    .editor textarea { height: 110px; }
-    .drift { margin-top: 14px; font-size: 12px; line-height: 1.8; background: #f8faff;
-      border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
-    .drift b { color: var(--primary); }
-    .drift .chg { display: block; color: var(--muted); }
-    .edit-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
-    .edit-tabs button { border: 1px solid var(--line); background: #fff; color: var(--muted);
-      border-radius: 8px; padding: 6px 14px; font-size: 12px; cursor: pointer; }
-    .edit-tabs button.active { background: #eef2ff; color: var(--primary); border-color: var(--primary); }
-    #manualFrame { width: 100%; height: 320px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+    .btn.ghost:hover { background: #e0e7ff; }
+    .btn.sm { padding: 8px 14px; font-size: 12px; }
+    .empty { border: 1.5px dashed var(--line); border-radius: var(--r-lg); padding: 64px 20px;
+      text-align: center; color: var(--muted); background: #fbfcfe; }
+    .empty .big { font-size: 34px; margin-bottom: 12px; }
+    .canvas-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 10px; }
+    .canvas-head h2 { font-size: 15px; font-weight: 700; }
+    .canvas-actions { display: flex; gap: 8px; align-items: center; }
+    .shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .shot { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: #fff;
+      cursor: pointer; transition: box-shadow .15s, border-color .15s, transform .15s; animation: fadeIn .45s ease; }
+    .shot:hover { border-color: var(--primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .shot img { width: 100%; display: block; }
+    .shot .cap { font-size: 11px; color: var(--ink-2); padding: 7px 10px; display: flex; justify-content: space-between; }
+    .shot .cap b { color: var(--primary); font-weight: 500; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; } }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
-    .tpl { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; cursor: pointer;
-      transition: box-shadow .15s, border-color .15s; }
-    .tpl:hover { box-shadow: 0 6px 20px rgba(25,33,61,.12); border-color: var(--primary); }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+    .tpl { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; background: #fff;
+      cursor: pointer; transition: box-shadow .15s, border-color .15s; }
+    .tpl:hover { box-shadow: var(--shadow-md); border-color: var(--primary); }
     .tpl.selected { border: 2px solid var(--primary); }
     .tpl img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: #dde3ee; }
     .tpl .meta { padding: 10px 12px; }
-    .tpl .meta b { font-size: 13px; display: block; margin-bottom: 4px; }
-    .tpl .meta span { font-size: 11px; color: var(--muted); }
-    .brand-item { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 12px;
-      padding: 12px 14px; margin-bottom: 10px; cursor: pointer; background: #fff; }
+    .tpl .meta b { font-size: 13px; display: block; margin-bottom: 3px; }
+    .tpl .meta span { font-size: 11px; color: var(--ink-2); }
+    .chips { display: flex; gap: 8px; margin-bottom: 18px; }
+    .chips button { border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 999px;
+      padding: 6px 14px; font-size: 12px; cursor: pointer; }
+    .chips button.active { background: #eef2ff; color: var(--primary); border-color: var(--primary); }
+    .brand-item { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: var(--r-md);
+      padding: 12px 14px; margin-bottom: 10px; cursor: pointer; background: #fff; transition: border-color .15s; }
     .brand-item.selected { border-color: var(--primary); background: #eef2ff; }
     .swatches { display: flex; gap: 5px; }
     .swatches i { width: 18px; height: 18px; border-radius: 5px; display: inline-block; border: 1px solid rgba(0,0,0,.08); }
-    .muted { color: var(--muted); font-size: 12px; }
-    .chips { display: flex; gap: 8px; margin-bottom: 16px; }
-    .chips button { border: 1px solid var(--line); background: #fff; color: var(--muted); border-radius: 999px;
-      padding: 6px 14px; font-size: 12px; cursor: pointer; }
-    .chips button.active { background: #eef2ff; color: var(--primary); border-color: var(--primary); }
-    @media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
+
+    /* ── 右侧抽屉编辑器 ── */
+    .drawer-mask { position: fixed; inset: 0; background: rgba(15,23,42,.45); z-index: 50; opacity: 0; pointer-events: none; transition: opacity .2s; }
+    .drawer-mask.open { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; top: 0; right: 0; height: 100vh; width: 720px; max-width: 94vw; background: #fff;
+      box-shadow: var(--shadow-lg); z-index: 60; transform: translateX(100%); transition: transform .25s ease;
+      display: flex; flex-direction: column; }
+    .drawer-mask.open + .drawer, .drawer.open { transform: translateX(0); }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; border-bottom: 1px solid var(--line); }
+    .drawer-head h2 { font-size: 16px; font-weight: 700; }
+    .drawer-close { background: none; border: 0; font-size: 22px; color: var(--ink-2); cursor: pointer; line-height: 1; }
+    .drawer-body { padding: 20px 22px; overflow: auto; flex: 1; }
+    .drawer-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    .drawer-grid img { width: 100%; border: 1px solid var(--line); border-radius: var(--r-md); }
+    .edit-tabs { display: flex; gap: 6px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .edit-tabs button { border: 0; background: none; color: var(--ink-2); padding: 8px 4px; font-size: 13px;
+      cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+    .edit-tabs button.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
+    #manualFrame { width: 100%; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; }
+    .drift { margin-top: 14px; font-size: 12px; line-height: 1.8; background: #f8faff;
+      border: 1px solid var(--line); border-radius: var(--r-md); padding: 12px; }
+    .drift b { color: var(--primary); }
+    .drift .chg { display: block; color: var(--ink-2); }
+
+    /* ── Toast ── */
+    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 80; display: flex; flex-direction: column; gap: 10px; }
+    .toast-item { background: #0f172a; color: #fff; border-radius: var(--r-md); padding: 12px 16px;
+      font-size: 13px; box-shadow: var(--shadow-lg); animation: fadeIn .25s ease; max-width: 360px; }
+    .toast-item.error { background: #b91c1c; }
+    .toast-item.success { background: #15803d; }
+    @media (max-width: 1080px) { .layout { grid-template-columns: 1fr; } .shell { grid-template-columns: 64px 1fr; } .brand-name, .brand-sub, .nav-item span, .sidebar-foot { display: none; } }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">SlideForge</div>
-    <nav>
-      <button data-tab="create" class="active">生成演示</button>
-      <button data-tab="templates">模板库</button>
-      <button data-tab="brands">我的品牌</button>
-      <a href="/console" target="_blank">运营控制台 ↗</a>
-    </nav>
-  </header>
-  <main>
-    <section id="create" class="tab active">
-      <div class="layout">
-        <div class="card">
-          <h2>做一份演示</h2>
-          <textarea id="brief" placeholder="一句话或粘贴文档内容。例如：Q3 销售复盘：销售额 1200 万，同比 +15%，新客户 86 家，回款率 92%"></textarea>
-          <div class="field"><label>页数</label><input id="pages" type="number" value="8" min="2" max="20" /></div>
-          <div class="field"><label>品牌（色 / 字体 / logo）</label><select id="brandSelect"><option value="">不使用</option></select></div>
-          <div class="field"><label>模板（不选则自动推荐）</label><select id="templateSelect"><option value="">自动推荐</option></select></div>
-          <button class="btn block" id="generate">生成演示</button>
-          <div id="status"></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <div class="brand-name">SlideForge</div>
+          <div class="brand-sub">AI Presentation</div>
         </div>
-        <div class="card">
-          <div class="canvas-head">
-            <h2>画布</h2>
-            <div style="display:flex;gap:8px;align-items:center">
-              <select id="themeSelect" style="width:auto;display:none"><option value="">换肤…</option></select>
-              <button class="btn ghost" id="exportPdfBtn" style="display:none">导出 PDF</button>
-              <button class="btn ghost" id="exportBtn" style="display:none">导出 PPTX</button>
+      </div>
+      <button class="nav-item active" data-tab="create"><span class="ico">✨</span><span>生成演示</span></button>
+      <button class="nav-item" data-tab="templates"><span class="ico">🎨</span><span>模板库</span></button>
+      <button class="nav-item" data-tab="brands"><span class="ico">🏢</span><span>我的品牌</span></button>
+      <div class="sidebar-foot"><a href="/console" target="_blank">运营控制台 ↗</a></div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <h1 id="pageTitle">生成演示</h1>
+          <div class="sub" id="pageSub">一句话或一份文档，生成可编辑的专业 PPT</div>
+        </div>
+      </div>
+      <div class="content">
+        <!-- 生成 -->
+        <section id="create" class="tab active">
+          <div class="layout">
+            <div class="card">
+              <div class="card-title">演示需求</div>
+              <textarea id="brief" placeholder="一句话或粘贴文档内容。例如：Q3 销售复盘：销售额 1200 万，同比 +15%，新客户 86 家，回款率 92%"></textarea>
+              <label class="label">页数</label>
+              <input id="pages" type="number" value="8" min="2" max="20" />
+              <label class="label">品牌（色 / 字体 / logo）</label>
+              <select id="brandSelect"><option value="">不使用</option></select>
+              <label class="label">模板（不选则自动推荐）</label>
+              <select id="templateSelect"><option value="">自动推荐</option></select>
+              <button class="btn block" id="generate">✨ 生成演示</button>
+              <div id="status" class="muted" style="margin-top:12px"></div>
+            </div>
+            <div class="card">
+              <div class="canvas-head">
+                <h2>画布</h2>
+                <div class="canvas-actions">
+                  <select id="themeSelect" style="width:auto;display:none"><option value="">换肤…</option></select>
+                  <button class="btn ghost sm" id="exportPdfBtn" style="display:none">导出 PDF</button>
+                  <button class="btn sm" id="exportBtn" style="display:none">导出 PPTX</button>
+                </div>
+              </div>
+              <div class="empty" id="emptyState"><div class="big">🎬</div>输入需求后点击「生成演示」，页面会逐张在这里长出来</div>
+              <div class="shots" id="previews"></div>
+              <div id="exportResult" class="muted" style="margin-top:10px"></div>
             </div>
           </div>
-          <div class="empty" id="emptyState"><div class="big">🎬</div>输入需求后点击「生成演示」，页面会逐张在这里长出来</div>
-          <div id="previews"></div>
-          <div id="exportResult" class="muted" style="margin-top:10px"></div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="templates" class="tab">
-      <div class="chips">
-        <button data-filter="all" class="active">全部</button>
-        <button data-filter="dark">深色</button>
-        <button data-filter="light">浅色</button>
-      </div>
-      <div class="gallery" id="templateGallery"></div>
-    </section>
+        <!-- 模板库 -->
+        <section id="templates" class="tab">
+          <div class="chips">
+            <button data-filter="all" class="active">全部</button>
+            <button data-filter="dark">深色</button>
+            <button data-filter="light">浅色</button>
+          </div>
+          <div class="gallery" id="templateGallery"></div>
+        </section>
 
-    <section id="brands" class="tab">
-      <div class="card" style="margin-bottom:16px">
-        <h2>上传品牌模板</h2>
-        <div class="field"><label>品牌名称</label><input id="brandName" type="text" placeholder="如：数澜科技" /></div>
-        <div class="field"><label>品牌 PPTX（提取配色与字体）</label><input id="brandPptx" type="file" accept=".pptx" /></div>
-        <div class="field"><label>Logo（可选，生成时逐页合成）</label><input id="brandLogo" type="file" accept=".png,.jpg,.jpeg,.webp" /></div>
-        <button class="btn" id="uploadBrand" style="margin-top:14px">上传并解析</button>
-        <div id="brandStatus" class="muted" style="margin-top:8px"></div>
+        <!-- 品牌 -->
+        <section id="brands" class="tab">
+          <div class="card" style="margin-bottom:18px">
+            <div class="card-title">上传品牌模板</div>
+            <label class="label">品牌名称</label>
+            <input id="brandName" type="text" placeholder="如：数澜科技" />
+            <label class="label">品牌 PPTX（提取配色与字体）</label>
+            <input id="brandPptx" type="file" accept=".pptx" />
+            <label class="label">Logo（可选，生成时逐页合成）</label>
+            <input id="brandLogo" type="file" accept=".png,.jpg,.jpeg,.webp" />
+            <button class="btn" id="uploadBrand" style="margin-top:14px">上传并解析</button>
+            <div id="brandStatus" class="muted" style="margin-top:8px"></div>
+          </div>
+          <div id="brandList"></div>
+        </section>
       </div>
-      <div id="brandList"></div>
-    </section>
-  </main>
+    </div>
+  </div>
 
-  <!-- 单页编辑器 -->
-  <div class="editor-mask" id="editorMask" style="display:none">
-    <div class="editor">
-      <div class="editor-head">
-        <h2 id="editorTitle">编辑第 N 页</h2>
-        <button class="editor-close" id="editorClose">×</button>
+  <!-- 右侧抽屉编辑器 -->
+  <div class="drawer-mask" id="editorMask"></div>
+  <div class="drawer" id="editorDrawer">
+    <div class="drawer-head">
+      <h2 id="editorTitle">编辑第 N 页</h2>
+      <button class="drawer-close" id="editorClose">×</button>
+    </div>
+    <div class="drawer-body">
+      <div class="edit-tabs">
+        <button id="aiTab" class="active">AI 修改</button>
+        <button id="manualTab">手动编辑</button>
       </div>
-      <div class="editor-grid">
+      <div class="drawer-grid" id="editorGrid">
         <div><img id="editorImage" alt="当前页预览" /></div>
         <div>
-          <div class="edit-tabs">
-            <button id="aiTab" class="active">AI 修改</button>
-            <button id="manualTab">手动编辑</button>
-          </div>
           <div id="aiPane">
-            <div class="field"><label>修改指令（只改这一页，其他页不动）</label>
-              <textarea id="editorInstruction" placeholder="例如：改成左右两栏，左侧数据、右侧图表；标题换成深蓝"></textarea>
-            </div>
+            <label class="label">修改指令（只改这一页，其他页不动）</label>
+            <textarea id="editorInstruction" placeholder="例如：改成左右两栏，左侧数据、右侧图表；标题换成深蓝"></textarea>
             <button class="btn block" id="applyEdit">重新生成此页</button>
           </div>
           <div id="manualPane" style="display:none">
-            <div class="muted" style="margin-bottom:8px">直接在下方页面里点文字修改，改完点保存（不经模型）</div>
+            <div class="muted" style="margin-bottom:8px">点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放，改完点保存</div>
             <iframe id="manualFrame" title="手动编辑页面"></iframe>
             <button class="btn block" id="saveManual" style="margin-top:10px">保存手动修改</button>
           </div>
@@ -182,6 +254,8 @@
       </div>
     </div>
   </div>
+
+  <div class="toast" id="toast"></div>
 
   <script>
     const $ = (id) => document.getElementById(id);
@@ -202,12 +276,23 @@
       reader.onload = () => resolve(reader.result.split(",")[1]);
       reader.readAsDataURL(file);
     });
+    function toast(message, kind = "info") {
+      const item = document.createElement("div");
+      item.className = `toast-item ${kind}`;
+      item.textContent = message;
+      $("toast").appendChild(item);
+      setTimeout(() => item.remove(), 4200);
+    }
 
-    document.querySelectorAll("nav button").forEach(btn => btn.addEventListener("click", () => {
-      document.querySelectorAll("nav button").forEach(b => b.classList.remove("active"));
+    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"] };
+    document.querySelectorAll(".nav-item").forEach(btn => btn.addEventListener("click", () => {
+      document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
       document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
       btn.classList.add("active");
       $(btn.dataset.tab).classList.add("active");
+      const [title, sub] = TITLES[btn.dataset.tab];
+      $("pageTitle").textContent = title;
+      $("pageSub").textContent = sub;
     }));
 
     // ── 品牌 ──
@@ -227,13 +312,14 @@
     }
     $("uploadBrand").addEventListener("click", async () => {
       const pptx = $("brandPptx").files[0];
-      if (!$("brandName").value.trim() || !pptx) return $("brandStatus").textContent = "请填写品牌名并选择 pptx 文件";
+      if (!$("brandName").value.trim() || !pptx) return toast("请填写品牌名并选择 pptx 文件", "error");
       $("brandStatus").textContent = "上传解析中…";
       const payload = { name: $("brandName").value.trim(), pptx_base64: await toBase64(pptx) };
       const logo = $("brandLogo").files[0];
       if (logo) { payload.logo_base64 = await toBase64(logo); payload.logo_ext = logo.name.split(".").pop(); }
       const result = await api("/brands", { method: "POST", body: JSON.stringify(payload) });
-      $("brandStatus").textContent = result.brand_id ? `已创建（主色 #${result.profile.primary}）` : JSON.stringify(result);
+      if (result.brand_id) { toast(`品牌已创建（主色 #${result.profile.primary}）`, "success"); $("brandStatus").textContent = ""; }
+      else $("brandStatus").textContent = JSON.stringify(result);
       loadBrands();
     });
 
@@ -250,6 +336,7 @@
         el.classList.add("selected");
         $("templateSelect").value = el.dataset.id;
         document.querySelector('[data-tab="create"]').click();
+        toast("已选择模板：" + el.dataset.id, "success");
       }));
     }
     document.querySelectorAll(".chips button").forEach(btn => btn.addEventListener("click", () => {
@@ -273,142 +360,11 @@
         $("emptyState").style.display = "none";
         const shot = document.createElement("div");
         shot.className = "shot";
-        shot.innerHTML = `<img src="data:image/jpeg;base64,${img.base64}" alt="第${img.page}页" /><div class="cap">第 ${img.page} 页 · 点击编辑</div>`;
+        shot.innerHTML = `<img src="data:image/jpeg;base64,${img.base64}" alt="第${img.page}页" /><div class="cap"><span>第 ${img.page} 页</span><b>点击编辑</b></div>`;
         shot.addEventListener("click", () => openEditor(img.page));
         $("previews").appendChild(shot);
       }
     }
-
-    // ── 单页编辑器 ──
-    function openEditor(page) {
-      if (!state.deckId) return;
-      state.editingPage = page;
-      const grid = document.querySelector(".editor-grid");
-      grid.style.gridTemplateColumns = "1.2fr 1fr";
-      grid.children[0].style.display = "block";
-      $("editorTitle").textContent = `编辑第 ${page} 页`;
-      $("editorImage").src = `data:image/jpeg;base64,${state.pageImages.get(page)}`;
-      $("editorInstruction").value = "";
-      $("editorStatus").textContent = "";
-      $("driftBox").style.display = "none";
-      $("editorMask").style.display = "flex";
-    }
-    $("editorClose").addEventListener("click", () => { $("editorMask").style.display = "none"; });
-    $("editorMask").addEventListener("click", (event) => {
-      if (event.target === $("editorMask")) $("editorMask").style.display = "none";
-    });
-
-    function renderDrift(drift) {
-      if (!drift) return "";
-      const styleLines = (drift.styleChanges ?? []).slice(0, 5).map(c =>
-        `<span class="chg">· ${c.selector} 的 ${c.property}：${c.from} → ${c.to}</span>`).join("");
-      return `<b>偏离度报告（机器 diff，可审计）</b><br>
-        文本新增 ${drift.summary.textAddedCount} 条 / 删除 ${drift.summary.textRemovedCount} 条 · 样式变化 ${drift.summary.styleChangeCount} 处
-        ${styleLines}`;
-    }
-
-    // ── 手动编辑（contentEditable，不经模型）──
-    $("aiTab").addEventListener("click", () => switchPane("ai"));
-    $("manualTab").addEventListener("click", () => switchPane("manual"));
-    function switchPane(which) {
-      const ai = which === "ai";
-      $("aiTab").classList.toggle("active", ai);
-      $("manualTab").classList.toggle("active", !ai);
-      $("aiPane").style.display = ai ? "block" : "none";
-      $("manualPane").style.display = ai ? "none" : "block";
-      // 手动模式已改为整页通栏，切回 AI 时恢复双栏
-      const grid = document.querySelector(".editor-grid");
-      grid.style.gridTemplateColumns = ai ? "1.2fr 1fr" : "1fr";
-      grid.children[0].style.display = ai ? "block" : "none";
-      if (!ai) loadManualFrame();
-    }
-    async function loadManualFrame() {
-      $("editorStatus").textContent = "加载页面…";
-      // 手动编辑时编辑区占满弹窗宽度，隐藏左侧图片预览
-      const grid = document.querySelector(".editor-grid");
-      grid.style.gridTemplateColumns = "1fr";
-      grid.children[0].style.display = "none";
-      const response = await fetch(`/decks/${state.deckId}/page-html?page=${state.editingPage}`, { headers: { "x-api-key": apiKey } });
-      const html = await response.text();
-      const frame = $("manualFrame");
-      frame.srcdoc = html;
-      frame.onload = () => {
-        const doc = frame.contentDocument;
-        doc.designMode = "on";
-        // 整页等比缩放：1920×1080 幻灯片完整适配弹窗宽度，无滚动条
-        const scale = frame.clientWidth / 1920;
-        doc.body.style.transform = `scale(${scale})`;
-        doc.body.style.transformOrigin = "top left";
-        doc.body.style.width = "1920px";
-        frame.style.height = `${Math.ceil(1080 * scale)}px`;
-        const style = doc.createElement("style");
-        style.id = "__editor-style";
-        style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text}";
-        doc.head.appendChild(style);
-        // F2 布局级拖拽：Ctrl/Cmd 点选元素，拖动移动、右下角手柄缩放
-        const script = doc.createElement("script");
-        script.id = "__dnd-script";
-        script.src = `${location.origin}/editor-dnd.js?v=${Date.now()}`;
-        doc.body.appendChild(script);
-        $("editorStatus").textContent = "点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放，改完点保存";
-      };
-    }
-    $("saveManual").addEventListener("click", async () => {
-      const frame = $("manualFrame");
-      const doc = frame.contentDocument;
-      // 保存前剥离编辑器注入物：DND 脚本、选择框/手柄、编辑样式、缩放
-      for (const id of ["__dnd-script", "__dnd-outline", "__dnd-handle", "__editor-style"]) {
-        doc.getElementById(id)?.remove();
-      }
-      doc.body.style.transform = "";
-      doc.body.style.width = "";
-      const html = doc.documentElement.outerHTML;
-      $("saveManual").disabled = true;
-      $("editorStatus").textContent = "保存中…";
-      const result = await api(`/decks/${state.deckId}/page-html`, {
-        method: "POST",
-        body: JSON.stringify({ page: state.editingPage, html }),
-      });
-      if (result.error) {
-        $("editorStatus").textContent = `保存失败：${result.error}`;
-      } else {
-        const base64 = await fetchSinglePreview(state.editingPage);
-        state.pageImages.set(state.editingPage, base64);
-        const shotImgs = $("previews").querySelectorAll(".shot");
-        const index = state.editingPage - 1;
-        if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
-        $("editorStatus").textContent = "✅ 手动修改已保存";
-        $("driftBox").innerHTML = renderDrift(result.drift);
-        $("driftBox").style.display = "block";
-      }
-      $("saveManual").disabled = false;
-    });
-
-    $("applyEdit").addEventListener("click", async () => {
-      const instruction = $("editorInstruction").value.trim();
-      if (!instruction) return $("editorStatus").textContent = "请先输入修改指令";
-      $("applyEdit").disabled = true;
-      $("editorStatus").textContent = "重新生成中（只改这一页）…";
-      const result = await api(`/decks/${state.deckId}/regenerate`, {
-        method: "POST",
-        body: JSON.stringify({ page: state.editingPage, instruction }),
-      });
-      if (result.error) {
-        $("editorStatus").textContent = `失败：${result.error}`;
-      } else {
-        // 刷新该页预览（单页返回 JPEG 二进制）
-        const base64 = await fetchSinglePreview(state.editingPage);
-        state.pageImages.set(state.editingPage, base64);
-        $("editorImage").src = `data:image/jpeg;base64,${base64}`;
-        const shotImgs = $("previews").querySelectorAll(".shot");
-        const index = state.editingPage - 1;
-        if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
-        $("editorStatus").textContent = "✅ 已更新此页，其他页未动";
-        $("driftBox").innerHTML = renderDrift(result.drift_report);
-        $("driftBox").style.display = "block";
-      }
-      $("applyEdit").disabled = false;
-    });
     async function fetchSinglePreview(page) {
       const response = await fetch(`/decks/${state.deckId}/preview?pages=${page}`, { headers: { "x-api-key": apiKey } });
       const blob = await response.blob();
@@ -418,7 +374,6 @@
         reader.readAsDataURL(blob);
       });
     }
-
     async function pullNewPreviews() {
       const remaining = [];
       for (let p = 1; p <= state.pageCount; p++) if (!state.shown.has(p)) remaining.push(p);
@@ -435,7 +390,7 @@
 
     $("generate").addEventListener("click", async () => {
       const brief = $("brief").value.trim();
-      if (!brief) return $("status").textContent = "请先输入需求";
+      if (!brief) return toast("请先输入需求", "error");
       $("generate").disabled = true;
       $("previews").innerHTML = "";
       $("emptyState").style.display = "block";
@@ -461,13 +416,11 @@
         $("status").textContent = `${job.status === "ready" ? "✅ 全部完成" : "生成中"} · ${(job.recent_events ?? []).slice(-1).join("")}`;
         await pullNewPreviews();
         if (job.status === "ready") {
-          // 全部页面补齐预览（分批拉取，避免只显示前 4 页）
-          while (state.shown.size < state.pageCount) {
-            await pullNewPreviews();
-          }
+          while (state.shown.size < state.pageCount) await pullNewPreviews();
           $("exportBtn").style.display = "inline-flex";
           $("exportPdfBtn").style.display = "inline-flex";
           $("themeSelect").style.display = "inline-block";
+          toast("演示已生成，可编辑或导出", "success");
           break;
         }
         if (job.status === "error") { $("status").textContent = "失败：" + job.error; break; }
@@ -478,11 +431,13 @@
       $("exportResult").textContent = "导出中…";
       const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: "{}" });
       $("exportResult").textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
+      if (result.outPath) toast("PPTX 已导出", "success");
     });
     $("exportPdfBtn").addEventListener("click", async () => {
       $("exportResult").textContent = "导出 PDF 中…";
       const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: JSON.stringify({ format: "pdf" }) });
       $("exportResult").textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
+      if (result.outPath) toast("PDF 已导出", "success");
     });
     $("themeSelect").addEventListener("change", async () => {
       const templateId = $("themeSelect").value;
@@ -490,13 +445,137 @@
       $("exportResult").textContent = "换肤中（内容不变，仅换风格）…";
       const result = await api(`/decks/${state.deckId}/theme`, { method: "POST", body: JSON.stringify({ template_id: templateId }) });
       if (result.error) { $("exportResult").textContent = `换肤失败：${result.error}`; return; }
-      // 换肤后重新拉取全部预览
       state.shown = new Set();
       $("previews").innerHTML = "";
-      while (state.shown.size < state.pageCount) {
-        await pullNewPreviews();
-      }
+      while (state.shown.size < state.pageCount) await pullNewPreviews();
       $("exportResult").textContent = "✅ 已换肤，内容与事实未变";
+      toast("换肤完成", "success");
+    });
+
+    // ── 单页编辑器（右侧抽屉）──
+    function openEditor(page) {
+      if (!state.deckId) return;
+      state.editingPage = page;
+      const grid = $("editorGrid");
+      grid.style.gridTemplateColumns = "1fr";
+      grid.children[0].style.display = "block";
+      $("editorTitle").textContent = `编辑第 ${page} 页`;
+      $("editorImage").src = `data:image/jpeg;base64,${state.pageImages.get(page)}`;
+      $("editorInstruction").value = "";
+      $("editorStatus").textContent = "";
+      $("driftBox").style.display = "none";
+      $("editorMask").classList.add("open");
+      $("editorDrawer").classList.add("open");
+    }
+    function closeEditor() {
+      $("editorMask").classList.remove("open");
+      $("editorDrawer").classList.remove("open");
+    }
+    $("editorClose").addEventListener("click", closeEditor);
+    $("editorMask").addEventListener("click", closeEditor);
+
+    function renderDrift(drift) {
+      if (!drift) return "";
+      const styleLines = (drift.styleChanges ?? []).slice(0, 5).map(c =>
+        `<span class="chg">· ${c.selector} 的 ${c.property}：${c.from} → ${c.to}</span>`).join("");
+      return `<b>偏离度报告（机器 diff，可审计）</b><br>
+        文本新增 ${drift.summary.textAddedCount} 条 / 删除 ${drift.summary.textRemovedCount} 条 · 样式变化 ${drift.summary.styleChangeCount} 处
+        ${styleLines}`;
+    }
+
+    $("applyEdit").addEventListener("click", async () => {
+      const instruction = $("editorInstruction").value.trim();
+      if (!instruction) return toast("请先输入修改指令", "error");
+      $("applyEdit").disabled = true;
+      $("editorStatus").textContent = "重新生成中（只改这一页）…";
+      const result = await api(`/decks/${state.deckId}/regenerate`, {
+        method: "POST",
+        body: JSON.stringify({ page: state.editingPage, instruction }),
+      });
+      if (result.error) {
+        $("editorStatus").textContent = `失败：${result.error}`;
+      } else {
+        const base64 = await fetchSinglePreview(state.editingPage);
+        state.pageImages.set(state.editingPage, base64);
+        $("editorImage").src = `data:image/jpeg;base64,${base64}`;
+        const shotImgs = $("previews").querySelectorAll(".shot");
+        const index = state.editingPage - 1;
+        if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
+        $("editorStatus").textContent = "✅ 已更新此页，其他页未动";
+        $("driftBox").innerHTML = renderDrift(result.drift_report);
+        $("driftBox").style.display = "block";
+      }
+      $("applyEdit").disabled = false;
+    });
+
+    // ── 手动编辑（contentEditable + 拖拽）──
+    $("aiTab").addEventListener("click", () => switchPane("ai"));
+    $("manualTab").addEventListener("click", () => switchPane("manual"));
+    function switchPane(which) {
+      const ai = which === "ai";
+      $("aiTab").classList.toggle("active", ai);
+      $("manualTab").classList.toggle("active", !ai);
+      $("aiPane").style.display = ai ? "block" : "none";
+      $("manualPane").style.display = ai ? "none" : "block";
+      const grid = $("editorGrid");
+      grid.style.gridTemplateColumns = "1fr";
+      grid.children[0].style.display = ai ? "block" : "none";
+      if (!ai) loadManualFrame();
+    }
+    async function loadManualFrame() {
+      $("editorStatus").textContent = "加载页面…";
+      const response = await fetch(`/decks/${state.deckId}/page-html?page=${state.editingPage}`, { headers: { "x-api-key": apiKey } });
+      const html = await response.text();
+      const frame = $("manualFrame");
+      frame.srcdoc = html;
+      frame.onload = () => {
+        const doc = frame.contentDocument;
+        doc.designMode = "on";
+        const scale = frame.clientWidth / 1920;
+        doc.body.style.transform = `scale(${scale})`;
+        doc.body.style.transformOrigin = "top left";
+        doc.body.style.width = "1920px";
+        frame.style.height = `${Math.ceil(1080 * scale)}px`;
+        const style = doc.createElement("style");
+        style.id = "__editor-style";
+        style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text}";
+        doc.head.appendChild(style);
+        const script = doc.createElement("script");
+        script.id = "__dnd-script";
+        script.src = `${location.origin}/editor-dnd.js?v=${Date.now()}`;
+        doc.body.appendChild(script);
+        $("editorStatus").textContent = "点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放，改完点保存";
+      };
+    }
+    $("saveManual").addEventListener("click", async () => {
+      const frame = $("manualFrame");
+      const doc = frame.contentDocument;
+      for (const id of ["__dnd-script", "__dnd-outline", "__dnd-handle", "__editor-style"]) {
+        doc.getElementById(id)?.remove();
+      }
+      doc.body.style.transform = "";
+      doc.body.style.width = "";
+      const html = doc.documentElement.outerHTML;
+      $("saveManual").disabled = true;
+      $("editorStatus").textContent = "保存中…";
+      const result = await api(`/decks/${state.deckId}/page-html`, {
+        method: "POST",
+        body: JSON.stringify({ page: state.editingPage, html }),
+      });
+      if (result.error) {
+        $("editorStatus").textContent = `保存失败：${result.error}`;
+      } else {
+        const base64 = await fetchSinglePreview(state.editingPage);
+        state.pageImages.set(state.editingPage, base64);
+        const shotImgs = $("previews").querySelectorAll(".shot");
+        const index = state.editingPage - 1;
+        if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
+        $("editorStatus").textContent = "✅ 手动修改已保存";
+        $("driftBox").innerHTML = renderDrift(result.drift);
+        $("driftBox").style.display = "block";
+        toast("手动修改已保存", "success");
+      }
+      $("saveManual").disabled = false;
     });
 
     loadBrands();
