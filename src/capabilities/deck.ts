@@ -43,6 +43,8 @@ export interface CreateDeckInput {
   brandProfile?: BrandProfile;
   /** 附件提取文本（作为唯一事实来源注入生成） */
   sourceText?: string;
+  /** 联网研究：生成前自动检索并注入带来源的资料 */
+  research?: boolean;
   /** 内置模板 id（98 套 Visual Style Preset 之一），作为风格参照 */
   templateId?: string;
   onEvent?: (event: DeckEvent) => void;
@@ -210,7 +212,20 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   const sourceBlock = input.sourceText?.trim()
     ? `\n\n【用户提供的原始文档，所有事实与数据必须以此为准，不得编造文档外信息】\n${input.sourceText.trim().slice(0, 12000)}`
     : "";
-  const effectiveBrief = input.brief + sourceBlock;
+  // F1 联网研究：检索资料与来源注入（在文档之后，标注来源归属）
+  let researchBlock = "";
+  if (input.research) {
+    const { researchWeb, researchContextBlock } = await import("../research/web.js");
+    emit({ stage: "outline", message: "联网检索中…" });
+    try {
+      const research = await researchWeb(input.brief);
+      researchBlock = `\n\n${researchContextBlock(research)}`;
+      emit({ stage: "outline", message: `检索到 ${research.sources.length} 条资料，已注入来源` });
+    } catch (error) {
+      emit({ stage: "outline", message: `检索失败（按无资料继续）：${error instanceof Error ? error.message.slice(0, 80) : error}` });
+    }
+  }
+  const effectiveBrief = input.brief + sourceBlock + researchBlock;
   emit({ stage: "outline", message: `生成大纲（${pageCount} 页）` });
   const outline = await generateOutline(effectiveBrief, pageCount);
   await writeFile(path.join(runDir, "outline.json"), JSON.stringify(outline, null, 2), "utf8");

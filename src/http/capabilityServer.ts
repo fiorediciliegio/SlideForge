@@ -178,6 +178,16 @@ const server = createServer(async (req, res) => {
       return json(res, 200, brands);
     }
 
+    // ── F1 联网研究 ──
+    if (req.method === "POST" && url.pathname === "/research") {
+      const body = await readBody(req);
+      const query = String(body.query ?? "").trim();
+      if (!query) return json(res, 400, { error: "query 不能为空" });
+      const { researchWeb } = await import("../research/web.js");
+      const result = await researchWeb(query);
+      return json(res, 200, result);
+    }
+
     if (req.method === "POST" && url.pathname === "/decks") {
       const body = await readBody(req);
       const brief = String(body.brief ?? "").trim();
@@ -220,6 +230,7 @@ const server = createServer(async (req, res) => {
             brandProfile: brandProfile ?? undefined,
             sourceText,
             templateId: typeof body.template_id === "string" ? body.template_id : undefined,
+            research: body.research === true,
             onEvent,
           }));
           job.runDir = deck.runDir;
