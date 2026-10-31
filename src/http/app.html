@@ -116,7 +116,11 @@
         <div class="card">
           <div class="canvas-head">
             <h2>画布</h2>
-            <button class="btn ghost" id="exportBtn" style="display:none">导出 PPTX</button>
+            <div style="display:flex;gap:8px;align-items:center">
+              <select id="themeSelect" style="width:auto;display:none"><option value="">换肤…</option></select>
+              <button class="btn ghost" id="exportPdfBtn" style="display:none">导出 PDF</button>
+              <button class="btn ghost" id="exportBtn" style="display:none">导出 PPTX</button>
+            </div>
           </div>
           <div class="empty" id="emptyState"><div class="big">🎬</div>输入需求后点击「生成演示」，页面会逐张在这里长出来</div>
           <div id="previews"></div>
@@ -256,6 +260,7 @@
     async function loadTemplates() {
       state.templates = await api("/templates");
       $("templateSelect").innerHTML = '<option value="">自动推荐</option>' + state.templates.map(t => `<option value="${t.id}">${t.id}</option>`).join("");
+      $("themeSelect").innerHTML = '<option value="">换肤…</option>' + state.templates.map(t => `<option value="${t.id}">${t.id}</option>`).join("");
       renderGallery();
     }
 
@@ -448,6 +453,8 @@
             await pullNewPreviews();
           }
           $("exportBtn").style.display = "inline-flex";
+          $("exportPdfBtn").style.display = "inline-flex";
+          $("themeSelect").style.display = "inline-block";
           break;
         }
         if (job.status === "error") { $("status").textContent = "失败：" + job.error; break; }
@@ -458,6 +465,25 @@
       $("exportResult").textContent = "导出中…";
       const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: "{}" });
       $("exportResult").textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
+    });
+    $("exportPdfBtn").addEventListener("click", async () => {
+      $("exportResult").textContent = "导出 PDF 中…";
+      const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: JSON.stringify({ format: "pdf" }) });
+      $("exportResult").textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
+    });
+    $("themeSelect").addEventListener("change", async () => {
+      const templateId = $("themeSelect").value;
+      if (!templateId) return;
+      $("exportResult").textContent = "换肤中（内容不变，仅换风格）…";
+      const result = await api(`/decks/${state.deckId}/theme`, { method: "POST", body: JSON.stringify({ template_id: templateId }) });
+      if (result.error) { $("exportResult").textContent = `换肤失败：${result.error}`; return; }
+      // 换肤后重新拉取全部预览
+      state.shown = new Set();
+      $("previews").innerHTML = "";
+      while (state.shown.size < state.pageCount) {
+        await pullNewPreviews();
+      }
+      $("exportResult").textContent = "✅ 已换肤，内容与事实未变";
     });
 
     loadBrands();

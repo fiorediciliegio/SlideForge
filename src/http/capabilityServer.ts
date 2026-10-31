@@ -235,7 +235,7 @@ const server = createServer(async (req, res) => {
       return json(res, 202, { deck_id: jobId, status: job.status });
     }
 
-    const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html))?$/);
+    const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html|theme))?$/);
     if (match) {
       const job = jobs.get(match[1]);
       if (!job) return json(res, 404, { error: "deck 不存在" });
@@ -306,14 +306,24 @@ const server = createServer(async (req, res) => {
         }
       }
 
+      if (req.method === "POST" && action === "theme") {
+        if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
+        const body = await readBody(req);
+        const { applyTheme } = await import("../capabilities/deck.js");
+        const result = await applyTheme({ runDir: job.runDir, templateId: typeof body.template_id === "string" ? body.template_id : undefined });
+        return json(res, 200, { deck_id: job.id, status: "theme-applied", ...result });
+      }
+
       if (req.method === "POST" && action === "export") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const apiKey = req.headers["x-api-key"] as string | undefined;
         const auth = await checkKey(apiKey);
         if (!auth.ok) return json(res, 402, { error: auth.reason });
         const body = await readBody(req);
-        const outPath = typeof body.out_path === "string" ? body.out_path : path.join(job.runDir, "deck.pptx");
-        const result = await exportDeck({ runDir: job.runDir, outPath });
+        const format = body.format === "pdf" ? "pdf" : "pptx";
+        const defaultName = format === "pdf" ? "deck.pdf" : "deck.pptx";
+        const outPath = typeof body.out_path === "string" ? body.out_path : path.join(job.runDir, defaultName);
+        const result = await exportDeck({ runDir: job.runDir, outPath, format });
         const charge = await chargeFixed(apiKey, job.id, "export");
         return json(res, 200, { ...result, billing: charge });
       }

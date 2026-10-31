@@ -417,23 +417,85 @@ export async function updatePageHtml(input: {
   return { drift, overflowWarnings };
 }
 
+/** 一键换肤：保留大纲与内容，仅按新模板视觉规范重生成全部页面。 */
+export async function applyTheme(input: {
+  runDir: string;
+  templateId?: string;
+  brandProfile?: BrandProfile;
+  onEvent?: (event: DeckEvent) => void;
+}): Promise<{ templateId?: string }> {
+  ensureRuntimeEnv();
+  const runDir = path.resolve(input.runDir);
+  const outline = JSON.parse(await readFile(path.join(runDir, "outline.json"), "utf8")) as Outline;
+  const brief = await readFile(path.join(runDir, "brief.txt"), "utf8");
+  const emit = input.onEvent ?? (() => {});
+
+  let templateId = input.templateId;
+  if (!templateId && !input.brandProfile) {
+    const { recommendTemplate } = await import("../templates/recommend.js");
+    const recommendation = await recommendTemplate(brief);
+    templateId = recommendation?.templateId;
+  }
+  const visualSpec = input.brandProfile
+    ? brandVisualSpec(input.brandProfile)
+    : templateId
+      ? "视觉规范：以下方【风格参照】参考页的视觉风格为唯一标准（配色/字体/布局/卡片语言），不得套用其他风格。"
+      : undefined;
+  const referenceHtml = templateId ? await getTemplateReference(templateId) : undefined;
+
+  const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+  const instruction = "这是一次纯换肤重生成：保持本页全部文字内容、事实与信息结构不变，只按新的视觉规范改变配色、字体与卡片风格，不得改写文字内容。";
+  for (let index = 0; index < outline.pages.length; index++) {
+    emit({ stage: "regenerate", page: index + 1, message: `换肤第 ${index + 1} 页` });
+    const pageFile = path.join(runDir, `page-${index + 1}.html`);
+    const oldHtml = await readFile(pageFile, "utf8");
+    await generatePage(
+      { brief, outline, runDir, pageCount: outline.pages.length, visualSpec, referenceHtml, onEvent: emit },
+      index,
+      overflowWarnings,
+      `${instruction}\n【本页原文（仅供保留内容，不要学习其旧风格）】\n${extractTextLinesLocal(oldHtml).join("；").slice(0, 1500)}`,
+    );
+  }
+  await assembleDeck(runDir, outline.title, outline.pages.length);
+  await closeValidatorBrowser();
+  return { templateId };
+}
+
 export async function exportDeck(input: {
   runDir: string;
   outPath: string;
+  format?: "pptx" | "pdf";
 }): Promise<ExportDeckResult> {
   ensureRuntimeEnv();
   input = { ...input, runDir: path.resolve(input.runDir), outPath: path.resolve(input.outPath) };
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
   await mkdir(path.dirname(input.outPath), { recursive: true });
-  const result = await runExportOnly({
+  const format = input.format ?? "pptx";
+  const base = {
     request_id: `export-${Date.now()}`,
-    format: "pptx",
     source_root: input.runDir,
     deck_html_file: "deck.html",
     expected_slide_count: outline.pages.length,
     title: outline.title,
     output_dir: path.dirname(input.outPath),
-  });
+  };
+  const result = format === "pdf"
+    ? await (async () => {
+        // PDF 导出要求每页都有 presentation-slides-wrapper 就绪结构，单页包装补齐
+        const pdfPagesDir = path.join(input.runDir, "pdf-pages");
+        await mkdir(pdfPagesDir, { recursive: true });
+        const slideHtmlFiles: string[] = [];
+        for (let i = 1; i <= outline.pages.length; i++) {
+          const pageHtml = await readFile(path.join(input.runDir, `page-${i}.html`), "utf8");
+          const slide = splitSlideDocument(pageHtml);
+          const wrapped = buildDeckHtml({ title: outline.title, slides: [slide] });
+          const file = path.join(pdfPagesDir, `page-${i}.html`);
+          await writeFile(file, wrapped, "utf8");
+          slideHtmlFiles.push(`pdf-pages/page-${i}.html`);
+        }
+        return runExportOnly({ ...base, format, slide_html_files: slideHtmlFiles });
+      })()
+    : await runExportOnly({ ...base, format });
   if (result.status !== "completed") {
     throw new Error(`导出失败：${result.error?.message ?? "unknown"}`);
   }
