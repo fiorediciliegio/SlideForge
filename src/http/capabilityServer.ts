@@ -183,6 +183,21 @@ const server = createServer(async (req, res) => {
       }
       return json(res, 200, brands);
     }
+    // F4 母版对话优化
+    const optimizeMatch = url.pathname.match(/^\/brands\/([\w-]+)\/optimize$/);
+    if (req.method === "POST" && optimizeMatch) {
+      const brandId = optimizeMatch[1];
+      const profile = await loadBrand(brandId);
+      if (!profile) return json(res, 404, { error: "品牌不存在" });
+      const body = await readBody(req);
+      const instruction = String(body.instruction ?? "").trim();
+      if (!instruction) return json(res, 400, { error: "instruction 不能为空" });
+      const { optimizeBrandProfile } = await import("../brand/optimize.js");
+      const { writeFile } = await import("node:fs/promises");
+      const result = await optimizeBrandProfile(profile, instruction);
+      await writeFile(path.join(BRANDS_DIR, brandId, "profile.json"), JSON.stringify(result.profile, null, 2), "utf8");
+      return json(res, 200, { brand_id: brandId, profile: result.profile, drift: result.drift });
+    }
 
     // ── F1 联网研究 ──
     if (req.method === "POST" && url.pathname === "/research") {

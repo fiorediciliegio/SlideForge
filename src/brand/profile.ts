@@ -16,6 +16,10 @@ export interface BrandProfile {
   text: string;
   muted: string;
   fontFamily: string;
+  /** 版式（五节档案之三） */
+  layout?: { padding: number; titleSize: number; cardRadius: number };
+  /** 组件（五节档案之四） */
+  components?: { card: string; button: string };
   source: "pptx-theme";
 }
 
@@ -58,6 +62,8 @@ export async function extractBrandProfile(pptxBuffer: Buffer, name: string): Pro
     text: hexOf(theme, "dk1") ?? FALLBACK.text,
     muted: FALLBACK.muted,
     fontFamily: fontFamily.startsWith(",") ? FALLBACK.fontFamily : fontFamily,
+    layout: { padding: 80, titleSize: 64, cardRadius: 20 },
+    components: { card: "rounded-20 shadow-soft", button: "primary-pill" },
     source: "pptx-theme",
   };
 }
