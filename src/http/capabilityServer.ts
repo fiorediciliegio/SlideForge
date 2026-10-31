@@ -75,8 +75,8 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { ok: true, service: "slideforge-capabilities", jobs: jobs.size });
     }
 
-    // ── M3 控制台（生产部署设置 SLIDEFORGE_ADMIN_TOKEN 启用鉴权）──
-    if (url.pathname === "/console" || url.pathname.startsWith("/admin/")) {
+    // ── M3 控制台（HTML 页面公开加载，/admin/* 接口需 SLIDEFORGE_ADMIN_TOKEN）──
+    if (url.pathname.startsWith("/admin/")) {
       if (!adminAuthorized(req)) return json(res, 401, { error: "admin unauthorized" });
     }
     if (req.method === "GET" && url.pathname === "/console") {
