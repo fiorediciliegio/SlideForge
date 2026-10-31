@@ -235,7 +235,7 @@ const server = createServer(async (req, res) => {
       return json(res, 202, { deck_id: jobId, status: job.status });
     }
 
-    const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport))?$/);
+    const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html))?$/);
     if (match) {
       const job = jobs.get(match[1]);
       if (!job) return json(res, 404, { error: "deck 不存在" });
@@ -283,6 +283,27 @@ const server = createServer(async (req, res) => {
         const { reimportDeck } = await import("../capabilities/deck.js");
         const result = await reimportDeck({ runDir: job.runDir, pptxBuffer: Buffer.from(base64, "base64") });
         return json(res, 200, { deck_id: job.id, status: "reimported", ...result, hint: "调用 export 导出新版本" });
+      }
+
+      if (action === "page-html") {
+        if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
+        const pageNumber = Number(url.searchParams.get("page") ?? 0);
+        if (req.method === "GET") {
+          const { readFile } = await import("node:fs/promises");
+          try {
+            const html = await readFile(path.join(job.runDir, `page-${pageNumber}.html`), "utf8");
+            res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+            return res.end(html);
+          } catch {
+            return json(res, 404, { error: `第 ${pageNumber} 页不存在` });
+          }
+        }
+        if (req.method === "POST") {
+          const body = await readBody(req);
+          const { updatePageHtml } = await import("../capabilities/deck.js");
+          const result = await updatePageHtml({ runDir: job.runDir, page: Number(body.page), html: String(body.html ?? "") });
+          return json(res, 200, { deck_id: job.id, status: "page-updated", ...result });
+        }
       }
 
       if (req.method === "POST" && action === "export") {

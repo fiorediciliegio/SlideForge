@@ -63,6 +63,11 @@
       border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
     .drift b { color: var(--primary); }
     .drift .chg { display: block; color: var(--muted); }
+    .edit-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+    .edit-tabs button { border: 1px solid var(--line); background: #fff; color: var(--muted);
+      border-radius: 8px; padding: 6px 14px; font-size: 12px; cursor: pointer; }
+    .edit-tabs button.active { background: #eef2ff; color: var(--primary); border-color: var(--primary); }
+    #manualFrame { width: 100%; height: 320px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; } }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
     .tpl { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; cursor: pointer;
@@ -152,10 +157,21 @@
       <div class="editor-grid">
         <div><img id="editorImage" alt="当前页预览" /></div>
         <div>
-          <div class="field"><label>修改指令（只改这一页，其他页不动）</label>
-            <textarea id="editorInstruction" placeholder="例如：改成左右两栏，左侧数据、右侧图表；标题换成深蓝"></textarea>
+          <div class="edit-tabs">
+            <button id="aiTab" class="active">AI 修改</button>
+            <button id="manualTab">手动编辑</button>
           </div>
-          <button class="btn block" id="applyEdit">重新生成此页</button>
+          <div id="aiPane">
+            <div class="field"><label>修改指令（只改这一页，其他页不动）</label>
+              <textarea id="editorInstruction" placeholder="例如：改成左右两栏，左侧数据、右侧图表；标题换成深蓝"></textarea>
+            </div>
+            <button class="btn block" id="applyEdit">重新生成此页</button>
+          </div>
+          <div id="manualPane" style="display:none">
+            <div class="muted" style="margin-bottom:8px">直接在下方页面里点文字修改，改完点保存（不经模型）</div>
+            <iframe id="manualFrame" title="手动编辑页面"></iframe>
+            <button class="btn block" id="saveManual" style="margin-top:10px">保存手动修改</button>
+          </div>
           <div id="editorStatus" class="muted" style="margin-top:10px"></div>
           <div class="drift" id="driftBox" style="display:none"></div>
         </div>
@@ -282,6 +298,56 @@
         文本新增 ${drift.summary.textAddedCount} 条 / 删除 ${drift.summary.textRemovedCount} 条 · 样式变化 ${drift.summary.styleChangeCount} 处
         ${styleLines}`;
     }
+
+    // ── 手动编辑（contentEditable，不经模型）──
+    $("aiTab").addEventListener("click", () => switchPane("ai"));
+    $("manualTab").addEventListener("click", () => switchPane("manual"));
+    function switchPane(which) {
+      const ai = which === "ai";
+      $("aiTab").classList.toggle("active", ai);
+      $("manualTab").classList.toggle("active", !ai);
+      $("aiPane").style.display = ai ? "block" : "none";
+      $("manualPane").style.display = ai ? "none" : "block";
+      if (!ai) loadManualFrame();
+    }
+    async function loadManualFrame() {
+      $("editorStatus").textContent = "加载页面…";
+      const response = await fetch(`/decks/${state.deckId}/page-html?page=${state.editingPage}`, { headers: { "x-api-key": apiKey } });
+      const html = await response.text();
+      const frame = $("manualFrame");
+      frame.srcdoc = html;
+      frame.onload = () => {
+        const doc = frame.contentDocument;
+        doc.designMode = "on";
+        const style = doc.createElement("style");
+        style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text}";
+        doc.head.appendChild(style);
+        $("editorStatus").textContent = "可直接点击文字编辑，改完点「保存手动修改」";
+      };
+    }
+    $("saveManual").addEventListener("click", async () => {
+      const frame = $("manualFrame");
+      const html = frame.contentDocument.documentElement.outerHTML;
+      $("saveManual").disabled = true;
+      $("editorStatus").textContent = "保存中…";
+      const result = await api(`/decks/${state.deckId}/page-html`, {
+        method: "POST",
+        body: JSON.stringify({ page: state.editingPage, html }),
+      });
+      if (result.error) {
+        $("editorStatus").textContent = `保存失败：${result.error}`;
+      } else {
+        const base64 = await fetchSinglePreview(state.editingPage);
+        state.pageImages.set(state.editingPage, base64);
+        const shotImgs = $("previews").querySelectorAll(".shot");
+        const index = state.editingPage - 1;
+        if (shotImgs[index]) shotImgs[index].querySelector("img").src = `data:image/jpeg;base64,${base64}`;
+        $("editorStatus").textContent = "✅ 手动修改已保存";
+        $("driftBox").innerHTML = renderDrift(result.drift);
+        $("driftBox").style.display = "block";
+      }
+      $("saveManual").disabled = false;
+    });
 
     $("applyEdit").addEventListener("click", async () => {
       const instruction = $("editorInstruction").value.trim();

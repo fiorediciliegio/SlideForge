@@ -379,6 +379,44 @@ ${slideTexts[index].join("；").slice(0, 1500)}
   return { changedPages, unchangedPages, report };
 }
 
+/** 直接写入手动编辑后的页面 HTML（不经模型），随后重组装并输出偏离度报告。 */
+export async function updatePageHtml(input: {
+  runDir: string;
+  page: number;
+  html: string;
+}): Promise<{
+  drift?: ReturnType<typeof computePageDrift>;
+  overflowWarnings: Array<{ page: number; issues: SlideIssue[] }>;
+}> {
+  ensureRuntimeEnv();
+  const runDir = path.resolve(input.runDir);
+  const outline = JSON.parse(await readFile(path.join(runDir, "outline.json"), "utf8")) as Outline;
+  if (input.page < 1 || input.page > outline.pages.length) {
+    throw new Error(`页码越界：${input.page}`);
+  }
+  const dialect = validateHtmlDialect(input.html);
+  if (!dialect.ok) {
+    throw new Error(`违反方言契约：${dialect.errors.map((e) => e.detail).join("；")}`);
+  }
+  const pageFile = path.join(runDir, `page-${input.page}.html`);
+  const oldHtml = await readFile(pageFile, "utf8");
+  await writeFile(pageFile, input.html, "utf8");
+  await assembleDeck(runDir, outline.title, outline.pages.length);
+
+  const drift = computePageDrift(oldHtml, input.html);
+  await writeFile(
+    path.join(runDir, `drift-report-page-${input.page}.json`),
+    JSON.stringify(drift, null, 2),
+    "utf8",
+  );
+
+  const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
+  const validation = await validateSlideHtmlFile(pageFile);
+  if (!validation.ok) overflowWarnings.push({ page: input.page, issues: validation.issues });
+  await closeValidatorBrowser();
+  return { drift, overflowWarnings };
+}
+
 export async function exportDeck(input: {
   runDir: string;
   outPath: string;
