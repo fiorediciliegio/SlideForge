@@ -209,6 +209,14 @@ const server = createServer(async (req, res) => {
       return json(res, 200, result);
     }
 
+    // ── A1 我的用量（按 API key 查询自己的余额与台账）──
+    if (req.method === "GET" && url.pathname === "/usage") {
+      const { getUsage } = await import("../billing/index.js");
+      const usage = await getUsage(req.headers["x-api-key"] as string | undefined);
+      if (!usage) return json(res, 200, { enabled: false });
+      return json(res, 200, { enabled: true, ...usage });
+    }
+
     if (req.method === "POST" && url.pathname === "/decks") {
       const body = await readBody(req);
       const brief = String(body.brief ?? "").trim();

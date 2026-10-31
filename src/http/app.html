@@ -203,6 +203,7 @@
       <button class="nav-item" data-tab="workspace"><span class="ico">🗂</span><span>工作台</span></button>
       <button class="nav-item" data-tab="templates"><span class="ico">🎨</span><span>模板库</span></button>
       <button class="nav-item" data-tab="brands"><span class="ico">🏢</span><span>我的品牌</span></button>
+      <button class="nav-item" data-tab="usage"><span class="ico">📊</span><span>我的用量</span></button>
       <div class="sidebar-foot"><a href="/console" target="_blank">运营控制台 ↗</a></div>
     </aside>
 
@@ -243,8 +244,22 @@
           </div>
         </section>
 
+        <section id="usage" class="tab">
+          <div class="card">
+            <div class="card-title">我的用量</div>
+            <div id="usageSummary" style="display:flex;gap:24px;margin-bottom:18px"></div>
+            <table style="width:100%;font-size:12px;border-collapse:collapse">
+              <thead><tr style="color:var(--ink-2);text-align:left"><th style="padding:8px">时间</th><th style="padding:8px">类型</th><th style="padding:8px">tokens</th><th style="padding:8px">点数</th><th style="padding:8px">余额</th></tr></thead>
+              <tbody id="usageRows"></tbody>
+            </table>
+          </div>
+        </section>
+
         <section id="workspace" class="tab">
-          <div class="workspace">
+          <div class="empty" id="workspaceEmpty" style="display:block">
+            <div class="big">🗂</div>工作台是空的。先在「生成演示」里创建一份 PPT，再回来逐页编辑和导出。
+          </div>
+          <div class="workspace" id="workspaceMain" style="display:none">
             <div class="page-list" id="pageList"></div>
             <div class="card">
               <div class="canvas-head">
@@ -340,7 +355,14 @@
     })();
     const api = (path, options) => fetch(path, {
       headers: { "content-type": "application/json", "x-api-key": apiKey }, ...options,
-    }).then(r => r.json());
+    }).then(async (response) => {
+      const payload = await response.json();
+      // 统一错误提示：任何接口返回 error 字段都弹 toast，禁止静默失败
+      if (payload && typeof payload === "object" && payload.error) {
+        toast(String(payload.error), "error");
+      }
+      return payload;
+    });
     const state = { deckId: null, pageCount: 8, shown: new Set(), templates: [], pageImages: new Map(), editingPage: null, optimizeBrandId: null };
     const toBase64 = (file) => new Promise((resolve) => {
       const reader = new FileReader();
@@ -359,7 +381,7 @@
       if (role === "assistant") $("status").textContent = text;
     }
 
-    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], workspace: ["工作台", "逐页预览、编辑、导出"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"] };
+    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], workspace: ["工作台", "逐页预览、编辑、导出"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"], usage: ["我的用量", "当前 API key 的余额与消耗明细"] };
     document.querySelectorAll(".nav-item").forEach(btn => btn.addEventListener("click", () => {
       document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
       document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -368,6 +390,7 @@
       const [title, sub] = TITLES[btn.dataset.tab];
       $("pageTitle").textContent = title;
       $("pageSub").textContent = sub;
+      if (btn.dataset.tab === "usage") loadUsage();
     }));
     $("brief").addEventListener("input", () => {
       $("brief").classList.toggle("tall", $("brief").value.length > 200);
@@ -504,8 +527,11 @@
         appendShots([{ page: batch[0], base64 }]);
         return;
       }
-      const result = await api(`/decks/${state.deckId}/preview?pages=${batch.join(",")}`);
-      if (result.images?.length) appendShots(result.images);
+      const result = await api(`/decks/${state.deckId}/preview?pages=${batch.join(",")}`).catch((error) => {
+        console.warn("预览拉取失败", error);
+        return null;
+      });
+      if (result?.images?.length) appendShots(result.images);
     }
 
     $("generate").addEventListener("click", async () => {
@@ -556,6 +582,8 @@
           $("reimportBtn").style.display = "inline-flex";
           addMessage("assistant", "✅ 全部页面已生成。你可以点击任意一页继续编辑，也可以直接导出 PPTX / PDF。");
           document.querySelector('[data-tab="workspace"]').click();
+          $("workspaceEmpty").style.display = "none";
+          $("workspaceMain").style.display = "grid";
           toast("演示已生成，可编辑或导出", "success");
           break;
         }
@@ -617,6 +645,8 @@
     function openEditor(page) {
       if (!state.deckId) return;
       state.editingPage = page;
+      $("workspaceEmpty").style.display = "none";
+      $("workspaceMain").style.display = "grid";
       document.querySelectorAll(".page-thumb").forEach(el => el.classList.toggle("active", Number(el.dataset.page) === page));
       $("workspaceTitle").textContent = `第 ${page} 页`;
       $("workspaceImage").src = `data:image/jpeg;base64,${state.pageImages.get(page)}`;
@@ -668,6 +698,19 @@
       $("manualTab").classList.toggle("active", !ai);
       $("aiPane").style.display = ai ? "block" : "none";
       $("manualPane").style.display = ai ? "none" : "block";
+      // 手动编辑时编辑面板扩展到预览区，获得完整编辑空间
+      const workspaceMain = $("workspaceMain");
+      const previewCard = workspaceMain.children[1];
+      const editPanel = workspaceMain.children[2];
+      if (ai) {
+        workspaceMain.style.gridTemplateColumns = "220px minmax(0, 1fr) 340px";
+        previewCard.style.display = "block";
+        editPanel.style.gridColumn = "auto";
+      } else {
+        workspaceMain.style.gridTemplateColumns = "220px minmax(0, 1fr)";
+        previewCard.style.display = "none";
+        editPanel.style.gridColumn = "2 / 4";
+      }
       if (!ai) loadManualFrame();
     }
     async function loadManualFrame() {
@@ -726,6 +769,28 @@
       $("saveManual").disabled = false;
     });
 
+    // ── 我的用量 ──
+    async function loadUsage() {
+      const data = await api("/usage");
+      if (!data.enabled) {
+        $("usageSummary").innerHTML = '<span class="muted">本机未启用计费（无 key 文件），用量不计。</span>';
+        $("usageRows").innerHTML = "";
+        return;
+      }
+      $("usageSummary").innerHTML = `
+        <div><div class="muted">当前 key</div><b>${data.name}</b></div>
+        <div><div class="muted">剩余点数</div><b style="font-size:26px;color:var(--navy)">${data.balance}</b></div>
+        <div><div class="muted">近 50 笔消耗</div><b>${data.entries.reduce((s, e) => s + e.points, 0)} 点</b></div>`;
+      $("usageRows").innerHTML = data.entries.map(e => `
+        <tr style="border-top:1px solid var(--line)">
+          <td style="padding:8px" class="muted">${e.ts.slice(5, 16).replace("T", " ")}</td>
+          <td style="padding:8px">${e.type}</td>
+          <td style="padding:8px">${(e.prompt_tokens ?? 0) + (e.completion_tokens ?? 0) || "-"}</td>
+          <td style="padding:8px">${e.points}</td>
+          <td style="padding:8px">${e.balance}</td>
+        </tr>`).join("");
+    }
+    loadUsage();
     loadBrands();
     loadTemplates();
   </script>

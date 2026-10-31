@@ -478,21 +478,23 @@ export async function applyTheme(input: {
 
 export async function exportDeck(input: {
   runDir: string;
-  outPath: string;
+  outPath?: string;
   format?: "pptx" | "pdf";
 }): Promise<ExportDeckResult> {
   ensureRuntimeEnv();
-  input = { ...input, runDir: path.resolve(input.runDir), outPath: path.resolve(input.outPath) };
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
-  await mkdir(path.dirname(input.outPath), { recursive: true });
+  const safeTitle = outline.title.replace(/[\\/:*?"<>|]/g, "-").slice(0, 60) || "deck";
   const format = input.format ?? "pptx";
+  const outPath = path.resolve(input.outPath ?? path.join(input.runDir, `${safeTitle}.${format}`));
+  input = { ...input, runDir: path.resolve(input.runDir), outPath };
+  await mkdir(path.dirname(outPath), { recursive: true });
   const base = {
     request_id: `export-${Date.now()}`,
     source_root: input.runDir,
     deck_html_file: "deck.html",
     expected_slide_count: outline.pages.length,
     title: outline.title,
-    output_dir: path.dirname(input.outPath),
+    output_dir: path.dirname(outPath),
   };
   const result = format === "pdf"
     ? await (async () => {
@@ -514,11 +516,11 @@ export async function exportDeck(input: {
   if (result.status !== "completed") {
     throw new Error(`导出失败：${result.error?.message ?? "unknown"}`);
   }
-  if (result.output_path !== input.outPath) {
-    await rename(result.output_path!, input.outPath);
+  if (result.output_path !== outPath) {
+    await rename(result.output_path!, outPath);
   }
   return {
-    outPath: input.outPath,
+    outPath,
     slideCount: result.slide_count,
     sizeBytes: result.size_bytes ?? 0,
     warnings: result.warnings,

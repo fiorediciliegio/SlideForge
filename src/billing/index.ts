@@ -136,6 +136,19 @@ export async function chargeFixed(apiKey: string | undefined, deckId: string, ki
 
 // ── M3 控制台管理接口 ──
 
+export async function getUsage(apiKey: string | undefined): Promise<{ name: string; balance: number; entries: LedgerEntry[] } | null> {
+  if (!billingEnabled() || !apiKey) return null;
+  const keys = await readKeys();
+  const record = keys[apiKey];
+  if (!record) return null;
+  const { entries } = await readLedger(50);
+  return {
+    name: record.name,
+    balance: record.balance,
+    entries: entries.filter((entry) => entry.key_name === record.name),
+  };
+}
+
 export async function listKeys(): Promise<Array<{ key: string; name: string; balance: number }>> {
   if (!billingEnabled()) return [];
   const keys = await readKeys();

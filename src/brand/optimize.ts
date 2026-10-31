@@ -12,7 +12,7 @@ export interface ProfileDrift {
 }
 
 export async function optimizeBrandProfile(
-  profile: BrandProfile & Record<string, unknown>,
+  profile: BrandProfile,
   instruction: string,
 ): Promise<{ profile: BrandProfile & Record<string, unknown>; drift: ProfileDrift[] }> {
   const messages = [
@@ -35,18 +35,19 @@ export async function optimizeBrandProfile(
   const end = json.lastIndexOf("}");
   if (begin >= 0 && end > begin) json = json.slice(begin, end + 1);
   const next = JSON.parse(json) as BrandProfile & Record<string, unknown>;
+  const current = profile as BrandProfile & Record<string, unknown>;
 
   // 字段合法性校验：hex 不合规则回退到旧值
   for (const field of ["primary", "accent", "background", "text", "muted"] as const) {
     const value = next[field];
     if (typeof value !== "string" || !/^[0-9a-fA-F]{6}$/.test(value)) {
-      next[field] = profile[field];
+      next[field] = current[field];
     }
   }
 
   const drift: ProfileDrift[] = [];
-  for (const key of new Set([...Object.keys(profile), ...Object.keys(next)])) {
-    const from = JSON.stringify(profile[key]);
+  for (const key of new Set([...Object.keys(current), ...Object.keys(next)])) {
+    const from = JSON.stringify(current[key]);
     const to = JSON.stringify(next[key]);
     if (from !== to) drift.push({ field: key, from, to });
   }
