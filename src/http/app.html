@@ -228,6 +228,14 @@
                 <select id="templateSelect" title="模板"><option value="">自动推荐</option></select>
                 <button class="btn" id="generate">生成演示 ✨</button>
               </div>
+              <div class="hero-controls" style="margin-top:10px">
+                <label class="muted" style="display:flex;align-items:center;gap:8px">
+                  <input id="researchToggle" type="checkbox" style="width:auto" /> 联网检索（带来源）
+                </label>
+                <label class="muted" style="display:flex;align-items:center;gap:8px;margin-left:auto">
+                  附件 <input id="attachmentFile" type="file" accept=".docx,.pdf,.txt,.md" style="font-size:11px" />
+                </label>
+              </div>
               <div id="status" class="muted" style="margin-top:10px"></div>
             </div>
             <div class="muted" style="margin:16px 0 10px">也可以先从模板选一种风格：</div>
@@ -513,6 +521,12 @@
         brief, page_count: state.pageCount,
         brand_id: $("brandSelect").value || undefined,
         template_id: $("templateSelect").value || undefined,
+        research: $("researchToggle").checked || undefined,
+        ...(await (async () => {
+          const file = $("attachmentFile").files[0];
+          if (!file) return {};
+          return { attachment_base64: await toBase64(file), filename: file.name };
+        })()),
       }) });
       state.deckId = created.deck_id;
       if (!state.deckId) {
