@@ -75,6 +75,9 @@
     .btn.sm { padding: 8px 14px; font-size: 12px; }
     .empty { border: 1.5px dashed var(--line); border-radius: var(--r-lg); padding: 64px 20px;
       text-align: center; color: var(--muted); background: #fbfcfe; }
+    .layout > .card:last-child { min-height: calc(100vh - 150px); display: flex; flex-direction: column; }
+    .layout > .card:last-child .empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .layout > .card:last-child .shots { flex: 1; align-content: start; }
     .empty .big { font-size: 34px; margin-bottom: 12px; }
     .canvas-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 10px; }
     .canvas-head h2 { font-size: 15px; font-weight: 700; }
