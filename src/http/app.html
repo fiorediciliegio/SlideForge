@@ -693,6 +693,8 @@
       $("editorInstruction").value = "";
       $("editorStatus").textContent = "";
       $("driftBox").style.display = "none";
+      // 手动编辑中换页：重新加载该页 HTML（否则 iframe 停留在旧页）
+      if ($("manualPane").style.display !== "none") loadManualFrame();
       document.querySelector('[data-tab="workspace"]').click();
     }
 
