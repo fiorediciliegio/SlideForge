@@ -217,6 +217,15 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { enabled: true, ...usage });
     }
 
+    // ── 我的作品：deck 列表（本机用户视角）──
+    if (req.method === "GET" && url.pathname === "/decks") {
+      return json(res, 200, [...deckJobs.values()].map((job) => ({
+        deck_id: job.id,
+        title: job.title,
+        status: job.status,
+        recent_events: job.events.slice(-2),
+      })));
+    }
     if (req.method === "POST" && url.pathname === "/decks") {
       const body = await readBody(req);
       const brief = String(body.brief ?? "").trim();

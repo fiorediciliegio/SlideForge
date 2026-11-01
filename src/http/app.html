@@ -201,9 +201,12 @@
       </div>
       <button class="nav-item active" data-tab="create"><span class="ico">✨</span><span>生成演示</span></button>
       <button class="nav-item" data-tab="workspace"><span class="ico">🗂</span><span>工作台</span></button>
+      <button class="nav-item" data-tab="decks"><span class="ico">📚</span><span>我的作品</span></button>
+      <button class="nav-item" data-tab="research"><span class="ico">🔍</span><span>联网研究</span></button>
       <button class="nav-item" data-tab="templates"><span class="ico">🎨</span><span>模板库</span></button>
       <button class="nav-item" data-tab="brands"><span class="ico">🏢</span><span>我的品牌</span></button>
       <button class="nav-item" data-tab="usage"><span class="ico">📊</span><span>我的用量</span></button>
+      <button class="nav-item" data-tab="guide"><span class="ico">🔌</span><span>接入指南</span></button>
       <div class="sidebar-foot"><a href="/console" target="_blank">运营控制台 ↗</a></div>
     </aside>
 
@@ -241,6 +244,41 @@
             </div>
             <div class="muted" style="margin:16px 0 10px">也可以先从模板选一种风格：</div>
             <div class="gallery" id="homeGallery"></div>
+          </div>
+        </section>
+
+        <section id="decks" class="tab">
+          <div id="deckList"></div>
+        </section>
+
+        <section id="research" class="tab">
+          <div class="card">
+            <div class="card-title">联网研究</div>
+            <div class="hero-controls">
+              <input id="researchQuery" type="text" placeholder="输入检索主题，例如：2026 新能源汽车销量" style="flex:1" />
+              <button class="btn" id="doResearch">检索</button>
+            </div>
+            <div id="researchResults" style="margin-top:16px"></div>
+          </div>
+        </section>
+
+        <section id="guide" class="tab">
+          <div class="card">
+            <div class="card-title">AI 客户端接入指南</div>
+            <p class="muted">把 SlideForge 接入你的 AI 工具，在对话里直接生成 PPT。</p>
+            <h3 style="font-size:14px;margin-top:16px">Claude Desktop 配置</h3>
+            <pre style="background:#f8f6f0;padding:14px;border-radius:10px;font-size:12px;overflow:auto">{
+  "mcpServers": {
+    "slideforge": {
+      "command": "node",
+      "args": ["--import", "tsx/esm", "&lt;绝对路径&gt;/slideforge/src/mcp/server.ts"],
+      "env": { "OPENAI_API_KEY": "sk-你的key" }
+    }
+  }
+}</pre>
+            <h3 style="font-size:14px;margin-top:16px">远程 MCP（Streamable HTTP）</h3>
+            <pre style="background:#f8f6f0;padding:14px;border-radius:10px;font-size:12px;overflow:auto">http://&lt;你的主机&gt;:3210/mcp</pre>
+            <p class="muted" style="margin-top:12px">可用工具：create_deck / get_deck_job / regenerate_page / get_deck_preview / export_deck</p>
           </div>
         </section>
 
@@ -381,7 +419,7 @@
       if (role === "assistant") $("status").textContent = text;
     }
 
-    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], workspace: ["工作台", "逐页预览、编辑、导出"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"], usage: ["我的用量", "当前 API key 的余额与消耗明细"] };
+    const TITLES = { create: ["生成演示", "一句话或一份文档，生成可编辑的专业 PPT"], workspace: ["工作台", "逐页预览、编辑、导出"], decks: ["我的作品", "历史生成的演示，随时打开续改或导出"], research: ["联网研究", "检索资料并标注来源，让生成有据可依"], templates: ["模板库", "98 套视觉预设，点图即用"], brands: ["我的品牌", "配色 / 字体 / logo，一次设定终身生效"], usage: ["我的用量", "当前 API key 的余额与消耗明细"], guide: ["接入指南", "把 SlideForge 接入你的 AI 工具"] };
     document.querySelectorAll(".nav-item").forEach(btn => btn.addEventListener("click", () => {
       document.querySelectorAll(".nav-item").forEach(b => b.classList.remove("active"));
       document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -391,6 +429,8 @@
       $("pageTitle").textContent = title;
       $("pageSub").textContent = sub;
       if (btn.dataset.tab === "usage") loadUsage();
+      if (btn.dataset.tab === "decks") loadDecks();
+      if (btn.dataset.tab === "research") {}
     }));
     $("brief").addEventListener("input", () => {
       $("brief").classList.toggle("tall", $("brief").value.length > 200);
@@ -790,9 +830,61 @@
           <td style="padding:8px">${e.balance}</td>
         </tr>`).join("");
     }
+    // ── 我的作品 ──
+    async function loadDecks() {
+      const decks = await api("/decks");
+      $("deckList").innerHTML = decks.length === 0
+        ? '<div class="empty">还没有作品，去「生成演示」创建第一份 PPT 吧。</div>'
+        : decks.map(d => `
+          <div class="card" style="margin-bottom:12px;display:flex;align-items:center;gap:12px">
+            <div style="flex:1">
+              <b>${d.title ?? d.deck_id}</b>
+              <div class="muted">${d.deck_id} · ${d.status}</div>
+            </div>
+            <button class="btn ghost sm" data-open="${d.deck_id}">打开续改</button>
+            <button class="btn sm" data-export="${d.deck_id}">导出 PPTX</button>
+          </div>`).join("");
+      document.querySelectorAll("[data-open]").forEach(btn => btn.addEventListener("click", () => openDeck(btn.dataset.open)));
+      document.querySelectorAll("[data-export]").forEach(btn => btn.addEventListener("click", () => exportDeckById(btn.dataset.export)));
+    }
+    async function openDeck(deckId) {
+      state.deckId = deckId;
+      state.pageCount = 20; // 上界，拉完即止
+      state.shown = new Set();
+      $("pageList").innerHTML = "";
+      $("workspaceEmpty").style.display = "none";
+      $("workspaceMain").style.display = "grid";
+      document.querySelector('[data-tab="workspace"]').click();
+      let attempts = 0;
+      while (state.shown.size < state.pageCount && attempts < 12) {
+        const before = state.shown.size;
+        await pullNewPreviews();
+        attempts++;
+        if (state.shown.size === before) break;
+      }
+    }
+    async function exportDeckById(deckId) {
+      const result = await api(`/decks/${deckId}/export`, { method: "POST", body: "{}" });
+      if (result.outPath) toast(`已导出：${result.outPath}`, "success");
+    }
+    $("doResearch").addEventListener("click", async () => {
+      const query = $("researchQuery").value.trim();
+      if (!query) return toast("请输入检索主题", "error");
+      $("researchResults").innerHTML = "检索中…";
+      const result = await api("/research", { method: "POST", body: JSON.stringify({ query }) });
+      $("researchResults").innerHTML = (result.sources ?? []).map(s => `
+        <div class="card" style="margin-bottom:10px">
+          <b>${s.title}</b>
+          <div class="muted"><a href="${s.url}" target="_blank" style="color:var(--navy)">${s.url}</a></div>
+          <div style="font-size:12px;margin-top:6px">${s.snippet}</div>
+        </div>`).join("") || '<div class="muted">未检索到结果</div>';
+    });
+
     loadUsage();
     loadBrands();
     loadTemplates();
+    loadDecks();
+
   </script>
 </body>
 </html>
