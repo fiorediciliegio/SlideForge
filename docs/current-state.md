@@ -1,4 +1,4 @@
-# SlideForge 系统全景与下一步（2026-10-30）
+# SlideForge 系统全景与下一步（2026-11-01）
 
 > 给协作者的交接摘要：10 分钟了解系统现状、各入口、验证方式与待办。
 > 前置阅读：`docs/product-tech-charter.md`（总纲）、`docs/deployment.md`（部署手册）。
@@ -37,8 +37,11 @@
 | `src/capabilities/deck.ts` | 能力层唯一入口（铁律：无 UI 后门） |
 | `scripts/m0/` | LLM 客户端、提示词、deck 组装、版面校验、缩略图 |
 | `src/mcp/server.ts` | MCP Server（create_deck/get_deck_job/regenerate_page/get_deck_preview/export_deck） |
-| `src/http/capabilityServer.ts` | HTTP 服务 + admin 接口 + /console |
-| `src/billing/index.ts` | 计费：价目表、鉴权、结算、台账、key 管理 |
+| `src/http/capabilityServer.ts` | HTTP 服务、用户隔离、限流、admin 接口与 /console |
+| `src/server/jobQueue.ts` | 所有重操作共享的有界队列 |
+| `src/server/httpSecurity.ts` | 请求体上限、固定窗口限流与安全响应头 |
+| `src/server/jobs.ts` | 任务热存储、归属信息、事件上限与原子快照 |
+| `src/billing/index.ts` | 计费、串行余额事务、原子持久化、台账与 key 管理 |
 | `scripts/keys.ts` | key 签发/充值/列表 CLI |
 | `integrations/wps-addon/` | WPS 加载项骨架（实机验证中） |
 

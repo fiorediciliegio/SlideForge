@@ -332,6 +332,18 @@
                 <div id="manualPane" style="display:none">
                   <div class="muted" style="margin-bottom:8px">点文字直接改；Ctrl/Cmd+点击选元素可拖拽移动/缩放</div>
                   <iframe id="manualFrame" title="手动编辑页面"></iframe>
+                  <div id="propPanel" style="display:none;margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:12px">
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                      <label class="muted">背景 <input id="propBg" type="color" style="width:44px;height:28px;border:0" /></label>
+                      <label class="muted">文字 <input id="propColor" type="color" style="width:44px;height:28px;border:0" /></label>
+                      <label class="muted">字号 <input id="propFontSize" type="text" style="width:64px" /></label>
+                      <button class="btn ghost sm" id="applyProps">应用样式</button>
+                    </div>
+                    <div id="propImageRow" style="display:none;margin-top:10px">
+                      <label class="muted">替换图片 <input id="propImageFile" type="file" accept=".png,.jpg,.jpeg,.webp" style="font-size:11px" /></label>
+                      <button class="btn ghost sm" id="applyImage">上传替换</button>
+                    </div>
+                  </div>
                   <button class="btn block" id="saveManual" style="margin-top:10px">保存手动修改</button>
                 </div>
                 <div id="editorStatus" class="muted" style="margin-top:8px"></div>
@@ -755,7 +767,43 @@
       }
       if (!ai) loadManualFrame();
     }
+    // ── 属性编辑：选中元素后改背景/文字/字号，图片可替换 ──
+    let selectedElement = null;
+    window.addEventListener("message", (event) => {
+      console.log("[parent] message", event.data?.type);
+      if (event.data?.type !== "dnd-select") return;
+      selectedElement = $("manualFrame").contentWindow.__dndSelectedElement;
+      console.log("[parent] selectedElement", selectedElement?.tagName);
+      const { background, color, fontSize, tag } = event.data;
+      console.log("[parent] props", background, color, fontSize, tag);
+      $("propPanel").style.display = "block";
+      console.log("[parent] panel shown");
+      const toHex = (rgb) => {
+        const m = rgb.match(/\d+/g);
+        return m ? `#${m.slice(0, 3).map(n => Number(n).toString(16).padStart(2, "0")).join("")}` : "#1e40af";
+      };
+      $("propBg").value = toHex(background);
+      $("propColor").value = toHex(color);
+      $("propFontSize").value = fontSize;
+      $("propImageRow").style.display = selectedElement.tagName === "IMG" ? "block" : "none";
+    });
+    $("applyProps").addEventListener("click", () => {
+      if (!selectedElement) return;
+      selectedElement.style.backgroundColor = $("propBg").value;
+      selectedElement.style.color = $("propColor").value;
+      if ($("propFontSize").value.trim()) selectedElement.style.fontSize = $("propFontSize").value.trim();
+      toast("样式已应用，记得点保存", "success");
+    });
+    $("applyImage").addEventListener("click", async () => {
+      const file = $("propImageFile").files[0];
+      if (!selectedElement || selectedElement.tagName !== "IMG" || !file) return;
+      selectedElement.src = `data:image/${file.type === "image/webp" ? "webp" : "jpeg"};base64,${await toBase64(file)}`;
+      toast("图片已替换，记得点保存", "success");
+    });
+
     async function loadManualFrame() {
+      // 未点选具体页时默认编辑第 1 页（避免 page=NaN）
+      if (!state.editingPage) state.editingPage = 1;
       $("editorStatus").textContent = "加载页面…";
       const response = await fetch(`/decks/${state.deckId}/page-html?page=${state.editingPage}`, { headers: { "x-api-key": apiKey } });
       const html = await response.text();

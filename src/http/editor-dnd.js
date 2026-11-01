@@ -31,6 +31,16 @@
       const style = getComputedStyle(selected);
       drag = { mode: "resize", x: event.clientX, y: event.clientY, w: parseFloat(style.width), h: parseFloat(style.height) };
     });
+    // 通知父页面：选中元素的属性面板可用（postMessage + iframe 全局引用）
+    const style = getComputedStyle(el);
+    window.__dndSelectedElement = el;
+    window.parent.postMessage({
+      type: "dnd-select",
+      background: style.backgroundColor,
+      color: style.color,
+      fontSize: style.fontSize,
+      tag: el.tagName,
+    }, "*");
   }
 
   doc.addEventListener("mousedown", (event) => {

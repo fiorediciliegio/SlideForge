@@ -118,11 +118,18 @@ node --import tsx/esm scripts/keys.ts list
 - 台账：`data/billing/ledger.jsonl`（每笔含 tokens、点数、余额）
 - `data/` 已 gitignore，key 与台账不会进仓库。
 
-## 六、生产化配置（2026-10-30 起）
+## 六、生产化配置（2026-11-01 更新）
 
-- **管理员鉴权**：设置 `SLIDEFORGE_ADMIN_TOKEN=<随机串>` 后，`/console` 与 `/admin/*` 需 `X-Admin-Token` 请求头（控制台页面会提示输入并记忆）；未设置 = 本机开发模式全放行。
-- **MCP 远程接入**：HTTP 服务同时挂载 `POST /mcp`（Streamable HTTP，无状态模式）。远程 AI 客户端直接指向 `http://<主机>:3210/mcp` 即可使用全部 5 个工具，与 stdio 共用任务存储（HTTP 建的 deck，MCP 可操作）。
-- 生产部署建议：仅暴露 3210 给可信网络，管理员 token 与客户端 key 分开管理。
+- **启动前置条件**：`NODE_ENV=production` 时必须配置 `SLIDEFORGE_ADMIN_TOKEN`，并在启动前执行 `node --import tsx/esm scripts/keys.ts issue --name "首位用户" --points 200` 创建至少一个 API key；否则服务拒绝以无鉴权模式启动。
+- **管理员鉴权**：`/admin/*` 使用 `X-Admin-Token`。管理员 token 与客户端 key 分开管理，不要使用同一个值。
+- **用户隔离**：开启计费后，deck、品牌模板和远程 MCP 都校验 API key 归属。旧的未归属数据不会自动对公开用户开放。
+- **容量保护**：生成、重生成、预览、换肤和导出共享有界队列。先用 `DECK_JOB_CONCURRENCY=1`、`DECK_CONCURRENCY=2` 压测，不要直接提高并发。
+- **请求保护**：默认请求体上限 32 MiB、每身份 120 请求/分钟、20 次创建/小时，可通过 `deploy/env.example` 中参数调整。
+- **MCP 远程接入**：`POST /mcp` 必须带与 REST 相同的 `X-API-Key`，远程客户端只能操作自己的任务。
+- **网络**：仅通过 HTTPS 反向代理暴露服务；3210 不对公网直接开放。只有位于受信代理后才设置 `SLIDEFORGE_TRUST_PROXY=true`。
+- **持久化**：`SLIDEFORGE_DATA_DIR` 和 `artifacts/decks` 必须在持久磁盘并定期备份。当前 JSON 与本地文件方案只允许单实例，禁止多副本共享启动。
+
+完整架构和 1 万用户扩容路线见 `docs/architecture-10k.md`。
 
 ## 七、验证清单（部署后自检）
 

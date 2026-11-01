@@ -1,84 +1,106 @@
-/**
- * M2-2 · SlideForge 能力层 HTTP 服务。
- * 与 MCP Server 共用能力层（src/capabilities/deck.ts），远程客户端/Go 网关的对接点。
- *
- * 启动：OPENAI_API_KEY=sk-... npm run serve（默认端口 3210，PORT 可改）
- *
- * 接口：
- *   GET  /healthz
- *   POST /decks                      {brief, page_count?} → {deck_id}
- *   GET  /decks/:id                  → 任务状态与进度
- *   POST /decks/:id/regenerate       {page, instruction}
- *   GET  /decks/:id/preview?pages=1,2 → JPEG 图片（单页）；JSON base64（多页）
- *   POST /decks/:id/export           {out_path?} → {pptx_path,...}
- */
-import { createServer } from "node:http";
+/** SlideForge 能力层 HTTP 服务：REST、控制台与 MCP 共用任务、队列和鉴权边界。 */
+import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { loadDotEnv } from "../server/env.js";
 
 loadDotEnv();
 
+import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
 import {
-  createDeck,
-  regeneratePage,
-  exportDeck,
-  getDeckPreview,
-  type DeckEvent,
-} from "../capabilities/deck.js";
-import {
-  checkKey,
-  runWithBilling,
-  settleDeck,
-  chargeFixed,
-  listKeys,
-  issueKey,
-  rechargeKey,
-  readLedger,
-  type BillingContext,
+  apiKeyHash, billingEnabled, checkKey, runWithBilling, settleDeck, chargeFixed,
+  listKeys, issueKey, rechargeKey, readLedger, type BillingContext,
 } from "../billing/index.js";
-import { deckJobs, type DeckJob } from "../server/jobs.js";
+import {
+  appendDeckJobEvent, deckJobs, loadDeckJobs, persistDeckJob, type DeckJob,
+} from "../server/jobs.js";
+import { AsyncJobQueue, QueueFullError } from "../server/jobQueue.js";
+import {
+  applySecurityHeaders, FixedWindowRateLimiter, HttpRequestError,
+  readJsonBody, requestIdentity,
+} from "../server/httpSecurity.js";
 import { extractBrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR, loadBrand } from "../brand/store.js";
 import { createSlideForgeMcpServer } from "../mcp/tools.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 
-const jobs = deckJobs;
 const ADMIN_TOKEN = process.env.SLIDEFORGE_ADMIN_TOKEN?.trim();
-// 小内存主机用 DECK_CONCURRENCY=1 或 2 降配（每个生成页都需 LLM+渲染开销）
-const DECK_CONCURRENCY = Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 4)));
+const PORT = Number(process.env.PORT ?? 3210);
+const MAX_BODY_BYTES = Math.max(1024, Number(process.env.MAX_BODY_BYTES ?? 32 * 1024 * 1024));
+const DECK_CONCURRENCY = Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 2)));
+const generationQueue = new AsyncJobQueue(
+  Math.max(1, Number(process.env.DECK_JOB_CONCURRENCY ?? 1)),
+  Math.max(0, Number(process.env.DECK_QUEUE_SIZE ?? 50)),
+);
+const requestLimiter = new FixedWindowRateLimiter(
+  Math.max(1, Number(process.env.RATE_LIMIT_PER_MINUTE ?? 120)), 60_000,
+);
+const createLimiter = new FixedWindowRateLimiter(
+  Math.max(1, Number(process.env.DECK_CREATE_PER_HOUR ?? 20)), 3_600_000,
+);
 
-function adminAuthorized(req: import("node:http").IncomingMessage): boolean {
-  if (!ADMIN_TOKEN) return true; // 未配置 = 本机开发模式
+await loadDeckJobs();
+if (process.env.NODE_ENV === "production" && (!ADMIN_TOKEN || !billingEnabled())) {
+  throw new Error("生产启动前必须配置 SLIDEFORGE_ADMIN_TOKEN，并先通过 scripts/keys.ts 签发至少一个 API key");
+}
+
+function adminAuthorized(req: IncomingMessage): boolean {
+  if (!ADMIN_TOKEN) return true;
   return req.headers["x-admin-token"] === ADMIN_TOKEN;
 }
 
-const PORT = Number(process.env.PORT ?? 3210);
-
-function json(res: import("node:http").ServerResponse, status: number, payload: unknown) {
-  res.writeHead(status, { "content-type": "application/json; charset=utf-8" });
-  res.end(JSON.stringify(payload, null, 2));
+function json(res: ServerResponse, status: number, payload: unknown, headers: Record<string, string> = {}) {
+  res.writeHead(status, { "content-type": "application/json; charset=utf-8", ...headers });
+  res.end(JSON.stringify(payload));
 }
 
-async function readBody(req: import("node:http").IncomingMessage): Promise<Record<string, unknown>> {
-  const chunks: Buffer[] = [];
-  for await (const chunk of req) chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
-  if (!chunks.length) return {};
-  return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+function readBody(req: IncomingMessage) { return readJsonBody(req, MAX_BODY_BYTES); }
+
+async function userAuthorized(req: IncomingMessage, res: ServerResponse): Promise<boolean> {
+  const auth = await checkKey(req.headers["x-api-key"] as string | undefined);
+  if (auth.ok) return true;
+  json(res, 402, { error: auth.reason });
+  return false;
+}
+
+function ownsResource(req: IncomingMessage, ownerKeyHash?: string): boolean {
+  if (!billingEnabled()) return true;
+  return Boolean(ownerKeyHash && ownerKeyHash === apiKeyHash(req.headers["x-api-key"] as string | undefined));
+}
+
+function ownJob(req: IncomingMessage, job: DeckJob | undefined): job is DeckJob {
+  return Boolean(job && ownsResource(req, job.ownerKeyHash));
+}
+
+function safeExportPath(runDir: string, requested: unknown, defaultName: string): string {
+  const candidate = path.resolve(runDir, typeof requested === "string" && requested ? requested : defaultName);
+  if (candidate !== runDir && !candidate.startsWith(`${runDir}${path.sep}`)) {
+    throw new HttpRequestError(400, "out_path 必须位于当前 deck 工作区内");
+  }
+  return candidate;
 }
 
 const server = createServer(async (req, res) => {
+  applySecurityHeaders(res);
   try {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);
-
     if (req.method === "GET" && url.pathname === "/healthz") {
-      return json(res, 200, { ok: true, service: "slideforge-capabilities", jobs: jobs.size });
+      return json(res, 200, {
+        ok: true, service: "slideforge-capabilities", jobs: deckJobs.size,
+        queue: generationQueue.stats, uptime_seconds: Math.round(process.uptime()),
+      });
     }
 
-    // ── M3 控制台（HTML 页面公开加载，/admin/* 接口需 SLIDEFORGE_ADMIN_TOKEN）──
-    if (url.pathname.startsWith("/admin/")) {
-      if (!adminAuthorized(req)) return json(res, 401, { error: "admin unauthorized" });
+    if (!url.pathname.startsWith("/template-cover/")) {
+      const limited = requestLimiter.consume(requestIdentity(req));
+      if (!limited.allowed) {
+        return json(res, 429, { error: "请求过于频繁，请稍后重试" }, { "retry-after": String(limited.retryAfterSeconds) });
+      }
     }
+    if (url.pathname.startsWith("/admin/") && !adminAuthorized(req)) {
+      return json(res, 401, { error: "admin unauthorized" });
+    }
+
     if (req.method === "GET" && url.pathname === "/editor-dnd.js") {
       const { readFile } = await import("node:fs/promises");
       const js = await readFile(new URL("./editor-dnd.js", import.meta.url), "utf8");
@@ -97,9 +119,7 @@ const server = createServer(async (req, res) => {
       res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
       return res.end(html);
     }
-    if (url.pathname === "/admin/keys" && req.method === "GET") {
-      return json(res, 200, await listKeys());
-    }
+    if (url.pathname === "/admin/keys" && req.method === "GET") return json(res, 200, await listKeys());
     if (url.pathname === "/admin/keys" && req.method === "POST") {
       const body = await readBody(req);
       const name = String(body.name ?? "").trim();
@@ -110,26 +130,25 @@ const server = createServer(async (req, res) => {
       const body = await readBody(req);
       return json(res, 200, await rechargeKey(String(body.key), Number(body.points ?? 100)));
     }
-    if (url.pathname === "/admin/ledger" && req.method === "GET") {
-      return json(res, 200, await readLedger());
-    }
+    if (url.pathname === "/admin/ledger" && req.method === "GET") return json(res, 200, await readLedger());
     if (url.pathname === "/admin/decks" && req.method === "GET") {
-      return json(res, 200, [...jobs.values()].map((job) => ({
+      return json(res, 200, [...deckJobs.values()].map((job) => ({
         deck_id: job.id, title: job.title, status: job.status, recent_events: job.events.slice(-2),
       })));
     }
+    if (url.pathname === "/admin/metrics" && req.method === "GET") {
+      return json(res, 200, { queue: generationQueue.stats, memory: process.memoryUsage(), uptime_seconds: process.uptime() });
+    }
 
-    // ── M5 内置模板库 ──
     if (req.method === "GET" && url.pathname === "/templates") {
       const { listTemplates } = await import("../templates/library.js");
       return json(res, 200, await listTemplates());
     }
-    // 模板封面图（presets/<id>/images/ 下第一张 webp）
     const coverMatch = url.pathname.match(/^\/template-cover\/(.+)$/);
     if (req.method === "GET" && coverMatch) {
       const { readdir, readFile } = await import("node:fs/promises");
       const presetId = decodeURIComponent(coverMatch[1]);
-      if (presetId.includes("..")) return json(res, 400, { error: "bad id" });
+      if (presetId.includes("..") || presetId.includes("/") || presetId.includes("\\")) return json(res, 400, { error: "bad id" });
       try {
         const dir = path.resolve(import.meta.dirname, "..", "features", "templates", "presets", presetId, "images");
         const file = (await readdir(dir)).find((name) => name.endsWith(".webp"));
@@ -137,12 +156,12 @@ const server = createServer(async (req, res) => {
         const data = await readFile(path.join(dir, file));
         res.writeHead(200, { "content-type": "image/webp", "cache-control": "public, max-age=86400" });
         return res.end(data);
-      } catch {
-        return json(res, 404, { error: "no cover" });
-      }
+      } catch { return json(res, 404, { error: "no cover" }); }
     }
 
-    // ── M4 品牌模板：上传 pptx → 提取品牌档案 ──
+    if (url.pathname === "/brands" || url.pathname.startsWith("/brands/")) {
+      if (!await userAuthorized(req, res)) return;
+    }
     if (req.method === "POST" && url.pathname === "/brands") {
       const body = await readBody(req);
       const name = String(body.name ?? "").trim();
@@ -155,8 +174,7 @@ const server = createServer(async (req, res) => {
       const buffer = Buffer.from(base64, "base64");
       await writeFile(path.join(dir, "source.pptx"), buffer);
       const profile = await extractBrandProfile(buffer, name);
-      Object.assign(profile, { brand_id: brandId });
-      // M4 固定资产：logo 原样保存，生成时确定性合成（不经模型）
+      Object.assign(profile, { brand_id: brandId, ownerKeyHash: apiKeyHash(req.headers["x-api-key"] as string | undefined) });
       if (typeof body.logo_base64 === "string" && body.logo_base64.length > 0) {
         const ext = typeof body.logo_ext === "string" && /^[a-z]{3,4}$/.test(body.logo_ext) ? body.logo_ext : "png";
         const logoFile = `logo.${ext}`;
@@ -164,8 +182,7 @@ const server = createServer(async (req, res) => {
         Object.assign(profile, {
           logoFile,
           logoPosition: ["top-right", "top-left", "bottom-right", "bottom-left"].includes(String(body.logo_position))
-            ? String(body.logo_position)
-            : "top-right",
+            ? String(body.logo_position) : "top-right",
         });
       }
       await writeFile(path.join(dir, "profile.json"), JSON.stringify(profile, null, 2), "utf8");
@@ -175,41 +192,41 @@ const server = createServer(async (req, res) => {
       const { readdir } = await import("node:fs/promises");
       const { existsSync } = await import("node:fs");
       if (!existsSync(BRANDS_DIR)) return json(res, 200, []);
-      const entries = await readdir(BRANDS_DIR);
       const brands = [];
-      for (const id of entries) {
+      for (const id of await readdir(BRANDS_DIR)) {
         const profile = await loadBrand(id);
-        if (profile) brands.push({ brand_id: id, ...profile });
+        if (profile && ownsResource(req, (profile as { ownerKeyHash?: string }).ownerKeyHash)) {
+          brands.push({ brand_id: id, ...profile });
+        }
       }
       return json(res, 200, brands);
     }
-    // F4 母版对话优化
     const optimizeMatch = url.pathname.match(/^\/brands\/([\w-]+)\/optimize$/);
     if (req.method === "POST" && optimizeMatch) {
       const brandId = optimizeMatch[1];
       const profile = await loadBrand(brandId);
-      if (!profile) return json(res, 404, { error: "品牌不存在" });
+      if (!profile || !ownsResource(req, (profile as { ownerKeyHash?: string }).ownerKeyHash)) {
+        return json(res, 404, { error: "品牌不存在" });
+      }
       const body = await readBody(req);
       const instruction = String(body.instruction ?? "").trim();
       if (!instruction) return json(res, 400, { error: "instruction 不能为空" });
       const { optimizeBrandProfile } = await import("../brand/optimize.js");
       const { writeFile } = await import("node:fs/promises");
       const result = await optimizeBrandProfile(profile, instruction);
+      Object.assign(result.profile, { ownerKeyHash: apiKeyHash(req.headers["x-api-key"] as string | undefined) });
       await writeFile(path.join(BRANDS_DIR, brandId, "profile.json"), JSON.stringify(result.profile, null, 2), "utf8");
       return json(res, 200, { brand_id: brandId, profile: result.profile, drift: result.drift });
     }
 
-    // ── F1 联网研究 ──
     if (req.method === "POST" && url.pathname === "/research") {
+      if (!await userAuthorized(req, res)) return;
       const body = await readBody(req);
       const query = String(body.query ?? "").trim();
       if (!query) return json(res, 400, { error: "query 不能为空" });
       const { researchWeb } = await import("../research/web.js");
-      const result = await researchWeb(query);
-      return json(res, 200, result);
+      return json(res, 200, await researchWeb(query));
     }
-
-    // ── A1 我的用量（按 API key 查询自己的余额与台账）──
     if (req.method === "GET" && url.pathname === "/usage") {
       const { getUsage } = await import("../billing/index.js");
       const usage = await getUsage(req.headers["x-api-key"] as string | undefined);
@@ -217,132 +234,121 @@ const server = createServer(async (req, res) => {
       return json(res, 200, { enabled: true, ...usage });
     }
 
-    // ── 我的作品：deck 列表（本机用户视角）──
+    if (url.pathname === "/decks" || url.pathname.startsWith("/decks/")) {
+      if (!await userAuthorized(req, res)) return;
+    }
     if (req.method === "GET" && url.pathname === "/decks") {
-      return json(res, 200, [...deckJobs.values()].map((job) => ({
-        deck_id: job.id,
-        title: job.title,
-        status: job.status,
-        recent_events: job.events.slice(-2),
+      return json(res, 200, [...deckJobs.values()].filter((job) => ownsResource(req, job.ownerKeyHash)).map((job) => ({
+        deck_id: job.id, title: job.title, status: job.status, recent_events: job.events.slice(-2),
       })));
     }
     if (req.method === "POST" && url.pathname === "/decks") {
+      const limited = createLimiter.consume(requestIdentity(req));
+      if (!limited.allowed) {
+        return json(res, 429, { error: "创建任务超过频率上限，请稍后重试" }, { "retry-after": String(limited.retryAfterSeconds) });
+      }
       const body = await readBody(req);
       const brief = String(body.brief ?? "").trim();
       if (!brief) return json(res, 400, { error: "brief 不能为空" });
       const apiKey = req.headers["x-api-key"] as string | undefined;
-      const auth = await checkKey(apiKey);
-      if (!auth.ok) return json(res, 402, { error: auth.reason });
-      const jobId = `deck-${randomUUID().slice(0, 8)}`;
-      const job: DeckJob = { id: jobId, status: "creating", events: [], overflowPages: [] };
-      jobs.set(jobId, job);
-      const onEvent = (event: DeckEvent) => {
-        job.events.push(`[${event.stage}]${event.page ? ` p${event.page}` : ""} ${event.message}`);
-      };
-      const billingCtx: BillingContext = { apiKey: apiKey ?? "", deckId: jobId, promptTokens: 0, completionTokens: 0 };
       const brandProfile = typeof body.brand_id === "string" ? await loadBrand(body.brand_id) : null;
-      if (typeof body.brand_id === "string" && !brandProfile) {
+      if (typeof body.brand_id === "string" && (!brandProfile || !ownsResource(req, (brandProfile as { ownerKeyHash?: string }).ownerKeyHash))) {
         return json(res, 404, { error: `brand_id 不存在：${body.brand_id}` });
       }
-      // M4 附件解析：提取文本作为生成的事实来源
       let sourceText: string | undefined;
       if (typeof body.attachment_base64 === "string" && body.attachment_base64.length > 0) {
         try {
           const { extractDocumentText } = await import("../documents/extract.js");
-          const extracted = await extractDocumentText(
-            Buffer.from(body.attachment_base64, "base64"),
-            String(body.filename ?? "attachment"),
-          );
+          const extracted = await extractDocumentText(Buffer.from(body.attachment_base64, "base64"), String(body.filename ?? "attachment"));
           sourceText = extracted.text;
-          job.events.push(`[attachment] 解析完成（${extracted.kind}，${extracted.chars} 字符）`);
         } catch (error) {
           return json(res, 400, { error: error instanceof Error ? error.message : String(error) });
         }
       }
-      void (async () => {
-        try {
-          const deck = await runWithBilling(billingCtx, () => createDeck({
-            brief,
-            pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
-            concurrency: DECK_CONCURRENCY,
-            brandProfile: brandProfile ?? undefined,
-            sourceText,
-            templateId: typeof body.template_id === "string" ? body.template_id : undefined,
-            research: body.research === true,
-            onEvent,
-          }));
-          job.runDir = deck.runDir;
-          job.title = deck.outline.title;
-          job.overflowPages = deck.overflowWarnings.map((w) => w.page);
-          job.status = "ready";
-          job.billing = await settleDeck(billingCtx);
-        } catch (error) {
-          job.status = "error";
-          job.error = error instanceof Error ? error.message : String(error);
-        }
-      })();
-      return json(res, 202, { deck_id: jobId, status: job.status });
+      const jobId = `deck-${randomUUID().slice(0, 8)}`;
+      const job: DeckJob = {
+        id: jobId, status: "creating", events: [], overflowPages: [],
+        ownerKeyHash: apiKeyHash(apiKey), createdAt: new Date().toISOString(),
+      };
+      deckJobs.set(jobId, job);
+      const onEvent = (event: DeckEvent) => appendDeckJobEvent(job, event);
+      const billingCtx: BillingContext = { apiKey: apiKey ?? "", deckId: jobId, promptTokens: 0, completionTokens: 0 };
+      try {
+        generationQueue.enqueue(async () => {
+          try {
+            const deck = await runWithBilling(billingCtx, () => createDeck({
+              brief, pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
+              concurrency: DECK_CONCURRENCY, brandProfile: brandProfile ?? undefined,
+              sourceText, templateId: typeof body.template_id === "string" ? body.template_id : undefined,
+              research: body.research === true, onEvent,
+            }));
+            job.runDir = deck.runDir;
+            job.title = deck.outline.title;
+            job.overflowPages = deck.overflowWarnings.map((warning) => warning.page);
+            job.status = "ready";
+            job.billing = await settleDeck(billingCtx);
+          } catch (error) {
+            job.status = "error";
+            job.error = error instanceof Error ? error.message : String(error);
+          } finally { await persistDeckJob(job); }
+        });
+        await persistDeckJob(job);
+      } catch (error) {
+        deckJobs.delete(jobId);
+        if (error instanceof QueueFullError) return json(res, 503, { error: error.message }, { "retry-after": "30" });
+        throw error;
+      }
+      return json(res, 202, { deck_id: jobId, status: job.status, queue: generationQueue.stats });
     }
 
     const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html|theme))?$/);
     if (match) {
       let job = deckJobs.get(match[1]);
-      // 重启后内存任务丢失：从磁盘工作区恢复（runDir 持久化，接口不受影响）
-      if (!job) {
+      if (!job && !billingEnabled()) {
         const { existsSync } = await import("node:fs");
         const runDir = path.resolve(import.meta.dirname, "..", "..", "artifacts", "decks", match[1]);
         if (existsSync(path.join(runDir, "outline.json"))) {
-          job = { id: match[1], runDir, title: undefined, status: "ready", events: [], overflowPages: [] };
+          job = { id: match[1], runDir, status: "ready", events: [], overflowPages: [] };
           deckJobs.set(job.id, job);
         }
       }
-      if (!job) return json(res, 404, { error: "deck 不存在" });
+      if (!ownJob(req, job)) return json(res, 404, { error: "deck 不存在" });
       const action = match[2];
-
       if (req.method === "GET" && !action) {
         return json(res, 200, {
-          deck_id: job.id,
-          status: job.status,
-          title: job.title,
-          recent_events: job.events.slice(-8),
-          overflow_pages: job.overflowPages,
-          billing: job.billing,
-          error: job.error,
+          deck_id: job.id, status: job.status, title: job.title, recent_events: job.events.slice(-8),
+          overflow_pages: job.overflowPages, billing: job.billing, error: job.error,
         });
       }
-
       if (req.method === "POST" && action === "regenerate") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const body = await readBody(req);
-        const result = await regeneratePage({
-          runDir: job.runDir,
-          page: Number(body.page),
-          instruction: String(body.instruction ?? ""),
-        });
+        const result = await generationQueue.submit(() => regeneratePage({
+          runDir: job.runDir!, page: Number(body.page), instruction: String(body.instruction ?? ""),
+        }));
         return json(res, 200, { deck_id: job.id, status: "regenerated", overflow_warnings: result.overflowWarnings, drift_report: result.drift });
       }
-
       if (req.method === "GET" && action === "preview") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const pages = url.searchParams.get("pages")?.split(",").map(Number).filter(Boolean);
-        const images = await getDeckPreview({ runDir: job.runDir, pages });
+        const images = await generationQueue.submit(() => getDeckPreview({ runDir: job.runDir!, pages }));
         if (images.length === 1) {
-          res.writeHead(200, { "content-type": "image/jpeg" });
+          res.writeHead(200, { "content-type": "image/jpeg", "cache-control": "private, max-age=60" });
           return res.end(Buffer.from(images[0].base64, "base64"));
         }
         return json(res, 200, { deck_id: job.id, images });
       }
-
       if (req.method === "POST" && action === "reimport") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const body = await readBody(req);
         const base64 = String(body.pptx_base64 ?? "");
         if (!base64) return json(res, 400, { error: "pptx_base64 必填" });
         const { reimportDeck } = await import("../capabilities/deck.js");
-        const result = await reimportDeck({ runDir: job.runDir, pptxBuffer: Buffer.from(base64, "base64") });
+        const result = await generationQueue.submit(() => reimportDeck({
+          runDir: job.runDir!, pptxBuffer: Buffer.from(base64, "base64"),
+        }));
         return json(res, 200, { deck_id: job.id, status: "reimported", ...result, hint: "调用 export 导出新版本" });
       }
-
       if (action === "page-html") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const pageNumber = Number(url.searchParams.get("page") ?? 0);
@@ -350,59 +356,80 @@ const server = createServer(async (req, res) => {
           const { readFile } = await import("node:fs/promises");
           try {
             const html = await readFile(path.join(job.runDir, `page-${pageNumber}.html`), "utf8");
-            res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
+            res.writeHead(200, { "content-type": "text/html; charset=utf-8", "content-security-policy": "sandbox; default-src 'none'; img-src data: file:; style-src 'unsafe-inline'" });
             return res.end(html);
-          } catch {
-            return json(res, 404, { error: `第 ${pageNumber} 页不存在` });
-          }
+          } catch { return json(res, 404, { error: `第 ${pageNumber} 页不存在` }); }
         }
         if (req.method === "POST") {
           const body = await readBody(req);
           const { updatePageHtml } = await import("../capabilities/deck.js");
-          const result = await updatePageHtml({ runDir: job.runDir, page: Number(body.page), html: String(body.html ?? "") });
+          const result = await generationQueue.submit(() => updatePageHtml({
+            runDir: job.runDir!, page: Number(body.page), html: String(body.html ?? ""),
+          }));
           return json(res, 200, { deck_id: job.id, status: "page-updated", ...result });
         }
       }
-
       if (req.method === "POST" && action === "theme") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const body = await readBody(req);
         const { applyTheme } = await import("../capabilities/deck.js");
-        const result = await applyTheme({ runDir: job.runDir, templateId: typeof body.template_id === "string" ? body.template_id : undefined });
+        const result = await generationQueue.submit(() => applyTheme({
+          runDir: job.runDir!, templateId: typeof body.template_id === "string" ? body.template_id : undefined,
+        }));
         return json(res, 200, { deck_id: job.id, status: "theme-applied", ...result });
       }
-
       if (req.method === "POST" && action === "export") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
-        const apiKey = req.headers["x-api-key"] as string | undefined;
-        const auth = await checkKey(apiKey);
-        if (!auth.ok) return json(res, 402, { error: auth.reason });
         const body = await readBody(req);
         const format = body.format === "pdf" ? "pdf" : "pptx";
         const defaultName = format === "pdf" ? "deck.pdf" : "deck.pptx";
-        const outPath = typeof body.out_path === "string" ? body.out_path : path.join(job.runDir, defaultName);
-        const result = await exportDeck({ runDir: job.runDir, outPath, format });
-        const charge = await chargeFixed(apiKey, job.id, "export");
+        const outPath = safeExportPath(job.runDir, body.out_path, defaultName);
+        const result = await generationQueue.submit(() => exportDeck({ runDir: job.runDir!, outPath, format }));
+        const charge = await chargeFixed(req.headers["x-api-key"] as string | undefined, job.id, "export");
         return json(res, 200, { ...result, billing: charge });
       }
     }
 
-    // ── MCP Streamable HTTP（远程 AI 客户端接入点，无状态模式）──
     if (url.pathname === "/mcp") {
-      const mcpServer = createSlideForgeMcpServer();
+      if (!await userAuthorized(req, res)) return;
+      const apiKey = req.headers["x-api-key"] as string | undefined;
+      const mcpServer = createSlideForgeMcpServer({ apiKey, queue: generationQueue, deckConcurrency: DECK_CONCURRENCY });
       const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
       await mcpServer.connect(transport);
-      const body = req.method === "POST" ? await readBody(req) : undefined;
-      await transport.handleRequest(req, res, body);
+      try {
+        const body = req.method === "POST" ? await readBody(req) : undefined;
+        await transport.handleRequest(req, res, body);
+      } finally { await mcpServer.close(); }
       return;
     }
-
     return json(res, 404, { error: "not found", path: url.pathname });
   } catch (error) {
-    return json(res, 500, { error: error instanceof Error ? error.message : String(error) });
+    if (res.headersSent) return res.end();
+    if (error instanceof QueueFullError) {
+      return json(res, 503, { error: error.message }, { "retry-after": "30" });
+    }
+    const status = error instanceof HttpRequestError ? error.status : 500;
+    return json(res, status, { error: error instanceof Error ? error.message : String(error) });
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`[slideforge] capability server listening on http://localhost:${PORT}`);
-});
+server.requestTimeout = 60_000;
+server.headersTimeout = 15_000;
+server.keepAliveTimeout = 5_000;
+server.listen(PORT, () => console.log(`[slideforge] capability server listening on http://localhost:${PORT}`));
+
+let shuttingDown = false;
+async function shutdown() {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  server.close();
+  const force = setTimeout(() => process.exit(1), 30_000);
+  force.unref();
+  server.closeAllConnections();
+  const { closeValidatorBrowser } = await import("../../scripts/m0/validatePage.js");
+  await closeValidatorBrowser().catch(() => undefined);
+  clearTimeout(force);
+  process.exit(0);
+}
+process.once("SIGTERM", () => void shutdown());
+process.once("SIGINT", () => void shutdown());
