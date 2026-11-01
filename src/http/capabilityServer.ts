@@ -286,7 +286,16 @@ const server = createServer(async (req, res) => {
 
     const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html|theme))?$/);
     if (match) {
-      const job = jobs.get(match[1]);
+      let job = deckJobs.get(match[1]);
+      // 重启后内存任务丢失：从磁盘工作区恢复（runDir 持久化，接口不受影响）
+      if (!job) {
+        const { existsSync } = await import("node:fs");
+        const runDir = path.resolve(import.meta.dirname, "..", "..", "artifacts", "decks", match[1]);
+        if (existsSync(path.join(runDir, "outline.json"))) {
+          job = { id: match[1], runDir, title: undefined, status: "ready", events: [], overflowPages: [] };
+          deckJobs.set(job.id, job);
+        }
+      }
       if (!job) return json(res, 404, { error: "deck 不存在" });
       const action = match[2];
 
