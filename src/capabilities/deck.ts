@@ -8,12 +8,10 @@ import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
 import os from "node:os";
 
 import { llmComplete } from "../../scripts/m0/llmClient.js";
-import { buildOutlineMessages, buildPageMessages } from "../../scripts/m0/prompts.js";
+import { buildOutlineMessagesViaBrain, buildPageMessagesViaBrain, generateOutlineViaBrain, remoteBrainEnabled } from "../server/brainClient.js";
 import { extractHtmlDocument, splitSlideDocument, buildDeckHtml } from "../../scripts/m0/deck.js";
 import {
   validateSlideHtmlFile,
-  validateDeckHtmlFile,
-  closeValidatorBrowser,
   type SlideIssue,
 } from "../../scripts/m0/validatePage.js";
 import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
@@ -24,31 +22,16 @@ import { extractPptxSlideTexts, normalizeTextSet } from "../documents/pptxText.j
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR } from "../brand/store.js";
 import { getTemplateReference } from "../templates/library.js";
+import type { CreateDeckInput as ContractCreateDeckInput, DeckEvent } from "../contracts/deck.js";
+import { newDeckId } from "../contracts/ids.js";
+import { createDeckWorkspace } from "./workspace.js";
+
+export type { DeckEvent } from "../contracts/deck.js";
 
 export interface OutlinePage { title: string; bullets: string[] }
 export interface Outline { title: string; pages: OutlinePage[] }
 
-export interface DeckEvent {
-  stage: "outline" | "page" | "assemble" | "export" | "done" | "regenerate";
-  message: string;
-  page?: number;
-  totalPages?: number;
-}
-
-export interface CreateDeckInput {
-  brief: string;
-  pageCount?: number;
-  concurrency?: number;
-  decksRoot?: string;
-  brandProfile?: BrandProfile;
-  /** 附件提取文本（作为唯一事实来源注入生成） */
-  sourceText?: string;
-  /** 联网研究：生成前自动检索并注入带来源的资料 */
-  research?: boolean;
-  /** 内置模板 id（98 套 Visual Style Preset 之一），作为风格参照 */
-  templateId?: string;
-  onEvent?: (event: DeckEvent) => void;
-}
+export interface CreateDeckInput extends ContractCreateDeckInput<BrandProfile> {}
 
 export interface CreateDeckResult {
   deckId: string;
@@ -83,7 +66,8 @@ function ensureRuntimeEnv() {
 }
 
 async function generateOutline(brief: string, pageCount: number): Promise<Outline> {
-  const result = await llmComplete(buildOutlineMessages(brief, pageCount));
+  if (remoteBrainEnabled()) return generateOutlineViaBrain(brief, pageCount);
+  const result = await llmComplete(await buildOutlineMessagesViaBrain(brief, pageCount));
   let json = result.text.trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
   const begin = json.indexOf("{");
   const end = json.lastIndexOf("}");
@@ -116,7 +100,7 @@ async function generatePage(
   let lastIssues: SlideIssue[] = [];
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
-      const messages = buildPageMessages({
+      const messages = await buildPageMessagesViaBrain({
         deckTitle: ctx.outline.title,
         brief: ctx.brief,
         outlineJson: JSON.stringify(ctx.outline),
@@ -192,9 +176,8 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   const pageCount = Math.max(2, Math.min(20, input.pageCount ?? 8));
   const concurrency = Math.max(1, Math.min(5, input.concurrency ?? 3));
   const decksRoot = input.decksRoot ?? defaultDecksRoot();
-  const deckId = `deck-${Date.now()}`;
-  const runDir = path.join(decksRoot, deckId);
-  await mkdir(runDir, { recursive: true });
+  const deckId = input.deckId ?? newDeckId();
+  const runDir = await createDeckWorkspace(decksRoot, deckId);
 
   // M4 固定资产：logo 拷贝进工作区，组装时确定性合成（不经模型）
   let logo: { src: string; position?: "top-right" | "top-left" | "bottom-right" | "bottom-left" } | undefined;
@@ -268,7 +251,6 @@ export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResu
   emit({ stage: "assemble", message: "组装 deck.html" });
   await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({ title: outline.title, slides, logo }), "utf8");
   await writeFile(path.join(runDir, "run-report.json"), JSON.stringify({ brief: input.brief, pageCount, outline, overflowWarnings }, null, 2), "utf8");
-  await closeValidatorBrowser();
   return { deckId, runDir, outline, overflowWarnings };
 }
 
@@ -315,7 +297,6 @@ export async function regeneratePage(input: {
       "utf8",
     );
   }
-  await closeValidatorBrowser();
   return { overflowWarnings, drift };
 }
 
@@ -390,7 +371,6 @@ ${slideTexts[index].join("；").slice(0, 1500)}
     JSON.stringify({ changedPages, unchangedPages, report, overflowWarnings, ts: new Date().toISOString() }, null, 2),
     "utf8",
   );
-  await closeValidatorBrowser();
   return { changedPages, unchangedPages, report };
 }
 
@@ -428,7 +408,6 @@ export async function updatePageHtml(input: {
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
   const validation = await validateSlideHtmlFile(pageFile);
   if (!validation.ok) overflowWarnings.push({ page: input.page, issues: validation.issues });
-  await closeValidatorBrowser();
   return { drift, overflowWarnings };
 }
 
@@ -472,7 +451,6 @@ export async function applyTheme(input: {
     );
   }
   await assembleDeck(runDir, outline.title, outline.pages.length);
-  await closeValidatorBrowser();
   return { templateId };
 }
 

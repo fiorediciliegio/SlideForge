@@ -1,4 +1,5 @@
 node_modules/
+.tooling/
 bundle/
 dist/
 screenshots/
@@ -15,3 +16,8 @@ artifacts/
 data/
 .env
 .env.local
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/

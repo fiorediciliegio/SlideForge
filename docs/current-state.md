@@ -45,10 +45,18 @@
 | `scripts/keys.ts` | key 签发/充值/列表 CLI |
 | `integrations/wps-addon/` | WPS 加载项骨架（实机验证中） |
 
+## 现役与 legacy 退役结果
+
+- 现役主链路为 HTTP 薄壳 / CLI / MCP → `src/contracts` → Capability API；新任务的任务 ID、计费 ID 和工作区目录统一为同一个 `deck_id`。
+- React／Host 旧体系及其测试已通过依赖可达性审计分批删除；根级 React／Vite 依赖和 legacy 入口已清理。
+- `src/features/templates/presets` 是现役共享资产，已完整保留；`dev` 是现役 `serve` 的别名。
+
 ## 验证方式
 
 | 验证 | 命令/位置 |
 |---|---|
+| 核心门禁 | `npm run check && npm run test:core` |
+| 全量现役测试 | `npm run test:unit`；Go 网关使用 `npm run test:gateway` |
 | 端到端生成 | `npm run generate -- --brief "测试" --pages 2 --out artifacts/t.pptx` |
 | MCP 全链路 | `npm run mcp:smoke`（含图片预览） |
 | HTTP 全链路 | `npm run serve` 后按 deployment.md §四-3 curl |
@@ -62,11 +70,10 @@
 
 ## 待办（按优先级）
 
-1. **人工验收**（用户）：WPS 目检清单 + WPS 加载项实机验证；
-2. **生产化**：部署到云主机（deploy/ 套件与本机彩排已就绪；管理员鉴权与 MCP Streamable HTTP 已完成）；
-3. **M4/M5 已交付**（品牌资产/附件/偏离度审计/模板库/自动推荐）；
-4. **后续候选**：~~Go 网关替换 Node HTTP 层（高并发）~~、~~完整 HTML 方言白名单契约（D2 收尾）~~、~~CI 保真回归（D6）~~、PasteHtml 内容级写回探索。
-5. **M6 深度优化已交付**（我的用量页/工作台空状态/编辑区扩展/导出命名/错误统一 toast/tsc 清零），见 `docs/notes/20261101-M6交付记录.md`。
+1. **P0 架构收敛（已完成）**：统一纯契约、`deck_id` 与工作区，退役 React／Host legacy，现役测试独立运行。
+2. **P1 目标架构**：按总纲建立跨服务 `contracts/` 与 Go 骨架层；Node 收敛为引擎服务，Python 承接大脑层。
+3. **人工验收**（用户）：WPS 目检清单 + WPS 加载项实机验证。
+4. **已交付**：M4/M5 品牌与模板能力、M6 产品交互优化、D2 方言契约、D6 CI 保真回归。
 
 ## 不要做的事
 

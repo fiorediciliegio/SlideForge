@@ -89,7 +89,7 @@
       const keys = await api("/admin/keys");
       $("totalKeys").textContent = keys.length;
       $("keyTable").querySelector("tbody").innerHTML = keys.map(k =>
-        `<tr><td>${k.name}</td><td class="muted">${k.key.slice(0, 12)}…</td><td>${k.balance}</td>
+        `<tr><td>${k.name}</td><td class="muted">${k.key_prefix}…</td><td>${k.balance}</td>
          <td><button class="mini" onclick="recharge('${k.key}')">+100</button></td></tr>`).join("");
     }
     async function issue() {

@@ -1,0 +1,15 @@
+[Unit]
+Description=SlideForge Node engine
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/slideforge
+EnvironmentFile=/opt/slideforge/.env
+ExecStart=/usr/bin/node --import tsx/esm src/http/engineServer.ts
+Restart=always
+RestartSec=5
+MemoryMax=1536M
+
+[Install]
+WantedBy=multi-user.target

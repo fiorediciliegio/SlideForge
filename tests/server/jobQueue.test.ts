@@ -3,20 +3,24 @@ import test from "node:test";
 
 import { AsyncJobQueue, QueueFullError } from "../../src/server/jobQueue.ts";
 
-test("queue enforces concurrency and drains pending tasks", async () => {
+test("queue enforces concurrency and drains pending tasks", { timeout: 1_000 }, async () => {
   const queue = new AsyncJobQueue(2, 3);
   let active = 0;
   let maximumActive = 0;
   let completed = 0;
+  let markDrained = () => {};
+  const drained = new Promise<void>((resolve) => { markDrained = resolve; });
   const task = async () => {
     active++;
     maximumActive = Math.max(maximumActive, active);
     await new Promise((resolve) => setTimeout(resolve, 5));
     active--;
     completed++;
+    if (completed === 5) markDrained();
   };
   for (let index = 0; index < 5; index++) queue.enqueue(task);
-  await new Promise((resolve) => setTimeout(resolve, 40));
+  await drained;
+  await new Promise((resolve) => setImmediate(resolve));
   assert.equal(maximumActive, 2);
   assert.equal(completed, 5);
   assert.deepEqual(queue.stats, { active: 0, pending: 0, concurrency: 2, maxPending: 3 });

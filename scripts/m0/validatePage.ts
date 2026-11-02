@@ -28,20 +28,33 @@ function chromePath(): string {
 
 let browserPromise: Promise<any> | null = null;
 async function getBrowser() {
-  browserPromise ??= puppeteer.launch({
-    executablePath: chromePath(),
-    headless: true,
-    args: ["--no-sandbox", "--disable-gpu"],
-  });
+  if (!browserPromise) {
+    const pending = puppeteer.launch({
+      executablePath: chromePath(),
+      headless: true,
+      args: ["--no-sandbox", "--disable-gpu"],
+    });
+    browserPromise = pending;
+    void pending.then((browser: any) => {
+      browser.once("disconnected", () => {
+        if (browserPromise === pending) browserPromise = null;
+      });
+    }).catch(() => {
+      if (browserPromise === pending) browserPromise = null;
+    });
+  }
   return browserPromise;
 }
 
+/** 仅进程退出或显式维护时调用；业务任务不能关闭其他任务正在复用的浏览器。 */
 export async function closeValidatorBrowser() {
-  if (browserPromise) {
-    const browser = await browserPromise;
+  const pending = browserPromise;
+  browserPromise = null;
+  if (!pending) return;
+  try {
+    const browser = await pending;
     await browser.close();
-    browserPromise = null;
-  }
+  } catch { /* 启动失败或已经断连时无需重复清理 */ }
 }
 
 /** 共享浏览器实例（缩略图渲染等复用）。 */

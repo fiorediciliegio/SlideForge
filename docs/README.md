@@ -50,6 +50,8 @@
 | [deployment.md](deployment.md) | 部署运行手册（安装/三种启动/计费 key 管理） | active · 2026-10-30 |
 | [notes/20261101-M6交付记录.md](notes/20261101-M6交付记录.md) | M6：用量页/空状态/编辑区扩展/导出命名/错误统一 | done · 2026-11-01 |
 | [plans/20261101-深度全面优化计划.md](plans/20261101-深度全面优化计划.md) | 深度全面优化计划（已完成） | done · 2026-11-01 |
+| [plans/20261101-P1三服务骨架.md](plans/20261101-P1三服务骨架.md) | P1：跨服务契约与 Go／Node／Python 三服务骨架 | active · 2026-11-01 |
+| [plans/20261101-P2生产存储.md](plans/20261101-P2生产存储.md) | P2：认证计费 PostgreSQL、任务 outbox 与对象存储路线 | active · 2026-11-01 |
 | [notes/20261030-M4M5交付记录.md](notes/20261030-M4M5交付记录.md) | M4/M5：品牌资产/附件/偏离度审计/模板库/自动推荐 | done · 2026-10-30 |
 | [notes/20261030-D4-WPS插件spike.md](notes/20261030-D4-WPS插件spike.md) | D4：WPS 插件可行（文档级），实机验证清单 | active · 2026-10-30 |
 | [notes/20261029-M1交付记录.md](notes/20261029-M1交付记录.md) | M1：能力层/版面闸门/MCP Server | done · 2026-10-29 |

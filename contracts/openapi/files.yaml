@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: SlideForge File Service API
+  version: 0.1.0
+  description: Go 独占导出文件元数据与对象，Node 通过内部接口发布，公共下载按 API key 隔离。
+paths:
+  /internal/files:
+    post:
+      operationId: publishFile
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [deck_id, name, media_type, content_base64, ownerKeyHash]
+              properties:
+                deck_id: { type: string }
+                name: { type: string }
+                media_type: { type: string, enum: [application/vnd.openxmlformats-officedocument.presentationml.presentation, application/pdf] }
+                content_base64: { type: string }
+                ownerKeyHash: { type: string }
+      responses:
+        "200":
+          description: 文件发布结果
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/File" }
+        "400":
+          description: 文件为空、格式无效或超过大小限制
+  /files/{file_id}:
+    get:
+      operationId: downloadFile
+      parameters:
+        - { name: file_id, in: path, required: true, schema: { type: string } }
+        - { name: X-API-Key, in: header, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: 文件二进制内容
+          content:
+            application/octet-stream:
+              schema: { type: string, format: binary }
+        "404":
+          description: 文件不存在或不属于当前用户
+  /decks/{deck_id}/files:
+    get:
+      operationId: listDeckFiles
+      parameters:
+        - { name: deck_id, in: path, required: true, schema: { type: string } }
+        - { name: X-API-Key, in: header, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: 当前用户在该作品下的文件列表
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/File" }
+components:
+  parameters:
+    InternalToken:
+      name: X-Internal-Token
+      in: header
+      required: true
+      schema: { type: string }
+  schemas:
+    File:
+      type: object
+      required: [file_id, deck_id, name, media_type, size_bytes, download_url, created_at]
+      properties:
+        file_id: { type: string }
+        deck_id: { type: string }
+        name: { type: string }
+        media_type: { type: string }
+        size_bytes: { type: integer }
+        download_url: { type: string }
+        created_at: { type: string }

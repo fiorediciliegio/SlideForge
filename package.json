@@ -13,37 +13,32 @@
     "preset-previews:convert": "npm --prefix ./tools/visual-style-preset-preview-renderer run convert-images --",
     "preset-previews:check": "npm --prefix ./tools/visual-style-preset-preview-renderer run check --",
     "preset-previews:test": "npm --prefix ./tools/visual-style-preset-preview-renderer test",
-    "ppt:check-env": "node ./scripts/run-ppt-pipeline.mjs check-env",
-    "ppt:generate": "node ./scripts/run-ppt-pipeline.mjs generate",
-    "ppt:generate-tsx": "node ./scripts/run-ppt-pipeline.mjs generate-tsx",
-    "dev": "vite",
-    "build": "vite build --outDir bundle",
+    "dev": "node scripts/dev-services.mjs",
+    "dev:legacy": "npm run serve",
     "generate": "node --import tsx/esm scripts/m0-generate.ts",
     "mcp": "node --import tsx/esm src/mcp/server.ts",
     "serve": "node --import tsx/esm src/http/capabilityServer.ts",
+    "serve:engine": "node --import tsx/esm src/http/engineServer.ts",
+    "serve:brain": "cd services/brain && python -m brain.app",
+    "serve:gateway": "cd services/gateway && go run ./cmd/gateway",
+    "test:gateway": "cd services/gateway && go test ./... && go vet ./...",
+    "test:integration": "node scripts/integration-up.mjs",
+    "test:brain": "cd services/brain && python -m unittest discover -s tests -v",
     "mcp:smoke": "node --import tsx/esm scripts/mcp-smoke.ts",
     "ci:fidelity": "node --import tsx/esm scripts/ci-fidelity.ts",
     "check": "tsc --noEmit",
+    "test:core": "node --import tsx/esm --test tests/contracts/**/*.test.ts tests/capabilities/**/*.test.ts tests/server/**/*.test.ts",
     "test:unit": "node --import tsx/esm --test tests/**/*.test.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "lucide-react": "^0.468.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-moveable": "^0.56.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^20.19.17",
-    "@types/react": "^18.3.24",
-    "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react": "^4.3.0",
-    "linkedom": "^0.18.13",
     "sharp": "^0.34.5",
     "tsx": "^4.22.3",
-    "typescript": "^5.9.2",
-    "vite": "^5.4.0"
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=22"

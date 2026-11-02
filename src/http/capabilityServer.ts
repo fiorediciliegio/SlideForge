@@ -8,13 +8,15 @@ loadDotEnv();
 
 import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
 import {
-  apiKeyHash, billingEnabled, checkKey, runWithBilling, settleDeck, chargeFixed,
+  apiKeyHash, billingEnabled, checkKey, runWithBilling, settleDeck,
   listKeys, issueKey, rechargeKey, readLedger, type BillingContext,
 } from "../billing/index.js";
 import {
-  appendDeckJobEvent, deckJobs, loadDeckJobs, persistDeckJob, type DeckJob,
+  appendDeckJobEvent, createDeckJob, deckJobs, deleteDeckJob, getDeckJob,
+  listDeckJobs, loadDeckJobs, persistDeckJob, remoteJobsEnabled, type DeckJob,
 } from "../server/jobs.js";
 import { AsyncJobQueue, QueueFullError } from "../server/jobQueue.js";
+import { runIdempotentExport } from "../server/exportCoordinator.js";
 import {
   applySecurityHeaders, FixedWindowRateLimiter, HttpRequestError,
   readJsonBody, requestIdentity,
@@ -23,6 +25,10 @@ import { extractBrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR, loadBrand } from "../brand/store.js";
 import { createSlideForgeMcpServer } from "../mcp/tools.js";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import { createDeckHttpSchema, toDeckJobDto } from "../contracts/deck.js";
+import { apiError } from "../contracts/errors.js";
+import { newDeckId } from "../contracts/ids.js";
+import { extractDocumentViaBrain, remoteBrainEnabled } from "../server/brainClient.js";
 
 const ADMIN_TOKEN = process.env.SLIDEFORGE_ADMIN_TOKEN?.trim();
 const PORT = Number(process.env.PORT ?? 3210);
@@ -50,8 +56,12 @@ function adminAuthorized(req: IncomingMessage): boolean {
 }
 
 function json(res: ServerResponse, status: number, payload: unknown, headers: Record<string, string> = {}) {
+  const normalized = typeof payload === "object" && payload !== null && !Array.isArray(payload)
+    && "error" in payload && typeof payload.error === "string"
+    ? { ...apiError(status, payload.error), ...payload }
+    : payload;
   res.writeHead(status, { "content-type": "application/json; charset=utf-8", ...headers });
-  res.end(JSON.stringify(payload));
+  res.end(JSON.stringify(normalized));
 }
 
 function readBody(req: IncomingMessage) { return readJsonBody(req, MAX_BODY_BYTES); }
@@ -86,7 +96,7 @@ const server = createServer(async (req, res) => {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);
     if (req.method === "GET" && url.pathname === "/healthz") {
       return json(res, 200, {
-        ok: true, service: "slideforge-capabilities", jobs: deckJobs.size,
+        ok: true, service: "slideforge-capabilities", jobs: (await listDeckJobs()).length,
         queue: generationQueue.stats, uptime_seconds: Math.round(process.uptime()),
       });
     }
@@ -132,7 +142,7 @@ const server = createServer(async (req, res) => {
     }
     if (url.pathname === "/admin/ledger" && req.method === "GET") return json(res, 200, await readLedger());
     if (url.pathname === "/admin/decks" && req.method === "GET") {
-      return json(res, 200, [...deckJobs.values()].map((job) => ({
+      return json(res, 200, (await listDeckJobs()).map((job) => ({
         deck_id: job.id, title: job.title, status: job.status, recent_events: job.events.slice(-2),
       })));
     }
@@ -238,7 +248,7 @@ const server = createServer(async (req, res) => {
       if (!await userAuthorized(req, res)) return;
     }
     if (req.method === "GET" && url.pathname === "/decks") {
-      return json(res, 200, [...deckJobs.values()].filter((job) => ownsResource(req, job.ownerKeyHash)).map((job) => ({
+      return json(res, 200, (await listDeckJobs()).filter((job) => ownsResource(req, job.ownerKeyHash)).map((job) => ({
         deck_id: job.id, title: job.title, status: job.status, recent_events: job.events.slice(-2),
       })));
     }
@@ -247,39 +257,54 @@ const server = createServer(async (req, res) => {
       if (!limited.allowed) {
         return json(res, 429, { error: "创建任务超过频率上限，请稍后重试" }, { "retry-after": String(limited.retryAfterSeconds) });
       }
-      const body = await readBody(req);
-      const brief = String(body.brief ?? "").trim();
-      if (!brief) return json(res, 400, { error: "brief 不能为空" });
+      const parsed = createDeckHttpSchema.safeParse(await readBody(req));
+      if (!parsed.success) {
+        return json(res, 400, {
+          error: "请求参数无效",
+          details: parsed.error.issues.map((issue) => ({ path: issue.path.join("."), message: issue.message })),
+        });
+      }
+      const body = parsed.data;
       const apiKey = req.headers["x-api-key"] as string | undefined;
-      const brandProfile = typeof body.brand_id === "string" ? await loadBrand(body.brand_id) : null;
-      if (typeof body.brand_id === "string" && (!brandProfile || !ownsResource(req, (brandProfile as { ownerKeyHash?: string }).ownerKeyHash))) {
+      const brandProfile = body.brand_id ? await loadBrand(body.brand_id) : null;
+      if (body.brand_id && (!brandProfile || !ownsResource(req, (brandProfile as { ownerKeyHash?: string }).ownerKeyHash))) {
         return json(res, 404, { error: `brand_id 不存在：${body.brand_id}` });
       }
       let sourceText: string | undefined;
-      if (typeof body.attachment_base64 === "string" && body.attachment_base64.length > 0) {
+      if (body.attachment_base64) {
         try {
-          const { extractDocumentText } = await import("../documents/extract.js");
-          const extracted = await extractDocumentText(Buffer.from(body.attachment_base64, "base64"), String(body.filename ?? "attachment"));
-          sourceText = extracted.text;
+          const content = Buffer.from(body.attachment_base64, "base64");
+          const filename = body.filename ?? "attachment";
+          if (remoteBrainEnabled()) {
+            const extracted = await extractDocumentViaBrain(content, filename);
+            sourceText = extracted.text;
+          } else {
+            const { extractDocumentText } = await import("../documents/extract.js");
+            const extracted = await extractDocumentText(content, filename);
+            sourceText = extracted.text;
+          }
         } catch (error) {
           return json(res, 400, { error: error instanceof Error ? error.message : String(error) });
         }
       }
-      const jobId = `deck-${randomUUID().slice(0, 8)}`;
+      const jobId = newDeckId();
       const job: DeckJob = {
         id: jobId, status: "creating", events: [], overflowPages: [],
         ownerKeyHash: apiKeyHash(apiKey), createdAt: new Date().toISOString(),
       };
-      deckJobs.set(jobId, job);
-      const onEvent = (event: DeckEvent) => appendDeckJobEvent(job, event);
+      await createDeckJob(job);
+      const onEvent = (event: DeckEvent) => {
+        appendDeckJobEvent(job, event);
+        if (remoteJobsEnabled()) void persistDeckJob(job).catch(() => undefined);
+      };
       const billingCtx: BillingContext = { apiKey: apiKey ?? "", deckId: jobId, promptTokens: 0, completionTokens: 0 };
       try {
         generationQueue.enqueue(async () => {
           try {
             const deck = await runWithBilling(billingCtx, () => createDeck({
-              brief, pageCount: typeof body.page_count === "number" ? body.page_count : undefined,
+              deckId: jobId, brief: body.brief, pageCount: body.page_count,
               concurrency: DECK_CONCURRENCY, brandProfile: brandProfile ?? undefined,
-              sourceText, templateId: typeof body.template_id === "string" ? body.template_id : undefined,
+              sourceText, templateId: body.template_id,
               research: body.research === true, onEvent,
             }));
             job.runDir = deck.runDir;
@@ -292,9 +317,8 @@ const server = createServer(async (req, res) => {
             job.error = error instanceof Error ? error.message : String(error);
           } finally { await persistDeckJob(job); }
         });
-        await persistDeckJob(job);
       } catch (error) {
-        deckJobs.delete(jobId);
+        await deleteDeckJob(jobId);
         if (error instanceof QueueFullError) return json(res, 503, { error: error.message }, { "retry-after": "30" });
         throw error;
       }
@@ -303,7 +327,7 @@ const server = createServer(async (req, res) => {
 
     const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html|theme))?$/);
     if (match) {
-      let job = deckJobs.get(match[1]);
+      let job = await getDeckJob(match[1]);
       if (!job && !billingEnabled()) {
         const { existsSync } = await import("node:fs");
         const runDir = path.resolve(import.meta.dirname, "..", "..", "artifacts", "decks", match[1]);
@@ -315,10 +339,7 @@ const server = createServer(async (req, res) => {
       if (!ownJob(req, job)) return json(res, 404, { error: "deck 不存在" });
       const action = match[2];
       if (req.method === "GET" && !action) {
-        return json(res, 200, {
-          deck_id: job.id, status: job.status, title: job.title, recent_events: job.events.slice(-8),
-          overflow_pages: job.overflowPages, billing: job.billing, error: job.error,
-        });
+        return json(res, 200, toDeckJobDto(job));
       }
       if (req.method === "POST" && action === "regenerate") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
@@ -384,9 +405,17 @@ const server = createServer(async (req, res) => {
         const format = body.format === "pdf" ? "pdf" : "pptx";
         const defaultName = format === "pdf" ? "deck.pdf" : "deck.pptx";
         const outPath = safeExportPath(job.runDir, body.out_path, defaultName);
-        const result = await generationQueue.submit(() => exportDeck({ runDir: job.runDir!, outPath, format }));
-        const charge = await chargeFixed(req.headers["x-api-key"] as string | undefined, job.id, "export");
-        return json(res, 200, { ...result, billing: charge });
+        const apiKey = req.headers["x-api-key"] as string | undefined;
+        const idempotencyKey = req.headers["idempotency-key"];
+        const result = await generationQueue.submit(() => runIdempotentExport({
+          apiKey, ownerKeyHash: job.ownerKeyHash, deckId: job.id, runDir: job.runDir!,
+          format, outPath,
+          idempotencyKey: typeof body.idempotency_key === "string"
+            ? body.idempotency_key
+            : typeof idempotencyKey === "string" ? idempotencyKey : undefined,
+          execute: () => exportDeck({ runDir: job.runDir!, outPath, format }),
+        }));
+        return json(res, 200, result);
       }
     }
 

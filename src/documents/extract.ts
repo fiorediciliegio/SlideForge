@@ -3,6 +3,7 @@
  * 确定性提取，提取文本作为生成的唯一事实来源。
  */
 import { createRequire } from "node:module";
+import { extractDocumentViaBrain, remoteBrainEnabled } from "../server/brainClient.js";
 
 const engineRequire = createRequire(
   new URL("../../executas/ppt-engine/package.json", import.meta.url),
@@ -16,6 +17,14 @@ export interface ExtractedDocument {
 }
 
 export async function extractDocumentText(buffer: Buffer, filename: string): Promise<ExtractedDocument> {
+  if (remoteBrainEnabled()) {
+    const result = await extractDocumentViaBrain(buffer, filename);
+    return {
+      text: result.text,
+      chars: result.chars,
+      kind: result.kind === "txt" ? "text" : result.kind as "docx" | "pdf",
+    };
+  }
   const lower = filename.toLowerCase();
 
   if (lower.endsWith(".docx")) {

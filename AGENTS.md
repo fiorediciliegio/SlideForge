@@ -4,7 +4,7 @@
 
 ## 先读这些
 
-- [`CONTEXT.md`](CONTEXT.md)
+- [`docs/current-state.md`](docs/current-state.md)
 - [`docs/adr/`](docs/adr/)
 - [`README.md`](README.md)
 - [`executas/ppt-engine/README.md`](executas/ppt-engine/README.md)
@@ -13,30 +13,33 @@
 
 ## 仓库概览
 
-当前主线是当前 App 根目录：把现有 PPT 生成链路包装成可交互的 SlideForge App 工作台。
+当前主线是独立交付服务：HTTP 薄壳 / CLI / MCP → `src/contracts` → `src/capabilities/deck.ts` → 生成校验与 `ppt-engine`。产品与目标架构以 `docs/product-tech-charter.md` 为准。
 
 相关子项目都收敛在 `executas/` 下：
 
 - [`executas/ppt-engine/`](executas/ppt-engine/)：HTML Page Source 工作区能力、模板参考快照、HTML 静态化、PPTX model 转换和任务状态机。
 - [`third_party/dom-to-pptx/`](third_party/dom-to-pptx/)：仓库内直接维护的 HTML 到 PPTX 权威源码。
-- Web 和图片研究由 SlideForge Host 官方 Web API 提供，不再使用本地搜索 Executa。
 
 完整链路仍然是：
 
 ```text
-manifest.json -> deck.html -> .pptx
+deck_id -> artifacts/decks/<deck_id> -> deck.html -> .pptx
 ```
 
 ## 当前代码架构
 
-### App 前端
+### 现役交付服务
 
-- `src/app/`：应用入口、路由和整体壳子。
-- `src/features/`：按业务域切分的功能层，主要有 `deck-workspace`、`outline`、`requirements`、`templates`、`review`、`export`、`task`、`pages`。
-- `src/api/`：前端后端适配层，React 页面只通过 `PptBackend` 调用。
-- `src/runtime/`：SlideForge runtime 连接与模式识别。
-- `src/ai/`、`src/agent/`：LLM 提示词、解析和 agent 相关逻辑。
-- `src/state/`：本地状态管理。
+- `src/contracts/`：纯 DTO、Zod 约束、错误结构与 `deck_id`，不得反向依赖 Capability、HTTP、MCP 或 React。
+- `src/capabilities/`：系统功能唯一入口；新任务的任务、计费和工作区共用同一个 `deck_id`。
+- `src/http/`、`src/mcp/`、CLI：薄适配层，不另建业务后门。
+- `src/server/`、`src/billing/`：现役运行支撑，保留队列、任务恢复、浏览器生命周期和导出幂等边界。
+
+### Legacy React／Host（已退役）
+
+- 旧 React 入口、Host 专属模块和对应测试已通过依赖可达性审计分批删除，不再接受新功能或兼容性补丁。
+- `src/features/templates/presets/` 是现役共享模板资产，必须保留，不随 legacy 删除。
+- 不根据目录名直接删除引擎或旧模块；后续删除必须独立进行引用与运行时资产审计。
 
 ### `executas/ppt-engine`
 
@@ -50,59 +53,25 @@ manifest.json -> deck.html -> .pptx
 
 ## 关键边界
 
-- React 页面组件只调用 `PptBackend`。
-- SlideForge Runtime / standalone 的差异只放在 adapter 层。
-- 工作区文件读写和 gate 判断放在 `ppt-engine` app-facing tools。
+- HTTP／MCP／CLI 只通过 `src/contracts` 与 Capability API 调用业务能力，不另建 UI 后门。
+- 工作区文件读写和 gate 判断放在 Capability 与 `ppt-engine` 的对应边界内。
 - `ppt-engine` 持有完整的 Deck HTML 到 PPTX 后端导出作业。
-- 前端不能直接读写本地文件系统。
-- 不要把前端的 `tools.invoke` 写成插件内部 JSON-RPC envelope。
-
-## Tool ID 不变量
-
-App manifest 使用 `bundled:<handle>` 引用 Executa，前端只从
-`window.__BUNDLED_TOOL_IDS__` 读取运行时生成的真实 tool id；缺失 sidecar 或 handle
-应直接失败，不要回退到 `.env` 或硬编码真实 id。
-
-以下位置必须通过 [`scripts/sync-tool-manifests.mjs`](scripts/sync-tool-manifests.mjs)
-保持同步：
-
-- [`manifest.json`](manifest.json) 的 `required_executas[].tool_id`：固定为 `bundled:ppt-engine`
-- [`manifest.json`](manifest.json) 的 `required_executas[].min_version`：来自各 Executa manifest 的 `version`
-- [`manifest.json`](manifest.json) 的 `ui.host_api.tools`：固定为 `required:bundled:<handle>`
-- [`app.json`](app.json) 的 `bundled_executas`
-- [`executas/*/executa.json`](executas/) 的真实 `tool_id`
-- [`executas/*/executa.json`](executas/) 的发布元数据 `name`、`version`、`description`
-- 真实插件 `describe` 返回的 manifest `display_name` 和 `version`
-
-各 Executa 的 `manifest.json` 是 JSON-RPC `describe` 返回的 tool protocol manifest，
-不再承载真实 `tool_id`；真实 `tool_id` 只放在对应 `executa.json`。
-
-当前真实 ID：
-
-```text
-ppt-engine:  tool-lightvoss-ppt-engine-kqhra9hy
-```
+- Web 薄壳不能直接读写本地文件系统；运行时 HTML／JS 资产必须经过路径白名单保护。
 
 ## 开发与运行
 
-- 默认不要自己启动 `npm run dev` 或 `slideforge-app dev`。
-- 一般由用户自己在本机启动 dev server，并打开 `http://localhost:5180/`。
-- 如果需要看 UI 或复现 bug，优先用 Chrome DevTools MCP 操作用户已经打开的 `http://localhost:5180/`。
-- 如果发现用户没有启动 dev server，就直接提醒用户启动，不要代为拉起。
-- 不要重新引入独立 Vite dev server proxy 路径。
+- 现役入口是 `npm run dev` 或 `npm run serve`（HTTP 薄壳与 Capability API，端口 3210）；默认不要代替用户启动长期服务。
+- 根级 React／Vite 已退役，没有 `dev:legacy`、`build:legacy` 或 `test:legacy`；不要重新引入这些入口。
 - 当前环境无法直接启动 Chrome / Puppeteer；如果必须运行相关渲染或截图测试，需要按提权流程请求用户授权。
 
 App 根目录常用命令是：
 
 ```bash
-npm run build
 npm run check
-npm run validate
-npm run dev:mock-llm
-npm run dev:mock-llm:retry
+npm run test:core
+npm run test:unit
+npm run test:gateway
 ```
-
-`npm run dev` 仍然是正式的本地入口，并固定使用 `slideforge-app dev --storage aps` 连接真实 APS；只在用户明确要求时配合使用。
 
 `ppt-engine` 里常用命令是：
 
@@ -116,20 +85,16 @@ cd executas/ppt-engine && npm run start:plugin
 
 ## 构建与验证顺序
 
-如果改动涉及下游产物，优先按这个顺序：
+如果修改了 `executas/ppt-engine/src/**`，先重建 engine，再按影响范围运行核心测试。现役主链路改动至少运行：
 
-1. `cd executas/ppt-engine && npm run build`
-2. `npm run build`
-3. `npm run validate`
-
-如果修改了 `executas/ppt-engine/src/**`，要先重建 engine，因为 `example_plugin.js` 从 `dist/index.js` 导入。
-
-如果改动只在 `src/**`，通常先跑 `npm run check`，再根据需要跑 `npm run build` 或 `npm run validate`。
+1. `npm run check`
+2. `npm run test:core`
+3. 必要时 `npm run test:unit` 与 `npm run test:gateway`。
 
 ## 测试
 
 - `executas/ppt-engine/test/**/*.test.ts` 是主要的单测入口，命令是 `npm run test:unit`。
-- App 目前主要靠 `npm run check`、`npm run build` 和 `npm run validate` 做回归。
+- App 现役链路主要靠 `npm run check` 和 `npm run test:core`，全量现役结果由 `npm run test:unit` 报告。
 - vendored dom-to-pptx 使用定向 Vitest 与 `ppt-engine` build 验证。
 - 新增测试时，优先沿用现有目录和命名：`*.test.ts`。
 
@@ -151,17 +116,6 @@ cd executas/ppt-engine && npm run start:plugin
   `ppt-engine` 构建、App `prebuild` 或二进制打包。
 
 - 个人模板在上传前创建 `user-templates/<id>/` 草稿目录；模板日志和排查包通过模板 ID 专用接口访问，不能放宽普通作品目录校验或初始化作品文件。诊断规则见 [ADR-0074](docs/adr/0074-personal-template-diagnostics.md)。
-
-## SlideForge Runtime 与 tool 返回值
-
-- SlideForge runtime 目前还不能原生理解 `__file_transport` pointer response。
-- `executas/ppt-engine/app_stdio.js` 会把 pointer file 内联回 stdout，原生支持 pointer 之前不要删除它。
-- 普通 `invoke` 统一经 `src/runtime/invokeTransport.ts` → `app_invoke_transport`。按完整消息 JSON 的 UTF-8 字节数，使用 **3 MiB（3,145,728 字节）**预算，为平台的 4 MiB 上限留余量。
-- 请求与响应使用同一协议：预算内直接传；超限只做一次 gzip + Base64 压缩；仍超限才走 Host Upload。业务层传原始对象或文本，禁止再添加业务专用阈值、压缩或大内容上传分支。
-- 上传复用现有协商、PUT、确认的失败重试；浏览器跨域失败只在统一传输层使用有界分块中转。业务调用不能因传输失败被传输层自动重放。
-- `invokeAsyncAwait`、任务恢复与结果读取仍沿用原协议。保留的异步入口文件指针内联上限仍是 1 MiB；新普通调用和分块控制帧直接输出受预算约束的响应，不经过该文件指针路径。
-- 后端 `manifest.json` 只公开统一网关、分块通道及 `app_run_pdf_export`、`app_run_export_artifact_publish` 两个异步入口。普通业务定义在 `invoke-tools.json`，仅由网关分发；禁止重新注册旧传输工具、旧上传字段或普通业务直连入口，不兼容旧版前端。
-- APS 持久化、图片/字体资源映射、真实文件上传以及 AI 会话需要 HTTPS 地址的附件保持原有存储用途。参见 [ADR-0071](docs/adr/0071-unified-ordinary-invoke-transport.md)。
 
 ## 常见坑
 

@@ -1,0 +1,15 @@
+[Unit]
+Description=SlideForge Python brain
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/slideforge/services/brain
+EnvironmentFile=/opt/slideforge/.env
+ExecStart=/usr/bin/python3 -m brain.app
+Restart=always
+RestartSec=5
+MemoryMax=768M
+
+[Install]
+WantedBy=multi-user.target

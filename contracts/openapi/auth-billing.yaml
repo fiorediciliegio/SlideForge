@@ -1,0 +1,160 @@
+openapi: 3.1.0
+info:
+  title: SlideForge Internal Auth and Billing API
+  version: 0.1.0
+  description: Go 骨架层内部认证计费契约。仅 Node 服务使用，必须携带 X-Internal-Token。
+paths:
+  /internal/auth/check:
+    post:
+      operationId: checkApiKey
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                api_key: { type: string }
+      responses:
+        "200":
+          description: 认证结果；ok=false 时 reason 与现役语义一致。
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/AuthResult" }
+  /internal/billing/settle:
+    post:
+      operationId: settleDeck
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/SettleRequest" }
+      responses:
+        "200":
+          description: 结算结果
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/BillingResult" }
+  /internal/billing/charge:
+    post:
+      operationId: chargeFixed
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ChargeRequest" }
+      responses:
+        "200":
+          description: 扣费或已有幂等回执
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/BillingResult" }
+  /internal/billing/usage:
+    post:
+      operationId: getUsage
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                api_key: { type: string }
+      responses:
+        "200":
+          description: 当前用户余额与最近台账
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Usage" }
+  /internal/billing/ledger:
+    post:
+      operationId: readLedger
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit: { type: integer, minimum: 1, maximum: 1000, default: 50 }
+      responses:
+        "200":
+          description: 管理台账与总计
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/LedgerResult" }
+components:
+  parameters:
+    InternalToken:
+      name: X-Internal-Token
+      in: header
+      required: true
+      schema: { type: string }
+  schemas:
+    AuthResult:
+      type: object
+      required: [ok]
+      properties:
+        ok: { type: boolean }
+        reason: { type: string }
+    SettleRequest:
+      type: object
+      required: [api_key, deck_id, prompt_tokens, completion_tokens]
+      properties:
+        api_key: { type: string }
+        deck_id: { type: string }
+        prompt_tokens: { type: number }
+        completion_tokens: { type: number }
+        input_points_per_k: { type: number }
+        output_points_per_k: { type: number }
+    ChargeRequest:
+      type: object
+      required: [api_key, deck_id, kind, points]
+      properties:
+        api_key: { type: string }
+        deck_id: { type: string }
+        kind: { type: string, enum: [export] }
+        points: { type: number }
+        operation_id: { type: string }
+    BillingResult:
+      type: object
+      required: [points]
+      properties:
+        points: { type: number }
+        balance: { type: number }
+    LedgerEntry:
+      type: object
+      required: [ts, type, deck_id, key_name, points, balance]
+      properties:
+        ts: { type: string }
+        type: { type: string }
+        deck_id: { type: string }
+        key_name: { type: string }
+        key_hash: { type: string }
+        operation_id: { type: string }
+        prompt_tokens: { type: number }
+        completion_tokens: { type: number }
+        points: { type: number }
+        balance: { type: number }
+    Usage:
+      type: object
+      properties:
+        name: { type: string }
+        balance: { type: number }
+        entries:
+          type: array
+          items: { $ref: "#/components/schemas/LedgerEntry" }
+    LedgerResult:
+      type: object
+      required: [entries, totalPoints, totalTokens]
+      properties:
+        entries:
+          type: array
+          items: { $ref: "#/components/schemas/LedgerEntry" }
+        totalPoints: { type: number }
+        totalTokens: { type: number }

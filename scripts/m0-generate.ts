@@ -7,6 +7,7 @@
  */
 import path from "node:path";
 import { createDeck, exportDeck, type DeckEvent } from "../src/capabilities/deck.js";
+import { closeValidatorBrowser } from "./m0/validatePage.js";
 
 const args = process.argv.slice(2);
 function argOf(name: string, fallback?: string): string {
@@ -24,12 +25,16 @@ const onEvent = (event: DeckEvent) => {
   console.log(`  [${event.stage}]${event.page ? ` p${event.page}` : ""} ${event.message}`);
 };
 
-console.log(`SlideForge · brief="${brief}" · pages=${pageCount} · 并发=${concurrency}`);
-const deck = await createDeck({ brief, pageCount, concurrency, onEvent });
-console.log(`工作区：${deck.runDir}`);
-const result = await exportDeck({ runDir: deck.runDir, outPath });
-console.log(`\n✅ 完成：${result.outPath}`);
-console.log(`页数=${result.slideCount} · 大小=${result.sizeBytes}B · 导出警告=${result.warnings.length}`);
-if (deck.overflowWarnings.length > 0) {
-  console.log(`⚠ 溢出遗留：${deck.overflowWarnings.map((w) => `第${w.page}页`).join("、")}`);
+try {
+  console.log(`SlideForge · brief="${brief}" · pages=${pageCount} · 并发=${concurrency}`);
+  const deck = await createDeck({ brief, pageCount, concurrency, onEvent });
+  console.log(`工作区：${deck.runDir}`);
+  const result = await exportDeck({ runDir: deck.runDir, outPath });
+  console.log(`\n✅ 完成：${result.outPath}`);
+  console.log(`页数=${result.slideCount} · 大小=${result.sizeBytes}B · 导出警告=${result.warnings.length}`);
+  if (deck.overflowWarnings.length > 0) {
+    console.log(`⚠ 溢出遗留：${deck.overflowWarnings.map((w) => `第${w.page}页`).join("、")}`);
+  }
+} finally {
+  await closeValidatorBrowser();
 }

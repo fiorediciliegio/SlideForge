@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: SlideForge Node Engine API
+  version: 0.1.0
+  description: 独立 Node 引擎服务。仅承担确定性 HTML 校验、预览渲染和 PPTX／PDF 导出。
+paths:
+  /healthz:
+    get:
+      operationId: getEngineHealth
+      responses:
+        "200":
+          description: 引擎进程健康
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  service: { type: string }
+  /internal/engine/validate-page:
+    post:
+      operationId: validatePageHtml
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [html]
+              properties:
+                html: { type: string, minLength: 1, maxLength: 1000000 }
+      responses:
+        "200":
+          description: Chrome 确定性版面检查结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  issues:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        kind: { type: string }
+                        detail: { type: string }
+  /internal/engine/preview:
+    post:
+      operationId: renderDeckPreview
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [runDir]
+              properties:
+                runDir: { type: string }
+                pages:
+                  type: array
+                  maxItems: 4
+                  items: { type: integer, minimum: 1 }
+                maxPages: { type: integer, minimum: 1, maximum: 20 }
+      responses:
+        "200":
+          description: JPEG 预览 base64
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  images:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        page: { type: integer }
+                        base64: { type: string }
+                        mimeType: { type: string }
+  /internal/engine/export:
+    post:
+      operationId: exportDeck
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [runDir]
+              properties:
+                runDir: { type: string }
+                outPath: { type: string }
+                format: { type: string, enum: [pptx, pdf], default: pptx }
+      responses:
+        "200":
+          description: 导出结果；产物由调用方通过文件服务发布
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  outPath: { type: string }
+                  slideCount: { type: integer }
+                  sizeBytes: { type: integer }
+                  warnings: { type: array, items: { type: string } }
+components:
+  parameters:
+    InternalToken:
+      name: X-Internal-Token
+      in: header
+      required: true
+      schema: { type: string }

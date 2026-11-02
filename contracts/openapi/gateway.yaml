@@ -1,0 +1,261 @@
+openapi: 3.1.0
+info:
+  title: SlideForge Gateway API
+  version: 0.1.0
+  description: Go 骨架层过渡契约。业务处理暂由 Node Capability API 承接。
+servers:
+  - url: http://localhost:8080
+paths:
+  /healthz:
+    get:
+      operationId: getGatewayHealth
+      responses:
+        "200":
+          description: 网关进程健康
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+  /readyz:
+    get:
+      operationId: getGatewayReadiness
+      responses:
+        "200":
+          description: 引擎上游可用
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+        "503":
+          $ref: "#/components/responses/Error"
+  /decks:
+    post:
+      operationId: createDeck
+      parameters:
+        - $ref: "#/components/parameters/ApiKey"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateDeckRequest"
+      responses:
+        "202":
+          description: 已接受异步任务
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateDeckAccepted"
+        "400":
+          $ref: "#/components/responses/Error"
+        "402":
+          $ref: "#/components/responses/Error"
+        "429":
+          $ref: "#/components/responses/Error"
+        "503":
+          $ref: "#/components/responses/Error"
+  /decks/{deck_id}:
+    get:
+      operationId: getDeckJob
+      parameters:
+        - $ref: "#/components/parameters/ApiKey"
+        - $ref: "#/components/parameters/DeckId"
+      responses:
+        "200":
+          description: 当前任务状态
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeckJob"
+        "402":
+          $ref: "#/components/responses/Error"
+        "404":
+          $ref: "#/components/responses/Error"
+  /decks/{deck_id}/export:
+    post:
+      operationId: exportDeck
+      parameters:
+        - $ref: "#/components/parameters/ApiKey"
+        - $ref: "#/components/parameters/DeckId"
+        - $ref: "#/components/parameters/IdempotencyKey"
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExportDeckRequest"
+      responses:
+        "200":
+          description: 导出结果；重复请求可返回幂等回执
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExportDeckResult"
+        "400":
+          $ref: "#/components/responses/Error"
+        "402":
+          $ref: "#/components/responses/Error"
+        "404":
+          $ref: "#/components/responses/Error"
+        "409":
+          $ref: "#/components/responses/Error"
+components:
+  parameters:
+    ApiKey:
+      name: X-API-Key
+      in: header
+      required: false
+      description: 本地开发模式可缺省；生产模式必填。
+      schema:
+        type: string
+    DeckId:
+      name: deck_id
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/DeckId"
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      schema:
+        type: string
+        maxLength: 128
+  responses:
+    Error:
+      description: 统一错误结构
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+  schemas:
+    DeckId:
+      type: string
+      pattern: "^deck-[A-Za-z0-9-]+$"
+      maxLength: 80
+    DeckStatus:
+      type: string
+      enum: [creating, ready, error]
+    Billing:
+      type: object
+      required: [points]
+      properties:
+        points:
+          type: number
+        balance:
+          type: number
+    Health:
+      type: object
+      required: [ok, service]
+      properties:
+        ok:
+          type: boolean
+        service:
+          type: string
+    CreateDeckRequest:
+      type: object
+      required: [brief]
+      properties:
+        brief:
+          type: string
+          minLength: 1
+        page_count:
+          type: integer
+          minimum: 2
+          maximum: 20
+        brand_id:
+          type: string
+        template_id:
+          type: string
+        source_text:
+          type: string
+          maxLength: 100000
+        research:
+          type: boolean
+        attachment_base64:
+          type: string
+        filename:
+          type: string
+    CreateDeckAccepted:
+      type: object
+      required: [deck_id, status]
+      properties:
+        deck_id:
+          $ref: "#/components/schemas/DeckId"
+        status:
+          $ref: "#/components/schemas/DeckStatus"
+    DeckJob:
+      type: object
+      required: [deck_id, status, recent_events, overflow_pages]
+      properties:
+        deck_id:
+          $ref: "#/components/schemas/DeckId"
+        status:
+          $ref: "#/components/schemas/DeckStatus"
+        title:
+          type: string
+        recent_events:
+          type: array
+          items:
+            type: string
+        overflow_pages:
+          type: array
+          items:
+            type: integer
+        billing:
+          $ref: "#/components/schemas/Billing"
+        error:
+          type: string
+    ExportDeckRequest:
+      type: object
+      properties:
+        format:
+          type: string
+          enum: [pptx, pdf]
+          default: pptx
+        out_path:
+          type: string
+          description: 仅允许当前 deck 工作区内路径。
+        idempotency_key:
+          type: string
+          maxLength: 128
+    ExportDeckResult:
+      type: object
+      required: [out_path, slide_count, size_bytes, warnings, billing, export_id, idempotent]
+      properties:
+        out_path:
+          type: string
+        outPath:
+          type: string
+          description: 过渡期兼容别名。
+        slide_count:
+          type: integer
+        size_bytes:
+          type: integer
+        warnings:
+          type: array
+          items:
+            type: string
+        billing:
+          $ref: "#/components/schemas/Billing"
+        export_id:
+          type: string
+        idempotent:
+          type: boolean
+        file_id:
+          type: string
+          description: 远程文件模式下的 Go 文件标识。
+        download_url:
+          type: string
+          description: 需携带同一用户 API key 的下载地址。
+    Error:
+      type: object
+      required: [error, error_code, retryable]
+      properties:
+        error:
+          type: string
+        error_code:
+          type: string
+        retryable:
+          type: boolean
+        details: {}

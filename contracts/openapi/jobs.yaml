@@ -1,0 +1,128 @@
+openapi: 3.1.0
+info:
+  title: SlideForge Async Job API
+  version: 0.1.0
+  description: Go 独占任务记录，Node 通过内部接口读写；客户端经 SSE 获取进度。
+paths:
+  /internal/jobs:
+    post:
+      operationId: mutateJob
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [action]
+              properties:
+                action: { type: string, enum: [create, get, list, save, delete] }
+                deck_id: { type: string }
+                job: { $ref: "#/components/schemas/InternalJob" }
+      responses:
+        "200":
+          description: 内部任务操作结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  job: { $ref: "#/components/schemas/InternalJob" }
+                  jobs:
+                    type: array
+                    items: { $ref: "#/components/schemas/InternalJob" }
+  /decks/{deck_id}/events:
+    get:
+      operationId: streamDeckJob
+      parameters:
+        - { name: deck_id, in: path, required: true, schema: { type: string } }
+        - { name: X-API-Key, in: header, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: text/event-stream。连接建立时发送当前快照，之后发送任务更新。
+          content:
+            text/event-stream:
+              schema: { type: string }
+        "404":
+          description: 任务不存在或不属于当前用户
+  /decks/{deck_id}/cancel:
+    post:
+      operationId: cancelDeckJob
+      parameters:
+        - { name: deck_id, in: path, required: true, schema: { type: string } }
+        - { name: X-API-Key, in: header, required: false, schema: { type: string } }
+      responses:
+        "200":
+          description: 协作式取消已记录；执行中的模型调用在下一个任务边界停止提交。
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/DeckJob" }
+  /decks/{deck_id}/webhooks:
+    post:
+      operationId: registerDeckWebhook
+      parameters:
+        - { name: deck_id, in: path, required: true, schema: { type: string } }
+        - { name: X-API-Key, in: header, required: false, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [url, secret]
+              properties:
+                url:
+                  type: string
+                  format: uri
+                  description: 生产环境要求 HTTPS；仅本地开发允许 loopback HTTP。
+                secret:
+                  type: string
+                  minLength: 16
+                  description: HMAC-SHA256 签名密钥，公共响应不回传。
+      responses:
+        "200":
+          description: 回调已注册；后续任务更新按签名投递。
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url: { type: string }
+        "400":
+          description: 回调地址或密钥无效
+components:
+  parameters:
+    InternalToken:
+      name: X-Internal-Token
+      in: header
+      required: true
+      schema: { type: string }
+  schemas:
+    Billing:
+      type: object
+      properties:
+        points: { type: number }
+        balance: { type: number }
+    DeckJob:
+      type: object
+      required: [id, status, events, overflowPages]
+      properties:
+        id: { type: string }
+        runDir: { type: string }
+        title: { type: string }
+        status: { type: string, enum: [creating, ready, error] }
+        events: { type: array, items: { type: string } }
+        error: { type: string }
+        overflowPages: { type: array, items: { type: number } }
+        billing: { $ref: "#/components/schemas/Billing" }
+        cancelled: { type: boolean }
+        createdAt: { type: string }
+        updatedAt: { type: string }
+    InternalJob:
+      allOf:
+        - $ref: "#/components/schemas/DeckJob"
+        - type: object
+          properties:
+            ownerKeyHash:
+              type: string
+              description: 仅内部接口和管理用途，公共 DTO 必须移除。

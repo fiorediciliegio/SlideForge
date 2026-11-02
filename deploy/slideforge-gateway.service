@@ -1,0 +1,16 @@
+[Unit]
+Description=SlideForge Go gateway
+After=network.target slideforge.service slideforge-engine.service slideforge-brain.service
+Requires=slideforge.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/slideforge
+EnvironmentFile=/opt/slideforge/.env
+ExecStart=/opt/slideforge/.bin/slideforge-gateway
+Restart=always
+RestartSec=5
+MemoryMax=512M
+
+[Install]
+WantedBy=multi-user.target
