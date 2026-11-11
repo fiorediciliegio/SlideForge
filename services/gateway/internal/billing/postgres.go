@@ -180,14 +180,22 @@ func (s *PostgresStore) Settle(apiKey, deckID string, promptTokens, completionTo
 }
 
 func (s *PostgresStore) Charge(apiKey, deckID, operationID string, points float64) (ChargeReceipt, error) {
+	return s.chargeIdentity(HashAPIKey(apiKey), deckID, operationID, points, false)
+}
+func (s *PostgresStore) ChargeOwner(ownerHash, deckID, operationID string, points float64) (ChargeReceipt, error) {
+	return s.chargeIdentity(ownerHash, deckID, operationID, points, true)
+}
+func (s *PostgresStore) chargeIdentity(identity, deckID, operationID string, points float64, requireOwner bool) (ChargeReceipt, error) {
 	tx, err := s.db.Begin()
 	if err != nil {
 		return ChargeReceipt{}, err
 	}
 	defer tx.Rollback()
-	identity := HashAPIKey(apiKey)
 	record, err := lockRecord(tx, identity)
 	if errors.Is(err, sql.ErrNoRows) {
+		if requireOwner {
+			return ChargeReceipt{}, errors.New("导出归属用户不存在")
+		}
 		return ChargeReceipt{}, nil
 	}
 	if err != nil {
@@ -197,6 +205,9 @@ func (s *PostgresStore) Charge(apiKey, deckID, operationID string, points float6
 		if existing, ok := record.Charges[operationID]; ok {
 			return existing, nil
 		}
+	}
+	if requireOwner && record.Balance < points {
+		return ChargeReceipt{}, errors.New("导出点数不足")
 	}
 	record.Balance = math.Max(0, record.Balance-points)
 	receipt := ChargeReceipt{Points: points, Balance: record.Balance}

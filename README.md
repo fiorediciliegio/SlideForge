@@ -22,6 +22,7 @@ src/capabilities/deck.ts
 - 现役服务端：`src/http/capabilityServer.ts`、`src/mcp/**`、`src/capabilities/**`。
 - 统一契约：`src/contracts/**`；新任务的 `deck_id` 同时作为任务、计费和 `artifacts/decks/<deck_id>` 工作区标识。
 - 引擎：`executas/ppt-engine/**`，继续负责 HTML 渲染与 PPTX／PDF 导出。
+- Web 默认使用 Python Brain 单总控 Harness，经 Node 业务工具和 Go 状态/预算完成闭环；接口与迁移说明见 [部署手册](docs/deployment.md)和 [ADR-0080](docs/adr/0080-python-brain-agent-harness.md)。CLI/MCP 现有契约保留。
 
 ## Legacy 退役结果
 
@@ -35,7 +36,7 @@ React／Host 旧入口、旧业务功能和对应测试已通过依赖可达性�
 
 ```bash
 npm install
-npm run dev           # 默认三服务入口，客户端访问 8080/app
+npm run dev           # 四进程入口，客户端访问 8080/app
 npm run dev:legacy    # 单 Node 兼容入口，端口 3210
 npm run serve         # 仅 Node Capability API
 npm run serve:engine  # 仅 Node 引擎，端口 3211

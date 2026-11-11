@@ -121,6 +121,7 @@ components:
         kind: { type: string, enum: [export] }
         points: { type: number }
         operation_id: { type: string }
+        owner_key_hash: { type: string, description: 仅受信内部后台导出使用，不能作为公开鉴权Key；与api_key二选一 }
     BillingResult:
       type: object
       required: [points]

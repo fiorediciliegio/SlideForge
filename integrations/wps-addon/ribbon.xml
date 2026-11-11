@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SlideForge WPS 加载项 · Ribbon 声明（骨架，实机验证中） -->
-<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
   <ribbon>
     <tabs>
-      <tab id="slideforge.tab" label="SlideForge" visible="true">
-        <group id="slideforge.group" label="AI 生成">
-          <button id="slideforge.showPane" label="生成 PPT"
-                  onAction="slideforgeShowPane" getImage="slideforge.icon"
-                  getEnabled="slideforge.alwaysEnabled" size="large"/>
+      <tab id="slideforgeTab" label="SlideForge">
+        <group id="slideforgeGroup" label="AI 生成">
+          <button id="slideforgeShowPane" label="生成 PPT" onAction="slideforgeShowPane" size="large"/>
         </group>
       </tab>
     </tabs>

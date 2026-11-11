@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JsPlugin>
+  <ApiVersion>1.0.0</ApiVersion>
+  <Name>SlideForge</Name>
+  <Description>在 WPS 演示中生成并插入幻灯片</Description>
+</JsPlugin>

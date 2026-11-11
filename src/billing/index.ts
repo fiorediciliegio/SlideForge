@@ -188,16 +188,18 @@ export async function chargeFixed(
   kind: "export",
   pricing: Pricing = DEFAULT_PRICING,
   operationId?: string,
+  ownerKeyHash?: string,
 ): Promise<{ points: number; balance?: number }> {
   const points = kind === "export" ? pricing.exportPoints : 0;
   if (remoteBillingEnabled()) {
     return callRemoteBilling("/billing/charge", {
       api_key: apiKey ?? "", deck_id: deckId, kind, points, operation_id: operationId,
+      ...(!apiKey&&ownerKeyHash?{owner_key_hash:ownerKeyHash}:{}),
     });
   }
   if (!billingEnabled()) return { points: 0 };
   return withKeyTransaction(async (keys) => {
-    const record = keys[keyIdentity(apiKey)];
+    const record = keys[!apiKey&&ownerKeyHash?ownerKeyHash:keyIdentity(apiKey)];
     if (!record) return { points: 0 };
     if (operationId && record.charges?.[operationId]) return record.charges[operationId];
     record.balance = Math.max(0, record.balance - points);

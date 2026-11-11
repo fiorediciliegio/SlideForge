@@ -156,6 +156,8 @@ components:
       type: object
       required: [brief]
       properties:
+        agent_options:
+          $ref: "agent.yaml#/components/schemas/AgentOptions"
         brief:
           type: string
           minLength: 1
@@ -180,6 +182,8 @@ components:
       type: object
       required: [deck_id, status]
       properties:
+        agent:
+          $ref: "agent.yaml#/components/schemas/AgentPublic"
         deck_id:
           $ref: "#/components/schemas/DeckId"
         status:
@@ -188,6 +192,8 @@ components:
       type: object
       required: [deck_id, status, recent_events, overflow_pages]
       properties:
+        agent:
+          $ref: "agent.yaml#/components/schemas/AgentPublic"
         deck_id:
           $ref: "#/components/schemas/DeckId"
         status:
@@ -209,6 +215,9 @@ components:
     ExportDeckRequest:
       type: object
       properties:
+        revision_id:
+          type: string
+          description: 固定导出该作品的指定修订；不填则在调用时固定当前修订。
         format:
           type: string
           enum: [pptx, pdf]

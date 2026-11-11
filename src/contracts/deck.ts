@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { deckIdSchema } from "./ids.js";
+import { agentOptionsSchema, publicAgent, type AgentRun } from "./agent.js";
 
 export const deckStatusSchema = z.enum(["creating", "ready", "error"]);
 export type DeckStatus = z.infer<typeof deckStatusSchema>;
@@ -35,6 +36,7 @@ export const createDeckMcpShape = {
 
 export const createDeckMcpSchema = z.object(createDeckMcpShape);
 export const createDeckHttpSchema = createDeckMcpSchema.extend({
+  agent_options: agentOptionsSchema.optional(),
   research: z.boolean().optional(),
   attachment_base64: z.string().optional(),
   filename: z.string().optional(),
@@ -66,6 +68,8 @@ export interface DeckBilling {
 }
 
 export interface DeckJobRecord {
+  agent?: AgentRun;
+  agent_history?: AgentRun[];
   id: string;
   runDir?: string;
   title?: string;
@@ -86,6 +90,7 @@ export const deckBillingSchema = z.object({
 });
 
 export const deckJobDtoSchema = z.object({
+  agent: z.unknown().optional(),
   deck_id: deckIdSchema,
   status: deckStatusSchema,
   title: z.string().optional(),
@@ -100,6 +105,7 @@ export type DeckJobDto = z.infer<typeof deckJobDtoSchema>;
 
 export function toDeckJobDto(job: DeckJobRecord, recentEventLimit = 8): DeckJobDto {
   return {
+    ...(job.agent ? { agent: publicAgent(job.agent) } : {}),
     deck_id: job.id,
     status: job.status,
     title: job.title,

@@ -67,6 +67,7 @@ type StoreAPI interface {
 	List() ([]KeyDTO, error)
 	Settle(apiKey, deckID string, promptTokens, completionTokens, inputPerK, outputPerK float64) (ChargeReceipt, error)
 	Charge(apiKey, deckID, operationID string, points float64) (ChargeReceipt, error)
+	ChargeOwner(ownerHash, deckID, operationID string, points float64) (ChargeReceipt, error)
 	Usage(apiKey string) (*Usage, error)
 	Ledger(limit int) (LedgerResult, error)
 }
@@ -190,11 +191,19 @@ func (s *Store) Settle(apiKey, deckID string, promptTokens, completionTokens, in
 }
 
 func (s *Store) Charge(apiKey, deckID, operationID string, points float64) (ChargeReceipt, error) {
+	return s.chargeIdentity(HashAPIKey(apiKey), deckID, operationID, points, false)
+}
+func (s *Store) ChargeOwner(ownerHash, deckID, operationID string, points float64) (ChargeReceipt, error) {
+	return s.chargeIdentity(ownerHash, deckID, operationID, points, true)
+}
+func (s *Store) chargeIdentity(identity, deckID, operationID string, points float64, requireOwner bool) (ChargeReceipt, error) {
 	var receipt ChargeReceipt
 	_, err := s.update(func(keys map[string]KeyRecord) error {
-		identity := HashAPIKey(apiKey)
 		record, ok := keys[identity]
 		if !ok {
+			if requireOwner {
+				return errors.New("导出归属用户不存在")
+			}
 			receipt = ChargeReceipt{}
 			return nil
 		}
@@ -203,6 +212,9 @@ func (s *Store) Charge(apiKey, deckID, operationID string, points float64) (Char
 				receipt = existing
 				return nil
 			}
+		}
+		if requireOwner && record.Balance < points {
+			return errors.New("导出点数不足")
 		}
 		record.Balance = max(0, record.Balance-points)
 		receipt = ChargeReceipt{Points: points, Balance: record.Balance}

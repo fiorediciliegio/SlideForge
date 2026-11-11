@@ -8,23 +8,24 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: "Microsoft YaHei", sans-serif; padding: 14px; color: #182033; font-size: 13px; }
     h1 { font-size: 16px; color: #1e40af; margin-bottom: 10px; }
+    label { display: block; margin-bottom: 8px; }
+    input[type=password] { width: 100%; margin-top: 4px; padding: 6px; border: 1px solid #d5dbe7; border-radius: 6px; }
     textarea { width: 100%; height: 110px; padding: 8px; border: 1px solid #d5dbe7; border-radius: 8px; resize: vertical; font-family: inherit; }
     input[type=number] { width: 60px; padding: 4px; border: 1px solid #d5dbe7; border-radius: 6px; }
     button { background: #1e40af; color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; margin-top: 10px; }
     button.secondary { background: #697386; }
     button:disabled { opacity: .5; cursor: wait; }
     #status { margin-top: 10px; white-space: pre-wrap; color: #697386; font-size: 12px; line-height: 1.6; }
-    #preview { margin-top: 10px; max-width: 100%; border-radius: 8px; border: 1px solid #e3e8f0; }
   </style>
 </head>
 <body>
   <h1>SlideForge · AI 生成 PPT</h1>
+  <label>SlideForge 业务 Key <input id="apiKey" type="password" autocomplete="off" /></label>
   <textarea id="brief" placeholder="描述你的演示需求，例如：Q3 销售复盘，销售额 1200 万，同比 +15%……"></textarea>
   <div style="margin-top:8px">页数 <input id="pages" type="number" value="8" min="2" max="20" /></div>
   <button id="generate">生成</button>
-  <button id="open" class="secondary" style="display:none">在 WPS 中打开</button>
-  <div id="status">先启动本机能力服务：npm run serve（localhost:3210）</div>
-  <img id="preview" style="display:none" alt="首页预览" />
+  <button id="insert" class="secondary" hidden>插入当前演示</button>
+  <div id="status" role="status">请先启动 SlideForge 四进程 dev（网关端口 8080）。</div>
   <script src="./main.js"></script>
 </body>
 </html>

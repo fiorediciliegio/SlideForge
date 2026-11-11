@@ -31,6 +31,7 @@ export interface IdempotentExportInput {
   format: "pptx" | "pdf";
   outPath: string;
   idempotencyKey?: string;
+  revisionId?: string;
   execute: () => Promise<ExportDeckResult>;
 }
 
@@ -88,7 +89,7 @@ export async function runIdempotentExport(input: IdempotentExportInput): Promise
     throw new HttpRequestError(400, "Idempotency-Key 只能包含字母、数字、下划线、点、冒号和连字符，且最长 128 字符");
   }
   const operationId = createHash("sha256").update([
-    input.ownerKeyHash ?? "local", input.deckId, input.format,
+    input.ownerKeyHash ?? "local", input.deckId, input.format,...(input.revisionId?[`revision:${input.revisionId}`]:[]),
     clientKey ? `key:${clientKey}` : `content:${fingerprint}`,
   ].join("\0")).digest("hex");
   const existing = inFlight.get(operationId);
@@ -115,7 +116,7 @@ export async function runIdempotentExport(input: IdempotentExportInput): Promise
       });
       result = { ...result, ...published };
     }
-    const charge = await chargeFixed(input.apiKey, input.deckId, "export", undefined, operationId);
+    const charge = await chargeFixed(input.apiKey, input.deckId, "export", undefined, operationId,input.ownerKeyHash);
     await saveReceipt({ operationId, fingerprint, result, charge, createdAt: new Date().toISOString() });
     return { ...result, billing: charge, export_id: operationId, idempotent: false };
   })();

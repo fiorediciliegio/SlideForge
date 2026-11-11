@@ -1,0 +1,248 @@
+{
+  "model": "deepseek-v4-flash",
+  "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-V9lTe3",
+  "records": [
+    {
+      "id": "enterprise-product",
+      "deck_id": "deck-9ead81e3",
+      "phase": "completed",
+      "scene": {
+        "category": "企业",
+        "subtype": "产品介绍",
+        "reason": "面向企业市场部门的新产品功能与价值介绍，无研究、无双语、无外部数据。"
+      },
+      "expected_scene": "企业",
+      "page_count": 2,
+      "elapsed_seconds": 98.731,
+      "budget": {
+        "active_seconds": 97.20023439999999,
+        "limit_seconds": 600,
+        "spent_cny": 0.335594,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "checked",
+      "error": "",
+      "request": null,
+      "project_revision": "f72fd2eb-4ee1-410c-9c90-f5e969661dd3",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-3h1KQf",
+      "baseline": {
+        "deck_id": "deck-45b45d9e",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+        "status": "ready",
+        "elapsed_seconds": 27.326,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.094676
+      }
+    },
+    {
+      "id": "enterprise-brand",
+      "deck_id": "deck-89ceef1f",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+      "phase": "completed",
+      "scene": {
+        "category": "企业",
+        "subtype": "品牌传播方案",
+        "reason": "青禾咖啡企业品牌传播方案，含品牌定位与触达渠道规划"
+      },
+      "expected_scene": "企业",
+      "page_count": 2,
+      "elapsed_seconds": 64.939,
+      "budget": {
+        "active_seconds": 63.854333299999986,
+        "limit_seconds": 600,
+        "spent_cny": 0.271472,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "checked",
+      "error": "",
+      "request": null,
+      "project_revision": "7944b61e-c757-489d-a373-37e90b4a4c41",
+      "baseline": {
+        "deck_id": "deck-5a4e99ef",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+        "status": "ready",
+        "elapsed_seconds": 26.272,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.078746
+      }
+    },
+    {
+      "id": "enterprise-marketing",
+      "deck_id": "deck-a6013f29",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+      "phase": "completed",
+      "scene": {
+        "category": "企业",
+        "subtype": "市场活动提案",
+        "reason": "面向现有客户的产品体验日提案，属于企业市场活动策划类，需目标、流程与准备事项，非发布口径的品牌宣传"
+      },
+      "expected_scene": "企业",
+      "page_count": 2,
+      "elapsed_seconds": 52.694,
+      "budget": {
+        "active_seconds": 52.4842302,
+        "limit_seconds": 600,
+        "spent_cny": 0.19162,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "checked",
+      "error": "",
+      "request": null,
+      "project_revision": "05d07e01-3a72-46b3-a5c8-ba57eb183134",
+      "baseline": {
+        "deck_id": "deck-8503d598",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+        "status": "ready",
+        "elapsed_seconds": 41.533,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.112768
+      }
+    },
+    {
+      "id": "tourism",
+      "deck_id": "deck-ff511fa3",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+      "phase": "completed",
+      "scene": {
+        "category": "旅游",
+        "subtype": "周末城市慢游指南",
+        "reason": "用户明确为北京周末旅行指南，偏好慢步行与拍照，非商务用途"
+      },
+      "expected_scene": "旅游",
+      "page_count": 2,
+      "elapsed_seconds": 91.004,
+      "budget": {
+        "active_seconds": 90.55287440000001,
+        "limit_seconds": 600,
+        "spent_cny": 0.36509,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "checked",
+      "error": "",
+      "request": null,
+      "project_revision": "78803b4c-f19d-4055-8b5d-06134e5e6306",
+      "baseline": {
+        "deck_id": "deck-112bdfdb",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+        "status": "ready",
+        "elapsed_seconds": 47.457,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.135772
+      }
+    },
+    {
+      "id": "education",
+      "deck_id": "deck-697e7a15",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+      "phase": "completed",
+      "scene": {
+        "category": "学术/教育",
+        "subtype": "初中数学课堂教学",
+        "reason": "面向初中生的数学定理教学演示，以概念讲解与例题演算为主，不含企业或旅游叙事"
+      },
+      "expected_scene": "学术/教育",
+      "page_count": 2,
+      "elapsed_seconds": 80.953,
+      "budget": {
+        "active_seconds": 80.0193307,
+        "limit_seconds": 600,
+        "spent_cny": 0.328738,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "checked",
+      "error": "",
+      "request": null,
+      "project_revision": "5a089748-1dd6-4f64-a56e-995873e73c2d",
+      "baseline": {
+        "deck_id": "deck-b9c125a5",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+        "status": "ready",
+        "elapsed_seconds": 28.33,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.091236
+      }
+    },
+    {
+      "id": "long-source",
+      "deck_id": "deck-2de82427",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-WdVVnD",
+      "phase": "waiting_user",
+      "scene": {
+        "category": "企业",
+        "subtype": "项目汇报（面向市场部门）",
+        "reason": "附件为企业内部项目说明，需求为向市场部门汇总项目进展并单列核验指标，属企业内部项目汇报"
+      },
+      "expected_scene": "企业",
+      "page_count": 2,
+      "elapsed_seconds": 100.271,
+      "budget": {
+        "active_seconds": 99.80815409999998,
+        "limit_seconds": 600,
+        "spent_cny": 0.663752,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "draft",
+      "error": "",
+      "request": {
+        "request_id": "001dbf12-7264-46d2-a5f8-aa956ea316b8",
+        "reason_code": "repair_limit",
+        "question": "已达到本次决策回合上限，现有结果已保存。请调整要求后继续，或结束本次执行。"
+      },
+      "project_revision": "5f14f81b-580c-496b-8071-fb12237a1747"
+    },
+    {
+      "id": "long-source",
+      "deck_id": "deck-1b386ddc",
+      "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-yInzW0",
+      "phase": "completed",
+      "scene": {
+        "category": "企业",
+        "subtype": "内部项目汇报",
+        "reason": "面向市场部门的项目资料汇总汇报，属企业内部工作汇报"
+      },
+      "expected_scene": "企业",
+      "page_count": 2,
+      "elapsed_seconds": 110.066,
+      "budget": {
+        "active_seconds": 109.02144130000003,
+        "limit_seconds": 600,
+        "spent_cny": 0.606748,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "quality": "checked",
+      "error": "",
+      "request": null,
+      "project_revision": "eb92d0d4-4520-46e7-bc88-97abcbc49239",
+      "baseline_before_source_fix": {
+        "deck_id": "deck-85b2294a",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-yInzW0",
+        "status": "ready",
+        "elapsed_seconds": 21.236,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.065466
+      },
+      "baseline": {
+        "deck_id": "deck-de05b6a6",
+        "data_dir": "C:\\Users\\Roy\\AppData\\Local\\Temp\\sf-native-eval-V9lTe3",
+        "status": "ready",
+        "elapsed_seconds": 25.353,
+        "overflow_pages": [],
+        "error": "",
+        "estimated_cost_cny": 0.11972
+      }
+    }
+  ]
+}

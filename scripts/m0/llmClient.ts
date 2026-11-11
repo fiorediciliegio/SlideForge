@@ -15,6 +15,7 @@ export interface LlmClientOptions {
 }
 
 import { reportUsage } from "../../src/billing/index.js";
+import { currentAgentCall } from "../../src/server/agentClient.js";
 
 const DEFAULT_TIMEOUT_MS = 240_000;
 const DEFAULT_RETRIES = 2;
@@ -66,6 +67,10 @@ export async function llmComplete(
   messages: Array<{ role: "system" | "user" | "assistant"; content: string }>,
   options: LlmClientOptions = {},
 ): Promise<LlmResult> {
+  if (currentAgentCall()) {
+    const { agentModelComplete } = await import("../../src/server/agentModel.js");
+    return agentModelComplete(messages);
+  }
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const maxRetries = options.maxRetries ?? DEFAULT_RETRIES;
   const providers = resolveProviders();

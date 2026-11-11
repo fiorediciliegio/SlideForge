@@ -21,3 +21,4 @@
 - `openapi/files.yaml`：Node 内部文件发布、作品文件列表和按用户隔离的公共下载协议。
 - `openapi/engine.yaml`：独立 Node 引擎的 HTML 校验、预览渲染和 PPTX／PDF 导出协议。
 - `openapi/brain.yaml`：Python 大脑层的 Prompt 编排和文档分块协议。
+- `openapi/agent.yaml`：单总控 Harness 的生成选项、大纲编辑/确认、场景纠正、续改/回退，以及 Go 执行/预算和 Node 工具协议。模型成本预算与产品点数独立，模型与检查点正文存 Node artifact，Go 保存执行引用和回执。

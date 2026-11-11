@@ -61,6 +61,10 @@
     .hero-controls select { flex: 1; font-size: 12px; }
     .hero-controls input[type=number] { width: 72px; }
     .hero-controls .btn { padding: 12px 26px; }
+    .agent-constraints { min-width: 0; max-width: 100%; }
+    .agent-constraints pre { box-sizing: border-box; max-width: 100%; max-height: 240px; overflow: auto;
+      white-space: pre-wrap; overflow-wrap: anywhere; padding: 14px; border: 1px solid var(--line); border-radius: 10px;
+      background: #f8f6f0; font: inherit; line-height: 1.6; }
 
     /* ── 工作台 ── */
     .workspace { display: grid; grid-template-columns: 220px minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
@@ -228,6 +232,9 @@
               <textarea id="brief" placeholder="输入需求，例如：Q3 销售复盘：销售额 1200 万，同比 +15%，新客户 86 家"></textarea>
               <div class="hero-controls">
                 <input id="pages" type="number" value="8" min="2" max="20" title="页数" />
+                <select id="pagePolicy" title="页数规则"><option value="fixed">固定页数</option><option value="range">范围页数</option><option value="auto">自动页数</option></select>
+                <input id="maxPages" type="number" value="10" min="2" max="20" title="最多页数" style="display:none;width:70px" />
+                <select id="generationMode" title="生成方式"><option value="direct">直接生成</option><option value="outline_first">先确认大纲</option></select>
                 <select id="brandSelect" title="品牌"><option value="">无品牌</option></select>
                 <select id="templateSelect" title="模板"><option value="">自动推荐</option></select>
                 <button class="btn" id="generate">生成演示 ✨</button>
@@ -241,6 +248,10 @@
                 </label>
               </div>
               <div id="status" class="muted" style="margin-top:10px"></div>
+              <div class="hero-controls" style="margin-top:10px">
+                <label class="muted">时间预算（分钟） <input id="agentMinutes" type="number" min="0.1" step="0.1" value="10" style="width:70px" /></label>
+                <label class="muted">模型费用估算上限（元） <input id="agentCost" type="number" min="0.01" step="0.1" value="2" style="width:70px" /></label>
+              </div>
             </div>
             <div class="muted" style="margin:16px 0 10px">也可以先从模板选一种风格：</div>
             <div class="gallery" id="homeGallery"></div>
@@ -294,6 +305,33 @@
         </section>
 
         <section id="workspace" class="tab">
+          <div id="agentPanel" class="card" style="display:none;margin-bottom:16px">
+            <div class="card-title">任务与项目</div>
+            <div id="agentProgress" role="status"></div><div id="agentBudget" class="muted" style="margin:8px 0"></div>
+            <div id="agentContext" style="margin:10px 0"></div>
+            <div id="agentDraft" style="display:none">
+              <label class="label">演示标题<input id="outlineTitle" style="width:100%" /></label>
+              <div class="hero-controls" style="margin:10px 0">
+                <label>页数规则 <select id="draftPolicy"><option value="fixed">固定</option><option value="range">范围</option><option value="auto">自动</option></select></label>
+                <input id="draftMin" type="number" min="2" max="20" style="width:70px" title="固定或最少页数" />
+                <input id="draftMax" type="number" min="2" max="20" style="width:70px" title="最多页数" />
+                <span class="muted">全部页面合计2–20页；可拖动排序</span>
+              </div>
+              <div id="outlineRows"></div>
+              <button id="outlineAdd" class="btn ghost sm">添加一页</button>
+              <span id="outlineSaveStatus" class="muted" style="margin-left:12px"></span>
+              <button id="outlineConfirm" class="btn" style="margin:12px">确认大纲并生成</button>
+            </div>
+            <div id="agentQuestion" style="display:none;margin:12px 0"><p id="agentQuestionText"></p><textarea id="agentAnswer" placeholder="补充必要资料或澄清要求" style="width:100%"></textarea><button class="btn sm" id="agentRespond">提交并继续</button><button class="btn ghost sm" id="agentAcceptOutline" style="display:none">打开建议大纲，编辑后确认</button><button class="btn ghost sm" id="agentUsePageCount" style="display:none">采用需求中的页数</button></div>
+            <div id="agentResume" style="display:none;margin:12px 0">
+              <div id="agentUnknown" style="color:#a34512"></div>
+              <label class="muted">追加分钟 <input id="agentAddMinutes" type="number" min="0" value="0" style="width:70px" /></label>
+              <label class="muted">追加估算费用（元） <input id="agentAddCost" type="number" min="0" step="0.1" value="0" style="width:70px" /></label>
+              <label id="unknownConsentLabel" style="display:none"><input type="checkbox" id="agentUnknownConsent" />我同意重新调用结果未知的请求，可能产生重复费用</label>
+              <button class="btn sm" id="agentContinue">继续任务</button>
+            </div>
+            <button class="btn ghost sm" id="agentCancel">取消本次执行</button>
+          </div>
           <div class="empty" id="workspaceEmpty" style="display:block">
             <div class="big">🗂</div>工作台是空的。先在「生成演示」里创建一份 PPT，再回来逐页编辑和导出。
           </div>
@@ -347,6 +385,7 @@
                   <button class="btn block" id="saveManual" style="margin-top:10px">保存手动修改</button>
                 </div>
                 <div id="editorStatus" class="muted" style="margin-top:8px"></div>
+                <details id="pageHistoryPanel" style="margin-top:12px"><summary>页面修改记录与回退</summary><div id="pageHistory"></div></details>
               </div>
               <div class="card drift" id="driftBox" style="display:none"></div>
             </div>
@@ -443,6 +482,7 @@
       if (btn.dataset.tab === "usage") loadUsage();
       if (btn.dataset.tab === "decks") loadDecks();
       if (btn.dataset.tab === "research") {}
+      void globalThis.agentUI?.tabChanged(btn.dataset.tab);
     }));
     $("brief").addEventListener("input", () => {
       $("brief").classList.toggle("tall", $("brief").value.length > 200);
@@ -570,20 +610,22 @@
       });
     }
     async function pullNewPreviews() {
+      const deckId = state.deckId;
       const remaining = [];
       for (let p = 1; p <= state.pageCount; p++) if (!state.shown.has(p)) remaining.push(p);
       if (!remaining.length) return;
       const batch = remaining.slice(0, 4);
       if (batch.length === 1) {
         const base64 = await fetchSinglePreview(batch[0]);
+        if(state.deckId!==deckId)return;
         appendShots([{ page: batch[0], base64 }]);
         return;
       }
-      const result = await api(`/decks/${state.deckId}/preview?pages=${batch.join(",")}`).catch((error) => {
+      const result = await api(`/decks/${deckId}/preview?pages=${batch.join(",")}`).catch((error) => {
         console.warn("预览拉取失败", error);
         return null;
       });
-      if (result?.images?.length) appendShots(result.images);
+      if (state.deckId===deckId&&result?.images?.length) appendShots(result.images);
     }
 
     $("generate").addEventListener("click", async () => {
@@ -597,6 +639,7 @@
       addMessage("assistant", "收到，开始为你生成演示。我会先规划大纲，再逐页生成，完成后你可以点击任意页面继续修改。");
       const created = await api("/decks", { method: "POST", body: JSON.stringify({
         brief, page_count: state.pageCount,
+        agent_options: globalThis.agentUI?.options(),
         brand_id: $("brandSelect").value || undefined,
         template_id: $("templateSelect").value || undefined,
         research: $("researchToggle").checked || undefined,
@@ -613,12 +656,13 @@
         $("generate").disabled = false;
         return;
       }
-      for (let round = 0; round < 90; round++) {
+      if(created.agent&&globalThis.agentUI) { $("generate").disabled=false; await agentUI.watch(state.deckId);return; }
+      while (state.deckId) {
         await new Promise(r => setTimeout(r, 4000));
         const job = await api(`/decks/${state.deckId}`);
         if (job.error && !job.status) { $("status").textContent = `失败：${job.error}`; break; }
+        if (job.status === "error") { $("status").textContent = "失败：" + job.error; addMessage("assistant", "生成失败：" + job.error); break; }
         $("status").textContent = `${job.status === "ready" ? "✅ 全部完成" : "生成中"} · ${(job.recent_events ?? []).slice(-1).join("")}`;
-        await pullNewPreviews();
         if (job.status === "ready") {
           // 全部页面补齐预览（分批拉取；无新图即停，避免空转死循环）
           let attempts = 0;
@@ -639,7 +683,6 @@
           toast("演示已生成，可编辑或导出", "success");
           break;
         }
-        if (job.status === "error") { $("status").textContent = "失败：" + job.error; addMessage("assistant", "生成失败：" + job.error); break; }
       }
       $("generate").disabled = false;
     });
@@ -648,12 +691,28 @@
       target.textContent = "";
       if (result.download_url) {
         target.textContent = `已导出：${format}`;
-        const link = document.createElement("a");
-        link.href = result.download_url;
-        link.textContent = `下载 ${format}`;
-        link.className = "btn sm";
-        link.style.marginLeft = "8px";
-        target.appendChild(link);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `下载 ${format}`;
+        button.className = "btn sm";
+        button.style.marginLeft = "8px";
+        button.addEventListener("click", async () => {
+          try {
+            const response = await fetch(result.download_url, { headers: { "x-api-key": apiKey } });
+            if (!response.ok) throw new Error((await response.json()).error);
+            const fileUrl = URL.createObjectURL(await response.blob());
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = `deck.${format.toLowerCase()}`;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            setTimeout(() => URL.revokeObjectURL(fileUrl), 1000);
+          } catch (error) {
+            toast(`下载失败：${error.message}`, "error");
+          }
+        });
+        target.appendChild(button);
       } else {
         target.textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
       }
@@ -680,6 +739,7 @@
       $("previews").innerHTML = "";
       while (state.shown.size < state.pageCount) await pullNewPreviews();
       $("exportResult").textContent = "✅ 已换肤，内容与事实未变";
+      await globalThis.agentUI?.refreshCurrent();
       toast("换肤完成", "success");
     });
 
@@ -700,6 +760,7 @@
         $("reimportResult").textContent = `失败：${result.error}`;
       } else {
         $("reimportResult").textContent = `✅ 已吸收改动：第 ${result.changedPages.join("、")} 页（其余页未动），可重新导出`;
+        await globalThis.agentUI?.refreshCurrent();
         toast("回传改动已吸收", "success");
         state.shown = new Set();
         $("previews").innerHTML = "";
@@ -737,6 +798,7 @@
     $("applyEdit").addEventListener("click", async () => {
       const instruction = $("editorInstruction").value.trim();
       if (!instruction) return toast("请先输入修改指令", "error");
+      if(globalThis.agentUI) { await agentUI.revise(instruction);return; }
       $("applyEdit").disabled = true;
       $("editorStatus").textContent = "重新生成中（只改这一页）…";
       const result = await api(`/decks/${state.deckId}/regenerate`, {
@@ -831,10 +893,10 @@
         doc.body.style.transform = `scale(${scale})`;
         doc.body.style.transformOrigin = "top left";
         doc.body.style.width = "1920px";
-        frame.style.height = `${Math.ceil(1080 * scale)}px`;
+        frame.style.height = `${Math.ceil(1080 * scale) + frame.offsetHeight - frame.clientHeight}px`;
         const style = doc.createElement("style");
         style.id = "__editor-style";
-        style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text}";
+        style.textContent = "*:focus{outline:2px dashed #1e40af!important} body{cursor:text;height:1080px!important}";
         doc.head.appendChild(style);
         const script = doc.createElement("script");
         script.id = "__dnd-script";
@@ -846,12 +908,14 @@
     $("saveManual").addEventListener("click", async () => {
       const frame = $("manualFrame");
       const doc = frame.contentDocument;
+      const source = doc.documentElement.cloneNode(true);
       for (const id of ["__dnd-script", "__dnd-outline", "__dnd-handle", "__editor-style"]) {
-        doc.getElementById(id)?.remove();
+        source.querySelector(`#${id}`)?.remove();
       }
-      doc.body.style.transform = "";
-      doc.body.style.width = "";
-      const html = doc.documentElement.outerHTML;
+      const body = source.querySelector("body");
+      body.style.transform = "";
+      body.style.width = "";
+      const html = source.outerHTML;
       $("saveManual").disabled = true;
       $("editorStatus").textContent = "保存中…";
       const result = await api(`/decks/${state.deckId}/page-html`, {
@@ -870,6 +934,7 @@
         $("driftBox").innerHTML = renderDrift(result.drift);
         $("driftBox").style.display = "block";
         toast("手动修改已保存", "success");
+        await globalThis.agentUI?.refreshCurrent();
       }
       $("saveManual").disabled = false;
     });
@@ -913,6 +978,10 @@
       document.querySelectorAll("[data-export]").forEach(btn => btn.addEventListener("click", () => exportDeckById(btn.dataset.export)));
     }
     async function openDeck(deckId) {
+      const job=await api(`/decks/${deckId}`);
+      if(job.agent&&globalThis.agentUI) {await agentUI.watch(deckId);return;}
+      if(job.status!=="ready") {toast(job.error??"作品尚未完成","error");return;}
+      if(globalThis.agentUI&&!(await agentUI.detach()))return;
       state.deckId = deckId;
       state.pageCount = 20; // 上界，拉完即止
       state.shown = new Set();
@@ -951,5 +1020,6 @@
     loadDecks();
 
   </script>
+  <script src="/agent-ui.js"></script>
 </body>
 </html>

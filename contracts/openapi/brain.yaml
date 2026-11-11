@@ -2,8 +2,19 @@ openapi: 3.1.0
 info:
   title: SlideForge Python Brain API
   version: 0.1.0
-  description: Python 大脑层基础契约：Prompt 编排与文档文本分块。模型调用、图像分析和 Evals 在后续里程碑接入。
+  description: Python 大脑层：Prompt、文档、图像评测和单总控 Agent。Agent 只调用业务工具，产物由 Node 保存，状态由 Go 持有。
 paths:
+  /internal/brain/agent-runs/enqueue:
+    post:
+      operationId: enqueueAgentRun
+      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object, required: [deck_id, run_seq], properties: { deck_id: { type: string }, run_seq: { type: integer, minimum: 1 } } }
+      responses:
+        "200": { description: 短请求派发到有界队列，重复执行标识不重复入队 }
   /healthz:
     get:
       operationId: getBrainHealth

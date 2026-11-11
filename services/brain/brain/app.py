@@ -11,11 +11,13 @@ from .evals import run_evals
 from .images import analyze_image_drift
 from .models import generate_outline
 from .prompts import build_outline_messages, build_page_messages
+from .harness import AgentRunner
 
 MAX_BODY_BYTES = 2 * 1024 * 1024
 
 
 def create_server(config: BrainConfig) -> ThreadingHTTPServer:
+    runner = AgentRunner(config)
     class BrainHandler(BaseHTTPRequestHandler):
         server_version = "SlideForgeBrain/0.1"
 
@@ -37,7 +39,9 @@ def create_server(config: BrainConfig) -> ThreadingHTTPServer:
             try:
                 large_payload = self.path in {"/internal/brain/image-drift", "/internal/brain/evals/run"}
                 body = self._read_body(64 * 1024 * 1024 if large_payload else MAX_BODY_BYTES)
-                if self.path == "/internal/brain/outline-prompt":
+                if self.path == "/internal/brain/agent-runs/enqueue":
+                    result = runner.enqueue(str(body.get("deck_id", "")), int(body.get("run_seq", 0)))
+                elif self.path == "/internal/brain/outline-prompt":
                     result = {
                         "messages": build_outline_messages(
                             brief=str(body.get("brief", "")),
@@ -120,7 +124,11 @@ def create_server(config: BrainConfig) -> ThreadingHTTPServer:
         def log_message(self, format: str, *args) -> None:
             return
 
-    return ThreadingHTTPServer((config.host, config.port), BrainHandler)
+    class BrainServer(ThreadingHTTPServer):
+        def server_close(self):
+            runner.close()
+            super().server_close()
+    return BrainServer((config.host, config.port), BrainHandler)
 
 
 def main() -> None:

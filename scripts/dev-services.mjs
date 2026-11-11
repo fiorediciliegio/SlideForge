@@ -3,9 +3,11 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 
 const root = path.resolve(import.meta.dirname, "..");
+if (existsSync(path.join(root, ".env"))) process.loadEnvFile(path.join(root, ".env"));
 const localGo = path.join(root, ".tooling", "go", "bin", "go.exe");
 const goBinary = process.env.GO_BINARY ?? (existsSync(localGo) ? localGo : "go");
-const pythonBinary = process.env.PYTHON ?? "python";
+const localPython = path.join(root, ".tooling", "brain-venv", "Scripts", "python.exe");
+const pythonBinary = process.env.PYTHON ?? (existsSync(localPython) ? localPython : "python");
 const gatewayPort = process.env.GATEWAY_PORT ?? "8080";
 const capabilityPort = process.env.PORT ?? "3210";
 const enginePort = process.env.ENGINE_PORT ?? "3211";

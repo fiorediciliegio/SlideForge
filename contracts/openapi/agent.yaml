@@ -1,0 +1,253 @@
+openapi: 3.1.0
+info:
+  title: SlideForge Agent Harness
+  version: 1.0.0
+  description: Python 单总控，Go 状态/预算，Node 版本与业务工具。外部请求须 X-API-Key，内部请求须 X-Internal-Token。
+paths:
+  /internal/jobs/agent:
+    post:
+      operationId: mutateAgentRun
+      parameters: [{ name: X-Internal-Token, in: header, required: true, schema: { type: string } }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [action, deck_id, run_seq]
+              properties:
+                action: { type: string, enum: [migrate, claim, transition, heartbeat, schedule, interrupt, cancel, draft, confirm, proposal, user_revision, continue, start_run, begin_tool, complete_tool, reserve_call, send_call, settle_call, reject_call, mark_unknown] }
+                deck_id: { type: string }
+                run_seq: { type: integer }
+                runner_epoch: { type: integer }
+                expected_checkpoint: { type: integer }
+                expected_draft_revision: { type: integer }
+                operation_id: { type: string }
+                call_id: { type: string }
+                input_hash: { type: string }
+                parent_revision: { type: string }
+                project_ref: { type: object }
+                result: { type: object }
+                messages: { type: array, items: { type: object } }
+                phase: { type: string }
+                cost: { type: number, minimum: 0 }
+                response_ref: { type: string }
+                messages_ref: { type: string }
+      responses:
+        "200": { description: 已提交任务快照，重复操作复用回执 }
+        "409": { description: 执行身份、父版本、输入指纹或检查点冲突 }
+        "402": { description: 预算不足，未发送新调用 }
+  /decks/{deck_id}/project:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    get:
+      operationId: readAgentProject
+      responses:
+        "200": { description: 当前项目、资料摘要、约束与版本 }
+  /decks/{deck_id}/outline-draft:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    put:
+      operationId: saveAgentOutlineDraft
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: "#/components/schemas/OutlineDraft"
+                - { type: object, required: [expected_draft_revision], properties: { expected_draft_revision: { type: integer, minimum: 0 }, page_policy: { type: object } } }
+      responses:
+        "200": { description: 新草稿修订 }
+        "409": { description: 草稿已被修改 }
+  /decks/{deck_id}/outline-confirm:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    post:
+      operationId: confirmAgentOutline
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object, required: [draft_revision], properties: { draft_revision: { type: integer, minimum: 0 } } }
+      responses:
+        "200": { description: 确认指定修订并排队，重复确认幂等 }
+  /decks/{deck_id}/continue:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    post:
+      operationId: continueAgentRun
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [expected_checkpoint]
+              properties:
+                expected_checkpoint: { type: integer }
+                budget_addition:
+                  type: object
+                  properties:
+                    active_seconds: { type: number, minimum: 0 }
+                    estimated_cost_cny: { type: number, minimum: 0 }
+                retry_unknown_call_ids: { type: array, items: { type: string } }
+      responses:
+        "200": { description: 先核对并结算已完整落盘的模型响应，再沿用累计预算恢复；确实未知的调用须明确同意重试 }
+  /decks/{deck_id}/respond:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    post:
+      operationId: answerAgentRequest
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [request_id, expected_checkpoint]
+              properties:
+                request_id: { type: string }
+                expected_checkpoint: { type: integer }
+                response: { type: string }
+                accept_outline: { type: boolean, description: 将结构提案加载为可编辑草稿，仍需确认 }
+                accept_page_count: { type: boolean, description: 明确采用需求中的固定页数 }
+      responses:
+        "200": { description: 记录用户回答并恢复 }
+  /decks/{deck_id}/agent-revise:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    post:
+      operationId: reviseAgentProject
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [page_ids, instruction, expected_project_revision]
+              properties:
+                page_ids: { type: array, minItems: 1, maxItems: 20, items: { type: string } }
+                instruction: { type: string, minLength: 1 }
+                expected_project_revision: { type: string }
+                budget: { type: object }
+      responses:
+        "202": { description: 新的页面修改执行 }
+  /decks/{deck_id}/pages/{page_id}/history:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/PageId" }, { $ref: "#/components/parameters/ApiKey" }]
+    get:
+      operationId: readPageHistory
+      responses:
+        "200": { description: 页面版本与修改记录 }
+  /decks/{deck_id}/pages/{page_id}/rollback:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/PageId" }, { $ref: "#/components/parameters/ApiKey" }]
+    post:
+      operationId: rollbackPageRevision
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { type: object, required: [target_page_revision, expected_project_revision], properties: { target_page_revision: { type: string }, expected_project_revision: { type: string } } }
+      responses:
+        "200": { description: 回退产生新版本，不覆盖历史 }
+  /decks/{deck_id}/scenario:
+    parameters: [{ $ref: "#/components/parameters/DeckId" }, { $ref: "#/components/parameters/ApiKey" }]
+    post:
+      operationId: correctAgentScenario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [expected_project_revision, scenario]
+              properties:
+                expected_project_revision: { type: string }
+                scenario: { type: object, required: [category, subtype, reason], properties: { category: { enum: [企业, 学术/教育, 旅游, 其他, 待明确] }, subtype: { type: string }, reason: { type: string } } }
+      responses:
+        "200": { description: 用户更正场景，保留约束并使相关检查失效 }
+        "409": { description: 执行中或版本已变化，未覆盖当前结果 }
+  /internal/agent/tools:
+    post:
+      operationId: executeAgentBusinessTool
+      parameters: [{ name: X-Internal-Token, in: header, required: true, schema: { type: string } }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [deck_id, run_seq, runner_epoch, operation_id, name, args]
+              properties:
+                deck_id: { type: string }
+                run_seq: { type: integer }
+                runner_epoch: { type: integer }
+                operation_id: { type: string, maxLength: 200 }
+                name: { type: string }
+                args: { type: object }
+      responses:
+        "200": { description: 版本化观察、回执或暂停/完成结果，具体工具参数由 Zod 导出 }
+  /internal/agent/model-results:
+    post:
+      operationId: persistAgentModelArtifact
+      parameters: [{ name: X-Internal-Token, in: header, required: true, schema: { type: string } }]
+      responses:
+        "200": { description: 受控读写供应商响应和消息检查点，Go 仅存引用 }
+components:
+  parameters:
+    DeckId: { name: deck_id, in: path, required: true, schema: { type: string } }
+    PageId: { name: page_id, in: path, required: true, schema: { type: string } }
+    ApiKey: { name: X-API-Key, in: header, required: true, schema: { type: string } }
+  schemas:
+    OutlineDraft:
+      type: object
+      required: [title, pages]
+      properties:
+        draft_revision: { type: integer, minimum: 0 }
+        title: { type: string, minLength: 1 }
+        pages:
+          type: array
+          minItems: 2
+          maxItems: 20
+          items:
+            type: object
+            required: [page_id, title, bullets]
+            properties:
+              page_id: { type: string, pattern: '^[a-zA-Z0-9_-]+$' }
+              title: { type: string, minLength: 1 }
+              bullets: { type: array, items: { type: string } }
+    AgentPublic:
+      type: object
+      required: [version, run_seq, phase, options, budget]
+      description: 公共 DTO 不返回 owner、模型消息、模型调用账、内部令牌或本地路径。
+      properties:
+        version: { const: 1 }
+        run_seq: { type: integer }
+        checkpoint_seq: { type: integer }
+        phase: { enum: [queued, planning, waiting_outline, generating, checking, revising, waiting_user, paused_budget, interrupted, completed, failed, cancelled] }
+        options: { $ref: '#/components/schemas/AgentOptions' }
+        preview_revision: { type: string }
+        quality_state: { enum: [draft, checked] }
+        draft_revision: { type: integer }
+        request: { type: [object, 'null'] }
+        error: { type: string }
+        unknown_calls: { type: array, items: { type: object, properties: { call_id: { type: string }, reserved_cny: { type: number } } } }
+        budget:
+          type: object
+          properties:
+            active_seconds: { type: number }
+            limit_seconds: { type: number }
+            spent_cny: { type: number }
+            reserved_cny: { type: number }
+            limit_cny: { type: number }
+    AgentOptions:
+      type: object
+      required: [version, page_policy]
+      properties:
+        version: { const: 1 }
+        generation_mode: { enum: [direct, outline_first], default: direct }
+        research_allowed: { type: boolean, default: false }
+        page_policy:
+          oneOf:
+            - { type: object, required: [mode, count], properties: { mode: { const: fixed }, count: { type: integer, minimum: 2, maximum: 20 } } }
+            - { type: object, required: [mode, min, max], properties: { mode: { const: range }, min: { type: integer, minimum: 2, maximum: 20 }, max: { type: integer, minimum: 2, maximum: 20 } } }
+            - { type: object, required: [mode], properties: { mode: { const: auto } } }
+        budget:
+          type: object
+          properties:
+            active_seconds: { type: number, exclusiveMinimum: 0, default: 600 }
+            estimated_cost_cny: { type: number, exclusiveMinimum: 0, default: 2 }

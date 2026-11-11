@@ -2,6 +2,8 @@
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
+import { timingSafeEqual } from "node:crypto";
+import { z } from "zod";
 import { loadDotEnv } from "../server/env.js";
 
 loadDotEnv();
@@ -94,11 +96,27 @@ const server = createServer(async (req, res) => {
   applySecurityHeaders(res);
   try {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);
+    if (url.pathname.startsWith("/internal/agent/")) {
+      const expected = Buffer.from(process.env.GATEWAY_INTERNAL_TOKEN ?? ""), actual = Buffer.from(String(req.headers["x-internal-token"] ?? ""));
+      if (!expected.length || expected.length !== actual.length || !timingSafeEqual(expected,actual)) return json(res,404,{error:"not found"});
+      if (req.method !== "POST") return json(res,405,{error:"method not allowed"});
+      const body = await readBody(req);
+      const agent = await import("../capabilities/agent.js");
+      if (url.pathname === "/internal/agent/model-results") return json(res,200,await agent.agentModelResult(body));
+      if (url.pathname === "/internal/agent/tools") {
+        const input = z.object({ deck_id:z.string(),run_seq:z.number().int(),runner_epoch:z.number().int(),operation_id:z.string().max(200),name:z.string(),args:z.record(z.string(),z.unknown()) }).parse(body);
+        return json(res,200,await agent.executeAgentTool(input,generationQueue));
+      }
+      return json(res,404,{error:"not found"});
+    }
     if (req.method === "GET" && url.pathname === "/healthz") {
       return json(res, 200, {
         ok: true, service: "slideforge-capabilities", jobs: (await listDeckJobs()).length,
         queue: generationQueue.stats, uptime_seconds: Math.round(process.uptime()),
       });
+    }
+    if(req.method==="GET"&&url.pathname==="/agent-ui.js") {
+      const {readFile}=await import("node:fs/promises");res.writeHead(200,{"content-type":"text/javascript; charset=utf-8"});return res.end(await readFile(new URL("./agent-ui.js",import.meta.url),"utf8"));
     }
 
     if (!url.pathname.startsWith("/template-cover/")) {
@@ -288,6 +306,14 @@ const server = createServer(async (req, res) => {
         }
       }
       const jobId = newDeckId();
+      if (body.agent_options) {
+        const agent = await import("../capabilities/agent.js");
+        const result = await agent.createAgentDeck({ brief:body.brief,options:body.agent_options,ownerKeyHash:apiKeyHash(apiKey),
+          sourceText:[body.source_text,sourceText].filter(Boolean).join("\n\n")||undefined,
+          attachment:body.attachment_base64?Buffer.from(body.attachment_base64,"base64"):undefined,filename:body.filename,
+          brand:brandProfile??undefined,templateId:body.template_id });
+        return json(res,202,result);
+      }
       const job: DeckJob = {
         id: jobId, status: "creating", events: [], overflowPages: [],
         ownerKeyHash: apiKeyHash(apiKey), createdAt: new Date().toISOString(),
@@ -304,7 +330,7 @@ const server = createServer(async (req, res) => {
             const deck = await runWithBilling(billingCtx, () => createDeck({
               deckId: jobId, brief: body.brief, pageCount: body.page_count,
               concurrency: DECK_CONCURRENCY, brandProfile: brandProfile ?? undefined,
-              sourceText, templateId: body.template_id,
+              sourceText: [body.source_text, sourceText].filter(Boolean).join("\n\n") || undefined, templateId: body.template_id,
               research: body.research === true, onEvent,
             }));
             job.runDir = deck.runDir;
@@ -325,6 +351,25 @@ const server = createServer(async (req, res) => {
       return json(res, 202, { deck_id: jobId, status: job.status, queue: generationQueue.stats });
     }
 
+    const agentMatch = url.pathname.match(/^\/decks\/([\w-]+)\/(project|scenario|outline-draft|outline-confirm|continue|respond|agent-revise|pages\/([\w-]+)\/(history|rollback))$/);
+    if (agentMatch) {
+      const agent = await import("../capabilities/agent.js");
+      if (!await userAuthorized(req,res)) return;
+      const job=await getDeckJob(agentMatch[1]);if (!ownJob(req,job)) return json(res,404,{error:"deck 不存在"});
+      const [,,action,pageId,pageAction]=agentMatch;
+      if (action==="project"&&req.method==="GET") return json(res,200,job.agent?await agent.getAgentProject(job.id):{legacy:true,deck_id:job.id});
+      if (pageAction==="history"&&req.method==="GET") return json(res,200,await agent.agentPageHistory(job.id,pageId));
+      const body=await readBody(req);
+      if (action==="outline-draft"&&req.method==="PUT") return json(res,200,await agent.saveAgentOutline(job.id,body));
+      if (req.method!=="POST") return json(res,405,{error:"method not allowed"});
+      if (action==="outline-confirm") return json(res,200,await agent.confirmAgentOutline(job.id,body));
+      if (action==="continue") return json(res,200,await agent.continueAgent(job.id,body));
+      if (action==="respond") return json(res,200,await agent.answerAgent(job.id,body));
+      if (action==="scenario") return json(res,200,await agent.correctAgentScenario(job.id,body));
+      if (action==="agent-revise") return json(res,202,await agent.reviseAgent(job.id,body));
+      if (pageAction==="rollback") return json(res,200,await agent.rollbackAgent(job.id,pageId,body));
+      return json(res,404,{error:"not found"});
+    }
     const match = url.pathname.match(/^\/decks\/([\w-]+)(?:\/(regenerate|preview|export|reimport|page-html|theme))?$/);
     if (match) {
       let job = await getDeckJob(match[1]);
@@ -375,8 +420,12 @@ const server = createServer(async (req, res) => {
         const pageNumber = Number(url.searchParams.get("page") ?? 0);
         if (req.method === "GET") {
           const { readFile } = await import("node:fs/promises");
+          const agent = await import("../capabilities/agent.js");
           try {
-            const html = await readFile(path.join(job.runDir, `page-${pageNumber}.html`), "utf8");
+            const project=job.agent?(await agent.getAgentProject(job.id)).project:undefined;
+            const html = project
+              ? await (await import("../capabilities/project.js")).pageHTML(agent.agentRoot(job.id),project,project.outline.pages[pageNumber-1]?.page_id??"")
+              : await readFile(path.join(job.runDir, `page-${pageNumber}.html`), "utf8");
             res.writeHead(200, { "content-type": "text/html; charset=utf-8", "content-security-policy": "sandbox; default-src 'none'; img-src data: file:; style-src 'unsafe-inline'" });
             return res.end(html);
           } catch { return json(res, 404, { error: `第 ${pageNumber} 页不存在` }); }
@@ -402,18 +451,27 @@ const server = createServer(async (req, res) => {
       if (req.method === "POST" && action === "export") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const body = await readBody(req);
+        let exportRunDir=job.runDir,revisionId=job.agent?.project_ref?.revision_id;
+        if(job.agent){
+          const {readProjectRevision}=await import("../capabilities/project.js");const {agentRoot}=await import("../capabilities/agent.js");
+          const requested=typeof body.revision_id==="string"?body.revision_id:revisionId!;
+          const project=await readProjectRevision(agentRoot(job.id),{revision_id:requested,artifact_ref:`project/revisions/${requested}`,outline_revision:0,constraints_revision:0});
+          if(project.pages.length!==project.outline.pages.length||project.pages.length<2)return json(res,409,{error:"页面尚未完整生成，不能导出不完整文件"});
+          exportRunDir=path.join(agentRoot(job.id),"project/revisions",requested);revisionId=requested;
+        }
         const format = body.format === "pdf" ? "pdf" : "pptx";
         const defaultName = format === "pdf" ? "deck.pdf" : "deck.pptx";
-        const outPath = safeExportPath(job.runDir, body.out_path, defaultName);
+        const outPath = safeExportPath(exportRunDir, body.out_path, defaultName);
         const apiKey = req.headers["x-api-key"] as string | undefined;
         const idempotencyKey = req.headers["idempotency-key"];
         const result = await generationQueue.submit(() => runIdempotentExport({
-          apiKey, ownerKeyHash: job.ownerKeyHash, deckId: job.id, runDir: job.runDir!,
+          apiKey, ownerKeyHash: job.ownerKeyHash, deckId: job.id, runDir: exportRunDir,
+          revisionId,
           format, outPath,
           idempotencyKey: typeof body.idempotency_key === "string"
             ? body.idempotency_key
             : typeof idempotencyKey === "string" ? idempotencyKey : undefined,
-          execute: () => exportDeck({ runDir: job.runDir!, outPath, format }),
+          execute: () => exportDeck({ runDir: exportRunDir, outPath, format }),
         }));
         return json(res, 200, result);
       }
@@ -437,8 +495,8 @@ const server = createServer(async (req, res) => {
     if (error instanceof QueueFullError) {
       return json(res, 503, { error: error.message }, { "retry-after": "30" });
     }
-    const status = error instanceof HttpRequestError ? error.status : 500;
-    return json(res, status, { error: error instanceof Error ? error.message : String(error) });
+    const status = error instanceof HttpRequestError ? error.status : error instanceof z.ZodError ? 400 : 500;
+    return json(res, status, { error: error instanceof Error ? error.message : String(error),...(status===402&&req.url?.startsWith("/internal/agent/")?{error_code:"budget_exhausted"}:{}) });
   }
 });
 

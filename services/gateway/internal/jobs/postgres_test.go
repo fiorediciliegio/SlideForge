@@ -2,6 +2,7 @@ package jobs
 
 import (
 	"context"
+	"database/sql/driver"
 	"encoding/json"
 	"os"
 	"path/filepath"
@@ -9,6 +10,76 @@ import (
 
 	"github.com/DATA-DOG/go-sqlmock"
 )
+
+func TestPostgresRestartInterruptsActiveAgentsAndPreservesUserWait(t *testing.T) {
+	db, mock, err := sqlmock.New()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer db.Close()
+	store := &PostgresStore{db: db, instanceID: "recovery", subscribers: map[string]map[chan Job]struct{}{}}
+	active := Job{ID: "active", Status: "creating", Agent: NewAgentRun(json.RawMessage(`{"version":1}`), 600, 2)}
+	active.Agent.Phase = "generating"
+	active.Agent.Epoch = 3
+	active.Agent.Calls["sent"] = AgentCall{Status: "sent", Cost: 0.1}
+	waiting := Job{ID: "waiting", Status: "creating", Agent: NewAgentRun(json.RawMessage(`{"version":1}`), 600, 2)}
+	waiting.Agent.Phase = "waiting_outline"
+	a, _ := json.Marshal(active)
+	w, _ := json.Marshal(waiting)
+	mock.ExpectBegin()
+	mock.ExpectQuery("SELECT payload FROM deck_jobs.*FOR UPDATE").WillReturnRows(sqlmock.NewRows([]string{"payload"}).AddRow(a).AddRow(w))
+	mock.ExpectExec("UPDATE deck_jobs SET payload").WithArgs(recoveredAgentPayload{}, sqlmock.AnyArg(), "active").WillReturnResult(sqlmock.NewResult(0, 1))
+	mock.ExpectExec("INSERT INTO job_outbox").WillReturnResult(sqlmock.NewResult(1, 1))
+	mock.ExpectExec("SELECT pg_notify").WillReturnResult(sqlmock.NewResult(0, 1))
+	mock.ExpectCommit()
+	if err := store.RecoverAgents(context.Background()); err != nil {
+		t.Fatal(err)
+	}
+	if err := mock.ExpectationsWereMet(); err != nil {
+		t.Fatal(err)
+	}
+}
+
+type recoveredAgentPayload struct{}
+
+func (recoveredAgentPayload) Match(value driver.Value) bool {
+	data, ok := value.([]byte)
+	if !ok {
+		return false
+	}
+	var job Job
+	if json.Unmarshal(data, &job) != nil {
+		return false
+	}
+	return job.Agent.Phase == "interrupted" && job.Agent.Epoch == 4 && job.Agent.Calls["sent"].Status == "unknown"
+}
+
+func TestPostgresAgentClaimUsesLockedTransactionalUpdate(t *testing.T) {
+	db, mock, err := sqlmock.New()
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer db.Close()
+	store := &PostgresStore{db: db, instanceID: "agent-test", subscribers: map[string]map[chan Job]struct{}{}}
+	job := Job{ID: "agent-a", Status: "creating", Agent: NewAgentRun(json.RawMessage(`{"version":1}`), 600, 2)}
+	payload, _ := json.Marshal(job)
+	mock.ExpectBegin()
+	mock.ExpectQuery("SELECT payload FROM deck_jobs WHERE id=\\$1 FOR UPDATE").WithArgs(job.ID).WillReturnRows(sqlmock.NewRows([]string{"payload"}).AddRow(payload))
+	mock.ExpectExec("UPDATE deck_jobs SET payload").WillReturnResult(sqlmock.NewResult(0, 1))
+	mock.ExpectExec("INSERT INTO job_outbox").WillReturnResult(sqlmock.NewResult(1, 1))
+	mock.ExpectExec("SELECT pg_notify").WillReturnResult(sqlmock.NewResult(0, 1))
+	mock.ExpectCommit()
+	result, err := store.MutateAgent(AgentCommand{Action: "claim", DeckID: job.ID, RunSeq: 1})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if result.Agent.Epoch != 1 || result.Agent.Phase != "planning" {
+		t.Fatal("claim not applied")
+	}
+	if err = mock.ExpectationsWereMet(); err != nil {
+		t.Fatal(err)
+	}
+}
 
 func TestPostgresJobSaveCommitsUpdateOutboxAndNotificationTogether(t *testing.T) {
 	db, mock, err := sqlmock.New()

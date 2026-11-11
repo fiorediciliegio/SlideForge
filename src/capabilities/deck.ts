@@ -25,6 +25,7 @@ import { getTemplateReference } from "../templates/library.js";
 import type { CreateDeckInput as ContractCreateDeckInput, DeckEvent } from "../contracts/deck.js";
 import { newDeckId } from "../contracts/ids.js";
 import { createDeckWorkspace } from "./workspace.js";
+import { currentAgentCall } from "../server/agentClient.js";
 
 export type { DeckEvent } from "../contracts/deck.js";
 
@@ -80,6 +81,7 @@ async function generateOutline(brief: string, pageCount: number): Promise<Outlin
 }
 
 interface PageContext {
+  currentHtml?: string;
   brief: string;
   outline: Outline;
   runDir: string;
@@ -114,6 +116,7 @@ async function generatePage(
       if (instruction) {
         messages.push({ role: "user", content: `用户对这一页的修改要求：${instruction}。请在遵守全部约束的前提下输出修改后的完整 HTML 文档。` });
       }
+      if (ctx.currentHtml) messages.push({role:"user",content:`【当前页面，修改必须以此为基础】\n${ctx.currentHtml}`});
       if (lastIssues.length > 0) {
         messages.push({
           role: "user",
@@ -127,6 +130,7 @@ async function generatePage(
       // D2 方言静态校验（结构/外部资源/不可映射 CSS）
       const dialect = validateHtmlDialect(html);
       if (!dialect.ok) {
+        if (currentAgentCall()) throw new Error(dialect.errors.map(item=>item.detail).join("；"));
         lastIssues = dialect.errors.map((e) => ({ kind: "overflow-y" as const, detail: `${e.rule}: ${e.detail}` }));
         if (attempt === 0) {
           ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页违反方言契约，定向重生成` });
@@ -140,6 +144,7 @@ async function generatePage(
 
       const validation = await validateSlideHtmlFile(pageFile);
       if (!validation.ok) {
+        if (currentAgentCall()) throw new Error(validation.issues.map(item=>item.detail).join("；"));
         lastIssues = validation.issues;
         if (attempt === 0) {
           ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页溢出，定向重生成` });
@@ -150,6 +155,7 @@ async function generatePage(
       ctx.onEvent?.({ stage: "page", page: index + 1, totalPages: ctx.pageCount, message: `第 ${index + 1} 页完成「${page.title}」` });
       return parts;
     } catch (error) {
+      if (currentAgentCall()) throw error;
       lastError = error;
       ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页第 ${attempt + 1} 次失败` });
     }
@@ -263,6 +269,8 @@ export async function regeneratePage(input: {
   overflowWarnings: Array<{ page: number; issues: SlideIssue[] }>;
   drift?: ReturnType<typeof computePageDrift>;
 }> {
+  const versioning=await import("./agent.js");
+  if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,input.instruction,directory=>regeneratePage({...input,runDir:directory}),{page:input.page});
   ensureRuntimeEnv();
   input = { ...input, runDir: path.resolve(input.runDir) };
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
@@ -279,8 +287,10 @@ export async function regeneratePage(input: {
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
   const emit = input.onEvent ?? (() => {});
   emit({ stage: "regenerate", page: input.page, message: `重生成第 ${input.page} 页` });
+  let visualContext: {visualSpec?:string;referenceHtml?:string}={};
+  try {visualContext=JSON.parse(await readFile(path.join(input.runDir,"agent-context.json"),"utf8"));}catch(error){if((error as NodeJS.ErrnoException).code!=="ENOENT")throw error;}
   await generatePage(
-    { brief, outline, runDir: input.runDir, pageCount: outline.pages.length, onEvent: emit },
+    { brief, outline, runDir: input.runDir, pageCount: outline.pages.length, onEvent: emit,currentHtml:oldHtml,...visualContext },
     index,
     overflowWarnings,
     input.instruction,
@@ -323,12 +333,16 @@ export async function reimportDeck(input: {
   unchangedPages: number[];
   report: Array<{ page: number; added: number; removed: number }>;
 }> {
+  const versioning=await import("./agent.js");
+  if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,"吸收 WPS 手工修改",directory=>reimportDeck({...input,runDir:directory}),{source:input.pptxBuffer});
   ensureRuntimeEnv();
   input = { ...input, runDir: path.resolve(input.runDir) };
   const emit = input.onEvent ?? (() => {});
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
   const brief = await readFile(path.join(input.runDir, "brief.txt"), "utf8");
   const slideTexts = await extractPptxSlideTexts(input.pptxBuffer);
+  let visualContext:{visualSpec?:string;referenceHtml?:string}={};
+  try{visualContext=JSON.parse(await readFile(path.join(input.runDir,"agent-context.json"),"utf8"));}catch(error){if((error as NodeJS.ErrnoException).code!=="ENOENT")throw error;}
   if (slideTexts.length !== outline.pages.length) {
     throw new Error(`页数不一致：原 deck ${outline.pages.length} 页，回传文件 ${slideTexts.length} 页`);
   }
@@ -358,7 +372,7 @@ export async function reimportDeck(input: {
 ${slideTexts[index].join("；").slice(0, 1500)}
 请保持原有的版式结构、配色与品牌风格，仅按上述新文本更新内容。`;
     await generatePage(
-      { brief, outline, runDir: input.runDir, pageCount: outline.pages.length, onEvent: emit },
+      { brief, outline, runDir: input.runDir, pageCount: outline.pages.length, onEvent: emit,currentHtml:oldHtml,...visualContext },
       index,
       overflowWarnings,
       instruction,
@@ -383,6 +397,8 @@ export async function updatePageHtml(input: {
   drift?: ReturnType<typeof computePageDrift>;
   overflowWarnings: Array<{ page: number; issues: SlideIssue[] }>;
 }> {
+  const versioning=await import("./agent.js");
+  if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,`手动编辑第${input.page}页`,directory=>updatePageHtml({...input,runDir:directory}),{page:input.page});
   ensureRuntimeEnv();
   const runDir = path.resolve(input.runDir);
   const outline = JSON.parse(await readFile(path.join(runDir, "outline.json"), "utf8")) as Outline;
@@ -418,6 +434,8 @@ export async function applyTheme(input: {
   brandProfile?: BrandProfile;
   onEvent?: (event: DeckEvent) => void;
 }): Promise<{ templateId?: string }> {
+  const versioning=await import("./agent.js");
+  if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,"调整视觉主题",directory=>applyTheme({...input,runDir:directory}));
   ensureRuntimeEnv();
   const runDir = path.resolve(input.runDir);
   const outline = JSON.parse(await readFile(path.join(runDir, "outline.json"), "utf8")) as Outline;
@@ -444,13 +462,14 @@ export async function applyTheme(input: {
     const pageFile = path.join(runDir, `page-${index + 1}.html`);
     const oldHtml = await readFile(pageFile, "utf8");
     await generatePage(
-      { brief, outline, runDir, pageCount: outline.pages.length, visualSpec, referenceHtml, onEvent: emit },
+      { brief, outline, runDir, pageCount: outline.pages.length, visualSpec, referenceHtml, onEvent: emit,currentHtml:oldHtml },
       index,
       overflowWarnings,
       `${instruction}\n【本页原文（仅供保留内容，不要学习其旧风格）】\n${extractTextLinesLocal(oldHtml).join("；").slice(0, 1500)}`,
     );
   }
   await assembleDeck(runDir, outline.title, outline.pages.length);
+  if(currentAgentCall())await writeFile(path.join(runDir,"agent-context.json"),JSON.stringify({themeChanged:true,templateId,visualSpec,referenceHtml,brand:input.brandProfile}));
   return { templateId };
 }
 
@@ -460,6 +479,8 @@ export async function exportDeck(input: {
   format?: "pptx" | "pdf";
 }): Promise<ExportDeckResult> {
   ensureRuntimeEnv();
+  const managed=await (await import("./agent.js")).isVersionedWorkspace(input.runDir);
+  if(managed&&(managed.pages.length!==managed.outline.pages.length||managed.pages.length<2))throw new Error("页面尚未完整生成，不能导出不完整文件");
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
   const safeTitle = outline.title.replace(/[\\/:*?"<>|]/g, "-").slice(0, 60) || "deck";
   const format = input.format ?? "pptx";
@@ -481,7 +502,7 @@ export async function exportDeck(input: {
         await mkdir(pdfPagesDir, { recursive: true });
         const slideHtmlFiles: string[] = [];
         for (let i = 1; i <= outline.pages.length; i++) {
-          const pageHtml = await readFile(path.join(input.runDir, `page-${i}.html`), "utf8");
+          const pageHtml = await readFile(path.join(input.runDir, managed ? managed.pages[i - 1].html_ref : `page-${i}.html`), "utf8");
           const slide = splitSlideDocument(pageHtml);
           const wrapped = buildDeckHtml({ title: outline.title, slides: [slide] });
           const file = path.join(pdfPagesDir, `page-${i}.html`);

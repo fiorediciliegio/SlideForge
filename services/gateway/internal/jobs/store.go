@@ -20,6 +20,8 @@ type WebhookConfig struct {
 }
 
 type Job struct {
+	Agent         *AgentRun      `json:"agent,omitempty"`
+	AgentHistory  []AgentRun     `json:"agent_history,omitempty"`
 	ID            string         `json:"id"`
 	RunDir        string         `json:"runDir,omitempty"`
 	Title         string         `json:"title,omitempty"`
@@ -36,6 +38,7 @@ type Job struct {
 }
 
 type StoreAPI interface {
+	MutateAgent(command AgentCommand) (Job, error)
 	Create(job Job) error
 	Save(job Job) error
 	Get(id string) (Job, bool)
@@ -73,7 +76,10 @@ func NewStore(dataDir string) (*Store, error) {
 	}
 	changed := false
 	for _, job := range saved {
-		if job.Status == "creating" {
+		if job.Agent != nil {
+			interruptAgent(job.Agent)
+			changed = true
+		} else if job.Status == "creating" {
 			job.Status = "error"
 			job.Error = "服务重启中断了生成，请重新创建任务"
 			changed = true
@@ -109,6 +115,9 @@ func (s *Store) Save(job Job) error {
 	current, exists := s.jobs[job.ID]
 	if !exists {
 		return errors.New("deck 任务不存在")
+	}
+	if current.Agent != nil {
+		return errors.New("Agent 任务必须通过条件更新接口修改")
 	}
 	if current.Cancelled && job.Status == "creating" {
 		job.Status = "error"
@@ -162,6 +171,14 @@ func (s *Store) Cancel(id string) (Job, bool, error) {
 		return Job{}, false, nil
 	}
 	job.Cancelled = true
+	if job.Agent != nil {
+		job = cloneJob(job)
+		accrue(job.Agent, time.Now())
+		job.Agent.Phase = "cancelled"
+		job.Agent.Epoch++
+		job.Agent.Checkpoint++
+		job.Agent.Error = "用户取消了任务"
+	}
 	job.Status = "error"
 	job.Error = "用户取消了任务"
 	job.UpdatedAt = time.Now().UTC().Format(time.RFC3339)
@@ -240,14 +257,21 @@ func (s *Store) saveLocked() error {
 		return err
 	}
 	temporary := s.file + ".tmp"
-	if err := os.WriteFile(temporary, data, 0o600); err != nil {
+	file, err := os.OpenFile(temporary, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0o600)
+	if err != nil {
 		return err
 	}
-	if err := os.Rename(temporary, s.file); err != nil {
-		if removeErr := os.Remove(s.file); removeErr != nil && !errors.Is(removeErr, os.ErrNotExist) {
-			return err
-		}
-		return os.Rename(temporary, s.file)
+	if _, err = file.Write(data); err != nil {
+		_ = file.Close()
+		return err
 	}
-	return nil
+	if err = file.Sync(); err != nil {
+		_ = file.Close()
+		return err
+	}
+	if err = file.Close(); err != nil {
+		return err
+	}
+	// Go's Windows Rename uses MoveFileExW(REPLACE_EXISTING). Never delete the old snapshot on failure.
+	return os.Rename(temporary, s.file)
 }

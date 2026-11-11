@@ -99,6 +99,7 @@ func (h *HTTPHandler) charge(writer http.ResponseWriter, request *http.Request) 
 		Kind        string  `json:"kind"`
 		Points      float64 `json:"points"`
 		OperationID string  `json:"operation_id"`
+		OwnerHash   string  `json:"owner_key_hash"`
 	}
 	if !decode(writer, request, &body) {
 		return
@@ -107,7 +108,13 @@ func (h *HTTPHandler) charge(writer http.ResponseWriter, request *http.Request) 
 		writeAPIError(writer, http.StatusBadRequest, "unsupported charge kind", "bad_request", false)
 		return
 	}
-	receipt, err := h.store.Charge(body.APIKey, body.DeckID, body.OperationID, body.Points)
+	var receipt ChargeReceipt
+	var err error
+	if body.OwnerHash != "" && body.APIKey == "" {
+		receipt, err = h.store.ChargeOwner(body.OwnerHash, body.DeckID, body.OperationID, body.Points)
+	} else {
+		receipt, err = h.store.Charge(body.APIKey, body.DeckID, body.OperationID, body.Points)
+	}
 	if err != nil {
 		writeAPIError(writer, http.StatusInternalServerError, err.Error(), "internal_error", true)
 		return

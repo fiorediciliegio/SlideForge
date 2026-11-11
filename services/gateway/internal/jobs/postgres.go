@@ -94,6 +94,70 @@ func newPostgresInstanceID() string {
 	return fmt.Sprintf("instance-%d", time.Now().UnixNano())
 }
 
+// RecoverAgents is called at single-gateway startup before accepting requests.
+// Replica startup must not interrupt another healthy gateway's executions.
+func (s *PostgresStore) RecoverAgents(ctx context.Context) error {
+	tx, err := s.db.BeginTx(ctx, nil)
+	if err != nil {
+		return err
+	}
+	defer tx.Rollback()
+	rows, err := tx.QueryContext(ctx, "SELECT payload FROM deck_jobs WHERE payload->'agent' IS NOT NULL FOR UPDATE")
+	if err != nil {
+		return err
+	}
+	var pending []Job
+	for rows.Next() {
+		var payload []byte
+		if err := rows.Scan(&payload); err != nil {
+			rows.Close()
+			return err
+		}
+		var job Job
+		if err := json.Unmarshal(payload, &job); err != nil {
+			rows.Close()
+			return err
+		}
+		if job.Agent == nil {
+			continue
+		}
+		changed := activePhase(job.Agent.Phase) || job.Agent.Phase == "queued"
+		for _, call := range job.Agent.Calls {
+			if call.Status == "sent" {
+				changed = true
+			}
+		}
+		if changed {
+			interruptAgent(job.Agent)
+			pending = append(pending, job)
+		}
+	}
+	if err := rows.Err(); err != nil {
+		rows.Close()
+		return err
+	}
+	if err := rows.Close(); err != nil {
+		return err
+	}
+	for _, job := range pending {
+		job.UpdatedAt = time.Now().UTC().Format(time.RFC3339Nano)
+		payload, err := json.Marshal(job)
+		if err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "UPDATE deck_jobs SET payload=$1,updated_at=$2 WHERE id=$3", payload, job.UpdatedAt, job.ID); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "INSERT INTO job_outbox(job_id,payload,created_at) VALUES($1,$2,$3)", job.ID, payload, job.UpdatedAt); err != nil {
+			return err
+		}
+		if _, err = tx.ExecContext(ctx, "SELECT pg_notify('deck_job_events',$1)", s.instanceID+":"+job.ID); err != nil {
+			return err
+		}
+	}
+	return tx.Commit()
+}
+
 func (s *PostgresStore) Close() error {
 	if s.listenStop != nil {
 		close(s.listenStop)
@@ -172,6 +236,9 @@ func (s *PostgresStore) Save(job Job) error {
 	current, err := postgresJobForUpdate(tx, job.ID)
 	if err != nil {
 		return err
+	}
+	if current.Agent != nil {
+		return errors.New("Agent 任务必须通过条件更新接口修改")
 	}
 	if current.Cancelled && job.Status == "creating" {
 		job.Status = "error"
@@ -255,6 +322,10 @@ func (s *PostgresStore) Cancel(id string) (Job, bool, error) {
 	job, ok := s.Get(id)
 	if !ok {
 		return Job{}, false, nil
+	}
+	if job.Agent != nil {
+		result, err := s.MutateAgent(AgentCommand{Action: "cancel", DeckID: id, RunSeq: job.Agent.RunSeq})
+		return result, true, err
 	}
 	job.Cancelled = true
 	job.Status = "error"

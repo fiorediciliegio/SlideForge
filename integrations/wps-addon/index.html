@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>SlideForge</title>
+</head>
+<body>
+  <script>
+    let taskPane;
+
+    window.slideforgeShowPane = function () {
+      if (!taskPane) {
+        const url = new URL("./taskpane.html", window.location.href);
+        taskPane = window.Application.CreateTaskPane(url.href, "SlideForge");
+      }
+      if (!taskPane) throw new Error("WPS 无法打开 SlideForge 侧栏");
+      taskPane.Visible = true;
+    };
+  </script>
+</body>
+</html>

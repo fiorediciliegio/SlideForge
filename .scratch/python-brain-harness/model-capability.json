@@ -1,0 +1,10 @@
+{
+  "model": "deepseek-v4-flash",
+  "tool_call": true,
+  "image_input": true,
+  "tool_reply": true,
+  "requests": 2,
+  "estimated_cost_cny": 0.002444,
+  "budget_cny": 0.2,
+  "elapsed_seconds": 3.129
+}

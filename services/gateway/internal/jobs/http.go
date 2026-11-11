@@ -3,6 +3,7 @@ package jobs
 import (
 	"crypto/subtle"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -23,11 +24,36 @@ func NewHTTPHandler(store StoreAPI, billingStore billing.StoreAPI, internalToken
 
 func (h *HTTPHandler) Register(mux *http.ServeMux) {
 	mux.HandleFunc("/internal/jobs", h.handleInternal)
+	mux.HandleFunc("/internal/jobs/agent", h.handleAgent)
 	mux.HandleFunc("GET /decks", h.handleList)
 	mux.HandleFunc("GET /decks/{id}", h.handleGet)
 	mux.HandleFunc("GET /decks/{id}/events", h.handleEvents)
 	mux.HandleFunc("POST /decks/{id}/cancel", h.handleCancel)
 	mux.HandleFunc("POST /decks/{id}/webhooks", h.handleWebhook)
+}
+
+func (h *HTTPHandler) handleAgent(writer http.ResponseWriter, request *http.Request) {
+	if request.Method != http.MethodPost || h.internalToken == "" || subtle.ConstantTimeCompare([]byte(request.Header.Get("X-Internal-Token")), []byte(h.internalToken)) != 1 {
+		writeJobError(writer, 404, "not found", "not_found")
+		return
+	}
+	var command AgentCommand
+	if err := json.NewDecoder(http.MaxBytesReader(writer, request.Body, 8*1024*1024)).Decode(&command); err != nil {
+		writeJobError(writer, 400, "JSON 请求体格式错误", "bad_request")
+		return
+	}
+	job, err := h.store.MutateAgent(command)
+	if err != nil {
+		code := "conflict"
+		status := 409
+		if errors.Is(err, ErrBudgetExhausted) {
+			code = "budget_exhausted"
+			status = 402
+		}
+		writeJobError(writer, status, err.Error(), code)
+		return
+	}
+	writeJobJSON(writer, 200, map[string]any{"job": job})
 }
 
 func (h *HTTPHandler) handleInternal(writer http.ResponseWriter, request *http.Request) {
@@ -196,11 +222,26 @@ func publicJob(job Job, eventLimit int) map[string]any {
 	if len(events) > eventLimit {
 		events = events[len(events)-eventLimit:]
 	}
-	return map[string]any{
+	result := map[string]any{
 		"deck_id": job.ID, "status": job.Status, "title": job.Title,
 		"recent_events": events, "overflow_pages": job.OverflowPages,
 		"billing": job.Billing, "error": job.Error, "cancelled": job.Cancelled,
 	}
+	if job.Agent != nil {
+		run := job.Agent
+		unknown := []map[string]any{}
+		qualityState := "draft"
+		if run.QualityRevision != "" && run.QualityRevision == revisionOf(run.ProjectRef) {
+			qualityState = "checked"
+		}
+		for id, call := range run.Calls {
+			if call.Status == "unknown" {
+				unknown = append(unknown, map[string]any{"call_id": id, "reserved_cny": call.Cost})
+			}
+		}
+		result["agent"] = map[string]any{"version": run.Version, "run_seq": run.RunSeq, "checkpoint_seq": run.Checkpoint, "phase": run.Phase, "options": run.Options, "draft_revision": run.DraftRevision, "preview_revision": revisionOf(run.ProjectRef), "budget": run.Budget, "request": run.Request, "unknown_calls": unknown, "error": run.Error, "quality_state": qualityState}
+	}
+	return result
 }
 
 func writeSSE(writer http.ResponseWriter, job Job) {

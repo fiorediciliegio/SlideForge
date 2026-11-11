@@ -28,6 +28,7 @@ type Server struct {
 	closeBilling func() error
 	closeJobs    func() error
 	closeFiles   func() error
+	stopAgents   context.CancelFunc
 }
 
 func New(cfg config.Config, logger *slog.Logger) (*Server, error) {
@@ -49,6 +50,12 @@ func New(cfg config.Config, logger *slog.Logger) (*Server, error) {
 			}
 		}
 		server.closeJobs = postgres.Close
+		if cfg.GatewayReplicas <= 1 {
+			if err := postgres.RecoverAgents(context.Background()); err != nil {
+				_ = postgres.Close()
+				return nil, fmt.Errorf("recover PostgreSQL Agent executions: %w", err)
+			}
+		}
 		server.dispatcher = jobs.NewPostgresDispatcher(cfg.DataDir, postgres, nil, 3, time.Second)
 		jobStore = postgres
 	} else {
@@ -103,6 +110,9 @@ func New(cfg config.Config, logger *slog.Logger) (*Server, error) {
 		fileStore = files.NewStore(cfg.DataDir)
 	}
 	mux := http.NewServeMux()
+	agentContext, stopAgents := context.WithCancel(context.Background())
+	server.stopAgents = stopAgents
+	go jobs.WatchAgents(agentContext, jobStore)
 	mux.HandleFunc("/healthz", server.handleHealth)
 	mux.HandleFunc("/readyz", server.handleReady)
 	billing.NewHTTPHandler(billingStore, cfg.InternalToken, cfg.AdminToken).Register(mux)
@@ -118,6 +128,9 @@ func (s *Server) Handler() http.Handler {
 }
 
 func (s *Server) Close() {
+	if s.stopAgents != nil {
+		s.stopAgents()
+	}
 	if s.dispatcher != nil {
 		s.dispatcher.Close()
 	}

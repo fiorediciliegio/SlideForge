@@ -45,6 +45,11 @@
 |---|---|---|
 | [product-tech-charter.md](product-tech-charter.md) | 产品与技术总纲（定位/垂直/计费/架构/路线） | active · 2026-10-30 盘点 |
 | [current-state.md](current-state.md) | **系统全景与下一步（协作者交接首选）** | active · 2026-10-30 |
+| [Python Brain Harness PRD](../.scratch/python-brain-harness/PRD.md) | 已确认的单总控 Agent 产品规则与交互（Q1–Q20） | active · 2026-11-10 |
+| [独立引擎任务服务 PRD](../.scratch/engine-job-service/PRD.md) | 跨机器固定输入、异步引擎任务、多用户调度与等待时间验收设计 | draft · 2026-11-11 |
+| [Harness 验收记录](../.scratch/python-brain-harness/验收记录.md) | 回归、四进程恢复、浏览器交互与真实模型评测 | active · 2026-11-10 |
+| [adr/0080-python-brain-agent-harness.md](adr/0080-python-brain-agent-harness.md) | Python 单总控 Harness、持久化、预算与版本边界 | accepted · 2026-11-10 |
+| [plans/20261110-Python-Brain-Harness改造方案.md](plans/20261110-Python-Brain-Harness改造方案.md) | Harness 契约、持久化、预算、工具闭环与分阶段改造 | active · 2026-11-10 |
 | [plans/20261026-M0最小闭环.md](plans/20261026-M0最小闭环.md) | M0：brief → pptx 最小闭环（4 天） | done · 2026-10-29 |
 | [notes/20261026-M0-spike-引擎独立导出.md](notes/20261026-M0-spike-引擎独立导出.md) | 第 0 步 spike 通过：引擎可独立导出 | done · 2026-10-26 |
 | [deployment.md](deployment.md) | 部署运行手册（安装/三种启动/计费 key 管理） | active · 2026-10-30 |

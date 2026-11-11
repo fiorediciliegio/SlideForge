@@ -1,4 +1,14 @@
-# SlideForge 系统全景与下一步（2026-11-01）
+# SlideForge 系统全景与下一步（2026-11-10）
+
+状态: active · 最后验证日期: 2026-11-10
+
+## Python Brain Harness 现状
+
+Web 现已接入单总控工具闭环：需求/场景 → 可编辑大纲或直接生成 → 页面工具 → 版面/内容/视觉检查 → 定向修订 → 预览。Go 保存条件执行、成本预算、回执与当前修订引用；Node 保存项目/资料/页面快照，运行生成、渲染与导出工具；Python 保存可恢复的控制协议并调用工具。模型消息与截图保存在 Node artifact，Go 保存检查点引用。
+
+默认 `npm run dev` 启动四进程，入口 `http://localhost:8080/app`。模型 Key 来自项目 `.env`；现有 `.tooling` Go/Python 自动识别。CLI/MCP/WPS 继续现有接口，已迁移作品的写入进入页面版本链。新接口见 [Agent 契约](../contracts/openapi/agent.yaml)，决策见 [ADR-0080](adr/0080-python-brain-agent-harness.md)，验收结果见 [Harness 验收记录](../.scratch/python-brain-harness/验收记录.md)。
+
+旧链路的结构与历史测试记录保留在下文；其中“20页70秒”等历史数据不适用于新增的规划/视觉检查闭环。
 
 > 给协作者的交接摘要：10 分钟了解系统现状、各入口、验证方式与待办。
 > 前置阅读：`docs/product-tech-charter.md`（总纲）、`docs/deployment.md`（部署手册）。
@@ -49,7 +59,7 @@
 
 - 现役主链路为 HTTP 薄壳 / CLI / MCP → `src/contracts` → Capability API；新任务的任务 ID、计费 ID 和工作区目录统一为同一个 `deck_id`。
 - React／Host 旧体系及其测试已通过依赖可达性审计分批删除；根级 React／Vite 依赖和 legacy 入口已清理。
-- `src/features/templates/presets` 是现役共享资产，已完整保留；`dev` 是现役 `serve` 的别名。
+- `src/features/templates/presets` 是现役共享资产，已完整保留；`dev` 启动四进程，`serve` 为单 Node 入口。
 
 ## 验证方式
 

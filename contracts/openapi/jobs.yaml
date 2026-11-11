@@ -107,6 +107,7 @@ components:
       type: object
       required: [id, status, events, overflowPages]
       properties:
+        agent: { $ref: "agent.yaml#/components/schemas/AgentPublic" }
         id: { type: string }
         runDir: { type: string }
         title: { type: string }

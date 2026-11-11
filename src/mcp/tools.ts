@@ -117,6 +117,7 @@ export function createSlideForgeMcpServer(context: McpSecurityContext = {}): Mcp
     if (resolved !== job.runDir && !resolved.startsWith(`${job.runDir}${path.sep}`)) return text({ error: "out_path 必须位于 deck 工作区内" });
     const result = await queue.submit(() => runIdempotentExport({
       apiKey: context.apiKey, ownerKeyHash, deckId: deck_id, runDir: job.runDir!,
+      revisionId:job.agent?.project_ref?.revision_id,
       format: "pptx", outPath: resolved, idempotencyKey: idempotency_key,
       execute: () => exportDeck({ runDir: job.runDir!, outPath: resolved }),
     }));
