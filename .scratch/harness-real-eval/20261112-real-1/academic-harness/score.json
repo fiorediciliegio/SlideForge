@@ -1,0 +1,125 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "拟设试件",
+      "value": "18",
+      "unit": "件",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 3,
+        "text": "拟设试件 18 件 计划值 · 尚未实施"
+      }
+    },
+    {
+      "subject": "设计工况",
+      "value": "6",
+      "unit": "类",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 3,
+        "text": "拟设试件 18 件 计划值 · 尚未实施 设计工况 6 类 计划值 · 尚未实施 拟设测点 24 个 计划值 · 尚未实施"
+      }
+    },
+    {
+      "subject": "拟设测点",
+      "value": "24",
+      "unit": "个",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 3,
+        "text": "拟设试件 18 件 计划值 · 尚未实施 设计工况 6 类 计划值 · 尚未实施 拟设测点 24 个 计划值 · 尚未实施"
+      }
+    },
+    {
+      "subject": "计划周期",
+      "value": "8",
+      "unit": "个月",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "计划周期 8 个月，按三阶段推进"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "研究背景",
+      "matched": true
+    },
+    {
+      "title": "研究内容与技术路线",
+      "matched": true
+    },
+    {
+      "title": "可行性与进度",
+      "matched": true
+    },
+    {
+      "title": "拟议创新点",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "cover",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "bg",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "content",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "feasibility",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "innovation",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "notes",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 2055.642899999999,
+  "rules_pass": true
+}

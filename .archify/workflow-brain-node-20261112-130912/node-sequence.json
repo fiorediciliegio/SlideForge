@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Node · 生成、校验与版本发布链路",
+    "locale": "zh-CN",
+    "output": ".archify/workflow-brain-node-20261112-130912/node-workflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/fiorediciliegio/SlideForge.git",
+      "revision": "7c54cba71971b25309953adb54e2bb304671cd15",
+      "link_mode": "local-only"
+    }
+  },
+  "participants": [
+    {
+      "id": "brain",
+      "type": "backend",
+      "label": "Python Brain",
+      "sublabel": "选工具与评估结果",
+      "sources": [
+        {
+          "path": "services/brain/brain/agent_state.py",
+          "line": 56,
+          "end_line": 58,
+          "label": "向 Node 发送工具请求"
+        },
+        {
+          "path": "services/brain/brain/app.py",
+          "line": 54,
+          "end_line": 67,
+          "label": "页面提示词接口"
+        }
+      ]
+    },
+    {
+      "id": "node",
+      "type": "backend",
+      "label": "业务 Node",
+      "sublabel": "生成、落盘和工具执行",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 120,
+          "end_line": 278,
+          "label": "工具准入、分发、候选与版本发布"
+        },
+        {
+          "path": "src/server/agentModel.ts",
+          "line": 8,
+          "end_line": 50,
+          "label": "页面模型共享预算与响应保存"
+        },
+        {
+          "path": "src/server/engineClient.ts",
+          "line": 42,
+          "end_line": 101,
+          "label": "提交固定快照并读取引擎结果"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "type": "cloud",
+      "label": "模型 API",
+      "sublabel": "生成单页 HTML",
+      "sources": [
+        {
+          "path": "scripts/m0/llmClient.ts",
+          "line": 67,
+          "end_line": 75,
+          "label": "Harness 使用受预算管理的客户端"
+        },
+        {
+          "path": "src/server/agentModel.ts",
+          "line": 30,
+          "end_line": 47,
+          "label": "调用供应商并结算 usage"
+        }
+      ]
+    },
+    {
+      "id": "go",
+      "type": "security",
+      "label": "Go 状态与队列",
+      "sublabel": "预算、版本引用和作业",
+      "sources": [
+        {
+          "path": "services/gateway/internal/jobs/agent.go",
+          "line": 372,
+          "end_line": 424,
+          "label": "发布条件与回执"
+        },
+        {
+          "path": "services/gateway/internal/enginejobs/store.go",
+          "line": 164,
+          "end_line": 350,
+          "label": "任务提交、领取和完成"
+        }
+      ]
+    },
+    {
+      "id": "engine",
+      "type": "backend",
+      "label": "独立引擎",
+      "sublabel": "Chrome 检查与导出",
+      "sources": [
+        {
+          "path": "src/engine/worker.ts",
+          "line": 12,
+          "end_line": 38,
+          "label": "按快照 ID 执行并回报"
+        },
+        {
+          "path": "src/engine/executor.ts",
+          "line": 23,
+          "end_line": 49,
+          "label": "临时目录内的受管浏览器作业"
+        }
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "from": 150,
+      "to": 365,
+      "label": "① 工具准入与幂等恢复"
+    },
+    {
+      "from": 380,
+      "to": 745,
+      "label": "② 汇集上下文并生成候选"
+    },
+    {
+      "from": 760,
+      "to": 1310,
+      "label": "③ 通过 Go 交给独立引擎，再发布版本"
+    }
+  ],
+  "messages": [
+    {
+      "id": "n01",
+      "from": "brain",
+      "to": "node",
+      "y": 170,
+      "label": "工具名、参数与操作 ID",
+      "variant": "emphasis",
+      "note": "先校验内部令牌、执行 epoch、参数与联网/导出权限。"
+    },
+    {
+      "id": "n02",
+      "from": "node",
+      "to": "go",
+      "y": 250,
+      "label": "登记 begin_tool / 核对回执",
+      "variant": "security",
+      "note": "已完成且指纹一致：直接返回；已准备版本：验证当前执行后恢复提交。"
+    },
+    {
+      "id": "n03",
+      "from": "go",
+      "to": "node",
+      "y": 330,
+      "label": "允许本次工具执行",
+      "variant": "return"
+    },
+    {
+      "id": "n04",
+      "from": "node",
+      "to": "brain",
+      "y": 410,
+      "label": "请求单页提示词模板",
+      "variant": "default",
+      "note": "Node 叠加当前 HTML、已确认约束、场景、页级要求与修改历史。"
+    },
+    {
+      "id": "n05",
+      "from": "brain",
+      "to": "node",
+      "y": 490,
+      "label": "返回页面模型消息",
+      "variant": "return"
+    },
+    {
+      "id": "n06",
+      "from": "node",
+      "to": "go",
+      "y": 530,
+      "label": "预留并标记页面模型调用",
+      "variant": "security"
+    },
+    {
+      "id": "n07",
+      "from": "node",
+      "to": "model",
+      "y": 570,
+      "label": "生成或修订单页 HTML",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n08",
+      "from": "model",
+      "to": "node",
+      "y": 610,
+      "label": "返回 HTML / usage",
+      "variant": "return",
+      "note": "Node 先保存响应，再向 Go 结算；已保存响应可复用，未知结果不自动重发。"
+    },
+    {
+      "id": "n09",
+      "from": "node",
+      "to": "go",
+      "y": 690,
+      "label": "结算模型调用",
+      "variant": "security",
+      "note": "Node 提取并保存候选、校验 HTML 方言。失败时保留问题候选，原页面不变。"
+    },
+    {
+      "id": "n10",
+      "from": "node",
+      "to": "go",
+      "y": 790,
+      "label": "上传快照并提交校验任务",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n11",
+      "from": "engine",
+      "to": "go",
+      "y": 830,
+      "label": "领取任务并读取输入快照",
+      "variant": "dashed"
+    },
+    {
+      "id": "n12",
+      "from": "go",
+      "to": "engine",
+      "y": 870,
+      "label": "返回快照与独立租约",
+      "variant": "return"
+    },
+    {
+      "id": "n13",
+      "from": "engine",
+      "to": "go",
+      "y": 910,
+      "label": "上传校验报告并完成作业",
+      "variant": "dashed",
+      "note": "引擎在自己的临时目录运行 Chrome；与业务 Node 不共享本地目录。"
+    },
+    {
+      "id": "n14",
+      "from": "node",
+      "to": "go",
+      "y": 990,
+      "label": "查询状态并读取报告",
+      "variant": "default"
+    },
+    {
+      "id": "n15",
+      "from": "go",
+      "to": "node",
+      "y": 1030,
+      "label": "返回检查结果",
+      "variant": "return",
+      "note": "未通过：只回报候选与问题；通过：Node 写入新页面版本，再申请发布。"
+    },
+    {
+      "id": "n16",
+      "from": "node",
+      "to": "go",
+      "y": 1110,
+      "label": "条件提交版本引用与回执",
+      "variant": "security",
+      "note": "Go 校验 epoch 和父版本；迟到结果不可覆盖当前版本。"
+    },
+    {
+      "id": "n17",
+      "from": "go",
+      "to": "node",
+      "y": 1190,
+      "label": "返回已提交版本与操作回执",
+      "variant": "return"
+    },
+    {
+      "id": "n18",
+      "from": "node",
+      "to": "brain",
+      "y": 1230,
+      "label": "返回页面、问题与版本信息",
+      "variant": "return",
+      "note": "Brain 决定下一步 inspect_deck、revise_page、request_user 或 finish_deck。"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Node 是执行层，Brain 决定返工",
+      "items": [
+        "蓝色主线展开 generate_pages / revise_page：准备上下文 → 调模型 → 保存候选 → 方言和引擎校验 → 发布版本。",
+        "未通过候选只保存诊断，当前有效页面保持原版本；返回 candidate_id 和 issues 给 Brain 决定是否修订。",
+        "页面默认并发 2，版本提交串行；同一页最多两次定向返工。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "生成和判断分属两次模型调用",
+      "items": [
+        "Brain 的模型决定调用哪个工具，以及如何判断内容与视觉问题。",
+        "Node 调用页提示词接口，叠加当前页面、已确认约束、场景和修改历史，再发起 HTML 生成模型请求。",
+        "Node 页面调用与 Brain 决策调用共享 Go 预算，已保存的有效响应可复用，未知结果不得自行重发。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "其他分支具体做什么",
+      "items": [
+        "项目分支：read_project、save_plan、授权后的 research_sources、request_user。save_plan 依交互模式返回大纲确认暂停。",
+        "检查分支：inspect_deck 取版面报告、文本或截图；record_assessment 校验证据指纹并保存 Brain 的内容 / 视觉评估。",
+        "交付分支：finish_deck 只返回完成回执；export_deck 还要求已授权格式与固定修订，并走独立引擎导出。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "独立引擎与 Go 的边界",
+      "items": [
+        "Node 将自包含 HTML / 资源上传到 Go 私有 artifact 域，只提交快照 ID 和任务参数。",
+        "独立引擎拉取快照，在自己的目录运行 Chrome 并回传报告 / 截图 / PDF / PPTX；业务 Node 不执行这些浏览器作业。",
+        "客户导出先由 Go 幂等扣点，再开放鉴权下载；状态、预算、执行权与当前版本引用以 Go 为准。"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "范围与恢复说明",
+      "items": [
+        "图中「其他工具」按功能合并；该节点内部的文件读写、引擎作业和完成回执没有再次展开为完整子图。",
+        "已有完成回执可复用；已准备但未提交的版本在校验当前执行后继续提交，不从头重复生成。",
+        "当前未提交工作区的源码快照及改动路径见同目录「来源说明.md」；没有修改业务代码。"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "如何阅读这条 Node 主线",
+      "items": [
+        "此图展开 generate_pages / revise_page；其他工具仍从同一个准入和分发入口执行，具体行为见上方卡片。",
+        "生成和校验失败不会自动反复调用模型。Node 返回候选与诊断，Brain 决定是否执行下一次定向修订。",
+        "模型错误、预算不足及引擎异常保留错误语义，不能伪装成功；候选不合格与服务中断是不同结果。",
+        "内部 HTML / 版本文件写入作为 Node 步骤注释展示，未另造一个远程存储服务；纵向间距不是耗时测量。"
+      ]
+    }
+  ]
+}

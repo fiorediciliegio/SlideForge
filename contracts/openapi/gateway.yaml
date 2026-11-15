@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: SlideForge Gateway API
-  version: 0.1.0
+  version: 0.2.0
   description: Go 骨架层过渡契约。业务处理暂由 Node Capability API 承接。
 servers:
   - url: http://localhost:8080
@@ -72,6 +72,15 @@ paths:
         "404":
           $ref: "#/components/responses/Error"
   /decks/{deck_id}/export:
+    get:
+      operationId: getExportStatus
+      parameters:
+        - $ref: "#/components/parameters/ApiKey"
+        - $ref: "#/components/parameters/DeckId"
+        - { name: job_id, in: query, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: queued/running/failed/cancelled；completed.result 含幂等收费后的文件交付回执。关闭页面不取消任务。
     post:
       operationId: exportDeck
       parameters:
@@ -85,12 +94,17 @@ paths:
             schema:
               $ref: "#/components/schemas/ExportDeckRequest"
       responses:
-        "200":
-          description: 导出结果；重复请求可返回幂等回执
+        "202":
+          description: 已提交固定版本导出，重复提交复用任务
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ExportDeckResult"
+                type: object
+                required: [engine_job_id, state, status_url]
+                properties:
+                  engine_job_id: { type: string }
+                  state: { enum: [queued, running, completed, failed, cancelled] }
+                  status_url: { type: string }
         "400":
           $ref: "#/components/responses/Error"
         "402":
@@ -215,6 +229,8 @@ components:
     ExportDeckRequest:
       type: object
       properties:
+        engine_job_id: { type: string, description: 取消时的共享任务ID }
+        cancel: { type: boolean, description: true 时取消本版本共享作业，影响其他窗口 }
         revision_id:
           type: string
           description: 固定导出该作品的指定修订；不填则在调用时固定当前修订。
@@ -230,16 +246,16 @@ components:
           maxLength: 128
     ExportDeckResult:
       type: object
-      required: [out_path, slide_count, size_bytes, warnings, billing, export_id, idempotent]
+      required: [file_id, download_url, slideCount, sizeBytes, warnings, billing, export_id, idempotent]
       properties:
         out_path:
           type: string
         outPath:
           type: string
           description: 过渡期兼容别名。
-        slide_count:
+        slideCount:
           type: integer
-        size_bytes:
+        sizeBytes:
           type: integer
         warnings:
           type: array

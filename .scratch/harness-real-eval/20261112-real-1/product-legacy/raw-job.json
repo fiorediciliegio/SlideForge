@@ -1,0 +1,25 @@
+{
+  "id": "deck-5d47d7e1",
+  "runDir": "D:\\SlideForge\\artifacts\\decks\\deck-5d47d7e1",
+  "title": "澄图工单云产品介绍",
+  "status": "ready",
+  "events": [
+    "[outline] 生成大纲（6 页）",
+    "[page] p1 第 1 页溢出，定向重生成",
+    "[page] p2 第 2 页完成「客户问题」",
+    "[page] p1 第 1 页完成「澄图工单云产品介绍」",
+    "[page] p4 第 4 页完成「试点数据」",
+    "[page] p3 第 3 页完成「产品能力」",
+    "[page] p5 第 5 页完成「实施步骤」",
+    "[page] p6 第 6 页完成「总结与致谢」",
+    "[assemble] 组装 deck.html"
+  ],
+  "overflowPages": [],
+  "billing": {
+    "points": 52,
+    "balance": 948
+  },
+  "ownerKeyHash": "1d4406d916d7d670c58dd5786dea22a122362e8d454f8e835c81a1436c6374b2",
+  "createdAt": "2026-11-12T10:53:40.317Z",
+  "updatedAt": "2026-11-12T10:55:51Z"
+}

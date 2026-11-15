@@ -16,13 +16,14 @@ paths:
               type: object
               required: [action, deck_id, run_seq]
               properties:
-                action: { type: string, enum: [migrate, claim, transition, heartbeat, schedule, interrupt, cancel, draft, confirm, proposal, user_revision, continue, start_run, begin_tool, complete_tool, reserve_call, send_call, settle_call, reject_call, mark_unknown] }
+                action: { type: string, enum: [migrate, claim, transition, heartbeat, schedule, interrupt, cancel, draft, confirm, proposal, user_revision, continue, start_run, begin_tool, complete_tool, engine_wait, reserve_call, send_call, settle_call, reject_call, mark_unknown] }
                 deck_id: { type: string }
                 run_seq: { type: integer }
                 runner_epoch: { type: integer }
                 expected_checkpoint: { type: integer }
                 expected_draft_revision: { type: integer }
                 operation_id: { type: string }
+                engine_state: { enum: [queued, running, done], description: engine_wait 时更新当前引擎等待；旧epoch拒收 }
                 call_id: { type: string }
                 input_hash: { type: string }
                 parent_revision: { type: string }

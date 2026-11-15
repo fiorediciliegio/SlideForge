@@ -8,7 +8,6 @@ import (
 	"encoding/json"
 	"errors"
 	"math"
-	"sort"
 	"strings"
 	"time"
 
@@ -216,17 +215,7 @@ func (s *PostgresStore) chargeIdentity(identity, deckID, operationID string, poi
 			record.Charges = map[string]ChargeReceipt{}
 		}
 		record.Charges[operationID] = receipt
-		if len(record.Charges) > 100 {
-			keys := make([]string, 0, len(record.Charges))
-			for key := range record.Charges {
-				keys = append(keys, key)
-			}
-			// 幂等回执是有界缓存，淘汰字典序最旧的辅助键。
-			sort.Strings(keys)
-			for _, key := range keys[:len(keys)-100] {
-				delete(record.Charges, key)
-			}
-		}
+
 	}
 	if err := saveRecord(tx, identity, record); err != nil {
 		return ChargeReceipt{}, err

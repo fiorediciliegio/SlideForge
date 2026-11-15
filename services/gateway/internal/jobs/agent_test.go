@@ -61,6 +61,7 @@ func TestAgentConcurrentBudgetReservationsShareOneLimit(t *testing.T) {
 	if accepted != 5 || current.Agent.Budget.ReservedCNY != 2 {
 		t.Fatalf("oversubscribed: %d %+v", accepted, current.Agent.Budget)
 	}
+	t.Logf("OFFLINE_METRIC budget_reservations accepted=%d rejected=%d reserved=%.6f", accepted, 10-accepted, current.Agent.Budget.ReservedCNY)
 }
 func TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget(t *testing.T) {
 	job := Job{Agent: NewAgentRun(json.RawMessage(`{}`), 600, 2)}

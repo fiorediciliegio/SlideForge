@@ -38,12 +38,14 @@ test("Go, Node engine and Python brain complete one export and download", { skip
   const decksRoot = path.join(dataDir, "decks");
   const runDir = path.join(decksRoot, "deck-a");
   await mkdir(runDir, { recursive: true });
+  const html='<main class="slide"><h1>Three Services</h1></main>';
+  for(const number of [1,2])await writeFile(path.join(runDir,`page-${number}.html`),`<!doctype html><html><head><style>.slide{width:1920px;height:1080px}</style></head><body>${html}</body></html>`);
   await writeFile(path.join(runDir, "deck.html"), buildDeckHtml({
     title: "Three Services",
-    slides: [{ styles: "h1 { color: #123456; }", body: '<main class="slide"><h1>Three Services</h1></main>' }],
+    slides: [1,2].map(()=>({ styles: "h1 { color: #123456; }", body:html })),
   }), "utf8");
   await writeFile(path.join(runDir, "outline.json"), JSON.stringify({
-    title: "Three Services", pages: [{ title: "Three Services", bullets: [] }],
+    title: "Three Services", pages: [1,2].map(()=>({title:"Three Services",bullets:[]})),
   }), "utf8");
 
   const gatewayPort = 38_000 + Math.floor(Math.random() * 400);
@@ -59,6 +61,8 @@ test("Go, Node engine and Python brain complete one export and download", { skip
     SLIDEFORGE_DATA_DIR: dataDir,
     SLIDEFORGE_ADMIN_TOKEN: "three-admin",
     GATEWAY_INTERNAL_TOKEN: "three-internal",
+    NODE_ENGINE_URL:engineRoot,
+    SLIDEFORGE_ENGINE_API_URL:`http://127.0.0.1:${gatewayPort}/internal/engine`,
   };
   let gateway: ChildProcess | undefined;
   let node: ChildProcess | undefined;
@@ -80,7 +84,7 @@ test("Go, Node engine and Python brain complete one export and download", { skip
     const issuedResponse = await fetch(`${gatewayRoot}/admin/keys`, {
       method: "POST",
       headers: { "content-type": "application/json", "x-admin-token": "three-admin" },
-      body: JSON.stringify({ name: "three-user", points: 100 }),
+      body: JSON.stringify({ name: "three-user", points: 10 }),
     });
     assert.equal(issuedResponse.status, 200);
     const issued = await issuedResponse.json() as { key: string };
@@ -110,7 +114,7 @@ test("Go, Node engine and Python brain complete one export and download", { skip
       env: { ...shared, ENGINE_PORT: String(enginePort), SLIDEFORGE_DECKS_ROOT: decksRoot },
       stdio: "ignore",
     });
-    brain = spawn("python", ["-m", "brain.app"], {
+    brain = spawn(process.env.PYTHON??"python", ["-m", "brain.app"], {
       cwd: path.resolve(import.meta.dirname, "..", "..", "services", "brain"),
       env: { ...shared, BRAIN_PORT: String(brainPort) },
       stdio: "ignore",
@@ -121,12 +125,19 @@ test("Go, Node engine and Python brain complete one export and download", { skip
       waitHealthy(`${brainRoot}/healthz`),
     ]);
 
+    const preview = await fetch(`${nodeRoot}/decks/deck-a/preview`,{headers:{"x-api-key":issued.key}});
+    assert.equal(preview.status,200);assert.equal((await preview.json()).images.length,2);
+
     const exported = await fetch(`${nodeRoot}/decks/deck-a/export`, {
       method: "POST", headers: { "x-api-key": issued.key, "content-type": "application/json" }, body: "{}",
     });
-    assert.equal(exported.status, 200);
-    const exportBody = await exported.json();
-    assert.equal(exportBody.slideCount, 1);
+    assert.equal(exported.status, 202);
+    const start=await exported.json();let status:any;
+    do {await new Promise(resolve=>setTimeout(resolve,200));status=await (await fetch(nodeRoot+start.status_url,{headers:{"x-api-key":issued.key}})).json();if(status.error)throw new Error(status.error)}while(status.state!=="completed");
+    const exportBody=status.result;
+    const replay=await (await fetch(nodeRoot+start.status_url,{headers:{"x-api-key":issued.key}})).json();
+    assert.equal(replay.result.file_id,exportBody.file_id,"zero-balance owner must recover the paid receipt");
+    assert.equal(exportBody.slideCount, 2);
     assert.match(exportBody.file_id, /^file-/);
     assert.match(exportBody.download_url, /^\/files\//);
 
@@ -134,13 +145,6 @@ test("Go, Node engine and Python brain complete one export and download", { skip
     assert.equal(downloaded.status, 200);
     assert.ok((await downloaded.arrayBuffer()).byteLength > 0);
 
-    const preview = await fetch(`${engineRoot}/internal/engine/preview`, {
-      method: "POST",
-      headers: { "content-type": "application/json", "x-internal-token": "three-internal" },
-      body: JSON.stringify({ runDir, pages: [1] }),
-    });
-    assert.equal(preview.status, 200);
-    assert.equal((await preview.json()).images.length, 1);
 
     const prompt = await fetch(`${brainRoot}/internal/brain/page-prompt`, {
       method: "POST",

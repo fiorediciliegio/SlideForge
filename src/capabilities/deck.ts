@@ -3,19 +3,14 @@
  * CLI（scripts/m0-generate.ts）与 MCP Server 共用这一层，禁止 UI 专用后门。
  */
 import path from "node:path";
-import { existsSync } from "node:fs";
-import { mkdir, readFile, writeFile, rename } from "node:fs/promises";
-import os from "node:os";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 import { llmComplete } from "../../scripts/m0/llmClient.js";
 import { buildOutlineMessagesViaBrain, buildPageMessagesViaBrain, generateOutlineViaBrain, remoteBrainEnabled } from "../server/brainClient.js";
 import { extractHtmlDocument, splitSlideDocument, buildDeckHtml } from "../../scripts/m0/deck.js";
-import {
-  validateSlideHtmlFile,
-  type SlideIssue,
-} from "../../scripts/m0/validatePage.js";
-import { runExportOnly } from "../../executas/ppt-engine/src/export-only/index.js";
-import { renderDeckThumbnails } from "../../scripts/m0/thumbnails.js";
+import type { SlideIssue } from "../../scripts/m0/validatePage.js";
+import { validateEngineHTML, inspectEngineWorkspace, startWorkspaceExport, waitEngineJob } from "../server/engineClient.js";
+import { engineTransport } from "../server/engineTransport.js";
 import { computePageDrift } from "./drift.js";
 import { validateHtmlDialect } from "../../scripts/m0/dialect.js";
 import { extractPptxSlideTexts, normalizeTextSet } from "../documents/pptxText.js";
@@ -46,24 +41,11 @@ export interface ExportDeckResult {
   slideCount: number;
   sizeBytes: number;
   warnings: string[];
+  engineJobId?: string;
 }
 
 function defaultDecksRoot(): string {
   return path.resolve(import.meta.dirname, "..", "..", "artifacts", "decks");
-}
-
-function ensureRuntimeEnv() {
-  if (!process.env.CHROME_PATH) {
-    const candidates = [
-      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-      "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
-      "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-    ];
-    for (const candidate of candidates) {
-      if (existsSync(candidate)) { process.env.CHROME_PATH = candidate; break; }
-    }
-  }
-  process.env.SLIDEFORGE_WORKSPACE_DIR ??= path.join(os.tmpdir(), "slideforge-m0-workspace");
 }
 
 async function generateOutline(brief: string, pageCount: number): Promise<Outline> {
@@ -101,6 +83,7 @@ async function generatePage(
   let lastError: unknown;
   let lastIssues: SlideIssue[] = [];
   for (let attempt = 0; attempt < 2; attempt++) {
+    let checkingEngine=false;
     try {
       const messages = await buildPageMessagesViaBrain({
         deckTitle: ctx.outline.title,
@@ -142,7 +125,9 @@ async function generatePage(
       const pageFile = path.join(ctx.runDir, `page-${index + 1}.html`);
       await writeFile(pageFile, html, "utf8");
 
-      const validation = await validateSlideHtmlFile(pageFile);
+      checkingEngine=true;
+      const validation = await validateEngineHTML(await readFile(pageFile,"utf8"),{runDir:ctx.runDir});
+      checkingEngine=false;
       if (!validation.ok) {
         if (currentAgentCall()) throw new Error(validation.issues.map(item=>item.detail).join("；"));
         lastIssues = validation.issues;
@@ -155,6 +140,7 @@ async function generatePage(
       ctx.onEvent?.({ stage: "page", page: index + 1, totalPages: ctx.pageCount, message: `第 ${index + 1} 页完成「${page.title}」` });
       return parts;
     } catch (error) {
+      if(checkingEngine)throw error;
       if (currentAgentCall()) throw error;
       lastError = error;
       ctx.onEvent?.({ stage: "page", page: index + 1, message: `第 ${index + 1} 页第 ${attempt + 1} 次失败` });
@@ -178,7 +164,6 @@ async function assembleDeck(runDir: string, title: string, pageCount: number): P
 }
 
 export async function createDeck(input: CreateDeckInput): Promise<CreateDeckResult> {
-  ensureRuntimeEnv();
   const pageCount = Math.max(2, Math.min(20, input.pageCount ?? 8));
   const concurrency = Math.max(1, Math.min(5, input.concurrency ?? 3));
   const decksRoot = input.decksRoot ?? defaultDecksRoot();
@@ -271,7 +256,6 @@ export async function regeneratePage(input: {
 }> {
   const versioning=await import("./agent.js");
   if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,input.instruction,directory=>regeneratePage({...input,runDir:directory}),{page:input.page});
-  ensureRuntimeEnv();
   input = { ...input, runDir: path.resolve(input.runDir) };
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
   const brief = await readFile(path.join(input.runDir, "brief.txt"), "utf8");
@@ -335,7 +319,6 @@ export async function reimportDeck(input: {
 }> {
   const versioning=await import("./agent.js");
   if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,"吸收 WPS 手工修改",directory=>reimportDeck({...input,runDir:directory}),{source:input.pptxBuffer});
-  ensureRuntimeEnv();
   input = { ...input, runDir: path.resolve(input.runDir) };
   const emit = input.onEvent ?? (() => {});
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
@@ -399,7 +382,6 @@ export async function updatePageHtml(input: {
 }> {
   const versioning=await import("./agent.js");
   if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,`手动编辑第${input.page}页`,directory=>updatePageHtml({...input,runDir:directory}),{page:input.page});
-  ensureRuntimeEnv();
   const runDir = path.resolve(input.runDir);
   const outline = JSON.parse(await readFile(path.join(runDir, "outline.json"), "utf8")) as Outline;
   if (input.page < 1 || input.page > outline.pages.length) {
@@ -422,7 +404,7 @@ export async function updatePageHtml(input: {
   );
 
   const overflowWarnings: Array<{ page: number; issues: SlideIssue[] }> = [];
-  const validation = await validateSlideHtmlFile(pageFile);
+  const validation = await validateEngineHTML(await readFile(pageFile,"utf8"),{runDir});
   if (!validation.ok) overflowWarnings.push({ page: input.page, issues: validation.issues });
   return { drift, overflowWarnings };
 }
@@ -436,7 +418,6 @@ export async function applyTheme(input: {
 }): Promise<{ templateId?: string }> {
   const versioning=await import("./agent.js");
   if(await versioning.isVersionedWorkspace(input.runDir))return versioning.versionedDeckEdit(input.runDir,"调整视觉主题",directory=>applyTheme({...input,runDir:directory}));
-  ensureRuntimeEnv();
   const runDir = path.resolve(input.runDir);
   const outline = JSON.parse(await readFile(path.join(runDir, "outline.json"), "utf8")) as Outline;
   const brief = await readFile(path.join(runDir, "brief.txt"), "utf8");
@@ -478,7 +459,6 @@ export async function exportDeck(input: {
   outPath?: string;
   format?: "pptx" | "pdf";
 }): Promise<ExportDeckResult> {
-  ensureRuntimeEnv();
   const managed=await (await import("./agent.js")).isVersionedWorkspace(input.runDir);
   if(managed&&(managed.pages.length!==managed.outline.pages.length||managed.pages.length<2))throw new Error("页面尚未完整生成，不能导出不完整文件");
   const outline = JSON.parse(await readFile(path.join(input.runDir, "outline.json"), "utf8")) as Outline;
@@ -487,43 +467,10 @@ export async function exportDeck(input: {
   const outPath = path.resolve(input.outPath ?? path.join(input.runDir, `${safeTitle}.${format}`));
   input = { ...input, runDir: path.resolve(input.runDir), outPath };
   await mkdir(path.dirname(outPath), { recursive: true });
-  const base = {
-    request_id: `export-${Date.now()}`,
-    source_root: input.runDir,
-    deck_html_file: "deck.html",
-    expected_slide_count: outline.pages.length,
-    title: outline.title,
-    output_dir: path.dirname(outPath),
-  };
-  const result = format === "pdf"
-    ? await (async () => {
-        // PDF 导出要求每页都有 presentation-slides-wrapper 就绪结构，单页包装补齐
-        const pdfPagesDir = path.join(input.runDir, "pdf-pages");
-        await mkdir(pdfPagesDir, { recursive: true });
-        const slideHtmlFiles: string[] = [];
-        for (let i = 1; i <= outline.pages.length; i++) {
-          const pageHtml = await readFile(path.join(input.runDir, managed ? managed.pages[i - 1].html_ref : `page-${i}.html`), "utf8");
-          const slide = splitSlideDocument(pageHtml);
-          const wrapped = buildDeckHtml({ title: outline.title, slides: [slide] });
-          const file = path.join(pdfPagesDir, `page-${i}.html`);
-          await writeFile(file, wrapped, "utf8");
-          slideHtmlFiles.push(`pdf-pages/page-${i}.html`);
-        }
-        return runExportOnly({ ...base, format, slide_html_files: slideHtmlFiles });
-      })()
-    : await runExportOnly({ ...base, format });
-  if (result.status !== "completed") {
-    throw new Error(`导出失败：${result.error?.message ?? "unknown"}`);
-  }
-  if (result.output_path !== outPath) {
-    await rename(result.output_path!, outPath);
-  }
-  return {
-    outPath,
-    slideCount: result.slide_count,
-    sizeBytes: result.size_bytes ?? 0,
-    warnings: result.warnings,
-  };
+  const job=await startWorkspaceExport(input.runDir,format);
+  const result=await waitEngineJob(job);
+  await writeFile(outPath,await engineTransport.read(result.file_ref!,job.owner_key_hash));
+  return {outPath,slideCount:result.slide_count!,sizeBytes:(await (await import("node:fs/promises")).stat(outPath)).size,warnings:result.warnings??[],engineJobId:job.job_id};
 }
 
 export interface DeckPreviewImage {
@@ -538,17 +485,8 @@ export async function getDeckPreview(input: {
   pages?: number[];
   maxPages?: number;
 }): Promise<DeckPreviewImage[]> {
-  ensureRuntimeEnv();
   const maxPages = input.maxPages ?? 4;
   const pages = input.pages?.slice(0, maxPages) ?? Array.from({ length: maxPages }, (_, i) => i + 1);
-  const thumbs = await renderDeckThumbnails(input.runDir, pages);
-  const images: DeckPreviewImage[] = [];
-  for (const thumb of thumbs) {
-    images.push({
-      page: thumb.page,
-      base64: (await readFile(thumb.filePath)).toString("base64"),
-      mimeType: "image/jpeg",
-    });
-  }
-  return images;
+  const result=await inspectEngineWorkspace(input.runDir,{pages,layout:false,visual:true});
+  return (result.pages??[]).map(page=>({page:page.page,base64:page.image!,mimeType:"image/jpeg" as const}));
 }

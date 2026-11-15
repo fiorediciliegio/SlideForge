@@ -101,12 +101,16 @@ func (h *HTTPHandler) handleList(writer http.ResponseWriter, request *http.Reque
 
 func (h *HTTPHandler) authorize(writer http.ResponseWriter, request *http.Request) (string, bool) {
 	apiKey := request.Header.Get("X-API-Key")
-	ok, reason, err := h.billing.Check(apiKey)
+	account, err := h.billing.Usage(apiKey)
 	if err != nil {
 		writeFileError(writer, http.StatusInternalServerError, err.Error())
 		return "", false
 	}
-	if !ok {
+	if account == nil {
+		reason := "invalid api key"
+		if apiKey == "" {
+			reason = "missing X-API-Key"
+		}
 		writeFileError(writer, http.StatusPaymentRequired, reason)
 		return "", false
 	}

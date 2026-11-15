@@ -1,6 +1,25 @@
 package billing
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
+
+func TestExportReceiptsSurviveMoreThanOneHundredCharges(t *testing.T) {
+	dir := t.TempDir()
+	s := NewStore(dir)
+	key, _, _ := s.Issue("customer", 2000)
+	first, _ := s.ChargeOwner(HashAPIKey(key), "deck-a", "engine-export:000-first", 10)
+	for i := 0; i < 101; i++ {
+		if _, err := s.ChargeOwner(HashAPIKey(key), "deck-a", fmt.Sprintf("z-%d", i), 1); err != nil {
+			t.Fatal(err)
+		}
+	}
+	receipt, err := NewStore(dir).ChargeOwner(HashAPIKey(key), "deck-a", "engine-export:000-first", 10)
+	if err != nil || receipt != first {
+		t.Fatalf("persisted charge was forgotten: %+v %v", receipt, err)
+	}
+}
 
 func TestAgentExportChargesOwnerWithoutPersistingBearerKey(t *testing.T) {
 	store := NewStore(t.TempDir())

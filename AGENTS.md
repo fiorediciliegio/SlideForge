@@ -53,6 +53,8 @@ deck_id -> artifacts/decks/<deck_id> -> deck.html -> .pptx
 
 ## 关键边界
 
+- 所有优化默认按面向客户、多人同时生成/检查/导出的产品设计。在线浏览器作业通过固定输入快照和引擎任务 ID 执行，边界见 [ADR-0081](docs/adr/0081-independent-engine-jobs.md)。
+
 - HTTP／MCP／CLI 只通过 `src/contracts` 与 Capability API 调用业务能力，不另建 UI 后门。
 - 工作区文件读写和 gate 判断放在 Capability 与 `ppt-engine` 的对应边界内。
 - `ppt-engine` 持有完整的 Deck HTML 到 PPTX 后端导出作业。

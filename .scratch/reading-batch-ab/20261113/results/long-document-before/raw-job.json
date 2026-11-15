@@ -1,0 +1,1425 @@
+{
+  "agent": {
+    "version": 1,
+    "run_seq": 1,
+    "runner_epoch": 1,
+    "checkpoint_seq": 101,
+    "phase": "paused_budget",
+    "options": {
+      "version": 1,
+      "generation_mode": "direct",
+      "page_policy": {
+        "mode": "fixed",
+        "count": 6
+      },
+      "research_allowed": false,
+      "budget": {
+        "active_seconds": 600,
+        "estimated_cost_cny": 2
+      }
+    },
+    "project_ref": {
+      "revision_id": "551135ba-179c-4b1f-b880-ead92c6fa72f",
+      "artifact_ref": "project/revisions/551135ba-179c-4b1f-b880-ead92c6fa72f",
+      "outline_revision": 1,
+      "constraints_revision": 1
+    },
+    "draft_ref": "project/drafts/8e1a1a8e1efbc608c56105916d132a1a39ac7555ec31aa4792c19af5c4917630.json",
+    "draft_revision": 1,
+    "context_ref": "project/contexts/44d3dce6-0a5f-4082-b64e-724ea2dc6aa1.json",
+    "messages_ref": "project/checkpoints/c5ece680-aa41-47a2-8465-36063cfb3516.json",
+    "pricing": {
+      "input_cny_per_million": 2,
+      "output_cny_per_million": 8,
+      "version": "batch-ab-peak-cache-miss-2026-11-13",
+      "model": "deepseek-flash",
+      "base_url": "https://api.deepseek.com",
+      "currency": "CNY"
+    },
+    "budget": {
+      "active_seconds": 254.24926079999994,
+      "limit_seconds": 600,
+      "spent_cny": 1.742338,
+      "reserved_cny": 0,
+      "limit_cny": 2
+    },
+    "calls": {
+      "run-1:turn-13:call_00_qGaNdVYZpnLN325C2jSR1152:page:p6-status:llm:0": {
+        "status": "completed",
+        "input_hash": "7c9a8e4a80879985fa6712a0b74cbed801c59ddf3025346a59d28d848bf9e87c",
+        "cost": 0.069532,
+        "response_ref": "project/responses/6b74f5b69dd82a3096ef80107c3c5986d52919c815a25b4990c7467fd25ba6dc.json",
+        "usage": {
+          "prompt_tokens": 10846,
+          "completion_tokens": 5980,
+          "total_tokens": 16826,
+          "prompt_tokens_details": {
+            "cached_tokens": 6272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1811
+          },
+          "prompt_cache_hit_tokens": 6272,
+          "prompt_cache_miss_tokens": 4574
+        }
+      },
+      "run-1:turn-14:call_00_ET_ZQrxb1kbNazrmXsgbOEO4628:page:p5-conclusion:llm:0": {
+        "status": "completed",
+        "input_hash": "6e1fdf55df7351b21731ceee9f4f934a5df09b2214032fd9d9d1973332111023",
+        "cost": 0.060206,
+        "response_ref": "project/responses/8037decb5f6ee51f549fe615d31e6785b64b771c81c4861423e36f9c45c93a66.json",
+        "usage": {
+          "prompt_tokens": 10931,
+          "completion_tokens": 4793,
+          "total_tokens": 15724,
+          "prompt_tokens_details": {
+            "cached_tokens": 6272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1543
+          },
+          "prompt_cache_hit_tokens": 6272,
+          "prompt_cache_miss_tokens": 4659
+        }
+      },
+      "run-1:turn-15:call_00_ET_doojjoMqsookNjrYeFaN5131:page:p3-process:llm:0": {
+        "status": "completed",
+        "input_hash": "3cfe35d068268d1eb0aa9711941f99bbc1b2607ebc0c6a7a788472575d7ab662",
+        "cost": 0.068728,
+        "response_ref": "project/responses/9a670ba00caa46959c521f8d81c9d2949d6568a41b90a027443915d14aca1185.json",
+        "usage": {
+          "prompt_tokens": 10616,
+          "completion_tokens": 5937,
+          "total_tokens": 16553,
+          "prompt_tokens_details": {
+            "cached_tokens": 6016
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 2005
+          },
+          "prompt_cache_hit_tokens": 6016,
+          "prompt_cache_miss_tokens": 4600
+        }
+      },
+      "run-1:turn-20:call_00_Yy6AGe2Fan1xEwqhGram0244:page:p5-conclusion:llm:0": {
+        "status": "completed",
+        "input_hash": "6a15f6e7fe58d63601e96ce7c104e398921c5782c245529aa2f8621ca4109b22",
+        "cost": 0.046608,
+        "response_ref": "project/responses/fbc90e0ad3ea1e8e3ed4071d41cafc141557b676ca344fbb1464a0237a962405.json",
+        "usage": {
+          "prompt_tokens": 10052,
+          "completion_tokens": 3313,
+          "total_tokens": 13365,
+          "prompt_tokens_details": {
+            "cached_tokens": 6272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 64
+          },
+          "prompt_cache_hit_tokens": 6272,
+          "prompt_cache_miss_tokens": 3780
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p1-cover:llm:0": {
+        "status": "completed",
+        "input_hash": "dd4bd713ad5ffcf389c0d2789b9f6ee4d3da4d448e537385926aa4d234242b1b",
+        "cost": 0.052858,
+        "response_ref": "project/responses/d8e5bf293b506c8c26c26ee202d0a2254e9886da8e797314d4b9ef7745d42df2.json",
+        "usage": {
+          "prompt_tokens": 6353,
+          "completion_tokens": 5019,
+          "total_tokens": 11372,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1816
+          },
+          "prompt_cache_hit_tokens": 256,
+          "prompt_cache_miss_tokens": 6097
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p2-overview:llm:0": {
+        "status": "completed",
+        "input_hash": "a9db25326a11617feeb671e5dc9291c0d501b60705674b815ea7f9751ecdad53",
+        "cost": 0.041288,
+        "response_ref": "project/responses/5334dab1c6be8af972bc71edecd99f018f800980fae608079a1bf46daac7c63e.json",
+        "usage": {
+          "prompt_tokens": 6336,
+          "completion_tokens": 3577,
+          "total_tokens": 9913,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 256,
+          "prompt_cache_miss_tokens": 6080
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p3-process:llm:0": {
+        "status": "completed",
+        "input_hash": "5fca86ee60afd18090f49accf3970a731d7cc919ac2b13ddd0ce673669939df7",
+        "cost": 0.078652,
+        "response_ref": "project/responses/0a214da44fc8679717c4fffb390df04ab70e4fe62e8194f1d522f292cd928727.json",
+        "usage": {
+          "prompt_tokens": 6326,
+          "completion_tokens": 8250,
+          "total_tokens": 14576,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 4190
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 5558
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p4-data:llm:0": {
+        "status": "completed",
+        "input_hash": "415d3640f354b98c45c0b5ba552e9e07ebaaf08e76bd53a621694c8a2ca0d907",
+        "cost": 0.05523,
+        "response_ref": "project/responses/fb57305e0870d9c3f5da1259118e8e1d000e93b6b685c9c2f36cf7c95f2d052a.json",
+        "usage": {
+          "prompt_tokens": 6347,
+          "completion_tokens": 5317,
+          "total_tokens": 11664,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 2338
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 5579
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p5-conclusion:llm:0": {
+        "status": "completed",
+        "input_hash": "305e312e5f2545c9783db3b83bc9cd3ec6e7678abeb5856a61a3e6e487ed43a1",
+        "cost": 0.09504,
+        "response_ref": "project/responses/04e4f61771a04db9e102ee7b7eb08cf4d58ef5f82b9ba6de5f831bdc6d857493.json",
+        "usage": {
+          "prompt_tokens": 6348,
+          "completion_tokens": 10293,
+          "total_tokens": 16641,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 5971
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 5580
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p6-status:llm:0": {
+        "status": "completed",
+        "input_hash": "6bcd81d911269d41f01c0fcaed0ea4efe28614ae685975eebddb4c33a8432493",
+        "cost": 0.080524,
+        "response_ref": "project/responses/8cf237be60b688b354851cf4c947f3220ff7f6c497b16b1e9b64d31dc4b826a3.json",
+        "usage": {
+          "prompt_tokens": 6346,
+          "completion_tokens": 8479,
+          "total_tokens": 14825,
+          "prompt_tokens_details": {
+            "cached_tokens": 768
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 4227
+          },
+          "prompt_cache_hit_tokens": 768,
+          "prompt_cache_miss_tokens": 5578
+        }
+      },
+      "turn-0": {
+        "status": "completed",
+        "input_hash": "0dade765cef7aa509c4bb0f54a65ca3d3e6fc6c9d9cd2e021cf4acf8bce4ee12",
+        "cost": 0.006196,
+        "response_ref": "project/responses/b920b9ca5655d57dcf771f245bfe25dd551344b115e6b8743f463f16fab0b25c.json",
+        "usage": {
+          "prompt_tokens": 2906,
+          "completion_tokens": 48,
+          "total_tokens": 2954,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 2560,
+          "prompt_cache_miss_tokens": 346
+        }
+      },
+      "turn-1": {
+        "status": "completed",
+        "input_hash": "5c8ac3e1a1e30bae86bb6236a00b9040b8d7dc6b06126e4a5f84b45bc82472f1",
+        "cost": 0.008494,
+        "response_ref": "project/responses/66baa9528fab9df24046ad405e263ed7fca4c57f4d558aa558bc750bec4e38e5.json",
+        "usage": {
+          "prompt_tokens": 3679,
+          "completion_tokens": 142,
+          "total_tokens": 3821,
+          "prompt_tokens_details": {
+            "cached_tokens": 2944
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 49
+          },
+          "prompt_cache_hit_tokens": 2944,
+          "prompt_cache_miss_tokens": 735
+        }
+      },
+      "turn-10": {
+        "status": "completed",
+        "input_hash": "35ddf5f5a9e4b8aa2586120e95e27c71538e32a28e338fb40cb955dbe6f43871",
+        "cost": 0.058426,
+        "response_ref": "project/responses/f862007a1d7b22bc7d4028d36ef87f04042cd2be4c1c760bc90f6a2f4a9d0d4a.json",
+        "usage": {
+          "prompt_tokens": 26737,
+          "completion_tokens": 619,
+          "total_tokens": 27356,
+          "prompt_tokens_details": {
+            "cached_tokens": 15488
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 500
+          },
+          "prompt_cache_hit_tokens": 15488,
+          "prompt_cache_miss_tokens": 11249
+        }
+      },
+      "turn-11": {
+        "status": "completed",
+        "input_hash": "54d5ba939b4ea959703007c09aa1eb999d4daaa3fd6a0afdbe279ffa08af5580",
+        "cost": 0.071284,
+        "response_ref": "project/responses/061787d01fb99957749b972d076b328260561db7670c7ceb05575a07211e2075.json",
+        "usage": {
+          "prompt_tokens": 30954,
+          "completion_tokens": 1172,
+          "total_tokens": 32126,
+          "prompt_tokens_details": {
+            "cached_tokens": 24576
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 562
+          },
+          "prompt_cache_hit_tokens": 24576,
+          "prompt_cache_miss_tokens": 6378
+        }
+      },
+      "turn-12": {
+        "status": "completed",
+        "input_hash": "ac0e97158a694a2e8cb120cb814d56fb63762ed017c5c8b609a24500d3c233da",
+        "cost": 0.060236,
+        "response_ref": "project/responses/8927005324d34ab278217831a906fbc008c300d2b78801a4e2c9af0845f94f0d.json",
+        "usage": {
+          "prompt_tokens": 28666,
+          "completion_tokens": 363,
+          "total_tokens": 29029,
+          "prompt_tokens_details": {
+            "cached_tokens": 26880
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 26880,
+          "prompt_cache_miss_tokens": 1786
+        }
+      },
+      "turn-13": {
+        "status": "completed",
+        "input_hash": "02bb05e0c0835f1dc8808de1dd0285adaba4cfad761401e4997b8b8cfe999a03",
+        "cost": 0.061356,
+        "response_ref": "project/responses/66fa3ca4a5314598224bdbcf0e231004400713e1dffafddc64274a6160d78394.json",
+        "usage": {
+          "prompt_tokens": 29274,
+          "completion_tokens": 351,
+          "total_tokens": 29625,
+          "prompt_tokens_details": {
+            "cached_tokens": 28928
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 56
+          },
+          "prompt_cache_hit_tokens": 28928,
+          "prompt_cache_miss_tokens": 346
+        }
+      },
+      "turn-14": {
+        "status": "completed",
+        "input_hash": "70730c8b1d2e8cb7bf11bc9ac6e6f8511ef200f8157cefb443e3b3cfe6ce183d",
+        "cost": 0.062142,
+        "response_ref": "project/responses/d299831169a732d207fe6c75cb61ed111531bde19b2dc08ab735ce250bfa88aa.json",
+        "usage": {
+          "prompt_tokens": 29791,
+          "completion_tokens": 320,
+          "total_tokens": 30111,
+          "prompt_tokens_details": {
+            "cached_tokens": 29568
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 29568,
+          "prompt_cache_miss_tokens": 223
+        }
+      },
+      "turn-15": {
+        "status": "completed",
+        "input_hash": "40e3e5cd9d2d1e6c567057331dda56391425b0faa651ea039af538183b319854",
+        "cost": 0.062852,
+        "response_ref": "project/responses/3e45ad49a4c343f26d68490ff5004340e185c0225411eaca7e5ba032146639d0.json",
+        "usage": {
+          "prompt_tokens": 30286,
+          "completion_tokens": 285,
+          "total_tokens": 30571,
+          "prompt_tokens_details": {
+            "cached_tokens": 30080
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 30080,
+          "prompt_cache_miss_tokens": 206
+        }
+      },
+      "turn-16": {
+        "status": "completed",
+        "input_hash": "deed6f5c39a653756fd175e7cf1910bd47f93057b629b85b5f57e197c9abfae5",
+        "cost": 0.062204,
+        "response_ref": "project/responses/9306f7a106bbb963cb03b2df64eb4ed9b1d8a5e9531c0190f05ce3229c549f7d.json",
+        "usage": {
+          "prompt_tokens": 30734,
+          "completion_tokens": 92,
+          "total_tokens": 30826,
+          "prompt_tokens_details": {
+            "cached_tokens": 22912
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 22912,
+          "prompt_cache_miss_tokens": 7822
+        }
+      },
+      "turn-17": {
+        "status": "completed",
+        "input_hash": "e1d66d5efdfe182d617104e214c51b34fb51aafdcf2edad07c5c134ea1c60c78",
+        "cost": 0.069602,
+        "response_ref": "project/responses/3c6dc63c49620a0bef5fb167a4c3e060ecfc93a782c24075ace9bc35cc8bdff8.json",
+        "usage": {
+          "prompt_tokens": 33645,
+          "completion_tokens": 289,
+          "total_tokens": 33934,
+          "prompt_tokens_details": {
+            "cached_tokens": 30720
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 204
+          },
+          "prompt_cache_hit_tokens": 30720,
+          "prompt_cache_miss_tokens": 2925
+        }
+      },
+      "turn-18": {
+        "status": "completed",
+        "input_hash": "be0de37441db0ca4cb2a99f542fefa89ca44ca63078da77665d74240ea93f5ae",
+        "cost": 0.069478,
+        "response_ref": "project/responses/36aacdf2cc589e27d693f6928385b5ddd0e303d12fd884eaae440112c6df9bcd.json",
+        "usage": {
+          "prompt_tokens": 33579,
+          "completion_tokens": 290,
+          "total_tokens": 33869,
+          "prompt_tokens_details": {
+            "cached_tokens": 30464
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 89
+          },
+          "prompt_cache_hit_tokens": 30464,
+          "prompt_cache_miss_tokens": 3115
+        }
+      },
+      "turn-19": {
+        "status": "completed",
+        "input_hash": "f7d26508c1aa3bf25962e4e0275cb13b5864a2a9f509e46c441bedd49d63a339",
+        "cost": 0.067222,
+        "response_ref": "project/responses/cf1e2ac1d35a4ab2f07f73a166472432850a9f09da7349bd3a5f389dcf3c3b99.json",
+        "usage": {
+          "prompt_tokens": 32983,
+          "completion_tokens": 157,
+          "total_tokens": 33140,
+          "prompt_tokens_details": {
+            "cached_tokens": 32384
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 40
+          },
+          "prompt_cache_hit_tokens": 32384,
+          "prompt_cache_miss_tokens": 599
+        }
+      },
+      "turn-2": {
+        "status": "completed",
+        "input_hash": "a2cd615df5ab52a61f17cdf0a96a246a90f25381f1461516dc1ca0255b3d283c",
+        "cost": 0.015258,
+        "response_ref": "project/responses/742646f6fa3bec52b2e84b81ff24a23c81c299ff0a340862423d4dce8abd4e69.json",
+        "usage": {
+          "prompt_tokens": 6245,
+          "completion_tokens": 346,
+          "total_tokens": 6591,
+          "prompt_tokens_details": {
+            "cached_tokens": 3712
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 84
+          },
+          "prompt_cache_hit_tokens": 3712,
+          "prompt_cache_miss_tokens": 2533
+        }
+      },
+      "turn-20": {
+        "status": "completed",
+        "input_hash": "05be6c5daf6e4184b10006e4fd6218225b7f41bd00d02dc362a1821e56e7eae5",
+        "cost": 0.077344,
+        "response_ref": "project/responses/6a1c46e5e381126eb973689c85f4fca2c772eeb33b24dbe8a7bb6cf7832a1f65.json",
+        "usage": {
+          "prompt_tokens": 35596,
+          "completion_tokens": 769,
+          "total_tokens": 36365,
+          "prompt_tokens_details": {
+            "cached_tokens": 17792
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 498
+          },
+          "prompt_cache_hit_tokens": 17792,
+          "prompt_cache_miss_tokens": 17804
+        }
+      },
+      "turn-21": {
+        "status": "completed",
+        "input_hash": "342d05047f8aa2941d0ae01e8f6f105beae05982cd064ccaa0a67fef61b40c6f",
+        "cost": 0.073706,
+        "response_ref": "project/responses/7edb375a288d71e0f389e91698f89cc50c4252dc0558f1dd9f43b4b2ba32b6ab.json",
+        "usage": {
+          "prompt_tokens": 36533,
+          "completion_tokens": 80,
+          "total_tokens": 36613,
+          "prompt_tokens_details": {
+            "cached_tokens": 31488
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 31488,
+          "prompt_cache_miss_tokens": 5045
+        }
+      },
+      "turn-3": {
+        "status": "completed",
+        "input_hash": "27658da2e23b8495e9d9597184d0113b2d9165605509c450aa448bec38c9993d",
+        "cost": 0.01898,
+        "response_ref": "project/responses/00c15d3c4fa51d5294de463482bb3f177b0dd5e0b2720e39c78ffb4ec0d3d3fd.json",
+        "usage": {
+          "prompt_tokens": 9066,
+          "completion_tokens": 106,
+          "total_tokens": 9172,
+          "prompt_tokens_details": {
+            "cached_tokens": 6528
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 12
+          },
+          "prompt_cache_hit_tokens": 6528,
+          "prompt_cache_miss_tokens": 2538
+        }
+      },
+      "turn-4": {
+        "status": "completed",
+        "input_hash": "6535a6eff5bb772e2f94e42bb3defe87fb3c46fd0ec9890b8ec8b68e3e62f495",
+        "cost": 0.02423,
+        "response_ref": "project/responses/743322cce68eb03ad9a4ed8920e52043fc122d3942e4eae0a46d715dff291e35.json",
+        "usage": {
+          "prompt_tokens": 11591,
+          "completion_tokens": 131,
+          "total_tokens": 11722,
+          "prompt_tokens_details": {
+            "cached_tokens": 9088
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 37
+          },
+          "prompt_cache_hit_tokens": 9088,
+          "prompt_cache_miss_tokens": 2503
+        }
+      },
+      "turn-5": {
+        "status": "completed",
+        "input_hash": "a83cdc7c899f2442fb0dc0556040dfd7896cc1f9670b77e249871848202d69da",
+        "cost": 0.047586,
+        "response_ref": "project/responses/8bf9d4f9e71a19538152b65cf3af68a534e0c25b63c997193867a91045d0f48a.json",
+        "usage": {
+          "prompt_tokens": 13797,
+          "completion_tokens": 2499,
+          "total_tokens": 16296,
+          "prompt_tokens_details": {
+            "cached_tokens": 11648
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 1682
+          },
+          "prompt_cache_hit_tokens": 11648,
+          "prompt_cache_miss_tokens": 2149
+        }
+      },
+      "turn-6": {
+        "status": "completed",
+        "input_hash": "79789aca91fc8432cd9e90fba0ce9e805a8bce04ff1afe7198b9ac472ea7e478",
+        "cost": 0.034998,
+        "response_ref": "project/responses/7c634d3d1ccfb0df4557a37905253325ea284de887e312a367546ce36c3b8f8c.json",
+        "usage": {
+          "prompt_tokens": 17079,
+          "completion_tokens": 105,
+          "total_tokens": 17184,
+          "prompt_tokens_details": {
+            "cached_tokens": 16256
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 9
+          },
+          "prompt_cache_hit_tokens": 16256,
+          "prompt_cache_miss_tokens": 823
+        }
+      },
+      "turn-7": {
+        "status": "completed",
+        "input_hash": "2bc89f0e11ee5a05bd841a251fb9f7a33c91c28c5109963a8e670391a43d2d12",
+        "cost": 0.036302,
+        "response_ref": "project/responses/4079cf8358f926ba924f91dce10a3315df2b3bcaf195a8be93fdd0df8075b10c.json",
+        "usage": {
+          "prompt_tokens": 17679,
+          "completion_tokens": 118,
+          "total_tokens": 17797,
+          "prompt_tokens_details": {
+            "cached_tokens": 15488
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 15488,
+          "prompt_cache_miss_tokens": 2191
+        }
+      },
+      "turn-8": {
+        "status": "completed",
+        "input_hash": "2178c8d8a72a0857ca49dbcddedf83542531676f347d510b62aa7e8088142a78",
+        "cost": 0.048074,
+        "response_ref": "project/responses/9bbc50308b3398ae2fed706c0dd0c4a5460581b8877df4a1ead2f9bb377f74c1.json",
+        "usage": {
+          "prompt_tokens": 20609,
+          "completion_tokens": 857,
+          "total_tokens": 21466,
+          "prompt_tokens_details": {
+            "cached_tokens": 17152
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 727
+          },
+          "prompt_cache_hit_tokens": 17152,
+          "prompt_cache_miss_tokens": 3457
+        }
+      },
+      "turn-9": {
+        "status": "completed",
+        "input_hash": "19779791d8bb078b5e6b434db320ce912b298eac108115fe7dca55ff82a2a08f",
+        "cost": 0.057702,
+        "response_ref": "project/responses/a5d9387b490a4ae240c4888e33f65dc70720a65537406d66b910c864b0557e4d.json",
+        "usage": {
+          "prompt_tokens": 27019,
+          "completion_tokens": 458,
+          "total_tokens": 27477,
+          "prompt_tokens_details": {
+            "cached_tokens": 21376
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 388
+          },
+          "prompt_cache_hit_tokens": 21376,
+          "prompt_cache_miss_tokens": 5643
+        }
+      }
+    },
+    "operations": {
+      "run-1:turn-0:call_00_ET_8jJpXG5vhIzgE2ABC4xZ1867": {
+        "status": "completed",
+        "input_hash": "103c543fde9f7f11212b8caeb106b657846355ee7ba591f4d879275a3d11f5dd",
+        "result": {
+          "sources": [
+            {
+              "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+              "name": "long-document.txt",
+              "kind": "user",
+              "chars": 15409,
+              "chunks": [
+                {
+                  "start": 0,
+                  "end": 4000,
+                  "preview": "此资料为虚构企业资料治理项目。\n【前部核验信息】试点部门9个；原始样本284份。\n本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增"
+                },
+                {
+                  "start": 4000,
+                  "end": 8000,
+                  "preview": "通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记"
+                },
+                {
+                  "start": 8000,
+                  "end": 12000,
+                  "preview": "工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、"
+                },
+                {
+                  "start": 12000,
+                  "end": 15409,
+                  "preview": "本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "run-1:turn-10:call_00_he9oUd5p7GJJ2xjZUtjA3801": {
+        "status": "completed",
+        "input_hash": "8a7b82734bad9b79f132fa49334d32d05d225796076d7b116e8019224f21402d",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p1-cover",
+              "text": "     \n \n \n    \n    \n          \n    \n    \n    \n    \n    \n              \n    \n    \n        \n   Internal Review · 企业资料治理项目组 \n   企业资料治理项目组 / 内部项目汇报 / 虚构测评材料 \n\n   \n       虚构企业资料治理测评 \n     长资料覆盖核验 \n     LONG-DOCUMENT COVERAGE VERIFICATION \n      \n     项目组内部汇报 · 前部 / 中部 / 末部三段核验记录 \n     \n       \n         唯一事实来源 \n         long-document.txt（15,409 字符） \n       \n       \n         汇报日期 \n         待补充（资料未载） \n       \n     \n   \n\n    口径 全部指标为本次测评构造值，不补充外部事实 \n\n   \n      01  项目概况  \n      02  整理流程  \n      03  前中后部核验数据  \n      04  结论与边界  \n   \n\n   1  / 6  \n \n  "
+            },
+            {
+              "page_id": "p2-overview",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   02 \n   长资料覆盖核验 · 内部汇报 \n   PROJECT SCOPE / 项目概况 \n   \n            \n      \n   \n\n   \n       02&nbsp;&nbsp;项目概况 \n     项目概况：虚构测评的范围与起点 \n     本页仅陈述资料已载内容，界定本次测评的性质、前部核验起点与资料范围；未记载事项不作补充。 \n        \n   \n\n   \n     \n       \n          01 项目性质 \n         虚构企业资料治理测评 \n         本次为企业资料治理的虚构测评，全部内容以资料原文为唯一事实来源，仅呈现资料已载内容，不引入外部事实或补充推断。 \n       \n\n       \n          02 前部核验记录 \n         \n           \n             9 个  \n             试点部门 \n             前部核验记录 \n           \n           \n             284 份  \n             原始样本 \n             前部核验记录 \n           \n         \n       \n     \n\n     \n       \n          03 资料范围 \n         四类对象纳入核验 \n         \n            A 资料整理 \n            B 角色分工 \n            C 沟通记录 \n            D 版本归档 \n         \n       \n\n       \n          04 口径约束 \n         不新增成果指标 \n         资料明确“不新增成果指标”，本演示不追加。\n           依据：long-document.txt 原文口径 \n         \n         凡资料未记载的日期、预算与业务成果类内容，均不列入本页。 \n       \n     \n   \n\n    2 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p3-process",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n   \n      \n      \n      \n      \n   \n\n    \n   长资料覆盖核验 \n   虚构企业资料治理测评 \n\n     02　整理流程 \n   整理流程：四环节与中部记录 \n    \n    \n   四个环节按资料记载的顺序排列；中部核验记录给出流程节点与复盘会议的计数。 \n\n    01 四个环节 \n   \n     \n       01 \n       资料整理 \n        \n     \n        \n     \n       02 \n       角色分工 \n        \n     \n        \n     \n       03 \n       沟通记录 \n        \n     \n        \n     \n       04 \n       版本归档 \n        \n     \n   \n\n     中部核验记录 \n\n    02 中部核验记录 \n   \n     \n        中部核验  A  \n        13  个  \n       流程节点 \n        \n     \n     \n        中部核验  B  \n        7  次  \n       复盘会议 \n        \n     \n   \n\n   \n     角色与时间 · 留空项 \n     \n       各环节负责人姓名 \n       资料未载 \n     \n     \n       各环节时间安排 \n       资料未载 \n     \n     资料未记载各环节负责人姓名与时间安排，故留空；不以推测填充。 \n   \n\n    \n   长资料覆盖核验 · 全部指标为本次虚构测评构造值 \n   3 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p4-data",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n        \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 企业资料治理项目组 \n   虚构测评材料 · 内部汇报 \n\n   \n     核验数据 \n     前中后部核验数据 \n     三段核验指标均取自 long-document.txt，逐项对应到具体环节；数字口径与资料原文一致。 \n   \n\n   \n     \n       \n         01 \n         前部 \n       \n       \n         9 个  \n         试点部门 \n       \n       \n         284 份  \n         原始样本 \n       \n     \n\n     \n       \n         02 \n         中部 \n       \n       \n         13 个  \n         流程节点 \n       \n       \n         7 次  \n         复盘会议 \n       \n     \n\n     \n       \n         03 \n         末部 \n       \n       \n         42.7 %  \n         资料复用率 \n       \n       \n         17 套  \n         已确认模板 \n       \n       注：资料原文即写作「末部」 \n     \n   \n\n   \n     口径提示 \n     上述指标仅为本次测评构造值，不可外推。 \n   \n\n   4 / 6 \n \n \n "
+            }
+          ],
+          "has_images": true,
+          "evidence_id": "bf127bbcdff5a5bb1a2619448473791576757b7034f4ceebd911ab44b172400d",
+          "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6"
+        }
+      },
+      "run-1:turn-11:call_00_H6AzvMlpFiTmjuj7ZMD76083": {
+        "status": "completed",
+        "input_hash": "8025bfe2b1dc4bac9362542e6f63c498a645aa24b3d87debef0c1efcf22d98db",
+        "result": {
+          "check_id": "visual-b0655a5d666e991ba2ee0d6b58813b991d79c81ec83aead87feb492ace293202",
+          "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6",
+          "issues": [
+            {
+              "severity": "blocker",
+              "code": "TEXT_CLIPPED",
+              "detail": "导语第二行被下方三栏卡片顶边裁切，“本页按原样区分呈现，不做补写”无法完整阅读；已完成卡内的三行数值也贴到卡片下边框。",
+              "page_ids": [
+                "p6-status"
+              ],
+              "evidence_refs": [
+                "da4e97605c4584977938f5c2ed1970fecc985fbfc7d070c02d354bfcda38e5b0"
+              ]
+            },
+            {
+              "severity": "improvement",
+              "code": "LAYOUT_DANGLING_LABEL",
+              "detail": "四个环节卡片内容偏上、下半部大片留白；卡片01左下角游离一个“中部核验记录”小标签，与“02 中部核验记录”节标题重复，层级含混。",
+              "page_ids": [
+                "p3-process"
+              ],
+              "evidence_refs": [
+                "bf127bbcdff5a5bb1a2619448473791576757b7034f4ceebd911ab44b172400d"
+              ]
+            },
+            {
+              "severity": "improvement",
+              "code": "REDUNDANT_SUBLABEL",
+              "detail": "数字卡内“9 个 / 284 份”下方重复低对比小字“前部核验记录”，与卡片标题重复，信息层级冗余。",
+              "page_ids": [
+                "p2-overview"
+              ],
+              "evidence_refs": [
+                "bf127bbcdff5a5bb1a2619448473791576757b7034f4ceebd911ab44b172400d"
+              ]
+            }
+          ]
+        }
+      },
+      "run-1:turn-12:call_00_ET_TnaiTaJMyHPEzxRhVREs0303": {
+        "status": "completed",
+        "input_hash": "db01953e1c0c40ac2462f13d5ca460e8c7f2d2bf7ce6aa473828a1839e2dc0f6",
+        "result": {
+          "check_id": "content-6356bddfface751eaf6007f4c83809008ce97e0fa6144fd999acf7732d317fd1",
+          "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6",
+          "issues": [
+            {
+              "severity": "improvement",
+              "code": "CONTENT_DUPLICATE_DECK",
+              "detail": "p5 把 p4 的前/中/末三段数据整体重列一遇，页内又先写“9 / 284 · 13 / 7 · 42.7% / 17”、再列三张数字卡，同一组数字在一页出现两次，与前一页重复，稀释了结论与边界的重点。",
+              "page_ids": [
+                "p5-conclusion"
+              ],
+              "evidence_refs": [
+                "1a6e6b681b4cae8cadfbe5ddf899b47a194fb2777a5fb143239250b0dd14ec29"
+              ]
+            }
+          ]
+        }
+      },
+      "run-1:turn-13:call_00_qGaNdVYZpnLN325C2jSR1152": {
+        "status": "completed",
+        "input_hash": "1caf836a338beed33be2463f54f4a9814f6c94309b74fc965aa63eb1d83cd15e",
+        "result": {
+          "pages": [
+            {
+              "page_id": "p6-status",
+              "candidate_id": "7d5ee45e9fa676ca0416bea4a7355a1697f95b6cfcf03000e1bef15cf046ab4a",
+              "issues": [],
+              "repair": true
+            }
+          ],
+          "failures": [],
+          "project_ref": {
+            "revision_id": "9c022210-bba7-4b38-b3ef-0e108711ea50",
+            "artifact_ref": "project/revisions/9c022210-bba7-4b38-b3ef-0e108711ea50",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-13:call_00_qGaNdVYZpnLN325C2jSR1152:page:p6-status": {
+        "status": "completed",
+        "input_hash": "b98e3b9205098b4c560a61199058ec288075ff14909aaccf3c79eb61f0bb04d2",
+        "result": {
+          "page_id": "p6-status",
+          "candidate_id": "7d5ee45e9fa676ca0416bea4a7355a1697f95b6cfcf03000e1bef15cf046ab4a",
+          "issues": [],
+          "repair": true,
+          "project_ref": {
+            "revision_id": "9c022210-bba7-4b38-b3ef-0e108711ea50",
+            "artifact_ref": "project/revisions/9c022210-bba7-4b38-b3ef-0e108711ea50",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-14:call_00_ET_ZQrxb1kbNazrmXsgbOEO4628": {
+        "status": "completed",
+        "input_hash": "2d397c60aa8cbe9b3275c5d4b8ee2f09a084c9599f2d6fa2716ac9cef988ecf8",
+        "result": {
+          "pages": [
+            {
+              "page_id": "p5-conclusion",
+              "candidate_id": "ee590fad96903ad808121471d8f4097a9b4c4f619935f9f2f39d87a219dbaf77",
+              "issues": [],
+              "repair": true
+            }
+          ],
+          "failures": [],
+          "project_ref": {
+            "revision_id": "c6e9ab4e-d13e-4584-a0e9-06fa7e96f48b",
+            "artifact_ref": "project/revisions/c6e9ab4e-d13e-4584-a0e9-06fa7e96f48b",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-14:call_00_ET_ZQrxb1kbNazrmXsgbOEO4628:page:p5-conclusion": {
+        "status": "completed",
+        "input_hash": "e38e976b5ed999feca2ef7136a55a2c847deaa72ee8504074a462cd209010399",
+        "result": {
+          "page_id": "p5-conclusion",
+          "candidate_id": "ee590fad96903ad808121471d8f4097a9b4c4f619935f9f2f39d87a219dbaf77",
+          "issues": [],
+          "repair": true,
+          "project_ref": {
+            "revision_id": "c6e9ab4e-d13e-4584-a0e9-06fa7e96f48b",
+            "artifact_ref": "project/revisions/c6e9ab4e-d13e-4584-a0e9-06fa7e96f48b",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-15:call_00_ET_doojjoMqsookNjrYeFaN5131": {
+        "status": "completed",
+        "input_hash": "5304984f4ba3c17b9af55982631223ebcb662ca076cb0f9d0a19587a14a7e9f0",
+        "result": {
+          "pages": [
+            {
+              "page_id": "p3-process",
+              "candidate_id": "fa6fed45be692c7499dd8518d3cf9f356a4c8a50806bab945f9c872f5c2d288b",
+              "issues": [],
+              "repair": true
+            }
+          ],
+          "failures": [],
+          "project_ref": {
+            "revision_id": "523cedd4-6bf3-4776-b721-da7ca5cfb348",
+            "artifact_ref": "project/revisions/523cedd4-6bf3-4776-b721-da7ca5cfb348",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-15:call_00_ET_doojjoMqsookNjrYeFaN5131:page:p3-process": {
+        "status": "completed",
+        "input_hash": "eb92c17be93c1419e6cc0a182367694e0910af9d497fcdc760a389d423b07a4e",
+        "result": {
+          "page_id": "p3-process",
+          "candidate_id": "fa6fed45be692c7499dd8518d3cf9f356a4c8a50806bab945f9c872f5c2d288b",
+          "issues": [],
+          "repair": true,
+          "project_ref": {
+            "revision_id": "523cedd4-6bf3-4776-b721-da7ca5cfb348",
+            "artifact_ref": "project/revisions/523cedd4-6bf3-4776-b721-da7ca5cfb348",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-16:call_00_ET_Hv8hBRLLzenHDYlc5BFg7456": {
+        "status": "completed",
+        "input_hash": "1cd16cceb2df172bf9c296e8acbe23e3f0450be8cd2090eacce16a11be80125d",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p3-process",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n   \n      \n      \n      \n      \n   \n\n    \n   长资料覆盖核验 \n   虚构企业资料治理测评 \n\n     02　整理流程 \n   整理流程：四环节与中部记录 \n    \n    \n   四个环节按资料记载的顺序排列；中部核验记录给出流程节点与复盘会议的计数。 \n\n    01 四个环节 \n   \n     \n       01 \n       资料整理 \n        \n     \n        \n     \n       02 \n       角色分工 \n        \n     \n        \n     \n       03 \n       沟通记录 \n        \n     \n        \n     \n       04 \n       版本归档 \n        \n     \n   \n\n    02 中部核验记录 \n   \n     \n        中部核验  A  \n        13  个  \n       流程节点 \n        \n     \n     \n        中部核验  B  \n        7  次  \n       复盘会议 \n        \n     \n   \n\n   \n     角色与时间 · 留空项 \n     \n       各环节负责人姓名 \n       资料未载 \n     \n     \n       各环节时间安排 \n       资料未载 \n     \n     资料未记载各环节负责人姓名与时间安排，故留空；不以推测填充。 \n   \n\n    \n   长资料覆盖核验 · 全部指标为本次虚构测评构造值 \n   3 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            },
+            {
+              "page_id": "p5-conclusion",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n          \n\n   \n              \n   \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 结论与边界 \n\n   长资料覆盖核验 \n   企业资料治理项目组 · 内部汇报 \n\n   结论与边界 ：可对应与不可外推  \n   本页只作结论与边界说明，不复述指标数值；缺失项以“资料未载”为界，不作推测。 \n    \n\n   \n     结 论 \n     前、中、末三段核验均有明确记录，各段指标已 对应到试点部门、流程节点与模板归档环节 。 \n   \n\n    \n\n   \n     边 界 \n\n     \n        \n       资料未提供日期、预算与业务成果数据，本演示 不作补充 。 \n     \n\n     \n        \n       样本与部门数量仅限本次 虚构测评 ，不构成推广依据。 \n     \n   \n\n   \n      \n     数字见第  4  页「前中后部核验数据」 \n   \n\n   5 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            }
+          ],
+          "has_images": true,
+          "evidence_id": "586b0367d45d19b02c18bb0a2fe4bf226e1b6a6bdf06230333a9f0b49611061e",
+          "revision_id": "523cedd4-6bf3-4776-b721-da7ca5cfb348"
+        }
+      },
+      "run-1:turn-17:call_00_DPkvAuFUP3xCyLS1xkdg6832": {
+        "status": "completed",
+        "input_hash": "15bea06cbe2d6d4beaa64ea20c27cc4fb999be8b86c6d7254102ad5ffdda70ca",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p6-status",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n   \n            \n   \n\n    \n    \n    \n    \n    \n   LONG-DOCUMENT COVERAGE CHECK · 状态区分 \n\n   长资料覆盖核验  ／  06 状态区分 \n   计划、未确定与已完成 ： 状态区分 \n    \n    \n\n   三类状态的记录程度不同： 已完成项有明确数值 ，计划与未确定项在资料中无对应记载。 \n\n   \n   \n      \n     01 \n     已完成 \n     资料明示 \n      \n     前 / 中 / 末三段核验指标已采集，可对应到具体环节。 \n     \n        9 / 284  试点部门 / 原始样本  \n        13 / 7  流程节点 / 复盘会议  \n        42.7% / 17  复用率 / 模板套数  \n     \n   \n\n   \n   \n      \n     02 \n     计划 \n     资料未载 \n      \n     后续推广与扩展安排， 未在资料中说明 。 \n     \n       对照项 \n      推广节奏 · 扩展范围 · 后续时间安排 \n      资料均无对应条目，留空不推测。\n     \n   \n\n   \n   \n      \n     03 \n     未确定 \n     资料未载 \n      \n     \n        日期  资料未载  \n        预算  资料未载  \n        责任人  资料未载  \n        业务成果指标  资料未载  \n     \n     以上四项在资料中均无对应数据，本演示不填入估计值。 \n   \n\n   \n   \n      \n     处理原则 \n     缺失项统一标注 “资料未载” ， 不以推测填充 ；日期、预算与业务成果数据不另行补充。 \n   \n\n   6 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            }
+          ],
+          "has_images": true,
+          "evidence_id": "1ead45d057fae2c32ad57a5eb11cd4105c57d08b04d259277ed4110324aeb58d",
+          "revision_id": "523cedd4-6bf3-4776-b721-da7ca5cfb348"
+        }
+      },
+      "run-1:turn-18:call_00_X2fBXVMYuQEGrjW5fRO12625": {
+        "status": "completed",
+        "input_hash": "a09e8bad2384cd67644958d076cd5daf8dde96a45121ca8bb0ea2b7e5345a864",
+        "result": {
+          "check_id": "visual-c7f514ad7a162bbfec4f3372e153f34b62fa0da6092a70a4b11dfdde31d72895",
+          "revision_id": "523cedd4-6bf3-4776-b721-da7ca5cfb348",
+          "issues": []
+        }
+      },
+      "run-1:turn-19:call_00_uVAZjnNZOpvI2zzgIukp4064": {
+        "status": "completed",
+        "input_hash": "1f5e7fc04d724c83a8df8c2d196f6ffb5bdfcaa28b44be13270c11d4a00c876b",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p1-cover",
+              "text": "     \n \n \n    \n    \n          \n    \n    \n    \n    \n    \n              \n    \n    \n        \n   Internal Review · 企业资料治理项目组 \n   企业资料治理项目组 / 内部项目汇报 / 虚构测评材料 \n\n   \n       虚构企业资料治理测评 \n     长资料覆盖核验 \n     LONG-DOCUMENT COVERAGE VERIFICATION \n      \n     项目组内部汇报 · 前部 / 中部 / 末部三段核验记录 \n     \n       \n         唯一事实来源 \n         long-document.txt（15,409 字符） \n       \n       \n         汇报日期 \n         待补充（资料未载） \n       \n     \n   \n\n    口径 全部指标为本次测评构造值，不补充外部事实 \n\n   \n      01  项目概况  \n      02  整理流程  \n      03  前中后部核验数据  \n      04  结论与边界  \n   \n\n   1  / 6  \n \n  "
+            },
+            {
+              "page_id": "p2-overview",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   02 \n   长资料覆盖核验 · 内部汇报 \n   PROJECT SCOPE / 项目概况 \n   \n            \n      \n   \n\n   \n       02&nbsp;&nbsp;项目概况 \n     项目概况：虚构测评的范围与起点 \n     本页仅陈述资料已载内容，界定本次测评的性质、前部核验起点与资料范围；未记载事项不作补充。 \n        \n   \n\n   \n     \n       \n          01 项目性质 \n         虚构企业资料治理测评 \n         本次为企业资料治理的虚构测评，全部内容以资料原文为唯一事实来源，仅呈现资料已载内容，不引入外部事实或补充推断。 \n       \n\n       \n          02 前部核验记录 \n         \n           \n             9 个  \n             试点部门 \n             前部核验记录 \n           \n           \n             284 份  \n             原始样本 \n             前部核验记录 \n           \n         \n       \n     \n\n     \n       \n          03 资料范围 \n         四类对象纳入核验 \n         \n            A 资料整理 \n            B 角色分工 \n            C 沟通记录 \n            D 版本归档 \n         \n       \n\n       \n          04 口径约束 \n         不新增成果指标 \n         资料明确“不新增成果指标”，本演示不追加。\n           依据：long-document.txt 原文口径 \n         \n         凡资料未记载的日期、预算与业务成果类内容，均不列入本页。 \n       \n     \n   \n\n    2 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p3-process",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n   \n      \n      \n      \n      \n   \n\n    \n   长资料覆盖核验 \n   虚构企业资料治理测评 \n\n     02　整理流程 \n   整理流程：四环节与中部记录 \n    \n    \n   四个环节按资料记载的顺序排列；中部核验记录给出流程节点与复盘会议的计数。 \n\n    01 四个环节 \n   \n     \n       01 \n       资料整理 \n        \n     \n        \n     \n       02 \n       角色分工 \n        \n     \n        \n     \n       03 \n       沟通记录 \n        \n     \n        \n     \n       04 \n       版本归档 \n        \n     \n   \n\n    02 中部核验记录 \n   \n     \n        中部核验  A  \n        13  个  \n       流程节点 \n        \n     \n     \n        中部核验  B  \n        7  次  \n       复盘会议 \n        \n     \n   \n\n   \n     角色与时间 · 留空项 \n     \n       各环节负责人姓名 \n       资料未载 \n     \n     \n       各环节时间安排 \n       资料未载 \n     \n     资料未记载各环节负责人姓名与时间安排，故留空；不以推测填充。 \n   \n\n    \n   长资料覆盖核验 · 全部指标为本次虚构测评构造值 \n   3 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p4-data",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n        \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 企业资料治理项目组 \n   虚构测评材料 · 内部汇报 \n\n   \n     核验数据 \n     前中后部核验数据 \n     三段核验指标均取自 long-document.txt，逐项对应到具体环节；数字口径与资料原文一致。 \n   \n\n   \n     \n       \n         01 \n         前部 \n       \n       \n         9 个  \n         试点部门 \n       \n       \n         284 份  \n         原始样本 \n       \n     \n\n     \n       \n         02 \n         中部 \n       \n       \n         13 个  \n         流程节点 \n       \n       \n         7 次  \n         复盘会议 \n       \n     \n\n     \n       \n         03 \n         末部 \n       \n       \n         42.7 %  \n         资料复用率 \n       \n       \n         17 套  \n         已确认模板 \n       \n       注：资料原文即写作「末部」 \n     \n   \n\n   \n     口径提示 \n     上述指标仅为本次测评构造值，不可外推。 \n   \n\n   4 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p5-conclusion",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n          \n\n   \n              \n   \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 结论与边界 \n\n   长资料覆盖核验 \n   企业资料治理项目组 · 内部汇报 \n\n   结论与边界 ：可对应与不可外推  \n   本页只作结论与边界说明，不复述指标数值；缺失项以“资料未载”为界，不作推测。 \n    \n\n   \n     结 论 \n     前、中、末三段核验均有明确记录，各段指标已 对应到试点部门、流程节点与模板归档环节 。 \n   \n\n    \n\n   \n     边 界 \n\n     \n        \n       资料未提供日期、预算与业务成果数据，本演示 不作补充 。 \n     \n\n     \n        \n       样本与部门数量仅限本次 虚构测评 ，不构成推广依据。 \n     \n   \n\n   \n      \n     数字见第  4  页「前中后部核验数据」 \n   \n\n   5 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p6-status",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n   \n            \n   \n\n    \n    \n    \n    \n    \n   LONG-DOCUMENT COVERAGE CHECK · 状态区分 \n\n   长资料覆盖核验  ／  06 状态区分 \n   计划、未确定与已完成 ： 状态区分 \n    \n    \n\n   三类状态的记录程度不同： 已完成项有明确数值 ，计划与未确定项在资料中无对应记载。 \n\n   \n   \n      \n     01 \n     已完成 \n     资料明示 \n      \n     前 / 中 / 末三段核验指标已采集，可对应到具体环节。 \n     \n        9 / 284  试点部门 / 原始样本  \n        13 / 7  流程节点 / 复盘会议  \n        42.7% / 17  复用率 / 模板套数  \n     \n   \n\n   \n   \n      \n     02 \n     计划 \n     资料未载 \n      \n     后续推广与扩展安排， 未在资料中说明 。 \n     \n       对照项 \n      推广节奏 · 扩展范围 · 后续时间安排 \n      资料均无对应条目，留空不推测。\n     \n   \n\n   \n   \n      \n     03 \n     未确定 \n     资料未载 \n      \n     \n        日期  资料未载  \n        预算  资料未载  \n        责任人  资料未载  \n        业务成果指标  资料未载  \n     \n     以上四项在资料中均无对应数据，本演示不填入估计值。 \n   \n\n   \n   \n      \n     处理原则 \n     缺失项统一标注 “资料未载” ， 不以推测填充 ；日期、预算与业务成果数据不另行补充。 \n   \n\n   6 / 6 \n \n \n "
+            }
+          ],
+          "has_images": false,
+          "evidence_id": "9ebba8ea01030f73bb019d30e8d3ddec9bf7b241a28bfb295a1af1be3d32b4b8",
+          "revision_id": "523cedd4-6bf3-4776-b721-da7ca5cfb348"
+        }
+      },
+      "run-1:turn-1:call_00_mrv02ossykoVjlEejAh55584": {
+        "status": "completed",
+        "input_hash": "1395aa29caebce74189f7bb280db013bc5887a134ae2cfa23b354ed2e79da4b1",
+        "result": {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 0,
+          "end": 4000,
+          "total": 15409,
+          "text": "此资料为虚构企业资料治理项目。\n【前部核验信息】试点部门9个；原始样本284份。\n本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟"
+        }
+      },
+      "run-1:turn-20:call_00_Yy6AGe2Fan1xEwqhGram0244": {
+        "status": "completed",
+        "input_hash": "3ef5bff7bd3bc72ad6579d5b4ffbe23d9c7c58e72f43bc08cc585a1d45bf40b7",
+        "result": {
+          "pages": [
+            {
+              "page_id": "p5-conclusion",
+              "candidate_id": "ed7f522d4be5a59f5de04c69ac5a5e54e5fb28bb968aff105083c30d0a8e655f",
+              "issues": [],
+              "repair": true
+            }
+          ],
+          "failures": [],
+          "project_ref": {
+            "revision_id": "551135ba-179c-4b1f-b880-ead92c6fa72f",
+            "artifact_ref": "project/revisions/551135ba-179c-4b1f-b880-ead92c6fa72f",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-20:call_00_Yy6AGe2Fan1xEwqhGram0244:page:p5-conclusion": {
+        "status": "completed",
+        "input_hash": "82963d8ad98b3436ad9e8cf794d9e2bb779be2f9d0ec1d80641ed5a6526e9c68",
+        "result": {
+          "page_id": "p5-conclusion",
+          "candidate_id": "ed7f522d4be5a59f5de04c69ac5a5e54e5fb28bb968aff105083c30d0a8e655f",
+          "issues": [],
+          "repair": true,
+          "project_ref": {
+            "revision_id": "551135ba-179c-4b1f-b880-ead92c6fa72f",
+            "artifact_ref": "project/revisions/551135ba-179c-4b1f-b880-ead92c6fa72f",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-21:call_00_ET_zgRJohpXeqtiuReb4vZ58049": {
+        "status": "completed",
+        "input_hash": "5f7ae60ebc5e60e90a89a6a36bf295379ff192d34c18189b477eba693d0eab62",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p5-conclusion",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n          \n\n   \n              \n   \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 结论与边界 \n\n   长资料覆盖核验 \n   企业资料治理项目组 · 内部汇报 \n\n   结论与边界 ：可对应与不可外推  \n   本页只作结论与边界说明，不复述指标数值；缺失项以“资料未载”为界，不作推测。 \n    \n\n   \n     结 论 \n     前、中、末三段核验均有明确记录，各段指标已 对应到试点部门、流程节点与归档环节 。 \n   \n\n    \n\n   \n     边 界 \n\n     \n        \n       资料未提供日期、预算与业务成果数据，本演示 不作补充 。 \n     \n\n     \n        \n       样本与部门数量仅限本次 虚构测评 ，不构成推广依据。 \n     \n   \n\n   \n      \n     数字见第  4  页「前中后部核验数据」 \n   \n\n   5 / 6 \n \n \n "
+            }
+          ],
+          "has_images": true,
+          "evidence_id": "3685b5f389d329c99e029f2e05b507574e49640b6b296f708282f4c1a794b352",
+          "revision_id": "551135ba-179c-4b1f-b880-ead92c6fa72f"
+        }
+      },
+      "run-1:turn-2:call_00_tQSATxTIHXjnrduFBH6m3928": {
+        "status": "completed",
+        "input_hash": "2d54337917c836bec6c73df1c875b40a09eb83800cf4e4ec6a65bada5c9901e1",
+        "result": {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 4000,
+          "end": 8000,
+          "total": 15409,
+          "text": "通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。\n【中部核验信息】流程节点13个；复盘会议7次。\n本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分"
+        }
+      },
+      "run-1:turn-3:call_00_qW2Pmpjmd428vTBO1qlQ0780": {
+        "status": "completed",
+        "input_hash": "c9b650a3cfff49b2347326dac8ef0d53d10286348eea32e1fff0f493612c24b7",
+        "result": {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 8000,
+          "end": 12000,
+          "total": 15409,
+          "text": "工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。"
+        }
+      },
+      "run-1:turn-4:call_00_I0tPlU0YBfWxNGdZaRud6525": {
+        "status": "completed",
+        "input_hash": "a715dd38ac6788ad7fe4fd5fb17ead0521e49a58dff6f54e6e5d53c3076ff742",
+        "result": {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 12000,
+          "end": 15409,
+          "total": 15409,
+          "text": "本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。本节说明资料整理、角色分工、沟通记录和版本归档方式，不新增成果指标。\n【末部核验信息】资料复用率42.7%；已确认模板17套。上述指标仅为本次测评构造值。"
+        }
+      },
+      "run-1:turn-5:call_00_hRTIrWSq09MjWeL0BdNH5060": {
+        "status": "completed",
+        "input_hash": "7f18d5d9e560944d88d1c4eb1d74430c7a2cbd558a641b06c6f3cc2e39dbffd8",
+        "result": {
+          "outline": {
+            "draft_revision": 1,
+            "title": "长资料覆盖核验",
+            "pages": [
+              {
+                "page_id": "p1-cover",
+                "title": "长资料覆盖核验",
+                "bullets": [
+                  "虚构企业资料治理测评 · 项目组内部汇报",
+                  "唯一事实来源：long-document.txt（15,409 字符）",
+                  "全部指标为本次测评构造值，不补充外部事实",
+                  "结构：项目概况 / 整理流程 / 前中后部核验数据 / 结论与边界"
+                ]
+              },
+              {
+                "page_id": "p2-overview",
+                "title": "项目概况：虚构测评的范围与起点",
+                "bullets": [
+                  "项目性质：虚构企业资料治理测评，仅呈现资料已载内容",
+                  "前部核验记录：试点部门 9 个；原始样本 284 份",
+                  "资料范围：资料整理、角色分工、沟通记录、版本归档",
+                  "口径约束：资料明确“不新增成果指标”，本演示不追加"
+                ]
+              },
+              {
+                "page_id": "p3-process",
+                "title": "整理流程：四环节与中部记录",
+                "bullets": [
+                  "四个环节：资料整理 → 角色分工 → 沟通记录 → 版本归档",
+                  "中部核验记录：流程节点 13 个",
+                  "中部核验记录：复盘会议 7 次",
+                  "资料未记载各环节负责人姓名与时间安排，故留空"
+                ]
+              },
+              {
+                "page_id": "p4-data",
+                "title": "前中后部核验数据",
+                "bullets": [
+                  "前部：试点部门 9 个 · 原始样本 284 份",
+                  "中部：流程节点 13 个 · 复盘会议 7 次",
+                  "末部（资料原文为“末部”）：资料复用率 42.7% · 已确认模板 17 套",
+                  "口径提示：上述指标仅为本次测评构造值，不可外推"
+                ]
+              },
+              {
+                "page_id": "p5-conclusion",
+                "title": "结论与边界：可对应与不可外推",
+                "bullets": [
+                  "结论：前、中、末三段核验均有明确记录，指标可对应到具体环节",
+                  "已完成：三段指标已采集（9/284、13/7、42.7%/17）",
+                  "边界：资料未提供日期、预算与业务成果数据，本演示不作补充",
+                  "边界：样本与部门数量仅限本次虚构测评，不构成推广依据"
+                ]
+              },
+              {
+                "page_id": "p6-status",
+                "title": "计划、未确定与已完成：状态区分",
+                "bullets": [
+                  "已完成（资料明示）：前/中/末三段指标、17 套模板确认、复盘会议 7 次",
+                  "计划（资料未载）：后续推广与扩展安排未在资料中说明",
+                  "未确定（资料未载）：日期、预算、责任人与业务成果指标",
+                  "处理原则：缺失项标注“资料未载”，不以推测填充"
+                ]
+              }
+            ]
+          },
+          "draft_ref": "project/drafts/8e1a1a8e1efbc608c56105916d132a1a39ac7555ec31aa4792c19af5c4917630.json",
+          "project_ref": {
+            "revision_id": "ce44b29c-0da5-44ff-9a57-067bc942dcb8",
+            "artifact_ref": "project/revisions/ce44b29c-0da5-44ff-9a57-067bc942dcb8",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456": {
+        "status": "completed",
+        "input_hash": "34715fda82f2e93ba1d5f233af15ae65705f94a442a20a540b4b28c829bc4937",
+        "result": {
+          "pages": [
+            {
+              "page_id": "p2-overview",
+              "candidate_id": "db5ac087eda5dbc51a1ef9cce4db1144874b6461e17657ee67e691a36747a5ad",
+              "issues": [],
+              "repair": false
+            },
+            {
+              "page_id": "p1-cover",
+              "candidate_id": "3951c859a5a357e20e39bfb4384ff683a675c8a1d037bb1afb982be7577e9ee0",
+              "issues": [],
+              "repair": false
+            },
+            {
+              "page_id": "p4-data",
+              "candidate_id": "a51aa34e67ab4a3adafd5487c30d07e02ced9fc6d6f297f5d32ec61bafe0b0f6",
+              "issues": [],
+              "repair": false
+            },
+            {
+              "page_id": "p3-process",
+              "candidate_id": "a9f9af34fde3ba8ae30ccce0b36eed7f0dbcde2c7efd52294fb1c2310a151c6f",
+              "issues": [],
+              "repair": false
+            },
+            {
+              "page_id": "p5-conclusion",
+              "candidate_id": "d6153ee4b5062f50eec0a06875943899a413b6cf0e1e0c9e39306ab291ea36ac",
+              "issues": [],
+              "repair": false
+            },
+            {
+              "page_id": "p6-status",
+              "candidate_id": "f63df4496e37ce5bad9281b71a4838e4b496f9b9a587e6199b45636ce057eb24",
+              "issues": [],
+              "repair": false
+            }
+          ],
+          "failures": [],
+          "project_ref": {
+            "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6",
+            "artifact_ref": "project/revisions/b7bd90be-acc9-404c-a4c5-e4ceb035acd6",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p1-cover": {
+        "status": "completed",
+        "input_hash": "090bdd63a3491c6d344af54214c8539a7b1ed5b6e747e2a2b292304d10ec558b",
+        "result": {
+          "page_id": "p1-cover",
+          "candidate_id": "3951c859a5a357e20e39bfb4384ff683a675c8a1d037bb1afb982be7577e9ee0",
+          "issues": [],
+          "repair": false,
+          "project_ref": {
+            "revision_id": "6d29d12e-ace4-4091-bf3b-34f206d6c8d3",
+            "artifact_ref": "project/revisions/6d29d12e-ace4-4091-bf3b-34f206d6c8d3",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p2-overview": {
+        "status": "completed",
+        "input_hash": "36fb0ba695225850df833640cbf37c80c88c788771c90a401167f4fd48a3ffb8",
+        "result": {
+          "page_id": "p2-overview",
+          "candidate_id": "db5ac087eda5dbc51a1ef9cce4db1144874b6461e17657ee67e691a36747a5ad",
+          "issues": [],
+          "repair": false,
+          "project_ref": {
+            "revision_id": "bd0585e2-ea88-4c02-b582-fd57a8f8dd0b",
+            "artifact_ref": "project/revisions/bd0585e2-ea88-4c02-b582-fd57a8f8dd0b",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p3-process": {
+        "status": "completed",
+        "input_hash": "2a5112757da7f2cbd47e0ec056dd8f456ac7362d36f607cdd3a5c965368c2603",
+        "result": {
+          "page_id": "p3-process",
+          "candidate_id": "a9f9af34fde3ba8ae30ccce0b36eed7f0dbcde2c7efd52294fb1c2310a151c6f",
+          "issues": [],
+          "repair": false,
+          "project_ref": {
+            "revision_id": "7b2ad152-3268-49b7-91b9-fbc53fce4680",
+            "artifact_ref": "project/revisions/7b2ad152-3268-49b7-91b9-fbc53fce4680",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p4-data": {
+        "status": "completed",
+        "input_hash": "98406213384762aed5b8b32740058db3b1a8fcaf7e2a94e04a57067f31dbaf67",
+        "result": {
+          "page_id": "p4-data",
+          "candidate_id": "a51aa34e67ab4a3adafd5487c30d07e02ced9fc6d6f297f5d32ec61bafe0b0f6",
+          "issues": [],
+          "repair": false,
+          "project_ref": {
+            "revision_id": "2bd336b9-e876-4fd0-868e-0fbe30a682cd",
+            "artifact_ref": "project/revisions/2bd336b9-e876-4fd0-868e-0fbe30a682cd",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p5-conclusion": {
+        "status": "completed",
+        "input_hash": "3a630f3aaac6bcf02846a22b1d10189022d7af6644e55292be69856171e22728",
+        "result": {
+          "page_id": "p5-conclusion",
+          "candidate_id": "d6153ee4b5062f50eec0a06875943899a413b6cf0e1e0c9e39306ab291ea36ac",
+          "issues": [],
+          "repair": false,
+          "project_ref": {
+            "revision_id": "b503b333-22f6-4731-be32-d7367e05bcdd",
+            "artifact_ref": "project/revisions/b503b333-22f6-4731-be32-d7367e05bcdd",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-6:call_00_xt0TX7t4h26j8Oli2xrv7456:page:p6-status": {
+        "status": "completed",
+        "input_hash": "07b4f8fbebcc14e6ef10072e8dd884be835f6ff8ebbd71f8c1fa936a9a35465b",
+        "result": {
+          "page_id": "p6-status",
+          "candidate_id": "f63df4496e37ce5bad9281b71a4838e4b496f9b9a587e6199b45636ce057eb24",
+          "issues": [],
+          "repair": false,
+          "project_ref": {
+            "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6",
+            "artifact_ref": "project/revisions/b7bd90be-acc9-404c-a4c5-e4ceb035acd6",
+            "outline_revision": 1,
+            "constraints_revision": 1
+          }
+        }
+      },
+      "run-1:turn-7:call_00_ET_YGpjfPcBuED9qAWnucTQ9196": {
+        "status": "completed",
+        "input_hash": "dc2e1bced97e5a1623ff13e8a75654944499dfbc164acdb7cc097241dded1297",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p1-cover",
+              "text": "     \n \n \n    \n    \n          \n    \n    \n    \n    \n    \n              \n    \n    \n        \n   Internal Review · 企业资料治理项目组 \n   企业资料治理项目组 / 内部项目汇报 / 虚构测评材料 \n\n   \n       虚构企业资料治理测评 \n     长资料覆盖核验 \n     LONG-DOCUMENT COVERAGE VERIFICATION \n      \n     项目组内部汇报 · 前部 / 中部 / 末部三段核验记录 \n     \n       \n         唯一事实来源 \n         long-document.txt（15,409 字符） \n       \n       \n         汇报日期 \n         待补充（资料未载） \n       \n     \n   \n\n    口径 全部指标为本次测评构造值，不补充外部事实 \n\n   \n      01  项目概况  \n      02  整理流程  \n      03  前中后部核验数据  \n      04  结论与边界  \n   \n\n   1  / 6  \n \n  ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            },
+            {
+              "page_id": "p2-overview",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   02 \n   长资料覆盖核验 · 内部汇报 \n   PROJECT SCOPE / 项目概况 \n   \n            \n      \n   \n\n   \n       02&nbsp;&nbsp;项目概况 \n     项目概况：虚构测评的范围与起点 \n     本页仅陈述资料已载内容，界定本次测评的性质、前部核验起点与资料范围；未记载事项不作补充。 \n        \n   \n\n   \n     \n       \n          01 项目性质 \n         虚构企业资料治理测评 \n         本次为企业资料治理的虚构测评，全部内容以资料原文为唯一事实来源，仅呈现资料已载内容，不引入外部事实或补充推断。 \n       \n\n       \n          02 前部核验记录 \n         \n           \n             9 个  \n             试点部门 \n             前部核验记录 \n           \n           \n             284 份  \n             原始样本 \n             前部核验记录 \n           \n         \n       \n     \n\n     \n       \n          03 资料范围 \n         四类对象纳入核验 \n         \n            A 资料整理 \n            B 角色分工 \n            C 沟通记录 \n            D 版本归档 \n         \n       \n\n       \n          04 口径约束 \n         不新增成果指标 \n         资料明确“不新增成果指标”，本演示不追加。\n           依据：long-document.txt 原文口径 \n         \n         凡资料未记载的日期、预算与业务成果类内容，均不列入本页。 \n       \n     \n   \n\n    2 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            },
+            {
+              "page_id": "p3-process",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n   \n      \n      \n      \n      \n   \n\n    \n   长资料覆盖核验 \n   虚构企业资料治理测评 \n\n     02　整理流程 \n   整理流程：四环节与中部记录 \n    \n    \n   四个环节按资料记载的顺序排列；中部核验记录给出流程节点与复盘会议的计数。 \n\n    01 四个环节 \n   \n     \n       01 \n       资料整理 \n        \n     \n        \n     \n       02 \n       角色分工 \n        \n     \n        \n     \n       03 \n       沟通记录 \n        \n     \n        \n     \n       04 \n       版本归档 \n        \n     \n   \n\n     中部核验记录 \n\n    02 中部核验记录 \n   \n     \n        中部核验  A  \n        13  个  \n       流程节点 \n        \n     \n     \n        中部核验  B  \n        7  次  \n       复盘会议 \n        \n     \n   \n\n   \n     角色与时间 · 留空项 \n     \n       各环节负责人姓名 \n       资料未载 \n     \n     \n       各环节时间安排 \n       资料未载 \n     \n     资料未记载各环节负责人姓名与时间安排，故留空；不以推测填充。 \n   \n\n    \n   长资料覆盖核验 · 全部指标为本次虚构测评构造值 \n   3 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            },
+            {
+              "page_id": "p4-data",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n        \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 企业资料治理项目组 \n   虚构测评材料 · 内部汇报 \n\n   \n     核验数据 \n     前中后部核验数据 \n     三段核验指标均取自 long-document.txt，逐项对应到具体环节；数字口径与资料原文一致。 \n   \n\n   \n     \n       \n         01 \n         前部 \n       \n       \n         9 个  \n         试点部门 \n       \n       \n         284 份  \n         原始样本 \n       \n     \n\n     \n       \n         02 \n         中部 \n       \n       \n         13 个  \n         流程节点 \n       \n       \n         7 次  \n         复盘会议 \n       \n     \n\n     \n       \n         03 \n         末部 \n       \n       \n         42.7 %  \n         资料复用率 \n       \n       \n         17 套  \n         已确认模板 \n       \n       注：资料原文即写作「末部」 \n     \n   \n\n   \n     口径提示 \n     上述指标仅为本次测评构造值，不可外推。 \n   \n\n   4 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            },
+            {
+              "page_id": "p5-conclusion",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n          \n\n   \n              \n   \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 阶段核验记录 \n\n   长资料覆盖核验 \n   企业资料治理项目组 · 内部汇报 \n\n   结论与边界 ：可对应与不可外推  \n   本页只呈现资料已载内容；资料未载事项以“资料未载”标注，不作推测、不作补充。 \n    \n\n   \n     结 论 \n     前、中、末三段核验均有明确记录，指标可对应到具体环节。 \n   \n\n   \n     已完成 ·  三段指标已采集  \n      \n     9 / 284 · 13 / 7 · 42.7% / 17 \n   \n\n   \n     \n        \n       \n           前部 \n         01 \n       \n       \n         \n           9 个  \n           试点部门 \n         \n         \n           284 份  \n           原始样本 \n         \n       \n     \n\n     \n        \n       \n           中部 \n         02 \n       \n       \n         \n           13 个  \n           流程节点 \n         \n         \n           7 次  \n           复盘会议 \n         \n       \n     \n\n     \n        \n       \n           末部 \n         03 \n       \n       \n         \n           42.7 %  \n           资料复用率 \n         \n         \n           17 套  \n           已确认模板 \n         \n       \n     \n   \n\n   \n     边 界 ·  不作为补充依据  \n      \n     2 项限制 \n   \n\n   \n     \n       边界  01  \n       资料未提供日期、预算与业务成果数据，本演示 不作补充 。 \n     \n     \n       边界  02  \n       样本与部门数量仅限本次虚构测评，不构成推广依据。 \n     \n   \n\n   5 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            },
+            {
+              "page_id": "p6-status",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n   \n            \n   \n\n    \n    \n    \n    \n    \n   LONG-DOCUMENT COVERAGE CHECK · 状态区分 \n\n   长资料覆盖核验  ／  06 状态区分 \n   计划、未确定与已完成 ： 状态区分 \n    \n    \n\n   同一份资料内，三类状态的记录程度并不相同： 已完成项有明确条目与数值 ，计划项与未确定项在资料中没有对应记载，本页按原样区分呈现，不做补写。 \n\n   \n   \n      \n     01 \n     已完成 \n     资料明示 \n      \n     前 / 中 / 末三段核验指标已采集，可对应到具体环节 \n     已确认模板  17 套  \n     复盘会议  7 次  \n     \n        9 / 284  试点部门 / 原始样本  \n        13 / 7  流程节点 / 复盘会议  \n        42.7% / 17  复用率 / 模板套数  \n     \n   \n\n   \n   \n      \n     02 \n     计划 \n     资料未载 \n      \n     后续推广与扩展安排， 未在资料中说明 。 \n     \n       对照项 \n      推广节奏 · 扩展范围 · 后续时间安排 \n      资料均无对应条目，留空不推测。\n     \n   \n\n   \n   \n      \n     03 \n     未确定 \n     资料未载 \n      \n     \n        日期  资料未载  \n        预算  资料未载  \n        责任人  资料未载  \n        业务成果指标  资料未载  \n     \n     以上四项在资料中均无对应数据，本演示不填入估计值。 \n   \n\n   \n   \n      \n     处理原则 \n     缺失项统一标注 “资料未载” ， 不以推测填充 ；日期、预算与业务成果数据不另行补充。 \n   \n\n   6 / 6 \n \n \n ",
+              "report": {
+                "ok": true,
+                "issues": []
+              }
+            }
+          ],
+          "has_images": false,
+          "evidence_id": "1a6e6b681b4cae8cadfbe5ddf899b47a194fb2777a5fb143239250b0dd14ec29",
+          "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6"
+        }
+      },
+      "run-1:turn-8:call_00_QrxMhd7J3QTQEAI2j4jC1592": {
+        "status": "completed",
+        "input_hash": "8a7b82734bad9b79f132fa49334d32d05d225796076d7b116e8019224f21402d",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p1-cover",
+              "text": "     \n \n \n    \n    \n          \n    \n    \n    \n    \n    \n              \n    \n    \n        \n   Internal Review · 企业资料治理项目组 \n   企业资料治理项目组 / 内部项目汇报 / 虚构测评材料 \n\n   \n       虚构企业资料治理测评 \n     长资料覆盖核验 \n     LONG-DOCUMENT COVERAGE VERIFICATION \n      \n     项目组内部汇报 · 前部 / 中部 / 末部三段核验记录 \n     \n       \n         唯一事实来源 \n         long-document.txt（15,409 字符） \n       \n       \n         汇报日期 \n         待补充（资料未载） \n       \n     \n   \n\n    口径 全部指标为本次测评构造值，不补充外部事实 \n\n   \n      01  项目概况  \n      02  整理流程  \n      03  前中后部核验数据  \n      04  结论与边界  \n   \n\n   1  / 6  \n \n  "
+            },
+            {
+              "page_id": "p2-overview",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n   02 \n   长资料覆盖核验 · 内部汇报 \n   PROJECT SCOPE / 项目概况 \n   \n            \n      \n   \n\n   \n       02&nbsp;&nbsp;项目概况 \n     项目概况：虚构测评的范围与起点 \n     本页仅陈述资料已载内容，界定本次测评的性质、前部核验起点与资料范围；未记载事项不作补充。 \n        \n   \n\n   \n     \n       \n          01 项目性质 \n         虚构企业资料治理测评 \n         本次为企业资料治理的虚构测评，全部内容以资料原文为唯一事实来源，仅呈现资料已载内容，不引入外部事实或补充推断。 \n       \n\n       \n          02 前部核验记录 \n         \n           \n             9 个  \n             试点部门 \n             前部核验记录 \n           \n           \n             284 份  \n             原始样本 \n             前部核验记录 \n           \n         \n       \n     \n\n     \n       \n          03 资料范围 \n         四类对象纳入核验 \n         \n            A 资料整理 \n            B 角色分工 \n            C 沟通记录 \n            D 版本归档 \n         \n       \n\n       \n          04 口径约束 \n         不新增成果指标 \n         资料明确“不新增成果指标”，本演示不追加。\n           依据：long-document.txt 原文口径 \n         \n         凡资料未记载的日期、预算与业务成果类内容，均不列入本页。 \n       \n     \n   \n\n    2 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p3-process",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n   \n      \n      \n      \n      \n   \n\n    \n   长资料覆盖核验 \n   虚构企业资料治理测评 \n\n     02　整理流程 \n   整理流程：四环节与中部记录 \n    \n    \n   四个环节按资料记载的顺序排列；中部核验记录给出流程节点与复盘会议的计数。 \n\n    01 四个环节 \n   \n     \n       01 \n       资料整理 \n        \n     \n        \n     \n       02 \n       角色分工 \n        \n     \n        \n     \n       03 \n       沟通记录 \n        \n     \n        \n     \n       04 \n       版本归档 \n        \n     \n   \n\n     中部核验记录 \n\n    02 中部核验记录 \n   \n     \n        中部核验  A  \n        13  个  \n       流程节点 \n        \n     \n     \n        中部核验  B  \n        7  次  \n       复盘会议 \n        \n     \n   \n\n   \n     角色与时间 · 留空项 \n     \n       各环节负责人姓名 \n       资料未载 \n     \n     \n       各环节时间安排 \n       资料未载 \n     \n     资料未记载各环节负责人姓名与时间安排，故留空；不以推测填充。 \n   \n\n    \n   长资料覆盖核验 · 全部指标为本次虚构测评构造值 \n   3 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p4-data",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n        \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 企业资料治理项目组 \n   虚构测评材料 · 内部汇报 \n\n   \n     核验数据 \n     前中后部核验数据 \n     三段核验指标均取自 long-document.txt，逐项对应到具体环节；数字口径与资料原文一致。 \n   \n\n   \n     \n       \n         01 \n         前部 \n       \n       \n         9 个  \n         试点部门 \n       \n       \n         284 份  \n         原始样本 \n       \n     \n\n     \n       \n         02 \n         中部 \n       \n       \n         13 个  \n         流程节点 \n       \n       \n         7 次  \n         复盘会议 \n       \n     \n\n     \n       \n         03 \n         末部 \n       \n       \n         42.7 %  \n         资料复用率 \n       \n       \n         17 套  \n         已确认模板 \n       \n       注：资料原文即写作「末部」 \n     \n   \n\n   \n     口径提示 \n     上述指标仅为本次测评构造值，不可外推。 \n   \n\n   4 / 6 \n \n \n "
+            }
+          ],
+          "has_images": true,
+          "evidence_id": "54267e155e873e654fa2b5fc340befe8a82764a5d60c36f48272a2f5f52bd368",
+          "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6"
+        }
+      },
+      "run-1:turn-9:call_00_N46p0gRzODTXxySxqc514694": {
+        "status": "completed",
+        "input_hash": "a5371d8abedbfef6e9b3c05414d02abf7d4be351d2360f6bf6ee5fee06601700",
+        "result": {
+          "evidence": [
+            {
+              "page_id": "p5-conclusion",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n          \n\n   \n              \n   \n\n    \n    \n    \n    \n    \n   长资料覆盖核验 · 阶段核验记录 \n\n   长资料覆盖核验 \n   企业资料治理项目组 · 内部汇报 \n\n   结论与边界 ：可对应与不可外推  \n   本页只呈现资料已载内容；资料未载事项以“资料未载”标注，不作推测、不作补充。 \n    \n\n   \n     结 论 \n     前、中、末三段核验均有明确记录，指标可对应到具体环节。 \n   \n\n   \n     已完成 ·  三段指标已采集  \n      \n     9 / 284 · 13 / 7 · 42.7% / 17 \n   \n\n   \n     \n        \n       \n           前部 \n         01 \n       \n       \n         \n           9 个  \n           试点部门 \n         \n         \n           284 份  \n           原始样本 \n         \n       \n     \n\n     \n        \n       \n           中部 \n         02 \n       \n       \n         \n           13 个  \n           流程节点 \n         \n         \n           7 次  \n           复盘会议 \n         \n       \n     \n\n     \n        \n       \n           末部 \n         03 \n       \n       \n         \n           42.7 %  \n           资料复用率 \n         \n         \n           17 套  \n           已确认模板 \n         \n       \n     \n   \n\n   \n     边 界 ·  不作为补充依据  \n      \n     2 项限制 \n   \n\n   \n     \n       边界  01  \n       资料未提供日期、预算与业务成果数据，本演示 不作补充 。 \n     \n     \n       边界  02  \n       样本与部门数量仅限本次虚构测评，不构成推广依据。 \n     \n   \n\n   5 / 6 \n \n \n "
+            },
+            {
+              "page_id": "p6-status",
+              "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n   \n            \n   \n\n    \n    \n    \n    \n    \n   LONG-DOCUMENT COVERAGE CHECK · 状态区分 \n\n   长资料覆盖核验  ／  06 状态区分 \n   计划、未确定与已完成 ： 状态区分 \n    \n    \n\n   同一份资料内，三类状态的记录程度并不相同： 已完成项有明确条目与数值 ，计划项与未确定项在资料中没有对应记载，本页按原样区分呈现，不做补写。 \n\n   \n   \n      \n     01 \n     已完成 \n     资料明示 \n      \n     前 / 中 / 末三段核验指标已采集，可对应到具体环节 \n     已确认模板  17 套  \n     复盘会议  7 次  \n     \n        9 / 284  试点部门 / 原始样本  \n        13 / 7  流程节点 / 复盘会议  \n        42.7% / 17  复用率 / 模板套数  \n     \n   \n\n   \n   \n      \n     02 \n     计划 \n     资料未载 \n      \n     后续推广与扩展安排， 未在资料中说明 。 \n     \n       对照项 \n      推广节奏 · 扩展范围 · 后续时间安排 \n      资料均无对应条目，留空不推测。\n     \n   \n\n   \n   \n      \n     03 \n     未确定 \n     资料未载 \n      \n     \n        日期  资料未载  \n        预算  资料未载  \n        责任人  资料未载  \n        业务成果指标  资料未载  \n     \n     以上四项在资料中均无对应数据，本演示不填入估计值。 \n   \n\n   \n   \n      \n     处理原则 \n     缺失项统一标注 “资料未载” ， 不以推测填充 ；日期、预算与业务成果数据不另行补充。 \n   \n\n   6 / 6 \n \n \n "
+            }
+          ],
+          "has_images": true,
+          "evidence_id": "da4e97605c4584977938f5c2ed1970fecc985fbfc7d070c02d354bfcda38e5b0",
+          "revision_id": "b7bd90be-acc9-404c-a4c5-e4ceb035acd6"
+        }
+      }
+    },
+    "instance_id": "4abfcbe3-7668-4e23-85f4-429cebeb0519",
+    "error": "任务预算不足，请明确追加预算后继续：剩余可用 ¥0.2577，本次需预留 ¥0.3272（已用 ¥1.7423 / ¥2.0000，在途预留 ¥0.0000）"
+  },
+  "id": "deck-ef61d619",
+  "runDir": "D:\\SlideForge\\artifacts\\decks\\deck-ef61d619\\project\\revisions\\551135ba-179c-4b1f-b880-ead92c6fa72f",
+  "title": "长资料覆盖核验",
+  "status": "creating",
+  "events": [],
+  "overflowPages": [],
+  "ownerKeyHash": "3ef343918ef6e07744436a7b8bbce73286a5eb5f1dfdcd232997cd098be7d370",
+  "createdAt": "2026-11-13T08:24:37.026Z",
+  "updatedAt": "2026-11-13T08:28:53.9204943Z"
+}

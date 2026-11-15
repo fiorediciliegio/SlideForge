@@ -1,0 +1,1287 @@
+[
+  {
+    "language": "Go",
+    "name": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentToolReplayAndParentRevisionCAS",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "status": "pass",
+    "ms": 220
+  },
+  {
+    "language": "Go",
+    "name": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentToolReplayAndParentRevisionCAS",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentToolReplayAndParentRevisionCAS",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "status": "pass",
+    "ms": 450
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestDurableDedupAndFencedRecovery",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentToolReplayAndParentRevisionCAS",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "status": "pass",
+    "ms": 20
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentToolReplayAndParentRevisionCAS",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "status": "pass",
+    "ms": 30
+  },
+  {
+    "language": "Go",
+    "name": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "status": "pass",
+    "ms": 200
+  },
+  {
+    "language": "Go",
+    "name": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "status": "pass",
+    "ms": 410
+  },
+  {
+    "language": "Go",
+    "name": "TestDurableDedupAndFencedRecovery",
+    "status": "pass",
+    "ms": 60
+  },
+  {
+    "language": "Go",
+    "name": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "status": "pass",
+    "ms": 190
+  },
+  {
+    "language": "Go",
+    "name": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "status": "pass",
+    "ms": 2000
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "status": "pass",
+    "ms": 420
+  },
+  {
+    "language": "Go",
+    "name": "TestDurableDedupAndFencedRecovery",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "status": "pass",
+    "ms": 180
+  },
+  {
+    "language": "Go",
+    "name": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "status": "pass",
+    "ms": 390
+  },
+  {
+    "language": "Go",
+    "name": "TestDurableDedupAndFencedRecovery",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "status": "pass",
+    "ms": 40
+  },
+  {
+    "language": "Go",
+    "name": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "status": "pass",
+    "ms": 190
+  },
+  {
+    "language": "Go",
+    "name": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "status": "pass",
+    "ms": 0
+  },
+  {
+    "language": "Go",
+    "name": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "status": "pass",
+    "ms": 500
+  },
+  {
+    "language": "Go",
+    "name": "TestDurableDedupAndFencedRecovery",
+    "status": "pass",
+    "ms": 60
+  },
+  {
+    "language": "Go",
+    "name": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "status": "pass",
+    "ms": 1910
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "status": "pass",
+    "ms": 60
+  },
+  {
+    "language": "Go",
+    "name": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "status": "pass",
+    "ms": 1930
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "status": "pass",
+    "ms": 1830
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "status": "pass",
+    "ms": 50
+  },
+  {
+    "language": "Go",
+    "name": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "status": "pass",
+    "ms": 1950
+  },
+  {
+    "language": "Go",
+    "name": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "status": "pass",
+    "ms": 60
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a delayed tool cannot adopt a newer epoch to publish stale output",
+    "status": "pass",
+    "ms": 141.4228
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a delayed tool cannot adopt a newer revision to publish stale output",
+    "status": "pass",
+    "ms": 67.1839
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a prepared plan restores the same draft and confirmation pause",
+    "status": "pass",
+    "ms": 195.5976
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a cancelled queued export never enters artifact export",
+    "status": "pass",
+    "ms": 102.2676
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a fully saved response is settled before asking to retry an unknown call",
+    "status": "pass",
+    "ms": 39.4753
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "tool permissions reject research and export without user authorization",
+    "status": "pass",
+    "ms": 1.8024
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a batch review issue on page A does not block unchanged page B after A is cleared",
+    "status": "pass",
+    "ms": 76.6526
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "unchanged pages reuse checks while modified pages or constraints invalidate them",
+    "status": "pass",
+    "ms": 0.4775
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "snapshot contains fixed HTML and never exposes the business directory",
+    "status": "pass",
+    "ms": 41.8404
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a cancelled Agent cannot consume a cached completed engine result",
+    "status": "pass",
+    "ms": 1.9691
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "snapshot embeds image assets without rewriting captions or presentation hyperlinks",
+    "status": "pass",
+    "ms": 37.4289
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "engine unavailable is reported and does not execute a local fallback",
+    "status": "pass",
+    "ms": 75.5578
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "worker uploads output before completion and binds the original lease",
+    "status": "pass",
+    "ms": 4.1713
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "a cancelled worker never completes a result",
+    "status": "pass",
+    "ms": 0.6366
+  },
+  {
+    "language": "Node",
+    "round": 1,
+    "name": "exports submit immutable inputs and stable operation IDs to the durable coordinator",
+    "status": "pass",
+    "ms": 243.5184
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_agent_models.AgentModelTests.test_deepseek_screenshot_reservation_excludes_base64_but_preserves_images",
+    "status": "pass",
+    "ms": 14.888899999277783
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_agent_models.AgentModelTests.test_lost_response_becomes_unknown_and_is_not_retried",
+    "status": "pass",
+    "ms": 0.6630999996559694
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_agent_models.AgentModelTests.test_native_tool_message_and_usage_are_preserved_without_retries",
+    "status": "pass",
+    "ms": 0.58069999977306
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_agent_models.AgentModelTests.test_resumed_run_cannot_silently_switch_its_priced_model",
+    "status": "pass",
+    "ms": 0.5144000006112037
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_harness.HarnessTests.test_closed_loop_preserves_tool_ids_and_finishes_only_with_tool",
+    "status": "pass",
+    "ms": 1.1753999988286523
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_harness.HarnessTests.test_continue_is_queued_even_while_the_old_epoch_worker_is_returning",
+    "status": "pass",
+    "ms": 4.441400000359863
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_harness.HarnessTests.test_outline_pause_releases_execution_without_page_generation",
+    "status": "pass",
+    "ms": 0.2992000008816831
+  },
+  {
+    "language": "Python",
+    "round": 1,
+    "name": "test_harness.HarnessTests.test_resume_replays_persisted_assistant_tool_before_requesting_model",
+    "status": "pass",
+    "ms": 0.22739999985788018
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a delayed tool cannot adopt a newer epoch to publish stale output",
+    "status": "pass",
+    "ms": 123.4464
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a delayed tool cannot adopt a newer revision to publish stale output",
+    "status": "pass",
+    "ms": 65.0018
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a prepared plan restores the same draft and confirmation pause",
+    "status": "pass",
+    "ms": 174.7197
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a cancelled queued export never enters artifact export",
+    "status": "pass",
+    "ms": 91.1083
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a fully saved response is settled before asking to retry an unknown call",
+    "status": "pass",
+    "ms": 38.6939
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "tool permissions reject research and export without user authorization",
+    "status": "pass",
+    "ms": 1.6835
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a batch review issue on page A does not block unchanged page B after A is cleared",
+    "status": "pass",
+    "ms": 43.1931
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "unchanged pages reuse checks while modified pages or constraints invalidate them",
+    "status": "pass",
+    "ms": 0.4995
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "snapshot contains fixed HTML and never exposes the business directory",
+    "status": "pass",
+    "ms": 39.4586
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a cancelled Agent cannot consume a cached completed engine result",
+    "status": "pass",
+    "ms": 1.3151
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "snapshot embeds image assets without rewriting captions or presentation hyperlinks",
+    "status": "pass",
+    "ms": 36.4759
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "engine unavailable is reported and does not execute a local fallback",
+    "status": "pass",
+    "ms": 78.3329
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "worker uploads output before completion and binds the original lease",
+    "status": "pass",
+    "ms": 3.1852
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "a cancelled worker never completes a result",
+    "status": "pass",
+    "ms": 0.646
+  },
+  {
+    "language": "Node",
+    "round": 2,
+    "name": "exports submit immutable inputs and stable operation IDs to the durable coordinator",
+    "status": "pass",
+    "ms": 230.5287
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_agent_models.AgentModelTests.test_deepseek_screenshot_reservation_excludes_base64_but_preserves_images",
+    "status": "pass",
+    "ms": 14.274600000135251
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_agent_models.AgentModelTests.test_lost_response_becomes_unknown_and_is_not_retried",
+    "status": "pass",
+    "ms": 0.7162000001699198
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_agent_models.AgentModelTests.test_native_tool_message_and_usage_are_preserved_without_retries",
+    "status": "pass",
+    "ms": 0.5858000004081987
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_agent_models.AgentModelTests.test_resumed_run_cannot_silently_switch_its_priced_model",
+    "status": "pass",
+    "ms": 0.5274000013741897
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_harness.HarnessTests.test_closed_loop_preserves_tool_ids_and_finishes_only_with_tool",
+    "status": "pass",
+    "ms": 1.2977000005776063
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_harness.HarnessTests.test_continue_is_queued_even_while_the_old_epoch_worker_is_returning",
+    "status": "pass",
+    "ms": 5.138099999385304
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_harness.HarnessTests.test_outline_pause_releases_execution_without_page_generation",
+    "status": "pass",
+    "ms": 0.2538999997341307
+  },
+  {
+    "language": "Python",
+    "round": 2,
+    "name": "test_harness.HarnessTests.test_resume_replays_persisted_assistant_tool_before_requesting_model",
+    "status": "pass",
+    "ms": 0.2406999992672354
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a delayed tool cannot adopt a newer epoch to publish stale output",
+    "status": "pass",
+    "ms": 177.4397
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a delayed tool cannot adopt a newer revision to publish stale output",
+    "status": "pass",
+    "ms": 78.5069
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a prepared plan restores the same draft and confirmation pause",
+    "status": "pass",
+    "ms": 245.8926
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a cancelled queued export never enters artifact export",
+    "status": "pass",
+    "ms": 104.1568
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a fully saved response is settled before asking to retry an unknown call",
+    "status": "pass",
+    "ms": 39.6774
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "tool permissions reject research and export without user authorization",
+    "status": "pass",
+    "ms": 2.6667
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a batch review issue on page A does not block unchanged page B after A is cleared",
+    "status": "pass",
+    "ms": 58.9271
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "unchanged pages reuse checks while modified pages or constraints invalidate them",
+    "status": "pass",
+    "ms": 0.6673
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "snapshot contains fixed HTML and never exposes the business directory",
+    "status": "pass",
+    "ms": 47.8882
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a cancelled Agent cannot consume a cached completed engine result",
+    "status": "pass",
+    "ms": 1.9023
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "snapshot embeds image assets without rewriting captions or presentation hyperlinks",
+    "status": "pass",
+    "ms": 44.8517
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "engine unavailable is reported and does not execute a local fallback",
+    "status": "pass",
+    "ms": 95.5904
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "worker uploads output before completion and binds the original lease",
+    "status": "pass",
+    "ms": 4.1999
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "a cancelled worker never completes a result",
+    "status": "pass",
+    "ms": 0.9543
+  },
+  {
+    "language": "Node",
+    "round": 3,
+    "name": "exports submit immutable inputs and stable operation IDs to the durable coordinator",
+    "status": "pass",
+    "ms": 294.0505
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_agent_models.AgentModelTests.test_deepseek_screenshot_reservation_excludes_base64_but_preserves_images",
+    "status": "pass",
+    "ms": 13.463999999657972
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_agent_models.AgentModelTests.test_lost_response_becomes_unknown_and_is_not_retried",
+    "status": "pass",
+    "ms": 0.705000000380096
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_agent_models.AgentModelTests.test_native_tool_message_and_usage_are_preserved_without_retries",
+    "status": "pass",
+    "ms": 0.6243000007088995
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_agent_models.AgentModelTests.test_resumed_run_cannot_silently_switch_its_priced_model",
+    "status": "pass",
+    "ms": 0.5268000004434725
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_harness.HarnessTests.test_closed_loop_preserves_tool_ids_and_finishes_only_with_tool",
+    "status": "pass",
+    "ms": 1.1672000000544358
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_harness.HarnessTests.test_continue_is_queued_even_while_the_old_epoch_worker_is_returning",
+    "status": "pass",
+    "ms": 4.6184999991965014
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_harness.HarnessTests.test_outline_pause_releases_execution_without_page_generation",
+    "status": "pass",
+    "ms": 0.23460000011255033
+  },
+  {
+    "language": "Python",
+    "round": 3,
+    "name": "test_harness.HarnessTests.test_resume_replays_persisted_assistant_tool_before_requesting_model",
+    "status": "pass",
+    "ms": 0.20139999833190814
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a delayed tool cannot adopt a newer epoch to publish stale output",
+    "status": "pass",
+    "ms": 135.4722
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a delayed tool cannot adopt a newer revision to publish stale output",
+    "status": "pass",
+    "ms": 66.192
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a prepared plan restores the same draft and confirmation pause",
+    "status": "pass",
+    "ms": 181.9827
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a cancelled queued export never enters artifact export",
+    "status": "pass",
+    "ms": 99.6264
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a fully saved response is settled before asking to retry an unknown call",
+    "status": "pass",
+    "ms": 38.6769
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "tool permissions reject research and export without user authorization",
+    "status": "pass",
+    "ms": 1.7271
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a batch review issue on page A does not block unchanged page B after A is cleared",
+    "status": "pass",
+    "ms": 50.671
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "unchanged pages reuse checks while modified pages or constraints invalidate them",
+    "status": "pass",
+    "ms": 0.6641
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "snapshot contains fixed HTML and never exposes the business directory",
+    "status": "pass",
+    "ms": 37.6274
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a cancelled Agent cannot consume a cached completed engine result",
+    "status": "pass",
+    "ms": 1.4524
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "snapshot embeds image assets without rewriting captions or presentation hyperlinks",
+    "status": "pass",
+    "ms": 39.0303
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "engine unavailable is reported and does not execute a local fallback",
+    "status": "pass",
+    "ms": 96.1584
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "worker uploads output before completion and binds the original lease",
+    "status": "pass",
+    "ms": 5.5965
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "a cancelled worker never completes a result",
+    "status": "pass",
+    "ms": 0.8907
+  },
+  {
+    "language": "Node",
+    "round": 4,
+    "name": "exports submit immutable inputs and stable operation IDs to the durable coordinator",
+    "status": "pass",
+    "ms": 254.1283
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_agent_models.AgentModelTests.test_deepseek_screenshot_reservation_excludes_base64_but_preserves_images",
+    "status": "pass",
+    "ms": 13.637799998832634
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_agent_models.AgentModelTests.test_lost_response_becomes_unknown_and_is_not_retried",
+    "status": "pass",
+    "ms": 0.7757999992463738
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_agent_models.AgentModelTests.test_native_tool_message_and_usage_are_preserved_without_retries",
+    "status": "pass",
+    "ms": 0.6548000001203036
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_agent_models.AgentModelTests.test_resumed_run_cannot_silently_switch_its_priced_model",
+    "status": "pass",
+    "ms": 0.6283000002440531
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_harness.HarnessTests.test_closed_loop_preserves_tool_ids_and_finishes_only_with_tool",
+    "status": "pass",
+    "ms": 1.4315000007627532
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_harness.HarnessTests.test_continue_is_queued_even_while_the_old_epoch_worker_is_returning",
+    "status": "pass",
+    "ms": 4.748800000015763
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_harness.HarnessTests.test_outline_pause_releases_execution_without_page_generation",
+    "status": "pass",
+    "ms": 0.25689999893074855
+  },
+  {
+    "language": "Python",
+    "round": 4,
+    "name": "test_harness.HarnessTests.test_resume_replays_persisted_assistant_tool_before_requesting_model",
+    "status": "pass",
+    "ms": 0.1909000002342509
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a delayed tool cannot adopt a newer epoch to publish stale output",
+    "status": "pass",
+    "ms": 135.8126
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a delayed tool cannot adopt a newer revision to publish stale output",
+    "status": "pass",
+    "ms": 64.9845
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a prepared plan restores the same draft and confirmation pause",
+    "status": "pass",
+    "ms": 189.3648
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a cancelled queued export never enters artifact export",
+    "status": "pass",
+    "ms": 98.2081
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a fully saved response is settled before asking to retry an unknown call",
+    "status": "pass",
+    "ms": 37.4369
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "tool permissions reject research and export without user authorization",
+    "status": "pass",
+    "ms": 1.7118
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a batch review issue on page A does not block unchanged page B after A is cleared",
+    "status": "pass",
+    "ms": 45.8087
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "unchanged pages reuse checks while modified pages or constraints invalidate them",
+    "status": "pass",
+    "ms": 0.8822
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "snapshot contains fixed HTML and never exposes the business directory",
+    "status": "pass",
+    "ms": 40.9932
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a cancelled Agent cannot consume a cached completed engine result",
+    "status": "pass",
+    "ms": 1.581
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "snapshot embeds image assets without rewriting captions or presentation hyperlinks",
+    "status": "pass",
+    "ms": 38.3456
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "engine unavailable is reported and does not execute a local fallback",
+    "status": "pass",
+    "ms": 87.1772
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "worker uploads output before completion and binds the original lease",
+    "status": "pass",
+    "ms": 3.6442
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "a cancelled worker never completes a result",
+    "status": "pass",
+    "ms": 0.8671
+  },
+  {
+    "language": "Node",
+    "round": 5,
+    "name": "exports submit immutable inputs and stable operation IDs to the durable coordinator",
+    "status": "pass",
+    "ms": 255.4859
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_agent_models.AgentModelTests.test_deepseek_screenshot_reservation_excludes_base64_but_preserves_images",
+    "status": "pass",
+    "ms": 13.875099999495433
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_agent_models.AgentModelTests.test_lost_response_becomes_unknown_and_is_not_retried",
+    "status": "pass",
+    "ms": 0.6893000008858507
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_agent_models.AgentModelTests.test_native_tool_message_and_usage_are_preserved_without_retries",
+    "status": "pass",
+    "ms": 0.5655999993905425
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_agent_models.AgentModelTests.test_resumed_run_cannot_silently_switch_its_priced_model",
+    "status": "pass",
+    "ms": 0.5365000015444821
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_harness.HarnessTests.test_closed_loop_preserves_tool_ids_and_finishes_only_with_tool",
+    "status": "pass",
+    "ms": 1.2004000000160886
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_harness.HarnessTests.test_continue_is_queued_even_while_the_old_epoch_worker_is_returning",
+    "status": "pass",
+    "ms": 4.506200000832905
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_harness.HarnessTests.test_outline_pause_releases_execution_without_page_generation",
+    "status": "pass",
+    "ms": 0.24610000036773272
+  },
+  {
+    "language": "Python",
+    "round": 5,
+    "name": "test_harness.HarnessTests.test_resume_replays_persisted_assistant_tool_before_requesting_model",
+    "status": "pass",
+    "ms": 0.3349999988131458
+  }
+]

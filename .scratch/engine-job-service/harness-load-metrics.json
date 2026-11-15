@@ -1,0 +1,72 @@
+{
+  "peak_active_projects": 5,
+  "provider": "local-fake-model",
+  "engine_concurrency": 1,
+  "loads": [
+    {
+      "id": "deck-099fd1bc",
+      "pages": 6,
+      "done": true,
+      "ms": 70019,
+      "budget": {
+        "active_seconds": 36.89889809999999,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-33fefa10",
+      "pages": 6,
+      "done": true,
+      "ms": 100288,
+      "budget": {
+        "active_seconds": 38.875002800000004,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-2f2a5698",
+      "pages": 6,
+      "done": true,
+      "ms": 144978,
+      "budget": {
+        "active_seconds": 36.07434040000001,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-0a4dfb8b",
+      "pages": 6,
+      "done": true,
+      "ms": 123414,
+      "budget": {
+        "active_seconds": 36.9886757,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-44c1fb17",
+      "pages": 20,
+      "done": true,
+      "ms": 211757,
+      "budget": {
+        "active_seconds": 79.62091520000003,
+        "limit_seconds": 600,
+        "spent_cny": 0.037,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    }
+  ]
+}

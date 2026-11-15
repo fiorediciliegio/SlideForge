@@ -15,6 +15,7 @@ import (
 
 	"slideforge/services/gateway/internal/billing"
 	"slideforge/services/gateway/internal/config"
+	"slideforge/services/gateway/internal/enginejobs"
 	"slideforge/services/gateway/internal/files"
 	"slideforge/services/gateway/internal/jobs"
 )
@@ -28,6 +29,7 @@ type Server struct {
 	closeBilling func() error
 	closeJobs    func() error
 	closeFiles   func() error
+	closeEngine  func() error
 	stopAgents   context.CancelFunc
 }
 
@@ -109,6 +111,24 @@ func New(cfg config.Config, logger *slog.Logger) (*Server, error) {
 	} else {
 		fileStore = files.NewStore(cfg.DataDir)
 	}
+	var engineStore *enginejobs.Store
+	if cfg.JobsDatabaseURL != "" {
+		objects, err := files.NewS3ObjectStore(files.S3Config{Endpoint: cfg.S3Endpoint, Bucket: cfg.S3Bucket, Region: cfg.S3Region, AccessKeyID: cfg.S3AccessKeyID, SecretAccessKey: cfg.S3SecretAccessKey, ForcePathStyle: cfg.S3ForcePathStyle}, nil)
+		if err != nil {
+			return nil, fmt.Errorf("initialize engine objects: %w", err)
+		}
+		engineStore, err = enginejobs.NewPostgresStore(context.Background(), cfg.JobsDatabaseURL, objects)
+		if err != nil {
+			return nil, fmt.Errorf("initialize engine queue: %w", err)
+		}
+	} else {
+		var err error
+		engineStore, err = enginejobs.NewStore(cfg.DataDir)
+		if err != nil {
+			return nil, err
+		}
+	}
+	server.closeEngine = engineStore.Close
 	mux := http.NewServeMux()
 	agentContext, stopAgents := context.WithCancel(context.Background())
 	server.stopAgents = stopAgents
@@ -118,6 +138,7 @@ func New(cfg config.Config, logger *slog.Logger) (*Server, error) {
 	billing.NewHTTPHandler(billingStore, cfg.InternalToken, cfg.AdminToken).Register(mux)
 	jobs.NewHTTPHandler(jobStore, billingStore, cfg.InternalToken).Register(mux)
 	files.NewHTTPHandler(fileStore, billingStore, cfg.InternalToken).Register(mux)
+	enginejobs.NewHTTPHandler(engineStore, billingStore, fileStore, cfg.InternalToken).Register(mux)
 	mux.Handle("/", server.newEngineProxy())
 	server.handler = server.withRequestLogging(mux)
 	return server, nil
@@ -128,6 +149,9 @@ func (s *Server) Handler() http.Handler {
 }
 
 func (s *Server) Close() {
+	if s.closeEngine != nil {
+		_ = s.closeEngine()
+	}
 	if s.stopAgents != nil {
 		s.stopAgents()
 	}

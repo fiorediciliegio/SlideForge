@@ -54,6 +54,7 @@ type AgentRun struct {
 	LeaseUntil      string                    `json:"lease_until,omitempty"`
 	LastActiveAt    string                    `json:"last_active_at,omitempty"`
 	Error           string                    `json:"error,omitempty"`
+	EngineWaits     map[string]string         `json:"engine_waits,omitempty"`
 }
 type AgentCommand struct {
 	Title              string          `json:"title"`
@@ -89,6 +90,7 @@ type AgentCommand struct {
 	Result             json.RawMessage `json:"result"`
 	RunDir             string          `json:"run_dir"`
 	Error              string          `json:"error"`
+	EngineState        string          `json:"engine_state"`
 }
 
 func NewAgentRun(options json.RawMessage, seconds, cny float64) *AgentRun {
@@ -107,7 +109,18 @@ func terminalPhase(phase string) bool {
 	return phase == "completed" || phase == "failed" || phase == "cancelled"
 }
 func accrue(run *AgentRun, now time.Time) {
-	if activePhase(run.Phase) && run.LastActiveAt != "" {
+	active := len(run.EngineWaits) == 0
+	for _, status := range run.EngineWaits {
+		if status == "running" {
+			active = true
+		}
+	}
+	for _, call := range run.Calls {
+		if call.Status == "sent" {
+			active = true
+		}
+	}
+	if active && activePhase(run.Phase) && run.LastActiveAt != "" {
 		if last, err := time.Parse(time.RFC3339Nano, run.LastActiveAt); err == nil {
 			run.Budget.ActiveSeconds += math.Max(0, now.Sub(last).Seconds())
 		}
@@ -219,11 +232,25 @@ func mutateAgentJob(job *Job, c AgentCommand, now time.Time) error {
 			return ErrAgentConflict
 		}
 		run.Epoch++
+		run.EngineWaits = nil
 		run.Checkpoint++
 		run.Phase = "planning"
 		run.InstanceID = c.InstanceID
 		run.LastActiveAt = now.UTC().Format(time.RFC3339Nano)
 		run.LeaseUntil = now.Add(30 * time.Second).UTC().Format(time.RFC3339Nano)
+	case "engine_wait":
+		if c.OperationID == "" || (c.EngineState != "queued" && c.EngineState != "running" && c.EngineState != "done") {
+			return errors.New("无效引擎等待状态")
+		}
+		accrue(run, now)
+		if run.EngineWaits == nil {
+			run.EngineWaits = map[string]string{}
+		}
+		if c.EngineState == "done" {
+			delete(run.EngineWaits, c.OperationID)
+		} else {
+			run.EngineWaits[c.OperationID] = c.EngineState
+		}
 	case "heartbeat":
 		accrue(run, now)
 		run.LeaseUntil = now.Add(30 * time.Second).UTC().Format(time.RFC3339Nano)
@@ -371,9 +398,7 @@ func mutateAgentJob(job *Job, c AgentCommand, now time.Time) error {
 		run.Operations[c.OperationID] = op
 		run.Checkpoint++
 	case "reserve_call", "send_call", "settle_call", "mark_unknown", "reject_call":
-		if c.Action == "reserve_call" {
-			accrue(run, now)
-		}
+		accrue(run, now)
 		if err := mutateBudget(run, c); err != nil {
 			return err
 		}

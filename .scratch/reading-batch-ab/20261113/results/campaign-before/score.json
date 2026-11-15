@@ -1,0 +1,125 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "邀请名额",
+      "value": "84",
+      "unit": "人",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "01 邀请名额 84 人 本方案给定的邀请规模"
+      }
+    },
+    {
+      "subject": "体验分组",
+      "value": "7",
+      "unit": "组",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 3,
+        "text": "流程规则 流程顺序固定：前一环节的输出，作为后一环节的输入；汇总复盘承接问题记录。 环节数量 5 段 签到 → 任务说明 → 分组体验 → 问题记录 → 汇总复盘 体验分组 7 组 分组体验环节按组轮转推进 每组时长 26 分钟 分组体验环节的单组体验时长"
+      }
+    },
+    {
+      "subject": "每组体验时长",
+      "value": "26",
+      "unit": "分钟",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "03 每组体验时长 26 分钟 单组体验时长，按组轮转推进"
+      }
+    },
+    {
+      "subject": "反馈问题",
+      "value": "9",
+      "unit": "项",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 5,
+        "text": "反馈问题 9 项，为本次反馈机制的固定范围。"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "活动目标",
+      "matched": true
+    },
+    {
+      "title": "体验流程",
+      "matched": true
+    },
+    {
+      "title": "资源安排",
+      "matched": true
+    },
+    {
+      "title": "反馈机制",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "p01",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "p02",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "p03",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "p04",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "p05",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "p06",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 5634.646100000013,
+  "rules_pass": true
+}

@@ -1,0 +1,133 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点部门",
+      "value": "9",
+      "unit": "个",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n前部核验\n9个\n试点部门\n284份\n原始样本\n资料已给出\n前部核验关键数值"
+      }
+    },
+    {
+      "subject": "原始样本",
+      "value": "284",
+      "unit": "份",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n前部核验\n9个\n试点部门\n284份\n原始样本\n资料已给出\n前部核验关键数值"
+      }
+    },
+    {
+      "subject": "流程节点",
+      "value": "13",
+      "unit": "个",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n前部核验\n9个\n试点部门\n284份\n原始样本\n资料已给出\n前部核验关键数值\n02\n中部核验\n13个\n流程节点\n7次\n复盘会议\n资料已给出\n中部核验关键数值\n03\n后部核验\n待补充\n资料未提供后部核验数据\n未提供\n不作推断"
+      }
+    },
+    {
+      "subject": "复盘会议",
+      "value": "7",
+      "unit": "次",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n前部核验\n9个\n试点部门\n284份\n原始样本\n资料已给出\n前部核验关键数值\n02\n中部核验\n13个\n流程节点\n7次\n复盘会议\n资料已给出\n中部核验关键数值\n03\n后部核验\n待补充\n资料未提供后部核验数据\n未提供\n不作推断"
+      }
+    },
+    {
+      "subject": "资料复用率",
+      "value": "42.7",
+      "unit": "%",
+      "matched": false
+    },
+    {
+      "subject": "已确认模板",
+      "value": "17",
+      "unit": "套",
+      "matched": false
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 6,
+  "sections": [
+    {
+      "title": "项目概况",
+      "matched": true
+    },
+    {
+      "title": "整理流程",
+      "matched": true
+    },
+    {
+      "title": "前中后部核验数据",
+      "matched": true
+    },
+    {
+      "title": "结论与边界",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "page-1",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "page-2",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "page-3",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "page-4",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "page-5",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "page-6",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 6071.446100000292,
+  "rules_pass": false
+}

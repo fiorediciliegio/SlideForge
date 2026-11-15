@@ -119,16 +119,30 @@ export async function validateDeckHtmlFile(filePath: string): Promise<{
   }
 }
 export async function validateSlideHtmlFile(filePath: string): Promise<SlideValidation> {
+  const {ok,issues}=await inspectSlideHtmlFile(filePath);
+  return {ok,issues};
+}
+export async function inspectSlideHtmlFile(filePath: string,options:{signal?:AbortSignal;capture?:boolean;shell?:number}={}): Promise<SlideValidation & {image?:string}> {
+  return (await inspectHtmlPages(filePath,[options.shell??0],options))[0];
+}
+export async function inspectHtmlPages(filePath:string,numbers:number[],options:{signal?:AbortSignal;capture?:boolean}={}):Promise<Array<SlideValidation & {page:number;image?:string}>> {
+  options.signal?.throwIfAborted();
   const browser = await getBrowser();
   const page = await browser.newPage();
+  const abort=()=>{void page.close().catch((error:unknown)=>console.error("[engine] close cancelled page",String(error)))};
+  options.signal?.addEventListener("abort",abort,{once:true});
   try {
+    await page.setJavaScriptEnabled(false);
     await page.setViewport({ width: 1920, height: 1080 });
     await page.goto(pathToFileURL(path.resolve(filePath)).href, {
       waitUntil: "networkidle0",
       timeout: 30_000,
     });
-    const issues = await page.evaluate(() => {
-      const root = document.querySelector("main.slide");
+    const results=[];
+    for(const number of numbers) {
+    const issues = await page.evaluate((number?:number) => {
+      const scope=number?document.querySelector(`[data-presenton-page-id="page-${number}"]`):document;
+      const root = scope?.querySelector("main.slide");
       if (!root) return [{ kind: "overflow-y" as const, detail: "missing main.slide" }];
       const found: Array<{ kind: "overflow-y" | "overflow-x"; detail: string }> = [];
       const TOLERANCE = 8;
@@ -157,9 +171,16 @@ export async function validateSlideHtmlFile(filePath: string): Promise<SlideVali
         }
       }
       return found;
-    });
-    return { ok: issues.length === 0, issues };
+    },number);
+    const target=number?await page.$(`[data-presenton-page-id="page-${number}"]`):page;
+    if(options.capture&&!target)throw new Error("预览页面不存在");
+    const image=options.capture?Buffer.from(await target.screenshot({type:"jpeg",quality:85})).toString("base64"):undefined;
+    options.signal?.throwIfAborted();
+    results.push({page:number,ok:issues.length===0,issues,...(image?{image}:{})});
+    }
+    return results;
   } finally {
-    await page.close();
+    options.signal?.removeEventListener("abort",abort);
+    if(!page.isClosed())await page.close();
   }
 }

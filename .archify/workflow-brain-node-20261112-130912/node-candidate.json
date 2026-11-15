@@ -1,0 +1,658 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Node · 工具执行与页面生成链路",
+    "locale": "zh-CN",
+    "output": ".archify/workflow-brain-node-20261112-130912/node-workflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/fiorediciliegio/SlideForge.git",
+      "revision": "7c54cba71971b25309953adb54e2bb304671cd15",
+      "link_mode": "local-only"
+    }
+  },
+  "lanes": [
+    {
+      "id": "entry",
+      "label": "工具准入与生成"
+    },
+    {
+      "id": "commit",
+      "label": "引擎校验与发布"
+    },
+    {
+      "id": "branch",
+      "label": "其他工具与异常"
+    }
+  ],
+  "mainPath": [
+    "receive",
+    "guard",
+    "receipt",
+    "dispatch",
+    "page-context",
+    "generate",
+    "dialect",
+    "snapshot",
+    "engine",
+    "quality",
+    "publish",
+    "result"
+  ],
+  "nodes": [
+    {
+      "id": "receive",
+      "lane": "entry",
+      "col": 0,
+      "type": "messagebus",
+      "label": "接收工具请求",
+      "sublabel": "Brain → Node HTTP",
+      "sources": [
+        {
+          "path": "src/http/capabilityServer.ts",
+          "line": 98,
+          "end_line": 112,
+          "label": "内部工具路由与结构化返回"
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "lane": "entry",
+      "col": 1,
+      "type": "security",
+      "label": "校验执行与权限",
+      "sublabel": "令牌 · epoch · 参数",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 60,
+          "end_line": 78,
+          "label": "联网/导出权限与当前执行校验"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 120,
+          "end_line": 128,
+          "label": "工具名和 Zod 参数校验"
+        },
+        {
+          "path": "src/http/capabilityServer.ts",
+          "line": 98,
+          "end_line": 108,
+          "label": "内部令牌校验"
+        }
+      ]
+    },
+    {
+      "id": "receipt",
+      "lane": "entry",
+      "col": 2,
+      "type": "database",
+      "label": "核对操作回执",
+      "sublabel": "操作 ID + 输入指纹",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 129,
+          "end_line": 139,
+          "label": "已完成结果与已准备版本恢复"
+        }
+      ]
+    },
+    {
+      "id": "dispatch",
+      "lane": "entry",
+      "col": 3,
+      "type": "backend",
+      "label": "登记并分发工具",
+      "sublabel": "Go begin_tool",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 129,
+          "end_line": 171,
+          "label": "幂等登记后按工具名执行"
+        }
+      ]
+    },
+    {
+      "id": "page-context",
+      "lane": "entry",
+      "col": 4,
+      "type": "backend",
+      "label": "汇集页面上下文",
+      "sublabel": "当前页 · 约束 · 历史",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 253,
+          "end_line": 262,
+          "label": "基于当前版本与确认约束生成提示词"
+        },
+        {
+          "path": "src/server/brainClient.ts",
+          "line": 39,
+          "end_line": 51,
+          "label": "Brain 提供页面消息模板"
+        }
+      ]
+    },
+    {
+      "id": "generate",
+      "lane": "entry",
+      "col": 5,
+      "type": "cloud",
+      "label": "生成或修订 HTML",
+      "sublabel": "Node 模型调用 · 预算共享",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 261,
+          "end_line": 266,
+          "label": "调用模型并保存候选"
+        },
+        {
+          "path": "src/server/agentModel.ts",
+          "line": 8,
+          "end_line": 50,
+          "label": "预留、持久化响应与结算"
+        }
+      ]
+    },
+    {
+      "id": "result",
+      "lane": "commit",
+      "col": 0,
+      "type": "messagebus",
+      "label": "返回 Brain",
+      "sublabel": "观察 / 暂停 / 完成 / 错误",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 274,
+          "end_line": 278,
+          "label": "返回批量结果和失败"
+        },
+        {
+          "path": "src/http/capabilityServer.ts",
+          "line": 109,
+          "end_line": 112,
+          "label": "工具结果或错误保留状态语义"
+        }
+      ]
+    },
+    {
+      "id": "publish",
+      "lane": "commit",
+      "col": 1,
+      "type": "database",
+      "label": "发布新页面版本",
+      "sublabel": "Node 落盘 · Go 条件提交",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 90,
+          "end_line": 97,
+          "label": "校验父版本后提交引用"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 234,
+          "end_line": 245,
+          "label": "逐页串行发布候选"
+        },
+        {
+          "path": "src/capabilities/project.ts",
+          "line": 62,
+          "end_line": 81,
+          "label": "不可变页面和项目版本先写入"
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "lane": "commit",
+      "col": 2,
+      "type": "security",
+      "label": "判定校验结果",
+      "sublabel": "无问题才替换当前页",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 234,
+          "end_line": 243,
+          "label": "有问题只回报，不更新项目版本"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 265,
+          "end_line": 270,
+          "label": "方言及引擎报告形成问题列表"
+        }
+      ]
+    },
+    {
+      "id": "engine",
+      "lane": "commit",
+      "col": 3,
+      "type": "backend",
+      "label": "独立引擎检查",
+      "sublabel": "从 Go 领取快照执行",
+      "sources": [
+        {
+          "path": "src/engine/worker.ts",
+          "line": 12,
+          "end_line": 30,
+          "label": "拉输入、执行并上传报告"
+        },
+        {
+          "path": "src/engine/executor.ts",
+          "line": 23,
+          "end_line": 49,
+          "label": "在独立临时目录执行浏览器检查"
+        }
+      ]
+    },
+    {
+      "id": "snapshot",
+      "lane": "commit",
+      "col": 4,
+      "type": "messagebus",
+      "label": "提交固定快照",
+      "sublabel": "Go 队列 · 引擎任务 ID",
+      "sources": [
+        {
+          "path": "src/server/engineClient.ts",
+          "line": 55,
+          "end_line": 85,
+          "label": "提交任务、查询状态并取回结果"
+        },
+        {
+          "path": "src/server/engineClient.ts",
+          "line": 90,
+          "end_line": 101,
+          "label": "单页校验封装为固定快照"
+        }
+      ]
+    },
+    {
+      "id": "dialect",
+      "lane": "commit",
+      "col": 5,
+      "type": "security",
+      "label": "保存并校验候选",
+      "sublabel": "先检查 HTML 方言",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 264,
+          "end_line": 270,
+          "label": "保存候选、方言通过才调用引擎"
+        }
+      ]
+    },
+    {
+      "id": "rejected",
+      "lane": "branch",
+      "col": 0,
+      "type": "security",
+      "label": "拒绝或上抛错误",
+      "sublabel": "失效 / 越权 / 服务异常",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 60,
+          "end_line": 78,
+          "label": "不允许越权或迟到执行"
+        },
+        {
+          "path": "src/http/capabilityServer.ts",
+          "line": 109,
+          "end_line": 112,
+          "label": "保留 HTTP 错误及预算错误"
+        }
+      ],
+      "icon": "failure"
+    },
+    {
+      "id": "retained",
+      "lane": "branch",
+      "col": 1,
+      "type": "database",
+      "label": "保留问题候选",
+      "sublabel": "原页面不被覆盖",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 265,
+          "end_line": 270,
+          "label": "保留 candidate_id 与诊断"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 234,
+          "end_line": 243,
+          "label": "只记录问题结果，不发布坏页面"
+        }
+      ]
+    },
+    {
+      "id": "reuse",
+      "lane": "branch",
+      "col": 2,
+      "type": "database",
+      "label": "复用既有操作",
+      "sublabel": "回执 / 已准备的版本",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 129,
+          "end_line": 139,
+          "label": "同指纹复用完成结果和准备产物"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 251,
+          "end_line": 252,
+          "label": "逐页结果可恢复"
+        }
+      ]
+    },
+    {
+      "id": "project-tools",
+      "lane": "branch",
+      "col": 3,
+      "type": "backend",
+      "label": "项目与规划工具",
+      "sublabel": "资料 · 大纲 · 请求用户",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 142,
+          "end_line": 169,
+          "label": "读取资料、场景与大纲、授权研究"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 201,
+          "end_line": 203,
+          "label": "返回用户确认请求"
+        }
+      ]
+    },
+    {
+      "id": "review-tools",
+      "lane": "branch",
+      "col": 4,
+      "type": "backend",
+      "label": "检查与评审工具",
+      "sublabel": "引擎证据 · 保存评估",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 172,
+          "end_line": 200,
+          "label": "读取版面/内容/截图并保存有效评估"
+        }
+      ]
+    },
+    {
+      "id": "delivery-tools",
+      "lane": "branch",
+      "col": 5,
+      "type": "security",
+      "label": "交付或授权导出",
+      "sublabel": "三类有效检查必须齐全",
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 204,
+          "end_line": 216,
+          "label": "质量通过后完成或导出固定修订"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 281,
+          "end_line": 296,
+          "label": "全稿完整性与三类检查门"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 60,
+          "end_line": 64,
+          "label": "导出格式需用户明确授权"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "n01",
+      "from": "receive",
+      "to": "guard",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n02",
+      "from": "guard",
+      "to": "receipt",
+      "label": "通过",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n03",
+      "from": "receipt",
+      "to": "dispatch",
+      "label": "新操作",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n04",
+      "from": "dispatch",
+      "to": "page-context",
+      "label": "生成 / 修订",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n05",
+      "from": "page-context",
+      "to": "generate",
+      "label": "页面消息",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n06",
+      "from": "generate",
+      "to": "dialect",
+      "label": "模型响应",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n07",
+      "from": "dialect",
+      "to": "snapshot",
+      "label": "方言通过",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n08",
+      "from": "snapshot",
+      "to": "engine",
+      "label": "经 Go 领取",
+      "variant": "emphasis",
+      "role": "async"
+    },
+    {
+      "id": "n09",
+      "from": "engine",
+      "to": "quality",
+      "label": "校验报告",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n10",
+      "from": "quality",
+      "to": "publish",
+      "label": "无阻断问题",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n11",
+      "from": "publish",
+      "to": "result",
+      "label": "版本与回执",
+      "variant": "emphasis"
+    },
+    {
+      "id": "n12",
+      "from": "guard",
+      "to": "rejected",
+      "label": "拒绝",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "n13",
+      "from": "engine",
+      "to": "rejected",
+      "label": "服务异常",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "n14",
+      "from": "rejected",
+      "to": "result",
+      "label": "错误",
+      "role": "return"
+    },
+    {
+      "id": "n15",
+      "from": "receipt",
+      "to": "reuse",
+      "label": "已完成 / 已准备",
+      "role": "branch"
+    },
+    {
+      "id": "n16",
+      "from": "reuse",
+      "to": "result",
+      "label": "恢复结果",
+      "role": "return"
+    },
+    {
+      "id": "n17",
+      "from": "dialect",
+      "to": "retained",
+      "label": "方言失败",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "n18",
+      "from": "quality",
+      "to": "retained",
+      "label": "校验未通过",
+      "role": "branch",
+      "variant": "security"
+    },
+    {
+      "id": "n19",
+      "from": "retained",
+      "to": "result",
+      "label": "候选与问题",
+      "role": "return"
+    },
+    {
+      "id": "n20",
+      "from": "dispatch",
+      "to": "project-tools",
+      "label": "项目 / 规划",
+      "role": "branch"
+    },
+    {
+      "id": "n21",
+      "from": "dispatch",
+      "to": "review-tools",
+      "label": "检查 / 评审",
+      "role": "branch"
+    },
+    {
+      "id": "n22",
+      "from": "dispatch",
+      "to": "delivery-tools",
+      "label": "交付 / 导出",
+      "role": "branch"
+    },
+    {
+      "id": "n23",
+      "from": "project-tools",
+      "to": "result",
+      "label": "资料 / 暂停",
+      "role": "return"
+    },
+    {
+      "id": "n24",
+      "from": "review-tools",
+      "to": "result",
+      "label": "证据 / 评估 ID",
+      "role": "return"
+    },
+    {
+      "id": "n25",
+      "from": "delivery-tools",
+      "to": "result",
+      "label": "完成 / 文件回执",
+      "role": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Node 是执行层，Brain 决定返工",
+      "items": [
+        "蓝色主线展开 generate_pages / revise_page：准备上下文 → 调模型 → 保存候选 → 方言和引擎校验 → 发布版本。",
+        "未通过候选只保存诊断，当前有效页面保持原版本；返回 candidate_id 和 issues 给 Brain 决定是否修订。",
+        "页面默认并发 2，版本提交串行；同一页最多两次定向返工。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "生成和判断分属两次模型调用",
+      "items": [
+        "Brain 的模型决定调用哪个工具，以及如何判断内容与视觉问题。",
+        "Node 调用页提示词接口，叠加当前页面、已确认约束、场景和修改历史，再发起 HTML 生成模型请求。",
+        "Node 页面调用与 Brain 决策调用共享 Go 预算，已保存的有效响应可复用，未知结果不得自行重发。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "其他分支具体做什么",
+      "items": [
+        "项目分支：read_project、save_plan、授权后的 research_sources、request_user。save_plan 依交互模式返回大纲确认暂停。",
+        "检查分支：inspect_deck 取版面报告、文本或截图；record_assessment 校验证据指纹并保存 Brain 的内容 / 视觉评估。",
+        "交付分支：finish_deck 只返回完成回执；export_deck 还要求已授权格式与固定修订，并走独立引擎导出。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "独立引擎与 Go 的边界",
+      "items": [
+        "Node 将自包含 HTML / 资源上传到 Go 私有 artifact 域，只提交快照 ID 和任务参数。",
+        "独立引擎拉取快照，在自己的目录运行 Chrome 并回传报告 / 截图 / PDF / PPTX；业务 Node 不执行这些浏览器作业。",
+        "客户导出先由 Go 幂等扣点，再开放鉴权下载；状态、预算、执行权与当前版本引用以 Go 为准。"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "范围与恢复说明",
+      "items": [
+        "图中「其他工具」按功能合并；该节点内部的文件读写、引擎作业和完成回执没有再次展开为完整子图。",
+        "已有完成回执可复用；已准备但未提交的版本在校验当前执行后继续提交，不从头重复生成。",
+        "当前未提交工作区的源码快照及改动路径见同目录「来源说明.md」；没有修改业务代码。"
+      ]
+    }
+  ]
+}

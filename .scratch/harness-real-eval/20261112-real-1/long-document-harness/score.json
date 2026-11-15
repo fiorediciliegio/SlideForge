@@ -1,0 +1,147 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点部门",
+      "value": "9",
+      "unit": "个",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "I 试点部门 Pilot Departments 9 个 资料标注值"
+      }
+    },
+    {
+      "subject": "原始样本",
+      "value": "284",
+      "unit": "份",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "I 试点部门 Pilot Departments 9 个 资料标注值 II 原始样本 Original Samples 284 份 资料标注值"
+      }
+    },
+    {
+      "subject": "流程节点",
+      "value": "13",
+      "unit": "个",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 3,
+        "text": "03 企业资料治理项目组 · 长资料覆盖核验 整理流程 整理流程 整理流程：13 个节点、7 次复盘 13 个 流程节点 核验记录值 7 次 复盘会议 核验记录值 配套记录 01 资料整理 02 角色分工 03 沟通记录 04 版本归档 口径说明：节点与会议数量为核验记录值，不含成果指标。 3 / 6"
+      }
+    },
+    {
+      "subject": "复盘会议",
+      "value": "7",
+      "unit": "次",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 3,
+        "text": "03 企业资料治理项目组 · 长资料覆盖核验 整理流程 整理流程 整理流程：13 个节点、7 次复盘 13 个 流程节点 核验记录值 7 次 复盘会议 核验记录值 配套记录 01 资料整理 02 角色分工 03 沟通记录 04 版本归档 口径说明：节点与会议数量为核验记录值，不含成果指标。 3 / 6"
+      }
+    },
+    {
+      "subject": "资料复用率",
+      "value": "42.7",
+      "unit": "%",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "42.7% 资料复用率"
+      }
+    },
+    {
+      "subject": "已确认模板",
+      "value": "17",
+      "unit": "套",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "长资料覆盖核验 · 企业资料治理项目组 前中后部核验数据 ： 六项记录值 — 三段数值分别标注在资料的前、中、末位置，可定点回查 前部 01 9 个 试点部门 284 份 原始样本 标注位置：资料前段 中部 02 13 个 流程节点 7 次 复盘会议 标注位置：资料中段 末部 03 42.7% 资料复用率 17 套 已确认模板 标注位置：资料末段 注：六项数值均为本次测评构造值，仅用于本次覆盖核验 4 / 6"
+      }
+    }
+  ],
+  "facts_hit": 6,
+  "facts_total": 6,
+  "sections": [
+    {
+      "title": "项目概况",
+      "matched": true
+    },
+    {
+      "title": "整理流程",
+      "matched": true
+    },
+    {
+      "title": "前中后部核验数据",
+      "matched": true
+    },
+    {
+      "title": "结论与边界",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "p1",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "p2",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "p3",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "p4",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "p5",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "p6",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 2654.1062999999995,
+  "rules_pass": true
+}

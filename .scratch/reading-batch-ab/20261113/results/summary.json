@@ -1,0 +1,1119 @@
+{
+  "status": "finished",
+  "finished_trials": 12,
+  "planned_trials": 12,
+  "stats": {
+    "before": {
+      "attempted": 6,
+      "delivered": 3,
+      "rules_passes": 2,
+      "pptx_passes": 3,
+      "page_count_passes": 6,
+      "facts_hit": 23,
+      "facts_total": 26,
+      "values_hit": 26,
+      "sections_hit": 24,
+      "sections_total": 24,
+      "overflow_pages": 0,
+      "scored_pages": 36,
+      "generation_median_s": 293.42749609999987,
+      "export_median_s": 47.727463999999976,
+      "budget_pauses": 1,
+      "waiting_user": 1,
+      "interrupted": 1,
+      "error_trials": 0,
+      "model_calls": 185,
+      "cost_peak_cny": 8.311994,
+      "cost_peak_with_cache_cny": 4.90153128,
+      "cost_time_cache_cny": 4.90153128,
+      "prompt_tokens": 2255781,
+      "completion_tokens": 475054,
+      "reasoning_tokens": 217419,
+      "cache_hit_tokens": 1740032,
+      "completed_repair_operations": 27,
+      "unknown_calls": 0,
+      "native_unknown_calls": 1,
+      "native_reserved_cny": 0.149108,
+      "output_limit_stops": 3,
+      "observed_multi_read_turns": 0,
+      "calls_by_kind": {
+        "controller": 120,
+        "page": 65
+      },
+      "selections": {
+        "read_project:sources:index": 5,
+        "read_project:sources:body": 10,
+        "save_plan": 6,
+        "generate_pages": 8,
+        "revise_page": 36,
+        "inspect_deck": 32,
+        "record_assessment": 26,
+        "finish_deck": 4,
+        "read_project:context": 2,
+        "request_user": 1
+      },
+      "multi_read_turns": 1,
+      "selected_batch_tools": 3
+    },
+    "after": {
+      "attempted": 6,
+      "delivered": 6,
+      "rules_passes": 5,
+      "pptx_passes": 6,
+      "page_count_passes": 6,
+      "facts_hit": 25,
+      "facts_total": 26,
+      "values_hit": 26,
+      "sections_hit": 24,
+      "sections_total": 24,
+      "overflow_pages": 0,
+      "scored_pages": 36,
+      "generation_median_s": 252.23317904999993,
+      "export_median_s": 44.60495814999996,
+      "budget_pauses": 0,
+      "waiting_user": 0,
+      "interrupted": 0,
+      "error_trials": 0,
+      "model_calls": 149,
+      "cost_peak_cny": 6.627406,
+      "cost_peak_with_cache_cny": 4.21444216,
+      "cost_time_cache_cny": 4.21444216,
+      "prompt_tokens": 1652099,
+      "completion_tokens": 415401,
+      "reasoning_tokens": 221601,
+      "cache_hit_tokens": 1231104,
+      "completed_repair_operations": 14,
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 5,
+      "observed_multi_read_turns": 1,
+      "calls_by_kind": {
+        "controller": 97,
+        "page": 52
+      },
+      "selections": {
+        "read_project:context": 6,
+        "read_project:sources:body": 14,
+        "save_plan": 6,
+        "generate_pages": 8,
+        "inspect_deck": 28,
+        "revise_page": 15,
+        "record_assessment": 23,
+        "finish_deck": 6
+      },
+      "multi_read_turns": 1,
+      "selected_batch_tools": 4
+    }
+  },
+  "pairs": [
+    {
+      "case_id": "product",
+      "both_delivered": true,
+      "before_seconds": 210.3891551,
+      "after_seconds": 171.04342989999998,
+      "time_change_pct": -18.701403682760464,
+      "before_calls": 26,
+      "after_calls": 20,
+      "before_peak_cny": 0.993696,
+      "after_peak_cny": 0.792202,
+      "before_facts": 1,
+      "after_facts": 4
+    },
+    {
+      "case_id": "brand",
+      "both_delivered": true,
+      "before_seconds": 293.42749609999987,
+      "after_seconds": 321.63503410000004,
+      "time_change_pct": 9.613120234099348,
+      "before_calls": 35,
+      "after_calls": 30,
+      "before_peak_cny": 1.506676,
+      "after_peak_cny": 1.26503,
+      "before_facts": 4,
+      "after_facts": 4
+    },
+    {
+      "case_id": "campaign",
+      "both_delivered": false,
+      "before_seconds": 264.96377590000003,
+      "after_seconds": 283.15161919999986,
+      "time_change_pct": 6.864275404523257,
+      "before_calls": 30,
+      "after_calls": 33,
+      "before_peak_cny": 1.25667,
+      "after_peak_cny": 1.480824,
+      "before_facts": 4,
+      "after_facts": 4
+    },
+    {
+      "case_id": "academic",
+      "both_delivered": true,
+      "before_seconds": 300.7387223,
+      "after_seconds": 264.4209586,
+      "time_change_pct": -12.076184743437013,
+      "before_calls": 34,
+      "after_calls": 21,
+      "before_peak_cny": 1.501314,
+      "after_peak_cny": 1.01951,
+      "before_facts": 4,
+      "after_facts": 4
+    },
+    {
+      "case_id": "travel",
+      "both_delivered": false,
+      "before_seconds": 365.6398802,
+      "after_seconds": 240.04539949999983,
+      "time_change_pct": -34.34922925565497,
+      "before_calls": 28,
+      "after_calls": 25,
+      "before_peak_cny": 1.3113,
+      "after_peak_cny": 1.036388,
+      "before_facts": 4,
+      "after_facts": 3
+    },
+    {
+      "case_id": "long-document",
+      "both_delivered": false,
+      "before_seconds": 258.16159140000025,
+      "after_seconds": 161.07167010000023,
+      "time_change_pct": -37.60819755312368,
+      "before_calls": 32,
+      "after_calls": 20,
+      "before_peak_cny": 1.742338,
+      "after_peak_cny": 1.033452,
+      "before_facts": 6,
+      "after_facts": 6
+    }
+  ],
+  "paired_success_timing": {
+    "count": 3,
+    "before_mean_seconds": 268.1851245,
+    "before_median_seconds": 293.42749609999987,
+    "before_calls": 95,
+    "before_cost_peak_cny": 4.001686,
+    "after_mean_seconds": 252.3664742,
+    "after_median_seconds": 264.4209586,
+    "after_calls": 71,
+    "after_cost_peak_cny": 3.076742,
+    "mean_time_change_pct": -5.898407053520216,
+    "median_time_change_pct": -9.885419016803542,
+    "faster_cases": 2,
+    "calls_change_pct": -25.263157894736842,
+    "cost_change_pct": -23.113857509059944
+  },
+  "details": {
+    "product-before": {
+      "model_calls": 26,
+      "calls_by_kind": {
+        "controller": 17,
+        "page": 9
+      },
+      "cost_peak_cny": 0.993696,
+      "cost_peak_with_cache_cny": 0.6369446400000001,
+      "cost_time_cache_cny": 0.6369446400000001,
+      "prompt_tokens": 250176,
+      "completion_tokens": 61668,
+      "reasoning_tokens": 25921,
+      "cache_hit_tokens": 182016,
+      "selections": {
+        "read_project:sources:index": 1,
+        "read_project:sources:body": 1,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "revise_page": 4,
+        "inspect_deck": 5,
+        "record_assessment": 4,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 2,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 0.8276421,
+      "source_read_decision_prompt_tokens": 3125,
+      "source_read_decision_completion_tokens": 102,
+      "source_read_decision_cost_peak_cny": 0.007066,
+      "completed_repair_operations": 3,
+      "source_reads": [
+        {
+          "source_id": "ab272d76-dd17-4798-b99d-91a1af42374f",
+          "start": 0,
+          "end": 155,
+          "total": 155
+        }
+      ],
+      "source_coverage": {
+        "ab272d76-dd17-4798-b99d-91a1af42374f": {
+          "intervals": [
+            [
+              0,
+              155
+            ]
+          ],
+          "covered_chars": 155,
+          "total_chars": 155
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    },
+    "product-after": {
+      "model_calls": 20,
+      "calls_by_kind": {
+        "controller": 13,
+        "page": 7
+      },
+      "cost_peak_cny": 0.792202,
+      "cost_peak_with_cache_cny": 0.55060456,
+      "cost_time_cache_cny": 0.55060456,
+      "prompt_tokens": 183989,
+      "completion_tokens": 53028,
+      "reasoning_tokens": 27204,
+      "cache_hit_tokens": 123264,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 2,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "inspect_deck": 5,
+        "revise_page": 1,
+        "record_assessment": 2,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 28,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 1.269576000000001,
+      "source_read_decision_prompt_tokens": 3785,
+      "source_read_decision_completion_tokens": 100,
+      "source_read_decision_cost_peak_cny": 0.00837,
+      "completed_repair_operations": 1,
+      "source_reads": [
+        {
+          "source_id": "869ac441-c6a9-46d5-92e9-391c42ebb7b8",
+          "start": 0,
+          "end": 155,
+          "total": 155
+        }
+      ],
+      "source_coverage": {
+        "869ac441-c6a9-46d5-92e9-391c42ebb7b8": {
+          "intervals": [
+            [
+              0,
+              155
+            ]
+          ],
+          "covered_chars": 155,
+          "total_chars": 155
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    },
+    "brand-after": {
+      "model_calls": 30,
+      "calls_by_kind": {
+        "controller": 19,
+        "page": 11
+      },
+      "cost_peak_cny": 1.26503,
+      "cost_peak_with_cache_cny": 0.79187032,
+      "cost_time_cache_cny": 0.79187032,
+      "prompt_tokens": 309039,
+      "completion_tokens": 80869,
+      "reasoning_tokens": 45895,
+      "cache_hit_tokens": 241408,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 2,
+        "save_plan": 1,
+        "generate_pages": 2,
+        "revise_page": 4,
+        "inspect_deck": 5,
+        "record_assessment": 4,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 48,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 1.601921399999992,
+      "source_read_decision_prompt_tokens": 3762,
+      "source_read_decision_completion_tokens": 97,
+      "source_read_decision_cost_peak_cny": 0.0083,
+      "completed_repair_operations": 4,
+      "source_reads": [
+        {
+          "source_id": "1245a311-742a-4ea7-83ea-a0b047ebb635",
+          "start": 0,
+          "end": 157,
+          "total": 157
+        }
+      ],
+      "source_coverage": {
+        "1245a311-742a-4ea7-83ea-a0b047ebb635": {
+          "intervals": [
+            [
+              0,
+              157
+            ]
+          ],
+          "covered_chars": 157,
+          "total_chars": 157
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 2,
+      "budget_delta_cny": 0.0
+    },
+    "brand-before": {
+      "model_calls": 35,
+      "calls_by_kind": {
+        "controller": 24,
+        "page": 11
+      },
+      "cost_peak_cny": 1.506676,
+      "cost_peak_with_cache_cny": 0.80747344,
+      "cost_time_cache_cny": 0.80747344,
+      "prompt_tokens": 440114,
+      "completion_tokens": 78306,
+      "reasoning_tokens": 39722,
+      "cache_hit_tokens": 356736,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 1,
+        "save_plan": 1,
+        "generate_pages": 2,
+        "inspect_deck": 7,
+        "record_assessment": 7,
+        "revise_page": 4,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 78,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 1.6116504999999888,
+      "source_read_decision_prompt_tokens": 3486,
+      "source_read_decision_completion_tokens": 98,
+      "source_read_decision_cost_peak_cny": 0.007756,
+      "completed_repair_operations": 4,
+      "source_reads": [
+        {
+          "source_id": "16fea160-bddb-4eaa-83e1-713d77934746",
+          "start": 0,
+          "end": 157,
+          "total": 157
+        }
+      ],
+      "source_coverage": {
+        "16fea160-bddb-4eaa-83e1-713d77934746": {
+          "intervals": [
+            [
+              0,
+              157
+            ]
+          ],
+          "covered_chars": 157,
+          "total_chars": 157
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 1,
+      "budget_delta_cny": 0.0
+    },
+    "campaign-before": {
+      "model_calls": 30,
+      "calls_by_kind": {
+        "controller": 18,
+        "page": 12
+      },
+      "cost_peak_cny": 1.25667,
+      "cost_peak_with_cache_cny": 0.81060536,
+      "cost_time_cache_cny": 0.81060536,
+      "prompt_tokens": 305423,
+      "completion_tokens": 80728,
+      "reasoning_tokens": 30869,
+      "cache_hit_tokens": 227584,
+      "selections": {
+        "read_project:sources:index": 1,
+        "read_project:sources:body": 1,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "revise_page": 8,
+        "inspect_deck": 3,
+        "record_assessment": 3,
+        "request_user": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 113,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 0.9630089000000153,
+      "source_read_decision_prompt_tokens": 3128,
+      "source_read_decision_completion_tokens": 100,
+      "source_read_decision_cost_peak_cny": 0.007056,
+      "completed_repair_operations": 6,
+      "source_reads": [
+        {
+          "source_id": "95aba281-d775-4285-8089-17a816272edf",
+          "start": 0,
+          "end": 166,
+          "total": 166
+        }
+      ],
+      "source_coverage": {
+        "95aba281-d775-4285-8089-17a816272edf": {
+          "intervals": [
+            [
+              0,
+              166
+            ]
+          ],
+          "covered_chars": 166,
+          "total_chars": 166
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    },
+    "campaign-after": {
+      "model_calls": 33,
+      "calls_by_kind": {
+        "controller": 22,
+        "page": 11
+      },
+      "cost_peak_cny": 1.480824,
+      "cost_peak_with_cache_cny": 0.80896736,
+      "cost_time_cache_cny": 0.80896736,
+      "prompt_tokens": 431472,
+      "completion_tokens": 77235,
+      "reasoning_tokens": 30587,
+      "cache_hit_tokens": 342784,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 2,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "inspect_deck": 6,
+        "record_assessment": 6,
+        "revise_page": 5,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 143,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 0.9250061999999453,
+      "source_read_decision_prompt_tokens": 3774,
+      "source_read_decision_completion_tokens": 98,
+      "source_read_decision_cost_peak_cny": 0.008332,
+      "completed_repair_operations": 5,
+      "source_reads": [
+        {
+          "source_id": "5770b2bc-fbac-40dc-9f16-cc606b352c46",
+          "start": 0,
+          "end": 166,
+          "total": 166
+        }
+      ],
+      "source_coverage": {
+        "5770b2bc-fbac-40dc-9f16-cc606b352c46": {
+          "intervals": [
+            [
+              0,
+              166
+            ]
+          ],
+          "covered_chars": 166,
+          "total_chars": 166
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    },
+    "academic-after": {
+      "model_calls": 21,
+      "calls_by_kind": {
+        "controller": 13,
+        "page": 8
+      },
+      "cost_peak_cny": 1.01951,
+      "cost_peak_with_cache_cny": 0.77164056,
+      "cost_time_cache_cny": 0.77164056,
+      "prompt_tokens": 178455,
+      "completion_tokens": 82825,
+      "reasoning_tokens": 53959,
+      "cache_hit_tokens": 126464,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 2,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "revise_page": 3,
+        "inspect_deck": 3,
+        "record_assessment": 3,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 176,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 1.0672404000000097,
+      "source_read_decision_prompt_tokens": 3797,
+      "source_read_decision_completion_tokens": 100,
+      "source_read_decision_cost_peak_cny": 0.008394,
+      "completed_repair_operations": 2,
+      "source_reads": [
+        {
+          "source_id": "9433c544-f428-4d93-b317-fd9d99001c75",
+          "start": 0,
+          "end": 203,
+          "total": 203
+        }
+      ],
+      "source_coverage": {
+        "9433c544-f428-4d93-b317-fd9d99001c75": {
+          "intervals": [
+            [
+              0,
+              203
+            ]
+          ],
+          "covered_chars": 203,
+          "total_chars": 203
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 2,
+      "budget_delta_cny": 0.0
+    },
+    "academic-before": {
+      "model_calls": 34,
+      "calls_by_kind": {
+        "controller": 23,
+        "page": 11
+      },
+      "cost_peak_cny": 1.501314,
+      "cost_peak_with_cache_cny": 0.85755592,
+      "cost_time_cache_cny": 0.85755592,
+      "prompt_tokens": 415513,
+      "completion_tokens": 83786,
+      "reasoning_tokens": 36811,
+      "cache_hit_tokens": 328448,
+      "selections": {
+        "read_project:sources:index": 1,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "inspect_deck": 7,
+        "record_assessment": 6,
+        "revise_page": 6,
+        "finish_deck": 2
+      },
+      "qualified_read_turns": [],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 0,
+      "source_read_decision_model_seconds": 0.0,
+      "source_read_decision_prompt_tokens": 0,
+      "source_read_decision_completion_tokens": 0,
+      "source_read_decision_cost_peak_cny": 0,
+      "completed_repair_operations": 5,
+      "source_reads": [],
+      "source_coverage": {},
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    },
+    "travel-before": {
+      "model_calls": 28,
+      "calls_by_kind": {
+        "controller": 16,
+        "page": 12
+      },
+      "cost_peak_cny": 1.3113,
+      "cost_peak_with_cache_cny": 0.941252,
+      "cost_time_cache_cny": 0.941252,
+      "prompt_tokens": 255606,
+      "completion_tokens": 100011,
+      "reasoning_tokens": 55194,
+      "cache_hit_tokens": 188800,
+      "selections": {
+        "read_project:sources:index": 1,
+        "read_project:context": 1,
+        "read_project:sources:body": 1,
+        "save_plan": 1,
+        "generate_pages": 2,
+        "revise_page": 10,
+        "inspect_deck": 2,
+        "record_assessment": 3
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 231,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 3.6436105999997817,
+      "source_read_decision_prompt_tokens": 3190,
+      "source_read_decision_completion_tokens": 566,
+      "source_read_decision_cost_peak_cny": 0.010908,
+      "completed_repair_operations": 5,
+      "source_reads": [
+        {
+          "source_id": "cc6a0fcc-b8e6-40de-be90-cd5c84c2b0c2",
+          "start": 0,
+          "end": 135,
+          "total": 135
+        }
+      ],
+      "source_coverage": {
+        "cc6a0fcc-b8e6-40de-be90-cd5c84c2b0c2": {
+          "intervals": [
+            [
+              0,
+              135
+            ]
+          ],
+          "covered_chars": 135,
+          "total_chars": 135
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 1,
+      "native_reserved_cny": 0.149108,
+      "output_limit_stops": 2,
+      "budget_delta_cny": 0.0
+    },
+    "travel-after": {
+      "model_calls": 25,
+      "calls_by_kind": {
+        "controller": 17,
+        "page": 8
+      },
+      "cost_peak_cny": 1.036388,
+      "cost_peak_with_cache_cny": 0.6668417600000001,
+      "cost_time_cache_cny": 0.6668417600000001,
+      "prompt_tokens": 248374,
+      "completion_tokens": 67455,
+      "reasoning_tokens": 37875,
+      "cache_hit_tokens": 188544,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 2,
+        "save_plan": 1,
+        "generate_pages": 2,
+        "inspect_deck": 5,
+        "record_assessment": 5,
+        "revise_page": 1,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 259,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 0.9616892000003718,
+      "source_read_decision_prompt_tokens": 3788,
+      "source_read_decision_completion_tokens": 154,
+      "source_read_decision_cost_peak_cny": 0.008808,
+      "completed_repair_operations": 1,
+      "source_reads": [
+        {
+          "source_id": "ff67ea63-41e2-49d0-9490-f21bedbe8a5c",
+          "start": 0,
+          "end": 135,
+          "total": 135
+        }
+      ],
+      "source_coverage": {
+        "ff67ea63-41e2-49d0-9490-f21bedbe8a5c": {
+          "intervals": [
+            [
+              0,
+              135
+            ]
+          ],
+          "covered_chars": 135,
+          "total_chars": 135
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 1,
+      "budget_delta_cny": 0.0
+    },
+    "long-document-after": {
+      "model_calls": 20,
+      "calls_by_kind": {
+        "controller": 13,
+        "page": 7
+      },
+      "cost_peak_cny": 1.033452,
+      "cost_peak_with_cache_cny": 0.6245176,
+      "cost_time_cache_cny": 0.6245176,
+      "prompt_tokens": 300770,
+      "completion_tokens": 53989,
+      "reasoning_tokens": 26081,
+      "cache_hit_tokens": 208640,
+      "selections": {
+        "read_project:context": 1,
+        "read_project:sources:body": 4,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "inspect_deck": 4,
+        "revise_page": 1,
+        "record_assessment": 3,
+        "finish_deck": 1
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 284,
+          "tools": 4,
+          "kinds": [
+            "read_project:sources:body",
+            "read_project:sources:body",
+            "read_project:sources:body",
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [
+        {
+          "call_id": 284,
+          "tools": 4,
+          "observed_results": 4,
+          "kinds": [
+            "read_project:sources:body",
+            "read_project:sources:body",
+            "read_project:sources:body",
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "observed_multi_read_turns": 1,
+      "source_read_decision_calls": 1,
+      "source_read_decision_model_seconds": 2.1632308999998493,
+      "source_read_decision_prompt_tokens": 3687,
+      "source_read_decision_completion_tokens": 435,
+      "source_read_decision_cost_peak_cny": 0.010854,
+      "completed_repair_operations": 1,
+      "source_reads": [
+        {
+          "source_id": "db746f47-ebe1-4d1b-9e26-a087fc165450",
+          "start": 0,
+          "end": 4000,
+          "total": 15409
+        },
+        {
+          "source_id": "db746f47-ebe1-4d1b-9e26-a087fc165450",
+          "start": 4000,
+          "end": 8000,
+          "total": 15409
+        },
+        {
+          "source_id": "db746f47-ebe1-4d1b-9e26-a087fc165450",
+          "start": 8000,
+          "end": 12000,
+          "total": 15409
+        },
+        {
+          "source_id": "db746f47-ebe1-4d1b-9e26-a087fc165450",
+          "start": 12000,
+          "end": 15409,
+          "total": 15409
+        }
+      ],
+      "source_coverage": {
+        "db746f47-ebe1-4d1b-9e26-a087fc165450": {
+          "intervals": [
+            [
+              0,
+              15409
+            ]
+          ],
+          "covered_chars": 15409,
+          "total_chars": 15409
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    },
+    "long-document-before": {
+      "model_calls": 32,
+      "calls_by_kind": {
+        "controller": 22,
+        "page": 10
+      },
+      "cost_peak_cny": 1.742338,
+      "cost_peak_with_cache_cny": 0.8476999199999999,
+      "cost_time_cache_cny": 0.8476999199999999,
+      "prompt_tokens": 588949,
+      "completion_tokens": 70555,
+      "reasoning_tokens": 28902,
+      "cache_hit_tokens": 456448,
+      "selections": {
+        "read_project:sources:index": 1,
+        "read_project:sources:body": 6,
+        "save_plan": 1,
+        "generate_pages": 1,
+        "inspect_deck": 8,
+        "record_assessment": 3,
+        "revise_page": 4
+      },
+      "qualified_read_turns": [
+        {
+          "call_id": 304,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        },
+        {
+          "call_id": 305,
+          "tools": 3,
+          "kinds": [
+            "read_project:sources:body",
+            "read_project:sources:body",
+            "read_project:sources:body"
+          ]
+        },
+        {
+          "call_id": 306,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        },
+        {
+          "call_id": 307,
+          "tools": 1,
+          "kinds": [
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "multi_read_turns": [
+        {
+          "call_id": 305,
+          "tools": 3,
+          "observed_results": 1,
+          "kinds": [
+            "read_project:sources:body",
+            "read_project:sources:body",
+            "read_project:sources:body"
+          ]
+        }
+      ],
+      "observed_multi_read_turns": 0,
+      "source_read_decision_calls": 4,
+      "source_read_decision_model_seconds": 4.812314399999101,
+      "source_read_decision_prompt_tokens": 30581,
+      "source_read_decision_completion_tokens": 725,
+      "source_read_decision_cost_peak_cny": 0.06696200000000001,
+      "completed_repair_operations": 4,
+      "source_reads": [
+        {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 0,
+          "end": 4000,
+          "total": 15409
+        },
+        {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 4000,
+          "end": 8000,
+          "total": 15409
+        },
+        {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 8000,
+          "end": 12000,
+          "total": 15409
+        },
+        {
+          "source_id": "ff1eabe8-3295-4263-bb12-b56893b41c8d",
+          "start": 12000,
+          "end": 15409,
+          "total": 15409
+        }
+      ],
+      "source_coverage": {
+        "ff1eabe8-3295-4263-bb12-b56893b41c8d": {
+          "intervals": [
+            [
+              0,
+              15409
+            ]
+          ],
+          "covered_chars": 15409,
+          "total_chars": 15409
+        }
+      },
+      "unknown_calls": 0,
+      "native_unknown_calls": 0,
+      "native_reserved_cny": 0,
+      "output_limit_stops": 0,
+      "budget_delta_cny": 0.0
+    }
+  },
+  "cost_peak_cny": 14.939400000000001,
+  "cost_time_cache_cny": 9.11597344,
+  "provider_requests": 334,
+  "supplier_statuses": {
+    "completed": 334
+  },
+  "model_fingerprints": [
+    "bc19ba97cbe016479903222bb1578db6"
+  ],
+  "models": [
+    "deepseek-flash"
+  ],
+  "source_audit": {
+    "status": "PASS",
+    "runtime_files": [
+      {
+        "file": "services/brain/brain/harness.py",
+        "before_sha256": "fd1f87128a965afb9985584aee40b082961eb48bfd613144f850f6da95bdd355",
+        "historical_sha256": "fd1f87128a965afb9985584aee40b082961eb48bfd613144f850f6da95bdd355",
+        "exact_match": true,
+        "after_sha256": "1ae0a4d48008f1cc2e3537375312b5058b638bf87d18d99a96aa024132f300de"
+      },
+      {
+        "file": "services/brain/brain/agent_tools.py",
+        "before_sha256": "2171ff5fd7740aa05e27e573260d9b285ac9cbd6117f8099e5b2522a3cd62e98",
+        "historical_sha256": "2171ff5fd7740aa05e27e573260d9b285ac9cbd6117f8099e5b2522a3cd62e98",
+        "exact_match": true,
+        "after_sha256": "62ae890efe7b23ceeaea7d448a4c3167172c6c6204ef210124bfe892640ae59f"
+      },
+      {
+        "file": "services/brain/brain/models.py",
+        "before_sha256": "ceebbf7fe09f5b550ae24556eeef3796d604e55bec7f21a98f0b89243fa1231c",
+        "historical_sha256": "ceebbf7fe09f5b550ae24556eeef3796d604e55bec7f21a98f0b89243fa1231c",
+        "exact_match": true,
+        "after_sha256": "a838000349d93e1f92890d0e935bd4c2f6a937fb521bb36349d680acde29cd21"
+      },
+      {
+        "file": "src/capabilities/agent.ts",
+        "before_sha256": "b43a94aa17fa16055f06af586adc7786394ff1eac730ffd79f729b1903376ada",
+        "historical_sha256": "b43a94aa17fa16055f06af586adc7786394ff1eac730ffd79f729b1903376ada",
+        "exact_match": true,
+        "after_sha256": "a9184ad8bfd7041992e5b41e36137fb0189bbffb14df34e45cdf285d62b87824"
+      }
+    ],
+    "other_changed_files": [
+      "services/brain/tests/test_agent_models.py",
+      "services/brain/tests/test_harness.py",
+      "tests/capabilities/agentRecoveryBoundaries.test.ts"
+    ],
+    "other_manifest_entries_unchanged": 818,
+    "provider_requests": 0,
+    "workspace_runtime_modified": false
+  },
+  "normal_cases_facts": {
+    "before": {
+      "hit": 17,
+      "total": 20
+    },
+    "after": {
+      "hit": 19,
+      "total": 20
+    }
+  }
+}

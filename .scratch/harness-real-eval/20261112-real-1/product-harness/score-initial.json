@@ -1,0 +1,121 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点团队",
+      "value": "17",
+      "unit": "支",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n试点规模\n17\n支\n试点团队\n试点期记录的团队数量"
+      }
+    },
+    {
+      "subject": "试点工单",
+      "value": "426",
+      "unit": "张",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n试点规模\n17\n支\n试点团队\n试点期记录的团队数量\n02\n试点规模\n426\n张\n试点工单\n试点期记录的工单数量\n03\n响应效率\n19\n分钟\n平均响应时长\n试点期记录的均值\n04\n培训投入\n3\n小时\n培训时长\n试点期记录的培训投入"
+      }
+    },
+    {
+      "subject": "平均响应时长",
+      "value": "19",
+      "unit": "分钟",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n试点规模\n17\n支\n试点团队\n试点期记录的团队数量\n02\n试点规模\n426\n张\n试点工单\n试点期记录的工单数量\n03\n响应效率\n19\n分钟\n平均响应时长\n试点期记录的均值\n04\n培训投入\n3\n小时\n培训时长\n试点期记录的培训投入"
+      }
+    },
+    {
+      "subject": "培训时长",
+      "value": "3",
+      "unit": "小时",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "01\n试点规模\n17\n支\n试点团队\n试点期记录的团队数量\n02\n试点规模\n426\n张\n试点工单\n试点期记录的工单数量\n03\n响应效率\n19\n分钟\n平均响应时长\n试点期记录的均值\n04\n培训投入\n3\n小时\n培训时长\n试点期记录的培训投入"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "客户问题",
+      "matched": true
+    },
+    {
+      "title": "产品能力",
+      "matched": true
+    },
+    {
+      "title": "试点数据",
+      "matched": false
+    },
+    {
+      "title": "实施步骤",
+      "matched": true
+    }
+  ],
+  "section_hits": 3,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "cover",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "customer-issue",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "product-capability",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "pilot-data",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "implementation",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "facts-boundary",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 6368.737299999979,
+  "rules_pass": false
+}

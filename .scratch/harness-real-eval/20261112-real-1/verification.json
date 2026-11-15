@@ -1,0 +1,13 @@
+{
+  "trial_records": 12,
+  "preview_pages": 72,
+  "pptx_structure_passes": 12,
+  "completed_provider_requests": 224,
+  "unknown_requests": 0,
+  "per_trial_budget_exceeded": 0,
+  "harness_usage_reconciliation_passes": 6,
+  "source_hashes_unchanged": 825,
+  "conservative_total_cny": 10.620612000000003,
+  "indicative_total_cny": 3.636810959999999,
+  "status": "PASS"
+}

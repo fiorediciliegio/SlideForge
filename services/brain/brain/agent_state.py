@@ -24,7 +24,10 @@ class AgentState:
             headers={"Content-Type": "application/json", "X-Internal-Token": self.config.internal_token or ""}, method="POST")
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
-                return json.load(response)
+                payload=json.load(response)
+                if payload.get("http_status"):
+                    raise AgentAPIError(payload["http_status"],payload)
+                return payload
         except urllib.error.HTTPError as error:
             raise AgentAPIError(error.code, json.loads(error.read())) from error
 

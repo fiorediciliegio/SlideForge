@@ -1,0 +1,3302 @@
+[
+  {
+    "file": "services/gateway/internal/enginejobs/delivery_test.go",
+    "sha256": "4b2db3e4c215ab4143214335073ea62b9560d0735b09f4106ef7d5e3193b7b71"
+  },
+  {
+    "file": "services/gateway/internal/enginejobs/http.go",
+    "sha256": "571d2e96666b5d2ef8aabedd26c9feebd5268d6a0718f6e96f990502cfd45d13"
+  },
+  {
+    "file": "services/gateway/internal/enginejobs/postgres.go",
+    "sha256": "5b931196f7b211d9e811f7a45690f1ac5aa016ef4931b79910d9c12c4692ff02"
+  },
+  {
+    "file": "services/gateway/internal/enginejobs/postgres_test.go",
+    "sha256": "362d5799b43ee8c4b872be8a5bc7c205c379d51ac0425a7eea2f0753a8a4b931"
+  },
+  {
+    "file": "services/gateway/internal/enginejobs/store.go",
+    "sha256": "58f0d8180fbca5c168ee1f634dcc810cf82d466744e2fb8029fd542ae1114d2d"
+  },
+  {
+    "file": "services/gateway/internal/enginejobs/store_test.go",
+    "sha256": "5ed2b7cb1f8a987d14feb394f2096607510acf5ed4574553a9d01552c356cf48"
+  },
+  {
+    "file": "services/gateway/internal/files/download_balance_test.go",
+    "sha256": "e762c0aea20a83a7509547d53d4b76375a4868cd417aa9ce7f4ae636c5268007"
+  },
+  {
+    "file": "services/gateway/internal/jobs/engine_budget_test.go",
+    "sha256": "ccd0877e31a62418cf6b15ac20cf3e875df2b04d692f327dccc71097cfae09ba"
+  },
+  {
+    "file": "src/engine/executor.ts",
+    "sha256": "3ce2af5ad652382c0dd8eb62daa17919178f90910de234c351c21a8dbecb2dd9"
+  },
+  {
+    "file": "src/engine/exportPool.ts",
+    "sha256": "5ae9f73577abe8897251777e35efac0950043ee1c957a7fe4c6144a466684353"
+  },
+  {
+    "file": "src/engine/exportTask.ts",
+    "sha256": "a6dcad17451c88a07c3c48409d22addafd4ae89dc61a3b32b08711348e408f28"
+  },
+  {
+    "file": "src/engine/exportWorkerChild.ts",
+    "sha256": "022b921d286325fc3c5af5e3156e4423bb4c8297f5c96cd7cf82e8588a9ccb44"
+  },
+  {
+    "file": "src/engine/worker.ts",
+    "sha256": "dd32e1bf76d69f37b7171be67cc4f1776961e1908970478482d31e544a8bf97d"
+  },
+  {
+    "file": "src/server/engineClient.ts",
+    "sha256": "89de5af21fdc9a199c7e66c7e4783cc178384bdf704744d33f2ee3e2457699a5"
+  },
+  {
+    "file": "src/server/engineTransport.ts",
+    "sha256": "9e44a105ce0126a1b7faab936d2dd52973c0e44e35dd89a87667171efd1c2064"
+  },
+  {
+    "file": "tests/helpers/engineHarness.ts",
+    "sha256": "9491c8bc3bf006b8885f603ef26984447d65d50c30e06a9220fa64a3faf77e36"
+  },
+  {
+    "file": "tests/server/engineClient.test.ts",
+    "sha256": "ada8ee87f0100189226e0367ca6725dd4ef809a76739ae20d1c26681978a5025"
+  },
+  {
+    "file": "tests/server/engineIntegration.test.ts",
+    "sha256": "f4227579f6054ccb83952bf02bbbd254a6a8c35c3d0a14dd745ff1088104620a"
+  },
+  {
+    "file": "tests/server/engineWorker.test.ts",
+    "sha256": "de1b31a05ae42a344ccd0ccb2f116c5327870154208d3fba178fa7f81020545d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-001/attachment-context.json",
+    "sha256": "df01ccb7c83098b085ba61dcb1e60e6a3355a43675506ffe3076efac6d814716"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-001/gold.json",
+    "sha256": "a2bd4f1b261be4b747786cc8b34740d4d697383951132325f7eeddd25ab0024c"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-001/input.json",
+    "sha256": "ffdda195f1dc77edfc6abab213e8dd77609bebf8952057ee6e2656e230c35bf4"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-001/requirements.json",
+    "sha256": "08fe01467338c4a7aa9b00e5c8093179c784e8aa6faca92b4c92aecad8d502f6"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-002/attachment-context.json",
+    "sha256": "ce43bb01c465192601d85a673290a552dd8642760d41677f6ac220413d7f39ff"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-002/gold.json",
+    "sha256": "ffc3cb0f538a09c9650fcfd82b7b16e42a838bed2b75f0cdbfd34572a0e77421"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-002/input.json",
+    "sha256": "b8441e1aaf8795e34a0ed47767846e53922fa92941230e8d6444e88aa30b4563"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-002/requirements.json",
+    "sha256": "bae09947bc51c3d77e299ed9604decece8a165a88d86f486d6613d39bada4a00"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-003/attachment-context.json",
+    "sha256": "88aa23935b506c17ca518d4447338b62e7904f25e5cff1f50ebc9ae937b1f7fb"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-003/gold.json",
+    "sha256": "1231205592876c74f1e84c62fcc252f539f5bb6a1ca3e79f4d546e9084143afa"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-003/input.json",
+    "sha256": "584967f0664abbac9ea98818205c72f820fc94c96dab0ddb2b5c1a805501c22a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-003/requirements.json",
+    "sha256": "6bf492dfac5bdb7c1b1b5ef9e6a0dace182482d02be235e97ae0503cce8f6828"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-004/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-004/gold.json",
+    "sha256": "5342505ae40648dad08857b25cd1ff24f6f5fbec58e402bfd06ab528284fe636"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-004/input.json",
+    "sha256": "d964c77203ad4a751d25f6c676841f92392a55cf9fad698a1bd9fb02b515932a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-004/requirements.json",
+    "sha256": "c9d1ee7ed1999cede3efd4e49f50fef3eb870a0642044a47a5624e8c78ea81e1"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-005/attachment-context.json",
+    "sha256": "68945a6abc355f6995e5d71059d3410202b875d6e8b644d263e9dfc9809bf45f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-005/gold.json",
+    "sha256": "9549e5ca014aabf9e02ec724c9adc0a4f0cf88419c628ba3d9e86301858b1605"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-005/input.json",
+    "sha256": "8a9e809cbb8f5b4f0b1438a60a0cb60a77fd3522e479e41f95fce8b5fbba1729"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-005/requirements.json",
+    "sha256": "58ef299c18cde8c59e98db1982dcae8ca1d1a3481983d01ceb99b1423da70c01"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-006/attachment-context.json",
+    "sha256": "a4e6c011307ac1147fd60ffe4283b8aea38081874e94499a5293a3bb7492637f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-006/gold.json",
+    "sha256": "6336798f9cf8d39a4422918921bde18a98a12b6a678b59315e9c5de543a1d605"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-006/input.json",
+    "sha256": "7ac86dd47364f95609a00b5e26abbad98d2ca662bfce0232cf07fabfe88eb830"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-006/requirements.json",
+    "sha256": "87bf68fe1df86f6a68ae5d312744c24f38d507b866750a8f42675ce2ea90e7f7"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-007/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-007/gold.json",
+    "sha256": "27d9a7abdd10697532b4e1ba677cb769f7938b138305064e827378f5e3b79ba9"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-007/input.json",
+    "sha256": "03f09db0b6bb3026faca421b7d8a4c821768ba8f05bc72b1f7466856339205cf"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-007/requirements.json",
+    "sha256": "f9b7dcacb97685d3743cbc5d7774a014e7fc11d92b8e1e98d1de5debc3d2a59e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-008/attachment-context.json",
+    "sha256": "a7460fd963394490459945a7b7d32af8f19a0d2e52c2ba93f7e763b1e93dd296"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-008/gold.json",
+    "sha256": "9ab4dc9a86e0bf1027b122995782c6bb81772b385f578617afc15da16ee569a4"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-008/input.json",
+    "sha256": "ec8949e9b86700f3c7ac3ecf667939ae273f86982c3f80b74314bf244804524b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-008/requirements.json",
+    "sha256": "d1b100eeebea2e1fb1e8c2174acab2bd4b107b55e35ba650c67c0b0c20349343"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-009/attachment-context.json",
+    "sha256": "0f7622c99cb048e2969d2d22e325c67f4850e7f6b9d01b1b02b3a80ebd1f5eaf"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-009/gold.json",
+    "sha256": "0ea13dc915b2af6e5886d9851714bd2d691923fa1de4a77dd84261784de23aa5"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-009/input.json",
+    "sha256": "1cc43e359b67322b32a8869e6a27f9e9f452c963351bdbca50f660293d704e9a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-009/requirements.json",
+    "sha256": "eae4836b331eab2369619dc5b42a6c122ed2269c57f038dbf0e187cd994e1882"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-010/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-010/gold.json",
+    "sha256": "b5ac4dfb7b747c684ccc4757c3872a25a4bded363fc49df73266dde90c440c7d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-010/input.json",
+    "sha256": "d1386f26ff036d713f27717d0e1eb72782437f818238ad880b6e63d5d3e776a3"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-010/requirements.json",
+    "sha256": "870a9a87ead257702d278201abd5cd63c06e67a1b79f5819a1061da54add4bb1"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-011/attachment-context.json",
+    "sha256": "c88dda9a5806b83e7525908afc8d1ea4b4ec733a325c140245e70685f0297f48"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-011/gold.json",
+    "sha256": "1ecc75bd3f922fff67902614d7273556bee838217efab83e99b7e42aa560e8f8"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-011/input.json",
+    "sha256": "b99e3482361dfd94924338e62e52ae1331a5270797ed690742684669cb15b2a9"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-011/requirements.json",
+    "sha256": "d9ac4899350b484e9335cf5ec0ceeb8f26acea2c0f898461674a44c84dd0328a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-012/attachment-context.json",
+    "sha256": "1dc005a9eaaaa2d0c95efebb605bd60a508a5c68580fc1f1be90947e99c8c776"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-012/gold.json",
+    "sha256": "90494be07a7919ba0d5c5eba4e1ac6161a2263f5765ec1c21ed73be1bc00408e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-012/input.json",
+    "sha256": "5e774243c80c0a54c1e1752eb62a0384e1a9db70494c86f115427e86708698c5"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-012/requirements.json",
+    "sha256": "e3b2c87e3ba69bd815f2c4523c9f658289b73407a6270d15d1221a289b4bd004"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-013/attachment-context.json",
+    "sha256": "b6a414d083e58a2053aded6508dc21d9bee1209e1a0d971e973378241400bc1b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-013/gold.json",
+    "sha256": "40004d921150fa70cd3732bbc8b39f19a6e07ce333999db4b868d4a533251778"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-013/input.json",
+    "sha256": "32cf4b83c8268261026c0698d1a28585aed0a8b2535b119a4c8ee19be9f561d9"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-013/requirements.json",
+    "sha256": "c36ab7c1293829950b024d34bf0236ca0c4fb378a935329fe05bff9ccb227aa2"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-014/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-014/gold.json",
+    "sha256": "fd2fb7300e615d7b8fbdc5c51596a773f812341b1b94e25ba145c634bd6ecfea"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-014/input.json",
+    "sha256": "b9926456492911e4d95f8bef739e07c61e342651bcc835ed1c25f34f0f9a8d7a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-014/requirements.json",
+    "sha256": "0f5fd08cde719e7ac442d8aee06085545496e73b72039a1d9b4869d84bbabbe7"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-015/attachment-context.json",
+    "sha256": "be46c86178497ae7b34ee0558c14e6932aa81136a2ab8eef94c087211c6dcc31"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-015/gold.json",
+    "sha256": "efc5a4392ab79e9cc953ac86b4a84d3da9e5e0d3ab255c7ff027158073a5541d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-015/input.json",
+    "sha256": "00a158cbafa9b8e4f1cd8274cfb3672e92fd98fdefb9cc31c142b41253aa1f8a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-015/requirements.json",
+    "sha256": "0c71053e747e78202029f0adcc97c9cedc5e9085cf18957226b2e53b48b69842"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-016/attachment-context.json",
+    "sha256": "f0a3ecd543d161cc58cf6cccb476990b8570751211086a683d4667ad239c2405"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-016/gold.json",
+    "sha256": "1ac148621d588f7d20e434f458943bbacdb37799d9b086652a8e0e9b3e4f7fb0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-016/input.json",
+    "sha256": "ca6c1853db37cee9ed7be6ae95be545e333a64043bfec5591755ec4f9986eb21"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-016/requirements.json",
+    "sha256": "e5f436bbf332cf5297f6e2634709268e1b092696d88cfc3fd028c08ed451e276"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-017/attachment-context.json",
+    "sha256": "2c97a4a6a49e70662b2eace3ab49a34c8e30d69175d9e4e974b754daf1837544"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-017/gold.json",
+    "sha256": "b8bf9a0cfdd595365d982b01883397c3d88fd05eb54aae5dda2102d8759aaa47"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-017/input.json",
+    "sha256": "87eafd6bb4500f3d653a8e5e4949f01a41c9b18cf555a8ab8c8eb7b410e6fecf"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-017/requirements.json",
+    "sha256": "44040d4ed74aabd8c3db9f19e796465a8088c3cc04c8f1d8c957ee9a30fc5fed"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-018/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-018/gold.json",
+    "sha256": "4e8f5a5be8f4b03b60752ef502a9af709733f682d91d5e9fd3e08f722488c224"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-018/input.json",
+    "sha256": "9dec2cee82d4eb1545d0c74acb0599bb060602edc0af5fc0ea244f79651709d1"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-018/requirements.json",
+    "sha256": "9a20c5432889939c15cbbc4757ad91ad3b9f41924acf6342760af60a030d868c"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-019/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-019/gold.json",
+    "sha256": "1b14d54366f96c66497a4b6218a2cc0256199d3e992862075834b1c4c8951372"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-019/input.json",
+    "sha256": "e6ecffed390cce724dd0dccad3e986185acc49cfe200feb7d5199d79d1d47431"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-019/requirements.json",
+    "sha256": "6152144e4e1dbfcb50d471aa2598893db26ac40e949768eb50c8abec7b6ffa4e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-020/attachment-context.json",
+    "sha256": "ba720461676a9dee0055e7a1689645994d5e94028198a89964d3a2850b6a1906"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-020/gold.json",
+    "sha256": "b739b71b29b235f63765b083dca3cd15a67e38d526409afe44b1c2234034cee6"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-020/input.json",
+    "sha256": "260581e541474f3cea87178f5c10b02a7d5ca4107bd999f29bdefa63d78da837"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-020/requirements.json",
+    "sha256": "7ca375b150876eb2e8a75c92023a91c68c9c0019534b5b881d5f52b44f77a357"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-021/attachment-context.json",
+    "sha256": "33eb67950731f032993491fed8c519258457516d43d25453e17e1c40b9025375"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-021/gold.json",
+    "sha256": "a0b3c89876ba68eb85fdfc6e88b8d5dffa66e510c0c7037da4e0260ed5fd246e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-021/input.json",
+    "sha256": "0b746b9f7da0b9f96ba8af1f355987206bdbeb96765d7e0352c491e699b90172"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-021/requirements.json",
+    "sha256": "e885da1dd725795f0733d3e923576bd6c5111ad3439a09685840d2b044d1ca31"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-022/attachment-context.json",
+    "sha256": "f4aa62d37f29c019350c8e447a840eeb6c24c4872b48f8387c0f70e412f53b7d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-022/gold.json",
+    "sha256": "dce14ebc2b19b22313a58dcc51f729211941fb68087b66f041597cac3b565495"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-022/input.json",
+    "sha256": "cdbbbe0bc5ce617d05f0d42eaf45b729001fd4364b51c4d09937a54d225fe9b8"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-022/requirements.json",
+    "sha256": "122dfbf2a3c163cb9d75345f9ffafdbddc8c5976eab62e41c7f88e22afcd87a4"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-023/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-023/gold.json",
+    "sha256": "6351eafb4612dd621c6ec97481dc350fb826b4692c0c9ce3ab06accc3afd86bd"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-023/input.json",
+    "sha256": "2e34b9b62e0716118c96806f51b3aef82f3c055e296686867eee76293fa95c3f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-023/requirements.json",
+    "sha256": "0d17982926cb70ee422abb9e9e4625964d82b8067af8a6fb9d1f74b558807036"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-024/attachment-context.json",
+    "sha256": "0716861c6890f0ce492072c2a7eb7c5da85bc82b414f84d7135fb9f410c5ac8c"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-024/gold.json",
+    "sha256": "85b3bb3c18825ec303946810fab6963381f85c42ce2dbc409be467f2135248ce"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-024/input.json",
+    "sha256": "8ca337e27e9ebf1999ae6e062d157a8b6fdeba26f2e714dac810e440a430cfb0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-024/requirements.json",
+    "sha256": "c05efed731b0ea1b370774e50916b7621f9f585fb5c857def69d483d4080d352"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-025/attachment-context.json",
+    "sha256": "e40f3239482cfd024bacf8bd45083f2fd65f0249a738176fbb1504704bd69c8d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-025/gold.json",
+    "sha256": "68577dc515b37336c560331c6d3a79c399c29f84c1396e21c50e369ddb3e14ec"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-025/input.json",
+    "sha256": "e37ed6a605dea6280c0bfefddddebcb8e9fdd574a994e975440e62ca189b3ca0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-025/requirements.json",
+    "sha256": "6e6c115aaa4c55cc0315cf62a16c9c6618e3c1ae63605b0acd871e03c639dd0a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-026/attachment-context.json",
+    "sha256": "ad732a1549dca6e3f3d8d40ab8c0fe1b9172a8cc804784a924c40ea46a8cdc5e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-026/gold.json",
+    "sha256": "1934ec1555836b39fbded0b786b2ff36eb08983288bf6994b79982c722dbe65a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-026/input.json",
+    "sha256": "7456194478049536398277623fe8434e5ba42c8cc57027dd767174fc8d67c630"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-026/requirements.json",
+    "sha256": "3c5b8ca6d79b12de320b3647d7e3c65006e34d659aa587ffb6f64cc866197638"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-027/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-027/gold.json",
+    "sha256": "334b90ca54d6bf77fde1eb7f8de26c73b82cd31c065762b3e6945b3065d9287b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-027/input.json",
+    "sha256": "1b670669a58d2849c1d7b3a6e2ac3d6d3e1a9cfed8f536b989df913529475f03"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-027/requirements.json",
+    "sha256": "2d96a3943e6e42fef5026512838d2c2e3ac6617958562f4fa926169b3f56ff12"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-028/attachment-context.json",
+    "sha256": "837c8f56e608220c15aca42d2f33c07d757416e5838e8657973b5fcf1a9924ec"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-028/gold.json",
+    "sha256": "0e91d3a82883f6f9960e0561a409d279a77dd11035b1479a920397e18cd0b557"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-028/input.json",
+    "sha256": "bb303f03d4f55067c8cf3169aa2735be3bb845813bf95039588f598ce547d8d7"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-028/requirements.json",
+    "sha256": "7ae0ba267a5bdafe72c3e8a0f4a40e926a84961638f91c68324c5eb0d0144504"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-029/attachment-context.json",
+    "sha256": "1187de51c77ee7063b119f1768b57208dfb4d397a6f9cb1a35ad8084e51c94a5"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-029/gold.json",
+    "sha256": "47ec6de67261bf48725aa3276ec8bb370e16d1ba7b71cb6ecd603339e2ac02ad"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-029/input.json",
+    "sha256": "419e5f58a58f16be89d68317d51431ba28ee82150897ccb1717ed7759da75a65"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-029/requirements.json",
+    "sha256": "edb8121d075cce1b25741d268c2b3bfccedd5145a1ba23caa5ebf11cd53f0c7a"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-030/attachment-context.json",
+    "sha256": "f0c9231cba744db67757cc556e4afbe4f9086fadd3cb8156687296d6a811c625"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-030/gold.json",
+    "sha256": "86d5ed0b22caad6176d28e2b558a41477500b4838751235dede4718f21004388"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-030/input.json",
+    "sha256": "2728066994c5bdf2b1bb80210189d10254ff6bd8bd6bb07d560141ac2f16fa61"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-030/requirements.json",
+    "sha256": "ea3d62d1f03fb2a7dac71f81203dc77fb117a6978471264db6f668fc82647c1d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-031/attachment-context.json",
+    "sha256": "cfb58b1615b8100ceebb9f192155617145a964aaf2dd7ddde9412ba66a88d88f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-031/gold.json",
+    "sha256": "22756c902c4fbe2ec83c8ad2c631b8039a38f1552bace48257046b34fcc1d99b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-031/input.json",
+    "sha256": "a26ace9fc8a78a982792183b46e62976eb24376833bac1c4024cf2bc71a7efb0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-031/requirements.json",
+    "sha256": "17c4aa7601ac7b4eeabc95880bbb2656bda001786bc7156891e7a314b14e0e15"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-032/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-032/gold.json",
+    "sha256": "cde2bc11d01ab1dae05d76701213d0a979d627953a4b584d72e392d9f034bd44"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-032/input.json",
+    "sha256": "8bc508f63414906991b3e993f28a1b95e75c9134cca9bfe459f9d30f0a926310"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-032/requirements.json",
+    "sha256": "8da4213ae61a613a9fd9dbae019183ef16062cfb36eb360ed50ba0e7292b4a67"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-033/attachment-context.json",
+    "sha256": "47f6d836e6276eb4c9e9200d759738b36f39f99ee22be457b4207c07e4ca4e92"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-033/gold.json",
+    "sha256": "63f5d5d60d057d4914350d0d9d16a0b9517226c4174d5bdd70479dfbc3257b0d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-033/input.json",
+    "sha256": "01dd2fb1747eae6e36407d61c2c8c5084ac90a9429a811039a1e71f5e03293e6"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-033/requirements.json",
+    "sha256": "c81e52ed848606252a80b129c55197245c897c8a365eca18199926b2b1679237"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-034/attachment-context.json",
+    "sha256": "aaf6f42d815fda28b686e689526829e5c9f85b29091564f5247befb1ca9e4be2"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-034/gold.json",
+    "sha256": "dc23bdda997d8a080acf9bce1b5d48e11d7da7574b27f39d9985c7d684b125a8"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-034/input.json",
+    "sha256": "82a64ce1e818b3d1fc0e1d210fd0b2c502040ff7a2dc5726620c115cf41242ce"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-034/requirements.json",
+    "sha256": "4ded753298acb6679d5aabbce9812ede3755dc8c4f3d1ab77e1decad71d8ab85"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-035/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-035/gold.json",
+    "sha256": "859ce0acb7d2c877542a572ec9420fff4447dd5b83f9ab3a94c1ce72f2c83cae"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-035/input.json",
+    "sha256": "16feed54e87427bacdd91b08730fc0b966d163716d88d4816d7b4e6724a76b12"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-035/requirements.json",
+    "sha256": "1f0860d67efdbf2bff48816a88595e7ac8a9faabca91e249e21cede0a8710589"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-036/attachment-context.json",
+    "sha256": "e311a6cb5af7ae13cbfa9311192f4765d995ba23fb73d2701ae09e4f4b4a4365"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-036/gold.json",
+    "sha256": "d58c56b62b96c7df273a0cbf09f136f2f768c9d385b75e20f2482030c431dffd"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-036/input.json",
+    "sha256": "81323b58432a7798466539d093617be54052a6dd83e353743f60a7f802b46373"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-036/requirements.json",
+    "sha256": "f44d595dc317be6723696b1343e7f9610361219f82af32fb73ae740dd82332e3"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-037/attachment-context.json",
+    "sha256": "6c6a1dc913ef7884e4169866a31fbfe1a8c9846c4e7cc7fce013bedc361ccb73"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-037/gold.json",
+    "sha256": "853f9d9868b7ff3cac6f463e9170da0469d209acf094dd051a2655c09d8b5440"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-037/input.json",
+    "sha256": "ba59129111609017e7cbbfecb3e08746b2f0e2f2d825f712554bf5644efeb517"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-037/requirements.json",
+    "sha256": "ad8a96f3532c915e9f3df21b633fc9632cc503c953760a5f876596e3c3fb3316"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-038/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-038/gold.json",
+    "sha256": "dfe85ebe6a5bc92f2766566e189484e869770cb948db595acca6bcbe6561f54b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-038/input.json",
+    "sha256": "f51577bee278d08a28aff151f5c643260f182bc83d2970a3cc9f146a40963346"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-038/requirements.json",
+    "sha256": "9ed45a22529b8f2d1a6909d9adea2b05787698ff7a75e5a2c021a43bb52b388e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-039/attachment-context.json",
+    "sha256": "64c45cc356cf8d0648080e1fea31101cb27b9992eb54cddc6e378aca6d5229fc"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-039/gold.json",
+    "sha256": "8f04686efedff62e37046a54886b352ae68708aded21ba7613ddcd81a530c445"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-039/input.json",
+    "sha256": "ae83dd444356debca5c8b4d6b16dd547d8507a3fde38a67d2375b3d4bb26c9d5"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-039/requirements.json",
+    "sha256": "c7a0c334665ac20e6e96818678fd3e3ef3c6b9617de4eaf9c062d443442c182b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-040/attachment-context.json",
+    "sha256": "bdd5fcd07e93db2de3e232d89e00741bfc560e7b0398c91f6e9f374d4ef18ba7"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-040/gold.json",
+    "sha256": "ed1ac018dd7335eb1e885682c3a8633d45da1eab815e72cd360e841e99517c1b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-040/input.json",
+    "sha256": "f6fc134ab8499f3d74af89537b925b3501578b47bdd33d78da1fcd52ebefa223"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-040/requirements.json",
+    "sha256": "e38fd3722b43a77154d5290c038405f87d5d83827b21ee76ebe3cbace082db99"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-041/attachment-context.json",
+    "sha256": "fdef6c90f295f16a49d847cec14c54b2269d29d584299bd765f474aa5cbce02f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-041/gold.json",
+    "sha256": "2ad86495dc11013d765ee8ea022b45bc84e7ee110ceb4f819403f15c2f0022cf"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-041/input.json",
+    "sha256": "bcf83f9d413f933b298631ae3e8547fed51e2dd0d9f4bbeac6444849e9dc085d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-041/requirements.json",
+    "sha256": "533da98393fe7de97f33389916138e7f624807b84a8ac8d2f9833e930d7e067b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-042/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-042/gold.json",
+    "sha256": "303481e9933604eff65a602b2b6eee6b4a79acda2e3ff3e1f84fc45d6334d7ca"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-042/input.json",
+    "sha256": "00e1585ec189b307200940fb5e48fdff9e02fb23c4b5172eee7ccd8fcfe0212b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-042/requirements.json",
+    "sha256": "dbb0013b13fe3abc239ecbf7fceb63a2da1563ff549047e69195f7fa0d6b272d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-043/attachment-context.json",
+    "sha256": "4bcafcba8711b6c627ce348c56107726b52db40304f569e4137402efc10499e5"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-043/gold.json",
+    "sha256": "1677b12d5fc3be9d123d9bc60b4e69a05a56618a68554e31951be7243fe56dc0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-043/input.json",
+    "sha256": "ce48cffd9898cde2f994acf2d1911840bc506b87dc992688b780451f6aba198d"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-043/requirements.json",
+    "sha256": "8e862fa95cba508508f48664905ded48fce7705bea335dc986ea31fb4217eefc"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-044/attachment-context.json",
+    "sha256": "d2d09afe7cace05e13b68cf4fbe8774d9d11d5b7974680de6ce45b508ba77c8e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-044/gold.json",
+    "sha256": "bf093e0e5ebbc98bfe03d8245cc598d765489dfb4b63db63ae02e47ec8d61560"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-044/input.json",
+    "sha256": "748210df66e9c4e7b4a9cac1b8a41c5986cc55d9e67caf0d802b89eb89390141"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-044/requirements.json",
+    "sha256": "c09986600a62aedae30c5fc94acfb1d38662becd38b0c036239d85437aef63d8"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-045/attachment-context.json",
+    "sha256": "6df51a349a9ffefe2fde4ef4e3982ec63568549a81af70f6dd23f54a6cc52b12"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-045/gold.json",
+    "sha256": "beea525755a0935c634a1110e782b7408459f249880705c01fdc9ebc1c2cbae0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-045/input.json",
+    "sha256": "b9da1d727b9527d9367b1cb48fda81f7a18ade7d579baa7732ec606776af0ce0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-045/requirements.json",
+    "sha256": "6fce3143035987eb29639eb6036da3d1ad4715dfa7a00c06175f8c4f83d0a6ba"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-046/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-046/gold.json",
+    "sha256": "be2a933b7462fa9b6c1f1d4908c45a8c0caca9ad36adebfe2304edc1773a5cd8"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-046/input.json",
+    "sha256": "d9d8e4fb05b2cd6f934e6e7ab8e0d6be430692dfea8e5ed85759c23989622ff4"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-046/requirements.json",
+    "sha256": "d4c4b094e806d4371add56d463482cd02d51c7383955a021a07bbc084e3552ba"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-047/attachment-context.json",
+    "sha256": "abdfbffecbe18ed94df9829819e596ee285b52a94aa108514452a9121721c789"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-047/gold.json",
+    "sha256": "4b6b14bb74108c4bd4d4ea270a7c07a3cea5980da44f5554a2ce7ba20f9eb74f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-047/input.json",
+    "sha256": "c8ec75c875bac5d71c42348b6fe38e2c6c986477be307ccd01acfe914bf44e64"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-047/requirements.json",
+    "sha256": "da38bde8583ae373734638c8ae13e686e244b9999eeb1e8614677ab803508844"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-048/attachment-context.json",
+    "sha256": "0a5b97255340e520c074e9dc13a49407c247f0c588d09ec43c5afd0d3a1f254f"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-048/gold.json",
+    "sha256": "1bc187c17f6694503a3b07e8837b4b38072af7645d5a6d691d92ee00fcd9fbc3"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-048/input.json",
+    "sha256": "703aec208c50ddc064cf52fef7049e0596e8ce53d1b7c970373b869737edbbe0"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-048/requirements.json",
+    "sha256": "0ebe1408510ce30153b80e0d0f33b11c708eb8df4df1d66d4a19e27bedcd42f4"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-049/attachment-context.json",
+    "sha256": "88322597d4cd4c94fe79e97bb027a03182f0e3a4c0ccaf407b3c2c9dddf15782"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-049/gold.json",
+    "sha256": "ddcfd64750a472b4db68aa59cc18431b519266ab31943bcd42ec0d7dd094c516"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-049/input.json",
+    "sha256": "756c450a88f370f6621ee580698dd8c0dc1e673c91a9a3df0ce490a1bc2a61aa"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-049/requirements.json",
+    "sha256": "ba6087fed7e0cdc681f162d4445e23c6ab22132fa0649fc9b7db721bf49f7814"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-050/attachment-context.json",
+    "sha256": "7253b17de4180a2e3779efed6751526243dc757bb763004ec5d21a8b6404874e"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-050/gold.json",
+    "sha256": "15720f11e287612f8881c33402a7c2b0c7ca2a9f62b02adb817b6ad93aa68d3b"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-050/input.json",
+    "sha256": "8732f03acf7e902e30270bbdce1bdd7eddc31cf712dfc8bfa4580c83e338dcc2"
+  },
+  {
+    "file": "evals/attachment/datasets/B-NEW/fixtures/B-050/requirements.json",
+    "sha256": "3eb3815350ae89081bde4ad57016c1a427f340c621fa0cba171555144610eccd"
+  },
+  {
+    "file": "evals/export/batch-configs/phase-1-smoke.json",
+    "sha256": "ba3974d3418041b9e068dca7019cd516fc965a7e99453219fdf5acd1957c52ef"
+  },
+  {
+    "file": "evals/export/cases/01-english-executive-summary/case.json",
+    "sha256": "0d7716e1a481624e21ef9294f75fef80e67fb4c25d003fcf8f8d78f475c886ad"
+  },
+  {
+    "file": "evals/export/cases/02-chinese-dashboard/case.json",
+    "sha256": "ba323eb6ab4b6f0b69caa60d556f5ea0f4bc9dd58c790e86f580258679bf31f3"
+  },
+  {
+    "file": "evals/export/cases/03-bilingual-roadmap/case.json",
+    "sha256": "425534153d74c80c790505649595f88d4ed4706782d848b99e0e30950049aa3b"
+  },
+  {
+    "file": "evals/export/cases/04-long-text-special-chars/case.json",
+    "sha256": "2bef4d64eda3aafd020858c06d1e14e9aa0a4a3a178cfe14563907bd0928c502"
+  },
+  {
+    "file": "evals/export/cases/05-font-matrix/case.json",
+    "sha256": "03b83371b978c14867250e4a06426baacca2a1d4fb143584c18676664312272d"
+  },
+  {
+    "file": "evals/export/cases/06-complex-table/case.json",
+    "sha256": "658709c4d31e69283850391110a8629a88cbbca018a9bb9dced4ebbf3c7e48c6"
+  },
+  {
+    "file": "evals/export/cases/07-svg-chart-icons/case.json",
+    "sha256": "7815afcbec8f4cdc39cc3c29afa205f79d3d707761a6ab629fa0915953fdfc96"
+  },
+  {
+    "file": "evals/export/cases/08-complex-layout/case.json",
+    "sha256": "64ac495f6c1cbc058f303ec0a25fb2fc9f2b92c126ac54bfafa617d85a8daa85"
+  },
+  {
+    "file": "evals/export/run_export_batch.py",
+    "sha256": "fbade5fe9e57fcd68ad697b0e1d4e8a37519895440bbe48eff4870bf21749c99"
+  },
+  {
+    "file": "evals/export/run_legacy_preset_export.py",
+    "sha256": "984971087b90baf027c3599276c774cf0676287b36885cc225d509c19b874b80"
+  },
+  {
+    "file": "evals/export/run_visual_style_preset_batch.py",
+    "sha256": "0c8aa3418576b6384f67e8eee4efe89d6d966b5d8f561064cef85526fa61057f"
+  },
+  {
+    "file": "evals/export/validators/__init__.py",
+    "sha256": "5784ff5b247677dc8cad14908ab129f50e45bf1cc776d13cf26a4460bb8cc1df"
+  },
+  {
+    "file": "evals/export/validators/pdf_validator.py",
+    "sha256": "310990d3aa9fe3ecc3018efa4e019b82bfb244f3a5b7bc889ba65ac0f9aa01de"
+  },
+  {
+    "file": "evals/export/validators/pptx_validator.py",
+    "sha256": "dceb68bb76e7c93ff27a76584a520853242a32a40b168a5a4259793bbc6dc6b4"
+  },
+  {
+    "file": "evals/layout-audit/ground-truth.json",
+    "sha256": "c43a1683a47b5390471d374e6228db0b4d56c49f498b984656084a719b8780f2"
+  },
+  {
+    "file": "evals/layout-audit/results/audit-results-v5.json",
+    "sha256": "f6b4e7245c35e9ee5a5ec7469d1cbe22cef35f2e0ee43c141a7571625b15343a"
+  },
+  {
+    "file": "evals/layout-audit/results/audit-results-v7.json",
+    "sha256": "1ec8791923ca383122124761817c6aebc49844190d86fe57e141bdfb80b58f56"
+  },
+  {
+    "file": "evals/layout-audit/results/text-audit-results-v6.json",
+    "sha256": "c9d66a9e3c719a57d6a50465e004d4a82a160e12d34fe56471879bf51fee8218"
+  },
+  {
+    "file": "evals/layout-audit/run_audit_eval.py",
+    "sha256": "e7423dea34fb89277e7bcb17787ef4808fc29e59e0eb1e7680b18d5339a6e93d"
+  },
+  {
+    "file": "evals/outline/config/outline-main-flow-50-batch-input.json",
+    "sha256": "bb46601901fe712398ab8ce8714c2a5a445ba2f0d64565323e9c53d88bebe4ec"
+  },
+  {
+    "file": "evals/outline/config/outline-provided-requirements-batch-input.json",
+    "sha256": "7f615c4123bf62a283dacbc13ccd153b6c485651b4be52bce0e582f1c81fcd3b"
+  },
+  {
+    "file": "evals/outline/scripts/build-outline-batch-input.mjs",
+    "sha256": "c73b693f17fd8c13635c5edca1596417da148a12a3fc28dbd021936a62796d1c"
+  },
+  {
+    "file": "evals/outline/scripts/extract-outline-results.mjs",
+    "sha256": "6725cd45da8fdd1f844cdc938519033d9021cfca7c62ac4cb86c8724849c846a"
+  },
+  {
+    "file": "evals/page-refinement-classification/config/smoke-v1-batch-input.json",
+    "sha256": "6010577745e3ae50a6f749861b720c7c6188aa73cbed7817b8b15b7a7b9e868b"
+  },
+  {
+    "file": "evals/research-routing/cases/research-routing-v1.json",
+    "sha256": "7556b23516bfc2eb4239542f27f98e10d5131af684c2a3992595ab69ff21159f"
+  },
+  {
+    "file": "evals/research-routing/config/stage1-batch-input.json",
+    "sha256": "027caefd3f7e5f0abd63959c6f5c8fe8820e7c9a0e61d43bc4c97043fe9026f8"
+  },
+  {
+    "file": "evals/research-routing/config/stage1-round2-batch-input.json",
+    "sha256": "9f6e37b7ab63c7671f658dd14fa78a68bcdb567409eb31d03dd6a168a1e87e3d"
+  },
+  {
+    "file": "evals/research-routing/config/stage1-smoke-v1-batch-input.json",
+    "sha256": "6597cdcaa956a5d46f79acef68f639605d51938397a79ea8bf9f2fc27d523d36"
+  },
+  {
+    "file": "evals/research-routing/config/stage1-smoke-v11-batch-input.json",
+    "sha256": "b21463357b15567c4bffc20c5b9837f792ed57e1f46b605ee5fadd1d4e8b695f"
+  },
+  {
+    "file": "evals/research-routing/config/stage1-smoke-v7-batch-input.json",
+    "sha256": "4789058eb8a3b144ca6f6c786d90b41f843b2c71a305aba541b60baa9ce5c9ee"
+  },
+  {
+    "file": "evals/research-routing/config/stage1.json",
+    "sha256": "a4ca411699b172c80cdeb6398bc7e92e036ec656373210185dcedfc991e74185"
+  },
+  {
+    "file": "evals/research-routing/config/stage2-kimi-v7-batch-input.json",
+    "sha256": "d62f3db57294d7564148297f9b9eb324499bc2bd50c126bab00efdd5ed3ca175"
+  },
+  {
+    "file": "evals/research-routing/config/stage2-mimo-v7-batch-input.json",
+    "sha256": "845507ff462fa2a3e9a7143c8fb4e706b753aa243aa0d8fc199f032366484e9c"
+  },
+  {
+    "file": "evals/research-routing/config/stage2.json",
+    "sha256": "108197ed15c0ebc8140236e8156de8f7261c5c64285e2f9c7263cef4b7330b26"
+  },
+  {
+    "file": "evals/research-routing/config/stage3.json",
+    "sha256": "b9db90d7987dd588910cc2438b562ef8af0764a279fa506543de4d657f5c9379"
+  },
+  {
+    "file": "evals/research-routing/scripts/build-stage1-batch-input.mjs",
+    "sha256": "a9e0c3920c615362391cc96a944844f08048af8cf9027ae34fdb17dcc99bdd2a"
+  },
+  {
+    "file": "evals/research-routing/scripts/build-stage1-round2-batch-input.mjs",
+    "sha256": "4f283a3d4bdffdf7b201a31082e0c47284fcd2faab225c2e0750707e79925a13"
+  },
+  {
+    "file": "evals/research-routing/scripts/build-stage2-batch-input.mjs",
+    "sha256": "24d8fe27b06a64a999563bdff6af96b2ccff66ac5ced84ceb5edaa75125df1c4"
+  },
+  {
+    "file": "evals/research-routing/scripts/build-stage3-batch-input.mjs",
+    "sha256": "2141431f8e6ac565f50414289b8242a4992a7841bcd5a30b4aab75097acf50ce"
+  },
+  {
+    "file": "evals/research-routing/scripts/extract-batch-results.mjs",
+    "sha256": "7a5f7313ffe3b8c7166c6ebc2c03712500002d101348aa50adbd993272630e57"
+  },
+  {
+    "file": "evals/research-routing/scripts/score-stage1.mjs",
+    "sha256": "ea8363eb8ba727a256133902969f9944542e3927ad973331b70174fafa13129c"
+  },
+  {
+    "file": "evals/research-routing/scripts/score-stage2.mjs",
+    "sha256": "4c74633fa35a192235c79e5e8debda08d627ce41bd8b18e57c2674461dfb05ae"
+  },
+  {
+    "file": "evals/research-routing/scripts/score-stage3.mjs",
+    "sha256": "90674c4252e368ba53900dcab5b0f85f385423ae85cdfa2d81ac74cdc80ba25d"
+  },
+  {
+    "file": "evals/research-routing/scripts/sync-fixtures.mjs",
+    "sha256": "61d506165b46431ae48b6828b090a04894e891f6d48e2dd5516e6e514a8cc5b7"
+  },
+  {
+    "file": "evals/research-routing/src/contracts.mjs",
+    "sha256": "639ed429fdf28c4288bef4c44db347b89101d17dd7dad9ca7154c0bf1e897b5d"
+  },
+  {
+    "file": "evals/research-routing/src/fixtures.mjs",
+    "sha256": "e9081b25c6cbdb3fcaaa1f93f54d70feb4dae6f1c0d45fa72139fe6ed8562d03"
+  },
+  {
+    "file": "evals/research-routing/src/report.mjs",
+    "sha256": "a086fe157af2e15a3fb50077c6d9d5ec1a90da4827b89af80cb20da1e7a52b9b"
+  },
+  {
+    "file": "evals/research-routing/src/scoring.mjs",
+    "sha256": "243e23b7e200700bb5aad81f917ec22402c1969f3cce3ea8288b84ebbb615423"
+  },
+  {
+    "file": "evals/research-routing/src/stage2-report.mjs",
+    "sha256": "48adbf1022f625365909b7e966f2b28f9212b0af9fbe866e6519dee906a201e7"
+  },
+  {
+    "file": "evals/research-routing/src/stage2.mjs",
+    "sha256": "6d8ff0f4dc053f9b22295190991f4bd168ee988da8f42d946b057bd49ff5405d"
+  },
+  {
+    "file": "evals/research-routing/src/xlsx.mjs",
+    "sha256": "052ab827fa3f469cf75bfb3ab76598729f74c57bdfd424088d12d4dbb0ad9cd6"
+  },
+  {
+    "file": "evals/research-routing/tests/fixtures.test.mjs",
+    "sha256": "2372211b9ca9833173e3d94cb2b54f80f5b14124202a0cf383a798c3e1a068f1"
+  },
+  {
+    "file": "evals/research-routing/tests/scoring.test.mjs",
+    "sha256": "439dd644dd16206865b1d91b7d83c21a986fd8a27fc93c033336ba6345c78ff2"
+  },
+  {
+    "file": "evals/research-routing/tests/stage2.test.mjs",
+    "sha256": "c973696fbd8adb836fda3f81641499bc227433b02d7e13c840bda5329c920d17"
+  },
+  {
+    "file": "executas/ppt-engine/executa copy.json",
+    "sha256": "d2f677cb3066d15ee918183e8662aa49cb4693a2e902d1a1668edaa456ba9f0f"
+  },
+  {
+    "file": "executas/ppt-engine/invoke-tools.json",
+    "sha256": "d088c1f3043227d10628faab900c3aacbad0394eec2bbe507418392cb6ec7129"
+  },
+  {
+    "file": "executas/ppt-engine/invoke-transport.d.ts",
+    "sha256": "e8b0034006bb7d0752e4ed0d5a66622e981702a03e93f099b09f2535a05ab331"
+  },
+  {
+    "file": "executas/ppt-engine/package.json",
+    "sha256": "97da3ae96b26404ac29036353c1c7fb0f1a163f4c95d4729017dd22d5a4537a9"
+  },
+  {
+    "file": "executas/ppt-engine/pdf-ocr-runner.mjs",
+    "sha256": "417482a75dd84bea6f742678bee8f1daf4172818057063c6c8c7ca01f7f4c970"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-generation.ts",
+    "sha256": "e80e28f58ed29def976f0c8353ed98b1dc77c64e42c71049f1a4f4fd1a2ba68e"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-publish.ts",
+    "sha256": "945d0c1fb9348186d0507e156e6adb1f0dabcce3b71dd226458d9eb139c75953"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-reconcile-engine.ts",
+    "sha256": "b69190dd5adbc95a5e19f0d12ebeb0a983dbbc4f8941dc8c987b17000ede6b69"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-regenerate.ts",
+    "sha256": "e1559cc709fa547d2cf98f1901ae42c8f6dfa80a65f8eb22f017c2651d316814"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-restore-idempotency.ts",
+    "sha256": "484a4fa86f6ba84db54b01826c4d245ff660cc29b743ee4cdbc46ad3f3b9ad17"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-restore-inplace.ts",
+    "sha256": "fcb7bfd8eaa529928b84026b8ec4e4e280411ef8a54258c782e1776593c10ecd"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-restore.ts",
+    "sha256": "4d7e3eb895f63dcd4b0758db1c1085ce263ca9f35f9e7e403b9e5b53b2dbc0c8"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/accept-snapshot-verify.ts",
+    "sha256": "69b0eff8249a7f7aa68c8ada637d93bcd45b18c314e37b39cd697ebd2f744ebc"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/binary-release.mjs",
+    "sha256": "c1d14f09a1f4a4933656898ef273b2ab8020112418b82d5244b514f442e68b54"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/build-authoring-kit.mjs",
+    "sha256": "71ec7c62c18cefec0290edf27bb7a7253bbf8fd625f464ede910658d5a9a61a5"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/build-dom-to-pptx-runtime.mjs",
+    "sha256": "fb07ccc1ce9de2263e117c139f7bf0a949aa7af3aa404e10186519760e614a99"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/build-forkable-templates.mjs",
+    "sha256": "1ac036c15b1ed283a205a37acf217ea716032017ef0a5a743e6bffb32238f258"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/build-tailwind-runtime.mjs",
+    "sha256": "724288c6cea0731dc74e4aa369314c89a6748e5dc582a2c007933b3b70ce5d2d"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/build-template-registry.mjs",
+    "sha256": "bf88f3020c9f8672e41f8b8427c38e4e18d77d25d1f31bce7b9c1efe0b04facb"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/convert-deck-html-to-pptx.ts",
+    "sha256": "968f36691742f5e36467cf12a515147a436105c31629325f48251add987bcbd9"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/corepack-command.mjs",
+    "sha256": "82ae7761d14569dc38a5b9654c26543a4c902711291618a06a7dd44a316e340d"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/merge-single-slide-pptx.ts",
+    "sha256": "8773a4e655a495ed84b21b08ac1ef429bcfe814d2e0f07ca69f5c030d68cc78a"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/patch-postject.mjs",
+    "sha256": "226644ceeef7f784b7932dd7bf4f7c2e456aba5d9d849d2ea51410c6a6da5834"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/prepare-browser-runtime.mjs",
+    "sha256": "d9350b9726255904cba62d3615b197a502be87729e4daa1a4bd0c58f85e6dc6c"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/prepare-sea-bundle.mjs",
+    "sha256": "1044b5d9377de6c2118ee16fa77936dd62d4d29b06151ff632d96876c92f08bd"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/preview-page-source.ts",
+    "sha256": "ffb5285dd50bc8779afc30d8cd5362dac6decef33dd30d364bf39a9dad188b85"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/run-isolated-tests.mjs",
+    "sha256": "f9916eecfc1c5839f4e5e87173b3f63b2b10684eccdca0eda3b81d809471b081"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/smoke-test-binary.mjs",
+    "sha256": "9f2c3cdd37f4f210804ac17eb67016738de9db28a3cdcbafc3033875df23a41b"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/snapshot-reconcile-local-ahead-test.mjs",
+    "sha256": "9ffaaf32355d1425a6871376e43f0831a3bcdbd6a19ab7debd93a1fe899c2133"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/snapshot-upload-test-gate.mjs",
+    "sha256": "3db7d43854bb78e21d359b5e35b062008b1ac17e616b94b4080b5bcaa4daa4c5"
+  },
+  {
+    "file": "executas/ppt-engine/scripts/tool-manifest-validation.mjs",
+    "sha256": "8a6e662cb9ba77c402ea402c10596ebf6ad0d1e6409a9e03aabcf2df3c8f1f1f"
+  },
+  {
+    "file": "executas/ppt-engine/src/agent-resource-info.ts",
+    "sha256": "b6100ba8b02259096a80c52892134f0043b17b9b714ffb753e51649ed356f2f9"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/generation-run.ts",
+    "sha256": "b3563bc0afaa5c505ff3070b837131bd78e243a32265604d3cc2138fa4ab66c2"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/image-asset-file.ts",
+    "sha256": "40b499748e4f141ae408b42a37b83562aabba47a79a56225aa1ffc1b1bd67da0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/image-candidates.ts",
+    "sha256": "334499a1f88783a8507e67395a582208ff345cd3cf1db64d0dfd3f8b3fbfb56f"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/index.ts",
+    "sha256": "ee4730bcdf9a05a607abbb3e0155ef9f8e50c5cd4833938fbdac62e95db3822a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/page-image-upload.ts",
+    "sha256": "fa6fc7874828d40513eeae44a80b4e70a7540b37eaf48ecd882b38dfbd5004cc"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/pdf-export.ts",
+    "sha256": "498138a249ca03ae54a27eeadfeec75d4c7df7bb8bcd6fbbeedef362c3619777"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/pdf-page-selection.ts",
+    "sha256": "d255c7f01654c7b1a68e687da25483b250a7515347a97f90cfd20b48b35f7cad"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/shared-research-progress.ts",
+    "sha256": "dfea14dda5b3c2856c4c387a469e6b1bda6b1cbe5147bf24876c5a84cbc406ef"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/snapshot-sync.ts",
+    "sha256": "f752fd3cddfde8c17b6ddd36034285ed40b4ff36ee36e6ec30d28c231ae7cac7"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/types.ts",
+    "sha256": "6905065c171a0c29d8c03a6439a5341e943eb26e0c2b51e02a016a0707c355fc"
+  },
+  {
+    "file": "executas/ppt-engine/src/app-workspace/workspace-tombstone.ts",
+    "sha256": "92c7e009b65472d6bdfe79fdf1802755810ec8585b46a153e4edd0590dfeedf7"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/agent-freestyle-v1/group.json",
+    "sha256": "ebba3eff96a42fe7f82d81fbb7e2f88bc86c564e5c931940d1ee8155372d2701"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/agent-freestyle-v1/theme.ts",
+    "sha256": "fc0e36a84606c4cb1a40b23f9354b81169538b71499d743a52ed0fc7575a4572"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/agent-freestyle-v2/group.json",
+    "sha256": "5513f1b86b09534afe712f08018320856823324f6475c3d544a623439ca15037"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/agent-freestyle-v2/theme.ts",
+    "sha256": "cf555cc8513f01340f3f12e062944b58ce000fbf65f73d5b55853fb509e68f4a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/catalog.json",
+    "sha256": "8a46367e3a3a3e4d18e6206a55b5771cc5601b2e89cbeb66bbdd05c1e4b36eec"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/data/demo/chart-evidence-canvas.json",
+    "sha256": "2f019530f055b46cf2badbd9b9882b95e5f2c344a0bb1605c9289fa2dc8629f2"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/data/demo/closing-canvas.json",
+    "sha256": "a931147d44e36df403d26f20efc4f2594a834a32ccf6155b0d2fc7d431ff81b6"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/data/demo/comparison-canvas.json",
+    "sha256": "e842954bfb1e5a614a26e89d5c9e2b61290234f12e4024a62fe35f9d6e5a4aeb"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/data/demo/content-canvas.json",
+    "sha256": "86d65cce4e005a43652701c811b8a6899c513feafefe24a07a18e9006809fa9b"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/data/demo/cover-canvas.json",
+    "sha256": "54406b9d4aa7ef4b012bc4113d673d874a8bc0af710ac2f866f1d865f77fb979"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/group.json",
+    "sha256": "666bf8f9efc60065804219387719c438f6b7cc771b0863acdf612ef22cc3c33b"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/theme/token.default.json",
+    "sha256": "4e80f4aa6a99af00e1fd2ab4e4cfd4f5c7f307bb2d61207dbaac761514be39de"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/theme/token.executive-amber.json",
+    "sha256": "e836da5ad4aeb661c1c8bbe8fecc04657beeb7e84638db353746d817b1266813"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/theme/token.schema.json",
+    "sha256": "bcad2286466bb29da7a46440b18a2626c426c20e68417e79606db70aeb9c98f3"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/theme/tokens.ts",
+    "sha256": "0103a11903cde6e5eb0fca74c7ed08f96d3e4074237ea5ba8235a00901cb3107"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-canvas/utils/templateData.ts",
+    "sha256": "1626efd816ef72c459075c69c391c77fe93e411e9b2bbae95305415524a673d0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/catalog.json",
+    "sha256": "6458282642dd053e451835f8802667edb19205f28440af1acf06d1347ea87a6a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/business-practice-matrix.json",
+    "sha256": "1ab95a87e93cff0e2fc20e1ed1079ab807253edde6ac34f7cfa9b439b5d9e255"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/closing-analytics.json",
+    "sha256": "33e345849da41440bd3b84c2d716beb02619929cbb2a9d241cc6a9befb9df3ec"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/cover-analytics.json",
+    "sha256": "d5787a968b0e017cb18bd2418d5ab463e7ce95bea179adc7c1f3975dd76ff0ac"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/executive-summary-dashboard.json",
+    "sha256": "b3340cbe71e22eff1c0523574b33773fecb92569dc1c8f09c73c322c43c84efa"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/growth-trend-comparison.json",
+    "sha256": "694257df09b4f88d6b50afb9b24191d2ad337a7c251456fbaedc02b34e51f9b4"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/historical-milestone-timeline.json",
+    "sha256": "66e259fec849c3485cd2371e14b257c1096451a4d2fc5c60a9f172e8b962814d"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/image-evidence-showcase.json",
+    "sha256": "071af8bc26580b286071a4e73a88faf31353bf723b9fbfba7ba4a7ccf0c16586"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/population-structure-comparison.json",
+    "sha256": "2ad19f2676e144b8cec66be82c5cd952e3ad6e78c9773dd13ff824d0de2004e5"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/strategic-summary-takeaways.json",
+    "sha256": "9491d417e80f37f4d9edf039146ec2fed9ce68753cc12dc3c6d78bea0eae75bf"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/data/demo/technology-capability-dashboard.json",
+    "sha256": "c5d4432e8929bb96c706399d9e7cd18edd945b295b1d4c378ff38d06f139c15a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/group.json",
+    "sha256": "b79144c251fbd9bc2412d3b48841abaa72a08cc7419c6e5c0f1c85dfed8761c3"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/theme/token.dark-orange.json",
+    "sha256": "3f72d4e72a80ee50e60f6ff0a9a22f33cb63412e413c42debe2575fa69291179"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/theme/token.default.json",
+    "sha256": "4e80f4aa6a99af00e1fd2ab4e4cfd4f5c7f307bb2d61207dbaac761514be39de"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/theme/token.executive-amber.json",
+    "sha256": "e836da5ad4aeb661c1c8bbe8fecc04657beeb7e84638db353746d817b1266813"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/theme/token.schema.json",
+    "sha256": "e36a467656d1556300030e493c1002504c931881ba4b543af9b97bf8ca519527"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/theme/tokens.ts",
+    "sha256": "0103a11903cde6e5eb0fca74c7ed08f96d3e4074237ea5ba8235a00901cb3107"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/chart-analytics-v1/utils/templateData.ts",
+    "sha256": "1626efd816ef72c459075c69c391c77fe93e411e9b2bbae95305415524a673d0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/defaultSchemes.ts",
+    "sha256": "c2e6b1a678a47a06d72450fab9bc2b249e5e6dead4720564fa697170905061db"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/generated-registry.ts",
+    "sha256": "cf1164292967cf65511e10de234bd68616867defcf3da33d542cc3dea73e0434"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/catalog.json",
+    "sha256": "30d89f170acb45d6be076c20db15456e45cea9f94270f7f08b3e1e1ccd28873d"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/data/demo/chart-evidence-canvas.json",
+    "sha256": "3e5d3e1f57575e5f7c2a02147c8dbd8808b8466530b906c873f15fd136bd1d7d"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/data/demo/closing-canvas.json",
+    "sha256": "205a2293041ca88fafb1edda71f115f8e37fd552aefabf448b6ab1135bb47750"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/data/demo/comparison-canvas.json",
+    "sha256": "158eba9ea93e7aa524e17a64b09973470f15563623dddbe99bf767d9cb213477"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/data/demo/content-canvas.json",
+    "sha256": "f8484be2b17f17edfb3c6dd7bff33d285c7c34d204dca24d54b29e3b03c421a4"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/data/demo/cover-canvas.json",
+    "sha256": "74e491579e0de57a3ad39ce17bd14ea8ba06da1541000c6db7122b5f0100f81e"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/group.json",
+    "sha256": "32646672ed94110e48ecf7b69f8feceb0fff0bd38760e863d03233a4d1265cf2"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/theme/token.dark-orange.json",
+    "sha256": "00d85f57830032fd3f971d23c414a40b01ba320534188a1da2bf01748b50a574"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/theme/token.default.json",
+    "sha256": "1717444f0fce4d8a4c20cca26a18eff52b4d5831f03d6169f23833b421c1eb25"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/theme/token.schema.json",
+    "sha256": "ad4a3566d19d81759e4d3838d1d336cf5ce85b2e7b43adc785de169fb17b6d84"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/theme/tokens.ts",
+    "sha256": "96d0d056932a1b96eff6796d2a865091e16c25b2bee4af480695be7c20d5b221"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-canvas/utils/templateData.ts",
+    "sha256": "1626efd816ef72c459075c69c391c77fe93e411e9b2bbae95305415524a673d0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/catalog.json",
+    "sha256": "c4b1cd2f38a8ca10f8b58b3f326a329dbf26a7103d907f78bf6e6dc7017738bb"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/aging-dependency.json",
+    "sha256": "124dbebdae0eb4266bad8d349180608313b1133ee1ea09ff9e5303b77e77611b"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/closing-contact.json",
+    "sha256": "fc3b070561c02228d3115497814c0a8d21568b84dda3928bb70dad1dfb68d740"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/cover-comparison.json",
+    "sha256": "fe74052974331081140019aa37f964195980687bd4680d7cdda1519ae6d04f80"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/demographics-snapshot.json",
+    "sha256": "14597df4314a8ae33faa8d35b13490188a1480738d6de75a7a2cff0a45509bb6"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/economic-structure.json",
+    "sha256": "61be72c3c11017a6a763cad8eb4265204dc0ce2747525e2b1e2ac9371949baed"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/economy-size-growth.json",
+    "sha256": "66600f09323c547468863bb8d430cba34661748eb24be4d70b75668cc75c5dac"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/evidence-image-table.json",
+    "sha256": "3ab64823dd308a9da126155b01e8723cfc3ed18a44b81485bbe7a66f9edf64f2"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/historical-milestones-timeline.json",
+    "sha256": "c2e88d4a3a3c6a0cdfc32d6462cddf2487f83ca70228d8a85ea3ee92f6d23dcb"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/population-trend.json",
+    "sha256": "1aa84128bc7e7bfb67b3dcbb2615f57439c3ee4041f5c715b3da55976831735e"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/technology-innovation-kpis.json",
+    "sha256": "e0e4d789558fb1fcb3beeafd04c599f7bb4e7e0f994aa169f8bccbddb90a200d"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/data/demo/topic-overview.json",
+    "sha256": "85486f8977190e065989aa5ee9d195aecee51deed4bf754d14d62ae2ebfb47f4"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/group.json",
+    "sha256": "6176f45916951f45478b90e02de9606c7cb313249bcf7110cb22d58a68ee2ff7"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/theme/token.dark-orange.json",
+    "sha256": "00d85f57830032fd3f971d23c414a40b01ba320534188a1da2bf01748b50a574"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/theme/token.default.json",
+    "sha256": "1717444f0fce4d8a4c20cca26a18eff52b4d5831f03d6169f23833b421c1eb25"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/theme/token.schema.json",
+    "sha256": "ad4a3566d19d81759e4d3838d1d336cf5ce85b2e7b43adc785de169fb17b6d84"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/theme/tokens.ts",
+    "sha256": "96d0d056932a1b96eff6796d2a865091e16c25b2bee4af480695be7c20d5b221"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-blue-comparison-v1/utils/templateData.ts",
+    "sha256": "1626efd816ef72c459075c69c391c77fe93e411e9b2bbae95305415524a673d0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/catalog.json",
+    "sha256": "58b799b334b43ab3afb6399a2ddbad889385b551a3715e448db50bb16e82235e"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/data/demo/content-canvas.json",
+    "sha256": "6b322deea33e1870077e7659920f61739ec5d384ebac9a72e65dc7c7827fcd1a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/data/demo/cover-canvas.json",
+    "sha256": "c032870db6b9e78b9b2d6ad71761be0d52f1e01aa26d7065f800f2e577d1e578"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/data/demo/section-focus-canvas.json",
+    "sha256": "28ad48a0db2284c237d3a2ba1c67f1bba347fd0ce4458ce661e81e5062fac391"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/group.json",
+    "sha256": "dbb616fc2f5174213b9ee1dabdb689b14b0c6505c62ff57759fa8e42a7a55bfd"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/theme/token.dark-orange.json",
+    "sha256": "7afb890b8a95a82dd045474944f097d215ed9405bcd5d5b941452ac5951983c7"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/theme/token.default.json",
+    "sha256": "d68a58a20e6aa7d6600e6236a66875c86f986c80476354f0cea91458b20dcc86"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/theme/token.schema.json",
+    "sha256": "ceb143c22df32cdb627e6ecb181c108bcba290ef49973cc821c2d277f646dc6f"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/theme/tokens.ts",
+    "sha256": "7c7267b3e686e15186437710624192116a6db746425c802eb810755f21064fcd"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-canvas/utils/templateData.ts",
+    "sha256": "1626efd816ef72c459075c69c391c77fe93e411e9b2bbae95305415524a673d0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/catalog.json",
+    "sha256": "d5a9bd35bc7a763538db0f9b76355a36ed1ac7bbaa4d6c122cbeb26e50a9d605"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/chart-with-narrative.json",
+    "sha256": "15c8a8ecd7174d3c3fa33f86d6f60a876915f13416cf958b7ea7f9b14e3767f7"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/closing-actions.json",
+    "sha256": "42bb65ebdaf2df4d0cda3f22cad4256b7f8e1293b32784e71e6dc997e901e637"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/comparison-matrix.json",
+    "sha256": "4fb06562cb43110d057d1dc65584c8f4ed5ae466f9cf90b5a865cbc4deac34ac"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/cover-statement.json",
+    "sha256": "d5d577a101fd9a8d1a3909115484c661a46fde31871b1d7f4a3aa65017857c85"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/image-narrative-showcase.json",
+    "sha256": "8642cbb7580068bf85cd3e38fc9dabd39d20c6f8dec4622ca676271ed8b9ec57"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/kpi-summary.json",
+    "sha256": "f6881136d94710822c5bc2a46be462db390c88567f85a6ef7d9ee2b7e6f1442b"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/section-divider.json",
+    "sha256": "93a366562e625c0e815931fe0ff1c550c67a6f3e76b41f78c4235921ad96028e"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/timeline-plan.json",
+    "sha256": "23d8ab33f71b4cfed1b497ffed4fe9d41f89a69f350254fbe92df03dc3331d4a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/data/demo/two-column-insight.json",
+    "sha256": "aa345488e9083df68126595baa6f758b35712b361ea5326fbc09637a5f8071fa"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/group.json",
+    "sha256": "8309adc19bdf36f3d24a9aabbeefb709832f2c66d3cf973af97917ebba83732a"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/theme/token.dark-orange.json",
+    "sha256": "7afb890b8a95a82dd045474944f097d215ed9405bcd5d5b941452ac5951983c7"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/theme/token.default.json",
+    "sha256": "d68a58a20e6aa7d6600e6236a66875c86f986c80476354f0cea91458b20dcc86"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/theme/token.schema.json",
+    "sha256": "cf1e7976ac6e996bd238061ed4e11a719d3f790ad10e237cdab043efa469093e"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/theme/tokens.ts",
+    "sha256": "7c7267b3e686e15186437710624192116a6db746425c802eb810755f21064fcd"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/red-finance-v3/utils/templateData.ts",
+    "sha256": "1626efd816ef72c459075c69c391c77fe93e411e9b2bbae95305415524a673d0"
+  },
+  {
+    "file": "executas/ppt-engine/src/app/presentation-templates/utils.ts",
+    "sha256": "f52bf6b7c50c316affa4524e4ce892dde42b1279e1a1908222ed6ab95afe6dce"
+  },
+  {
+    "file": "executas/ppt-engine/src/authoring-kit-workspace/index.ts",
+    "sha256": "0022043f7e8aa9faaf887590f60a0cdbf7b1833cfaed87b1e3e192ab580777b4"
+  },
+  {
+    "file": "executas/ppt-engine/src/browser/local-render-deck.ts",
+    "sha256": "c0fe8ec5acbed1bb519d789927e684b3dad2c128fb49985f1e8d96504e465c28"
+  },
+  {
+    "file": "executas/ppt-engine/src/browser/local-render-slide.ts",
+    "sha256": "f252b3665d1cd73c57b3825704620b94de3e7542ae39d61c12fe32fb87ac3792"
+  },
+  {
+    "file": "executas/ppt-engine/src/browser/render-deck-auto.ts",
+    "sha256": "80372e090a844a2d22534977f6571cb74dabb867d2ab4bdeecf78a3b24c5857c"
+  },
+  {
+    "file": "executas/ppt-engine/src/browser/render-slide-auto.ts",
+    "sha256": "8128ea6f392d5ad10ef0138b5a367c39b48d58aaed340ea1fba80155af7e39c8"
+  },
+  {
+    "file": "executas/ppt-engine/src/browser/template-entry.ts",
+    "sha256": "a528f40c988fd2311f34888a8d6c3751d809d081e36746ff3ec7dd0cc40dc98e"
+  },
+  {
+    "file": "executas/ppt-engine/src/cli.ts",
+    "sha256": "414299392683d4cd1352ea992a3ae18b6d3714a1a20b5158d2807813a9d4e161"
+  },
+  {
+    "file": "executas/ppt-engine/src/diagnostic-logging.ts",
+    "sha256": "dea63f3bb4f380cd356cbb1f6e216de79c184ff74a47b67e3484cefac186741b"
+  },
+  {
+    "file": "executas/ppt-engine/src/diagnostics/archive.ts",
+    "sha256": "01f6665ccc15f223427ee527d5133d78a31366f65bf5c7ef8e6da8fbe0fba28e"
+  },
+  {
+    "file": "executas/ppt-engine/src/diagnostics/log.ts",
+    "sha256": "bd77b4a4fe3869918cd6a100994ecae96eb2940f63663dd7e3c0591cd9904759"
+  },
+  {
+    "file": "executas/ppt-engine/src/diagnostics/redact.ts",
+    "sha256": "a6cdd789bd9a64bcef5078da812f5cd46c9c63b36f9070d00ef481e5718d7f13"
+  },
+  {
+    "file": "executas/ppt-engine/src/discovery/index.ts",
+    "sha256": "a9dc5b3c43a659f64a5020f8fc3d43eeaba3b8abc712eb76e85ead820f490c15"
+  },
+  {
+    "file": "executas/ppt-engine/src/export-only/index.ts",
+    "sha256": "621e0372e4f339aacf81055026645a770898b3c2c9c7cb0bfb2fcdc1ff69502d"
+  },
+  {
+    "file": "executas/ppt-engine/src/font-library/index.ts",
+    "sha256": "6f89b6d91f0a958804ee5e7bae0c13fb04ee9864ce5bcaf144005b7c83c54433"
+  },
+  {
+    "file": "executas/ppt-engine/src/fork/fork-template-group.ts",
+    "sha256": "8575eea229497cda61cc12f5d2b88c5dec5cf240f8def07eee26c1ee2124f3ac"
+  },
+  {
+    "file": "executas/ppt-engine/src/global.d.ts",
+    "sha256": "24bb56bff724869b7a98ee799a002bf58044e541b9eb1a846e80c9e5fd7c903d"
+  },
+  {
+    "file": "executas/ppt-engine/src/http/server.ts",
+    "sha256": "ad3f55894bca8527bc4be4200db13284e8275565f392ce943be95ef9f453973e"
+  },
+  {
+    "file": "executas/ppt-engine/src/index.ts",
+    "sha256": "1fcfc47be3eaa11b391b11873a8959659e79e47c087a17a22fc59c2f3c5a4135"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/agent-report.ts",
+    "sha256": "35e55771bdd46b1372611c3cc904405d9a3c9a01f65680a5e0e7f5c1026ffc72"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/audit.ts",
+    "sha256": "7eb90060f957b31604453252bedbd179a80fe9887ab67dafc842f2db2acc08db"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/cli.ts",
+    "sha256": "4cfd3d0e46f11e744fb8552bb44fea17ce5d1a4b59cc00b4dc14c326c17a2da9"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/geometry.ts",
+    "sha256": "074772c333b1a8cd68daaf19f76fae65d8fee29d234811566160f77df3e0e136"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/index.ts",
+    "sha256": "7b6b8e25164ba33c38f159de6d06cc9e8b377bbe8578180a4196ffc74f3dd046"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/report.ts",
+    "sha256": "fb2e7e57d94975b4eff9b09c9da8d0c0dc1c7ad37add0843e11eedd32d4fac88"
+  },
+  {
+    "file": "executas/ppt-engine/src/layout-audit/types.ts",
+    "sha256": "9eca3cf86d66e475fa59c29d4f5945f7b319f5a73ed2370d22a7e4712b07ba74"
+  },
+  {
+    "file": "executas/ppt-engine/src/local-template/loader.ts",
+    "sha256": "4e2fc469ccaac1cb4f7759915ecf37e140e06b0df1a6943495667d4c01f18cfe"
+  },
+  {
+    "file": "executas/ppt-engine/src/local-template/typecheck.ts",
+    "sha256": "559791bb4b4bcaf50d4b3070c5dee6b5232c21f1dcbf27ad0692fa2870788f39"
+  },
+  {
+    "file": "executas/ppt-engine/src/manual-page-revisions/index.ts",
+    "sha256": "2ff4d54d543b5fbe475ae49e9fa224ffe713958bf40601fc48f84807f713dca9"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/aps-resources.ts",
+    "sha256": "704678264f6a857648185d1bc934693840c640d27cfe0faa80fa2e541b08e43f"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/cleanup.ts",
+    "sha256": "3ec8c804a3cc9ab941c530989a05392b8063f65b4b96e2e595dee3a5bbac9579"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/current-page.ts",
+    "sha256": "61684f33e4d9ec5c781789d5e924279208d3e8eea62c1c408def3b7991b8d010"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/fallback.ts",
+    "sha256": "d78b381605a1144725f110e4ce2e65300a07c61726597930a8894511415f3a5c"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/limits.ts",
+    "sha256": "16e2db8cb3a0917f8c73a511b59f820ea6773ed1fd85ed40e2037fda38bce156"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/preparation.ts",
+    "sha256": "9f13cff909660a8f0f72be6212c9cb476e154b9f59a746824205d232a8da9df4"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/recovery-log.ts",
+    "sha256": "2ac924d493b1ab23032155c3d87e27ab144910d6be03961bfd7d8e50520ca3dd"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/recovery.ts",
+    "sha256": "3b28920405d5fd99a846dd07798cbf527ac87c2b6d3b4369e2a4c57a7260a506"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/resources.ts",
+    "sha256": "3bcb5361a276dea2d031261bbe921a1eaac4a764075e6eb8847bbd203342da60"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/snapshot.ts",
+    "sha256": "9867b77e14a78807d0b84ca303e34500d9a3709e1993eb4db1bfe7b5cddf36ff"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-html-preview/thumbnail.ts",
+    "sha256": "49907e50933d8c0c3fcfa8dde3077504ce958ec0e5474410c77cd1164a96a8ac"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-regeneration/beautification.ts",
+    "sha256": "b69a7bdba1719935036aa4c8241867a427d26ba8b5ba49195ce776470b656f49"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-regeneration/store.ts",
+    "sha256": "6e28b9e042667de62871df0e8f2551ea2bc7929bcaef67dda80daf42235165cd"
+  },
+  {
+    "file": "executas/ppt-engine/src/page-regeneration/types.ts",
+    "sha256": "df87d7da80046a1a2c2c524f219ea641c941fc5f99d59496ea0af59372ad0700"
+  },
+  {
+    "file": "executas/ppt-engine/src/performance-runs/index.ts",
+    "sha256": "2b993fd6a47624bfd968f4174bd1449b95cc69e67bb9c6324577a6c055d89257"
+  },
+  {
+    "file": "executas/ppt-engine/src/performance-runs/token-usage.ts",
+    "sha256": "0378397a65a80765d8b0564d815f67e3f30ba8e08251adbf8aa54db6ff4f200f"
+  },
+  {
+    "file": "executas/ppt-engine/src/pptx-export/css-image-url.ts",
+    "sha256": "80b99ab059ae7c6c5b16f9ae02f402774b7b939851bbad487e4a98eb7853d94e"
+  },
+  {
+    "file": "executas/ppt-engine/src/pptx-export/dom-to-pptx.ts",
+    "sha256": "20a75f417b40bac66cbf3220c0df6169c1ec141e5b98f9fd20ffead9bd97041b"
+  },
+  {
+    "file": "executas/ppt-engine/src/pptx-export/google-static-fonts.ts",
+    "sha256": "0a47e54894c69c74db18ad97ae7fa9c25f1595f069f8ec1d31150d27f86f0afa"
+  },
+  {
+    "file": "executas/ppt-engine/src/pptx-export/pptx-page-merger.ts",
+    "sha256": "6b870a243b2ba4d439345a384efa7cc7ec656c5027447e32a6ea063e0a6ec34b"
+  },
+  {
+    "file": "executas/ppt-engine/src/pptx-export/system-fonts.ts",
+    "sha256": "a98216067311a1a58f2c0838286254dd2d044a9b4d20eec1a198a962a0f9cc73"
+  },
+  {
+    "file": "executas/ppt-engine/src/pptx-rasterization/index.ts",
+    "sha256": "a79e58f9c46abc18e37755a71afb6a0cdf988846fe4d0aacccce06c948f84fa2"
+  },
+  {
+    "file": "executas/ppt-engine/src/react-dom-server.d.ts",
+    "sha256": "da5c04104b03d63cd4a18d2159dbdf82bd0e42e00316dc4b907d2370ef0a79ca"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/browser-artifacts.ts",
+    "sha256": "1412d658083728f12cfc985a4a0b0f37ff72004578162ff70b75386d0648a622"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/build-deck.ts",
+    "sha256": "92d9a6d8ec6658b793fc7c53141a7208521195b531c077b7f3e86e6dab43802e"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/build-page-source-preview.ts",
+    "sha256": "69aea1b82ceaa15c3b68b3ae05e266b9932400951225ec9b248533b3b8602b59"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/file-names.ts",
+    "sha256": "265268050ac574bc92ba62d1dd1102c9df691d73408ddee48acb1077c956d40b"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/local-runtime-bundle.ts",
+    "sha256": "b7532329cfc287ce88c669bbddf08f4b7b30debd4a348ad44848514296938f9d"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/managed-page.ts",
+    "sha256": "fb014760e4c5aa1ade904350f0732f9651d9cf65ed0c62c85e1d0b6e7c5f98e5"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/manifest-render-plan.ts",
+    "sha256": "e9a428856a4e754512aaf2cd73a7cc7db1ea621a92a025450d9815e508837d27"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/page-source-document.ts",
+    "sha256": "760d658dbadf49134229ef1d26d25db0275b7b712822c64209b7a108a77fe8d1"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/page-source-runtime-bundle.ts",
+    "sha256": "bf660485edd429b680a84cb870b6156fa3ac7a2a4686283ae5eeb3d78728172e"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/render-slide.ts",
+    "sha256": "72798fc5dea6e9aa96701d17e883c9ec30f058093dc6c0f96391d3ffe734d149"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/runtime-bundle.ts",
+    "sha256": "3bde0bb73f8845a6cee4fd8d46c1dd16ad0611153ed8c24084f78ca38c8e8bbc"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/screenshot-render-queue.ts",
+    "sha256": "5e6c438a8ebe98c61e43dd63ad85c5a04b524de1dea391ad04a9d1831f64724d"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/static-html.ts",
+    "sha256": "0197aadacccedd50a3b1071e988cb7fce6fd4df412fc697dc9a6a51495be2ac8"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/tailwind-runtime.ts",
+    "sha256": "5ed4b9334c9bebdebb3052f416a1eeb1f4df5dff88578a587d1dcd6a9d360f8f"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/theme-tokens.ts",
+    "sha256": "4679ccdb2159ab41ac4788c312412399d92aea7a002339035acf0cfc7ebf5e23"
+  },
+  {
+    "file": "executas/ppt-engine/src/render/types.ts",
+    "sha256": "8ae196253510ec7abe3375d5bf7247c415b0fa201fe83a1083f86116a56e1879"
+  },
+  {
+    "file": "executas/ppt-engine/src/research-image-download/index.ts",
+    "sha256": "561655c7026e1b5860285bf2c82dc31ddf21422802f3b1669f8ff1fc634f0c1e"
+  },
+  {
+    "file": "executas/ppt-engine/src/runtime/browser-runtime.ts",
+    "sha256": "f2b9eee144ced4b37fad151ac8ce4abf494607f0c4d8d42274dc35278b78e749"
+  },
+  {
+    "file": "executas/ppt-engine/src/runtime/bundled-browser-runtime.ts",
+    "sha256": "d458c0b7a19b50a5b9582bf6c9556569e5746fd4d921089ceafa8f232a9c24ec"
+  },
+  {
+    "file": "executas/ppt-engine/src/slide-format.ts",
+    "sha256": "208852d293ca6b34176e8cbf8fd30feff978ea2502f2e4fa06af7084e2dabab6"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/checkpoint.ts",
+    "sha256": "45b90e3a2b071c67c3de42adb580edc0d0f2059d39680670ce4ab53369a65a42"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/index.ts",
+    "sha256": "dee505ec1eb7165345550fd42c90e701cd287c1a33175dc9149eae7e165c624e"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/page.ts",
+    "sha256": "4e1c0bbb6e7f673d003db1546d2673e89d9d3ae2d038e0323927d1073c5e557c"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/plan.ts",
+    "sha256": "10b7157f353c1503b61d6c27016206d0e38e97333af7d7005a778b0fd8cbe1f7"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/project.ts",
+    "sha256": "ac516a6a0d0da1dbadc39059aae1e6efc67b861992bb4cc8a202f870e73e47da"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/query.ts",
+    "sha256": "36bbaaa0819207678f38365ccddae7c0caeaf742e82a6c6d3713c1c5e440b92b"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/actions/template.ts",
+    "sha256": "c669d0a1555a59c4d99182bbf86dec1830f507bfd66f2b464d36396416ab6456"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/constants.ts",
+    "sha256": "6be447bc5432ea896a8dee96b702985fa8872570ea98187045d7ac8edf5f23eb"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/index.ts",
+    "sha256": "6460f594c66eb0498ac5a644c8644310ef8fa56cc179ca6236743fea0d6c84ae"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/promote/index.ts",
+    "sha256": "5ca96f2a8cbc00dac0fb8dcd57660b35913caa74ba1423ef8083d2944636341a"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/recovery/index.ts",
+    "sha256": "184f184c74e82e4f7ccf4c1a7d525de9722c8bf54e478151d01d7ca8ba3f9713"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/rpc/index.ts",
+    "sha256": "7a3a50f3336f81b677d916c6f9b9f1e4fd9733e298b0538271ca641774e84d79"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/semantics/index.ts",
+    "sha256": "85c08c93e76114bfd08464142c6cf1562e8b3ed80b9effd965247bf68dca9afe"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/storage/events.ts",
+    "sha256": "f5a0c38e476e8f78a7e2a1b247ff8ce3b6f1d84ed88fb3b06abf1995bcaec5d6"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/storage/index.ts",
+    "sha256": "e116114cbfec5cd17edc21f58f27b49d2e6581c6affca169fa9c3cae651f798d"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/storage/json.ts",
+    "sha256": "461b6b199d57a4137271637fc7e354236d91b6cd397f9756df5cc708a62bfe87"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/storage/paths.ts",
+    "sha256": "f941ee3dc404e641dfcebaa0d98d762c4227c30b5ed998dea5296961155b5db2"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/storage/records.ts",
+    "sha256": "d568e963325d692e56f36c568ecd96e7be8f52ee97d3f98a00fec55d4162c1e5"
+  },
+  {
+    "file": "executas/ppt-engine/src/task-state-machine/types.ts",
+    "sha256": "5c3de4c808d4a2af040ef9c27bf285ed48432ff3158ea24b765d62819c3f11a2"
+  },
+  {
+    "file": "executas/ppt-engine/src/themes/default-theme-presets.ts",
+    "sha256": "664cb1c634be083e491bf363b5b6b6f64ebd9cbb991f50966755fdf9e9db1d32"
+  },
+  {
+    "file": "executas/ppt-engine/src/uploaded-source-preflight/config.ts",
+    "sha256": "ad7814474860c24253061101d86ec10aa57203a7b7f5510b43c0e813876cf3c4"
+  },
+  {
+    "file": "executas/ppt-engine/src/uploaded-source-preflight/extract.ts",
+    "sha256": "11ee864767f4d82db5e07d2c04a78d87164075974baf91486ef56cb4dcf832f4"
+  },
+  {
+    "file": "executas/ppt-engine/src/uploaded-source-preflight/index.ts",
+    "sha256": "9a54aab8e4ccd667ea4cc9dcd2fa49244972d7a9218d7ceef29f4f20f7becd67"
+  },
+  {
+    "file": "executas/ppt-engine/src/uploaded-source-preflight/pdf-ocr.ts",
+    "sha256": "b66d0516f75818e1b7e3cf62fc7e8b6000daa67e7a364150a3c3d174e7648a49"
+  },
+  {
+    "file": "executas/ppt-engine/src/uploaded-source-preflight/routing.ts",
+    "sha256": "160204f75c3aa1bae092acb4ab4bc22ce2a2fc4dd52ab9229eadd4ba532b1bca"
+  },
+  {
+    "file": "executas/ppt-engine/src/uploaded-source-preflight/types.ts",
+    "sha256": "e5e94df79699d684cfc39dc67ea943b71b06d357b79614eb43895004a80c8b52"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/asset-slots.ts",
+    "sha256": "69b52dd2d4158a0051c5e320f6c1e2dab6123da13ff9640e23e3ae925a163075"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/diagnostic-bundle.ts",
+    "sha256": "cbaf56d5d2f6b657c33ca5dd517cc3d147ee46b54ee5948669d194b44ee9fafe"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/diagnostics.ts",
+    "sha256": "1d8d35f0c2c61fe66aab3df79d330b3e99aad2594df6bf9ec1dd8a0d53a0ad94"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/image-slots.ts",
+    "sha256": "efc4c2b28f2a6f46b45cf073ba5799331f09b912806d3b4621e2be455ef73480"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/index.ts",
+    "sha256": "fc66644c52ae384d826c53cb1cd01a420e0f9172c0a14b76a0c773a244a69fe6"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/storage.ts",
+    "sha256": "7aeba7fc96c73f255d91bb75223f54b94930246c3e198e1f178d62a7a89da136"
+  },
+  {
+    "file": "executas/ppt-engine/src/user-templates/types.ts",
+    "sha256": "3ce6edd849bb0833261d51b1b6e24ecf4e5e54a6ace6ff21fd7a20cb28c2e0e0"
+  },
+  {
+    "file": "executas/ppt-engine/src/word-extractor.d.ts",
+    "sha256": "8149f18fdb7cd3d2bc8dee4c0a9d707efb0513b564e5ade078648ec8fb2b257f"
+  },
+  {
+    "file": "executas/ppt-engine/src/workspace-root.ts",
+    "sha256": "4b2469416b854e7ccff2e2034ffa87b0b96e9f14c9f11a9d1c14a3927dbb3c94"
+  },
+  {
+    "file": "executas/ppt-engine/src/workspace-slide-format.ts",
+    "sha256": "e3c469c8a5aed19012317691a1d8e359d5b3ad8161ba25ded0fd966441b06ac8"
+  },
+  {
+    "file": "executas/ppt-engine/storage-retry.d.ts",
+    "sha256": "f5325098b8beae6eb2efc0c5d1090ecb6c5808e0298560b85497cb6a358a1526"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/authoring-kit-generation.test.ts",
+    "sha256": "f9d8937fbf80e229faa82a35241cdeb6656220fa4b44d1c55636690d50c87ce1"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/batch-test.test.ts",
+    "sha256": "3d4d8001250d8484fc4c40f076526394bc628790513edacc7f722878b2ec8843"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/batch-transport.test.ts",
+    "sha256": "ba5c7745009a3b48dc7759ba19d4e8b2544a45d13d284a4b04dec334cae07acb"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/current-page-cache.test.ts",
+    "sha256": "edb80d6e7495b9d6e3bc72f868724c2df3f2061cee193b123b684ecffd8541c5"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/current-page-recovery.test.ts",
+    "sha256": "4949f5194b74b5e6165465a4f68f77ba5f2f753f7e02ac8e2c6f0b8ebff6c734"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/duplicate-workspace.test.ts",
+    "sha256": "1f9e062d297131268d4902fee28c8c7b543cdd83f861bb1d1a7394f9f0e448a9"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/export-artifact-mirror.test.ts",
+    "sha256": "7e30f326a6997adb6d4473a9227abec4d1cedcb97547f36a225832d2e9052f6e"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/generation-run-id.test.ts",
+    "sha256": "123186ef8e56b33549a4f79ea7c1d376a211695bc3296a1e5ae27124dc671fab"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/generation-run.test.ts",
+    "sha256": "60f6aa613514152c097bf41a75aa7605b9967081cd2fc5dcadef22af61f0959c"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/get-rendered-deck-html.test.ts",
+    "sha256": "ff739ebda8c6ae9a14fdb2796419808270228ef032091d72f09e9d99b912e790"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/html-authoring-generation.test.ts",
+    "sha256": "a51b2e52add404a7c421cee58f07344749a494f5a99dfc0b0b150065cf9125a3"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/image-candidates.test.ts",
+    "sha256": "332f5a467892b86af2d748961cbb586525e981f13de9418b181e5892c031d646"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/image-description-preparation.test.ts",
+    "sha256": "096fae2b89030d7b8f9696e8357a660762f751c56e6e430a2d1fcc05a4b33857"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/managed-font-render.test.ts",
+    "sha256": "dc41ae9f14fdb6eb37260d00fdeea4110656bd7b820b610888263a5cd862a35b"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/outline-creation-requirements.test.ts",
+    "sha256": "0fb933897d7b14881d0efccb3905a2f24aa0b4e77651e5e247fbf085f7deea4b"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/outline-images.test.ts",
+    "sha256": "f8b7ac4b9882e8e881fc85b88373258d6cd7e79d511461d1028b314716fc6fd7"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/outline-v3-migration.test.ts",
+    "sha256": "04d724397f9fe0e2b485f227d9b7e68db195ad710367803c96e04c4200505b5c"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/outline-v4-compat.test.ts",
+    "sha256": "51ca6a1c774a51deb1a7bc250ff2e8dbed2134eba0f4f8cb1f6044639e89c1db"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/page-file-fingerprints.test.ts",
+    "sha256": "6cfa098381fa9919dfd5db6945e74d021db4487b44eb06ec19cfd05b4a89007b"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/page-preview-preparation.test.ts",
+    "sha256": "4adbe176179f5aa0f5454bd1871eef61679c8b41ee6975ebc7a735d15c73d3a2"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/page-progress-screenshot-source.test.ts",
+    "sha256": "a10d4fad40c269eed7f5e17be2f33ace19fe7b0f4d4dada0329edd9e2138059d"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/page-progress-writes.test.ts",
+    "sha256": "6891f20ab83a6aa8830066fd62de4e144d0a58225215f09d95901d35ba8d8464"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/page-regeneration.test.ts",
+    "sha256": "c35398d77b82547d50a5b7dd589ce14cd18c54e602543b8c0fc68a67abcfe4c0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/pdf-export.test.ts",
+    "sha256": "466c3d1aabc220f9286023f72da24438f8121bb92aa81a59d90e03c5d51adae0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/pdf-page-selection.test.ts",
+    "sha256": "cafe569f5e68eefee0c800db586d2c0b7f36647bd2840412ac1c1e87aa593cbd"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/plugin-wrapper.test.ts",
+    "sha256": "8cfebb601073f8c2d3940c9b32cf1f26e066db9dad7dd517788f03afb66611b0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/pptx-export-status.test.ts",
+    "sha256": "6ac926dfed7f2d838413b3bf26cdf50bdb5802636c50bae911398e4a2ea888e0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/presentation-requirements.test.ts",
+    "sha256": "76ea37be327565f9055f3956dc591975fe50b8c9060bc551d441b8c83b75b661"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/refinement.test.ts",
+    "sha256": "709b3ed68d36ee73b67f4428065feea1d9fe8f8cf75d5de98cd721ff5ca64f57"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/render-deck-preserves-outline.test.ts",
+    "sha256": "d2e00a3f581247dde979b501e75e9a7985b5217c597063d3ea33ef4068d3d787"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/shared-research-progress.test.ts",
+    "sha256": "facb572dfd64775366b7491e5deb7dc2d32c279ba1fe8e6a086bb8868f32712a"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/shared-research-workspace.test.ts",
+    "sha256": "fc52b404ba75e1e4b49d01002167a5f1dad22407cc5d2d28010ba421e11eb5e9"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/slide-format-requirements.test.ts",
+    "sha256": "6cf581b8314d3c125f6d5bce790175de5e8dd925aa535e61758af2f5f209fff5"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-create-flow-trigger-race.test.ts",
+    "sha256": "96bee6c15c1bdbd180f57f1144c53c90e7d547a8caad5510fe40d2281a4cf0a0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-dedicated-publish-aps-plugin.test.ts",
+    "sha256": "4cca8bcf1bb7ad551b63925d8b71df6c87ca809a7f68472f3db7e9a44bcdf6a6"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-fingerprint.test.ts",
+    "sha256": "3fcb5090352560a5e19c1649ffc907c389680b139badf2a3e850b70d1f5962a6"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-portable-contract.test.ts",
+    "sha256": "6346515d1e7eafad2c160b0d23ecc010ff91f6825ed6502b3c125a4e97e6533a"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-reconcile-classification.test.ts",
+    "sha256": "8ab7e8500e564327a93e24ec50819fc740f9ed45d180f21e474779592abcc131"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-restore-safety.test.ts",
+    "sha256": "1b7a9c111d779d80511f0cc524d429ad9f8f6669db102aad27df802ff9d42281"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-restore-scheduling.test.ts",
+    "sha256": "f1832549f53acf219764d5281dfc8c9b387051185104c75c0eb592fcd2a968fd"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-retry-budget.test.ts",
+    "sha256": "54353b5775daeb8505cdd48ff20c15560c172e032479a9dc26d53268a1267cd5"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-semantic-validation.test.ts",
+    "sha256": "ef16406d419cd07cb2993abdbea54cc84f5ebdcfcd97a33876d380dbca44fcc0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/snapshot-state-writer.test.ts",
+    "sha256": "527178c9cddcce9232a2c1bef5c8aafd97678e1eab63df4db9c035df94d46770"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/style-profile.test.ts",
+    "sha256": "2ec0e5af321b653d90f13315d2999345f38c345a98ad79162992e08a56c0b64c"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/template-reference-access.test.ts",
+    "sha256": "fcf99f519e6b9bfb4824bb87a9000671172a1a023154289725842e06031eb3ae"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/update-pages.test.ts",
+    "sha256": "874fecad083d93d78f5e3b3cae5b760db30336ee6e39b5313006a6c2194e8703"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/uploaded-image-limit.test.ts",
+    "sha256": "a19dc116d31d17833a3e5023b737605e78a2cc52b24742623eb2a69ec6cd0c7b"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/uploaded-source-material.test.ts",
+    "sha256": "a513cf41b9f84c0a331c1212dd191384f58263569b3f895405162be81863d9e4"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-cover.test.ts",
+    "sha256": "b369253c64f6431ee159e04059ca98ac7a019ee99cec3c79c8b804f4c312a45a"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-delete-corrupt.test.ts",
+    "sha256": "b6b0c2ae028e9b3f8d0b2ada56792634e3634fa683ff95e925b3443247944ff4"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-diagnostic-bundle.test.ts",
+    "sha256": "eb7dcb9e09c3f6042ac28699940def8ce8a23e308f8aef3b0859a87b5d1403a0"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-list-delete.test.ts",
+    "sha256": "6a5e6576e1b94317175fc2fc7f66cbff27fe81a40613d72b2a789f425d9f017d"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-log-payloads.test.ts",
+    "sha256": "db7c8691ad8aa0c61d40744d5a3bc19a0967e3a6bcc912b8873aa55a8748fc0f"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-page-image.test.ts",
+    "sha256": "be582089a1cb1a5d1c1a2fc90db4e3441b64dbdc0f113d1edc3dc274656699a8"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-settings.test.ts",
+    "sha256": "4abbd6d7bf8e01b602003770a6d057730209e1fcee96f78a23b60721c259da67"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-theme-token.test.ts",
+    "sha256": "bad64ea4da588806d173b4ad59648641111cdc77ba54858ef87b5ba4468cb12c"
+  },
+  {
+    "file": "executas/ppt-engine/test/app-workspace/workspace-tombstone.test.ts",
+    "sha256": "97089a83ff312c587720e2276d4cbb8008b3ec8c12a742fbac162d0e5e0ba316"
+  },
+  {
+    "file": "executas/ppt-engine/test/aps-files-client.test.ts",
+    "sha256": "a9c2ecede4869dbc811b9fb10be415649fa169961e005db7c1bc8df86a4630d4"
+  },
+  {
+    "file": "executas/ppt-engine/test/authoring-kit-workspace/authoring-kit-workspace.test.ts",
+    "sha256": "4d593fa3c745cc97b64a053e074ddc34a15c5008365e5f65f330addde55b584e"
+  },
+  {
+    "file": "executas/ppt-engine/test/binary-release.test.ts",
+    "sha256": "527a18a8a10841184882d92cb94a7555187390a47403c69733f3f227436895f1"
+  },
+  {
+    "file": "executas/ppt-engine/test/corepack-command.test.ts",
+    "sha256": "70c7d38c59e9ca725fa815a4b315b9b81eaa71aa621bc8b28208bdbaca1b125b"
+  },
+  {
+    "file": "executas/ppt-engine/test/diagnostic-logging.test.ts",
+    "sha256": "97cf04f3f7c821e1f714f13ece78c2171997aa0c110dfe0da472135dc5db7d56"
+  },
+  {
+    "file": "executas/ppt-engine/test/export-artifact-aps-plugin.test.ts",
+    "sha256": "de1051a9bce68b4ae635428fc0400d7d5fd375740dcec7a5a3ed3c3993c3796c"
+  },
+  {
+    "file": "executas/ppt-engine/test/export/export-only.test.ts",
+    "sha256": "021e98a492e9e0677d5321a1968ffcf9a10aa98c699e9154a6c6b6fff3767ad9"
+  },
+  {
+    "file": "executas/ppt-engine/test/font-library.test.ts",
+    "sha256": "bf7c975a76c203a6c56bdd272108417e583e6aca54c16f70e1cd32ebdc0132fd"
+  },
+  {
+    "file": "executas/ppt-engine/test/google-static-fonts.test.ts",
+    "sha256": "25955cf7c1c86eba3ec00034a3d213bc678c0fc79994a6845d0f0d59f74a19aa"
+  },
+  {
+    "file": "executas/ppt-engine/test/helpers/invoke.ts",
+    "sha256": "e4d1ef5647a7b8390457712901e2a3a38c2fdcb8d979e6f6c94813c0048cf9c3"
+  },
+  {
+    "file": "executas/ppt-engine/test/host-upload-cache.test.ts",
+    "sha256": "ea166636eb7673a47108ac64a4d3ab9e91bc475f863c837d9058ddc2634ae10a"
+  },
+  {
+    "file": "executas/ppt-engine/test/host-upload-confirmation.test.ts",
+    "sha256": "29840414acc10cdbfd8fc326abbf777c3a60d18bcdf087f921a36395ec92197d"
+  },
+  {
+    "file": "executas/ppt-engine/test/host-upload-stream-plugin.test.ts",
+    "sha256": "ce1168dbf824d04f4c1907803331191a95054a6fde7f52cd0e114ef425851165"
+  },
+  {
+    "file": "executas/ppt-engine/test/html-to-pptx-model/converter-hardening.test.ts",
+    "sha256": "75e97f80c11058e852a30c55bb21d8214fe48908c837bdf74cf5a07b3278e653"
+  },
+  {
+    "file": "executas/ppt-engine/test/image-asset-file.test.ts",
+    "sha256": "6944adbc2715f41e62cecd4a9ffd2b063a62379ac254585cc570ef64950b7265"
+  },
+  {
+    "file": "executas/ppt-engine/test/invoke-context.test.ts",
+    "sha256": "9f2f3e9c9f59fc037e73ea14c9d772c83220027c7658470776f34903a5dfca2e"
+  },
+  {
+    "file": "executas/ppt-engine/test/invoke-transport-channel.test.ts",
+    "sha256": "e2df8268cccd52156cdd4d90fef949f6842fb1635b60796cbc61547b922eea6e"
+  },
+  {
+    "file": "executas/ppt-engine/test/invoke-transport-stdio.test.ts",
+    "sha256": "2b59eb3a8432cb468d1bf8121a354065d04669db4450cc246a1072c28556a4a5"
+  },
+  {
+    "file": "executas/ppt-engine/test/layout-audit-geometry.test.ts",
+    "sha256": "fd84dd0fe5ea97f3c52574ffdfeeaf76475c6736c4ba8e40d1b7af04d3b22df2"
+  },
+  {
+    "file": "executas/ppt-engine/test/local-template/loader.test.ts",
+    "sha256": "9e3910e701fb757ef298f2b4968f10ff9765d52e46f8e66de6f2b1f0b6387065"
+  },
+  {
+    "file": "executas/ppt-engine/test/local-template/typecheck.test.ts",
+    "sha256": "d4279577a970ed88fba8151cc80b7f1cc5e90e10726e81f5a685632418e75dec"
+  },
+  {
+    "file": "executas/ppt-engine/test/manual-page-revisions.test.ts",
+    "sha256": "8b4d73007db1374045e64197a0b024205e249e7028965d3ced23a1fca1b42ffe"
+  },
+  {
+    "file": "executas/ppt-engine/test/my-work-aps-pagination.test.ts",
+    "sha256": "216c8043c1653379e11fbc23ae82f4365e6f8abc369f03a587cf85e50362bedf"
+  },
+  {
+    "file": "executas/ppt-engine/test/my-work-snapshot-order.test.ts",
+    "sha256": "e146ea19fb34f99a7c36afc66382421540297343b7fc63ef6137a72ae9eb2301"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-beautification-source.test.ts",
+    "sha256": "6808ac8f96755b9a1046e13375eea39a82236a04fb184bf40cb1132770c979ac"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-html-preview.test.ts",
+    "sha256": "48961557a204923269d2b8d698407ab395dd2e869b15c6515c1512dd0fbf64b9"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-image-search.test.ts",
+    "sha256": "fd51377104bd1f4d50a3e00039b80dd015d3eafe937aa1c00e3b3fc21c681eb2"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-image-upload.test.ts",
+    "sha256": "0ab3cee17628a136298dbcb3d7e41046e7f02bfd865ff6b7e9f8d911cf6d316f"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-regeneration-store.test.ts",
+    "sha256": "df56e6d317492d67f4699d44282b13aa6daead76998f2d6dd794cf983f744a06"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-snapshot-lifecycle.test.ts",
+    "sha256": "28a2fab1462ea4b338d17b0db2d0662b81188744d47176232aca3731a60a768c"
+  },
+  {
+    "file": "executas/ppt-engine/test/page-thumbnail.test.ts",
+    "sha256": "fefbb02257e8f3ff25a07a800422f5bfb9c0c3c86ea452b1da106e62a19528ce"
+  },
+  {
+    "file": "executas/ppt-engine/test/performance-runs/performance-runs-plugin.test.ts",
+    "sha256": "dfd4d6c921ceb658a7c479a491e2e8a76b7c36e0f85dc387a246fdd06e3480af"
+  },
+  {
+    "file": "executas/ppt-engine/test/performance-runs/performance-runs.test.ts",
+    "sha256": "9b2c3299e4d36684d30bcdc2c7d7b6b4ee3782d67177ffec1b6d02f264709680"
+  },
+  {
+    "file": "executas/ppt-engine/test/pptx-capture-clip.test.ts",
+    "sha256": "096f79f9a901dc45885360e8d7b9535c321a75aa456fc2fd34cb6d783f122b6d"
+  },
+  {
+    "file": "executas/ppt-engine/test/pptx-css-image-url.test.ts",
+    "sha256": "191ce78a750b39de189b8a784614dea950bc00ad64c8a755f5d66bcab2af82db"
+  },
+  {
+    "file": "executas/ppt-engine/test/pptx-rasterization/rasterize.test.ts",
+    "sha256": "aff16b0efe6736e376456769f51b3996688f708a52974d226ea6581beecb2a42"
+  },
+  {
+    "file": "executas/ppt-engine/test/prepare-browser-runtime.test.ts",
+    "sha256": "30a999ae4af38f1579f20af8ad146fc1a1dd32c929f75f1a17378e80644b8616"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/agent-freestyle-v1.test.ts",
+    "sha256": "e73499f258ba61c3a943e6b26003f2bb019e2c4889968777dfb352a31cbdb6c9"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/agent-freestyle-v2.test.ts",
+    "sha256": "3fee2e34392f299428d7e36a55cb6d9263bed5b405307d8e06278938ff18fdd8"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/chart-analytics-backdrop-export.test.ts",
+    "sha256": "286b373a1e4fa98e372e8943184be36b702e25e140d935fd111407d1aa9aabd8"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/finance-icons.test.ts",
+    "sha256": "58e89c983c4f7d1e7798d1d0d56d046758fb435200adb9d7c8549c6b4d1f64d4"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/red-finance-canvas.test.ts",
+    "sha256": "081da0883c86c9fd8d70b8dd3ac66561af3db413b255e89f616042b36bba37ba"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/red-finance-v3-template-data.test.ts",
+    "sha256": "20e7d0253377f6a93076e08a151a2ff5a1db1b34cbe13ab09a37585d2830264d"
+  },
+  {
+    "file": "executas/ppt-engine/test/presentation-templates/template-data-validation-policy.test.ts",
+    "sha256": "387e3e8c25d535b5a307f5536e4d0f54f77356a04b50c713e4052af92bfd68f7"
+  },
+  {
+    "file": "executas/ppt-engine/test/preview-fallback.test.ts",
+    "sha256": "8fa0563540a59b10b06008d154a8c1008197c6175408a059b52299cc468023e8"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/cross-origin-stylesheet-fallback.test.ts",
+    "sha256": "8f3de12926d6bd7ddc52cf4ab1119e582cbf5ae52e7771972814c7aef63106fd"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/html-page-background-staticization.test.ts",
+    "sha256": "a15c415d4833deeb7fe9aaf5a461f4cc55dd221ebe32be5ce42b9106bc833d70"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/manifest-render-plan.test.ts",
+    "sha256": "5f20e6e49430879994f0ed6243cd51120f3b1743fb6bf6407c277732615a2a1e"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/page-source-wrapper.test.ts",
+    "sha256": "cfa34634a8e0551e7c8175255f20a57f85b4fd4c6a48257f57a2f124d784d562"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/screenshot-render-queue.test.ts",
+    "sha256": "93650f942e797506357567d1071d9848e10386efadbc0ef4a42638fc0c15ea8e"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/single-page-browser-route.test.ts",
+    "sha256": "10b9aaf8d779365ead28c86796da7a2b2a632ca0ed5ea3e0edd4cc54eea6bc5a"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/slide-formats.test.ts",
+    "sha256": "2cf92ab8daeed64f0039550554da6b0d3ed673d0b045a5de55b6f4beaaa86411"
+  },
+  {
+    "file": "executas/ppt-engine/test/render/static-manifest-html.test.ts",
+    "sha256": "2417c8c9c474f04f4602f5eca1ef60e643904121d5cd3c7c591c58f0a982976e"
+  },
+  {
+    "file": "executas/ppt-engine/test/research-image-download.test.ts",
+    "sha256": "55143c7b4d4ea477de25558a4263319f5f3c3b9188750ff2682f5b5818f551df"
+  },
+  {
+    "file": "executas/ppt-engine/test/research-image-plugin.test.ts",
+    "sha256": "5ec140a51f177df9bfa012f8049745f3a5449216b6ba99bd1381a38f51408c3b"
+  },
+  {
+    "file": "executas/ppt-engine/test/runtime/browser-runtime.test.ts",
+    "sha256": "b59a80683071420b150c123aaa291b998c447c0b8d861b6680875e893de7f964"
+  },
+  {
+    "file": "executas/ppt-engine/test/runtime/bundled-browser-runtime.test.ts",
+    "sha256": "3bd10866cdf1e57043a94ac5c7d9c1cd552b2468bf507db71dcf32ec4761c8d1"
+  },
+  {
+    "file": "executas/ppt-engine/test/sea-bootstrap.test.ts",
+    "sha256": "2a0fbe869eec62070c6017ef1f737f2c68a7b9feb0aef2c6a7f7cdf0ad2f3a92"
+  },
+  {
+    "file": "executas/ppt-engine/test/stdout-write-concurrency.test.ts",
+    "sha256": "1a237d068635cf70d7a97b16f41bfb52d892461babbd4bec97595bbefbe15568"
+  },
+  {
+    "file": "executas/ppt-engine/test/storage-retry.test.ts",
+    "sha256": "18b8c55f74d859588356b11e8eb46830c3c653c34ae292b9945bd4a31c758af6"
+  },
+  {
+    "file": "executas/ppt-engine/test/system-fonts.test.ts",
+    "sha256": "6f5469d0e60007342eae851b9e14c6641b78372fafb2c4cc2ed4cf0bdf23f714"
+  },
+  {
+    "file": "executas/ppt-engine/test/task-state-machine/semantics.test.ts",
+    "sha256": "334e99904504d8231dff81ed8a3003b2bcd0fa482da746bdb426391336214159"
+  },
+  {
+    "file": "executas/ppt-engine/test/task-state-machine/workflow.test.ts",
+    "sha256": "e78a3168663d594ea2b34601d99f439b2d86576d7ece49facd96e472d9acae73"
+  },
+  {
+    "file": "executas/ppt-engine/test/tool-manifest-validation.test.ts",
+    "sha256": "3920f20932a76d9cdd149e024c8dc9aa333e1f14360470f039be09724b9661eb"
+  },
+  {
+    "file": "executas/ppt-engine/test/uploaded-source-image-research-import.test.ts",
+    "sha256": "2f1ababfe5062c59d84105a2d3c520a68b22e8930d4438882a23ead015a308a2"
+  },
+  {
+    "file": "executas/ppt-engine/test/uploaded-source-preflight/pdf.test.ts",
+    "sha256": "209ba9b1345a5a55f5ca92b2912c978085be3c798489ecca18a724486f671c09"
+  },
+  {
+    "file": "executas/ppt-engine/test/uploaded-source-preflight/spreadsheet.test.ts",
+    "sha256": "5694d31485e8074d7a81791d0ca188041273f313f2069c67534c3b9c0638f61b"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/asset-slots.test.ts",
+    "sha256": "acf93130c430637c1c5df0238ed393a5eece618f8a135035a057bb7bcbc44f69"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/design-profile.test.ts",
+    "sha256": "95f13c49e33b6d375549e1efae237497fcceb50f1337efc17e2b644d6f0c73d3"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/diagnostics.test.ts",
+    "sha256": "a86181c7d132b66f7fa77f949bdeb87ee94351a331d0ad332732d1965d991603"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/image-slots.test.ts",
+    "sha256": "7a647d4b43c61372a915f5e663c367609ef86d7f5f723f51778819cd48a22aa3"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/image-sources.test.ts",
+    "sha256": "0874b100f9878346d3d7a9cd0543f0a07f0b201bd027ab93a524876566a57f8c"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/list-metadata-only.test.ts",
+    "sha256": "10d67bf2c22f1fe2fcd70a3dd4699d6fac9745519aa0ab1762d8f7cb8bbdce55"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/master-versioning.test.ts",
+    "sha256": "77011016e64840005055b78177057601564dd607724bbb7ebe44cee53aeda1e3"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/profile-asset.test.ts",
+    "sha256": "44ef3f7aabdcfa74fb19bb5b48de8acc747df30314639aed500ca18341df909f"
+  },
+  {
+    "file": "executas/ppt-engine/test/user-templates/user-templates.test.ts",
+    "sha256": "f690fb11446a7f4be8ccea53bc006dfffb57fb6cf17c6e72782f7f085c3ff5ad"
+  },
+  {
+    "file": "executas/ppt-engine/test/workspace-diagnostic-bundle-aps-plugin.test.ts",
+    "sha256": "628dd36e18db2f2392af406262aa5ec39b2285795dd5000db213dfca9a05c119"
+  },
+  {
+    "file": "executas/ppt-engine/test/workspace-root.test.ts",
+    "sha256": "75fe942b9ee46f4859d081405147d3faa0961e8d71dcb6533217cace80669614"
+  },
+  {
+    "file": "executas/ppt-engine/tsconfig.json",
+    "sha256": "04ef77f804f37050b52290698a3476e7d1e78887639d1168817ec2e1c271f8d3"
+  },
+  {
+    "file": "executas/ppt-engine/tsup.config.ts",
+    "sha256": "b3974a88b3f9958d6cad855760d3b5cad5afef930f48de4a70cfddd8464a8a36"
+  },
+  {
+    "file": "integrations/wps-addon/package.json",
+    "sha256": "4cf744aa78468d5d4a4db7469c458873809ecf4ba3d515ef61d7bab7caf5d1d5"
+  },
+  {
+    "file": "integrations/wps-addon/test/taskpane.test.mjs",
+    "sha256": "f5ff01b8f8a96fe6032f2c30a1e4021c780dad7995b22bf065a14a9727e9ea8f"
+  },
+  {
+    "file": "package.json",
+    "sha256": "6af90c63746024f46d0a85fa88469f878ff66cba6bb8c4971ccc5cf073f678ea"
+  },
+  {
+    "file": "scripts/architecture-reachability.mjs",
+    "sha256": "87d2547ea3b03acf1b86daad128baa1aef2deff358de09e31350aacf1244bb79"
+  },
+  {
+    "file": "scripts/audit-template-fonts.mjs",
+    "sha256": "b62a233ea7770cdc5b1aa203517892a50596ce8f94b0e9b5747e98e7340396fb"
+  },
+  {
+    "file": "scripts/break_snapshot.py",
+    "sha256": "9a4ba00739011bdd67d67211b6fd0e31d2d0e50dc456fe8b82af56626468c8f7"
+  },
+  {
+    "file": "scripts/check-i18n.ts",
+    "sha256": "0f5d7c5f70ba497a5c88071e921226c1880e6fdec1737e25d9527889b5f92f5c"
+  },
+  {
+    "file": "scripts/ci-fidelity.ts",
+    "sha256": "4540331f96d9188505d3129d1afad0547fce449e19a330b2411b551d3db3b456"
+  },
+  {
+    "file": "scripts/corrupt_snapshot_loop.py",
+    "sha256": "6c2a1a3cc68f51bd3cb132ff5f38bc9a49023ace4f13e49a8d58fa2a9216b328"
+  },
+  {
+    "file": "scripts/dedupe-embedded-template-fonts.mjs",
+    "sha256": "c2b5f7c96a7ce6a2723b9b89dbe7f6e4d04a27462c77f907c211499cee400369"
+  },
+  {
+    "file": "scripts/dev-services.mjs",
+    "sha256": "fff5d4507e2516e3ab96a7f6dd902c65275cdac5ce2f50b1aa89f4f90cee77b9"
+  },
+  {
+    "file": "scripts/embed-semantic-template-fonts.mjs",
+    "sha256": "8c8d67dd722e94317e623bb2ab1e8c01803933d231adbdf4899c947b7dafd143"
+  },
+  {
+    "file": "scripts/integration-up.mjs",
+    "sha256": "f5356ccb42eafb5139283cf1b7e8cc3343bd93f86d43e80723fb91635015257f"
+  },
+  {
+    "file": "scripts/keys.ts",
+    "sha256": "c84bf55cfa8a1dbb7532adaf371d440c9658337e52af7e62dd99cad2fa026c10"
+  },
+  {
+    "file": "scripts/lib/pipeline-validation.mjs",
+    "sha256": "0f6793b385e3e6de24e52bf0109737807a63ea0db2eec5d330decd209a678c08"
+  },
+  {
+    "file": "scripts/m0-generate.ts",
+    "sha256": "70ab7083b762b3f0b32a4676c9de3dd2f935471b47da9422c9cfaa4530a6976b"
+  },
+  {
+    "file": "scripts/m0-spike-export.ts",
+    "sha256": "03a834b6608fdf5e199a8fb0e7bfa5fb85174055f40c593195bd940c92f90b55"
+  },
+  {
+    "file": "scripts/m0/deck.ts",
+    "sha256": "60a23345fba3e5381fa314e642e29495cb36ad92cdafaa15a2de2d8b6214b3d0"
+  },
+  {
+    "file": "scripts/m0/dialect.ts",
+    "sha256": "d8194e687b839d9cb730c2019db059ced96a755b0bd1f7aff24a152d6a66becb"
+  },
+  {
+    "file": "scripts/m0/llmClient.ts",
+    "sha256": "7e9a34b044f556d89f9b6415b648cfcb7be923de6f265d4988dc5319d24f4ad7"
+  },
+  {
+    "file": "scripts/m0/prompts.ts",
+    "sha256": "7170cf7a3130cdae41e1d80658c172cb9481ef1f0a90340f0cfb5532fbfce246"
+  },
+  {
+    "file": "scripts/m0/thumbnails.ts",
+    "sha256": "916008c833dbbfad1e1d4b7fbef0ca14cc3035e88a9902dbcbfc2d8fa63beef1"
+  },
+  {
+    "file": "scripts/m0/validatePage.ts",
+    "sha256": "759988a5a3e2be996481100dbf6666325148423564e479a79bd97b33202325bb"
+  },
+  {
+    "file": "scripts/mcp-smoke.ts",
+    "sha256": "4329e46d35ac486a5ca079491b881f1c98af72fcf34741bd089e8a9493422f36"
+  },
+  {
+    "file": "scripts/restore-semantic-template-fonts.mjs",
+    "sha256": "6e5a9a7c4d3faf720fb4b8e753902e5a7f9ac117f1213ae6ccab0f5238cecb11"
+  },
+  {
+    "file": "scripts/sync-ppt-engine-manifest.mjs",
+    "sha256": "d53cef0619da2695941f64e4b3cbdc4426108886ceb9466486853409f21dd388"
+  },
+  {
+    "file": "scripts/test/pipeline-validation.test.mjs",
+    "sha256": "71eab3800de4c69659d1a516631e09bd84e832406eb63e54442a85990b3db3e5"
+  },
+  {
+    "file": "scripts/upload-binary.mjs",
+    "sha256": "d4668d04898d86d306e5c4f3a4257ce33084078ba6668f1617b4591db27c7718"
+  },
+  {
+    "file": "scripts/uvx-compat.mjs",
+    "sha256": "8a7c88c96660d0c1096ad1e353e0b3873374ab68d8d3fad4a206782297fd29a5"
+  },
+  {
+    "file": "scripts/validate-openapi.py",
+    "sha256": "2a947ae6a5d7b6948ced515fdaeae6196d23a2c0c53ddfdba03540097675562c"
+  },
+  {
+    "file": "scripts/validate-visual-style-presets.mjs",
+    "sha256": "58c3c14514dee69b47b4232feaf397253679e6dd2cd7406bde95c0cdb4df71ee"
+  },
+  {
+    "file": "services/brain/brain/__init__.py",
+    "sha256": "e5606255c9eaa04b4ff9d63645139764105b4cdaa5ea10dec77ca8b335a146af"
+  },
+  {
+    "file": "services/brain/brain/agent_state.py",
+    "sha256": "01470be62784243d462a1bf405d744f1b1f5470e5659bdebf8ba46522f498d2e"
+  },
+  {
+    "file": "services/brain/brain/agent_tools.py",
+    "sha256": "2171ff5fd7740aa05e27e573260d9b285ac9cbd6117f8099e5b2522a3cd62e98"
+  },
+  {
+    "file": "services/brain/brain/app.py",
+    "sha256": "4f244f2a7f0e176c12dc25e4d0d0314d833207d9966d04d1b1dc8565de3e2a8e"
+  },
+  {
+    "file": "services/brain/brain/config.py",
+    "sha256": "c509dd596d870a75e27f34e3071d5e1beb2e649644da769db5c13632183f639d"
+  },
+  {
+    "file": "services/brain/brain/documents.py",
+    "sha256": "5dce332ccd7b22af9c0e5253e182c67b6fcb2d454d9a67651dfe831bb62c4d23"
+  },
+  {
+    "file": "services/brain/brain/evals.py",
+    "sha256": "d06774e7498b8f63f656cd63f202344f82b7fccf2e2221bc2043dd5b8ee40957"
+  },
+  {
+    "file": "services/brain/brain/harness.py",
+    "sha256": "fd1f87128a965afb9985584aee40b082961eb48bfd613144f850f6da95bdd355"
+  },
+  {
+    "file": "services/brain/brain/images.py",
+    "sha256": "e465d17b12006021afda7e6b86e8daa9be5553abdebfafdff3e4a247329bf1dd"
+  },
+  {
+    "file": "services/brain/brain/models.py",
+    "sha256": "ceebbf7fe09f5b550ae24556eeef3796d604e55bec7f21a98f0b89243fa1231c"
+  },
+  {
+    "file": "services/brain/brain/prompts.py",
+    "sha256": "a5681558a900ae821eb62370d1cbb961be5b0057952803c76aa00b848b05d08c"
+  },
+  {
+    "file": "services/brain/tests/test_agent_models.py",
+    "sha256": "1cd934bfd4f07ff25d5e12757e75d4503f119eafd268b0f1ddbc506866b416eb"
+  },
+  {
+    "file": "services/brain/tests/test_brain.py",
+    "sha256": "27b9a0d0d691f1e07e80e7e6761ef08fa81c1a6a9a7d6cf24704105e8128b3c6"
+  },
+  {
+    "file": "services/brain/tests/test_harness.py",
+    "sha256": "d092fad8fd4d06c0efa6db278150b13bbb1cf55364b9d2fc8e63aed500366430"
+  },
+  {
+    "file": "services/brain/tests/test_images_evals.py",
+    "sha256": "467f88fb04dc1f4da758737b5e75637135966aed95cffb3908af1fe7b327290b"
+  },
+  {
+    "file": "services/brain/tests/test_models_documents.py",
+    "sha256": "3434fc28e7a772d52cc8ebde278332591a997599234c86a22a5f77318976c7b7"
+  },
+  {
+    "file": "services/gateway/cmd/gateway/main.go",
+    "sha256": "e7e54eef2c1c97a5cf0daf5189fcb96d5dd24f5173dbec43d8f150fe9501c77c"
+  },
+  {
+    "file": "services/gateway/internal/billing/agent_export_test.go",
+    "sha256": "ee4fa74d347ffcc4b6f1c68a7be0e3cfd9b742e28eedd13d1eb021529e9be2f4"
+  },
+  {
+    "file": "services/gateway/internal/billing/http.go",
+    "sha256": "c7b8de1791cc24efca4065abf24dde21bbc22d9b1c4b720ea0610f7c7ab704ba"
+  },
+  {
+    "file": "services/gateway/internal/billing/http_test.go",
+    "sha256": "35b34f0c2dd94be86b6caa96af6e76f26abf92962b859769789f2b6a9d935801"
+  },
+  {
+    "file": "services/gateway/internal/billing/postgres.go",
+    "sha256": "c475ca9bceed1ebe64a0fd2b803205cd3a0678a7ea4960649cea14f10e1ae78c"
+  },
+  {
+    "file": "services/gateway/internal/billing/postgres_migration.go",
+    "sha256": "4f73d16b704f15dd7700302a44e8ee993eb3d1644e67836ada013501779719f2"
+  },
+  {
+    "file": "services/gateway/internal/billing/postgres_test.go",
+    "sha256": "e901db248e1e51c2f3a2383f06ec63987e2f1d1db62d3721c96492c94545cfe4"
+  },
+  {
+    "file": "services/gateway/internal/billing/store.go",
+    "sha256": "4e7f42f0cd01c47e23f0db2d957c94c2ef01198dda60c819d8cabf6c497fdccd"
+  },
+  {
+    "file": "services/gateway/internal/billing/store_test.go",
+    "sha256": "22e62cb7c4859d04ba7ee02cc30be2542e2188ed4bb74b3b0ca44f4ca5537449"
+  },
+  {
+    "file": "services/gateway/internal/config/config.go",
+    "sha256": "324a3990bfc21f08ae1e5be1506f7246615cf078eeed95c65b5cb43753766c2a"
+  },
+  {
+    "file": "services/gateway/internal/config/config_test.go",
+    "sha256": "6e2644e54de5e1cd85b200cb16ad5c12d6f1815e1bc780e97ece5dd24dda7ec7"
+  },
+  {
+    "file": "services/gateway/internal/files/http.go",
+    "sha256": "ee25a8fba9d8a48d1fabf212b52da5cebf6fd649957ecf4e779c6395eee2d71e"
+  },
+  {
+    "file": "services/gateway/internal/files/postgres.go",
+    "sha256": "053dfbe59eab62d315683103eca4dfd7166065346bb9f1fd3e4102c1062fc982"
+  },
+  {
+    "file": "services/gateway/internal/files/postgres_test.go",
+    "sha256": "014c08ddf94c3726372da9983f406f5c585f747f9e2dd3c966a2733101307689"
+  },
+  {
+    "file": "services/gateway/internal/files/s3.go",
+    "sha256": "1c897a9288e366921d083342f0994e4e4d4b6c7f382765647c75eee1be02d9c4"
+  },
+  {
+    "file": "services/gateway/internal/files/s3_test.go",
+    "sha256": "d62bc63516f2ada4b8dbd134a52a22a568bf7338407e9dd5cb586bb01a2b6072"
+  },
+  {
+    "file": "services/gateway/internal/files/store.go",
+    "sha256": "71b75831984b877a9d45dfbda30cf51116ea8492df96bfd8ff6adbe939749193"
+  },
+  {
+    "file": "services/gateway/internal/files/store_test.go",
+    "sha256": "231bb69bc4fb708ffce10c13a09d82c5093edfe074d9944c36e9ddc743d621fc"
+  },
+  {
+    "file": "services/gateway/internal/httpapi/server.go",
+    "sha256": "5a2d1a7a6721192b6ecabca346476610a87a8346feff5edc3c73a4066f866c6c"
+  },
+  {
+    "file": "services/gateway/internal/httpapi/server_test.go",
+    "sha256": "9c522655d9cd122e2427f50a7d1ef375454ec446889c1c146bf165ec4d05e763"
+  },
+  {
+    "file": "services/gateway/internal/integration/real_test.go",
+    "sha256": "e8ec60d97ea033b493b80e75c08fe27b0864da324a59851dd8de1478f68672ed"
+  },
+  {
+    "file": "services/gateway/internal/jobs/agent.go",
+    "sha256": "3e004fa601200e3153786b18f57d94070fcd1e9e67462663bb075fe37496aa34"
+  },
+  {
+    "file": "services/gateway/internal/jobs/agent_test.go",
+    "sha256": "324bcd5fe27b53e5b5f275c121925d19188543fa04249d46c233c5408202ec37"
+  },
+  {
+    "file": "services/gateway/internal/jobs/budget.go",
+    "sha256": "16cf5cdd5c9391dcee9a06e5b6e533fc10fa666d052915c1cf5c09c485954d01"
+  },
+  {
+    "file": "services/gateway/internal/jobs/http.go",
+    "sha256": "7e0f56dd0e54c1f5a0eee6c5d850381e3dddd7fb0466823c02586e273128f96c"
+  },
+  {
+    "file": "services/gateway/internal/jobs/postgres.go",
+    "sha256": "cd8864472396150341df1fc430907dbb57fc8e5e3f5efc8498d5d8fd57175ef3"
+  },
+  {
+    "file": "services/gateway/internal/jobs/postgres_test.go",
+    "sha256": "5edef397d847292b457e92c847e415fc7d2745a60a146db1f611a9625aa90858"
+  },
+  {
+    "file": "services/gateway/internal/jobs/store.go",
+    "sha256": "3b04870b8044d126a9d912903ed08a8ab95173803cb1622edab5a6e0292a8bda"
+  },
+  {
+    "file": "services/gateway/internal/jobs/store_test.go",
+    "sha256": "931747b135514e0cfa3c63e1d70976de6603e0ec2d0f77c1302ae4582a7a757b"
+  },
+  {
+    "file": "services/gateway/internal/jobs/webhook.go",
+    "sha256": "23e5be591c9c178351392ca555ebb12515eae73bca504fabb1cbc313b2f37ef3"
+  },
+  {
+    "file": "services/gateway/internal/jobs/webhook_test.go",
+    "sha256": "d4c7bd2187ef945f9237ea04b44128cae372aa8ea62b02ffc0b44335f5cf225d"
+  },
+  {
+    "file": "src/billing/index.ts",
+    "sha256": "b5e5f6c92f2ad6e726e665e49eac3325853c7cce27a44e58d105c37456e87889"
+  },
+  {
+    "file": "src/billing/remote.ts",
+    "sha256": "9611eea5ff3ed11bd976915436f5269568e5443a4bec898a37e1e857e6f66a3b"
+  },
+  {
+    "file": "src/brand/optimize.ts",
+    "sha256": "2975dff52929d815a0fd65af870912eec80e46ac4387a744b09e35cf4b01227b"
+  },
+  {
+    "file": "src/brand/profile.ts",
+    "sha256": "013a63636cbd14d6cd57b2e32e4c451f89534e2419a239f8e4beb4bebdacdf7d"
+  },
+  {
+    "file": "src/brand/store.ts",
+    "sha256": "58f77058f421b1e0377f7a5d3ff9b0231a2e05afba7a43529369c0fed551d788"
+  },
+  {
+    "file": "src/capabilities/agent.ts",
+    "sha256": "b43a94aa17fa16055f06af586adc7786394ff1eac730ffd79f729b1903376ada"
+  },
+  {
+    "file": "src/capabilities/deck.ts",
+    "sha256": "49c3181341dc44f860da8b1ca5b68fc129f57ced46222360e507418fb69ac453"
+  },
+  {
+    "file": "src/capabilities/drift.ts",
+    "sha256": "bfd0d4363b7d7de0fbbd0ebecc55bbc1a10d2d9559ade13ec563d2e965a28dd5"
+  },
+  {
+    "file": "src/capabilities/project.ts",
+    "sha256": "262f81996ddab9215b571df755e3203839519dfa69460859f4474e47153336e6"
+  },
+  {
+    "file": "src/capabilities/workspace.ts",
+    "sha256": "e006bf3af6aa762438ea519d67d14af8c02ef5d6d30c90b0ff3378c0302fc0b3"
+  },
+  {
+    "file": "src/contracts/agent.ts",
+    "sha256": "f48b40f180f814e2f36f70c7b8b414c106a96aea64bce855ac35ffffbefd4cbe"
+  },
+  {
+    "file": "src/contracts/deck.ts",
+    "sha256": "2f8e2023b961ffc6fc531a6f2455c7a6f696a516b58cd52ea654304f1400c271"
+  },
+  {
+    "file": "src/contracts/engine.ts",
+    "sha256": "cb56ab3df395eeff495e0274d1133ee41a180ceddebe70b1d432e2bf6f297e80"
+  },
+  {
+    "file": "src/contracts/errors.ts",
+    "sha256": "aa032a267438119e3689b12f94f6ac151aff40f01177187b1e922f060aa1efbf"
+  },
+  {
+    "file": "src/contracts/ids.ts",
+    "sha256": "9595156ddfc06ca11b1e567e512ede54c0cc88f6629521ea5b12db59238365a1"
+  },
+  {
+    "file": "src/documents/extract.ts",
+    "sha256": "4a5ee9a179b76b33e11704543d72c52c1ba1a84e9f858713a2d117538ae2a95a"
+  },
+  {
+    "file": "src/documents/pptxText.ts",
+    "sha256": "4433bcf743cfaa3ec3f445170bef3be68a2f45fda00190960be4277fad7c5fe5"
+  },
+  {
+    "file": "src/http/capabilityServer.ts",
+    "sha256": "1b21649a6d84dad6966bd31dfeea932358e2672820532571c628178c8b9402cf"
+  },
+  {
+    "file": "src/http/engineServer.ts",
+    "sha256": "91ec21ac8b29756bd02e88757ab24490ae97ee00d4280311ccc8e14bd07ba048"
+  },
+  {
+    "file": "src/mcp/server.ts",
+    "sha256": "7f71bfa43991c9807b7f820988d4cc01e27bafe1cb549c9212615f494961ffab"
+  },
+  {
+    "file": "src/mcp/tools.ts",
+    "sha256": "7056d37059e6083d1eaee501ea43a94ebd9dbcce216fa081dd4448516f0a6c0d"
+  },
+  {
+    "file": "src/research/web.ts",
+    "sha256": "1e06ec77066e15de1970bb587dfc0dc3e99b7de4b3f7fa19ecf7480a6d405597"
+  },
+  {
+    "file": "src/server/agentClient.ts",
+    "sha256": "7d27631cd6ba04ee520d2f8dbb8a1c81e1defcbb3b35141a6e98454967a1b062"
+  },
+  {
+    "file": "src/server/agentModel.ts",
+    "sha256": "2e357a1fb010c5ef3b594a24f357a70d2db02067c29e2d8ac93afd37b8330bd2"
+  },
+  {
+    "file": "src/server/brainClient.ts",
+    "sha256": "fd3e27df81fea14afb004349a4eec82c7d40fb6b72f402bc87318d38f82270cb"
+  },
+  {
+    "file": "src/server/env.ts",
+    "sha256": "2c6dfd784fc8d98fac266a0aaac0143d44a9d29d10159d218a6062a8b6c7431d"
+  },
+  {
+    "file": "src/server/exportCoordinator.ts",
+    "sha256": "764179b134e8a90576ba736d4d51728ec8f3705da2ae1b94433128ae688c3097"
+  },
+  {
+    "file": "src/server/fileClient.ts",
+    "sha256": "1477fdcbc5d2c599ce9e88659db20dcf98056020c99c843e6ca390cefd9f5f5d"
+  },
+  {
+    "file": "src/server/httpSecurity.ts",
+    "sha256": "06b80482ab7c8c0e3d715465b0a6dc918a5ec86fcdbca8e79199ffa2fe9b8ed1"
+  },
+  {
+    "file": "src/server/jobQueue.ts",
+    "sha256": "2214ed9c0bb351cdfb6c945c500e42e8e070741731d03e8f8202339eb83cb76f"
+  },
+  {
+    "file": "src/server/jobs.ts",
+    "sha256": "35e368d593962105978a9499f97b5a4528c9344b0a8ae9ed8ae1c738dc76f23d"
+  },
+  {
+    "file": "src/templates/library.ts",
+    "sha256": "2b5a0d4b05edbc1287c939de7b99763653439c1dcd419d7f1fda19b9a23c6237"
+  },
+  {
+    "file": "src/templates/recommend.ts",
+    "sha256": "5a24afaf640e7b33efa6ab910021c49ea9e7e80df75a16a629ce9514a2f4e380"
+  },
+  {
+    "file": "tests/capabilities/agentFencing.test.ts",
+    "sha256": "adce3545f398cd6d5156356134afc2727c82f9eb58ad76a1a845614741e56805"
+  },
+  {
+    "file": "tests/capabilities/agentRecoveryBoundaries.test.ts",
+    "sha256": "5cc72cfa9004fffacdd55bfe37ed5d0f22629d95fd69c796e35ef287ecf0b91e"
+  },
+  {
+    "file": "tests/capabilities/agentTools.test.ts",
+    "sha256": "1d9ee9bfbba52b812fd9ae5463f85bef2ee5a35d2c6ac8cbf65a3d26e404fb33"
+  },
+  {
+    "file": "tests/capabilities/project.test.ts",
+    "sha256": "1db5e37050736ad1b7d9b7f266209c194230b013eed4f7680a0e415068305d68"
+  },
+  {
+    "file": "tests/capabilities/workspace.test.ts",
+    "sha256": "0bd717a2b1dda45e59d718e01f049ed45512f72af89cc75cad7de01ba1d805ec"
+  },
+  {
+    "file": "tests/contracts/agent.test.ts",
+    "sha256": "c82be00828759daa9d3d2a7966f71d4ce020fdcf1982a42166eebd5ae799feba"
+  },
+  {
+    "file": "tests/contracts/deck.test.ts",
+    "sha256": "24eb9b9e6347179eca5c562de6b3f9b46bc4d43d3f5365906ea24a67f0aff218"
+  },
+  {
+    "file": "tests/contracts/errors.test.ts",
+    "sha256": "0d58c727cb60a360c75b906e563a9c098628c53f7d7a5e4a07b205a47cddb40b"
+  },
+  {
+    "file": "tests/contracts/ids.test.ts",
+    "sha256": "f8855aaaaab116fc3f58ea51fc94f2221722e06fbc1f0eff6488e247bd917abc"
+  },
+  {
+    "file": "tests/fixtures/templateRecommendationDirectBatch.json",
+    "sha256": "a60457664044e7c40a925f942c571a9192cf05103687898a887209b8e2b40ff3"
+  },
+  {
+    "file": "tests/fixtures/templateRecommendationDirectBlindBatch.json",
+    "sha256": "9b47947dd7750074c132ffb41c434d08ff0c5f2a2cefdecb4c845b05d8a9f006"
+  },
+  {
+    "file": "tests/fixtures/templateRecommendationDirectBlindBatchV2.json",
+    "sha256": "3711e6fa7636999a3c2d21038991e38ce5309831152a46dc2837f45e6b23d254"
+  },
+  {
+    "file": "tests/fixtures/templateRecommendationLLMChineseBlind20260917.json",
+    "sha256": "466bc7b74357aa6c04f0dd840296bd4c4d55c789b2f4e8f47575757193fa80ed"
+  },
+  {
+    "file": "tests/fixtures/templateRecommendationLLMCombinedV1.json",
+    "sha256": "9aeccb8aad1e0f059288f319e379aa9e75c2549839a2a6377f4de67d26432720"
+  },
+  {
+    "file": "tests/fixtures/templateRecommendationMultilingualV1.json",
+    "sha256": "f7dbcacdd6e6fbd4d6967128d949400dae9400bf16196a5f532644e04e9a4396"
+  },
+  {
+    "file": "tests/fixtures/visualStylePresetRecommendationBlindBatch.json",
+    "sha256": "c068577599716c405f5d754d3be3205c075740486a5dad30ede66bf8f1f2acbb"
+  },
+  {
+    "file": "tests/server/agentApp.test.ts",
+    "sha256": "1c93aaa13c29b080df8a0bc6cddd693adad9243b4d3f1222b5c143d3b71ca140"
+  },
+  {
+    "file": "tests/server/agentRecovery.test.ts",
+    "sha256": "104fe47480d65294c9a7eec8b9446697f99338e069e0927064ce8e5f8d726352"
+  },
+  {
+    "file": "tests/server/appDownload.test.ts",
+    "sha256": "b588e4b21a99f38c926b7f03842154627abcd860c9a379268bd250fc477623d3"
+  },
+  {
+    "file": "tests/server/appPolling.test.ts",
+    "sha256": "cb2fd4ed77b69bc08685dd995f86accae09027bc87e0d0079f02d3800bfb7b80"
+  },
+  {
+    "file": "tests/server/billing.test.ts",
+    "sha256": "e18a23692e725ac3f41298ba1c1657d618f8df08008a45f9ee180eb77193272d"
+  },
+  {
+    "file": "tests/server/billingRemote.test.ts",
+    "sha256": "1b99e1ca2ca9646d8612946a944d73976315795a0da679aee2114fa3dd2114e8"
+  },
+  {
+    "file": "tests/server/brainClient.test.ts",
+    "sha256": "9e99a18385e5e9c7bc0810a157459e7e5df54bfec95abf3d5b0c835ab26b3fae"
+  },
+  {
+    "file": "tests/server/brainGeneration.test.ts",
+    "sha256": "8f2a6bd9b99276e43d2da9c443a4015f251c0b0829d83a8ceeca232e1833aa1f"
+  },
+  {
+    "file": "tests/server/brainResponsibilities.test.ts",
+    "sha256": "108990b222befe5230f2bfcc392d1e118c193e6e4ad07954eb3d49ffd0d21976"
+  },
+  {
+    "file": "tests/server/devServicesSmoke.test.ts",
+    "sha256": "fb9b65379c9232b6b71e698d8b47ec6161ca3dfe2e7693214b3d5be2139f5177"
+  },
+  {
+    "file": "tests/server/engineApi.test.ts",
+    "sha256": "ca9d0b69e14186fb15172f4aac1944e0346d5b58ef3ca854f4629bc76700fd98"
+  },
+  {
+    "file": "tests/server/exportCoordinator.test.ts",
+    "sha256": "8b0a6aa50021331984b2f77198f965771f5681a1ad62adff80a2df1535e58fdd"
+  },
+  {
+    "file": "tests/server/exportRemoteFile.test.ts",
+    "sha256": "4541cd03f14d00fd662939cc9fba9bcd55698175fa7f380f3b654be1ad99c1f2"
+  },
+  {
+    "file": "tests/server/httpSecurity.test.ts",
+    "sha256": "ad6d5ec9f473b6926c48cff7414ab40b9c4ff64f83244873b96a22c0ebc1843e"
+  },
+  {
+    "file": "tests/server/httpSmoke.test.ts",
+    "sha256": "dc0e01a5c2c2051ba8026fd0f350a275f566a28cfe0a4f4bc61c1e63c5071378"
+  },
+  {
+    "file": "tests/server/jobQueue.test.ts",
+    "sha256": "ae08b44447f363b0f1f4d11a7acecc55128607a48bf2412fbb98454ae423833f"
+  },
+  {
+    "file": "tests/server/jobs.test.ts",
+    "sha256": "5582ebce698b8a8d9ef3d35f8eef278757dfa2733da73163417867e94524c283"
+  },
+  {
+    "file": "tests/server/multiReplicaSmoke.test.ts",
+    "sha256": "6ef2cc4466cd9c876341984c92df5573ce833b691f737a80df0b1644195dea2f"
+  },
+  {
+    "file": "tests/server/remoteFiles.test.ts",
+    "sha256": "bca60ad1f3ea7d832ebcc72dabb3433716ea328284477645d51baa1b5a4d4d21"
+  },
+  {
+    "file": "tests/server/remoteGatewaySmoke.test.ts",
+    "sha256": "014c126696cb51b3792ba31cf41c5823049f01fcf19892969a90488f2e07a254"
+  },
+  {
+    "file": "tests/server/threeServiceSmoke.test.ts",
+    "sha256": "fd29d4bceca3bb8a6587c26aacfb1718c326746b8054eaf8dc98923f8dcaab91"
+  },
+  {
+    "file": "third_party/dom-to-pptx/.markdownlint.json",
+    "sha256": "025a1fa03a1da5a27c8a18c138eb0fb7c31fd5aece0b009b4fb25d39434f5b61"
+  },
+  {
+    "file": "third_party/dom-to-pptx/package.json",
+    "sha256": "bc1940a75de6a8d03f5035692b3b52e94b870fdc91601af78e3383b633a1fbe1"
+  },
+  {
+    "file": "third_party/dom-to-pptx/packages/dom-to-pptx-exporter/package.json",
+    "sha256": "ed90ea2a616d06c1a723c533276da6c16bf767b13e83a2026588170d755bb57d"
+  },
+  {
+    "file": "third_party/dom-to-pptx/packages/dom-to-pptx-skills/package.json",
+    "sha256": "6a0235d28d2f50730580867ede82e4483196bb01d3696ae0ad1bf1fc363e4cd9"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/package.json",
+    "sha256": "719f5ee4d10199a841539fa7e17d15f030caaa3c110e85962af887489ee385c2"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/args.mjs",
+    "sha256": "56220302863d8ff63ee9639ab5d8d9cce8bd321c17572edff23f867a202a618a"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/browser.mjs",
+    "sha256": "bda317920042b994cfe6620be51b3a66d2d4a247e0ce336a018da89465f4def1"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/cli.mjs",
+    "sha256": "c8fada6c1412fde79a177a2aaa3ec2335ad818973d550943f9ee933d9ce31c53"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/constants.mjs",
+    "sha256": "452ecc11985e9c465be48f329e07dad43b53cc6a90671de0564d401783fc4f22"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/files.mjs",
+    "sha256": "f4ad5985deb89d7111f9c6c391f5164804d5644c4766671424158434c8b9d3c9"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/html-resources.mjs",
+    "sha256": "9c66e516b09cb2effe45fb3523a80e3cee773904d7577e6e37a63086b0c89e43"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/image.mjs",
+    "sha256": "f0c74cfb85cc4468429ad5f51fb179ae717b2e5c972ba7292687e1732b21809a"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/operations.mjs",
+    "sha256": "16eecaa6b76baca556e89836f3c5cce3415d5f7e87f6e59df04af878321c6feb"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/src/presets.mjs",
+    "sha256": "7ae80fea21f898380b9506227c61c751af2230e2b16c9cac5b33f2aad1c41349"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/args.test.mjs",
+    "sha256": "37ef56e9c93aac150a5ee3cf9aa7eafc7d207dc14c91315f9ef4e50fea41d095"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/browser.test.mjs",
+    "sha256": "7d61ac1a78c05bfaffc4b52ed2e87f0bcd9951accaefbdab5124f229189d314c"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/files.test.mjs",
+    "sha256": "3766e8750f3b8f440a29de40a7a37fa73affc5ebd31f34cccebce0c39880a7e9"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/html-resources.test.mjs",
+    "sha256": "b08088f5f3fbff97edaf98d9abb8f216b6e740d82f2f7686b736b73a1f2a7cd3"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/image.test.mjs",
+    "sha256": "a02ba7e9135318a9be6c3561f07267c9e2fca2fcafc02a0346adcf0f126a5c36"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/operations.test.mjs",
+    "sha256": "d48cf016ad0b81c815361a2dfeea432e459ed468028ddf2533bb513d9710337e"
+  },
+  {
+    "file": "tools/visual-style-preset-preview-renderer/tests/presets.test.mjs",
+    "sha256": "47c34f7fcb7f4f7003283b9322907bf517eec868d5963892752bd5860793ead0"
+  },
+  {
+    "file": "tsconfig.json",
+    "sha256": "ba4d8db687c820581129c46bd6653773a25a87a218a029db3b86466dc320fed5"
+  }
+]

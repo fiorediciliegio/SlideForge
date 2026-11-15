@@ -1,0 +1,2429 @@
+[
+  {
+    "Time": "2026-11-12T16:48:48.1982603+08:00",
+    "Action": "start",
+    "Package": "slideforge/services/gateway/internal/jobs"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.2012697+08:00",
+    "Action": "start",
+    "Package": "slideforge/services/gateway/internal/billing"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.2012697+08:00",
+    "Action": "start",
+    "Package": "slideforge/services/gateway/internal/enginejobs"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7246066+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7263104+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "=== RUN   TestExportReceiptsSurviveMoreThanOneHundredCharges\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7395503+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7395503+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "=== RUN   TestAgentReservationFailureExplainsRemainingAndNextCost\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7395503+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "--- PASS: TestAgentReservationFailureExplainsRemainingAndNextCost (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7395503+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:48.740106+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.740106+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "=== RUN   TestAgentConcurrentBudgetReservationsShareOneLimit\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.760308+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7608697+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "=== RUN   TestDeliveryChargesOnceAndNeverPublishesWithoutPayment\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7740857+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "    agent_test.go:64: OFFLINE_METRIC budget_reservations accepted=5 rejected=5 reserved=2.000000\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7802968+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "--- PASS: TestAgentConcurrentBudgetReservationsShareOneLimit (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7802968+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7802968+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7802968+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "=== RUN   TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7802968+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "--- PASS: TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7808687+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7808687+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.7808687+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "=== RUN   TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.810945+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "--- PASS: TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.810945+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:48.810945+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.810945+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "=== RUN   TestAgentClaimFencesDuplicateAndCancelledWrites\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8309375+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "--- PASS: TestAgentClaimFencesDuplicateAndCancelledWrites (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8309375+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8309375+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8309375+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "=== RUN   TestAgentBudgetReservationsAndSettlementAreDurable\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8774997+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "--- PASS: TestAgentBudgetReservationsAndSettlementAreDurable (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8774997+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8774997+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.8774997+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "=== RUN   TestAgentToolReplayAndParentRevisionCAS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9137743+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "--- PASS: TestAgentToolReplayAndParentRevisionCAS (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9137743+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9137743+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9137743+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "=== RUN   TestAgentDraftSaveDoesNotPublishUntilConfirmation\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "--- PASS: TestAgentDraftSaveDoesNotPublishUntilConfirmation (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "=== RUN   TestEngineQueueTimeExcludedAndParallelWorkCountsOnce\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "--- PASS: TestEngineQueueTimeExcludedAndParallelWorkCountsOnce (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "=== RUN   TestAgentReservationFailureExplainsRemainingAndNextCost\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "--- PASS: TestAgentReservationFailureExplainsRemainingAndNextCost (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.943068+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "=== RUN   TestAgentConcurrentBudgetReservationsShareOneLimit\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9743367+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "    agent_test.go:64: OFFLINE_METRIC budget_reservations accepted=5 rejected=5 reserved=2.000000\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "--- PASS: TestAgentConcurrentBudgetReservationsShareOneLimit (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "=== RUN   TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "--- PASS: TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9794293+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "=== RUN   TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "--- PASS: TestDeliveryChargesOnceAndNeverPublishesWithoutPayment (0.22s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Elapsed": 0.22
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "=== RUN   TestPersistedJSONParameterOrderDoesNotChangeIdentity\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "--- PASS: TestPersistedJSONParameterOrderDoesNotChangeIdentity (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9833769+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "=== RUN   TestMixedOwnersCannotStarveOneOwnersExport\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9993614+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "--- PASS: TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9999312+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9999312+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites"
+  },
+  {
+    "Time": "2026-11-12T16:48:48.9999312+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "=== RUN   TestAgentClaimFencesDuplicateAndCancelledWrites\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0205104+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "--- PASS: TestAgentClaimFencesDuplicateAndCancelledWrites (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0210659+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0210659+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0210659+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "=== RUN   TestAgentBudgetReservationsAndSettlementAreDurable\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0734046+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "--- PASS: TestAgentBudgetReservationsAndSettlementAreDurable (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0734046+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0734046+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.0734046+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "=== RUN   TestAgentToolReplayAndParentRevisionCAS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1065847+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "--- PASS: TestAgentToolReplayAndParentRevisionCAS (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1065847+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1065847+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1065847+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "=== RUN   TestAgentDraftSaveDoesNotPublishUntilConfirmation\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "--- PASS: TestAgentDraftSaveDoesNotPublishUntilConfirmation (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "=== RUN   TestEngineQueueTimeExcludedAndParallelWorkCountsOnce\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "--- PASS: TestEngineQueueTimeExcludedAndParallelWorkCountsOnce (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1366716+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.137255+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "=== RUN   TestAgentReservationFailureExplainsRemainingAndNextCost\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.137255+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "--- PASS: TestAgentReservationFailureExplainsRemainingAndNextCost (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.137255+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.137255+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.137255+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "=== RUN   TestAgentConcurrentBudgetReservationsShareOneLimit\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1694242+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "    agent_test.go:64: OFFLINE_METRIC budget_reservations accepted=5 rejected=5 reserved=2.000000\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1735396+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "--- PASS: TestAgentConcurrentBudgetReservationsShareOneLimit (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1735396+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1741043+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1741043+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "=== RUN   TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1741043+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "--- PASS: TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1741043+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1741043+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.1741043+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "=== RUN   TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2074487+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "--- PASS: TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2074487+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2074487+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2074487+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "=== RUN   TestAgentClaimFencesDuplicateAndCancelledWrites\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2304506+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "--- PASS: TestAgentClaimFencesDuplicateAndCancelledWrites (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2304506+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2304506+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2304506+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "=== RUN   TestAgentBudgetReservationsAndSettlementAreDurable\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2853486+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "--- PASS: TestAgentBudgetReservationsAndSettlementAreDurable (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2853486+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2853486+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.2853486+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "=== RUN   TestAgentToolReplayAndParentRevisionCAS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3212229+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "--- PASS: TestAgentToolReplayAndParentRevisionCAS (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3212229+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3212229+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3212229+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "=== RUN   TestAgentDraftSaveDoesNotPublishUntilConfirmation\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3519227+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "--- PASS: TestAgentDraftSaveDoesNotPublishUntilConfirmation (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "=== RUN   TestEngineQueueTimeExcludedAndParallelWorkCountsOnce\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "--- PASS: TestEngineQueueTimeExcludedAndParallelWorkCountsOnce (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "=== RUN   TestAgentReservationFailureExplainsRemainingAndNextCost\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "--- PASS: TestAgentReservationFailureExplainsRemainingAndNextCost (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3524846+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "=== RUN   TestAgentConcurrentBudgetReservationsShareOneLimit\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3909084+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "    agent_test.go:64: OFFLINE_METRIC budget_reservations accepted=5 rejected=5 reserved=2.000000\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3965646+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "--- PASS: TestAgentConcurrentBudgetReservationsShareOneLimit (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3965646+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3965646+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3965646+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "=== RUN   TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3965646+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "--- PASS: TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3970999+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3970999+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.3970999+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "=== RUN   TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4165129+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "--- PASS: TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4165129+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4165129+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4165129+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "=== RUN   TestAgentClaimFencesDuplicateAndCancelledWrites\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4320573+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "--- PASS: TestMixedOwnersCannotStarveOneOwnersExport (0.45s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4320573+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Elapsed": 0.45
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4320573+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4320573+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "=== RUN   TestDurableDedupAndFencedRecovery\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4371713+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "--- PASS: TestAgentClaimFencesDuplicateAndCancelledWrites (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4371713+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4371713+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4371713+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "=== RUN   TestAgentBudgetReservationsAndSettlementAreDurable\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4831992+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "--- PASS: TestAgentBudgetReservationsAndSettlementAreDurable (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4831992+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4831992+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4831992+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "=== RUN   TestAgentToolReplayAndParentRevisionCAS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4866461+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "--- PASS: TestDurableDedupAndFencedRecovery (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4866461+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4866461+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.4866461+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "=== RUN   TestFairOwnersCancellationAndPrivateArtifacts\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5153515+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "--- PASS: TestAgentToolReplayAndParentRevisionCAS (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5153515+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5153515+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5153515+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "=== RUN   TestAgentDraftSaveDoesNotPublishUntilConfirmation\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5337566+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "--- PASS: TestFairOwnersCancellationAndPrivateArtifacts (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5337566+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5337566+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5337566+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "=== RUN   TestDeliveryChargesOnceAndNeverPublishesWithoutPayment\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "--- PASS: TestAgentDraftSaveDoesNotPublishUntilConfirmation (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "=== RUN   TestEngineQueueTimeExcludedAndParallelWorkCountsOnce\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "--- PASS: TestEngineQueueTimeExcludedAndParallelWorkCountsOnce (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "=== RUN   TestAgentReservationFailureExplainsRemainingAndNextCost\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Output": "--- PASS: TestAgentReservationFailureExplainsRemainingAndNextCost (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentReservationFailureExplainsRemainingAndNextCost",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.542341+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "=== RUN   TestAgentConcurrentBudgetReservationsShareOneLimit\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5733158+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "    agent_test.go:64: OFFLINE_METRIC budget_reservations accepted=5 rejected=5 reserved=2.000000\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Output": "--- PASS: TestAgentConcurrentBudgetReservationsShareOneLimit (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentConcurrentBudgetReservationsShareOneLimit",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "=== RUN   TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Output": "--- PASS: TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentWaitingAndQueuedTimeDoNotConsumeExecutionBudget",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5778928+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "=== RUN   TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5976141+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Output": "--- PASS: TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5976141+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentPersistenceFailureKeepsPriorSnapshotAndMemory",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5976141+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.5976141+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "=== RUN   TestAgentClaimFencesDuplicateAndCancelledWrites\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6178517+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Output": "--- PASS: TestAgentClaimFencesDuplicateAndCancelledWrites (0.02s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6178517+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentClaimFencesDuplicateAndCancelledWrites",
+    "Elapsed": 0.02
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6178517+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6178517+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "=== RUN   TestAgentBudgetReservationsAndSettlementAreDurable\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6677335+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Output": "--- PASS: TestAgentBudgetReservationsAndSettlementAreDurable (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6677335+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentBudgetReservationsAndSettlementAreDurable",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6677335+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.6677335+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "=== RUN   TestAgentToolReplayAndParentRevisionCAS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7003972+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Output": "--- PASS: TestAgentToolReplayAndParentRevisionCAS (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7003972+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentToolReplayAndParentRevisionCAS",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7003972+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7003972+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "=== RUN   TestAgentDraftSaveDoesNotPublishUntilConfirmation\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Output": "--- PASS: TestAgentDraftSaveDoesNotPublishUntilConfirmation (0.03s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestAgentDraftSaveDoesNotPublishUntilConfirmation",
+    "Elapsed": 0.03
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "=== RUN   TestEngineQueueTimeExcludedAndParallelWorkCountsOnce\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Output": "--- PASS: TestEngineQueueTimeExcludedAndParallelWorkCountsOnce (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Test": "TestEngineQueueTimeExcludedAndParallelWorkCountsOnce",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7274742+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Output": "PASS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7325317+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "--- PASS: TestDeliveryChargesOnceAndNeverPublishesWithoutPayment (0.20s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Elapsed": 0.2
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "=== RUN   TestPersistedJSONParameterOrderDoesNotChangeIdentity\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "--- PASS: TestPersistedJSONParameterOrderDoesNotChangeIdentity (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7330847+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "=== RUN   TestMixedOwnersCannotStarveOneOwnersExport\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7393804+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Output": "ok  \tslideforge/services/gateway/internal/jobs\t1.538s\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:49.7393804+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/jobs",
+    "Elapsed": 1.541
+  },
+  {
+    "Time": "2026-11-12T16:48:50.1452589+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "--- PASS: TestMixedOwnersCannotStarveOneOwnersExport (0.41s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.1452589+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Elapsed": 0.41
+  },
+  {
+    "Time": "2026-11-12T16:48:50.1452589+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.1452589+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "=== RUN   TestDurableDedupAndFencedRecovery\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2033824+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "--- PASS: TestDurableDedupAndFencedRecovery (0.06s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2033824+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Elapsed": 0.06
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2033824+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2033824+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "=== RUN   TestFairOwnersCancellationAndPrivateArtifacts\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2501116+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "--- PASS: TestFairOwnersCancellationAndPrivateArtifacts (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2501116+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2501116+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.2501116+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "=== RUN   TestDeliveryChargesOnceAndNeverPublishesWithoutPayment\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4416845+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "--- PASS: TestDeliveryChargesOnceAndNeverPublishesWithoutPayment (0.19s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4416845+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Elapsed": 0.19
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4416845+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4416845+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "=== RUN   TestPersistedJSONParameterOrderDoesNotChangeIdentity\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4416845+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "--- PASS: TestPersistedJSONParameterOrderDoesNotChangeIdentity (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4422447+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4422447+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.4422447+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "=== RUN   TestMixedOwnersCannotStarveOneOwnersExport\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7216655+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "--- PASS: TestExportReceiptsSurviveMoreThanOneHundredCharges (2.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7222227+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Elapsed": 2
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7222227+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7222227+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "=== RUN   TestAgentExportChargesOwnerWithoutPersistingBearerKey\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7718515+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "--- PASS: TestAgentExportChargesOwnerWithoutPersistingBearerKey (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7718515+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7718515+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.7718515+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "=== RUN   TestExportReceiptsSurviveMoreThanOneHundredCharges\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.8579968+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "--- PASS: TestMixedOwnersCannotStarveOneOwnersExport (0.42s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.8579968+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Elapsed": 0.42
+  },
+  {
+    "Time": "2026-11-12T16:48:50.8579968+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.8579968+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "=== RUN   TestDurableDedupAndFencedRecovery\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9072991+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "--- PASS: TestDurableDedupAndFencedRecovery (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9078451+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9078451+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9078451+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "=== RUN   TestFairOwnersCancellationAndPrivateArtifacts\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9528258+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "--- PASS: TestFairOwnersCancellationAndPrivateArtifacts (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9528258+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9528258+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment"
+  },
+  {
+    "Time": "2026-11-12T16:48:50.9528258+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "=== RUN   TestDeliveryChargesOnceAndNeverPublishesWithoutPayment\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "--- PASS: TestDeliveryChargesOnceAndNeverPublishesWithoutPayment (0.18s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Elapsed": 0.18
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "=== RUN   TestPersistedJSONParameterOrderDoesNotChangeIdentity\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "--- PASS: TestPersistedJSONParameterOrderDoesNotChangeIdentity (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.1374382+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "=== RUN   TestMixedOwnersCannotStarveOneOwnersExport\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5260406+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "--- PASS: TestMixedOwnersCannotStarveOneOwnersExport (0.39s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5260406+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Elapsed": 0.39
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5260406+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5260406+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "=== RUN   TestDurableDedupAndFencedRecovery\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5733293+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "--- PASS: TestDurableDedupAndFencedRecovery (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5738824+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5738824+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.5738824+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "=== RUN   TestFairOwnersCancellationAndPrivateArtifacts\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.612868+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "--- PASS: TestFairOwnersCancellationAndPrivateArtifacts (0.04s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.612868+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Elapsed": 0.04
+  },
+  {
+    "Time": "2026-11-12T16:48:51.612868+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.612868+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "=== RUN   TestDeliveryChargesOnceAndNeverPublishesWithoutPayment\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Output": "--- PASS: TestDeliveryChargesOnceAndNeverPublishesWithoutPayment (0.19s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDeliveryChargesOnceAndNeverPublishesWithoutPayment",
+    "Elapsed": 0.19
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "=== RUN   TestPersistedJSONParameterOrderDoesNotChangeIdentity\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Output": "--- PASS: TestPersistedJSONParameterOrderDoesNotChangeIdentity (0.00s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestPersistedJSONParameterOrderDoesNotChangeIdentity",
+    "Elapsed": 0
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport"
+  },
+  {
+    "Time": "2026-11-12T16:48:51.8035578+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "=== RUN   TestMixedOwnersCannotStarveOneOwnersExport\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3049198+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Output": "--- PASS: TestMixedOwnersCannotStarveOneOwnersExport (0.50s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3049198+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestMixedOwnersCannotStarveOneOwnersExport",
+    "Elapsed": 0.5
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3049198+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3049198+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "=== RUN   TestDurableDedupAndFencedRecovery\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3694674+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Output": "--- PASS: TestDurableDedupAndFencedRecovery (0.06s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3694674+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestDurableDedupAndFencedRecovery",
+    "Elapsed": 0.06
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3700162+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.3700162+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "=== RUN   TestFairOwnersCancellationAndPrivateArtifacts\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.4235681+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Output": "--- PASS: TestFairOwnersCancellationAndPrivateArtifacts (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.424126+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Test": "TestFairOwnersCancellationAndPrivateArtifacts",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:52.424126+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Output": "PASS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.437168+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Output": "ok  \tslideforge/services/gateway/internal/enginejobs\t4.236s\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.437168+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/enginejobs",
+    "Elapsed": 4.236
+  },
+  {
+    "Time": "2026-11-12T16:48:52.6821599+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "--- PASS: TestExportReceiptsSurviveMoreThanOneHundredCharges (1.91s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.6827055+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Elapsed": 1.91
+  },
+  {
+    "Time": "2026-11-12T16:48:52.6827055+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.6827055+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "=== RUN   TestAgentExportChargesOwnerWithoutPersistingBearerKey\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.7375216+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "--- PASS: TestAgentExportChargesOwnerWithoutPersistingBearerKey (0.06s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.7375216+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Elapsed": 0.06
+  },
+  {
+    "Time": "2026-11-12T16:48:52.7375216+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges"
+  },
+  {
+    "Time": "2026-11-12T16:48:52.7375216+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "=== RUN   TestExportReceiptsSurviveMoreThanOneHundredCharges\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:54.6667829+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "--- PASS: TestExportReceiptsSurviveMoreThanOneHundredCharges (1.93s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:54.6673476+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Elapsed": 1.93
+  },
+  {
+    "Time": "2026-11-12T16:48:54.6673476+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey"
+  },
+  {
+    "Time": "2026-11-12T16:48:54.6673476+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "=== RUN   TestAgentExportChargesOwnerWithoutPersistingBearerKey\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:54.7201455+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "--- PASS: TestAgentExportChargesOwnerWithoutPersistingBearerKey (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:54.7201455+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:54.7201455+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges"
+  },
+  {
+    "Time": "2026-11-12T16:48:54.7201455+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "=== RUN   TestExportReceiptsSurviveMoreThanOneHundredCharges\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:56.5484413+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "--- PASS: TestExportReceiptsSurviveMoreThanOneHundredCharges (1.83s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:56.5489959+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Elapsed": 1.83
+  },
+  {
+    "Time": "2026-11-12T16:48:56.5489959+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey"
+  },
+  {
+    "Time": "2026-11-12T16:48:56.5489959+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "=== RUN   TestAgentExportChargesOwnerWithoutPersistingBearerKey\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:56.6007786+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "--- PASS: TestAgentExportChargesOwnerWithoutPersistingBearerKey (0.05s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:56.6013377+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Elapsed": 0.05
+  },
+  {
+    "Time": "2026-11-12T16:48:56.6013377+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges"
+  },
+  {
+    "Time": "2026-11-12T16:48:56.6013377+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "=== RUN   TestExportReceiptsSurviveMoreThanOneHundredCharges\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.5527085+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Output": "--- PASS: TestExportReceiptsSurviveMoreThanOneHundredCharges (1.95s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.5527085+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestExportReceiptsSurviveMoreThanOneHundredCharges",
+    "Elapsed": 1.95
+  },
+  {
+    "Time": "2026-11-12T16:48:58.5527085+08:00",
+    "Action": "run",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.5527085+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "=== RUN   TestAgentExportChargesOwnerWithoutPersistingBearerKey\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.6082615+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Output": "--- PASS: TestAgentExportChargesOwnerWithoutPersistingBearerKey (0.06s)\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.6082615+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Test": "TestAgentExportChargesOwnerWithoutPersistingBearerKey",
+    "Elapsed": 0.06
+  },
+  {
+    "Time": "2026-11-12T16:48:58.6082615+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Output": "PASS\n",
+    "OutputType": "frame"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.6181596+08:00",
+    "Action": "output",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Output": "ok  \tslideforge/services/gateway/internal/billing\t10.417s\n"
+  },
+  {
+    "Time": "2026-11-12T16:48:58.6181596+08:00",
+    "Action": "pass",
+    "Package": "slideforge/services/gateway/internal/billing",
+    "Elapsed": 10.417
+  }
+]

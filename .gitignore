@@ -21,3 +21,5 @@ data/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.superpowers/
+.archify/**/evidence/

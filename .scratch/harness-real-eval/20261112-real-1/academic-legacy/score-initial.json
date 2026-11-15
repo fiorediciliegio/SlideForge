@@ -1,0 +1,121 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "拟设试件",
+      "value": "18",
+      "unit": "件",
+      "matched": true,
+      "evidence": {
+        "page": 3,
+        "text": "01\n18件\n拟设试件"
+      }
+    },
+    {
+      "subject": "设计工况",
+      "value": "6",
+      "unit": "类",
+      "matched": true,
+      "evidence": {
+        "page": 3,
+        "text": "02\n6类\n设计工况"
+      }
+    },
+    {
+      "subject": "拟设测点",
+      "value": "24",
+      "unit": "个",
+      "matched": true,
+      "evidence": {
+        "page": 3,
+        "text": "03\n24个\n拟设测点"
+      }
+    },
+    {
+      "subject": "计划周期",
+      "value": "8",
+      "unit": "个月",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "PLAN & TIMELINE\n可行性与进度\n\n计划周期 8 个月：第 1 至 2 个月完成设计，第 3 至 5 个月准备和采集，第 6 至 8 个月分析与写作。以上均为计划安排。"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "研究背景",
+      "matched": true
+    },
+    {
+      "title": "研究内容与技术路线",
+      "matched": false
+    },
+    {
+      "title": "可行性与进度",
+      "matched": true
+    },
+    {
+      "title": "拟议创新点",
+      "matched": true
+    }
+  ],
+  "section_hits": 3,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "page-1",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "page-2",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "page-3",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "page-4",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "page-5",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "page-6",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 4555.392399999779,
+  "rules_pass": false
+}

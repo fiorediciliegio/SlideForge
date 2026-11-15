@@ -1,0 +1,113 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点团队",
+      "value": "17",
+      "unit": "支",
+      "matched": false,
+      "value_present": true
+    },
+    {
+      "subject": "试点工单",
+      "value": "426",
+      "unit": "张",
+      "matched": false,
+      "value_present": true
+    },
+    {
+      "subject": "平均响应时长",
+      "value": "19",
+      "unit": "分钟",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 6,
+        "text": "能力：工单归类、责任人分派、状态追踪。试点：17 支团队、426 张工单、平均响应时长 19 分钟、培训 3 小时，均为资料直接给出。"
+      }
+    },
+    {
+      "subject": "培训时长",
+      "value": "3",
+      "unit": "小时",
+      "matched": false,
+      "value_present": true
+    }
+  ],
+  "facts_hit": 1,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "客户问题",
+      "matched": true
+    },
+    {
+      "title": "产品能力",
+      "matched": true
+    },
+    {
+      "title": "试点数据",
+      "matched": true
+    },
+    {
+      "title": "实施步骤",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "cover",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "problem",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "capability",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "pilot",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "steps",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "scope",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 5599.685900000011,
+  "rules_pass": false
+}

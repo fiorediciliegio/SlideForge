@@ -17,7 +17,7 @@ git clone https://github.com/xiaoyuankele/SlideForge.git slideforge
 cd slideforge
 npm install
 
-# 引擎依赖（M0/M1 当前为进程内直调引擎模块，需引擎 node_modules）
+# 独立引擎依赖（只由引擎进程执行渲染与导出）
 cd executas/ppt-engine && npm install && cd ../..
 ```
 
@@ -53,7 +53,7 @@ npm.cmd run dev
 
 浏览器打开 `http://localhost:8080/app`。终端保持运行，Ctrl+C 关闭本次四个服务。启动器加载根目录 `.env`，已有进程环境变量优先；模型 Key 只写在本机 `.env`，不要放入业务 Key 输入框。业务 Key 仍由 Go 网关签发，用于登录、作品隔离和导出点数。
 
-端口：Go 网关8080、Node Capability3210、Node引擎3211、Python Brain3212。启动器默认识别 `.tooling/go/bin/go.exe` 与 `.tooling/brain-venv/Scripts/python.exe`，无需为每次启动重复设置 PATH。当前引擎调用仍包含进程内能力，本轮没有宣称全部引擎作业已迁往3211。
+端口：Go 网关8080、Node Capability3210、Node引擎3211、Python Brain3212。启动器默认识别 `.tooling/go/bin/go.exe` 与 `.tooling/brain-venv/Scripts/python.exe`，无需为每次启动重复设置 PATH。在线检查、预览、PDF/PPTX 均通过独立引擎作业执行；业务 Node 不启动 Chrome。
 
 新机器准备 Python 虚拟环境可用以下命令（本机已有，无需重复）：
 
@@ -160,7 +160,7 @@ node --import tsx/esm scripts/keys.ts list
 - **启动前置条件**：`NODE_ENV=production` 时必须配置 `SLIDEFORGE_ADMIN_TOKEN`，并在启动前执行 `node --import tsx/esm scripts/keys.ts issue --name "首位用户" --points 200` 创建至少一个 API key；否则服务拒绝以无鉴权模式启动。
 - **管理员鉴权**：`/admin/*` 使用 `X-Admin-Token`。管理员 token 与客户端 key 分开管理，不要使用同一个值。
 - **用户隔离**：开启计费后，deck、品牌模板和远程 MCP 都校验 API key 归属。旧的未归属数据不会自动对公开用户开放。
-- **容量保护**：生成、重生成、预览、换肤和导出共享有界队列。保持 `DECK_JOB_CONCURRENCY=1`、`DECK_CONCURRENCY=2` 的保守起点，不要直接提高并发。
+- **容量保护**：Brain 默认 `AGENT_PROJECT_CONCURRENCY=5`，每作品 `DECK_CONCURRENCY=2`；引擎默认 `ENGINE_CONCURRENCY=1`。检查/预览/导出使用独立持久队列，等待引擎不占整份生成的共享槽位。服务器并发按压测和内存调整。
 - **密钥存储**：API key 仅保存 SHA-256 哈希，原始 key 只在签发时显示一次；旧明文文件会在读取时自动迁移。
 - **导出幂等**：相同内容重复导出复用回执且不重复扣费；客户端重试可额外携带 `Idempotency-Key`。
 - **请求保护**：默认请求体上限 32 MiB、每身份 120 请求/分钟、20 次创建/小时，可通过 `deploy/env.example` 中参数调整。
@@ -177,18 +177,21 @@ node --import tsx/esm scripts/keys.ts list
 3. 通过 Go 管理接口签发首位用户 key；旧明文 key 文件会由 Go 自动迁移为哈希。
 4. 再启动 Node：`npm run serve`，继续监听 3210。远程模式下 Node 只调用 Go，不读写 API key、余额、台账或任务快照文件。
 5. `GATEWAY_PORT` 控制网关端口；`ENGINE_UPSTREAM_URL`、`NODE_ENGINE_URL`、`BRAIN_URL` 分别指向 Node 主服务、独立引擎和 Python。`GET /healthz` 检查网关，`GET /readyz` 逐一检查三个上游并指出失败服务。
-6. 客户端统一访问 8080。Go 直接处理 key 管理、任务查询、SSE 进度与取消，其他 API 透明代理到 Node。Node 导出后发布文件，Go 提供 `GET /files/<file_id>` 鉴权下载与 `GET /decks/<deck_id>/files` 列表；导出回执可包含 `file_id`、`download_url`。
-7. 本地单进程开发可不设置远程 API URL，继续使用 Node 原本地实现；生产远程模式不得同时让两个进程写同一计费或任务文件，文件对象与元数据只归 Go 文件服务。
+6. 客户端统一访问 8080。Go 直接处理 key 管理、任务查询、SSE 进度与取消，其他 API 透明代理到 Node。独立引擎上传私有产物，Go 幂等扣点后发布文件，并提供 `GET /files/<file_id>` 鉴权下载与 `GET /decks/<deck_id>/files` 列表；导出回执可包含 `file_id`、`download_url`。
+7. 本地生成和导出也需要运行 Go 与独立引擎；CLI/MCP 在 `npm run dev` 已运行时连接本机网关。单独 `serve` 仅启动业务 API，不提供本地渲染；生产远程模式不得同时让两个进程写同一计费或任务文件，文件对象与元数据只归 Go 文件服务。
 
 跨服务接口以 `contracts/openapi/gateway.yaml`、`contracts/openapi/auth-billing.yaml`、`contracts/openapi/jobs.yaml` 和 `contracts/openapi/files.yaml` 为准。
 
 ## 六-C、P1-D1 Node 独立引擎服务
 
-1. 配置 `ENGINE_PORT=3211`、`SLIDEFORGE_DECKS_ROOT=<作品根目录>` 与现有 `GATEWAY_INTERNAL_TOKEN`，执行 `npm run serve:engine`。
-2. 引擎只处理确定性页面校验、预览和导出，不承接用户、计费、任务或文件元数据；`GET /healthz` 可用于进程检查。
-3. 内部接口为 `POST /internal/engine/validate-page`、`POST /internal/engine/preview`、`POST /internal/engine/export`，均要求 `X-Internal-Token`。
-4. `runDir` 必须是 `SLIDEFORGE_DECKS_ROOT` 的直接子目录，`outPath` 必须直接位于对应 Deck 工作区内，禁止路径穿越。
-5. 引擎契约见 `contracts/openapi/engine.yaml`。现有 Capability API 保持兼容，后续由 Go 按内部契约调用，不新增客户端专用业务接口。
+1. 本机使用 `npm.cmd run dev` 启动四进程，访问 `http://localhost:8080/app`，既有 `.env` 无需增加配置。默认重型并发为 1，Brain 活跃项目为 5。
+2. 分机部署时，业务 Node 和引擎均配置 `SLIDEFORGE_ENGINE_API_URL=https://网关/internal/engine` 与相同的 `GATEWAY_INTERNAL_TOKEN`；该内部端点只向可信服务开放。引擎仅需可写的 `ENGINE_WORK_ROOT`（未设置时用系统临时目录），不挂载业务作品目录。引擎进程保留 Chrome/字体与 engine 依赖。
+3. Go 暴露私有 `POST /internal/engine/artifacts`、`jobs`、`claim`，统一内部令牌。输入只能包含固定 HTML 和内嵌资源，不接受绝对路径或任意 URL。私有输入/截图不会出现在客户文件列表。原同步引擎目录接口已移除。
+4. 多引擎实例共享同一 Go 队列；每次执行带租约，失联最多重跑一次。生产使用 `JOBS_DATABASE_URL` 加 S3，JSON 仅供单网关开发。生产 PostgreSQL 采用短行事务协调，不把 HTML/文件内容写进调度记录。
+5. `POST /decks/<id>/export` 返回 202、`engine_job_id` 和 `status_url`。GET 状态 URL 得到 queued/running/completed/failed/cancelled；completed 包含鉴权下载回执。请求取消用相同 POST 携带 `{ "engine_job_id":"...", "cancel":true }`。同版本任务复用，取消会影响其他使用该任务的窗口；关闭页面不取消。
+6. 客户导出先生成私有文件，再以引擎任务 ID 幂等扣点，最后发布 `/files/<id>`。扣点后响应丢失可继续查询原交付，不重复扣点；未扣点产物不会开放下载。CLI/MCP 的等待仍使用同一任务协议，受信本地 stdio/CLI 可保存文件到本机。
+7. `ENGINE_CONCURRENCY=1` 是本机起点。服务器可配置 1–8，每增加一个槽位都要测 Chrome 峰值内存；用户数量不等于浏览器进程数。队列全局 100、每 owner 20，满时明确拒绝。仅排队不扣 Agent 有效时间。
+8. 本期不实现多个业务 Node 对同一项目目录的接管。详见 [ADR-0081](adr/0081-independent-engine-jobs.md)、[协议](../contracts/openapi/engine.yaml)及[验收记录](../.scratch/engine-job-service/验收记录.md)。
 
 ## 六-D、P1-D2 Python 大脑层
 

@@ -1,0 +1,28 @@
+{
+  "format": 1,
+  "baselines": {
+    "20261113-after": {
+      "sha256": "13524b9f678c66985b52b8916fb8c8b921434ee5db6c18d4e4a8b63800e83c4d",
+      "runtime_overrides": {
+        "services/brain/brain/harness.py": "1ae0a4d48008f1cc2e3537375312b5058b638bf87d18d99a96aa024132f300de",
+        "services/brain/brain/agent_tools.py": "62ae890efe7b23ceeaea7d448a4c3167172c6c6204ef210124bfe892640ae59f",
+        "services/brain/brain/models.py": "a838000349d93e1f92890d0e935bd4c2f6a937fb521bb36349d680acde29cd21",
+        "src/capabilities/agent.ts": "a9184ad8bfd7041992e5b41e36137fb0189bbffb14df34e45cdf285d62b87824"
+      }
+    },
+    "20261113-before": {
+      "sha256": "b39f95f7a65a6b56e9f72ff945d333fd3872323a01d0714396d05140c29416f4",
+      "runtime_overrides": {
+        "services/brain/brain/harness.py": "fd1f87128a965afb9985584aee40b082961eb48bfd613144f850f6da95bdd355",
+        "services/brain/brain/agent_tools.py": "2171ff5fd7740aa05e27e573260d9b285ac9cbd6117f8099e5b2522a3cd62e98",
+        "services/brain/brain/models.py": "ceebbf7fe09f5b550ae24556eeef3796d604e55bec7f21a98f0b89243fa1231c",
+        "src/capabilities/agent.ts": "b43a94aa17fa16055f06af586adc7786394ff1eac730ffd79f729b1903376ada"
+      }
+    },
+    "20261112-harness": {
+      "sha256": "4b03e006f2572bf91ce456ccf33a6de9e1dadcd235cfc77ff722ea9495123d2e",
+      "runtime_overrides": {}
+    }
+  },
+  "original_source_manifest_sha256": "46f1a823495abc2f7380312441bb66aed606faa89a950dc357a01c6e9ab6699d"
+}

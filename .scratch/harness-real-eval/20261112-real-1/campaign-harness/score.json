@@ -1,0 +1,125 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "邀请名额",
+      "value": "84",
+      "unit": "人",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "OBJECTIVE · 02 镜桥产品体验日方案 Objective 活动目标 核心目标是收集 可观察的使用问题 目标边界 不承诺成交，不设成交类指标 01 邀请名额 84 人 Invitees 02 体验分组 7 组 Groups 03 每组体验时长 26 分钟 Duration 04 反馈问题 9 项 Issues 注 数值引自附件 campaign.pdf，为虚构测评材料中的测试构造值。 2 / 6"
+      }
+    },
+    {
+      "subject": "体验分组",
+      "value": "7",
+      "unit": "组",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "OBJECTIVE · 02 镜桥产品体验日方案 Objective 活动目标 核心目标是收集 可观察的使用问题 目标边界 不承诺成交，不设成交类指标 01 邀请名额 84 人 Invitees 02 体验分组 7 组 Groups 03 每组体验时长 26 分钟 Duration 04 反馈问题 9 项 Issues 注 数值引自附件 campaign.pdf，为虚构测评材料中的测试构造值。 2 / 6"
+      }
+    },
+    {
+      "subject": "每组体验时长",
+      "value": "26",
+      "unit": "分钟",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "OBJECTIVE · 02 镜桥产品体验日方案 Objective 活动目标 核心目标是收集 可观察的使用问题 目标边界 不承诺成交，不设成交类指标 01 邀请名额 84 人 Invitees 02 体验分组 7 组 Groups 03 每组体验时长 26 分钟 Duration 04 反馈问题 9 项 Issues 注 数值引自附件 campaign.pdf，为虚构测评材料中的测试构造值。 2 / 6"
+      }
+    },
+    {
+      "subject": "反馈问题",
+      "value": "9",
+      "unit": "项",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "OBJECTIVE · 02 镜桥产品体验日方案 Objective 活动目标 核心目标是收集 可观察的使用问题 目标边界 不承诺成交，不设成交类指标 01 邀请名额 84 人 Invitees 02 体验分组 7 组 Groups 03 每组体验时长 26 分钟 Duration 04 反馈问题 9 项 Issues 注 数值引自附件 campaign.pdf，为虚构测评材料中的测试构造值。 2 / 6"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "活动目标",
+      "matched": true
+    },
+    {
+      "title": "体验流程",
+      "matched": true
+    },
+    {
+      "title": "资源安排",
+      "matched": true
+    },
+    {
+      "title": "反馈机制",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "cover",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "goal",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "flow",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "resource",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "feedback",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "status",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 2772.899599999999,
+  "rules_pass": true
+}

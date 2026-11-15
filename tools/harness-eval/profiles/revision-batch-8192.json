@@ -1,0 +1,9 @@
+{
+  "id": "harness-six-scenes-v2-8192",
+  "parent_protocol_hash": "92c95816448de51dd5035288e0e6f44f71e5d6f5082c6f08a249e12f73d7de5c",
+  "controller_max_tokens": 8192,
+  "proxy_file": "proxy-8192.mjs",
+  "proxy_sha256": "a5d961eafe4341ef0924dfc670972966c44af501be966b63514e2d9bce47fcd8",
+  "primary_baseline": "20261114-review",
+  "baseline_sha256": "8bae75fff467214e6428986dfe486d01c20a935d475077dc2c6b2c9da0a10c8f"
+}

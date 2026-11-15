@@ -86,6 +86,18 @@ test("the insert button downloads an export with only a file URL and appends it 
   assert.match(pane.fields.status.textContent, /2 页/);
 });
 
+test("asynchronous engine export is polled before enabling WPS insertion",async()=>{
+ let polls=0;
+ const pane=loadPane((_method,path)=>{
+  if(path==="/decks")return Response.json({deck_id:"deck-test"});
+  if(path==="/decks/deck-test")return Response.json({status:"ready"});
+  if(path==="/decks/deck-test/export")return Response.json({engine_job_id:"engine-one",status_url:"/engine-status"},{status:202});
+  if(path==="/engine-status")return Response.json(++polls===1?{state:"queued"}:{state:"completed",result:{download_url:"/files/ready"}});
+  throw new Error("unexpected request");
+ });
+ await pane.handlers.get("generate")();assert.equal(polls,2);assert.equal(pane.fields.insert.hidden,false);assert.deepEqual(pane.insertions,[]);
+});
+
 test("a rejected file download leaves the current presentation untouched", async () => {
   const pane = loadPane((_method, path) => {
     if (path === "/decks") return Response.json({ deck_id: "deck-test" });

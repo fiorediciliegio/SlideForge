@@ -223,16 +223,7 @@ func (s *Store) chargeIdentity(identity, deckID, operationID string, points floa
 				record.Charges = map[string]ChargeReceipt{}
 			}
 			record.Charges[operationID] = receipt
-			if len(record.Charges) > 100 {
-				keysToDelete := make([]string, 0, len(record.Charges))
-				for key := range record.Charges {
-					keysToDelete = append(keysToDelete, key)
-				}
-				sort.Strings(keysToDelete)
-				for _, key := range keysToDelete[:len(keysToDelete)-100] {
-					delete(record.Charges, key)
-				}
-			}
+
 		}
 		keys[identity] = record
 		return s.appendLedger(LedgerEntry{

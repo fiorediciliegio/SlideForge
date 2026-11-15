@@ -2,11 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {createServer} from "node:http";
 import {once} from "node:events";
-import {mkdir,rm,unlink} from "node:fs/promises";
+import {mkdir,rm,unlink,writeFile} from "node:fs/promises";
 import {randomUUID} from "node:crypto";
 import path from "node:path";
 import {executeAgentTool,continueAgent,agentRoot} from "../../src/capabilities/agent.ts";
-import {emptyProject,prepareRevision,writeArtifact} from "../../src/capabilities/project.ts";
+import {emptyProject,prepareRevision,writeArtifact,readJSON,projectPath} from "../../src/capabilities/project.ts";
 import {agentOptionsSchema} from "../../src/contracts/agent.ts";
 import {AsyncJobQueue} from "../../src/server/jobQueue.ts";
 import {inputHash} from "../../src/server/agentClient.ts";
@@ -76,4 +76,112 @@ test("a fully saved response is settled before asking to retry an unknown call",
   assert.ok(Math.abs(f.job.agent.budget.spent_cny-0.00028)<1e-9);assert.equal(f.job.agent.budget.reserved_cny,0);
   assert.ok(!f.commands.some(command=>command.action==="reserve_call"));
  } finally {await f.close();}
+});
+
+for(const start of [0,-1])test(`source read error at offset ${start} has a replayable receipt`,async()=>{
+ const f=await fixture();
+ try {
+  const input={deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"source-error",name:"read_project",args:{section:"sources",source_id:"source-a",start}};
+  const result=await executeAgentTool(input,new AsyncJobQueue(1,5));
+  assert.equal(typeof result.error,"string");
+  assert.equal(f.job.agent.operations["run-1:source-error"].status,"completed");
+  await writeFile(path.join(f.root,"project/later.txt"),"later text");
+  f.project.sources.push({source_id:"source-a",name:"later source",chars:10,kind:"user",text_ref:"project/later.txt"});
+  f.job.agent.context_ref=await writeArtifact(f.root,"contexts",{project:f.project,export_authorized:[]});
+  assert.deepEqual(await executeAgentTool(input,new AsyncJobQueue(1,5)),result);
+  assert.equal(f.commands.filter(c=>c.action==="begin_tool").length,1);
+  await assert.rejects(()=>executeAgentTool({...input,args:{...input.args,start:8}},new AsyncJobQueue(1,5)),/指纹/);
+ } finally {await f.close();}
+});
+
+test("page reads retain available HTML and identify ungenerated and unknown IDs",async()=>{
+ const f=await fixture();
+ try {
+  const current=await prepareRevision(f.root,f.project,{instruction:"生成第一页",outline:f.outline,page_html:{a:html("A")}});
+  f.job.agent.project_ref=current.ref;
+  const result:any=await executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"read-pages",name:"read_project",args:{section:"pages",page_ids:["a","b","unknown"]}},new AsyncJobQueue(1,5));
+  assert.equal(result.revision_id,current.project.revision_id);
+  assert.equal(result.pages.length,1);assert.ok(result.pages[0].html.includes("A"));
+  assert.deepEqual(result.missing_pages,[{page_id:"b",reason:"not_generated"},{page_id:"unknown",reason:"not_found"}]);
+ }finally{await f.close();}
+});
+
+test("history reads preserve deleted pages and report IDs without history",async()=>{
+ const f=await fixture();
+ try {
+  const old=await prepareRevision(f.root,f.project,{instruction:"生成两页",outline:f.outline,page_html:{a:html("A"),b:html("B")}});
+  const current=await prepareRevision(f.root,old.project,{instruction:"删除第二页",outline:{...f.outline,pages:[f.outline.pages[0]]}});
+  f.job.agent.project_ref=current.ref;
+  const result:any=await executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"read-history",name:"read_project",args:{section:"history",page_ids:["b","unknown"]}},new AsyncJobQueue(1,5));
+  assert.equal(result.revision_id,current.project.revision_id);
+  assert.equal(result.history[0].versions[0].revision_id,old.project.revision_id);
+  assert.deepEqual(result.missing_pages,[{page_id:"unknown",reason:"not_found"}]);
+  assert.ok(!("html" in result.history[0].versions[0]));
+ }finally{await f.close();}
+});
+
+for(const section of ["pages","history"])test(`${section} parameter errors have durable receipts`,async()=>{
+ const f=await fixture();
+ try {
+  const input={deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"bad-read",name:"read_project",args:{section,page_ids:[]}};
+  const result=await executeAgentTool(input,new AsyncJobQueue(1,5));
+  assert.equal(typeof result.error,"string");
+  assert.equal(f.job.agent.operations["run-1:bad-read"].status,"completed");
+  assert.deepEqual(await executeAgentTool(input,new AsyncJobQueue(1,5)),result);
+  assert.equal(f.commands.filter(c=>c.action==="begin_tool").length,1);
+ }finally{await f.close();}
+});
+
+test("completed page read receipt cannot stand for a newer project revision",async()=>{
+ const f=await fixture();
+ try {
+  const old=await prepareRevision(f.root,f.project,{instruction:"生成",outline:f.outline,page_html:{a:html("OLD")}});
+  f.job.agent.project_ref=old.ref;
+  const input={deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"read-old",name:"read_project",args:{section:"pages",page_ids:["a"]}};
+  const first:any=await executeAgentTool(input,new AsyncJobQueue(1,5));
+  const current=await prepareRevision(f.root,old.project,{instruction:"用户修改",page_html:{a:html("NEW")}});
+  f.job.agent.project_ref=current.ref;
+  const stale:any=await executeAgentTool(input,new AsyncJobQueue(1,5));
+  assert.equal(stale.error_code,"read_revision_changed");assert.equal(stale.previous_revision_id,old.project.revision_id);
+  assert.equal(stale.revision_id,current.project.revision_id);assert.ok(!stale.pages);
+  assert.deepEqual(f.job.agent.operations["run-1:read-old"].result,JSON.parse(JSON.stringify(first)));
+  const fresh:any=await executeAgentTool({...input,operation_id:"read-new"},new AsyncJobQueue(1,5));
+  assert.ok(fresh.pages[0].html.includes("NEW"));
+ }finally{await f.close();}
+});
+
+test("automatic review combines unchanged-page evidence with the revised page without rendering",async()=>{
+ const f=await fixture();
+ try{
+  const first=await prepareRevision(f.root,f.project,{instruction:"初稿",outline:f.outline,page_html:{a:html("A"),b:html("B")}});
+  const changed=await prepareRevision(f.root,first.project,{instruction:"修改A",page_html:{a:html("new A")}});f.job.agent.project_ref=changed.ref;
+  const fp=(p:any)=>({page_revisions:Object.fromEntries(p.pages.map((page:any)=>[page.page_id,inputHash([page.page_revision,[]])])),constraints_hash:inputHash([p.constraints,p.outline.pages,p.sources]),template_hash:inputHash(p.visual??{})});
+  for(const kind of ["layout","content"])await writeArtifact(f.root,"checks",{...fp(changed.project),kind,page_ids:["a","b"],revision_id:changed.ref.revision_id,global_summary:kind==="content",issues:[]},kind);
+  await writeArtifact(f.root,"observations",{...fp(first.project),created_at:"2026-11-14T00:00:00Z",kinds:["visual"],page_ids:["a","b"],evidence:[{page_id:"a",text:"old A"},{page_id:"b",text:"B"}],images:[{page_id:"a",image_url:"old-a"},{page_id:"b",image_url:"old-b"}]},"old-images");
+  await writeArtifact(f.root,"observations",{...fp(changed.project),created_at:"2026-11-14T00:01:00Z",kinds:["visual"],page_ids:["a"],evidence:[{page_id:"a",text:"new A"}],images:[{page_id:"a",image_url:"new-a"}]},"new-a");
+  const step:any=await executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"review-next",name:"_review_next",args:{}},new AsyncJobQueue(1,5));
+  assert.equal(step.action,"assess");assert.equal(step.kind,"visual");
+  const evidence:any=await readJSON(projectPath(f.root,"project/observations/"+step.evidence_id+".json"));
+  assert.deepEqual(evidence.images.map((p:any)=>p.image_url),["new-a","old-b"]);
+  assert.equal(evidence.revision_id,changed.ref.revision_id);
+  assert.equal(Object.keys(f.job.agent.operations).length,0,"取证组合不能发起生成、渲染或模型作业");
+  f.job.agent.phase="cancelled";
+  await assert.rejects(()=>executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"late",name:"_review_next",args:{}},new AsyncJobQueue(1,5)),/失效/);
+ }finally{await f.close()}
+});
+
+test("automatic completion preserves authorized export order and the current completion receipt",async()=>{
+ const f=await fixture();
+ try{
+  const prepared=await prepareRevision(f.root,f.project,{instruction:"初稿",outline:f.outline,page_html:{a:html("A"),b:html("B")}});f.job.agent.project_ref=prepared.ref;
+  const fp={page_revisions:Object.fromEntries(prepared.project.pages.map(page=>[page.page_id,inputHash([page.page_revision,[]])])),constraints_hash:inputHash([prepared.project.constraints,prepared.project.outline.pages,prepared.project.sources]),template_hash:inputHash(prepared.project.visual??{})};
+  for(const kind of ["layout","content","visual"])await writeArtifact(f.root,"checks",{...fp,kind,page_ids:["a","b"],revision_id:prepared.ref.revision_id,global_summary:kind==="content",issues:[]},kind);
+  const next=()=>executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"review-next",name:"_review_next",args:{}},new AsyncJobQueue(1,5));
+  const exporting:any=await next();assert.equal(exporting.name,"export_deck");assert.equal(exporting.args.format,"pptx");
+  f.job.agent.operations["run-1:"+exporting.operation_id]={status:"completed",result:{download_url:"already-exported"}};
+  const finish:any=await next();assert.equal(finish.name,"finish_deck");
+  const result:any=await executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,...finish},new AsyncJobQueue(1,5));
+  assert.equal(result.completed,true);assert.equal(result.project_ref.revision_id,prepared.ref.revision_id);
+  assert.equal(f.job.agent.operations["run-1:"+finish.operation_id].result.completed,true);
+ }finally{await f.close()}
 });

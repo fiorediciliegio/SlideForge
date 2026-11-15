@@ -19,6 +19,8 @@
 - `openapi/auth-billing.yaml`：Node 调用 Go 的内部认证、结算、扣费、用量与台账协议。
 - `openapi/jobs.yaml`：Go 任务仓库内部协议，以及公共 SSE 进度、协作式取消和签名 webhook 协议。
 - `openapi/files.yaml`：Node 内部文件发布、作品文件列表和按用户隔离的公共下载协议。
-- `openapi/engine.yaml`：独立 Node 引擎的 HTML 校验、预览渲染和 PPTX／PDF 导出协议。
+- `openapi/engine.yaml`：Go 私有快照、持久引擎任务/租约和交付协议；独立 Node worker 执行检查、预览与导出。
 - `openapi/brain.yaml`：Python 大脑层的 Prompt 编排和文档分块协议。
 - `openapi/agent.yaml`：单总控 Harness 的生成选项、大纲编辑/确认、场景纠正、续改/回退，以及 Go 执行/预算和 Node 工具协议。模型成本预算与产品点数独立，模型与检查点正文存 Node artifact，Go 保存执行引用和回执。
+
+引擎/异步导出契约已升级至 0.2.0。本期为用户本机方案升级，Web/WPS 随服务同步升级，不保留传递本地目录的旧引擎接口；决策见 ADR-0081。

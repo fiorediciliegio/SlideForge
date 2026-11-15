@@ -1,0 +1,125 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点门店",
+      "value": "11",
+      "unit": "家",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "POSITIONING · 品牌定位 溪木咖啡 · 品牌传播 / 内部对齐材料 02 · 品牌定位 品牌定位： 日常、友好、易理解 虚构的社区咖啡品牌，定位关键词为日常、友好、易理解。 定位关键词 3 个 01 日常 02 友好 03 易理解 品牌口号 「把日常慢慢喝好」 资料原文表述 资料记录的数字 试点门店 11 家 传播周期 5 周 触点类型 3 类 虚构测评材料 ：所有数字仅供测评，不作为业务承诺 2 / 6"
+      }
+    },
+    {
+      "subject": "传播周期",
+      "value": "5",
+      "unit": "周",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "POSITIONING · 品牌定位 溪木咖啡 · 品牌传播 / 内部对齐材料 02 · 品牌定位 品牌定位： 日常、友好、易理解 虚构的社区咖啡品牌，定位关键词为日常、友好、易理解。 定位关键词 3 个 01 日常 02 友好 03 易理解 品牌口号 「把日常慢慢喝好」 资料原文表述 资料记录的数字 试点门店 11 家 传播周期 5 周 触点类型 3 类 虚构测评材料 ：所有数字仅供测评，不作为业务承诺 2 / 6"
+      }
+    },
+    {
+      "subject": "触点类型",
+      "value": "3",
+      "unit": "类",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 2,
+        "text": "POSITIONING · 品牌定位 溪木咖啡 · 品牌传播 / 内部对齐材料 02 · 品牌定位 品牌定位： 日常、友好、易理解 虚构的社区咖啡品牌，定位关键词为日常、友好、易理解。 定位关键词 3 个 01 日常 02 友好 03 易理解 品牌口号 「把日常慢慢喝好」 资料原文表述 资料记录的数字 试点门店 11 家 传播周期 5 周 触点类型 3 类 虚构测评材料 ：所有数字仅供测评，不作为业务承诺 2 / 6"
+      }
+    },
+    {
+      "subject": "素材版本",
+      "value": "14",
+      "unit": "套",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 5,
+        "text": "溪木咖啡 · 品牌传播 节奏 5周节奏： 计划、未确定 与已完成 三段时间任务均为计划； 资料未记录已完成事项。 第1周 准备素材 计划 第2至4周 发布与收集反馈 计划 第5周 复盘 计划 素材版本 ： 14套 未确定 ：具体日期、预算、成效指标； 已完成 ：资料未记录 5 / 6"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "品牌定位",
+      "matched": true
+    },
+    {
+      "title": "表达原则",
+      "matched": true
+    },
+    {
+      "title": "触点安排",
+      "matched": true
+    },
+    {
+      "title": "执行边界",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "cover",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "positioning",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "expression",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "touchpoints",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "rhythm",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "boundary",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 5704.207900000038,
+  "rules_pass": true
+}

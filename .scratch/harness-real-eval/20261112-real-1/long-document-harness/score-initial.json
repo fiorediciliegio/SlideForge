@@ -1,0 +1,141 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点部门",
+      "value": "9",
+      "unit": "个",
+      "matched": true,
+      "evidence": {
+        "page": 2,
+        "text": "I\n试点部门\nPILOT DEPARTMENTS\n9\n个\n资料标注值"
+      }
+    },
+    {
+      "subject": "原始样本",
+      "value": "284",
+      "unit": "份",
+      "matched": true,
+      "evidence": {
+        "page": 2,
+        "text": "I\n试点部门\nPILOT DEPARTMENTS\n9\n个\n资料标注值\nII\n原始样本\nORIGINAL SAMPLES\n284\n份\n资料标注值"
+      }
+    },
+    {
+      "subject": "流程节点",
+      "value": "13",
+      "unit": "个",
+      "matched": true,
+      "evidence": {
+        "page": 3,
+        "text": "03\n企业资料治理项目组 · 长资料覆盖核验\n整理流程\n整理流程\n整理流程：13 个节点、7 次复盘\n13\n个\n流程节点\n核验记录值\n7\n次\n复盘会议\n核验记录值\n配套记录\n01\n资料整理\n02\n角色分工\n03\n沟通记录\n04\n版本归档\n\n口径说明：节点与会议数量为核验记录值，不含成果指标。\n\n3 / 6"
+      }
+    },
+    {
+      "subject": "复盘会议",
+      "value": "7",
+      "unit": "次",
+      "matched": true,
+      "evidence": {
+        "page": 3,
+        "text": "03\n企业资料治理项目组 · 长资料覆盖核验\n整理流程\n整理流程\n整理流程：13 个节点、7 次复盘\n13\n个\n流程节点\n核验记录值\n7\n次\n复盘会议\n核验记录值\n配套记录\n01\n资料整理\n02\n角色分工\n03\n沟通记录\n04\n版本归档\n\n口径说明：节点与会议数量为核验记录值，不含成果指标。\n\n3 / 6"
+      }
+    },
+    {
+      "subject": "资料复用率",
+      "value": "42.7",
+      "unit": "%",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "长资料覆盖核验 · 企业资料治理项目组\n前中后部核验数据：六项记录值\n\n—三段数值分别标注在资料的前、中、末位置，可定点回查\n\n前部\n01\n9个\n试点部门\n284份\n原始样本\n标注位置：资料前段\n中部\n02\n13个\n流程节点\n7次\n复盘会议\n标注位置：资料中段\n末部\n03\n42.7%\n资料复用率\n17套\n已确认模板\n标注位置：资料末段\n注：六项数值均为本次测评构造值，仅用于本次覆盖核验\n4 / 6"
+      }
+    },
+    {
+      "subject": "已确认模板",
+      "value": "17",
+      "unit": "套",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "长资料覆盖核验 · 企业资料治理项目组\n前中后部核验数据：六项记录值\n\n—三段数值分别标注在资料的前、中、末位置，可定点回查\n\n前部\n01\n9个\n试点部门\n284份\n原始样本\n标注位置：资料前段\n中部\n02\n13个\n流程节点\n7次\n复盘会议\n标注位置：资料中段\n末部\n03\n42.7%\n资料复用率\n17套\n已确认模板\n标注位置：资料末段\n注：六项数值均为本次测评构造值，仅用于本次覆盖核验\n4 / 6"
+      }
+    }
+  ],
+  "facts_hit": 6,
+  "facts_total": 6,
+  "sections": [
+    {
+      "title": "项目概况",
+      "matched": true
+    },
+    {
+      "title": "整理流程",
+      "matched": true
+    },
+    {
+      "title": "前中后部核验数据",
+      "matched": true
+    },
+    {
+      "title": "结论与边界",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "p1",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "p2",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "p3",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "p4",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "p5",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "p6",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 4818.756599999964,
+  "rules_pass": true
+}

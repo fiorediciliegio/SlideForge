@@ -1,0 +1,72 @@
+{
+  "peak_active_projects": 5,
+  "provider": "local-fake-model",
+  "engine_concurrency": 1,
+  "loads": [
+    {
+      "id": "deck-748236e2",
+      "pages": 6,
+      "done": true,
+      "ms": 131031,
+      "budget": {
+        "active_seconds": 40.69338889999999,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-0964645c",
+      "pages": 6,
+      "done": true,
+      "ms": 158740,
+      "budget": {
+        "active_seconds": 38.92509450000001,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-ce8c64a4",
+      "pages": 6,
+      "done": true,
+      "ms": 62725,
+      "budget": {
+        "active_seconds": 40.08990520000001,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-30a7b325",
+      "pages": 6,
+      "done": true,
+      "ms": 103836,
+      "budget": {
+        "active_seconds": 40.70176040000001,
+        "limit_seconds": 600,
+        "spent_cny": 0.017,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    },
+    {
+      "id": "deck-088ce3ae",
+      "pages": 20,
+      "done": true,
+      "ms": 223793,
+      "budget": {
+        "active_seconds": 81.26517730000005,
+        "limit_seconds": 600,
+        "spent_cny": 0.037,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      }
+    }
+  ]
+}

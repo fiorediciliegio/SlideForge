@@ -9,7 +9,8 @@ EnvironmentFile=/opt/slideforge/.env
 ExecStart=/usr/bin/node --import tsx/esm src/http/engineServer.ts
 Restart=always
 RestartSec=5
-MemoryMax=1536M
+# 引擎包含受管 Chrome 与导出 worker；按部署实测调整
+MemoryMax=3G
 
 [Install]
 WantedBy=multi-user.target

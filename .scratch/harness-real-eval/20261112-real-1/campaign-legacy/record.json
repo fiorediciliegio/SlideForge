@@ -1,0 +1,353 @@
+{
+  "id": "campaign-legacy",
+  "case_id": "campaign",
+  "arm": "legacy",
+  "started_at": "2026-11-12T11:11:01.428Z",
+  "expected_scene": "企业",
+  "events": [
+    {
+      "phase": "creating",
+      "elapsed_ms": 1081.591899999883
+    },
+    {
+      "phase": "ready",
+      "elapsed_ms": 124374.85269999993
+    }
+  ],
+  "deck_id": "deck-e45f6f6f",
+  "job": {
+    "billing": {
+      "points": 50,
+      "balance": 795
+    },
+    "cancelled": false,
+    "deck_id": "deck-e45f6f6f",
+    "error": "",
+    "overflow_pages": [],
+    "recent_events": [
+      "[outline] 生成大纲（6 页）",
+      "[page] p2 第 2 页完成「活动目标」",
+      "[page] p1 第 1 页完成「镜桥产品体验日方案」",
+      "[page] p4 第 4 页完成「资源安排」",
+      "[page] p3 第 3 页完成「体验流程」",
+      "[page] p5 第 5 页完成「反馈机制」",
+      "[page] p6 第 6 页完成「总结与待确认事项」",
+      "[assemble] 组装 deck.html"
+    ],
+    "status": "ready",
+    "title": "镜桥产品体验日方案"
+  },
+  "phase": "ready",
+  "generation_ms": 124379.01309999987,
+  "raw_job": {
+    "id": "deck-e45f6f6f",
+    "runDir": "D:\\SlideForge\\artifacts\\decks\\deck-e45f6f6f",
+    "title": "镜桥产品体验日方案",
+    "status": "ready",
+    "events": [
+      "[outline] 生成大纲（6 页）",
+      "[page] p2 第 2 页完成「活动目标」",
+      "[page] p1 第 1 页完成「镜桥产品体验日方案」",
+      "[page] p4 第 4 页完成「资源安排」",
+      "[page] p3 第 3 页完成「体验流程」",
+      "[page] p5 第 5 页完成「反馈机制」",
+      "[page] p6 第 6 页完成「总结与待确认事项」",
+      "[assemble] 组装 deck.html"
+    ],
+    "overflowPages": [],
+    "billing": {
+      "points": 50,
+      "balance": 795
+    },
+    "ownerKeyHash": "1d4406d916d7d670c58dd5786dea22a122362e8d454f8e835c81a1436c6374b2",
+    "createdAt": "2026-11-12T11:11:02.502Z",
+    "updatedAt": "2026-11-12T11:13:04Z"
+  },
+  "delivery_success": true,
+  "score": {
+    "page_count": 6,
+    "page_count_ok": true,
+    "facts": [
+      {
+        "subject": "邀请名额",
+        "value": "84",
+        "unit": "人",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览 镜桥产品体验日 · 活动目标 虚构测评 材料 02 目标 活动目标 面向企业市场活动执行团队 核心目标 收集可观察的使用问题 目标边界 明确 不承诺成交 ， 不设成交类指标 邀请名额 84 人 体验分组 7 组 每组体验时长 26 分钟 反馈问题 9 项 数值说明 以上数值均为 测试构造值 ，仅作方案演示。 镜桥产品体验日方案 2 / 6"
+        }
+      },
+      {
+        "subject": "体验分组",
+        "value": "7",
+        "unit": "组",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览 镜桥产品体验日 · 活动目标 虚构测评 材料 02 目标 活动目标 面向企业市场活动执行团队 核心目标 收集可观察的使用问题 目标边界 明确 不承诺成交 ， 不设成交类指标 邀请名额 84 人 体验分组 7 组 每组体验时长 26 分钟 反馈问题 9 项 数值说明 以上数值均为 测试构造值 ，仅作方案演示。 镜桥产品体验日方案 2 / 6"
+        }
+      },
+      {
+        "subject": "每组体验时长",
+        "value": "26",
+        "unit": "分钟",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览 镜桥产品体验日 · 活动目标 虚构测评 材料 02 目标 活动目标 面向企业市场活动执行团队 核心目标 收集可观察的使用问题 目标边界 明确 不承诺成交 ， 不设成交类指标 邀请名额 84 人 体验分组 7 组 每组体验时长 26 分钟 反馈问题 9 项 数值说明 以上数值均为 测试构造值 ，仅作方案演示。 镜桥产品体验日方案 2 / 6"
+        }
+      },
+      {
+        "subject": "反馈问题",
+        "value": "9",
+        "unit": "项",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览 镜桥产品体验日 · 活动目标 虚构测评 材料 02 目标 活动目标 面向企业市场活动执行团队 核心目标 收集可观察的使用问题 目标边界 明确 不承诺成交 ， 不设成交类指标 邀请名额 84 人 体验分组 7 组 每组体验时长 26 分钟 反馈问题 9 项 数值说明 以上数值均为 测试构造值 ，仅作方案演示。 镜桥产品体验日方案 2 / 6"
+        }
+      }
+    ],
+    "facts_hit": 4,
+    "facts_total": 4,
+    "sections": [
+      {
+        "title": "活动目标",
+        "matched": true
+      },
+      {
+        "title": "体验流程",
+        "matched": true
+      },
+      {
+        "title": "资源安排",
+        "matched": true
+      },
+      {
+        "title": "反馈机制",
+        "matched": true
+      }
+    ],
+    "section_hits": 4,
+    "overflow_pages": [],
+    "layout_ok": true,
+    "reports": [
+      {
+        "page": 1,
+        "page_id": "page-1",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 2,
+        "page_id": "page-2",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 3,
+        "page_id": "page-3",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 4,
+        "page_id": "page-4",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 5,
+        "page_id": "page-5",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 6,
+        "page_id": "page-6",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      }
+    ],
+    "scoring_ms": 2093.3027999999995,
+    "rules_pass": true
+  },
+  "export": {
+    "elapsed_ms": 45296.66390000004,
+    "file": "D:\\SlideForge\\.scratch\\harness-real-eval\\20261112-real-1\\campaign-legacy\\deck.pptx",
+    "zip_ok": true,
+    "slide_count": 6,
+    "presentation_slide_count": 6,
+    "all_slides_have_text": true,
+    "slides": [
+      {
+        "file": "ppt/slides/slide1.xml",
+        "text": "方案预览\nPREVIEW\n方案预览 · PROPOSAL PREVIEW\n镜桥\n产品体验日方案\n面向企业市场活动执行团队的方案预览\n核心目标\n收集可观察的使用问题，\n不承诺成交\n日期\n待确认\n场地\n待确认\n实际预算\n待确认\n案例中所有数值均为虚构测评材料中的测试构造值，仅作方案演示。\nJINGQIAO PRODUCT EXPERIENCE DAY\nCOVER · 封面\n1 / 6"
+      },
+      {
+        "file": "ppt/slides/slide2.xml",
+        "text": "虚构测评\n材料\n核心目标\n收集可观察的使用问题\n目标边界\n明确\n不承诺成交\n，\n不设成交类指标\n邀请名额\n84\n人\n体验分组\n7\n组\n每组体验时长\n26\n分钟\n反馈问题\n9\n项\n数值说明\n以上数值均为\n测试构造值\n，仅作方案演示。\n02\n目标\n活动目标\n面向企业市场活动执行团队\n镜桥产品体验日方案 · 方案预览\n镜桥产品体验日 · 活动目标\n镜桥产品体验日方案\n2 / 6"
+      },
+      {
+        "file": "ppt/slides/slide3.xml",
+        "text": "01\n签到\nCHECK-IN\n02\n任务说明\nBRIEFING\n03\n分组体验\nGROUP SESSION\n04\n问题记录\nLOGGING\n05\n汇总复盘\nREVIEW\nPROCESS FLOW\n体验流程\n五个环节\n按顺序执行\n，确保问题可被观察记录。\n流程依次\n随后进行\n7\n组\n体验分组\n26\n分钟\n每组体验时长\n数值说明\n案例中所有数值均为测试构造值，仅作方案演示。\nPROCESS · 体验日方案\n镜桥产品体验日方案 · 企业市场活动执行团队\n3 / 6"
+      },
+      {
+        "file": "ppt/slides/slide4.xml",
+        "text": "01\n主持\nROLE\n02\n引导\nROLE\n03\n技术支持\nROLE\n04\n记录\nROLE\n84\n人\n邀请名额\n7\n组\n分组体验\n日期\nDATE\n待确认\n场地\nVENUE\n待确认\n实际预算\nBUDGET\n待确认\nRESOURCE ARRANGEMENT\n资源安排\n岗位分工、邀请名额与分组方式已明确；日期、场地与实际预算保持待确认。\n岗位分工\n名额与分组\n待确认事项\n案例中所有数值均为测试构造值\n4 / 6\n04\n镜桥产品体验日方案 · 资源安排\nJINGQIAO · PRODUCT EXPERIENCE DAY · RESOURCES"
+      },
+      {
+        "file": "ppt/slides/slide5.xml",
+        "text": "05 — 反馈环节\n反馈机制\n问题记录 → 汇总复盘：统一整理可观察的使用问题\n9\n反馈问题项\n均为测试构造值\n反馈链路\n01\n问题记录\n以问题记录环节收集可观察的使用问题\n→\n02\n记录岗位\n记录岗位负责汇总复盘输入\n→\n03\n汇总复盘\n汇总复盘环节统一整理问题记录\n边界\n不承诺成交，反馈不用于成交类承诺\n全部数值为虚构测评材料中的测试构造值\n5 / 6\n镜桥产品体验日方案 · 企业市场活动执行团队\nFEEDBACK MECHANISM · 反馈机制"
+      },
+      {
+        "file": "ppt/slides/slide6.xml",
+        "text": "PAGE 06\nSUMMARY\nA · 已明确\n已明确事项\n已确认\n目标\n收集可观察的使用问题；明确不承诺成交，不设成交类指标\n流程\n签到\n→\n任务说明\n→\n分组体验\n→\n问题记录\n→\n汇总复盘\n岗位\n主持\n·\n引导\n·\n技术支持\n·\n记录\n84\n人\n邀请名额\n7\n组\n体验分组\n26\n分钟\n每组体验时长\n9\n项\n反馈问题\nB · 待确认\n待确认事项\n保持待确认\n日期\n待确认\n场地\n待确认\n实际预算\n待确认\n以上三项尚未确定，本方案不作假定，也不编造日期、预算或业务成果。\n06\n收束与确认\n/ CONFIRMED & PENDING\n总结与待确认事项\n已明确事项与待确认事项分列呈现；待确认项保持待确认，不作任何假定。\n原则\n不编造日期、预算或业务成果\n·\n全部数值为虚构测评材料中的测试构造值\n感谢企业市场活动执行团队参与评审\nTHANKS FOR THE REVIEW\n镜桥产品体验日方案 · MIRROR BRIDGE EXPERIENCE DAY\n镜桥产品体验日方案 / 虚拟测评材料\n6 / 6"
+      }
+    ],
+    "bytes": 798575,
+    "pass": true
+  },
+  "total_ms": 174686.81239999994,
+  "finished_at": "2026-11-12T11:13:56.119Z",
+  "model_calls": 7,
+  "cost_peak_cny": 0.493574,
+  "initial_score": {
+    "page_count": 6,
+    "page_count_ok": true,
+    "facts": [
+      {
+        "subject": "邀请名额",
+        "value": "84",
+        "unit": "人",
+        "matched": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览\n镜桥产品体验日 · 活动目标\n虚构测评\n材料\n02目标\n活动目标\n面向企业市场活动执行团队\n核心目标\n收集可观察的使用问题\n目标边界\n明确不承诺成交，不设成交类指标\n邀请名额\n84\n人\n体验分组\n7\n组\n每组体验时长\n26\n分钟\n反馈问题\n9\n项\n数值说明\n以上数值均为测试构造值，仅作方案演示。\n镜桥产品体验日方案\n2 / 6"
+        }
+      },
+      {
+        "subject": "体验分组",
+        "value": "7",
+        "unit": "组",
+        "matched": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览\n镜桥产品体验日 · 活动目标\n虚构测评\n材料\n02目标\n活动目标\n面向企业市场活动执行团队\n核心目标\n收集可观察的使用问题\n目标边界\n明确不承诺成交，不设成交类指标\n邀请名额\n84\n人\n体验分组\n7\n组\n每组体验时长\n26\n分钟\n反馈问题\n9\n项\n数值说明\n以上数值均为测试构造值，仅作方案演示。\n镜桥产品体验日方案\n2 / 6"
+        }
+      },
+      {
+        "subject": "每组体验时长",
+        "value": "26",
+        "unit": "分钟",
+        "matched": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览\n镜桥产品体验日 · 活动目标\n虚构测评\n材料\n02目标\n活动目标\n面向企业市场活动执行团队\n核心目标\n收集可观察的使用问题\n目标边界\n明确不承诺成交，不设成交类指标\n邀请名额\n84\n人\n体验分组\n7\n组\n每组体验时长\n26\n分钟\n反馈问题\n9\n项\n数值说明\n以上数值均为测试构造值，仅作方案演示。\n镜桥产品体验日方案\n2 / 6"
+        }
+      },
+      {
+        "subject": "反馈问题",
+        "value": "9",
+        "unit": "项",
+        "matched": true,
+        "evidence": {
+          "page": 2,
+          "text": "镜桥产品体验日方案 · 方案预览\n镜桥产品体验日 · 活动目标\n虚构测评\n材料\n02目标\n活动目标\n面向企业市场活动执行团队\n核心目标\n收集可观察的使用问题\n目标边界\n明确不承诺成交，不设成交类指标\n邀请名额\n84\n人\n体验分组\n7\n组\n每组体验时长\n26\n分钟\n反馈问题\n9\n项\n数值说明\n以上数值均为测试构造值，仅作方案演示。\n镜桥产品体验日方案\n2 / 6"
+        }
+      }
+    ],
+    "facts_hit": 4,
+    "facts_total": 4,
+    "sections": [
+      {
+        "title": "活动目标",
+        "matched": true
+      },
+      {
+        "title": "体验流程",
+        "matched": true
+      },
+      {
+        "title": "资源安排",
+        "matched": true
+      },
+      {
+        "title": "反馈机制",
+        "matched": true
+      }
+    ],
+    "section_hits": 4,
+    "overflow_pages": [],
+    "layout_ok": true,
+    "reports": [
+      {
+        "page": 1,
+        "page_id": "page-1",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 2,
+        "page_id": "page-2",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 3,
+        "page_id": "page-3",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 4,
+        "page_id": "page-4",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 5,
+        "page_id": "page-5",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 6,
+        "page_id": "page-6",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      }
+    ],
+    "scoring_ms": 5001.400799999945,
+    "rules_pass": true
+  }
+}

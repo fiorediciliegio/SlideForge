@@ -1,0 +1,995 @@
+{
+  "id": "20261113-before",
+  "protocol_hash": "92c95816448de51dd5035288e0e6f44f71e5d6f5082c6f08a249e12f73d7de5c",
+  "started_at": "2026-11-13T07:28:14.169Z",
+  "finished_at": "2026-11-13T08:29:01.762Z",
+  "model": "deepseek-flash",
+  "hardware": {
+    "cpu": "AMD Ryzen 9 7940HX with Radeon Graphics        ",
+    "cpus": 32,
+    "memory_bytes": 16331579392,
+    "node": "v24.14.0"
+  },
+  "service_lifecycle": "isolated-cluster-per-case",
+  "cases": [
+    {
+      "case_id": "product",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 210389.1551,
+      "export_ms": 47727.46399999998,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "试点团队",
+            "value": "17",
+            "unit": "支",
+            "matched": false,
+            "value_present": true
+          },
+          {
+            "subject": "试点工单",
+            "value": "426",
+            "unit": "张",
+            "matched": false,
+            "value_present": true
+          },
+          {
+            "subject": "平均响应时长",
+            "value": "19",
+            "unit": "分钟",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 6,
+              "text": "能力：工单归类、责任人分派、状态追踪。试点：17 支团队、426 张工单、平均响应时长 19 分钟、培训 3 小时，均为资料直接给出。"
+            }
+          },
+          {
+            "subject": "培训时长",
+            "value": "3",
+            "unit": "小时",
+            "matched": false,
+            "value_present": true
+          }
+        ],
+        "facts_hit": 1,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "客户问题",
+            "matched": true
+          },
+          {
+            "title": "产品能力",
+            "matched": true
+          },
+          {
+            "title": "试点数据",
+            "matched": true
+          },
+          {
+            "title": "实施步骤",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "problem",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "capability",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "pilot",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "steps",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "scope",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5599.685900000011,
+        "rules_pass": false
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "产品发布/产品介绍",
+        "reason": "面向企业市场与客户成功团队的 B2B 产品介绍，含能力、试点数据与实施路径"
+      },
+      "calls": 26,
+      "calls_by_kind": {
+        "controller": 17,
+        "page": 9,
+        "outline": 0
+      },
+      "prompt_tokens": 250176,
+      "completion_tokens": 61668,
+      "reasoning_tokens": 25921,
+      "cache_hit_tokens": 182016,
+      "cost_time_cache_cny": 0.6369446399999998,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 3,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "brand",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 293427.4960999999,
+      "export_ms": 43049.13899999997,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "试点门店",
+            "value": "11",
+            "unit": "家",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "TOUCHPOINTS · 触点安排 溪木咖啡品牌传播 虚构测评材料 · 内部对齐用 04 触点安排 按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 触点类型 共 3 类 01 门店海报 触点类型 01 02 社区社群 触点类型 02 03 公众号 触点类型 03 14 套 素材版本，对应 3 类触点使用 11 家 覆盖试点门店 未确定 各触点的 发布频次 与 责任人 ：资料未给出 待资料补充后再行确认 数字仅供测评，不作为成效表述 4 / 6"
+            }
+          },
+          {
+            "subject": "传播周期",
+            "value": "5",
+            "unit": "周",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 5,
+              "text": "5 周 传播周期"
+            }
+          },
+          {
+            "subject": "触点类型",
+            "value": "3",
+            "unit": "类",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "TOUCHPOINTS · 触点安排 溪木咖啡品牌传播 虚构测评材料 · 内部对齐用 04 触点安排 按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 触点类型 共 3 类 01 门店海报 触点类型 01 02 社区社群 触点类型 02 03 公众号 触点类型 03 14 套 素材版本，对应 3 类触点使用 11 家 覆盖试点门店 未确定 各触点的 发布频次 与 责任人 ：资料未给出 待资料补充后再行确认 数字仅供测评，不作为成效表述 4 / 6"
+            }
+          },
+          {
+            "subject": "素材版本",
+            "value": "14",
+            "unit": "套",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "14 套 素材版本，对应 3 类触点使用"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "品牌定位",
+            "matched": true
+          },
+          {
+            "title": "表达原则",
+            "matched": true
+          },
+          {
+            "title": "触点安排",
+            "matched": true
+          },
+          {
+            "title": "执行边界",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "positioning",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "expression",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "touchpoints",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "cadence",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "boundaries",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5718.703200000105,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "品牌传播方案",
+        "reason": "面向品牌与门店运营团队的品牌传播口径演示，属企业品牌传播子类"
+      },
+      "calls": 35,
+      "calls_by_kind": {
+        "controller": 24,
+        "page": 11,
+        "outline": 0
+      },
+      "prompt_tokens": 440114,
+      "completion_tokens": 78306,
+      "reasoning_tokens": 39722,
+      "cache_hit_tokens": 356736,
+      "cost_time_cache_cny": 0.8074734400000001,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 4,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "campaign",
+      "phase": "waiting_user",
+      "delivered": false,
+      "generation_ms": 264963.7759,
+      "export_ms": null,
+      "pptx_pass": false,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "邀请名额",
+            "value": "84",
+            "unit": "人",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "01 邀请名额 84 人 本方案给定的邀请规模"
+            }
+          },
+          {
+            "subject": "体验分组",
+            "value": "7",
+            "unit": "组",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "流程规则 流程顺序固定：前一环节的输出，作为后一环节的输入；汇总复盘承接问题记录。 环节数量 5 段 签到 → 任务说明 → 分组体验 → 问题记录 → 汇总复盘 体验分组 7 组 分组体验环节按组轮转推进 每组时长 26 分钟 分组体验环节的单组体验时长"
+            }
+          },
+          {
+            "subject": "每组体验时长",
+            "value": "26",
+            "unit": "分钟",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "03 每组体验时长 26 分钟 单组体验时长，按组轮转推进"
+            }
+          },
+          {
+            "subject": "反馈问题",
+            "value": "9",
+            "unit": "项",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 5,
+              "text": "反馈问题 9 项，为本次反馈机制的固定范围。"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "活动目标",
+            "matched": true
+          },
+          {
+            "title": "体验流程",
+            "matched": true
+          },
+          {
+            "title": "资源安排",
+            "matched": true
+          },
+          {
+            "title": "反馈机制",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "p01",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "p02",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "p03",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "p04",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "p05",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "p06",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5634.646100000013,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "市场活动方案",
+        "reason": "企业市场活动执行团队使用的产品体验日策划方案，覆盖目标、流程、资源、反馈四段式执行结构"
+      },
+      "request": {
+        "request_id": "aed0949940ec8c3f427bd089e861f5766e11c7ca0adc70681802a99b27a4fb84",
+        "reason_code": "repair_limit",
+        "question": "第 1 页封面已用满两次返工上限，但仍有两处阻断项：底部“日期 / 待确认”卡片压住页脚“唯一事实来源”文字；标题“镜桥 · 产品体验日方案”重复出现两行并与右上装饰弧线叠压。其余 5 页均已通过程序校验，内容与视觉仅剩轻微改进项。请选择处理方式：A) 授权我再生成一次封面（重置该页返工次数），保持现有深色封面结构，只修间距与标题重复；B) 改为更简洁的封面版式（标题＋一行副标题＋“虚构测评材料”标签＋页脚来源），去掉装饰弧线与日期卡片以避免重叠；C) 保留现状先交付预览，把该重叠记为遗留问题。请回复选项，我随后继续。",
+        "proposal": {
+          "title": "镜桥产品体验日方案",
+          "pages": [
+            {
+              "page_id": "p01",
+              "title": "镜桥产品体验日方案",
+              "bullets": [
+                "企业市场活动执行团队内部方案",
+                "本方案为虚构测评材料，所有数值均为测试构造值",
+                "唯一事实来源：campaign.pdf，未引入外部资料"
+              ],
+              "repair_note": "仅该页需要按 A 或 B 方案重建版式，标题、文案与事实不变"
+            }
+          ]
+        }
+      },
+      "calls": 30,
+      "calls_by_kind": {
+        "controller": 18,
+        "page": 12,
+        "outline": 0
+      },
+      "prompt_tokens": 305423,
+      "completion_tokens": 80728,
+      "reasoning_tokens": 30869,
+      "cache_hit_tokens": 227584,
+      "cost_time_cache_cny": 0.8106053599999999,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 6,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "academic",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 300738.7223,
+      "export_ms": 48224.34459999995,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "拟设试件",
+            "value": "18",
+            "unit": "件",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "虚构隔振支架研究开题 研 究 内 容 研究内容与技术路线 技术路线依次推进；试件、工况与测点数量均为拟设参数，尚待实施。 02 技术路线 · 五个阶段 01 问题界定 → 02 参数设计 → 03 试验准备 → 04 数据采集 → 05 对比分析 计划 18 件 拟设试件 计划 6 类 设计工况 计划 24 个 拟设测点 研 究 内 容 围绕连接方式与多工况响应展开对比 虚构测评材料 · 仅依据所提供开题材料 3 / 6"
+            }
+          },
+          {
+            "subject": "设计工况",
+            "value": "6",
+            "unit": "类",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "虚构隔振支架研究开题 研 究 内 容 研究内容与技术路线 技术路线依次推进；试件、工况与测点数量均为拟设参数，尚待实施。 02 技术路线 · 五个阶段 01 问题界定 → 02 参数设计 → 03 试验准备 → 04 数据采集 → 05 对比分析 计划 18 件 拟设试件 计划 6 类 设计工况 计划 24 个 拟设测点 研 究 内 容 围绕连接方式与多工况响应展开对比 虚构测评材料 · 仅依据所提供开题材料 3 / 6"
+            }
+          },
+          {
+            "subject": "拟设测点",
+            "value": "24",
+            "unit": "个",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "虚构隔振支架研究开题 研 究 内 容 研究内容与技术路线 技术路线依次推进；试件、工况与测点数量均为拟设参数，尚待实施。 02 技术路线 · 五个阶段 01 问题界定 → 02 参数设计 → 03 试验准备 → 04 数据采集 → 05 对比分析 计划 18 件 拟设试件 计划 6 类 设计工况 计划 24 个 拟设测点 研 究 内 容 围绕连接方式与多工况响应展开对比 虚构测评材料 · 仅依据所提供开题材料 3 / 6"
+            }
+          },
+          {
+            "subject": "计划周期",
+            "value": "8",
+            "unit": "个月",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "计划周期 8 个月，分三个阶段推进；"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "研究背景",
+            "matched": true
+          },
+          {
+            "title": "研究内容与技术路线",
+            "matched": true
+          },
+          {
+            "title": "可行性与进度",
+            "matched": true
+          },
+          {
+            "title": "拟议创新点",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "p1",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "p2",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "p3",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "p4",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "p5",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "p6",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5694.707299999893,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "学术/教育",
+        "subtype": "研究开题汇报",
+        "reason": "受众为研究开题评审，内容为虚构隔振支架课题的研究背景、路线、进度与创新点，属学术开题场景。"
+      },
+      "calls": 34,
+      "calls_by_kind": {
+        "controller": 23,
+        "page": 11,
+        "outline": 0
+      },
+      "prompt_tokens": 415513,
+      "completion_tokens": 83786,
+      "reasoning_tokens": 36811,
+      "cache_hit_tokens": 328448,
+      "cost_time_cache_cny": 0.85755592,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 5,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "travel",
+      "phase": "interrupted",
+      "delivered": false,
+      "generation_ms": 365639.8802,
+      "export_ms": null,
+      "pptx_pass": false,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "旅行天数",
+            "value": "2",
+            "unit": "天",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 6,
+              "text": "已明确（计划） PLAN 旅行天数 2 天 同行人数 5 人 首日步行上限 4.6 公里 次日步行上限 3.2 公里 四处点位 芦汀园 · 旧街 · 星港步道 · 书店 偏好 慢行、拍照，为停留留出时间"
+            }
+          },
+          {
+            "subject": "首日步行上限",
+            "value": "4.6",
+            "unit": "公里",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 2,
+              "text": "首日步行上限 4.6 公里 当日累计控制"
+            }
+          },
+          {
+            "subject": "次日步行上限",
+            "value": "3.2",
+            "unit": "公里",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 2,
+              "text": "首日步行上限 4.6 公里 当日累计控制 次日步行上限 3.2 公里 低于首日，留出恢复空间"
+            }
+          },
+          {
+            "subject": "同行人数",
+            "value": "5",
+            "unit": "人",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "Day 01 第一天 当天重点为拍摄与慢走，同行者按同一节奏推进。 已明确（计划）： 点位安排、步行上限、同行人数 未确定： 具体出发时间 01 点位安排 芦汀园 ＋ 旧街摄影 02 步行上限 4.6 公里 当日累计控制 03 同行人数 5 人 按同一节奏推进 04 当天重点 拍摄与慢走 具体出发时间未确定 本页呈现的是计划状态：点位、步行上限与人数已写入计划，出发时间仍待确认。"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "行程原则",
+            "matched": true
+          },
+          {
+            "title": "第一天",
+            "matched": true
+          },
+          {
+            "title": "第二天",
+            "matched": true
+          },
+          {
+            "title": "准备清单",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "principles",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "day1",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "day2",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "checklist",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "appendix",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 6310.023599999957,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "旅游",
+        "subtype": "城市周末慢游行程规划",
+        "reason": "内容为虚构城市的2天步行摄影周末行程，面向普通游客，非企业或学术材料。"
+      },
+      "error": "模型调用结果未知，已停止新调用，需要用户确认后继续",
+      "calls": 28,
+      "calls_by_kind": {
+        "controller": 16,
+        "page": 12,
+        "outline": 0
+      },
+      "prompt_tokens": 255606,
+      "completion_tokens": 100011,
+      "reasoning_tokens": 55194,
+      "cache_hit_tokens": 188800,
+      "cost_time_cache_cny": 0.941252,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 1,
+      "native_reserved_cny": 0.149108,
+      "completed_repairs": 5,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "long-document",
+      "phase": "paused_budget",
+      "delivered": false,
+      "generation_ms": 258161.59140000027,
+      "export_ms": null,
+      "pptx_pass": false,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "试点部门",
+            "value": "9",
+            "unit": "个",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 2,
+              "text": "01 项目性质 虚构企业资料治理测评 本次为企业资料治理的虚构测评，全部内容以资料原文为唯一事实来源，仅呈现资料已载内容，不引入外部事实或补充推断。 02 前部核验记录 9 个 试点部门 前部核验记录 284 份 原始样本 前部核验记录"
+            }
+          },
+          {
+            "subject": "原始样本",
+            "value": "284",
+            "unit": "份",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 2,
+              "text": "01 项目性质 虚构企业资料治理测评 本次为企业资料治理的虚构测评，全部内容以资料原文为唯一事实来源，仅呈现资料已载内容，不引入外部事实或补充推断。 02 前部核验记录 9 个 试点部门 前部核验记录 284 份 原始样本 前部核验记录"
+            }
+          },
+          {
+            "subject": "流程节点",
+            "value": "13",
+            "unit": "个",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "中部核验 A 13 个 流程节点"
+            }
+          },
+          {
+            "subject": "复盘会议",
+            "value": "7",
+            "unit": "次",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "中部核验 A 13 个 流程节点 中部核验 B 7 次 复盘会议"
+            }
+          },
+          {
+            "subject": "资料复用率",
+            "value": "42.7",
+            "unit": "%",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "长资料覆盖核验 · 企业资料治理项目组 虚构测评材料 · 内部汇报 核验数据 前中后部核验数据 三段核验指标均取自 long-document.txt，逐项对应到具体环节；数字口径与资料原文一致。 01 前部 9 个 试点部门 284 份 原始样本 02 中部 13 个 流程节点 7 次 复盘会议 03 末部 42.7 % 资料复用率 17 套 已确认模板 注：资料原文即写作「末部」 口径提示 上述指标仅为本次测评构造值，不可外推。 4 / 6"
+            }
+          },
+          {
+            "subject": "已确认模板",
+            "value": "17",
+            "unit": "套",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "长资料覆盖核验 · 企业资料治理项目组 虚构测评材料 · 内部汇报 核验数据 前中后部核验数据 三段核验指标均取自 long-document.txt，逐项对应到具体环节；数字口径与资料原文一致。 01 前部 9 个 试点部门 284 份 原始样本 02 中部 13 个 流程节点 7 次 复盘会议 03 末部 42.7 % 资料复用率 17 套 已确认模板 注：资料原文即写作「末部」 口径提示 上述指标仅为本次测评构造值，不可外推。 4 / 6"
+            }
+          }
+        ],
+        "facts_hit": 6,
+        "facts_total": 6,
+        "sections": [
+          {
+            "title": "项目概况",
+            "matched": true
+          },
+          {
+            "title": "整理流程",
+            "matched": true
+          },
+          {
+            "title": "前中后部核验数据",
+            "matched": true
+          },
+          {
+            "title": "结论与边界",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "p1-cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "p2-overview",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "p3-process",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "p4-data",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "p5-conclusion",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "p6-status",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 6415.685300000012,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "内部项目汇报",
+        "reason": "受众为企业资料治理项目组，内容是资料覆盖核验的内部测评汇报，非对外品牌或产品发布"
+      },
+      "error": "任务预算不足，请明确追加预算后继续：剩余可用 ¥0.2577，本次需预留 ¥0.3272（已用 ¥1.7423 / ¥2.0000，在途预留 ¥0.0000）",
+      "calls": 32,
+      "calls_by_kind": {
+        "controller": 22,
+        "page": 10,
+        "outline": 0
+      },
+      "prompt_tokens": 588949,
+      "completion_tokens": 70555,
+      "reasoning_tokens": 28902,
+      "cache_hit_tokens": 456448,
+      "cost_time_cache_cny": 0.84769992,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 4,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    }
+  ],
+  "provenance": {
+    "metadata_sha256": "5e6addec2d203bd954e47cd1b7c1abff76a24d4c605a645c5a5f53948212b4c4",
+    "model_ledger_sha256": "d61330e0780996258b14e9de143e1ba36f5b01b279b4f72de8206e5c17f8b5ec",
+    "original_folder": ".scratch/reading-batch-ab/20261113/results"
+  }
+}

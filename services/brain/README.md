@@ -3,7 +3,7 @@
 - 状态: active
 - 最后验证: 2026-11-01
 
-总纲中的大脑层基础服务。当前提供确定性 Prompt 编排和文档文本分块，不直接访问 Chrome、作品文件、用户或计费存储。
+总纲中的大脑层基础服务。当前提供单总控 Agent Harness、Prompt 编排和文档文本分块，不直接访问 Chrome、作品文件、用户或计费存储。
 
 ## 接口
 
@@ -24,6 +24,7 @@
 |---|---|---|
 | `BRAIN_HOST` | `127.0.0.1` | 监听地址 |
 | `BRAIN_PORT` | `3212` | 监听端口 |
+| `AGENT_PROJECT_CONCURRENCY` | `5` | 并发项目数（1–20）；不是浏览器并发 |
 | `GATEWAY_INTERNAL_TOKEN` | 空 | 内部服务令牌，生产必填 |
 | `OPENAI_BASE_URL` | `https://api.deepseek.com` | 大纲模型端点 |
 | `OPENAI_API_KEY` | 空 | 大纲模型凭证，调用 `/outline` 时必填 |
@@ -31,10 +32,11 @@
 
 ## 运行与验证
 
-要求 Python 3.11+。基础服务无第三方运行时依赖；PDF 提取需要可选依赖 PyMuPDF。
+要求 Python 3.11+。依赖按 pyproject.toml 安装（包含图像检查所需 Pillow）；PDF 提取使用 PyMuPDF。
 
 ```bash
 cd services/brain
+python -m pip install -e ".[documents,images]"
 python -m brain.app
 python -m unittest discover -s tests -v
 ```

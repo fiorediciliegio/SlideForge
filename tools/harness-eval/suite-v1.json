@@ -1,0 +1,57 @@
+{
+  "id": "harness-six-scenes-v1",
+  "model": "deepseek-flash",
+  "base_url": "https://api.deepseek.com",
+  "template_id": "134-Adaptive Systems Editorial Cover",
+  "page_count": 6,
+  "active_seconds": 600,
+  "per_trial_cny": 2,
+  "wall_timeout_seconds": 900,
+  "controller_max_tokens": 4096,
+  "page_max_tokens": 12000,
+  "primary_baseline": "20261113-after",
+  "baseline_ids": [
+    "20261113-after",
+    "20261113-before",
+    "20261112-harness"
+  ],
+  "template_reference_sha256": "44624a5171966bfb42cfdf30a063e6e1dc14f7b235123908fcc68f696394c5fe",
+  "files": [
+    {
+      "file": "fixtures/v1/fixtures.json",
+      "sha256": "8ed916989fda51ee36e5a21840b282f0dd7109f0cbf53c1a9a9ce6062f9b967c"
+    },
+    {
+      "file": "fixtures/v1/template-reference.html",
+      "sha256": "44624a5171966bfb42cfdf30a063e6e1dc14f7b235123908fcc68f696394c5fe"
+    },
+    {
+      "file": "fixtures/v1/materials/academic.pdf",
+      "sha256": "8e7ce36f161651547ad03f989121ad3302764392384aa88fb669c487b90a8ce2"
+    },
+    {
+      "file": "fixtures/v1/materials/brand.docx",
+      "sha256": "5fec25c13630ff72b31b9a56b83550f6e8ea6071a537cf60cef867b9109c66a2"
+    },
+    {
+      "file": "fixtures/v1/materials/campaign.pdf",
+      "sha256": "55b360292f8de65854bc6eb270a8f3c4945b41872549c7ab3f4c965418d81109"
+    },
+    {
+      "file": "fixtures/v1/materials/long-document.txt",
+      "sha256": "330f0858ed637285a6ee7c38aac7b482a90f37f381bcc4fc80c951da1c2cbf8e"
+    },
+    {
+      "file": "score.mjs",
+      "sha256": "84b2df7c417f736e46a7ea79e6df072fbc258baac26aec1b28c8dc7c65f6bf65"
+    },
+    {
+      "file": "pptx-check.py",
+      "sha256": "26924b08c01fa7e0f597c545e37b490a0eddbb61d0aba5ed40d6abdce6ec1b83"
+    },
+    {
+      "file": "proxy.mjs",
+      "sha256": "d7175192bd3d95701eeb5c118e0d85f6d1dd90887d1d91f223f341ca5a9600f9"
+    }
+  ]
+}

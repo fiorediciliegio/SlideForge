@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "676411b0-63b1-467e-947b-7bce577465ee",
+  "status": "current",
+  "command": "deliver",
+  "type": "sequence",
+  "input": "D:\\SlideForge\\.archify\\workflow-brain-node-20261112-130912\\node-sequence.json",
+  "output": "D:\\SlideForge\\.archify\\workflow-brain-node-20261112-130912\\node-workflow.html",
+  "specification": {
+    "sha256": "882b007e8ef6adb9752859fc8476f4b8919321b2ddebe1ff43b61db4a56a0efd",
+    "bytes": 10745
+  },
+  "artifact": {
+    "sha256": "a46aecb7cf015a2849df27e4ef4f85cd2635dde10adba7bedd4b4f90301954e3",
+    "bytes": 848159
+  }
+}

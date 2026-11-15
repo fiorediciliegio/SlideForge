@@ -37,7 +37,7 @@ def create_server(config: BrainConfig) -> ThreadingHTTPServer:
                 self._json(404, self._error("not found", "not_found"))
                 return
             try:
-                large_payload = self.path in {"/internal/brain/image-drift", "/internal/brain/evals/run"}
+                large_payload = self.path in {"/internal/brain/document-extract", "/internal/brain/image-drift", "/internal/brain/evals/run"}
                 body = self._read_body(64 * 1024 * 1024 if large_payload else MAX_BODY_BYTES)
                 if self.path == "/internal/brain/agent-runs/enqueue":
                     result = runner.enqueue(str(body.get("deck_id", "")), int(body.get("run_seq", 0)))

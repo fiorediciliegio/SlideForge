@@ -1,0 +1,415 @@
+{
+  "status": "finished",
+  "started_at": "2026-11-12T10:53:20.838Z",
+  "finished_at": "2026-11-12T11:41:55.446Z",
+  "planned_trials": 12,
+  "finished_trials": 12,
+  "stats": {
+    "legacy": {
+      "attempted": 6,
+      "delivered": 6,
+      "rule_passes": 3,
+      "facts_hit": 20,
+      "facts_total": 26,
+      "section_hits": 24,
+      "section_total": 24,
+      "overflow_pages": 0,
+      "scored_pages": 36,
+      "pptx_passes": 6,
+      "completed_generation_median_s": 134.02741179999998,
+      "all_terminal_median_s": 134.02741179999998,
+      "cost_peak_cny": 3.19428,
+      "cost_time_cache_cny": 1.5340436800000001,
+      "model_calls": 45,
+      "prompt_tokens": 289292,
+      "completion_tokens": 326962,
+      "reasoning_tokens": 186469,
+      "image_requests": 0,
+      "repair_tool_decisions": 0,
+      "budget_pauses": 0,
+      "unknown": 0,
+      "export_median_s": 44.19263794999995,
+      "output_limit_stops": 2,
+      "calls_by_kind": {
+        "outline": 6,
+        "controller": 0,
+        "page": 39
+      },
+      "completed_repair_operations": null,
+      "value_unit_hits": 24,
+      "unverified_with_value_present": 4
+    },
+    "harness": {
+      "attempted": 6,
+      "delivered": 6,
+      "rule_passes": 5,
+      "facts_hit": 25,
+      "facts_total": 26,
+      "section_hits": 24,
+      "section_total": 24,
+      "overflow_pages": 0,
+      "scored_pages": 36,
+      "pptx_passes": 6,
+      "completed_generation_median_s": 252.27637295000008,
+      "all_terminal_median_s": 252.27637295000008,
+      "cost_peak_cny": 7.424767999999995,
+      "cost_time_cache_cny": 2.10198528,
+      "model_calls": 178,
+      "prompt_tokens": 2071708,
+      "completion_tokens": 410169,
+      "reasoning_tokens": 188092,
+      "image_requests": 20,
+      "repair_tool_decisions": 26,
+      "budget_pauses": 0,
+      "unknown": 0,
+      "export_median_s": 43.7042699999999,
+      "output_limit_stops": 3,
+      "calls_by_kind": {
+        "outline": 0,
+        "controller": 121,
+        "page": 57
+      },
+      "completed_repair_operations": 20,
+      "value_unit_hits": 26,
+      "unverified_with_value_present": 1
+    }
+  },
+  "pairs": [
+    {
+      "case_id": "product",
+      "both_delivered": true,
+      "legacy_seconds": 132.51771420000003,
+      "harness_seconds": 248.01536960000004,
+      "legacy_facts": "4/4",
+      "harness_facts": "4/4"
+    },
+    {
+      "case_id": "brand",
+      "both_delivered": true,
+      "legacy_seconds": 162.80061310000008,
+      "harness_seconds": 274.01795540000006,
+      "legacy_facts": "4/4",
+      "harness_facts": "4/4"
+    },
+    {
+      "case_id": "campaign",
+      "both_delivered": true,
+      "legacy_seconds": 124.37901309999987,
+      "harness_seconds": 283.2454948999998,
+      "legacy_facts": "4/4",
+      "harness_facts": "4/4"
+    },
+    {
+      "case_id": "academic",
+      "both_delivered": true,
+      "legacy_seconds": 154.66948180000017,
+      "harness_seconds": 193.32799959999997,
+      "legacy_facts": "1/4",
+      "harness_facts": "4/4"
+    },
+    {
+      "case_id": "travel",
+      "both_delivered": true,
+      "legacy_seconds": 135.53710939999996,
+      "harness_seconds": 256.5373763000001,
+      "legacy_facts": "3/4",
+      "harness_facts": "3/4"
+    },
+    {
+      "case_id": "long-document",
+      "both_delivered": true,
+      "legacy_seconds": 95.98356460000016,
+      "harness_seconds": 230.30492909999984,
+      "legacy_facts": "4/6",
+      "harness_facts": "6/6"
+    }
+  ],
+  "paired_success_timing": {
+    "pairs": 6,
+    "mean_legacy_seconds": 134.31458270000005,
+    "mean_harness_seconds": 247.57485414999996
+  },
+  "normal_cases_facts": {
+    "legacy": {
+      "hit": 16,
+      "total": 20
+    },
+    "harness": {
+      "hit": 19,
+      "total": 20
+    }
+  },
+  "conservative_total_cny": 10.620612000000003,
+  "indicative_total_cny": 3.636810959999999,
+  "supplier_requests": 224,
+  "probe_calls": 1,
+  "unrun": 0,
+  "model_fingerprints": [
+    "bc19ba97cbe016479903222bb1578db6"
+  ],
+  "harness_scenes": [
+    {
+      "case_id": "product",
+      "expected": "企业",
+      "actual": "企业",
+      "matched": true
+    },
+    {
+      "case_id": "brand",
+      "expected": "企业",
+      "actual": "企业",
+      "matched": true
+    },
+    {
+      "case_id": "campaign",
+      "expected": "企业",
+      "actual": "企业",
+      "matched": true
+    },
+    {
+      "case_id": "academic",
+      "expected": "学术/教育",
+      "actual": "学术/教育",
+      "matched": true
+    },
+    {
+      "case_id": "travel",
+      "expected": "旅游",
+      "actual": "旅游",
+      "matched": true
+    },
+    {
+      "case_id": "long-document",
+      "expected": "企业",
+      "actual": "企业",
+      "matched": true
+    }
+  ],
+  "budget_reconciliation": [
+    {
+      "case_id": "product",
+      "proxy_peak_cny": 1.230012,
+      "product_spent_cny": 1.230012,
+      "delta_cny": 0
+    },
+    {
+      "case_id": "brand",
+      "proxy_peak_cny": 1.236664,
+      "product_spent_cny": 1.236664,
+      "delta_cny": 0
+    },
+    {
+      "case_id": "campaign",
+      "proxy_peak_cny": 1.5491979999999999,
+      "product_spent_cny": 1.549198,
+      "delta_cny": -2.220446049250313e-16
+    },
+    {
+      "case_id": "academic",
+      "proxy_peak_cny": 0.962504,
+      "product_spent_cny": 0.962504,
+      "delta_cny": 0
+    },
+    {
+      "case_id": "travel",
+      "proxy_peak_cny": 0.9693700000000001,
+      "product_spent_cny": 0.96937,
+      "delta_cny": 1.1102230246251565e-16
+    },
+    {
+      "case_id": "long-document",
+      "proxy_peak_cny": 1.47702,
+      "product_spent_cny": 1.47702,
+      "delta_cny": 0
+    }
+  ],
+  "phase_breakdown": [
+    {
+      "id": "product-legacy",
+      "phase_seconds": {
+        "creating": 132.4886233,
+        "ready": 0.001386400000017602
+      }
+    },
+    {
+      "id": "product-harness",
+      "phase_seconds": {
+        "queued": 1.018239200000011,
+        "planning": 55.647611700000034,
+        "generating": 103.20958110000001,
+        "checking": 18.255512300000003,
+        "revising": 69.76925149999995,
+        "completed": 0.00201500000001397
+      }
+    },
+    {
+      "id": "brand-harness",
+      "phase_seconds": {
+        "queued": 1.0144157999999588,
+        "planning": 57.64945290000026,
+        "generating": 130.31792850000005,
+        "revising": 69.7276255999998,
+        "checking": 15.163817399999942,
+        "completed": 0.003297400000039488
+      }
+    },
+    {
+      "id": "brand-legacy",
+      "phase_seconds": {
+        "creating": 162.77100819999993,
+        "ready": 0.004742200000095181
+      }
+    },
+    {
+      "id": "campaign-legacy",
+      "phase_seconds": {
+        "creating": 123.29326080000004,
+        "ready": 0.00416039999993518
+      }
+    },
+    {
+      "id": "campaign-harness",
+      "phase_seconds": {
+        "queued": 1.0120681999998633,
+        "planning": 58.69449970000075,
+        "generating": 111.1871148000001,
+        "checking": 18.2255951999994,
+        "revising": 94.0589413999999,
+        "completed": 0.0034808999998494983
+      }
+    },
+    {
+      "id": "academic-harness",
+      "phase_seconds": {
+        "queued": 1.0180764999999665,
+        "planning": 47.58661229999993,
+        "generating": 99.08386629999988,
+        "checking": 11.146568700000177,
+        "revising": 34.403644200000215,
+        "completed": 0.005709199999924749
+      }
+    },
+    {
+      "id": "academic-legacy",
+      "phase_seconds": {
+        "creating": 154.64075719999988,
+        "ready": 0.005653700000140816
+      }
+    },
+    {
+      "id": "travel-legacy",
+      "phase_seconds": {
+        "creating": 135.51735830000018,
+        "ready": 0.005507299999706447
+      }
+    },
+    {
+      "id": "travel-harness",
+      "phase_seconds": {
+        "queued": 1.0252998000001534,
+        "planning": 48.49711359999934,
+        "generating": 159.43283160000016,
+        "revising": 42.42435850000009,
+        "checking": 5.081390200000256,
+        "completed": 0.005506599999964237
+      }
+    },
+    {
+      "id": "long-document-harness",
+      "phase_seconds": {
+        "queued": 1.0116844000001437,
+        "planning": 60.66656799999997,
+        "generating": 106.9514066999997,
+        "checking": 10.131869999999648,
+        "revising": 51.483888400000524,
+        "completed": 0.007556700000073761
+      }
+    },
+    {
+      "id": "long-document-legacy",
+      "phase_seconds": {
+        "creating": 95.94504300000007,
+        "ready": 0.009573400000110269
+      }
+    }
+  ],
+  "source_read_receipts": [
+    {
+      "case_id": "product",
+      "intervals": [
+        {
+          "source_id": "019bf969-0946-427f-9b99-ba6ae93fb5f7",
+          "start": 0,
+          "end": 155,
+          "total": 155
+        }
+      ]
+    },
+    {
+      "case_id": "brand",
+      "intervals": [
+        {
+          "source_id": "9a82d12c-dfdf-4998-bb24-c33d369c45aa",
+          "start": 0,
+          "end": 157,
+          "total": 157
+        }
+      ]
+    },
+    {
+      "case_id": "campaign",
+      "intervals": [
+        {
+          "source_id": "60c300ab-af27-435e-a25a-d2ee7eeb381c",
+          "start": 0,
+          "end": 166,
+          "total": 166
+        }
+      ]
+    },
+    {
+      "case_id": "academic",
+      "intervals": []
+    },
+    {
+      "case_id": "travel",
+      "intervals": [
+        {
+          "source_id": "6d3d8529-1414-4518-86f8-78d5694efe41",
+          "start": 0,
+          "end": 135,
+          "total": 135
+        }
+      ]
+    },
+    {
+      "case_id": "long-document",
+      "intervals": [
+        {
+          "source_id": "26e43bda-71e3-4234-b5e9-01c91c4e05ab",
+          "start": 0,
+          "end": 4000,
+          "total": 15409
+        },
+        {
+          "source_id": "26e43bda-71e3-4234-b5e9-01c91c4e05ab",
+          "start": 4000,
+          "end": 8000,
+          "total": 15409
+        },
+        {
+          "source_id": "26e43bda-71e3-4234-b5e9-01c91c4e05ab",
+          "start": 8000,
+          "end": 12000,
+          "total": 15409
+        },
+        {
+          "source_id": "26e43bda-71e3-4234-b5e9-01c91c4e05ab",
+          "start": 12000,
+          "end": 15409,
+          "total": 15409
+        }
+      ]
+    }
+  ]
+}

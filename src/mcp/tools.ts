@@ -2,7 +2,7 @@
 import path from "node:path";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
-import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
+import { createDeck, regeneratePage, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
 import {
   createDeckMcpShape, deckPreviewMcpShape, exportDeckMcpShape,
   regeneratePageMcpShape, toDeckJobDto,
@@ -15,6 +15,7 @@ import {
 import { AsyncJobQueue } from "../server/jobQueue.js";
 import { apiKeyHash, billingEnabled, runWithBilling, settleDeck, type BillingContext } from "../billing/index.js";
 import { runIdempotentExport } from "../server/exportCoordinator.js";
+import { runWithEngineOwner } from "../server/engineClient.js";
 import { loadBrand } from "../brand/store.js";
 
 export interface McpSecurityContext {
@@ -100,7 +101,7 @@ export function createSlideForgeMcpServer(context: McpSecurityContext = {}): Mcp
   server.tool("get_deck_preview", "获取当前用户 deck 页面缩略图。", deckPreviewMcpShape, async ({ deck_id, pages }) => {
     const job = await getDeckJob(deck_id);
     if (!owns(job) || !job.runDir) return text({ error: "deck 不存在或尚未 ready" });
-    const images = await queue.submit(() => getDeckPreview({ runDir: job.runDir!, pages }));
+    const images = await runWithEngineOwner(ownerKeyHash,()=>getDeckPreview({ runDir: job.runDir!, pages }));
     return {
       content: [
         { type: "text" as const, text: `共 ${images.length} 页预览：${images.map((image) => `第${image.page}页`).join("、")}` },
@@ -115,12 +116,11 @@ export function createSlideForgeMcpServer(context: McpSecurityContext = {}): Mcp
     const output = remoteUser ? "deck.pptx" : out_path ?? "deck.pptx";
     const resolved = path.resolve(job.runDir, output);
     if (resolved !== job.runDir && !resolved.startsWith(`${job.runDir}${path.sep}`)) return text({ error: "out_path 必须位于 deck 工作区内" });
-    const result = await queue.submit(() => runIdempotentExport({
+    const result = await runIdempotentExport({
       apiKey: context.apiKey, ownerKeyHash, deckId: deck_id, runDir: job.runDir!,
       revisionId:job.agent?.project_ref?.revision_id,
       format: "pptx", outPath: resolved, idempotencyKey: idempotency_key,
-      execute: () => exportDeck({ runDir: job.runDir!, outPath: resolved }),
-    }));
+    });
     return text({
       deck_id, pptx_path: result.outPath, slide_count: result.slideCount,
       size_bytes: result.sizeBytes, warnings: result.warnings,

@@ -8,7 +8,7 @@ import { loadDotEnv } from "../server/env.js";
 
 loadDotEnv();
 
-import { createDeck, regeneratePage, exportDeck, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
+import { createDeck, regeneratePage, getDeckPreview, type DeckEvent } from "../capabilities/deck.js";
 import {
   apiKeyHash, billingEnabled, checkKey, runWithBilling, settleDeck,
   listKeys, issueKey, rechargeKey, readLedger, type BillingContext,
@@ -18,7 +18,8 @@ import {
   listDeckJobs, loadDeckJobs, persistDeckJob, remoteJobsEnabled, type DeckJob,
 } from "../server/jobs.js";
 import { AsyncJobQueue, QueueFullError } from "../server/jobQueue.js";
-import { runIdempotentExport } from "../server/exportCoordinator.js";
+import { beginEngineExport,engineExportStatus,previousExportReceipt } from "../server/exportCoordinator.js";
+import { runWithEngineOwner } from "../server/engineClient.js";
 import {
   applySecurityHeaders, FixedWindowRateLimiter, HttpRequestError,
   readJsonBody, requestIdentity,
@@ -37,7 +38,7 @@ const PORT = Number(process.env.PORT ?? 3210);
 const MAX_BODY_BYTES = Math.max(1024, Number(process.env.MAX_BODY_BYTES ?? 32 * 1024 * 1024));
 const DECK_CONCURRENCY = Math.max(1, Math.min(5, Number(process.env.DECK_CONCURRENCY ?? 2)));
 const generationQueue = new AsyncJobQueue(
-  Math.max(1, Number(process.env.DECK_JOB_CONCURRENCY ?? 1)),
+  Math.max(1, Number(process.env.DECK_JOB_CONCURRENCY ?? 5)),
   Math.max(0, Number(process.env.DECK_QUEUE_SIZE ?? 50)),
 );
 const requestLimiter = new FixedWindowRateLimiter(
@@ -92,7 +93,7 @@ function safeExportPath(runDir: string, requested: unknown, defaultName: string)
   return candidate;
 }
 
-const server = createServer(async (req, res) => {
+const server = createServer((req, res) => runWithEngineOwner(apiKeyHash(req.headers["x-api-key"] as string|undefined),async () => {
   applySecurityHeaders(res);
   try {
     const url = new URL(req.url ?? "/", `http://${req.headers.host ?? "localhost"}`);
@@ -105,7 +106,10 @@ const server = createServer(async (req, res) => {
       if (url.pathname === "/internal/agent/model-results") return json(res,200,await agent.agentModelResult(body));
       if (url.pathname === "/internal/agent/tools") {
         const input = z.object({ deck_id:z.string(),run_seq:z.number().int(),runner_epoch:z.number().int(),operation_id:z.string().max(200),name:z.string(),args:z.record(z.string(),z.unknown()) }).parse(body);
-        return json(res,200,await agent.executeAgentTool(input,generationQueue));
+        const pulse=setInterval(()=>{if(!res.destroyed){if(!res.headersSent)res.writeHead(200,{"content-type":"application/json"});res.write("\n")}},10000);
+        try {const result=await agent.executeAgentTool(input,generationQueue);if(res.headersSent)return res.end(JSON.stringify(result));return json(res,200,result)}
+        catch(error){if(!res.headersSent)throw error;const status=error instanceof HttpRequestError?error.status:500;return res.end(JSON.stringify({error:error instanceof Error?error.message:String(error),http_status:status,error_code:status===402?"budget_exhausted":"tool_error"}))}
+        finally{clearInterval(pulse)}
       }
       return json(res,404,{error:"not found"});
     }
@@ -263,7 +267,9 @@ const server = createServer(async (req, res) => {
     }
 
     if (url.pathname === "/decks" || url.pathname.startsWith("/decks/")) {
-      if (!await userAuthorized(req, res)) return;
+      if(/^\/decks\/[\w-]+\/export$/.test(url.pathname)&&billingEnabled()){
+        const {getUsage}=await import("../billing/index.js");if(!await getUsage(req.headers["x-api-key"] as string|undefined))return json(res,402,{error:"invalid api key"});
+      }else if (!await userAuthorized(req, res)) return;
     }
     if (req.method === "GET" && url.pathname === "/decks") {
       return json(res, 200, (await listDeckJobs()).filter((job) => ownsResource(req, job.ownerKeyHash)).map((job) => ({
@@ -397,7 +403,7 @@ const server = createServer(async (req, res) => {
       if (req.method === "GET" && action === "preview") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const pages = url.searchParams.get("pages")?.split(",").map(Number).filter(Boolean);
-        const images = await generationQueue.submit(() => getDeckPreview({ runDir: job.runDir!, pages }));
+        const images = await getDeckPreview({ runDir: job.runDir!, pages });
         if (images.length === 1) {
           res.writeHead(200, { "content-type": "image/jpeg", "cache-control": "private, max-age=60" });
           return res.end(Buffer.from(images[0].base64, "base64"));
@@ -448,6 +454,11 @@ const server = createServer(async (req, res) => {
         }));
         return json(res, 200, { deck_id: job.id, status: "theme-applied", ...result });
       }
+      if (req.method === "GET" && action === "export") {
+        const id=url.searchParams.get("job_id");if(!id)return json(res,400,{error:"缺少引擎任务 ID"});
+        const status=await engineExportStatus(job.id,job.ownerKeyHash??"local",id);
+        return json(res,200,status);
+      }
       if (req.method === "POST" && action === "export") {
         if (!job.runDir) return json(res, 409, { error: "deck 尚未 ready" });
         const body = await readBody(req);
@@ -464,16 +475,17 @@ const server = createServer(async (req, res) => {
         const outPath = safeExportPath(exportRunDir, body.out_path, defaultName);
         const apiKey = req.headers["x-api-key"] as string | undefined;
         const idempotencyKey = req.headers["idempotency-key"];
-        const result = await generationQueue.submit(() => runIdempotentExport({
-          apiKey, ownerKeyHash: job.ownerKeyHash, deckId: job.id, runDir: exportRunDir,
-          revisionId,
-          format, outPath,
-          idempotencyKey: typeof body.idempotency_key === "string"
-            ? body.idempotency_key
-            : typeof idempotencyKey === "string" ? idempotencyKey : undefined,
-          execute: () => exportDeck({ runDir: exportRunDir, outPath, format }),
-        }));
-        return json(res, 200, result);
+        if(body.cancel===true&&typeof body.engine_job_id==="string") {
+          const {engineTransport}=await import("../server/engineTransport.js");
+          const pending=await engineTransport.get(body.engine_job_id,job.ownerKeyHash??"local");
+          if(pending.deck_id!==job.id||pending.kind!=="export")return json(res,404,{error:"导出任务不存在"});
+          return json(res,200,await engineTransport.cancel(pending.job_id,pending.owner_key_hash));
+        }
+        const input={apiKey,ownerKeyHash:job.ownerKeyHash,deckId:job.id,runDir:exportRunDir,revisionId,format:format as "pptx"|"pdf",outPath,
+          idempotencyKey:typeof body.idempotency_key==="string"?body.idempotency_key:typeof idempotencyKey==="string"?idempotencyKey:undefined};
+        const previous=await previousExportReceipt(input);if(previous)return json(res,200,previous);
+        const task=await beginEngineExport(input);
+        return json(res,202,{engine_job_id:task.job_id,state:task.state,status_url:`/decks/${job.id}/export?job_id=${task.job_id}`});
       }
     }
 
@@ -498,7 +510,7 @@ const server = createServer(async (req, res) => {
     const status = error instanceof HttpRequestError ? error.status : error instanceof z.ZodError ? 400 : 500;
     return json(res, status, { error: error instanceof Error ? error.message : String(error),...(status===402&&req.url?.startsWith("/internal/agent/")?{error_code:"budget_exhausted"}:{}) });
   }
-});
+}));
 
 server.requestTimeout = 60_000;
 server.headersTimeout = 15_000;
@@ -513,8 +525,6 @@ async function shutdown() {
   const force = setTimeout(() => process.exit(1), 30_000);
   force.unref();
   server.closeAllConnections();
-  const { closeValidatorBrowser } = await import("../../scripts/m0/validatePage.js");
-  await closeValidatorBrowser().catch(() => undefined);
   clearTimeout(force);
   process.exit(0);
 }

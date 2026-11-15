@@ -77,6 +77,12 @@ func NewPostgresFileStore(ctx context.Context, dsn string, objects ObjectStore) 
 func (s *PostgresFileStore) Close() error { return s.db.Close() }
 
 func (s *PostgresFileStore) Publish(deckID, name, mediaType, ownerKeyHash string, content []byte) (Record, error) {
+	return s.publish("", deckID, name, mediaType, ownerKeyHash, content)
+}
+func (s *PostgresFileStore) PublishOnce(operationID, deckID, name, mediaType, owner string, content []byte) (Record, error) {
+	return s.publish(deliveryFileID(operationID, deckID, owner), deckID, name, mediaType, owner, content)
+}
+func (s *PostgresFileStore) publish(id, deckID, name, mediaType, ownerKeyHash string, content []byte) (Record, error) {
 	if !strings.HasPrefix(deckID, "deck-") || ownerKeyHash == "" {
 		return Record{}, errors.New("deck_id 或文件归属无效")
 	}
@@ -90,9 +96,21 @@ func (s *PostgresFileStore) Publish(deckID, name, mediaType, ownerKeyHash string
 	if len(content) == 0 || len(content) > MaxFileBytes {
 		return Record{}, errors.New("文件为空或超过 64 MiB 上限")
 	}
-	id, err := newFileID()
-	if err != nil {
-		return Record{}, err
+	deterministic := id != ""
+	if deterministic {
+		existing, ok, err := s.Get(id)
+		if err != nil {
+			return Record{}, err
+		}
+		if ok {
+			return existing, nil
+		}
+	} else {
+		var err error
+		id, err = newFileID()
+		if err != nil {
+			return Record{}, err
+		}
 	}
 	objectKey := "exports/" + id
 	if err := s.objects.Put(objectKey, content); err != nil {
@@ -103,14 +121,22 @@ func (s *PostgresFileStore) Publish(deckID, name, mediaType, ownerKeyHash string
 		DownloadURL: "/files/" + id, OwnerKeyHash: ownerKeyHash, ObjectPath: objectKey,
 		CreatedAt: time.Now().UTC().Format(time.RFC3339),
 	}
-	_, err = s.db.Exec(`
+	insert := `
 		INSERT INTO deck_files(file_id,deck_id,name,media_type,size_bytes,download_url,owner_key_hash,object_key,created_at)
-		VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,
+		VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`
+	if deterministic {
+		insert += ` ON CONFLICT(file_id) DO NOTHING`
+	}
+	_, err := s.db.Exec(insert,
 		record.ID, record.DeckID, record.Name, record.MediaType, record.SizeBytes,
 		record.DownloadURL, record.OwnerKeyHash, record.ObjectPath, record.CreatedAt,
 	)
-	if err != nil {
+	if err != nil && !deterministic {
 		_ = s.objects.Delete(objectKey)
+	}
+	if err == nil && deterministic {
+		existing, _, readErr := s.Get(id)
+		return existing, readErr
 	}
 	return record, err
 }

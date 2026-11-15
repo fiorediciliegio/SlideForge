@@ -1,0 +1,121 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点门店",
+      "value": "11",
+      "unit": "家",
+      "matched": true,
+      "evidence": {
+        "page": 2,
+        "text": "BRAND POSITIONING / 溪木咖啡\n02 / 品牌定位\n品牌定位：日常、友好、易理解\n\n溪木咖啡是虚构的社区咖啡品牌，定位为日常、友好、易理解。\n\n01\n定位关键词\n日常\n02\n定位关键词\n友好\n03\n定位关键词\n易理解\n品牌口号\n把日常慢慢喝好\n“\n口号表述以材料原文为准 · 材料为虚构测评内容\n11家\n试点门店\n5周\n传播周期\n数字仅供测评\n材料中所有数字仅供测评，不作对外承诺\n2 / 6"
+      }
+    },
+    {
+      "subject": "传播周期",
+      "value": "5",
+      "unit": "周",
+      "matched": true,
+      "evidence": {
+        "page": 2,
+        "text": "BRAND POSITIONING / 溪木咖啡\n02 / 品牌定位\n品牌定位：日常、友好、易理解\n\n溪木咖啡是虚构的社区咖啡品牌，定位为日常、友好、易理解。\n\n01\n定位关键词\n日常\n02\n定位关键词\n友好\n03\n定位关键词\n易理解\n品牌口号\n把日常慢慢喝好\n“\n口号表述以材料原文为准 · 材料为虚构测评内容\n11家\n试点门店\n5周\n传播周期\n数字仅供测评\n材料中所有数字仅供测评，不作对外承诺\n2 / 6"
+      }
+    },
+    {
+      "subject": "触点类型",
+      "value": "3",
+      "unit": "类",
+      "matched": true,
+      "evidence": {
+        "page": 6,
+        "text": "关键数据\n据测评材料\n11家\n试点门店\n5周\n传播周期\n3类\n触点类型\n14套\n素材版本"
+      }
+    },
+    {
+      "subject": "素材版本",
+      "value": "14",
+      "unit": "套",
+      "matched": true,
+      "evidence": {
+        "page": 4,
+        "text": "材料中列明 3 类触点与 14 套素材版本；传播周期 5 周，按准备素材、发布并收集反馈、复盘三个阶段推进。"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "品牌定位",
+      "matched": true
+    },
+    {
+      "title": "表达原则",
+      "matched": true
+    },
+    {
+      "title": "触点安排",
+      "matched": true
+    },
+    {
+      "title": "执行边界",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "page-1",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "page-2",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "page-3",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "page-4",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "page-5",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "page-6",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 5375.544200000004,
+  "rules_pass": true
+}

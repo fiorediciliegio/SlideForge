@@ -1,0 +1,125 @@
+{
+  "page_count": 6,
+  "page_count_ok": true,
+  "facts": [
+    {
+      "subject": "试点门店",
+      "value": "11",
+      "unit": "家",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "TOUCHPOINTS · 触点安排 溪木咖啡品牌传播 虚构测评材料 · 内部对齐用 04 触点安排 按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 触点类型 共 3 类 01 门店海报 触点类型 01 02 社区社群 触点类型 02 03 公众号 触点类型 03 14 套 素材版本，对应 3 类触点使用 11 家 覆盖试点门店 未确定 各触点的 发布频次 与 责任人 ：资料未给出 待资料补充后再行确认 数字仅供测评，不作为成效表述 4 / 6"
+      }
+    },
+    {
+      "subject": "传播周期",
+      "value": "5",
+      "unit": "周",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 5,
+        "text": "5 周 传播周期"
+      }
+    },
+    {
+      "subject": "触点类型",
+      "value": "3",
+      "unit": "类",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "TOUCHPOINTS · 触点安排 溪木咖啡品牌传播 虚构测评材料 · 内部对齐用 04 触点安排 按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 触点类型 共 3 类 01 门店海报 触点类型 01 02 社区社群 触点类型 02 03 公众号 触点类型 03 14 套 素材版本，对应 3 类触点使用 11 家 覆盖试点门店 未确定 各触点的 发布频次 与 责任人 ：资料未给出 待资料补充后再行确认 数字仅供测评，不作为成效表述 4 / 6"
+      }
+    },
+    {
+      "subject": "素材版本",
+      "value": "14",
+      "unit": "套",
+      "matched": true,
+      "value_present": true,
+      "evidence": {
+        "page": 4,
+        "text": "14 套 素材版本，对应 3 类触点使用"
+      }
+    }
+  ],
+  "facts_hit": 4,
+  "facts_total": 4,
+  "sections": [
+    {
+      "title": "品牌定位",
+      "matched": true
+    },
+    {
+      "title": "表达原则",
+      "matched": true
+    },
+    {
+      "title": "触点安排",
+      "matched": true
+    },
+    {
+      "title": "执行边界",
+      "matched": true
+    }
+  ],
+  "section_hits": 4,
+  "overflow_pages": [],
+  "layout_ok": true,
+  "reports": [
+    {
+      "page": 1,
+      "page_id": "cover",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 2,
+      "page_id": "positioning",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 3,
+      "page_id": "expression",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 4,
+      "page_id": "touchpoints",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 5,
+      "page_id": "cadence",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    },
+    {
+      "page": 6,
+      "page_id": "boundaries",
+      "report": {
+        "ok": true,
+        "issues": []
+      }
+    }
+  ],
+  "scoring_ms": 5718.703200000105,
+  "rules_pass": true
+}

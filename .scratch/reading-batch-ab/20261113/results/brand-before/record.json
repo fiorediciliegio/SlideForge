@@ -1,0 +1,3207 @@
+{
+  "id": "brand-before",
+  "case_id": "brand",
+  "arm": "before",
+  "status": "recorded",
+  "expected_scene": "企业",
+  "started_at": "2026-11-13T07:42:38.346Z",
+  "events": [
+    {
+      "phase": "queued",
+      "elapsed_ms": 1061.7748999999603
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 2083.5387999999803
+    },
+    {
+      "phase": "generating",
+      "elapsed_ms": 16263.309499999974
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 138657.2167
+    },
+    {
+      "phase": "generating",
+      "elapsed_ms": 140673.8922
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 172041.9314
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 173061.00549999997
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 175084.72619999992
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 180118.84719999996
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 182151.05759999994
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 189212.7929
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 191241.30550000002
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 201360.6388999999
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 202374.94460000005
+    },
+    {
+      "phase": "revising",
+      "elapsed_ms": 204397.04759999993
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 218581.2415
+    },
+    {
+      "phase": "revising",
+      "elapsed_ms": 220617.28899999987
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 234776.13650000002
+    },
+    {
+      "phase": "revising",
+      "elapsed_ms": 236806.80979999993
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 249947.13559999992
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 251964.28969999985
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 252983.80869999994
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 254997.25069999998
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 257023.53269999987
+    },
+    {
+      "phase": "revising",
+      "elapsed_ms": 266121.0799
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 278267.97
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 279279.68350000004
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 281305.2859
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 285350.1946999999
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 286365.37659999984
+    },
+    {
+      "phase": "completed",
+      "elapsed_ms": 293422.6945
+    }
+  ],
+  "deck_id": "deck-83f96c76",
+  "job": {
+    "agent": {
+      "budget": {
+        "active_seconds": 289.3599746000002,
+        "limit_seconds": 600,
+        "spent_cny": 1.506676,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "checkpoint_seq": 107,
+      "draft_revision": 1,
+      "error": "",
+      "options": {
+        "version": 1,
+        "generation_mode": "direct",
+        "page_policy": {
+          "mode": "fixed",
+          "count": 6
+        },
+        "research_allowed": false,
+        "budget": {
+          "active_seconds": 600,
+          "estimated_cost_cny": 2
+        }
+      },
+      "phase": "completed",
+      "preview_revision": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+      "quality_state": "checked",
+      "request": null,
+      "run_seq": 1,
+      "unknown_calls": [],
+      "version": 1
+    },
+    "billing": null,
+    "cancelled": false,
+    "deck_id": "deck-83f96c76",
+    "error": "",
+    "overflow_pages": [],
+    "recent_events": [],
+    "status": "ready",
+    "title": "溪木咖啡品牌传播"
+  },
+  "phase": "completed",
+  "generation_ms": 293427.4960999999,
+  "raw_job": {
+    "agent": {
+      "version": 1,
+      "run_seq": 1,
+      "runner_epoch": 1,
+      "checkpoint_seq": 107,
+      "phase": "completed",
+      "options": {
+        "version": 1,
+        "generation_mode": "direct",
+        "page_policy": {
+          "mode": "fixed",
+          "count": 6
+        },
+        "research_allowed": false,
+        "budget": {
+          "active_seconds": 600,
+          "estimated_cost_cny": 2
+        }
+      },
+      "project_ref": {
+        "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+        "artifact_ref": "project/revisions/d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+        "outline_revision": 1,
+        "constraints_revision": 1
+      },
+      "quality_revision": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+      "draft_ref": "project/drafts/415550687ee685b08eeb37b9c8c0dbb528100f27c5ba911a58ebc34c3c86272c.json",
+      "draft_revision": 1,
+      "context_ref": "project/contexts/cc28e582-c0e0-4bd3-804e-d05cb8642f51.json",
+      "messages_ref": "project/checkpoints/89b33cff-864b-44bb-9c90-f378601fa0b1.json",
+      "pricing": {
+        "input_cny_per_million": 2,
+        "output_cny_per_million": 8,
+        "version": "batch-ab-peak-cache-miss-2026-11-13",
+        "model": "deepseek-flash",
+        "base_url": "https://api.deepseek.com",
+        "currency": "CNY"
+      },
+      "budget": {
+        "active_seconds": 289.3599746000002,
+        "limit_seconds": 600,
+        "spent_cny": 1.506676,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "calls": {
+        "run-1:turn-12:call_00_ET_p0ORo14byJ6uCUBk32Sg3048:page:touchpoints:llm:0": {
+          "status": "completed",
+          "input_hash": "109cbd11c75b8728a6ca598a5aaa52c0b81b3481d5ea9c6504ba58d444dd1d32",
+          "cost": 0.052176,
+          "response_ref": "project/responses/af9ff0ca0d31718ec7495ba0420ad1cadfb757d8290b406ac477ec2409e50918.json",
+          "usage": {
+            "prompt_tokens": 9856,
+            "completion_tokens": 4058,
+            "total_tokens": 13914,
+            "prompt_tokens_details": {
+              "cached_tokens": 5888
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 553
+            },
+            "prompt_cache_hit_tokens": 5888,
+            "prompt_cache_miss_tokens": 3968
+          }
+        },
+        "run-1:turn-13:call_00_ET_nwxSZdYZAaCq8LzGfvhi7764:page:expression:llm:0": {
+          "status": "completed",
+          "input_hash": "19a1e1b6ef2939b71ca9f4206354385b4ae9925a11acf2f3c9dd0aa883e9b7ca",
+          "cost": 0.056172,
+          "response_ref": "project/responses/a33f191cd508c698f71b11940a619279822ba727855eef1f47556201a9157186.json",
+          "usage": {
+            "prompt_tokens": 10454,
+            "completion_tokens": 4408,
+            "total_tokens": 14862,
+            "prompt_tokens_details": {
+              "cached_tokens": 5888
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 315
+            },
+            "prompt_cache_hit_tokens": 5888,
+            "prompt_cache_miss_tokens": 4566
+          }
+        },
+        "run-1:turn-14:call_00_ET_NeLrBNCDhb0PYosmMv3r8643:page:boundaries:llm:0": {
+          "status": "completed",
+          "input_hash": "c89c72f0de2854335da0d92fd26ca1bfa273550a38dcffc2e5c6ca599543efcb",
+          "cost": 0.044694,
+          "response_ref": "project/responses/fb9f76316cbea0ead89951d48a3321109bbcdda29b25a13a843d5e2977c92796.json",
+          "usage": {
+            "prompt_tokens": 8815,
+            "completion_tokens": 3383,
+            "total_tokens": 12198,
+            "prompt_tokens_details": {
+              "cached_tokens": 5888
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1001
+            },
+            "prompt_cache_hit_tokens": 5888,
+            "prompt_cache_miss_tokens": 2927
+          }
+        },
+        "run-1:turn-18:call_00_ET_E8ulhkoALLfYytqE3CqM2971:page:boundaries:llm:0": {
+          "status": "completed",
+          "input_hash": "b99d45e8dd9b8587bbe0b20093d9fa74d592f48c2f276fb9e5fd2ade710fc4c6",
+          "cost": 0.042254,
+          "response_ref": "project/responses/d504ed2393bd86bec1da96f85b2eb508e22ec8d6f1a13524d403e48230739834.json",
+          "usage": {
+            "prompt_tokens": 8907,
+            "completion_tokens": 3055,
+            "total_tokens": 11962,
+            "prompt_tokens_details": {
+              "cached_tokens": 5888
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 683
+            },
+            "prompt_cache_hit_tokens": 5888,
+            "prompt_cache_miss_tokens": 3019
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:boundaries:llm:0": {
+          "status": "completed",
+          "input_hash": "66b6a0782d840e4ed4406b30ee758280d77ad3e920ccf1da273d536aa0d9e21d",
+          "cost": 0.055828,
+          "response_ref": "project/responses/de57522e3e9c2a7e911e6d431fc5c5efea8a24e90a2219e3f3438141d90f1ea9.json",
+          "usage": {
+            "prompt_tokens": 6174,
+            "completion_tokens": 5435,
+            "total_tokens": 11609,
+            "prompt_tokens_details": {
+              "cached_tokens": 640
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2967
+            },
+            "prompt_cache_hit_tokens": 640,
+            "prompt_cache_miss_tokens": 5534
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:cadence:llm:0": {
+          "status": "completed",
+          "input_hash": "847decd2f238d52d9262891b65c11919c7ff61c7a9de05665a1896eadd55568f",
+          "cost": 0.101228,
+          "response_ref": "project/responses/1c42b4a2070dbf7679ef0fb38bbe98941e11c406e67c92943e670db8f3186e6f.json",
+          "usage": {
+            "prompt_tokens": 6186,
+            "completion_tokens": 11107,
+            "total_tokens": 17293,
+            "prompt_tokens_details": {
+              "cached_tokens": 640
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 7439
+            },
+            "prompt_cache_hit_tokens": 640,
+            "prompt_cache_miss_tokens": 5546
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:cover:llm:0": {
+          "status": "completed",
+          "input_hash": "41dabddbec655211ed72b942be3952895e3c56e8ee38fc63d2e119e6b7dff47f",
+          "cost": 0.04189,
+          "response_ref": "project/responses/07a786b000f14d9297d270b584af9f8e295dac6dd6c2448e2ad1b62c6bc1a049.json",
+          "usage": {
+            "prompt_tokens": 6169,
+            "completion_tokens": 3694,
+            "total_tokens": 9863,
+            "prompt_tokens_details": {
+              "cached_tokens": 256
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 591
+            },
+            "prompt_cache_hit_tokens": 256,
+            "prompt_cache_miss_tokens": 5913
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:expression:llm:0": {
+          "status": "completed",
+          "input_hash": "71dd84ecbcc2ee1f0716767374780830371e355506cdb5cf13faa042f7fbea0a",
+          "cost": 0.06777,
+          "response_ref": "project/responses/41348cc4c4b795174b64a95ca780a4a5874ea13335451db99b77c3572da808c1.json",
+          "usage": {
+            "prompt_tokens": 6177,
+            "completion_tokens": 6927,
+            "total_tokens": 13104,
+            "prompt_tokens_details": {
+              "cached_tokens": 640
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2856
+            },
+            "prompt_cache_hit_tokens": 640,
+            "prompt_cache_miss_tokens": 5537
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:positioning:llm:0": {
+          "status": "completed",
+          "input_hash": "8b3e5fa402e39cc77badf645ec28ac52be4ef19b29c0d6eeb3cd2a8c4e6eadee",
+          "cost": 0.078732,
+          "response_ref": "project/responses/9458be04d3f3ae9c323df81d8270575866886c647e77d7b340ad7757de4b17bf.json",
+          "usage": {
+            "prompt_tokens": 6158,
+            "completion_tokens": 8302,
+            "total_tokens": 14460,
+            "prompt_tokens_details": {
+              "cached_tokens": 256
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 5410
+            },
+            "prompt_cache_hit_tokens": 256,
+            "prompt_cache_miss_tokens": 5902
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:touchpoints:llm:0": {
+          "status": "completed",
+          "input_hash": "4c09550c40bc270c60b07f6c4e9898432f3a2547dddf2e13af0d626444de6914",
+          "cost": 0.108336,
+          "response_ref": "project/responses/342c3fc1c807c50dc2baf8130e366a4087d3f636668920140aab09713e668e2a.json",
+          "usage": {
+            "prompt_tokens": 6168,
+            "completion_tokens": 12000,
+            "total_tokens": 18168,
+            "prompt_tokens_details": {
+              "cached_tokens": 640
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 10604
+            },
+            "prompt_cache_hit_tokens": 640,
+            "prompt_cache_miss_tokens": 5528
+          }
+        },
+        "run-1:turn-4:call_00_VvxiBKM4w9XIxn21qSN99266:page:touchpoints:llm:0": {
+          "status": "completed",
+          "input_hash": "4c09550c40bc270c60b07f6c4e9898432f3a2547dddf2e13af0d626444de6914",
+          "cost": 0.067064,
+          "response_ref": "project/responses/646df7f574bf02334c4224322ca8eb1a65f0e0ee0002fbd5e3c04e9717294f11.json",
+          "usage": {
+            "prompt_tokens": 6168,
+            "completion_tokens": 6841,
+            "total_tokens": 13009,
+            "prompt_tokens_details": {
+              "cached_tokens": 6016
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 3355
+            },
+            "prompt_cache_hit_tokens": 6016,
+            "prompt_cache_miss_tokens": 152
+          }
+        },
+        "turn-0": {
+          "status": "completed",
+          "input_hash": "c7351ab0b682ade72fc6727d0fdd3e9c4fea50279e356a04805866caf3a4cdd7",
+          "cost": 0.00614,
+          "response_ref": "project/responses/b920b9ca5655d57dcf771f245bfe25dd551344b115e6b8743f463f16fab0b25c.json",
+          "usage": {
+            "prompt_tokens": 2890,
+            "completion_tokens": 45,
+            "total_tokens": 2935,
+            "prompt_tokens_details": {
+              "cached_tokens": 2560
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 2560,
+            "prompt_cache_miss_tokens": 330
+          }
+        },
+        "turn-1": {
+          "status": "completed",
+          "input_hash": "82579d3a26d4e2e5bdd6a43fcde234764a6156153907c467ff8d4dd5df946f41",
+          "cost": 0.007756,
+          "response_ref": "project/responses/66baa9528fab9df24046ad405e263ed7fca4c57f4d558aa558bc750bec4e38e5.json",
+          "usage": {
+            "prompt_tokens": 3486,
+            "completion_tokens": 98,
+            "total_tokens": 3584,
+            "prompt_tokens_details": {
+              "cached_tokens": 2816
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 6
+            },
+            "prompt_cache_hit_tokens": 2816,
+            "prompt_cache_miss_tokens": 670
+          }
+        },
+        "turn-10": {
+          "status": "completed",
+          "input_hash": "831f3075e93b7b0e7a3ef397de9b8f5b191af6fd6401e2d8ed4c1a2cde430bf5",
+          "cost": 0.032746,
+          "response_ref": "project/responses/f862007a1d7b22bc7d4028d36ef87f04042cd2be4c1c760bc90f6a2f4a9d0d4a.json",
+          "usage": {
+            "prompt_tokens": 14909,
+            "completion_tokens": 366,
+            "total_tokens": 15275,
+            "prompt_tokens_details": {
+              "cached_tokens": 13568
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 13568,
+            "prompt_cache_miss_tokens": 1341
+          }
+        },
+        "turn-11": {
+          "status": "completed",
+          "input_hash": "cafe1ec3704fc2cfbcd850d30d0459ea1551bbcdaf1752de263e6eb81e5f0685",
+          "cost": 0.032456,
+          "response_ref": "project/responses/061787d01fb99957749b972d076b328260561db7670c7ceb05575a07211e2075.json",
+          "usage": {
+            "prompt_tokens": 15548,
+            "completion_tokens": 170,
+            "total_tokens": 15718,
+            "prompt_tokens_details": {
+              "cached_tokens": 15232
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 15232,
+            "prompt_cache_miss_tokens": 316
+          }
+        },
+        "turn-12": {
+          "status": "completed",
+          "input_hash": "218a5a8aaff8d050475e0aedd5364cb227c3c993f2769109f866ade6376c898f",
+          "cost": 0.033682,
+          "response_ref": "project/responses/8927005324d34ab278217831a906fbc008c300d2b78801a4e2c9af0845f94f0d.json",
+          "usage": {
+            "prompt_tokens": 15813,
+            "completion_tokens": 257,
+            "total_tokens": 16070,
+            "prompt_tokens_details": {
+              "cached_tokens": 15616
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 15616,
+            "prompt_cache_miss_tokens": 197
+          }
+        },
+        "turn-13": {
+          "status": "completed",
+          "input_hash": "84d53bc529e41f4656be6394e231e4bf893de5c52dcd1f84332df179d486c5a2",
+          "cost": 0.034424,
+          "response_ref": "project/responses/66fa3ca4a5314598224bdbcf0e231004400713e1dffafddc64274a6160d78394.json",
+          "usage": {
+            "prompt_tokens": 16240,
+            "completion_tokens": 243,
+            "total_tokens": 16483,
+            "prompt_tokens_details": {
+              "cached_tokens": 16000
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 16000,
+            "prompt_cache_miss_tokens": 240
+          }
+        },
+        "turn-14": {
+          "status": "completed",
+          "input_hash": "95d2031613ce269b4ab6ad7002808fda2a162f53d4995a6cfe9ab13a3f371c53",
+          "cost": 0.035006,
+          "response_ref": "project/responses/d299831169a732d207fe6c75cb61ed111531bde19b2dc08ab735ce250bfa88aa.json",
+          "usage": {
+            "prompt_tokens": 16647,
+            "completion_tokens": 214,
+            "total_tokens": 16861,
+            "prompt_tokens_details": {
+              "cached_tokens": 16384
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 16384,
+            "prompt_cache_miss_tokens": 263
+          }
+        },
+        "turn-15": {
+          "status": "completed",
+          "input_hash": "c15d6bd3c1d73b090c022cae0fcbabf5bd86103dca73b02b351e7afd44aef42f",
+          "cost": 0.03474,
+          "response_ref": "project/responses/3e45ad49a4c343f26d68490ff5004340e185c0225411eaca7e5ba032146639d0.json",
+          "usage": {
+            "prompt_tokens": 17026,
+            "completion_tokens": 86,
+            "total_tokens": 17112,
+            "prompt_tokens_details": {
+              "cached_tokens": 16768
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 16768,
+            "prompt_cache_miss_tokens": 258
+          }
+        },
+        "turn-16": {
+          "status": "completed",
+          "input_hash": "3844bc5cb70fd7ea55c0102e3156a7194223076917a8319787840e866adb0179",
+          "cost": 0.03766,
+          "response_ref": "project/responses/9306f7a106bbb963cb03b2df64eb4ed9b1d8a5e9531c0190f05ce3229c549f7d.json",
+          "usage": {
+            "prompt_tokens": 18470,
+            "completion_tokens": 90,
+            "total_tokens": 18560,
+            "prompt_tokens_details": {
+              "cached_tokens": 17024
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 10
+            },
+            "prompt_cache_hit_tokens": 17024,
+            "prompt_cache_miss_tokens": 1446
+          }
+        },
+        "turn-17": {
+          "status": "completed",
+          "input_hash": "f95437560a9579e535764a9c67d10b4a966337910029eae26c7907da3a6afbfd",
+          "cost": 0.053686,
+          "response_ref": "project/responses/3c6dc63c49620a0bef5fb167a4c3e060ecfc93a782c24075ace9bc35cc8bdff8.json",
+          "usage": {
+            "prompt_tokens": 22815,
+            "completion_tokens": 1007,
+            "total_tokens": 23822,
+            "prompt_tokens_details": {
+              "cached_tokens": 18560
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 662
+            },
+            "prompt_cache_hit_tokens": 18560,
+            "prompt_cache_miss_tokens": 4255
+          }
+        },
+        "turn-18": {
+          "status": "completed",
+          "input_hash": "ca710d103a74f74c1bb68e0dc8aea50d8ca85a47a33b23a5ab1a1723f15bf809",
+          "cost": 0.04407,
+          "response_ref": "project/responses/36aacdf2cc589e27d693f6928385b5ddd0e303d12fd884eaae440112c6df9bcd.json",
+          "usage": {
+            "prompt_tokens": 21119,
+            "completion_tokens": 229,
+            "total_tokens": 21348,
+            "prompt_tokens_details": {
+              "cached_tokens": 19584
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 19584,
+            "prompt_cache_miss_tokens": 1535
+          }
+        },
+        "turn-19": {
+          "status": "completed",
+          "input_hash": "80623cd91e7a44529da6a479d64b59fa43f5f078e576ad9ad27e95ed768358d4",
+          "cost": 0.04365,
+          "response_ref": "project/responses/cf1e2ac1d35a4ab2f07f73a166472432850a9f09da7349bd3a5f389dcf3c3b99.json",
+          "usage": {
+            "prompt_tokens": 21517,
+            "completion_tokens": 77,
+            "total_tokens": 21594,
+            "prompt_tokens_details": {
+              "cached_tokens": 19712
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 19712,
+            "prompt_cache_miss_tokens": 1805
+          }
+        },
+        "turn-2": {
+          "status": "completed",
+          "input_hash": "dba79ea0b1b4d6e7ada64ea5989fdd190c7e6f7947bda26bd9706b6c137f42f2",
+          "cost": 0.021208,
+          "response_ref": "project/responses/742646f6fa3bec52b2e84b81ff24a23c81c299ff0a340862423d4dce8abd4e69.json",
+          "usage": {
+            "prompt_tokens": 3744,
+            "completion_tokens": 1715,
+            "total_tokens": 5459,
+            "prompt_tokens_details": {
+              "cached_tokens": 3584
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1104
+            },
+            "prompt_cache_hit_tokens": 3584,
+            "prompt_cache_miss_tokens": 160
+          }
+        },
+        "turn-20": {
+          "status": "completed",
+          "input_hash": "1a15c5243d11f3bd7b7e37142c31110bc6b6445f4dd65b64d14127169ba463c4",
+          "cost": 0.048082,
+          "response_ref": "project/responses/6a1c46e5e381126eb973689c85f4fca2c772eeb33b24dbe8a7bb6cf7832a1f65.json",
+          "usage": {
+            "prompt_tokens": 23025,
+            "completion_tokens": 254,
+            "total_tokens": 23279,
+            "prompt_tokens_details": {
+              "cached_tokens": 21504
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 72
+            },
+            "prompt_cache_hit_tokens": 21504,
+            "prompt_cache_miss_tokens": 1521
+          }
+        },
+        "turn-21": {
+          "status": "completed",
+          "input_hash": "c18bd2ad19e5721756ef9e69a39bc8eb7bae6b30945cce760ca3199141cab690",
+          "cost": 0.04621,
+          "response_ref": "project/responses/7edb375a288d71e0f389e91698f89cc50c4252dc0558f1dd9f43b4b2ba32b6ab.json",
+          "usage": {
+            "prompt_tokens": 22397,
+            "completion_tokens": 177,
+            "total_tokens": 22574,
+            "prompt_tokens_details": {
+              "cached_tokens": 21888
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 86
+            },
+            "prompt_cache_hit_tokens": 21888,
+            "prompt_cache_miss_tokens": 509
+          }
+        },
+        "turn-22": {
+          "status": "completed",
+          "input_hash": "5cfac737ba40b31648edd5b47a4984a05be31891dfcb8856d70807007c77616a",
+          "cost": 0.051226,
+          "response_ref": "project/responses/3f59d38b8f187ebc1413ef53141b50efbedf83b0aecef44660b37736bf1a2933.json",
+          "usage": {
+            "prompt_tokens": 24933,
+            "completion_tokens": 170,
+            "total_tokens": 25103,
+            "prompt_tokens_details": {
+              "cached_tokens": 21248
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 21248,
+            "prompt_cache_miss_tokens": 3685
+          }
+        },
+        "turn-23": {
+          "status": "completed",
+          "input_hash": "7c22ffc0a70a351e6abb314735916e1d65388b72724eae7290a397d200c4180c",
+          "cost": 0.05908,
+          "response_ref": "project/responses/4fed7ac7fc9b7b60ce0ee147317029c2902d0c512fdc36ea9afa805859d44d7d.json",
+          "usage": {
+            "prompt_tokens": 25192,
+            "completion_tokens": 1087,
+            "total_tokens": 26279,
+            "prompt_tokens_details": {
+              "cached_tokens": 22528
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 227
+            },
+            "prompt_cache_hit_tokens": 22528,
+            "prompt_cache_miss_tokens": 2664
+          }
+        },
+        "turn-3": {
+          "status": "completed",
+          "input_hash": "7364dfbbf0f9cd22d8d35a08c1aa647d537180aedd91e5419f2d5526e8263daa",
+          "cost": 0.012786,
+          "response_ref": "project/responses/00c15d3c4fa51d5294de463482bb3f177b0dd5e0b2720e39c78ffb4ec0d3d3fd.json",
+          "usage": {
+            "prompt_tokens": 6109,
+            "completion_tokens": 71,
+            "total_tokens": 6180,
+            "prompt_tokens_details": {
+              "cached_tokens": 5376
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 5376,
+            "prompt_cache_miss_tokens": 733
+          }
+        },
+        "turn-4": {
+          "status": "completed",
+          "input_hash": "13633d178fd396fa997e818c63281f79076acc8df6979e61498c906fc5876b60",
+          "cost": 0.013974,
+          "response_ref": "project/responses/743322cce68eb03ad9a4ed8920e52043fc122d3942e4eae0a46d715dff291e35.json",
+          "usage": {
+            "prompt_tokens": 6663,
+            "completion_tokens": 81,
+            "total_tokens": 6744,
+            "prompt_tokens_details": {
+              "cached_tokens": 6144
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 17
+            },
+            "prompt_cache_hit_tokens": 6144,
+            "prompt_cache_miss_tokens": 519
+          }
+        },
+        "turn-5": {
+          "status": "completed",
+          "input_hash": "b2f6cf1ed1f215dc8144452c6cd6f7e56390da5109543c7b018066373d864726",
+          "cost": 0.014666,
+          "response_ref": "project/responses/8bf9d4f9e71a19538152b65cf3af68a534e0c25b63c997193867a91045d0f48a.json",
+          "usage": {
+            "prompt_tokens": 6913,
+            "completion_tokens": 105,
+            "total_tokens": 7018,
+            "prompt_tokens_details": {
+              "cached_tokens": 6656
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 6656,
+            "prompt_cache_miss_tokens": 257
+          }
+        },
+        "turn-6": {
+          "status": "completed",
+          "input_hash": "a6239af05bb05d7d634e5b40df81d4da134ae523de2e800c53dab63897268d0f",
+          "cost": 0.024556,
+          "response_ref": "project/responses/7c634d3d1ccfb0df4557a37905253325ea284de887e312a367546ce36c3b8f8c.json",
+          "usage": {
+            "prompt_tokens": 9434,
+            "completion_tokens": 711,
+            "total_tokens": 10145,
+            "prompt_tokens_details": {
+              "cached_tokens": 6912
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 612
+            },
+            "prompt_cache_hit_tokens": 6912,
+            "prompt_cache_miss_tokens": 2522
+          }
+        },
+        "turn-7": {
+          "status": "completed",
+          "input_hash": "d2b1a411e4ea51b4798806d4952e9552b4c45e64fc0e4b2547c42d4a0037d57d",
+          "cost": 0.03756,
+          "response_ref": "project/responses/4079cf8358f926ba924f91dce10a3315df2b3bcaf195a8be93fdd0df8075b10c.json",
+          "usage": {
+            "prompt_tokens": 15596,
+            "completion_tokens": 796,
+            "total_tokens": 16392,
+            "prompt_tokens_details": {
+              "cached_tokens": 10112
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 466
+            },
+            "prompt_cache_hit_tokens": 10112,
+            "prompt_cache_miss_tokens": 5484
+          }
+        },
+        "turn-8": {
+          "status": "completed",
+          "input_hash": "b2beb8b356eec6a22e5d91d9f3cd75278cf891503679744ec324103205974887",
+          "cost": 0.026104,
+          "response_ref": "project/responses/9bbc50308b3398ae2fed706c0dd0c4a5460581b8877df4a1ead2f9bb377f74c1.json",
+          "usage": {
+            "prompt_tokens": 12728,
+            "completion_tokens": 81,
+            "total_tokens": 12809,
+            "prompt_tokens_details": {
+              "cached_tokens": 11520
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 11520,
+            "prompt_cache_miss_tokens": 1208
+          }
+        },
+        "turn-9": {
+          "status": "completed",
+          "input_hash": "06bc35cc3b860a9748f136fa9a13a0a32c45aa059e9ca840753721c89f9057d3",
+          "cost": 0.039064,
+          "response_ref": "project/responses/a5d9387b490a4ae240c4888e33f65dc70720a65537406d66b910c864b0557e4d.json",
+          "usage": {
+            "prompt_tokens": 15668,
+            "completion_tokens": 966,
+            "total_tokens": 16634,
+            "prompt_tokens_details": {
+              "cached_tokens": 12800
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 686
+            },
+            "prompt_cache_hit_tokens": 12800,
+            "prompt_cache_miss_tokens": 2868
+          }
+        }
+      },
+      "operations": {
+        "run-1:turn-0:call_00_ET_ymLL4jE7VOdIR0ITp4UX5839": {
+          "status": "completed",
+          "input_hash": "0d27cffeefc04c1cea1347dd4971ee7b678fd0bc6353ead08d59f8043ca3dcaf",
+          "result": {
+            "project": {
+              "version": 1,
+              "deck_id": "deck-83f96c76",
+              "revision_id": "",
+              "brief": "生成6页中文演示，直接生成预览，不联网。主题：溪木咖啡品牌传播。受众：品牌与门店运营团队。覆盖以下部分：品牌定位、表达原则、触点安排、执行边界。以上部分名称须原样出现在某页可见标题中。以附件或正文资料为唯一事实来源，准确呈现其中关键数据，保留计划、未确定与已完成的区别；不编造日期、预算或业务成果。资料为虚构测评材料，不要补充外部事实。",
+              "title": "新演示",
+              "outline": {
+                "title": "新演示",
+                "draft_revision": 0,
+                "pages": []
+              },
+              "constraints_revision": 1,
+              "constraints": [
+                {
+                  "text": "生成6页中文演示，直接生成预览，不联网。主题：溪木咖啡品牌传播。受众：品牌与门店运营团队。覆盖以下部分：品牌定位、表达原则、触点安排、执行边界。以上部分名称须原样出现在某页可见标题中。以附件或正文资料为唯一事实来源，准确呈现其中关键数据，保留计划、未确定与已完成的区别；不编造日期、预算或业务成果。资料为虚构测评材料，不要补充外部事实。",
+                  "source": "user",
+                  "confirmed_at": "2026-11-13T07:42:41.255Z"
+                }
+              ],
+              "scenario": {
+                "category": "待明确",
+                "subtype": "",
+                "reason": "尚未识别"
+              },
+              "sources": [
+                {
+                  "source_id": "16fea160-bddb-4eaa-83e1-713d77934746",
+                  "name": "brand.docx",
+                  "kind": "user",
+                  "chars": 157
+                }
+              ],
+              "pages": [],
+              "missing": [],
+              "history": {
+                "instruction": "创建项目",
+                "at": "2026-11-13T07:42:41.255Z",
+                "changed_page_ids": []
+              },
+              "visual": {
+                "template_id": "134-Adaptive Systems Editorial Cover",
+                "visual_spec": "以参考页视觉风格为准，内容不得照抄"
+              }
+            },
+            "options": {
+              "version": 1,
+              "generation_mode": "direct",
+              "page_policy": {
+                "mode": "fixed",
+                "count": 6
+              },
+              "research_allowed": false,
+              "budget": {
+                "active_seconds": 600,
+                "estimated_cost_cny": 2
+              }
+            }
+          }
+        },
+        "run-1:turn-10:call_00_ET_xUL6ukWNaDrO9MkbUhCn9772": {
+          "status": "completed",
+          "input_hash": "29442a62f44b4bc9022fe04c407bcbce19b7dced77bb7270201ba1284fb13b3c",
+          "result": {
+            "check_id": "content-ab56ae2e99bdf83bce0396512822ffc1a2946ba98c38ad4272eb2a003ef25620",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+            "issues": [
+              {
+                "severity": "improvement",
+                "code": "derivation_unlabeled",
+                "detail": "表达原则页：第 01 条“所有表达位一律使用《把日常慢慢喝好》，保持原句，不作换字与改写”为强度较高的硬规则，而资料仅给出“品牌口号为…”，未规定不得改写；该页只给第 02 条加了“由定位关键词推导”标注，建议对 01 条同样标注为推导口径（或改为“建议统一使用”），以保持事实与推导的区分。仅影响该页。",
+                "page_ids": [
+                  "expression"
+                ],
+                "evidence_refs": [
+                  "f0f46c44fde0778c3b2e7e445dc46a7e881877fb0f4f60a7862f73987899dca7"
+                ]
+              }
+            ]
+          }
+        },
+        "run-1:turn-11:call_00_ET_6cxXCsEz9y0SLMNkrkt14968": {
+          "status": "completed",
+          "input_hash": "df0cc100063e0f47fd928a188d8ea7655144ed138e4b959cc6d4b8315927a5f7",
+          "result": {
+            "check_id": "content-27bdf047d2ef03150335880a433f9af1d4a57845b597a5df265ab5a7e8f19fae",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+            "issues": []
+          }
+        },
+        "run-1:turn-12:call_00_ET_p0ORo14byJ6uCUBk32Sg3048": {
+          "status": "completed",
+          "input_hash": "e1b0cc8050c65ae1840ceb28232f33cb36130cf9d9c3ecb008b508f6e8d148f7",
+          "result": {
+            "pages": [
+              {
+                "page_id": "touchpoints",
+                "candidate_id": "542e42767e08e3165ea833b9bb377fd99dfc2ecdad4b9b60d2b0d2d7d89b4c3e",
+                "issues": [],
+                "repair": true
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "f937eccd-e68e-4e66-bca8-f8865b223e72",
+              "artifact_ref": "project/revisions/f937eccd-e68e-4e66-bca8-f8865b223e72",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-12:call_00_ET_p0ORo14byJ6uCUBk32Sg3048:page:touchpoints": {
+          "status": "completed",
+          "input_hash": "765a8986b4bf24ed52dace3c844a53a52c401d740852c673896bfd0405a56a09",
+          "result": {
+            "page_id": "touchpoints",
+            "candidate_id": "542e42767e08e3165ea833b9bb377fd99dfc2ecdad4b9b60d2b0d2d7d89b4c3e",
+            "issues": [],
+            "repair": true,
+            "project_ref": {
+              "revision_id": "f937eccd-e68e-4e66-bca8-f8865b223e72",
+              "artifact_ref": "project/revisions/f937eccd-e68e-4e66-bca8-f8865b223e72",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-13:call_00_ET_nwxSZdYZAaCq8LzGfvhi7764": {
+          "status": "completed",
+          "input_hash": "00b9bc116a399bbd53e19d440ea87c9e81033c82f168422fcede59ee8ad99e7e",
+          "result": {
+            "pages": [
+              {
+                "page_id": "expression",
+                "candidate_id": "6dbeb806d2b1dfa0ec61540ae3578dcfa6b19aec08907cde9d2cd16515a19a09",
+                "issues": [],
+                "repair": true
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "54e7d836-0a76-413e-b249-033e4ae87977",
+              "artifact_ref": "project/revisions/54e7d836-0a76-413e-b249-033e4ae87977",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-13:call_00_ET_nwxSZdYZAaCq8LzGfvhi7764:page:expression": {
+          "status": "completed",
+          "input_hash": "a8ff75a3606ef72bc52a19dd7351673d1771f07d6ddc2075af6cf6b1585e9ef1",
+          "result": {
+            "page_id": "expression",
+            "candidate_id": "6dbeb806d2b1dfa0ec61540ae3578dcfa6b19aec08907cde9d2cd16515a19a09",
+            "issues": [],
+            "repair": true,
+            "project_ref": {
+              "revision_id": "54e7d836-0a76-413e-b249-033e4ae87977",
+              "artifact_ref": "project/revisions/54e7d836-0a76-413e-b249-033e4ae87977",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-14:call_00_ET_NeLrBNCDhb0PYosmMv3r8643": {
+          "status": "completed",
+          "input_hash": "e88d7b0e95b2cd504fdee2af88c8770a92574cbebaaf12247c1caf17f8a25b6b",
+          "result": {
+            "pages": [
+              {
+                "page_id": "boundaries",
+                "candidate_id": "7ce28e405f7247b4cac456531c29b1ba881ebaef1486191890ee8a36c5fc033e",
+                "issues": [],
+                "repair": true
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "b3417ce7-23c4-4cd7-bb45-555cd3726d13",
+              "artifact_ref": "project/revisions/b3417ce7-23c4-4cd7-bb45-555cd3726d13",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-14:call_00_ET_NeLrBNCDhb0PYosmMv3r8643:page:boundaries": {
+          "status": "completed",
+          "input_hash": "01b3f99fe1f71eb5c557bf8c79c6cc72e7d8324f86afec2fe35470fdfca4a8b1",
+          "result": {
+            "page_id": "boundaries",
+            "candidate_id": "7ce28e405f7247b4cac456531c29b1ba881ebaef1486191890ee8a36c5fc033e",
+            "issues": [],
+            "repair": true,
+            "project_ref": {
+              "revision_id": "b3417ce7-23c4-4cd7-bb45-555cd3726d13",
+              "artifact_ref": "project/revisions/b3417ce7-23c4-4cd7-bb45-555cd3726d13",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-15:call_00_ET_4BepzTMMjFR1a4E7MufH8548": {
+          "status": "completed",
+          "input_hash": "9f2485e60bf931a0c2c2cc2f4fda400bca76193bab3ab5427eecab75b48b49b1",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "touchpoints",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   TOUCHPOINTS · 触点安排 \n\n   溪木咖啡品牌传播 \n   虚构测评材料 · 内部对齐用 \n\n     04 \n   触点安排 \n   按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 \n    \n\n   触点类型 共  3  类 \n\n   \n     \n        \n       01 \n       门店海报 \n         触点类型 \n       01 \n     \n     \n        \n       02 \n       社区社群 \n         触点类型 \n       02 \n     \n     \n        \n       03 \n       公众号 \n         触点类型 \n       03 \n     \n   \n\n   \n     \n       14  套 \n       素材版本，对应 3 类触点使用 \n     \n      \n     \n       11  家 \n       覆盖试点门店 \n     \n   \n\n   \n     未确定 \n     各触点的 发布频次 与 责任人 ：资料未给出 \n     待资料补充后再行确认 \n   \n\n   数字仅供测评，不作为成效表述 \n   4 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "expression",
+                "text": " \n \n \n \n 表达原则｜溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   溪木咖啡品牌传播 \n   内部对齐 · 表达口径 \n   03 \n   EXPRESSION PRINCIPLES \n\n   \n   \n     \n       03 \n        \n       表达原则 \n     \n     表达原则 \n      \n     以定位关键词“日常、友好、易理解”为基准，约定可复用的表达方式。 \n   \n\n   \n   \n     品牌口号 · 原样复用 \n     “把日常慢慢喝好” \n     全篇统一使用此句， 不作改写 。 \n   \n\n   \n   \n\n     \n       01 \n       \n         \n           口号原样复用，不作改写 \n           统一口径 \n         \n         建议各表达位统一使用  “把日常慢慢喝好” ，不作改写。 \n         说明：本条为统一口径建议，原文仅给出品牌口号，未规定改写限制。 \n       \n     \n\n     \n       02 \n       \n         \n           用词贴近“日常”，避免生硬术语 \n         \n         优先使用贴近日常的场景语汇，回避生硬术语与抽象表述。 \n         说明：本条由定位关键词推导，原文未逐条细化。 \n       \n     \n\n     \n       03 \n       \n         \n           语气“友好”，信息“易理解” \n         \n         一句话说清一件事，不做多层信息堆叠。 \n       \n     \n\n     \n       04 \n       \n         \n           涉及数字须标注“仅供测评” \n           仅供测评 \n         \n         出现数字时须标注“仅供测评”， 不得当作成果表述 。 \n       \n     \n\n   \n\n   \n   \n     资料依据：brand.docx（虚构测评材料） \n      \n     数字口径：仅供测评 \n   \n    3  / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "boundaries",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n   \n\n    \n    \n    \n    \n    \n    \n   溪木咖啡品牌传播 \n\n   品牌与门店运营团队 · 内部对齐 \n\n   \n      \n     溪木咖啡品牌传播 \n     执行边界 \n     以下五条为执行与对外表述的固定口径，各渠道按此对齐。 \n   \n\n   \n     \n       01 \n       成效表述 \n       不以销售增长或市场排名作为已实现成效 \n     \n     \n       02 \n       数字用途 \n       所有数字仅供测评，不用于对外成效引用 \n     \n     \n       03 \n       状态标注 \n       计划与未确定项不得写成已完成 \n     \n     \n       04 \n       资料范围 \n       不补充资料之外的事实、日期与预算 \n     \n     \n       05 \n       结论边界 \n       结论不外推至 11 家试点门店与 5 周周期之外 \n     \n   \n\n   资料依据：brand.docx（虚构测评材料） \n   6 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              }
+            ],
+            "has_images": false,
+            "evidence_id": "288edc4c139ddc45e54c11a3d92e0aedf4ae3c8205d7744935205ec039a6ce16",
+            "revision_id": "b3417ce7-23c4-4cd7-bb45-555cd3726d13"
+          }
+        },
+        "run-1:turn-16:call_00_oYO0vg3WfqUwEvKMYNKX1097": {
+          "status": "completed",
+          "input_hash": "95ef66c9a221ecdf904dc7c75bf2e464d23783f8b7d4ed9ca7f4595914457333",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "touchpoints",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   TOUCHPOINTS · 触点安排 \n\n   溪木咖啡品牌传播 \n   虚构测评材料 · 内部对齐用 \n\n     04 \n   触点安排 \n   按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 \n    \n\n   触点类型 共  3  类 \n\n   \n     \n        \n       01 \n       门店海报 \n         触点类型 \n       01 \n     \n     \n        \n       02 \n       社区社群 \n         触点类型 \n       02 \n     \n     \n        \n       03 \n       公众号 \n         触点类型 \n       03 \n     \n   \n\n   \n     \n       14  套 \n       素材版本，对应 3 类触点使用 \n     \n      \n     \n       11  家 \n       覆盖试点门店 \n     \n   \n\n   \n     未确定 \n     各触点的 发布频次 与 责任人 ：资料未给出 \n     待资料补充后再行确认 \n   \n\n   数字仅供测评，不作为成效表述 \n   4 / 6 \n \n \n "
+              },
+              {
+                "page_id": "expression",
+                "text": " \n \n \n \n 表达原则｜溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   溪木咖啡品牌传播 \n   内部对齐 · 表达口径 \n   03 \n   EXPRESSION PRINCIPLES \n\n   \n   \n     \n       03 \n        \n       表达原则 \n     \n     表达原则 \n      \n     以定位关键词“日常、友好、易理解”为基准，约定可复用的表达方式。 \n   \n\n   \n   \n     品牌口号 · 原样复用 \n     “把日常慢慢喝好” \n     全篇统一使用此句， 不作改写 。 \n   \n\n   \n   \n\n     \n       01 \n       \n         \n           口号原样复用，不作改写 \n           统一口径 \n         \n         建议各表达位统一使用  “把日常慢慢喝好” ，不作改写。 \n         说明：本条为统一口径建议，原文仅给出品牌口号，未规定改写限制。 \n       \n     \n\n     \n       02 \n       \n         \n           用词贴近“日常”，避免生硬术语 \n         \n         优先使用贴近日常的场景语汇，回避生硬术语与抽象表述。 \n         说明：本条由定位关键词推导，原文未逐条细化。 \n       \n     \n\n     \n       03 \n       \n         \n           语气“友好”，信息“易理解” \n         \n         一句话说清一件事，不做多层信息堆叠。 \n       \n     \n\n     \n       04 \n       \n         \n           涉及数字须标注“仅供测评” \n           仅供测评 \n         \n         出现数字时须标注“仅供测评”， 不得当作成果表述 。 \n       \n     \n\n   \n\n   \n   \n     资料依据：brand.docx（虚构测评材料） \n      \n     数字口径：仅供测评 \n   \n    3  / 6 \n \n \n "
+              },
+              {
+                "page_id": "boundaries",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n   \n\n    \n    \n    \n    \n    \n    \n   溪木咖啡品牌传播 \n\n   品牌与门店运营团队 · 内部对齐 \n\n   \n      \n     溪木咖啡品牌传播 \n     执行边界 \n     以下五条为执行与对外表述的固定口径，各渠道按此对齐。 \n   \n\n   \n     \n       01 \n       成效表述 \n       不以销售增长或市场排名作为已实现成效 \n     \n     \n       02 \n       数字用途 \n       所有数字仅供测评，不用于对外成效引用 \n     \n     \n       03 \n       状态标注 \n       计划与未确定项不得写成已完成 \n     \n     \n       04 \n       资料范围 \n       不补充资料之外的事实、日期与预算 \n     \n     \n       05 \n       结论边界 \n       结论不外推至 11 家试点门店与 5 周周期之外 \n     \n   \n\n   资料依据：brand.docx（虚构测评材料） \n   6 / 6 \n \n \n "
+              }
+            ],
+            "has_images": true,
+            "evidence_id": "17fcfa4121da8bbaba2c7ae904c598dd6c86046b9ec73e04d9af788fd1a81321",
+            "revision_id": "b3417ce7-23c4-4cd7-bb45-555cd3726d13"
+          }
+        },
+        "run-1:turn-17:call_00_DsLA1dtVOe1EtE0bfV8j2247": {
+          "status": "completed",
+          "input_hash": "87f1f35df9affb1f40a95b19630e827e1e59b6fb0229418273b3cd3e79508fa8",
+          "result": {
+            "check_id": "visual-638cc88ffadc635df4e41aa1003473d6c7762d59277ccfef384b53dbbdfcc2d7",
+            "revision_id": "b3417ce7-23c4-4cd7-bb45-555cd3726d13",
+            "issues": [
+              {
+                "severity": "improvement",
+                "code": "rotated_label_cramped",
+                "detail": "执行边界页：左侧竖排标签现仅剩一行，但宇形仍被竖向压扁、彼此拥挤，难以辨认；建议直接移除该装饰竖排标签，或改为与页顶标签一致的横排小字。仅影响该页。",
+                "page_ids": [
+                  "boundaries"
+                ],
+                "evidence_refs": [
+                  "17fcfa4121da8bbaba2c7ae904c598dd6c86046b9ec73e04d9af788fd1a81321"
+                ]
+              }
+            ]
+          }
+        },
+        "run-1:turn-18:call_00_ET_E8ulhkoALLfYytqE3CqM2971": {
+          "status": "completed",
+          "input_hash": "6452b92246cceac6465699a7ee67b6f5d5109ff20a045a26da1c3654b29199d3",
+          "result": {
+            "pages": [
+              {
+                "page_id": "boundaries",
+                "candidate_id": "1104a978341a22b0dcffa050f7be3c99dc8bf8ca857fda8bb706a4846801098a",
+                "issues": [],
+                "repair": true
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+              "artifact_ref": "project/revisions/d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-18:call_00_ET_E8ulhkoALLfYytqE3CqM2971:page:boundaries": {
+          "status": "completed",
+          "input_hash": "74ce737db7ee64b3c9d874d98e17b3c295dab3185c7bb0a81c6b99d3ca4a80b9",
+          "result": {
+            "page_id": "boundaries",
+            "candidate_id": "1104a978341a22b0dcffa050f7be3c99dc8bf8ca857fda8bb706a4846801098a",
+            "issues": [],
+            "repair": true,
+            "project_ref": {
+              "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+              "artifact_ref": "project/revisions/d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-19:call_00_ET_T6hvJa7sOBsgGlICfWMM5211": {
+          "status": "completed",
+          "input_hash": "7bdc410300353d1913c02587fc023794d3651fa9dbbd4576117d73403eee9e8e",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "boundaries",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n   \n\n    \n    \n    \n    \n    \n    \n   溪木咖啡品牌传播 · 内部对齐 \n\n   品牌与门店运营团队 · 内部对齐 \n\n   \n      \n     溪木咖啡品牌传播 \n     执行边界 \n     以下五条为执行与对外表述的固定口径，各渠道按此对齐。 \n   \n\n   \n     \n       01 \n       成效表述 \n       不以销售增长或市场排名作为已实现成效 \n     \n     \n       02 \n       数字用途 \n       所有数字仅供测评，不用于对外成效引用 \n     \n     \n       03 \n       状态标注 \n       计划与未确定项不得写成已完成 \n     \n     \n       04 \n       资料范围 \n       不补充资料之外的事实、日期与预算 \n     \n     \n       05 \n       结论边界 \n       结论不外推至 11 家试点门店与 5 周周期之外 \n     \n   \n\n   资料依据：brand.docx（虚构测评材料） \n   6 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              }
+            ],
+            "has_images": true,
+            "evidence_id": "9a8aaf7a3503d7701199c568f5c2eb8e744c7b0d4fcb125b424992e6ed1506ee",
+            "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8"
+          }
+        },
+        "run-1:turn-1:call_00_teaRpy2b4CHN3fOhRVBE8993": {
+          "status": "completed",
+          "input_hash": "3b0448521ddf41a027644368768a1f6ea96db07a12583895114e8d480df0eab7",
+          "result": {
+            "source_id": "16fea160-bddb-4eaa-83e1-713d77934746",
+            "start": 0,
+            "end": 157,
+            "total": 157,
+            "text": "溪木咖啡品牌传播\n溪木咖啡是虚构的社区咖啡品牌，定位为日常、友好、易理解。品牌口号为“把日常慢慢喝好”。试点门店11家，传播周期5周，触点类型3类，素材版本14套。三类触点为门店海报、社区社群和公众号。第一周准备素材，第二至四周发布与收集反馈，第五周复盘。不使用销售增长或市场排名作为已实现成效。所有数字仅供测评。"
+          }
+        },
+        "run-1:turn-20:call_00_SIhbnF5P4tQrchvaPbQI1873": {
+          "status": "completed",
+          "input_hash": "53eeeec44d1a20963f1cfb7aa72cb07d92a85fec44f3dca4a53c30df6832fab9",
+          "result": {
+            "check_id": "visual-9b5bcf8f63714244b2826c8a340e1ecdbb2966d00afde2f6ab49729351760f07",
+            "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+            "issues": []
+          }
+        },
+        "run-1:turn-21:call_00_G1LjxDUj9eCBplnQbUkn0204": {
+          "status": "completed",
+          "input_hash": "fb9ba72caa063d167772707c3c545d473d3ae23d292f15cb094dc78561ea657e",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "cover",
+                "text": " \n \n \n \n 溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   溪木咖啡 · 品牌传播 · 内部对齐 \n\n   溪木咖啡 · 内部对齐材料 \n   \n      \n     品牌与门店运营团队 \n   \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   \n     \n       00 \n        \n       品牌传播方案 · 内部对齐 \n     \n\n     溪木咖啡 品牌传播  \n\n      \n\n     品牌与门店运营团队内部对齐 / 统一口径，明确边界 \n\n     \n       品牌定位 \n       表达原则 \n       触点安排 \n       执行边界 \n     \n   \n\n    \n   \n     \n       \n         资料依据 \n         brand.docx  （虚构测评材料）  \n       \n       \n         日期 \n         待补充 \n       \n     \n     1 / 6 \n   \n \n \n "
+              },
+              {
+                "page_id": "positioning",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n    \n    \n   品牌传播 · 内部对齐资料 \n   溪木咖啡 · 品牌传播 \n\n   \n       品牌与门店运营团队 · 内部对齐 \n     品牌定位 \n     虚构的社区咖啡品牌，面向社区日常场景 \n   \n    \n\n   \n     \n       01 \n       日常 \n          定位关键词  \n     \n     \n       02 \n       友好 \n          定位关键词  \n     \n     \n       03 \n       易理解 \n          定位关键词  \n     \n   \n\n   \n     品牌口号 \n     把日常慢慢喝好 \n     &rdquo; \n   \n\n   \n     口径基准 \n     本页为全篇口径基准， 后续页面不另行引申 \n   \n\n     资料依据：brand.docx（虚构测评材料） \n   2 / 6 \n \n \n "
+              },
+              {
+                "page_id": "expression",
+                "text": " \n \n \n \n 表达原则｜溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   溪木咖啡品牌传播 \n   内部对齐 · 表达口径 \n   03 \n   EXPRESSION PRINCIPLES \n\n   \n   \n     \n       03 \n        \n       表达原则 \n     \n     表达原则 \n      \n     以定位关键词“日常、友好、易理解”为基准，约定可复用的表达方式。 \n   \n\n   \n   \n     品牌口号 · 原样复用 \n     “把日常慢慢喝好” \n     全篇统一使用此句， 不作改写 。 \n   \n\n   \n   \n\n     \n       01 \n       \n         \n           口号原样复用，不作改写 \n           统一口径 \n         \n         建议各表达位统一使用  “把日常慢慢喝好” ，不作改写。 \n         说明：本条为统一口径建议，原文仅给出品牌口号，未规定改写限制。 \n       \n     \n\n     \n       02 \n       \n         \n           用词贴近“日常”，避免生硬术语 \n         \n         优先使用贴近日常的场景语汇，回避生硬术语与抽象表述。 \n         说明：本条由定位关键词推导，原文未逐条细化。 \n       \n     \n\n     \n       03 \n       \n         \n           语气“友好”，信息“易理解” \n         \n         一句话说清一件事，不做多层信息堆叠。 \n       \n     \n\n     \n       04 \n       \n         \n           涉及数字须标注“仅供测评” \n           仅供测评 \n         \n         出现数字时须标注“仅供测评”， 不得当作成果表述 。 \n       \n     \n\n   \n\n   \n   \n     资料依据：brand.docx（虚构测评材料） \n      \n     数字口径：仅供测评 \n   \n    3  / 6 \n \n \n "
+              },
+              {
+                "page_id": "touchpoints",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   TOUCHPOINTS · 触点安排 \n\n   溪木咖啡品牌传播 \n   虚构测评材料 · 内部对齐用 \n\n     04 \n   触点安排 \n   按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 \n    \n\n   触点类型 共  3  类 \n\n   \n     \n        \n       01 \n       门店海报 \n         触点类型 \n       01 \n     \n     \n        \n       02 \n       社区社群 \n         触点类型 \n       02 \n     \n     \n        \n       03 \n       公众号 \n         触点类型 \n       03 \n     \n   \n\n   \n     \n       14  套 \n       素材版本，对应 3 类触点使用 \n     \n      \n     \n       11  家 \n       覆盖试点门店 \n     \n   \n\n   \n     未确定 \n     各触点的 发布频次 与 责任人 ：资料未给出 \n     待资料补充后再行确认 \n   \n\n   数字仅供测评，不作为成效表述 \n   4 / 6 \n \n \n "
+              },
+              {
+                "page_id": "cadence",
+                "text": " \n \n \n \n\n \n \n \n    \n        \n    \n\n   \n          \n   \n\n    \n    \n   溪木咖啡 · 品牌传播 \n   brand.docx · 虚构测评材料 \n   传播节奏 · 5 周计划 \n\n   05 · CADENCE \n   传播节奏： 5  周计划 \n     按周次拆分的计划安排，本页条目均为计划层级；资料未给出具体起止日期。 \n\n   \n     \n       5 周  \n       传播周期 \n     \n     \n       11 家  \n       试点门店 \n     \n   \n\n   \n      \n     \n        W1    \n        W2    \n        W3    \n        W4    \n        W5    \n     \n   \n\n   \n     \n       计划 \n       第 1 周 \n       准备素材 \n       计划动作：完成素材准备。 \n       状态标记：计划 \n     \n\n     \n       计划 \n       第 2–4 周 \n       发布并收集反馈 \n       计划动作：按既定触点安排发布，并同步收集反馈。第 2–4 周连续执行，资料未细分到单周动作。 \n       状态标记：计划 · 周内细节待补充 \n     \n\n     \n       计划 \n       第 5 周 \n       复盘 \n       计划动作：复盘。 \n       状态标记：计划 \n     \n   \n\n   \n     \n       已完成 \n       资料未记录任何已完成动作。 \n     \n     \n       未确定 \n       具体起止日期未确定。 \n     \n   \n   计划与未确定项不写作已完成；结论范围限于 11 家试点门店与 5 周周期。 \n\n   5 / 6 \n \n \n "
+              },
+              {
+                "page_id": "boundaries",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n   \n\n    \n    \n    \n    \n    \n    \n   溪木咖啡品牌传播 · 内部对齐 \n\n   品牌与门店运营团队 · 内部对齐 \n\n   \n      \n     溪木咖啡品牌传播 \n     执行边界 \n     以下五条为执行与对外表述的固定口径，各渠道按此对齐。 \n   \n\n   \n     \n       01 \n       成效表述 \n       不以销售增长或市场排名作为已实现成效 \n     \n     \n       02 \n       数字用途 \n       所有数字仅供测评，不用于对外成效引用 \n     \n     \n       03 \n       状态标注 \n       计划与未确定项不得写成已完成 \n     \n     \n       04 \n       资料范围 \n       不补充资料之外的事实、日期与预算 \n     \n     \n       05 \n       结论边界 \n       结论不外推至 11 家试点门店与 5 周周期之外 \n     \n   \n\n   资料依据：brand.docx（虚构测评材料） \n   6 / 6 \n \n \n "
+              }
+            ],
+            "has_images": false,
+            "evidence_id": "6f6257d4fed096b8b3a100228c3df5d5c7c2aec97cc97d8a100f6eb33e287732",
+            "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8"
+          }
+        },
+        "run-1:turn-22:call_00_ET_xnQ1ji9uOxjlVL91ijrj1639": {
+          "status": "completed",
+          "input_hash": "2449e460f8d33bc5bef0f1a926870104d3b317762311992f691b49ac2dd63d7b",
+          "result": {
+            "check_id": "content-f5e40e5cf9df826b23feb375eb87ef1773ccea319006509dd60694be6e904e8f",
+            "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+            "issues": []
+          }
+        },
+        "run-1:turn-23:call_00_rqDgI4DB7F8IMbpYODAE1739": {
+          "status": "completed",
+          "input_hash": "87b58948fe73df8cf8b49345a088d2a74d19520026b700cc4bc63d09201d75a7",
+          "result": {
+            "completed": true,
+            "assessment": "6 页中文品牌传播演示已完成：封面 + 品牌定位、表达原则、触点安排、传播节奏（5 周计划）、执行边界，四个必需部分名称均以原样出现在页面可见标题中。全部事实取自 brand.docx（虚构测评材料）：定位三词（日常、友好、易理解）、口号“把日常慢慢喝好”、试点门店 11 家、周期 5 周、触点 3 类（门店海报、社区社群、公众号）、素材版本 14 套，以及第 1 周准备素材 / 第 2–4 周发布并收集反馈 / 第 5 周的周次安排，均按“计划”层级呈现；已明确标注“已完成：资料未记录任何已完成动作”“具体起止日期未确定”“各触点频次与责任人未给出”，未编造日期、预算或成效，未使用销售增长与市场排名。版面报告全部通过；内容逐页+全稿摘要检查通过；视觉逐页截图核对，修复了触点安排页标题与副标题重叠（阻断项）、执行边界页竖排标签叠压，以及表达原则页推导口径未标注。剩余为可忽略的微差：封面日期标注“待补充”、执行边界页左上两行同类标签略重复。",
+            "remaining_issues": [],
+            "project_ref": {
+              "revision_id": "d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+              "artifact_ref": "project/revisions/d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-2:call_00_qmbvTJ7whhXwc38kbOiG6478": {
+          "status": "completed",
+          "input_hash": "a50a92b327dd35bbac5a05ee1462140aba24cb9e4b50bb3bc6c5b4cbb17a10db",
+          "result": {
+            "outline": {
+              "draft_revision": 1,
+              "title": "溪木咖啡品牌传播",
+              "pages": [
+                {
+                  "page_id": "cover",
+                  "title": "溪木咖啡品牌传播",
+                  "bullets": [
+                    "品牌与门店运营团队内部对齐",
+                    "资料依据：brand.docx（虚构测评材料）",
+                    "含品牌定位、表达原则、触点安排、执行边界"
+                  ]
+                },
+                {
+                  "page_id": "positioning",
+                  "title": "品牌定位",
+                  "bullets": [
+                    "虚构的社区咖啡品牌，面向社区日常场景",
+                    "定位三个关键词：日常、友好、易理解",
+                    "品牌口号：“把日常慢慢喝好”",
+                    "本页为全篇口径基准，后续页面不另行引申"
+                  ]
+                },
+                {
+                  "page_id": "expression",
+                  "title": "表达原则",
+                  "bullets": [
+                    "口号原样复用“把日常慢慢喝好”，不作改写",
+                    "用词贴近“日常”，避免生硬术语（由定位关键词推导，原文未逐条细化）",
+                    "语气“友好”、信息“易理解”，一句话说清一件事",
+                    "涉及数字时须标注“仅供测评”，不得当作成果表述"
+                  ]
+                },
+                {
+                  "page_id": "touchpoints",
+                  "title": "触点安排",
+                  "bullets": [
+                    "触点类型 3 类：门店海报、社区社群、公众号",
+                    "素材版本共 14 套，对应 3 类触点使用",
+                    "覆盖试点门店 11 家",
+                    "未确定：各触点的发布频次与责任人，资料未给出"
+                  ]
+                },
+                {
+                  "page_id": "cadence",
+                  "title": "传播节奏：5 周计划",
+                  "bullets": [
+                    "传播周期 5 周，试点门店 11 家",
+                    "第 1 周：准备素材（计划）",
+                    "第 2–4 周：发布并收集反馈（计划）",
+                    "第 5 周：复盘（计划）",
+                    "已完成：资料未记录任何已完成动作；具体起止日期未确定"
+                  ]
+                },
+                {
+                  "page_id": "boundaries",
+                  "title": "执行边界",
+                  "bullets": [
+                    "不以销售增长或市场排名作为已实现成效",
+                    "所有数字仅供测评，不用于对外成效引用",
+                    "计划与未确定项不得写成已完成",
+                    "不补充资料之外的事实、日期与预算",
+                    "结论不外推至 11 家试点门店与 5 周周期之外"
+                  ]
+                }
+              ]
+            },
+            "draft_ref": "project/drafts/415550687ee685b08eeb37b9c8c0dbb528100f27c5ba911a58ebc34c3c86272c.json",
+            "project_ref": {
+              "revision_id": "2616c799-6e62-48a6-8213-58d9fe839cb6",
+              "artifact_ref": "project/revisions/2616c799-6e62-48a6-8213-58d9fe839cb6",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812": {
+          "status": "completed",
+          "input_hash": "0f62759993e350a639ce3a51b7767be32706dd05b704b80bf1e5c1934b5a305d",
+          "result": {
+            "pages": [
+              {
+                "page_id": "cover",
+                "candidate_id": "66627715b067e914c7557a47ac64da953350c27b5f66566a2c57ecf1a7d14977",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "positioning",
+                "candidate_id": "f6b5d72e304f117121329fea84cfb36b38473fb2b38fdfea4885000e71acfe7e",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "expression",
+                "candidate_id": "eb7b099273b68a5cec84394d01a676e3befe3306ed6b03d289802184edbe679f",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "cadence",
+                "candidate_id": "7e8d8535c2ee7c162121b7341f9ad1f24c39b9f627e17226551991466b68c2f5",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "boundaries",
+                "candidate_id": "239835cbf35f9f32a07ea76609f63f84b47279cdfb743f2cd878a2ddc505230c",
+                "issues": [],
+                "repair": false
+              }
+            ],
+            "failures": [
+              {
+                "page_id": "touchpoints",
+                "error": "No complete HTML document found (preview: <!doctype html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\"/>\n<style>\n  html,body{margin:0;padding:0;background:#F5)"
+              }
+            ],
+            "project_ref": {
+              "revision_id": "09168dae-b970-4d83-8555-e864ecf01a9b",
+              "artifact_ref": "project/revisions/09168dae-b970-4d83-8555-e864ecf01a9b",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:boundaries": {
+          "status": "completed",
+          "input_hash": "90daaf8853099fb48d0fb3049ad3230db8965777cfc030b50abfdab9ab34d238",
+          "result": {
+            "page_id": "boundaries",
+            "candidate_id": "239835cbf35f9f32a07ea76609f63f84b47279cdfb743f2cd878a2ddc505230c",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "09168dae-b970-4d83-8555-e864ecf01a9b",
+              "artifact_ref": "project/revisions/09168dae-b970-4d83-8555-e864ecf01a9b",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:cadence": {
+          "status": "completed",
+          "input_hash": "cd06ab967d431095bfd1668a50e17f24fa8120bea4c91fa705deb0375108a0aa",
+          "result": {
+            "page_id": "cadence",
+            "candidate_id": "7e8d8535c2ee7c162121b7341f9ad1f24c39b9f627e17226551991466b68c2f5",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "9a77cb9e-5657-4854-ad6c-2ebeb2ba8181",
+              "artifact_ref": "project/revisions/9a77cb9e-5657-4854-ad6c-2ebeb2ba8181",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:cover": {
+          "status": "completed",
+          "input_hash": "2655795df0f9f4d55b898b04a0897ae720ec37bb765e991c3269f1fe9770357a",
+          "result": {
+            "page_id": "cover",
+            "candidate_id": "66627715b067e914c7557a47ac64da953350c27b5f66566a2c57ecf1a7d14977",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "79cd63e5-6c88-4195-92e8-1d00120050cf",
+              "artifact_ref": "project/revisions/79cd63e5-6c88-4195-92e8-1d00120050cf",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:expression": {
+          "status": "completed",
+          "input_hash": "05987d9608fda47189585eda68342bfcee82a0dd91a2597c7dfb4bcc90b7778b",
+          "result": {
+            "page_id": "expression",
+            "candidate_id": "eb7b099273b68a5cec84394d01a676e3befe3306ed6b03d289802184edbe679f",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "8126141d-fe9c-4fec-9c1e-57810e86cc8e",
+              "artifact_ref": "project/revisions/8126141d-fe9c-4fec-9c1e-57810e86cc8e",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:positioning": {
+          "status": "completed",
+          "input_hash": "431217b45b66bdeb50b221420a9223a69548296793c0f6a188345a129857eb32",
+          "result": {
+            "page_id": "positioning",
+            "candidate_id": "f6b5d72e304f117121329fea84cfb36b38473fb2b38fdfea4885000e71acfe7e",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "d19222e3-18fa-4a0d-850f-3d4f11a64096",
+              "artifact_ref": "project/revisions/d19222e3-18fa-4a0d-850f-3d4f11a64096",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_zwAxggxwZMcWRhEHyuom3812:page:touchpoints": {
+          "status": "pending",
+          "input_hash": "c50951ff1f3db1095d1651f4d640c2ffaa6aee61565647c2c96566659fed8733"
+        },
+        "run-1:turn-4:call_00_VvxiBKM4w9XIxn21qSN99266": {
+          "status": "completed",
+          "input_hash": "7c109d0b080287c55e4d3dee7b62fef24c34404eb992d7924791844a6a7a287a",
+          "result": {
+            "pages": [
+              {
+                "page_id": "touchpoints",
+                "candidate_id": "14bb5f05471d17078e6e399758eafd172130f510abaaa9185b88597546c3b082",
+                "issues": [],
+                "repair": false
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+              "artifact_ref": "project/revisions/d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-4:call_00_VvxiBKM4w9XIxn21qSN99266:page:touchpoints": {
+          "status": "completed",
+          "input_hash": "873bf7ee6a6c52fb18a6ffabe8983ae5faeee579b23294920f2654fa4d790f48",
+          "result": {
+            "page_id": "touchpoints",
+            "candidate_id": "14bb5f05471d17078e6e399758eafd172130f510abaaa9185b88597546c3b082",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+              "artifact_ref": "project/revisions/d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-5:call_00_ET_9NdH3NSsub6ATwbUkqom5777": {
+          "status": "completed",
+          "input_hash": "8ee8ca621385b87982eeb576a35c875cd1fab3a7bca0a370a3a2db1c70580a69",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "cover",
+                "text": " \n \n \n \n 溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   溪木咖啡 · 品牌传播 · 内部对齐 \n\n   溪木咖啡 · 内部对齐材料 \n   \n      \n     品牌与门店运营团队 \n   \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   \n     \n       00 \n        \n       品牌传播方案 · 内部对齐 \n     \n\n     溪木咖啡 品牌传播  \n\n      \n\n     品牌与门店运营团队内部对齐 / 统一口径，明确边界 \n\n     \n       品牌定位 \n       表达原则 \n       触点安排 \n       执行边界 \n     \n   \n\n    \n   \n     \n       \n         资料依据 \n         brand.docx  （虚构测评材料）  \n       \n       \n         日期 \n         待补充 \n       \n     \n     1 / 6 \n   \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "positioning",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n    \n    \n   品牌传播 · 内部对齐资料 \n   溪木咖啡 · 品牌传播 \n\n   \n       品牌与门店运营团队 · 内部对齐 \n     品牌定位 \n     虚构的社区咖啡品牌，面向社区日常场景 \n   \n    \n\n   \n     \n       01 \n       日常 \n          定位关键词  \n     \n     \n       02 \n       友好 \n          定位关键词  \n     \n     \n       03 \n       易理解 \n          定位关键词  \n     \n   \n\n   \n     品牌口号 \n     把日常慢慢喝好 \n     &rdquo; \n   \n\n   \n     口径基准 \n     本页为全篇口径基准， 后续页面不另行引申 \n   \n\n     资料依据：brand.docx（虚构测评材料） \n   2 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "expression",
+                "text": " \n \n \n \n 表达原则｜溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   溪木咖啡品牌传播 \n   内部对齐 · 表达口径 \n   03 \n   EXPRESSION PRINCIPLES \n\n   \n   \n     \n       03 \n        \n       表达原则 \n     \n     表达原则 \n      \n     以定位关键词“日常、友好、易理解”为基准，约定可复用的表达方式。 \n   \n\n   \n   \n     品牌口号 · 原样复用 \n     “把日常慢慢喝好” \n     全篇统一使用此句， 不作改写 。 \n   \n\n   \n   \n\n     \n       01 \n       \n         \n           口号原样复用，不作改写 \n           统一口径 \n         \n         所有表达位一律使用  “把日常慢慢喝好” ，保持原句，不作换字与改写。 \n       \n     \n\n     \n       02 \n       \n         \n           用词贴近“日常”，避免生硬术语 \n         \n         优先使用贴近日常的场景语汇，回避生硬术语与抽象表述。 \n         说明：本条由定位关键词推导，原文未逐条细化。 \n       \n     \n\n     \n       03 \n       \n         \n           语气“友好”，信息“易理解” \n         \n         一句话说清一件事，不做多层信息堆叠。 \n       \n     \n\n     \n       04 \n       \n         \n           涉及数字须标注“仅供测评” \n           仅供测评 \n         \n         出现数字时须标注“仅供测评”， 不得当作成果表述 。 \n       \n     \n\n   \n\n   \n   \n     资料依据：brand.docx（虚构测评材料） \n      \n     数字口径：仅供测评 \n   \n    3  / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "touchpoints",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   TOUCHPOINTS · 触点安排 \n\n   溪木咖啡品牌传播 \n   虚构测评材料 · 内部对齐用 \n\n     04 \n   触点安排 \n   按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 \n    \n\n   触点类型 共  3  类 \n\n   \n     \n        \n       01 \n       门店海报 \n         触点类型 \n       01 \n     \n     \n        \n       02 \n       社区社群 \n         触点类型 \n       02 \n     \n     \n        \n       03 \n       公众号 \n         触点类型 \n       03 \n     \n   \n\n   \n     \n       14  套 \n       素材版本，对应 3 类触点使用 \n     \n      \n     \n       11  家 \n       覆盖试点门店 \n     \n   \n\n   \n     未确定 \n     各触点的 发布频次 与 责任人 ：资料未给出 \n     待资料补充后再行确认 \n   \n\n   数字仅供测评，不作为成效表述 \n   4 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "cadence",
+                "text": " \n \n \n \n\n \n \n \n    \n        \n    \n\n   \n          \n   \n\n    \n    \n   溪木咖啡 · 品牌传播 \n   brand.docx · 虚构测评材料 \n   传播节奏 · 5 周计划 \n\n   05 · CADENCE \n   传播节奏： 5  周计划 \n     按周次拆分的计划安排，本页条目均为计划层级；资料未给出具体起止日期。 \n\n   \n     \n       5 周  \n       传播周期 \n     \n     \n       11 家  \n       试点门店 \n     \n   \n\n   \n      \n     \n        W1    \n        W2    \n        W3    \n        W4    \n        W5    \n     \n   \n\n   \n     \n       计划 \n       第 1 周 \n       准备素材 \n       计划动作：完成素材准备。 \n       状态标记：计划 \n     \n\n     \n       计划 \n       第 2–4 周 \n       发布并收集反馈 \n       计划动作：按既定触点安排发布，并同步收集反馈。第 2–4 周连续执行，资料未细分到单周动作。 \n       状态标记：计划 · 周内细节待补充 \n     \n\n     \n       计划 \n       第 5 周 \n       复盘 \n       计划动作：复盘。 \n       状态标记：计划 \n     \n   \n\n   \n     \n       已完成 \n       资料未记录任何已完成动作。 \n     \n     \n       未确定 \n       具体起止日期未确定。 \n     \n   \n   计划与未确定项不写作已完成；结论范围限于 11 家试点门店与 5 周周期。 \n\n   5 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "boundaries",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n   \n\n    \n    \n    \n    \n    \n    \n   溪木咖啡品牌传播 \n   执行边界 \n\n   品牌与门店运营团队 · 内部对齐 \n\n   \n      \n     溪木咖啡品牌传播 \n     执行边界 \n     以下五条为执行与对外表述的固定口径，各渠道按此对齐。 \n   \n\n   \n     \n       01 \n       成效表述 \n       不以销售增长或市场排名作为已实现成效 \n     \n     \n       02 \n       数字用途 \n       所有数字仅供测评，不用于对外成效引用 \n     \n     \n       03 \n       状态标注 \n       计划与未确定项不得写成已完成 \n     \n     \n       04 \n       资料范围 \n       不补充资料之外的事实、日期与预算 \n     \n     \n       05 \n       结论边界 \n       结论不外推至 11 家试点门店与 5 周周期之外 \n     \n   \n\n   资料依据：brand.docx（虚构测评材料） \n   6 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              }
+            ],
+            "has_images": false,
+            "evidence_id": "f0f46c44fde0778c3b2e7e445dc46a7e881877fb0f4f60a7862f73987899dca7",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81"
+          }
+        },
+        "run-1:turn-6:call_00_Sk76qbOGgitoq1tTdaAp7782": {
+          "status": "completed",
+          "input_hash": "dcbb56d1c3803d83046ccb9551a1e7b007618f04e053a564bc60c80f5be5f5b6",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "cover",
+                "text": " \n \n \n \n 溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   溪木咖啡 · 品牌传播 · 内部对齐 \n\n   溪木咖啡 · 内部对齐材料 \n   \n      \n     品牌与门店运营团队 \n   \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   \n     \n       00 \n        \n       品牌传播方案 · 内部对齐 \n     \n\n     溪木咖啡 品牌传播  \n\n      \n\n     品牌与门店运营团队内部对齐 / 统一口径，明确边界 \n\n     \n       品牌定位 \n       表达原则 \n       触点安排 \n       执行边界 \n     \n   \n\n    \n   \n     \n       \n         资料依据 \n         brand.docx  （虚构测评材料）  \n       \n       \n         日期 \n         待补充 \n       \n     \n     1 / 6 \n   \n \n \n "
+              },
+              {
+                "page_id": "positioning",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n    \n    \n   品牌传播 · 内部对齐资料 \n   溪木咖啡 · 品牌传播 \n\n   \n       品牌与门店运营团队 · 内部对齐 \n     品牌定位 \n     虚构的社区咖啡品牌，面向社区日常场景 \n   \n    \n\n   \n     \n       01 \n       日常 \n          定位关键词  \n     \n     \n       02 \n       友好 \n          定位关键词  \n     \n     \n       03 \n       易理解 \n          定位关键词  \n     \n   \n\n   \n     品牌口号 \n     把日常慢慢喝好 \n     &rdquo; \n   \n\n   \n     口径基准 \n     本页为全篇口径基准， 后续页面不另行引申 \n   \n\n     资料依据：brand.docx（虚构测评材料） \n   2 / 6 \n \n \n "
+              },
+              {
+                "page_id": "expression",
+                "text": " \n \n \n \n 表达原则｜溪木咖啡品牌传播 \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n      \n      \n   \n\n   溪木咖啡品牌传播 \n   内部对齐 · 表达口径 \n   03 \n   EXPRESSION PRINCIPLES \n\n   \n   \n     \n       03 \n        \n       表达原则 \n     \n     表达原则 \n      \n     以定位关键词“日常、友好、易理解”为基准，约定可复用的表达方式。 \n   \n\n   \n   \n     品牌口号 · 原样复用 \n     “把日常慢慢喝好” \n     全篇统一使用此句， 不作改写 。 \n   \n\n   \n   \n\n     \n       01 \n       \n         \n           口号原样复用，不作改写 \n           统一口径 \n         \n         所有表达位一律使用  “把日常慢慢喝好” ，保持原句，不作换字与改写。 \n       \n     \n\n     \n       02 \n       \n         \n           用词贴近“日常”，避免生硬术语 \n         \n         优先使用贴近日常的场景语汇，回避生硬术语与抽象表述。 \n         说明：本条由定位关键词推导，原文未逐条细化。 \n       \n     \n\n     \n       03 \n       \n         \n           语气“友好”，信息“易理解” \n         \n         一句话说清一件事，不做多层信息堆叠。 \n       \n     \n\n     \n       04 \n       \n         \n           涉及数字须标注“仅供测评” \n           仅供测评 \n         \n         出现数字时须标注“仅供测评”， 不得当作成果表述 。 \n       \n     \n\n   \n\n   \n   \n     资料依据：brand.docx（虚构测评材料） \n      \n     数字口径：仅供测评 \n   \n    3  / 6 \n \n \n "
+              },
+              {
+                "page_id": "touchpoints",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n    \n   TOUCHPOINTS · 触点安排 \n\n   溪木咖啡品牌传播 \n   虚构测评材料 · 内部对齐用 \n\n     04 \n   触点安排 \n   按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 \n    \n\n   触点类型 共  3  类 \n\n   \n     \n        \n       01 \n       门店海报 \n         触点类型 \n       01 \n     \n     \n        \n       02 \n       社区社群 \n         触点类型 \n       02 \n     \n     \n        \n       03 \n       公众号 \n         触点类型 \n       03 \n     \n   \n\n   \n     \n       14  套 \n       素材版本，对应 3 类触点使用 \n     \n      \n     \n       11  家 \n       覆盖试点门店 \n     \n   \n\n   \n     未确定 \n     各触点的 发布频次 与 责任人 ：资料未给出 \n     待资料补充后再行确认 \n   \n\n   数字仅供测评，不作为成效表述 \n   4 / 6 \n \n \n "
+              }
+            ],
+            "has_images": true,
+            "evidence_id": "dc129b65db3e2d2cd434a3dd4910ad3a48d48229e94b8fed2727cac3be61ca0b",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81"
+          }
+        },
+        "run-1:turn-7:call_00_ZBl7g0SbfsKgwGuWMh1D7229": {
+          "status": "completed",
+          "input_hash": "dd2916d2cbaad2d3590ecc1fb82d7d69df0bb0fa7373b2559bfb307e73ad1b4d",
+          "result": {
+            "check_id": "visual-d3dac53750710ced6f78f2b6db232019b1a315b506faca1e275cf824c8c80ad2",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+            "issues": [
+              {
+                "severity": "blocker",
+                "code": "title_subtitle_overlap",
+                "detail": "触点安排页：副标题“按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。”与超大标题“触点安排”重叠，文字被标题笔画压住，基本不可读；需下移副标题或缩小标题并留出安全间距。",
+                "page_ids": [
+                  "touchpoints"
+                ],
+                "evidence_refs": [
+                  "dc129b65db3e2d2cd434a3dd4910ad3a48d48229e94b8fed2727cac3be61ca0b"
+                ]
+              }
+            ]
+          }
+        },
+        "run-1:turn-8:call_00_ET_6nd7zzmhYw8vXLoXUl9v8444": {
+          "status": "completed",
+          "input_hash": "8b9ad4237cb4d8c5ccbba1a85ad49fcb9002ed9108332ef0877c7022ebf483a3",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "cadence",
+                "text": " \n \n \n \n\n \n \n \n    \n        \n    \n\n   \n          \n   \n\n    \n    \n   溪木咖啡 · 品牌传播 \n   brand.docx · 虚构测评材料 \n   传播节奏 · 5 周计划 \n\n   05 · CADENCE \n   传播节奏： 5  周计划 \n     按周次拆分的计划安排，本页条目均为计划层级；资料未给出具体起止日期。 \n\n   \n     \n       5 周  \n       传播周期 \n     \n     \n       11 家  \n       试点门店 \n     \n   \n\n   \n      \n     \n        W1    \n        W2    \n        W3    \n        W4    \n        W5    \n     \n   \n\n   \n     \n       计划 \n       第 1 周 \n       准备素材 \n       计划动作：完成素材准备。 \n       状态标记：计划 \n     \n\n     \n       计划 \n       第 2–4 周 \n       发布并收集反馈 \n       计划动作：按既定触点安排发布，并同步收集反馈。第 2–4 周连续执行，资料未细分到单周动作。 \n       状态标记：计划 · 周内细节待补充 \n     \n\n     \n       计划 \n       第 5 周 \n       复盘 \n       计划动作：复盘。 \n       状态标记：计划 \n     \n   \n\n   \n     \n       已完成 \n       资料未记录任何已完成动作。 \n     \n     \n       未确定 \n       具体起止日期未确定。 \n     \n   \n   计划与未确定项不写作已完成；结论范围限于 11 家试点门店与 5 周周期。 \n\n   5 / 6 \n \n \n "
+              },
+              {
+                "page_id": "boundaries",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n   \n      \n      \n      \n      \n   \n\n    \n    \n    \n    \n    \n    \n   溪木咖啡品牌传播 \n   执行边界 \n\n   品牌与门店运营团队 · 内部对齐 \n\n   \n      \n     溪木咖啡品牌传播 \n     执行边界 \n     以下五条为执行与对外表述的固定口径，各渠道按此对齐。 \n   \n\n   \n     \n       01 \n       成效表述 \n       不以销售增长或市场排名作为已实现成效 \n     \n     \n       02 \n       数字用途 \n       所有数字仅供测评，不用于对外成效引用 \n     \n     \n       03 \n       状态标注 \n       计划与未确定项不得写成已完成 \n     \n     \n       04 \n       资料范围 \n       不补充资料之外的事实、日期与预算 \n     \n     \n       05 \n       结论边界 \n       结论不外推至 11 家试点门店与 5 周周期之外 \n     \n   \n\n   资料依据：brand.docx（虚构测评材料） \n   6 / 6 \n \n \n "
+              }
+            ],
+            "has_images": true,
+            "evidence_id": "04b9857308f9105f50bbb991033103149a4a5f4925149f480fefbff7894872a3",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81"
+          }
+        },
+        "run-1:turn-9:call_00_kNKx6PK9GsxbaAViXmee5313": {
+          "status": "completed",
+          "input_hash": "afd81942233340435407f60cf72f0dc50aec1f89ef50ea32d4630d11bbd0bdad",
+          "result": {
+            "check_id": "visual-71fabd42d23d3bb2ddb75fd8be3a40cc671f97d7ba420bd21341c0d33c509385",
+            "revision_id": "d42e2ce3-59e7-4c56-92d4-4e739f014c81",
+            "issues": [
+              {
+                "severity": "improvement",
+                "code": "rotated_label_overlap",
+                "detail": "执行边界页：左侧竖排标签文字（“溪木咖啡品牌传播 / 内部对齐”类信息）宇形相互叠压、难以辨认，建议只留一行竖排标签或改为横排；本条仅影响该页，不涉及本批其他页。",
+                "page_ids": [
+                  "boundaries"
+                ],
+                "evidence_refs": [
+                  "04b9857308f9105f50bbb991033103149a4a5f4925149f480fefbff7894872a3"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "instance_id": "dbd7ed0e-d0f9-4697-bf73-57b5521c7f8d"
+    },
+    "id": "deck-83f96c76",
+    "runDir": "D:\\SlideForge\\artifacts\\decks\\deck-83f96c76\\project\\revisions\\d844ecab-7cf3-4f8c-ad65-2ef9f58a7dd8",
+    "title": "溪木咖啡品牌传播",
+    "status": "ready",
+    "events": [],
+    "overflowPages": [],
+    "ownerKeyHash": "66b99c1222b28808ddac446695b6fd632ab56f7a2cff6136f40dd9ac8ed89283",
+    "createdAt": "2026-11-13T07:42:41.268Z",
+    "updatedAt": "2026-11-13T07:47:33.6924755Z"
+  },
+  "scene": {
+    "category": "企业",
+    "subtype": "品牌传播方案",
+    "reason": "面向品牌与门店运营团队的品牌传播口径演示，属企业品牌传播子类"
+  },
+  "delivery_success": true,
+  "score": {
+    "page_count": 6,
+    "page_count_ok": true,
+    "facts": [
+      {
+        "subject": "试点门店",
+        "value": "11",
+        "unit": "家",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 4,
+          "text": "TOUCHPOINTS · 触点安排 溪木咖啡品牌传播 虚构测评材料 · 内部对齐用 04 触点安排 按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 触点类型 共 3 类 01 门店海报 触点类型 01 02 社区社群 触点类型 02 03 公众号 触点类型 03 14 套 素材版本，对应 3 类触点使用 11 家 覆盖试点门店 未确定 各触点的 发布频次 与 责任人 ：资料未给出 待资料补充后再行确认 数字仅供测评，不作为成效表述 4 / 6"
+        }
+      },
+      {
+        "subject": "传播周期",
+        "value": "5",
+        "unit": "周",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 5,
+          "text": "5 周 传播周期"
+        }
+      },
+      {
+        "subject": "触点类型",
+        "value": "3",
+        "unit": "类",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 4,
+          "text": "TOUCHPOINTS · 触点安排 溪木咖啡品牌传播 虚构测评材料 · 内部对齐用 04 触点安排 按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。 触点类型 共 3 类 01 门店海报 触点类型 01 02 社区社群 触点类型 02 03 公众号 触点类型 03 14 套 素材版本，对应 3 类触点使用 11 家 覆盖试点门店 未确定 各触点的 发布频次 与 责任人 ：资料未给出 待资料补充后再行确认 数字仅供测评，不作为成效表述 4 / 6"
+        }
+      },
+      {
+        "subject": "素材版本",
+        "value": "14",
+        "unit": "套",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 4,
+          "text": "14 套 素材版本，对应 3 类触点使用"
+        }
+      }
+    ],
+    "facts_hit": 4,
+    "facts_total": 4,
+    "sections": [
+      {
+        "title": "品牌定位",
+        "matched": true
+      },
+      {
+        "title": "表达原则",
+        "matched": true
+      },
+      {
+        "title": "触点安排",
+        "matched": true
+      },
+      {
+        "title": "执行边界",
+        "matched": true
+      }
+    ],
+    "section_hits": 4,
+    "overflow_pages": [],
+    "layout_ok": true,
+    "reports": [
+      {
+        "page": 1,
+        "page_id": "cover",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 2,
+        "page_id": "positioning",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 3,
+        "page_id": "expression",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 4,
+        "page_id": "touchpoints",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 5,
+        "page_id": "cadence",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 6,
+        "page_id": "boundaries",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      }
+    ],
+    "scoring_ms": 5718.703200000105,
+    "rules_pass": true
+  },
+  "export": {
+    "elapsed_ms": 43049.13899999997,
+    "zip_ok": true,
+    "slide_count": 6,
+    "presentation_slide_count": 6,
+    "all_slides_have_text": true,
+    "slides": [
+      {
+        "file": "ppt/slides/slide1.xml",
+        "text": "00\n品牌传播方案 · 内部对齐\n溪木咖啡\n品牌传播\n品牌与门店运营团队内部对齐\n/\n统一口径，明确边界\n品牌定位\n表达原则\n触点安排\n执行边界\n资料依据\nbrand.docx \n（虚构测评材料）\n日期\n待补充\n1\n/\n6\n溪木咖啡 · 品牌传播 · 内部对齐\n溪木咖啡 · 内部对齐材料\n品牌与门店运营团队"
+      },
+      {
+        "file": "ppt/slides/slide2.xml",
+        "text": "品牌与门店运营团队 · 内部对齐\n品牌定位\n虚构的社区咖啡品牌，面向社区日常场景\n01\n日常\n定位关键词\n02\n友好\n定位关键词\n03\n易理解\n定位关键词\n品牌口号\n把日常慢慢喝好\n”\n口径基准\n本页为全篇口径基准，\n后续页面不另行引申\n品牌传播 · 内部对齐资料\n溪木咖啡 · 品牌传播\n资料依据：brand.docx（虚构测评材料）\n2 / 6"
+      },
+      {
+        "file": "ppt/slides/slide3.xml",
+        "text": "03\n表达原则\n表达原则\n以定位关键词“日常、友好、易理解”为基准，约定可复用的表达方式。\n品牌口号 · 原样复用\n“把日常慢慢喝好”\n全篇统一使用此句，\n不作改写\n。\n01\n口号原样复用，不作改写\n统一口径\n建议各表达位统一使用 \n“把日常慢慢喝好”\n，不作改写。\n说明：本条为统一口径建议，原文仅给出品牌口号，未规定改写限制。\n02\n用词贴近“日常”，避免生硬术语\n优先使用贴近日常的场景语汇，回避生硬术语与抽象表述。\n说明：本条由定位关键词推导，原文未逐条细化。\n03\n语气“友好”，信息“易理解”\n一句话说清一件事，不做多层信息堆叠。\n04\n涉及数字须标注“仅供测评”\n仅供测评\n出现数字时须标注“仅供测评”，\n不得当作成果表述\n。\n溪木咖啡品牌传播\n内部对齐 · 表达口径\n03\nEXPRESSION PRINCIPLES\n资料依据：brand.docx（虚构测评材料）\n数字口径：仅供测评\n3\n / 6"
+      },
+      {
+        "file": "ppt/slides/slide4.xml",
+        "text": "01\n门店海报\n触点类型\n01\n02\n社区社群\n触点类型\n02\n03\n公众号\n触点类型\n03\n14\n套\n素材版本，对应 3 类触点使用\n11\n家\n覆盖试点门店\n未确定\n各触点的\n发布频次\n与\n责任人\n：资料未给出\n待资料补充后再行确认\n04\n触点安排\n按资料记录呈现触点类型、素材版本与覆盖门店；未给出的信息留作未确定项。\n触点类型 共 \n3\n 类\n数字仅供测评，不作为成效表述\nTOUCHPOINTS · 触点安排\n溪木咖啡品牌传播\n虚构测评材料 · 内部对齐用\n4 / 6"
+      },
+      {
+        "file": "ppt/slides/slide5.xml",
+        "text": "W1\nW2\nW3\nW4\nW5\n计划\n第 1 周\n准备素材\n计划动作：完成素材准备。\n状态标记：计划\n计划\n第 2–4 周\n发布并收集反馈\n计划动作：按既定触点安排发布，并同步收集反馈。第 2–4 周连续执行，资料未细分到单周动作。\n状态标记：计划 · 周内细节待补充\n计划\n第 5 周\n复盘\n计划动作：复盘。\n状态标记：计划\n已完成\n资料未记录任何已完成动作。\n未确定\n具体起止日期未确定。\n计划与未确定项不写作已完成；结论范围限于 11 家试点门店与 5 周周期。\n溪木咖啡 · 品牌传播\nbrand.docx · 虚构测评材料\n传播节奏 · 5 周计划\n05 · CADENCE\n传播节奏：\n5\n 周计划\n按周次拆分的计划安排，本页条目均为计划层级；资料未给出具体起止日期。\n5\n周\n传播周期\n11\n家\n试点门店\n5 / 6"
+      },
+      {
+        "file": "ppt/slides/slide6.xml",
+        "text": "溪木咖啡品牌传播\n执行边界\n以下五条为执行与对外表述的固定口径，各渠道按此对齐。\n01\n成效表述\n不以销售增长或市场排名作为已实现成效\n02\n数字用途\n所有数字仅供测评，不用于对外成效引用\n03\n状态标注\n计划与未确定项不得写成已完成\n04\n资料范围\n不补充资料之外的事实、日期与预算\n05\n结论边界\n结论不外推至 11 家试点门店与 5 周周期之外\n溪木咖啡品牌传播 · 内部对齐\n品牌与门店运营团队 · 内部对齐\n资料依据：brand.docx（虚构测评材料）\n6 / 6"
+      }
+    ],
+    "bytes": 983130,
+    "pass": true,
+    "file": "D:\\SlideForge\\.scratch\\reading-batch-ab\\20261113\\results\\brand-before\\deck.pptx"
+  },
+  "loaded_files": [
+    "services/brain/brain/models.py",
+    "services/brain/brain/harness.py",
+    "services/brain/brain/agent_tools.py",
+    "src/capabilities/agent.ts"
+  ],
+  "finished_at": "2026-11-13T07:48:23.148Z",
+  "calls": [
+    {
+      "id": 77,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:42:42.135Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 11041,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 2890,
+        "completion_tokens": 45,
+        "total_tokens": 2935,
+        "prompt_tokens_details": {
+          "cached_tokens": 2560
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 2560,
+        "prompt_cache_miss_tokens": 330
+      },
+      "model": "deepseek-flash",
+      "created": 1794555765,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "read_project"
+      ],
+      "cost_peak_cny": 0.00614,
+      "cost_time_cache_cny": 0.0011224000000000002,
+      "elapsed_ms": 1012.8973999998998,
+      "finished_at": "2026-11-13T07:42:43.150Z"
+    },
+    {
+      "id": 78,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:42:43.400Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 13470,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 3486,
+        "completion_tokens": 98,
+        "total_tokens": 3584,
+        "prompt_tokens_details": {
+          "cached_tokens": 2816
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 6
+        },
+        "prompt_cache_hit_tokens": 2816,
+        "prompt_cache_miss_tokens": 670
+      },
+      "model": "deepseek-flash",
+      "created": 1794555767,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "read_project"
+      ],
+      "cost_peak_cny": 0.007756,
+      "cost_time_cache_cny": 0.0022366400000000002,
+      "elapsed_ms": 1611.6504999999888,
+      "finished_at": "2026-11-13T07:42:45.013Z"
+    },
+    {
+      "id": 79,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:42:45.267Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 14440,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 3744,
+        "completion_tokens": 1715,
+        "total_tokens": 5459,
+        "prompt_tokens_details": {
+          "cached_tokens": 3584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1104
+        },
+        "prompt_cache_hit_tokens": 3584,
+        "prompt_cache_miss_tokens": 160
+      },
+      "model": "deepseek-flash",
+      "created": 1794555768,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "save_plan"
+      ],
+      "cost_peak_cny": 0.021208,
+      "cost_time_cache_cny": 0.01418336,
+      "elapsed_ms": 9686.520600000047,
+      "finished_at": "2026-11-13T07:42:54.955Z"
+    },
+    {
+      "id": 80,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:42:55.210Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 23846,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6109,
+        "completion_tokens": 71,
+        "total_tokens": 6180,
+        "prompt_tokens_details": {
+          "cached_tokens": 5376
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 5376,
+        "prompt_cache_miss_tokens": 733
+      },
+      "model": "deepseek-flash",
+      "created": 1794555778,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "generate_pages"
+      ],
+      "cost_peak_cny": 0.012786,
+      "cost_time_cache_cny": 0.00224904,
+      "elapsed_ms": 1111.4775000000373,
+      "finished_at": "2026-11-13T07:42:56.324Z"
+    },
+    {
+      "id": 81,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:42:56.484Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16421,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6169,
+        "completion_tokens": 3694,
+        "total_tokens": 9863,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 591
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 5913
+      },
+      "model": "deepseek-flash",
+      "created": 1794555779,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.04189,
+      "cost_time_cache_cny": 0.04138824,
+      "elapsed_ms": 13359.856199999922,
+      "finished_at": "2026-11-13T07:43:09.846Z"
+    },
+    {
+      "id": 82,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:42:56.491Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16379,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6158,
+        "completion_tokens": 8302,
+        "total_tokens": 14460,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5410
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 5902
+      },
+      "model": "deepseek-flash",
+      "created": 1794555779,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.078732,
+      "cost_time_cache_cny": 0.07823024,
+      "elapsed_ms": 37722.34200000006,
+      "finished_at": "2026-11-13T07:43:34.215Z"
+    },
+    {
+      "id": 83,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:43:11.813Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16472,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6177,
+        "completion_tokens": 6927,
+        "total_tokens": 13104,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2856
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 5537
+      },
+      "model": "deepseek-flash",
+      "created": 1794555795,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.06777,
+      "cost_time_cache_cny": 0.06651560000000001,
+      "elapsed_ms": 28757.027599999914,
+      "finished_at": "2026-11-13T07:43:40.571Z"
+    },
+    {
+      "id": 84,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:43:35.581Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16375,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6168,
+        "completion_tokens": 12000,
+        "total_tokens": 18168,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 10604
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 5528
+      },
+      "model": "deepseek-flash",
+      "created": 1794555818,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "length",
+      "tool_names": [],
+      "cost_peak_cny": 0.108336,
+      "cost_time_cache_cny": 0.1070816,
+      "elapsed_ms": 57389.71860000002,
+      "finished_at": "2026-11-13T07:44:32.972Z"
+    },
+    {
+      "id": 85,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:43:41.952Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16426,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6186,
+        "completion_tokens": 11107,
+        "total_tokens": 17293,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 7439
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 5546
+      },
+      "model": "deepseek-flash",
+      "created": 1794555825,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.101228,
+      "cost_time_cache_cny": 0.09997360000000001,
+      "elapsed_ms": 53855.28700000001,
+      "finished_at": "2026-11-13T07:44:35.810Z"
+    },
+    {
+      "id": 86,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:44:33.005Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16435,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6174,
+        "completion_tokens": 5435,
+        "total_tokens": 11609,
+        "prompt_tokens_details": {
+          "cached_tokens": 640
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2967
+        },
+        "prompt_cache_hit_tokens": 640,
+        "prompt_cache_miss_tokens": 5534
+      },
+      "model": "deepseek-flash",
+      "created": 1794555876,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.055828,
+      "cost_time_cache_cny": 0.0545736,
+      "elapsed_ms": 24267.400200000033,
+      "finished_at": "2026-11-13T07:44:57.274Z"
+    },
+    {
+      "id": 87,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:44:58.766Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 25506,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6663,
+        "completion_tokens": 81,
+        "total_tokens": 6744,
+        "prompt_tokens_details": {
+          "cached_tokens": 6144
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 17
+        },
+        "prompt_cache_hit_tokens": 6144,
+        "prompt_cache_miss_tokens": 519
+      },
+      "model": "deepseek-flash",
+      "created": 1794555902,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "generate_pages"
+      ],
+      "cost_peak_cny": 0.013974,
+      "cost_time_cache_cny": 0.00193176,
+      "elapsed_ms": 2196.4340000000084,
+      "finished_at": "2026-11-13T07:45:00.964Z"
+    },
+    {
+      "id": 88,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:45:01.070Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 16375,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6168,
+        "completion_tokens": 6841,
+        "total_tokens": 13009,
+        "prompt_tokens_details": {
+          "cached_tokens": 6016
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3355
+        },
+        "prompt_cache_hit_tokens": 6016,
+        "prompt_cache_miss_tokens": 152
+      },
+      "model": "deepseek-flash",
+      "created": 1794555904,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.067064,
+      "cost_time_cache_cny": 0.05527264,
+      "elapsed_ms": 29583.237900000066,
+      "finished_at": "2026-11-13T07:45:30.655Z"
+    },
+    {
+      "id": 89,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:45:32.215Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 26364,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 6913,
+        "completion_tokens": 105,
+        "total_tokens": 7018,
+        "prompt_tokens_details": {
+          "cached_tokens": 6656
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 6656,
+        "prompt_cache_miss_tokens": 257
+      },
+      "model": "deepseek-flash",
+      "created": 1794555935,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.014666,
+      "cost_time_cache_cny": 0.00162024,
+      "elapsed_ms": 1343.4771000000183,
+      "finished_at": "2026-11-13T07:45:33.561Z"
+    },
+    {
+      "id": 90,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:45:35.969Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 34994,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 9434,
+        "completion_tokens": 711,
+        "total_tokens": 10145,
+        "prompt_tokens_details": {
+          "cached_tokens": 6912
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 612
+        },
+        "prompt_cache_hit_tokens": 6912,
+        "prompt_cache_miss_tokens": 2522
+      },
+      "model": "deepseek-flash",
+      "created": 1794555939,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.024556,
+      "cost_time_cache_cny": 0.01100848,
+      "elapsed_ms": 4444.705199999968,
+      "finished_at": "2026-11-13T07:45:40.416Z"
+    },
+    {
+      "id": 91,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 4,
+      "started_at": "2026-11-13T07:45:42.997Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 47780,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 15596,
+        "completion_tokens": 796,
+        "total_tokens": 16392,
+        "prompt_tokens_details": {
+          "cached_tokens": 10112
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 466
+        },
+        "prompt_cache_hit_tokens": 10112,
+        "prompt_cache_miss_tokens": 5484
+      },
+      "model": "deepseek-flash",
+      "created": 1794555946,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.03756,
+      "cost_time_cache_cny": 0.01774048,
+      "elapsed_ms": 5434.247100000037,
+      "finished_at": "2026-11-13T07:45:48.438Z"
+    },
+    {
+      "id": 92,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:45:48.742Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 47149,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 12728,
+        "completion_tokens": 81,
+        "total_tokens": 12809,
+        "prompt_tokens_details": {
+          "cached_tokens": 11520
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 11520,
+        "prompt_cache_miss_tokens": 1208
+      },
+      "model": "deepseek-flash",
+      "created": 1794555951,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.026104,
+      "cost_time_cache_cny": 0.0035248000000000002,
+      "elapsed_ms": 818.2760000000708,
+      "finished_at": "2026-11-13T07:45:49.563Z"
+    },
+    {
+      "id": 93,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 2,
+      "started_at": "2026-11-13T07:45:51.479Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 52793,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 15668,
+        "completion_tokens": 966,
+        "total_tokens": 16634,
+        "prompt_tokens_details": {
+          "cached_tokens": 12800
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 686
+        },
+        "prompt_cache_hit_tokens": 12800,
+        "prompt_cache_miss_tokens": 2868
+      },
+      "model": "deepseek-flash",
+      "created": 1794555954,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.039064,
+      "cost_time_cache_cny": 0.013976,
+      "elapsed_ms": 6716.0168000000995,
+      "finished_at": "2026-11-13T07:45:58.201Z"
+    },
+    {
+      "id": 94,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:45:58.546Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 55230,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 14909,
+        "completion_tokens": 366,
+        "total_tokens": 15275,
+        "prompt_tokens_details": {
+          "cached_tokens": 13568
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 13568,
+        "prompt_cache_miss_tokens": 1341
+      },
+      "model": "deepseek-flash",
+      "created": 1794555961,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.032746,
+      "cost_time_cache_cny": 0.00615272,
+      "elapsed_ms": 2140.9259000001475,
+      "finished_at": "2026-11-13T07:46:00.689Z"
+    },
+    {
+      "id": 95,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:01.050Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 57284,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 15548,
+        "completion_tokens": 170,
+        "total_tokens": 15718,
+        "prompt_tokens_details": {
+          "cached_tokens": 15232
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 15232,
+        "prompt_cache_miss_tokens": 316
+      },
+      "model": "deepseek-flash",
+      "created": 1794555964,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.032456,
+      "cost_time_cache_cny": 0.0026012799999999997,
+      "elapsed_ms": 1068.6612999998033,
+      "finished_at": "2026-11-13T07:46:02.121Z"
+    },
+    {
+      "id": 96,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:02.544Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 57994,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 15813,
+        "completion_tokens": 257,
+        "total_tokens": 16070,
+        "prompt_tokens_details": {
+          "cached_tokens": 15616
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 15616,
+        "prompt_cache_miss_tokens": 197
+      },
+      "model": "deepseek-flash",
+      "created": 1794555965,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "revise_page"
+      ],
+      "cost_peak_cny": 0.033682,
+      "cost_time_cache_cny": 0.00307464,
+      "elapsed_ms": 1783.6465999998618,
+      "finished_at": "2026-11-13T07:46:04.330Z"
+    },
+    {
+      "id": 97,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:04.519Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 27052,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 9856,
+        "completion_tokens": 4058,
+        "total_tokens": 13914,
+        "prompt_tokens_details": {
+          "cached_tokens": 5888
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 553
+        },
+        "prompt_cache_hit_tokens": 5888,
+        "prompt_cache_miss_tokens": 3968
+      },
+      "model": "deepseek-flash",
+      "created": 1794555967,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.052176,
+      "cost_time_cache_cny": 0.04063552,
+      "elapsed_ms": 12987.490700000199,
+      "finished_at": "2026-11-13T07:46:17.508Z"
+    },
+    {
+      "id": 98,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:19.124Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 59436,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 16240,
+        "completion_tokens": 243,
+        "total_tokens": 16483,
+        "prompt_tokens_details": {
+          "cached_tokens": 16000
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 16000,
+        "prompt_cache_miss_tokens": 240
+      },
+      "model": "deepseek-flash",
+      "created": 1794555982,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "revise_page"
+      ],
+      "cost_peak_cny": 0.034424,
+      "cost_time_cache_cny": 0.003064,
+      "elapsed_ms": 1679.2103999999817,
+      "finished_at": "2026-11-13T07:46:20.806Z"
+    },
+    {
+      "id": 99,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:20.991Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 29155,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 10454,
+        "completion_tokens": 4408,
+        "total_tokens": 14862,
+        "prompt_tokens_details": {
+          "cached_tokens": 5888
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 315
+        },
+        "prompt_cache_hit_tokens": 5888,
+        "prompt_cache_miss_tokens": 4566
+      },
+      "model": "deepseek-flash",
+      "created": 1794555984,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.056172,
+      "cost_time_cache_cny": 0.04463152,
+      "elapsed_ms": 12864.908400000073,
+      "finished_at": "2026-11-13T07:46:33.858Z"
+    },
+    {
+      "id": 100,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:35.477Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 60810,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 16647,
+        "completion_tokens": 214,
+        "total_tokens": 16861,
+        "prompt_tokens_details": {
+          "cached_tokens": 16384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 16384,
+        "prompt_cache_miss_tokens": 263
+      },
+      "model": "deepseek-flash",
+      "created": 1794555998,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "revise_page"
+      ],
+      "cost_peak_cny": 0.035006,
+      "cost_time_cache_cny": 0.00289336,
+      "elapsed_ms": 1337.8265000001993,
+      "finished_at": "2026-11-13T07:46:36.817Z"
+    },
+    {
+      "id": 101,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:37.019Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 24056,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 8815,
+        "completion_tokens": 3383,
+        "total_tokens": 12198,
+        "prompt_tokens_details": {
+          "cached_tokens": 5888
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1001
+        },
+        "prompt_cache_hit_tokens": 5888,
+        "prompt_cache_miss_tokens": 2927
+      },
+      "model": "deepseek-flash",
+      "created": 1794556000,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.044694,
+      "cost_time_cache_cny": 0.033153520000000006,
+      "elapsed_ms": 12534.696400000015,
+      "finished_at": "2026-11-13T07:46:49.556Z"
+    },
+    {
+      "id": 102,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:51.009Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 62039,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 17026,
+        "completion_tokens": 86,
+        "total_tokens": 17112,
+        "prompt_tokens_details": {
+          "cached_tokens": 16768
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 16768,
+        "prompt_cache_miss_tokens": 258
+      },
+      "model": "deepseek-flash",
+      "created": 1794556014,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.03474,
+      "cost_time_cache_cny": 0.00187472,
+      "elapsed_ms": 840.8175999999512,
+      "finished_at": "2026-11-13T07:46:51.852Z"
+    },
+    {
+      "id": 103,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:46:53.722Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 67095,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 18470,
+        "completion_tokens": 90,
+        "total_tokens": 18560,
+        "prompt_tokens_details": {
+          "cached_tokens": 17024
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 10
+        },
+        "prompt_cache_hit_tokens": 17024,
+        "prompt_cache_miss_tokens": 1446
+      },
+      "model": "deepseek-flash",
+      "created": 1794556016,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.03766,
+      "cost_time_cache_cny": 0.00429296,
+      "elapsed_ms": 1182.2309000000823,
+      "finished_at": "2026-11-13T07:46:54.907Z"
+    },
+    {
+      "id": 104,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 3,
+      "started_at": "2026-11-13T07:46:57.303Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 75466,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 22815,
+        "completion_tokens": 1007,
+        "total_tokens": 23822,
+        "prompt_tokens_details": {
+          "cached_tokens": 18560
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 662
+        },
+        "prompt_cache_hit_tokens": 18560,
+        "prompt_cache_miss_tokens": 4255
+      },
+      "model": "deepseek-flash",
+      "created": 1794556020,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.053686,
+      "cost_time_cache_cny": 0.0173084,
+      "elapsed_ms": 6723.480299999937,
+      "finished_at": "2026-11-13T07:47:04.033Z"
+    },
+    {
+      "id": 105,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:47:04.410Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 77020,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 21119,
+        "completion_tokens": 229,
+        "total_tokens": 21348,
+        "prompt_tokens_details": {
+          "cached_tokens": 19584
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 19584,
+        "prompt_cache_miss_tokens": 1535
+      },
+      "model": "deepseek-flash",
+      "created": 1794556027,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "revise_page"
+      ],
+      "cost_peak_cny": 0.04407,
+      "cost_time_cache_cny": 0.00568536,
+      "elapsed_ms": 1830.120399999898,
+      "finished_at": "2026-11-13T07:47:06.243Z"
+    },
+    {
+      "id": 106,
+      "trial": "brand-before",
+      "kind": "page",
+      "images": 0,
+      "started_at": "2026-11-13T07:47:06.420Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 24405,
+      "max_tokens": 12000,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 8907,
+        "completion_tokens": 3055,
+        "total_tokens": 11962,
+        "prompt_tokens_details": {
+          "cached_tokens": 5888
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 683
+        },
+        "prompt_cache_hit_tokens": 5888,
+        "prompt_cache_miss_tokens": 3019
+      },
+      "model": "deepseek-flash",
+      "created": 1794556029,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "stop",
+      "tool_names": [],
+      "cost_peak_cny": 0.042254,
+      "cost_time_cache_cny": 0.03071352,
+      "elapsed_ms": 10861.91929999995,
+      "finished_at": "2026-11-13T07:47:17.284Z"
+    },
+    {
+      "id": 107,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:47:18.962Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 78333,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 21517,
+        "completion_tokens": 77,
+        "total_tokens": 21594,
+        "prompt_tokens_details": {
+          "cached_tokens": 19712
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 19712,
+        "prompt_cache_miss_tokens": 1805
+      },
+      "model": "deepseek-flash",
+      "created": 1794556042,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.04365,
+      "cost_time_cache_cny": 0.00501448,
+      "elapsed_ms": 1091.3518999998923,
+      "finished_at": "2026-11-13T07:47:20.055Z"
+    },
+    {
+      "id": 108,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 1,
+      "started_at": "2026-11-13T07:47:21.973Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 81318,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 23025,
+        "completion_tokens": 254,
+        "total_tokens": 23279,
+        "prompt_tokens_details": {
+          "cached_tokens": 21504
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 72
+        },
+        "prompt_cache_hit_tokens": 21504,
+        "prompt_cache_miss_tokens": 1521
+      },
+      "model": "deepseek-flash",
+      "created": 1794556045,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.048082,
+      "cost_time_cache_cny": 0.00593416,
+      "elapsed_ms": 2047.5519999999087,
+      "finished_at": "2026-11-13T07:47:24.024Z"
+    },
+    {
+      "id": 109,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:47:24.406Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 81265,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 22397,
+        "completion_tokens": 177,
+        "total_tokens": 22574,
+        "prompt_tokens_details": {
+          "cached_tokens": 21888
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 86
+        },
+        "prompt_cache_hit_tokens": 21888,
+        "prompt_cache_miss_tokens": 509
+      },
+      "model": "deepseek-flash",
+      "created": 1794556047,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "inspect_deck"
+      ],
+      "cost_peak_cny": 0.04621,
+      "cost_time_cache_cny": 0.00330952,
+      "elapsed_ms": 1692.2709000001196,
+      "finished_at": "2026-11-13T07:47:26.101Z"
+    },
+    {
+      "id": 110,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:47:26.474Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 90026,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 24933,
+        "completion_tokens": 170,
+        "total_tokens": 25103,
+        "prompt_tokens_details": {
+          "cached_tokens": 21248
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 21248,
+        "prompt_cache_miss_tokens": 3685
+      },
+      "model": "deepseek-flash",
+      "created": 1794556049,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "record_assessment"
+      ],
+      "cost_peak_cny": 0.051226,
+      "cost_time_cache_cny": 0.00957992,
+      "elapsed_ms": 1158.6689999999944,
+      "finished_at": "2026-11-13T07:47:27.636Z"
+    },
+    {
+      "id": 111,
+      "trial": "brand-before",
+      "kind": "controller",
+      "images": 0,
+      "started_at": "2026-11-13T07:47:28.020Z",
+      "status": "completed",
+      "reserved_cny": 0,
+      "input_bound_tokens": 90733,
+      "max_tokens": 4096,
+      "normalized_max_tokens": false,
+      "http_status": 200,
+      "request_id": null,
+      "usage": {
+        "prompt_tokens": 25192,
+        "completion_tokens": 1087,
+        "total_tokens": 26279,
+        "prompt_tokens_details": {
+          "cached_tokens": 22528
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 227
+        },
+        "prompt_cache_hit_tokens": 22528,
+        "prompt_cache_miss_tokens": 2664
+      },
+      "model": "deepseek-flash",
+      "created": 1794556051,
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6",
+      "finish_reason": "tool_calls",
+      "tool_names": [
+        "finish_deck"
+      ],
+      "cost_peak_cny": 0.05908,
+      "cost_time_cache_cny": 0.014925119999999998,
+      "elapsed_ms": 5345.33759999997,
+      "finished_at": "2026-11-13T07:47:33.368Z"
+    }
+  ],
+  "cost_peak_cny": 1.5066760000000001
+}

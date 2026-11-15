@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "runtime_files": [
+    {
+      "file": "services/brain/brain/harness.py",
+      "before_sha256": "fd1f87128a965afb9985584aee40b082961eb48bfd613144f850f6da95bdd355",
+      "historical_sha256": "fd1f87128a965afb9985584aee40b082961eb48bfd613144f850f6da95bdd355",
+      "exact_match": true,
+      "after_sha256": "1ae0a4d48008f1cc2e3537375312b5058b638bf87d18d99a96aa024132f300de"
+    },
+    {
+      "file": "services/brain/brain/agent_tools.py",
+      "before_sha256": "2171ff5fd7740aa05e27e573260d9b285ac9cbd6117f8099e5b2522a3cd62e98",
+      "historical_sha256": "2171ff5fd7740aa05e27e573260d9b285ac9cbd6117f8099e5b2522a3cd62e98",
+      "exact_match": true,
+      "after_sha256": "62ae890efe7b23ceeaea7d448a4c3167172c6c6204ef210124bfe892640ae59f"
+    },
+    {
+      "file": "services/brain/brain/models.py",
+      "before_sha256": "ceebbf7fe09f5b550ae24556eeef3796d604e55bec7f21a98f0b89243fa1231c",
+      "historical_sha256": "ceebbf7fe09f5b550ae24556eeef3796d604e55bec7f21a98f0b89243fa1231c",
+      "exact_match": true,
+      "after_sha256": "a838000349d93e1f92890d0e935bd4c2f6a937fb521bb36349d680acde29cd21"
+    },
+    {
+      "file": "src/capabilities/agent.ts",
+      "before_sha256": "b43a94aa17fa16055f06af586adc7786394ff1eac730ffd79f729b1903376ada",
+      "historical_sha256": "b43a94aa17fa16055f06af586adc7786394ff1eac730ffd79f729b1903376ada",
+      "exact_match": true,
+      "after_sha256": "a9184ad8bfd7041992e5b41e36137fb0189bbffb14df34e45cdf285d62b87824"
+    }
+  ],
+  "other_changed_files": [
+    "services/brain/tests/test_agent_models.py",
+    "services/brain/tests/test_harness.py",
+    "tests/capabilities/agentRecoveryBoundaries.test.ts"
+  ],
+  "other_manifest_entries_unchanged": 818,
+  "provider_requests": 0,
+  "workspace_runtime_modified": false
+}

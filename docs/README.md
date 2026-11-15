@@ -65,3 +65,7 @@
 | [adr/](adr/) | 架构决策记录（0001–0071 为历史决策） | active |
 | `plans/` | 开发计划 | — |
 | `notes/` | 调研与踩坑笔记 | — |
+
+| [ADR-0081](adr/0081-independent-engine-jobs.md) | 固定输入与独立引擎作业，取消及幂等交付 |
+| [引擎实施计划](plans/20261111-独立引擎任务服务.md) | 本期 A 实施与验证任务 |
+| [引擎验收记录](../.scratch/engine-job-service/验收记录.md) | 并发、性能和故障结果 |

@@ -1,0 +1,21 @@
+{
+  "id": "harness-six-scenes-v3-scope-16000",
+  "parent_protocol_hash": "92c95816448de51dd5035288e0e6f44f71e5d6f5082c6f08a249e12f73d7de5c",
+  "controller_max_tokens": 8192,
+  "proxy_file": "proxy-16000.mjs",
+  "proxy_sha256": "f838ff0f72fc645036eef40e23aa097514d9359e845c5df1e4b1c04e61a166cc",
+  "primary_baseline": "20261114-review",
+  "baseline_sha256": "8bae75fff467214e6428986dfe486d01c20a935d475077dc2c6b2c9da0a10c8f",
+  "page_max_tokens": 16000,
+  "result_family": "v3-16000",
+  "additional_baselines": [
+    {
+      "id": "20261114-revision-batch",
+      "sha256": "44fa4fa76a0a35c44803c177b3bd82b0e0cb3ed06b983b5a9c4f4dfb94b6a5de",
+      "protocol_hash": "3868aa57ec0d1c729d0566827f2cca4fd7412966d097fd29b068daa48be46b6f"
+    }
+  ],
+  "metrics_file": "metrics-baselines-16000.json",
+  "metrics_sha256": "385253c9b4ae9b06f861bcbb8d5eb5f7d6d14d34b2e49e3101da5b5993ad7403",
+  "metrics_collector_sha256": "e60d180e01c748049adef3906ef867e8dbf743c44805a2f6297705f2f9c76226"
+}

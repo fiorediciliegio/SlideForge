@@ -47,6 +47,7 @@ export interface BillingContext {
 }
 
 const als = new AsyncLocalStorage<BillingContext>();
+export const currentBillingOwner=()=>apiKeyHash(als.getStore()?.apiKey);
 let keyWriteChain: Promise<void> = Promise.resolve();
 let keysCache: KeyStore | undefined;
 let keysCacheMtime = -1;

@@ -17,7 +17,7 @@ for (const [format, exportButton] of [["pptx", "exportBtn"], ["pdf", "exportPdfB
     const blobs: Blob[] = [];
     const target = { textContent: "", appendChild() {} };
 
-    runInNewContext(exportScript, {
+    runInNewContext(exportScript, {crypto:globalThis.crypto,
       state: { deckId: "deck-test" },
       apiKey: "local-test-key",
       api: async () => ({ download_url: `/files/file-${format}` }),
@@ -60,3 +60,22 @@ for (const [format, exportButton] of [["pptx", "exportBtn"], ["pdf", "exportPdfB
     assert.equal(await blobs[0].text(), `${format} bytes`);
   });
 }
+
+test("workspace waits for asynchronous export completion before offering download",async()=>{
+ const handlers=new Map<string,()=>Promise<void>>();let polls=0;const states:string[]=[];
+ const target={textContent:"",appendChild(){states.push(this.textContent)}};
+ runInNewContext(exportScript,{crypto:globalThis.crypto,
+  state:{deckId:"deck-test"},apiKey:"test",toast(){},fetch(){throw new Error("no early download")},
+  setTimeout:(callback:()=>void)=>callback(),
+  api:async(path:string)=>path.endsWith("/export")?{status_url:"/export-status",engine_job_id:"engine-one"}:++polls===1?{state:"queued"}:{state:"completed",result:{download_url:"/files/ready"}},
+  $:(id:string)=>id==="exportResult"?target:{addEventListener:(_e:string,handler:()=>Promise<void>)=>handlers.set(id,handler)},
+  document:{createElement:()=>({style:{},addEventListener(){}})},
+ });
+ await handlers.get("exportBtn")!();assert.equal(polls,2);assert.ok(states.some(text=>text.includes("排队")));assert.equal(target.textContent,"已导出：PPTX");
+});
+
+test("workspace shows a failed export reason and handles the rejected task",async()=>{
+ const handlers=new Map<string,()=>Promise<void>>(),target={textContent:"",appendChild(){}};
+ runInNewContext(exportScript,{crypto:globalThis.crypto,state:{deckId:"deck-test"},toast(){},api:async(path:string)=>path.endsWith("/export")?{status_url:"/status",engine_job_id:"engine-one"}:{state:"failed",error:"conversion timed out"},setTimeout:(cb:()=>void)=>cb(),$:(id:string)=>id==="exportResult"?target:{addEventListener:(_e:string,handler:()=>Promise<void>)=>handlers.set(id,handler)},document:{createElement:()=>({style:{},addEventListener(){}})}});
+ await assert.doesNotReject(handlers.get("exportBtn")!());assert.match(target.textContent,/导出失败.*conversion timed out/);
+});

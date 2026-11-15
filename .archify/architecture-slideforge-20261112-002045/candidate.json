@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "SlideForge · 当前四进程架构",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-slideforge-20261112-002045/slideforge-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/fiorediciliegio/SlideForge.git",
+      "revision": "eb2a7b4d0ee1d322dbd5fce6f369647574ad113b",
+      "link_mode": "local-only"
+    }
+  },
+  "components": [
+    {
+      "id": "clients",
+      "type": "frontend",
+      "label": "Web / WPS",
+      "sublabel": "工作台 · 任务侧栏 · 文件下载",
+      "tag": "客户入口",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/http/app.html",
+          "line": 634,
+          "end_line": 662,
+          "label": "Web 创建与 Harness 入口"
+        },
+        {
+          "path": "integrations/wps-addon/main.js",
+          "line": 1,
+          "end_line": 48,
+          "label": "WPS 走已有 HTTP 接口"
+        }
+      ]
+    },
+    {
+      "id": "gateway",
+      "type": "backend",
+      "label": "Go 网关",
+      "sublabel": "状态 · 预算 · 队列 · 点数",
+      "tag": "Go :8080",
+      "pos": [
+        450,
+        40
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/dev-services.mjs",
+          "line": 11,
+          "end_line": 61,
+          "label": "四进程与服务地址"
+        },
+        {
+          "path": "services/gateway/internal/httpapi/server.go",
+          "line": 131,
+          "end_line": 243,
+          "label": "注册控制接口并转发业务"
+        },
+        {
+          "path": "services/gateway/internal/enginejobs/http.go",
+          "line": 173,
+          "end_line": 210,
+          "label": "完成后幂等扣点再开放下载"
+        }
+      ]
+    },
+    {
+      "id": "capability",
+      "type": "backend",
+      "label": "业务 Capability",
+      "sublabel": "生成 · 工具执行 · 项目版本",
+      "tag": "Node :3210",
+      "pos": [
+        850,
+        40
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 99,
+          "end_line": 193,
+          "label": "项目创建、派发与检查工具"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 253,
+          "end_line": 273,
+          "label": "调用模型生成 HTML 与候选校验"
+        },
+        {
+          "path": "src/server/engineClient.ts",
+          "line": 42,
+          "end_line": 85,
+          "label": "固定快照提交与结果查询"
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "type": "database",
+      "label": "Node 项目工作区",
+      "sublabel": "artifacts/decks/<deck_id>",
+      "tag": "约束 · 资料 · 页面 · 历史",
+      "pos": [
+        1250,
+        40
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/capabilities/project.ts",
+          "line": 28,
+          "end_line": 48,
+          "label": "不可变记录与页面读取"
+        },
+        {
+          "path": "src/capabilities/project.ts",
+          "line": 62,
+          "end_line": 81,
+          "label": "页面与项目版本持久化"
+        },
+        {
+          "path": "src/capabilities/agent.ts",
+          "line": 101,
+          "end_line": 112,
+          "label": "资料和约束进入项目上下文"
+        }
+      ]
+    },
+    {
+      "id": "go-data",
+      "type": "database",
+      "label": "Go 私有数据域",
+      "sublabel": "本地 JSON / 文件 · 可配 PG / S3",
+      "tag": "任务 · 预算 · 点数 · 产物",
+      "pos": [
+        40,
+        350
+      ],
+      "size": [
+        255,
+        90
+      ],
+      "sources": [
+        {
+          "path": "services/gateway/internal/enginejobs/store.go",
+          "line": 89,
+          "end_line": 141,
+          "label": "本地引擎队列持久化"
+        },
+        {
+          "path": "services/gateway/internal/enginejobs/store.go",
+          "line": 374,
+          "end_line": 426,
+          "label": "私有输入输出对象读写"
+        },
+        {
+          "path": "services/gateway/internal/httpapi/server.go",
+          "line": 39,
+          "end_line": 129,
+          "label": "JSON 或 PostgreSQL 与 S3 配置分支"
+        }
+      ]
+    },
+    {
+      "id": "engine",
+      "type": "backend",
+      "label": "独立渲染引擎",
+      "sublabel": "Chrome · 检查 / 截图 / 导出",
+      "tag": "Node :3211",
+      "pos": [
+        450,
+        350
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "src/http/engineServer.ts",
+          "line": 1,
+          "end_line": 21,
+          "label": "独立服务与重型并发限制"
+        },
+        {
+          "path": "src/engine/worker.ts",
+          "line": 12,
+          "end_line": 52,
+          "label": "领取快照、租约心跳与结果回报"
+        },
+        {
+          "path": "src/engine/executor.ts",
+          "line": 23,
+          "end_line": 49,
+          "label": "临时工作区执行检查及 PDF/PPTX 导出"
+        }
+      ]
+    },
+    {
+      "id": "brain",
+      "type": "backend",
+      "label": "Python Brain",
+      "sublabel": "单总控 Agent Harness",
+      "tag": "Python :3212",
+      "pos": [
+        850,
+        350
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "services/brain/brain/harness.py",
+          "line": 59,
+          "end_line": 100,
+          "label": "模型选工具、观察、修订与暂停"
+        },
+        {
+          "path": "services/brain/brain/agent_state.py",
+          "line": 14,
+          "end_line": 58,
+          "label": "向 Node 调工具、向 Go 更新状态"
+        },
+        {
+          "path": "services/brain/brain/models.py",
+          "line": 55,
+          "end_line": 68,
+          "label": "先预留预算再调用决策模型"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "type": "cloud",
+      "label": "模型 API",
+      "sublabel": "OpenAI 兼容 · 默认 DeepSeek",
+      "tag": "外部模型服务",
+      "pos": [
+        1250,
+        350
+      ],
+      "size": [
+        230,
+        90
+      ],
+      "sources": [
+        {
+          "path": "services/brain/brain/models.py",
+          "line": 55,
+          "end_line": 68,
+          "label": "Python 决策模型与用量结算"
+        },
+        {
+          "path": "scripts/m0/llmClient.ts",
+          "line": 47,
+          "end_line": 59,
+          "label": "默认模型供应商配置"
+        },
+        {
+          "path": "scripts/m0/llmClient.ts",
+          "line": 84,
+          "end_line": 106,
+          "label": "Node 页面模型 HTTP 调用"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "client-request",
+      "from": "clients",
+      "to": "gateway",
+      "label": "业务 HTTP",
+      "variant": "emphasis"
+    },
+    {
+      "id": "business-forward",
+      "from": "gateway",
+      "to": "capability",
+      "label": "转发 HTTP",
+      "variant": "emphasis"
+    },
+    {
+      "id": "project-write",
+      "from": "capability",
+      "to": "projects",
+      "label": "读写版本"
+    },
+    {
+      "id": "agent-dispatch",
+      "from": "capability",
+      "to": "brain",
+      "label": "Web 派发 / Prompt",
+      "variant": "emphasis"
+    },
+    {
+      "id": "agent-tools",
+      "from": "brain",
+      "to": "capability",
+      "label": "工具 HTTP",
+      "variant": "emphasis"
+    },
+    {
+      "id": "model-decisions",
+      "from": "brain",
+      "to": "model",
+      "label": "决策 / 评估",
+      "variant": "emphasis"
+    },
+    {
+      "id": "model-pages",
+      "from": "capability",
+      "to": "model",
+      "label": "单页 HTML"
+    },
+    {
+      "id": "snapshot-submit",
+      "from": "capability",
+      "to": "gateway",
+      "label": "状态 / 引擎作业"
+    },
+    {
+      "id": "budget-state",
+      "from": "brain",
+      "to": "gateway",
+      "label": "预算 / 状态"
+    },
+    {
+      "id": "engine-claim",
+      "from": "engine",
+      "to": "gateway",
+      "label": "领取 / 回报",
+      "variant": "dashed"
+    },
+    {
+      "id": "gateway-persist",
+      "from": "gateway",
+      "to": "go-data",
+      "label": "持久读写"
+    },
+    {
+      "id": "download-delivery",
+      "from": "gateway",
+      "to": "clients",
+      "label": "鉴权下载",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Agent 闭环在哪里",
+      "items": [
+        "Brain 调模型选择工具 → Node 执行 → 返回观察证据 → Brain 决定修订或完成。",
+        "版面检查和截图由独立引擎执行；内容与视觉判断回到 Brain。",
+        "默认直接生成；也可先确认可编辑大纲。当前新 Harness 首先接入 Web。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "文件如何流动",
+      "items": [
+        "Node 上传固定 HTML / 资源快照，Go 返回 artifact ID 和引擎任务 ID。",
+        "引擎从 Go 拉取输入，在自己的临时目录执行，再上传报告、截图和导出文件。",
+        "业务与引擎不共享本地目录；导出完成后 Go 幂等扣点，客户带业务 Key 下载。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "哪些资料会被保存",
+      "items": [
+        "Node 项目域：原资料、已确认约束、大纲、当前页面、历史版本、模型消息和检查证据。",
+        "Go 控制域：执行状态、预算预留与结算、任务租约、幂等回执及当前版本引用。",
+        "模型费用预算与导出产品点数是两套独立口径。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前默认并发与部署范围",
+      "items": [
+        "默认 Brain 同时推进 5 个项目，每份作品页面模型并发 2；引擎每实例 1 个重型作业。",
+        "Go 开发环境使用 JSON 与私有文件；生产可配置 PostgreSQL / S3，图中不代表已经完成生产验收。",
+        "引擎可独立部署、多实例领取任务；业务 Node 项目目录仍由一个逻辑实例持有。"
+      ]
+    },
+    {
+      "dot": "slate",
+      "title": "其他入口与图的范围",
+      "items": [
+        "CLI / MCP 调用同一套 Capability 能力，属于可选入口，主图未逐个展开。",
+        "WPS 沿用已有生成 / 导出 / 插入接口，尚未接入 Web 的新 Harness 交互。",
+        "四个端口来自 npm run dev 的默认配置；图中将库与辅助模块合并为所属服务。"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "代码证据与版本",
+      "items": [
+        "按 2026-11-12 当前工作区绘制，包含尚未提交的独立引擎改造及附件修复。",
+        "源码行号依据输出目录内独立的本地证据快照校验，不指向旧 HEAD 的未修改版本。",
+        "未提交路径、原 HEAD 与源码哈希见同目录「来源说明.md」；制图未修改业务代码。"
+      ]
+    }
+  ]
+}

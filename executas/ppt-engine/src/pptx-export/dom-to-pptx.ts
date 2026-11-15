@@ -198,6 +198,8 @@ async function convertDeckHtmlToPptxInBrowser(
     launchOptions: { protocolTimeout: timeoutMs },
   }) as any;
   const temporaryPath = `${outputPath}.tmp`;
+  const embeddedOnly=Boolean(process.env.SLIDEFORGE_EMBEDDED_EXPORT_ROOT);
+  const systemSources=new Set<string>();
   const blockRemoteFonts = process.env.PPTX_BLOCK_REMOTE_FONTS === "1";
   const callbackName = `__presentonWritePptxChunk_${Date.now()}_${Math.random().toString(36).slice(2)}`;
   const cssImageUrlCallbackName = `__presentonExtractCssImageUrls_${Date.now()}_${Math.random().toString(36).slice(2)}`;
@@ -224,7 +226,7 @@ async function convertDeckHtmlToPptxInBrowser(
     page = await browser.newPage();
     page.setDefaultTimeout(timeoutMs);
     await page.setViewport({ width: format.width, height: format.height });
-    if (blockRemoteFonts) {
+    if (blockRemoteFonts&&!embeddedOnly) {
       await page.setRequestInterception(true);
       page.on("request", (request: any) => {
         const url = request.url();
@@ -249,9 +251,10 @@ async function convertDeckHtmlToPptxInBrowser(
     await page.exposeFunction(cssImageUrlCallbackName, (values: string[]) => (
       values.map((value) => extractCssImageUrls(value))
     ));
-    await page.exposeFunction(fontSourceCallbackName, async (url: string) => (
-      (await readPptxFontSource(url)).toString("base64")
-    ));
+    await page.exposeFunction(fontSourceCallbackName, async (url: string) => {
+      if(embeddedOnly&&!url.startsWith("data:")&&!systemSources.has(url))throw new Error("Snapshot font source must be embedded or a resolved system font");
+      return (await readPptxFontSource(url)).toString("base64");
+    });
     await page.exposeFunction(fontReportCallbackName, (report: FontEmbedReport) => {
       fontEmbedReport = report;
     });
@@ -268,12 +271,14 @@ async function convertDeckHtmlToPptxInBrowser(
     // converter to read; this callback lets the Node process find the face on
     // disk, subset it to the deck's code points, and hand back a file:// url
     // that the existing fetchFontBuffer path can read unchanged.
-    await page.exposeFunction(systemFontCallbackName, async (family: string, request: { unicodes?: number[] }) => (
-      await systemFonts.resolve(family, request?.unicodes ?? [])
-    ));
+    await page.exposeFunction(systemFontCallbackName, async (family: string, request: { unicodes?: number[] }) => {
+      const sources=await systemFonts.resolve(family,request?.unicodes??[]);
+      for(const source of sources??[])systemSources.add(source.url);
+      return sources;
+    });
     const staticFontCallbackName = `__presentonResolvePptxGoogleStaticFont_${Date.now()}_${Math.random().toString(36).slice(2)}`;
     await page.exposeFunction(staticFontCallbackName, async (request: { family?: string; weight?: string | number; style?: string }) => {
-      if (!request?.family) return null;
+      if (embeddedOnly||!request?.family) return null;
       return await googleStaticFonts.resolve({
         family: request.family,
         weight: request.weight,
@@ -663,7 +668,7 @@ async function inspectDeckForIsolatedExport(
     page = await browser.newPage();
     page.setDefaultTimeout(timeoutMs);
     await page.setViewport({ width: format.width, height: format.height });
-    if (blockRemoteFonts) {
+    if (blockRemoteFonts&&!process.env.SLIDEFORGE_EMBEDDED_EXPORT_ROOT) {
       await page.setRequestInterception(true);
       page.on("request", (request: any) => {
         const url = request.url();

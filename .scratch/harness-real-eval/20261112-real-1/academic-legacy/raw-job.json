@@ -1,0 +1,25 @@
+{
+  "id": "deck-5cf58355",
+  "runDir": "D:\\SlideForge\\artifacts\\decks\\deck-5cf58355",
+  "title": "虚构隔振支架研究开题",
+  "status": "ready",
+  "events": [
+    "[outline] 生成大纲（6 页）",
+    "[page] p1 第 1 页完成「虚构隔振支架研究开题」",
+    "[page] p2 第 2 页完成「研究背景」",
+    "[page] p3 第 3 页完成「研究内容与技术路线」",
+    "[page] p4 第 4 页第 1 次失败",
+    "[page] p5 第 5 页完成「拟议创新点」",
+    "[page] p4 第 4 页完成「可行性与进度」",
+    "[page] p6 第 6 页完成「总结与致谢」",
+    "[assemble] 组装 deck.html"
+  ],
+  "overflowPages": [],
+  "billing": {
+    "points": 58,
+    "balance": 707
+  },
+  "ownerKeyHash": "1d4406d916d7d670c58dd5786dea22a122362e8d454f8e835c81a1436c6374b2",
+  "createdAt": "2026-11-12T11:23:27.915Z",
+  "updatedAt": "2026-11-12T11:26:02Z"
+}

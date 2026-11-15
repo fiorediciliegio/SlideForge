@@ -24,6 +24,7 @@
     "test:gateway": "cd services/gateway && go test ./... && go vet ./...",
     "test:integration": "node scripts/integration-up.mjs",
     "test:brain": "cd services/brain && python -m unittest discover -s tests -v",
+    "eval:harness": "node --import tsx/esm tools/harness-eval/run.mjs",
     "mcp:smoke": "node --import tsx/esm scripts/mcp-smoke.ts",
     "ci:fidelity": "node --import tsx/esm scripts/ci-fidelity.ts",
     "check": "tsc --noEmit",

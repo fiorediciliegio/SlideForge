@@ -9,13 +9,13 @@
 
 - `/healthz`：仅表示 Go 网关进程健康。
 - `/readyz`：检查 `ENGINE_UPSTREAM_URL` 指向的 Node `/healthz`。
-- `/internal/auth/*`、`/internal/billing/*`、`/internal/jobs`、`/internal/files`：Node 专用内部接口，必须携带 `X-Internal-Token`。
+- `/internal/auth/*`、`/internal/billing/*`、`/internal/jobs`、`/internal/files`、`/internal/engine/*`：Node 专用内部接口，必须携带 `X-Internal-Token`。
 - `/admin/keys`：由 Go 直接处理 key 签发、列表与充值，继续校验管理员 token。
 - `GET /decks/{id}/events`：Go 直接提供 SSE 任务快照与更新；`POST /decks/{id}/cancel` 记录协作式取消。
 - `POST /decks/{id}/webhooks`：注册任务回调；HMAC-SHA256 签名、有界重试与 `job-webhooks.jsonl` 审计。
 - 其他路径：透明代理到 Node，保留路径、查询、请求体、API key 和响应。
 - `GET /decks/{id}/files`、`GET /files/{id}`：作品文件列表与按用户隔离的下载。
-- Go 独占 API key、余额、计费台账、任务记录与已发布文件；Node 配置远程模式后不再读写这些元数据。生成工作区仍由 Node 管理。
+- Go 独占 API key、余额、计费台账、任务记录与已发布文件；Node 配置远程模式后不再读写这些元数据。生成工作区仍由业务 Node 管理；引擎只接收固定快照，Go 独占引擎租约和交付回执。
 
 ## 环境变量
 

@@ -46,7 +46,18 @@ async function generate() {
     if (job.status !== "ready") throw new Error(`等待任务 ${deckId} 超时`);
 
     status(`${deckId} · 导出 PPTX…`);
-    const { download_url: url } = await api(`${deckPath}/export`, apiKey, { method: "POST", body: "{}" });
+    let exported = await api(`${deckPath}/export`, apiKey, { method: "POST", body: JSON.stringify({idempotency_key:crypto.getRandomValues(new Uint32Array(4)).join("-")}) });
+    if (exported.status_url) {
+      const statusUrl=exported.status_url;
+      while(true) {
+        const task=await api(statusUrl,apiKey);
+        if(task.state==="completed"){exported=task.result;break;}
+        if(task.state==="failed"||task.state==="cancelled")throw new Error(task.error??"导出已取消");
+        status(`${deckId} · ${task.state==="queued"?"导出排队中":"引擎正在导出"}…`);
+        await new Promise(resolve=>setTimeout(resolve,1000));
+      }
+    }
+    const {download_url:url}=exported;
     if (!url) throw new Error("导出响应缺少下载地址，请确认已启动 SlideForge 四进程 dev");
     download = { url, apiKey };
     status(`${deckId} · 已导出，可以插入当前演示`);

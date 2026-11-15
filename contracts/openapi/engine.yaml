@@ -1,112 +1,77 @@
 openapi: 3.1.0
 info:
-  title: SlideForge Node Engine API
-  version: 0.1.0
-  description: 独立 Node 引擎服务。仅承担确定性 HTML 校验、预览渲染和 PPTX／PDF 导出。
+  title: SlideForge Engine Job API
+  version: 0.2.0
+  description: >-
+    Go 持久引擎队列和私有 artifact。业务 Node 上传固定输入，独立引擎按租约拉取执行。
+    所有路径均在 Go 网关，要求内部令牌；引擎端口只提供 healthz，不接受本地目录。
 paths:
-  /healthz:
-    get:
-      operationId: getEngineHealth
-      responses:
-        "200":
-          description: 引擎进程健康
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  ok: { type: boolean }
-                  service: { type: string }
-  /internal/engine/validate-page:
+  /internal/engine/artifacts:
     post:
-      operationId: validatePageHtml
-      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      operationId: engineArtifact
+      parameters: [{ $ref: '#/components/parameters/InternalToken' }]
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [html]
+              required: [action, owner_key_hash]
               properties:
-                html: { type: string, minLength: 1, maxLength: 1000000 }
+                action: { enum: [put, read] }
+                artifact_id: { type: string, description: read 时必填 }
+                owner_key_hash: { type: string }
+                deck_id: { type: string, description: put 时必填 }
+                media_type: { type: string }
+                content_base64: { type: string, description: put 时必填；解码后1至64MiB }
       responses:
-        "200":
-          description: Chrome 确定性版面检查结果
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  ok: { type: boolean }
-                  issues:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        kind: { type: string }
-                        detail: { type: string }
-  /internal/engine/preview:
+        '200': { description: 'put 返回 artifact_id/sha256/size_bytes；read 返回 content_base64' }
+        '404': { description: 内部令牌无效，或 artifact 不存在/归属不符 }
+  /internal/engine/jobs:
     post:
-      operationId: renderDeckPreview
-      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      operationId: engineJob
+      parameters: [{ $ref: '#/components/parameters/InternalToken' }]
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [runDir]
+              required: [action]
               properties:
-                runDir: { type: string }
-                pages:
-                  type: array
-                  maxItems: 4
-                  items: { type: integer, minimum: 1 }
-                maxPages: { type: integer, minimum: 1, maximum: 20 }
+                action: { enum: [submit, get, heartbeat, complete, fail, cancel, deliver] }
+                request: { $ref: '#/components/schemas/Submit' }
+                job_id: { type: string }
+                owner_key_hash: { type: string, description: get/cancel/deliver 必填 }
+                lease_token: { type: string, description: heartbeat/complete/fail 必填 }
+                result_ref: { type: string, description: complete 时必须是同 owner/deck 的私有结果 artifact }
+                error: { type: string, description: fail 时的明确失败原因 }
       responses:
-        "200":
-          description: JPEG 预览 base64
+        '200':
+          description: '任务回执；deliver 返回已幂等扣点的 file_id/download_url/billing 等交付字段'
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  images:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        page: { type: integer }
-                        base64: { type: string }
-                        mimeType: { type: string }
-  /internal/engine/export:
+                  job: { $ref: '#/components/schemas/Job' }
+        '409': { description: 幂等身份冲突、取消已完成作业、旧租约或迟到结果 }
+        '429': { description: 排队超过全局100或同owner20的上限 }
+  /internal/engine/claim:
     post:
-      operationId: exportDeck
-      parameters: [{ $ref: "#/components/parameters/InternalToken" }]
+      operationId: claimEngineJob
+      parameters: [{ $ref: '#/components/parameters/InternalToken' }]
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [runDir]
+              required: [worker_id]
               properties:
-                runDir: { type: string }
-                outPath: { type: string }
-                format: { type: string, enum: [pptx, pdf], default: pptx }
+                worker_id: { type: string }
       responses:
-        "200":
-          description: 导出结果；产物由调用方通过文件服务发布
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  outPath: { type: string }
-                  slideCount: { type: integer }
-                  sizeBytes: { type: integer }
-                  warnings: { type: array, items: { type: string } }
+        '200': { description: 'job 为 null 或一个带新 lease_token 的 running 作业；按 owner 轮转、短任务/导出2比1' }
 components:
   parameters:
     InternalToken:
@@ -114,3 +79,63 @@ components:
       in: header
       required: true
       schema: { type: string }
+  schemas:
+    Snapshot:
+      type: object
+      additionalProperties: false
+      required: [schema_version, deck_id, title, pages]
+      properties:
+        schema_version: { const: 1 }
+        deck_id: { type: string }
+        revision_id: { type: string }
+        title: { type: string }
+        deck_html: { type: string, description: 固定聚合HTML，所需资源全部内嵌 }
+        pages:
+          type: array
+          minItems: 1
+          maxItems: 20
+          items:
+            type: object
+            additionalProperties: false
+            required: [page_id, html]
+            properties:
+              page_id: { type: string }
+              html: { type: string, description: 自包含单页HTML，禁止脚本/事件/外链/本机资源 }
+    Submit:
+      type: object
+      required: [owner_key_hash, deck_id, snapshot_id, source_hash, kind, operation_id, profile_version, params]
+      properties:
+        owner_key_hash: { type: string }
+        deck_id: { type: string }
+        snapshot_id: { type: string }
+        source_hash: { type: string, description: 输入 artifact 原始字节 SHA256 }
+        kind: { enum: [validate, inspect, export] }
+        operation_id: { type: string }
+        profile_version: { type: string }
+        agent_run_seq: { type: integer }
+        agent_epoch: { type: integer }
+        params:
+          type: object
+          properties:
+            pages: { type: array, items: { type: integer, minimum: 1, maximum: 20 } }
+            layout: { type: boolean }
+            visual: { type: boolean }
+            format: { enum: [pptx, pdf] }
+    Job:
+      allOf:
+        - { $ref: '#/components/schemas/Submit' }
+        - type: object
+          required: [job_id, state, stage, attempt, queued_at]
+          properties:
+            job_id: { type: string }
+            state: { enum: [queued, running, completed, failed, cancelled] }
+            stage: { type: string }
+            attempt: { type: integer, minimum: 0, maximum: 2 }
+            worker_id: { type: string }
+            lease_token: { type: string, description: 每次领取更新；旧尝试结果拒收 }
+            lease_until: { type: string, format: date-time }
+            queued_at: { type: string, format: date-time }
+            started_at: { type: string, format: date-time }
+            finished_at: { type: string, format: date-time }
+            result_ref: { type: string }
+            error: { type: string }

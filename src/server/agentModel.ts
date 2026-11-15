@@ -12,7 +12,7 @@ export async function agentModelComplete(messages: unknown[]) {
   if(Object.values(run.calls).some(call=>call.status==="unknown"))throw new Error("存在结果未知的模型调用，需要用户明确处理后继续");
   if (!pricing || !Number.isFinite(pricing.input_cny_per_million) || !Number.isFinite(pricing.output_cny_per_million) || pricing.input_cny_per_million < 0 || pricing.output_cny_per_million <= 0) throw new Error("Agent 缺少有效模型价格配置");
   if((pricing.model&&pricing.model!==(process.env.OPENAI_MODEL??"deepseek-chat"))||(pricing.base_url&&pricing.base_url!==(process.env.OPENAI_BASE_URL??"https://api.deepseek.com").replace(/\/$/,"")))throw new Error("恢复任务的模型或端点与原报价不一致，请恢复原配置或开始新的执行");
-  const maxTokens = 12000;
+  const maxTokens = 16000;
   const payload = { model: process.env.OPENAI_MODEL ?? "deepseek-chat", messages, temperature: 0.4, max_tokens: maxTokens };
   const cost = (Buffer.byteLength(JSON.stringify(payload), "utf8") * pricing.input_cny_per_million + maxTokens * pricing.output_cny_per_million) / 1e6;
   const baseId = `${context.operation_id}:llm:${context.counter++}`;

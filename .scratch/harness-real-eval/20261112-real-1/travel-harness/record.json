@@ -1,0 +1,1529 @@
+{
+  "id": "travel-harness",
+  "case_id": "travel",
+  "arm": "harness",
+  "started_at": "2026-11-12T11:29:52.290Z",
+  "expected_scene": "旅游",
+  "events": [
+    {
+      "phase": "queued",
+      "elapsed_ms": 70.87600000016391
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 1096.1758000003174
+    },
+    {
+      "phase": "generating",
+      "elapsed_ms": 15217.272100000177
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 139350.70390000008
+    },
+    {
+      "phase": "revising",
+      "elapsed_ms": 142376.76690000016
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 159574.5745000001
+    },
+    {
+      "phase": "revising",
+      "elapsed_ms": 164644.25410000002
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 189870.80500000017
+    },
+    {
+      "phase": "generating",
+      "elapsed_ms": 190888.51750000007
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 226187.91730000032
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 227201.62490000017
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 230234.66400000034
+    },
+    {
+      "phase": "checking",
+      "elapsed_ms": 239366.3602
+    },
+    {
+      "phase": "planning",
+      "elapsed_ms": 241414.71130000008
+    },
+    {
+      "phase": "completed",
+      "elapsed_ms": 256531.86970000016
+    }
+  ],
+  "deck_id": "deck-2595d847",
+  "job": {
+    "agent": {
+      "budget": {
+        "active_seconds": 255.09272710000002,
+        "limit_seconds": 600,
+        "spent_cny": 0.96937,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "checkpoint_seq": 65,
+      "draft_revision": 1,
+      "error": "",
+      "options": {
+        "version": 1,
+        "generation_mode": "direct",
+        "page_policy": {
+          "mode": "fixed",
+          "count": 6
+        },
+        "research_allowed": false,
+        "budget": {
+          "active_seconds": 600,
+          "estimated_cost_cny": 2
+        }
+      },
+      "phase": "completed",
+      "preview_revision": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+      "quality_state": "checked",
+      "request": null,
+      "run_seq": 1,
+      "unknown_calls": [],
+      "version": 1
+    },
+    "billing": null,
+    "cancelled": false,
+    "deck_id": "deck-2595d847",
+    "error": "",
+    "overflow_pages": [],
+    "recent_events": [],
+    "status": "ready",
+    "title": "青岚市周末慢游：2天步行与摄影行程（虚构测评）"
+  },
+  "phase": "completed",
+  "generation_ms": 256537.37630000012,
+  "raw_job": {
+    "agent": {
+      "version": 1,
+      "run_seq": 1,
+      "runner_epoch": 1,
+      "checkpoint_seq": 65,
+      "phase": "completed",
+      "options": {
+        "version": 1,
+        "generation_mode": "direct",
+        "page_policy": {
+          "mode": "fixed",
+          "count": 6
+        },
+        "research_allowed": false,
+        "budget": {
+          "active_seconds": 600,
+          "estimated_cost_cny": 2
+        }
+      },
+      "project_ref": {
+        "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+        "artifact_ref": "project/revisions/542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+        "outline_revision": 1,
+        "constraints_revision": 1
+      },
+      "quality_revision": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+      "draft_ref": "project/drafts/bf911c78bcaa5aa977ebf2fe42ffa43ed7394b9db846284540aeffe452f2d5b2.json",
+      "draft_revision": 1,
+      "context_ref": "project/contexts/4b05d49a-b70d-4d2d-81f3-0a6070bfc275.json",
+      "messages_ref": "project/checkpoints/f32bf420-6d22-4437-bdd0-7cc17bc3732d.json",
+      "pricing": {
+        "input_cny_per_million": 2,
+        "output_cny_per_million": 8,
+        "version": "eval-flash-peak-cache-miss-2026-11-12",
+        "model": "deepseek-flash",
+        "base_url": "https://api.deepseek.com",
+        "currency": "CNY"
+      },
+      "budget": {
+        "active_seconds": 255.09272710000002,
+        "limit_seconds": 600,
+        "spent_cny": 0.96937,
+        "reserved_cny": 0,
+        "limit_cny": 2
+      },
+      "calls": {
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-cover:llm:0": {
+          "status": "completed",
+          "input_hash": "98127fa6e75a6d66990046673ea4af8506786830e100fe62875fcc0b40f8f123",
+          "cost": 0.093792,
+          "response_ref": "project/responses/b608289423007707a2d73851b6e4b067bee83dc6c165ff11a51ab49cb54d8007.json",
+          "usage": {
+            "prompt_tokens": 6460,
+            "completion_tokens": 10109,
+            "total_tokens": 16569,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 7351
+            },
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 6460
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-day1:llm:0": {
+          "status": "completed",
+          "input_hash": "1adcc4f41c76bfbe0655cab486c9044c69c0a6649fe5982e47f5231f0c3b53c3",
+          "cost": 0.089612,
+          "response_ref": "project/responses/ce71105a48b063ee8dcea1bf28a56c5ec2396cad204afdf1f142e501cce6bb0e.json",
+          "usage": {
+            "prompt_tokens": 6470,
+            "completion_tokens": 9584,
+            "total_tokens": 16054,
+            "prompt_tokens_details": {
+              "cached_tokens": 896
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 5902
+            },
+            "prompt_cache_hit_tokens": 896,
+            "prompt_cache_miss_tokens": 5574
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-day2:llm:0": {
+          "status": "completed",
+          "input_hash": "598aa42846f4e3a9e63104c0d157971a5e85d9ec5dae8ca7feb58ff497a65c12",
+          "cost": 0.108908,
+          "response_ref": "project/responses/56ae503c272b507dfba616ee383bf53da216dd877a2c4578abbf0d5a76e3af5d.json",
+          "usage": {
+            "prompt_tokens": 6454,
+            "completion_tokens": 12000,
+            "total_tokens": 18454,
+            "prompt_tokens_details": {
+              "cached_tokens": 896
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 9921
+            },
+            "prompt_cache_hit_tokens": 896,
+            "prompt_cache_miss_tokens": 5558
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-prep:llm:0": {
+          "status": "completed",
+          "input_hash": "bf4150fe6d2543675720e18c4d915c93d6cc4833862ff3c0153892c2a38bc9a9",
+          "cost": 0.058268,
+          "response_ref": "project/responses/afd6c4d39561cc097462bcf4c14652bcca9a82d296ce5fc9da56f6854a5350bb.json",
+          "usage": {
+            "prompt_tokens": 6490,
+            "completion_tokens": 5661,
+            "total_tokens": 12151,
+            "prompt_tokens_details": {
+              "cached_tokens": 896
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 2357
+            },
+            "prompt_cache_hit_tokens": 896,
+            "prompt_cache_miss_tokens": 5594
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-principles:llm:0": {
+          "status": "completed",
+          "input_hash": "27254b0a249d5a127fdfa6ef1677eee5e0c1a04bbe3090ae9a3f20eacb65ea8f",
+          "cost": 0.057868,
+          "response_ref": "project/responses/3471227c14a57c052ced5ea307489d6ecd6136b3c63ac32b38b210b03ba78867.json",
+          "usage": {
+            "prompt_tokens": 6478,
+            "completion_tokens": 5614,
+            "total_tokens": 12092,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1652
+            },
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 6478
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-status:llm:0": {
+          "status": "completed",
+          "input_hash": "6ea2fd18e2d7e2d02cb51e62b36e8aa179c0ef1dccdf9a9a72ae7a6f06ee1b8b",
+          "cost": 0.065046,
+          "response_ref": "project/responses/18b39a8c6545d321f260d32fdd36637f3609f27f857e88c9029f03f6bca7a0e3.json",
+          "usage": {
+            "prompt_tokens": 6455,
+            "completion_tokens": 6517,
+            "total_tokens": 12972,
+            "prompt_tokens_details": {
+              "cached_tokens": 896
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 3411
+            },
+            "prompt_cache_hit_tokens": 896,
+            "prompt_cache_miss_tokens": 5559
+          }
+        },
+        "run-1:turn-4:call_00_6q6D1hfkg81ETQ3OR6mn7710:page:p-day1:llm:0": {
+          "status": "completed",
+          "input_hash": "d48b6589168a2da913845e80b50bf4147791e8c5e5c18335a0e121bb3e8b6a41",
+          "cost": 0.056546,
+          "response_ref": "project/responses/9a2d0c2a0da0e7a7fb75f1f66cb960e26b8c97c9e18eb5fd64797f4b8b94cf65.json",
+          "usage": {
+            "prompt_tokens": 10225,
+            "completion_tokens": 4512,
+            "total_tokens": 14737,
+            "prompt_tokens_details": {
+              "cached_tokens": 6400
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 833
+            },
+            "prompt_cache_hit_tokens": 6400,
+            "prompt_cache_miss_tokens": 3825
+          }
+        },
+        "run-1:turn-6:call_00_38SzJpwAbtl7osWMzOpo5486:page:p-day1:llm:0": {
+          "status": "completed",
+          "input_hash": "bdbacce45099b5d4b2f7d172168d9f367592f8fa13bb3ee7b85091ff9437da65",
+          "cost": 0.065158,
+          "response_ref": "project/responses/54020a051d5c9115b7acea60a2ac0486141f585e9991753748ddea11091119c1.json",
+          "usage": {
+            "prompt_tokens": 10227,
+            "completion_tokens": 5588,
+            "total_tokens": 15815,
+            "prompt_tokens_details": {
+              "cached_tokens": 7808
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1871
+            },
+            "prompt_cache_hit_tokens": 7808,
+            "prompt_cache_miss_tokens": 2419
+          }
+        },
+        "run-1:turn-7:call_00_ET_GG9yIvtAltU0VaJzayAN9353:page:p-day2:llm:0": {
+          "status": "completed",
+          "input_hash": "598aa42846f4e3a9e63104c0d157971a5e85d9ec5dae8ca7feb58ff497a65c12",
+          "cost": 0.076332,
+          "response_ref": "project/responses/e0e82496e03e1603883fdc59922b7c4e2502ee23c9c17afd2becda86568d5734.json",
+          "usage": {
+            "prompt_tokens": 6454,
+            "completion_tokens": 7928,
+            "total_tokens": 14382,
+            "prompt_tokens_details": {
+              "cached_tokens": 6272
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 4007
+            },
+            "prompt_cache_hit_tokens": 6272,
+            "prompt_cache_miss_tokens": 182
+          }
+        },
+        "turn-0": {
+          "status": "completed",
+          "input_hash": "10eadbf9d71e0294514b84fd9ff37be801d32c65df2aab6fafaf8522cfb3f226",
+          "cost": 0.006144,
+          "response_ref": "project/responses/b920b9ca5655d57dcf771f245bfe25dd551344b115e6b8743f463f16fab0b25c.json",
+          "usage": {
+            "prompt_tokens": 2896,
+            "completion_tokens": 44,
+            "total_tokens": 2940,
+            "prompt_tokens_details": {
+              "cached_tokens": 2304
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 2304,
+            "prompt_cache_miss_tokens": 592
+          }
+        },
+        "turn-1": {
+          "status": "completed",
+          "input_hash": "fd6ad58ea0e198b238afcb6a4649dc17f44cd77dd4863a1495992add116a38b6",
+          "cost": 0.007768,
+          "response_ref": "project/responses/66baa9528fab9df24046ad405e263ed7fca4c57f4d558aa558bc750bec4e38e5.json",
+          "usage": {
+            "prompt_tokens": 3496,
+            "completion_tokens": 97,
+            "total_tokens": 3593,
+            "prompt_tokens_details": {
+              "cached_tokens": 2816
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 3
+            },
+            "prompt_cache_hit_tokens": 2816,
+            "prompt_cache_miss_tokens": 680
+          }
+        },
+        "turn-10": {
+          "status": "completed",
+          "input_hash": "af356dd75b53c25366e5f067c63f0be305d84d6c9e8d3205de51610e03098dfe",
+          "cost": 0.023978,
+          "response_ref": "project/responses/f862007a1d7b22bc7d4028d36ef87f04042cd2be4c1c760bc90f6a2f4a9d0d4a.json",
+          "usage": {
+            "prompt_tokens": 11697,
+            "completion_tokens": 73,
+            "total_tokens": 11770,
+            "prompt_tokens_details": {
+              "cached_tokens": 10240
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 10240,
+            "prompt_cache_miss_tokens": 1457
+          }
+        },
+        "turn-11": {
+          "status": "completed",
+          "input_hash": "fd9ebca95aa0f0014a693e38ec82fa6d295c099d7e48c2e2d546a5248c961ad4",
+          "cost": 0.037248,
+          "response_ref": "project/responses/061787d01fb99957749b972d076b328260561db7670c7ceb05575a07211e2075.json",
+          "usage": {
+            "prompt_tokens": 14928,
+            "completion_tokens": 924,
+            "total_tokens": 15852,
+            "prompt_tokens_details": {
+              "cached_tokens": 11648
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 648
+            },
+            "prompt_cache_hit_tokens": 11648,
+            "prompt_cache_miss_tokens": 3280
+          }
+        },
+        "turn-12": {
+          "status": "completed",
+          "input_hash": "323b2fdb92eca71b6e3660920f90020cfabf1e7a40df521f6a22fe7dd92d0c64",
+          "cost": 0.03117,
+          "response_ref": "project/responses/8927005324d34ab278217831a906fbc008c300d2b78801a4e2c9af0845f94f0d.json",
+          "usage": {
+            "prompt_tokens": 14121,
+            "completion_tokens": 366,
+            "total_tokens": 14487,
+            "prompt_tokens_details": {
+              "cached_tokens": 12800
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 14
+            },
+            "prompt_cache_hit_tokens": 12800,
+            "prompt_cache_miss_tokens": 1321
+          }
+        },
+        "turn-13": {
+          "status": "completed",
+          "input_hash": "4dc4847ecb5591ec5a15ef559a7279297ab03a04b5c2c562dfcd6bb8a0d7cb6d",
+          "cost": 0.037346,
+          "response_ref": "project/responses/66fa3ca4a5314598224bdbcf0e231004400713e1dffafddc64274a6160d78394.json",
+          "usage": {
+            "prompt_tokens": 14717,
+            "completion_tokens": 989,
+            "total_tokens": 15706,
+            "prompt_tokens_details": {
+              "cached_tokens": 14464
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 353
+            },
+            "prompt_cache_hit_tokens": 14464,
+            "prompt_cache_miss_tokens": 253
+          }
+        },
+        "turn-2": {
+          "status": "completed",
+          "input_hash": "26c8b547fd6be3381d4c140a7de8be5e8060fd1889a627d395fc65fc055ee7cd",
+          "cost": 0.019832,
+          "response_ref": "project/responses/742646f6fa3bec52b2e84b81ff24a23c81c299ff0a340862423d4dce8abd4e69.json",
+          "usage": {
+            "prompt_tokens": 3748,
+            "completion_tokens": 1542,
+            "total_tokens": 5290,
+            "prompt_tokens_details": {
+              "cached_tokens": 3584
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 704
+            },
+            "prompt_cache_hit_tokens": 3584,
+            "prompt_cache_miss_tokens": 164
+          }
+        },
+        "turn-3": {
+          "status": "completed",
+          "input_hash": "ab97d6400b79424ac28255a0042f86e91da89928e9a6c31285912f262122010f",
+          "cost": 0.012922,
+          "response_ref": "project/responses/00c15d3c4fa51d5294de463482bb3f177b0dd5e0b2720e39c78ffb4ec0d3d3fd.json",
+          "usage": {
+            "prompt_tokens": 6153,
+            "completion_tokens": 77,
+            "total_tokens": 6230,
+            "prompt_tokens_details": {
+              "cached_tokens": 5248
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 5248,
+            "prompt_cache_miss_tokens": 905
+          }
+        },
+        "turn-4": {
+          "status": "completed",
+          "input_hash": "293cecef7a8882cd1757cdad55cd639b25067ed78aa0202c63bcd0f8bd54e0ab",
+          "cost": 0.016746,
+          "response_ref": "project/responses/743322cce68eb03ad9a4ed8920e52043fc122d3942e4eae0a46d715dff291e35.json",
+          "usage": {
+            "prompt_tokens": 6789,
+            "completion_tokens": 396,
+            "total_tokens": 7185,
+            "prompt_tokens_details": {
+              "cached_tokens": 6144
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 150
+            },
+            "prompt_cache_hit_tokens": 6144,
+            "prompt_cache_miss_tokens": 645
+          }
+        },
+        "turn-5": {
+          "status": "completed",
+          "input_hash": "3068529f26d9ccd2a6851c7f4d8e54393cf9eb1c71d69dc477e8d67291f16ca7",
+          "cost": 0.016332,
+          "response_ref": "project/responses/8bf9d4f9e71a19538152b65cf3af68a534e0c25b63c997193867a91045d0f48a.json",
+          "usage": {
+            "prompt_tokens": 7446,
+            "completion_tokens": 180,
+            "total_tokens": 7626,
+            "prompt_tokens_details": {
+              "cached_tokens": 7168
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 121
+            },
+            "prompt_cache_hit_tokens": 7168,
+            "prompt_cache_miss_tokens": 278
+          }
+        },
+        "turn-6": {
+          "status": "completed",
+          "input_hash": "e5c7c409d0283f963bca1f22beb29940629cf81ad52a4bd606c95525a32e9de9",
+          "cost": 0.017612,
+          "response_ref": "project/responses/7c634d3d1ccfb0df4557a37905253325ea284de887e312a367546ce36c3b8f8c.json",
+          "usage": {
+            "prompt_tokens": 7642,
+            "completion_tokens": 291,
+            "total_tokens": 7933,
+            "prompt_tokens_details": {
+              "cached_tokens": 7424
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 79
+            },
+            "prompt_cache_hit_tokens": 7424,
+            "prompt_cache_miss_tokens": 218
+          }
+        },
+        "turn-7": {
+          "status": "completed",
+          "input_hash": "e40bc7473ca33d11a2ce4e4356acb16c78cc165ab614e1185ba88f82476f90a9",
+          "cost": 0.016658,
+          "response_ref": "project/responses/4079cf8358f926ba924f91dce10a3315df2b3bcaf195a8be93fdd0df8075b10c.json",
+          "usage": {
+            "prompt_tokens": 8097,
+            "completion_tokens": 58,
+            "total_tokens": 8155,
+            "prompt_tokens_details": {
+              "cached_tokens": 7808
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 7808,
+            "prompt_cache_miss_tokens": 289
+          }
+        },
+        "turn-8": {
+          "status": "completed",
+          "input_hash": "fe24ee2bfdf0fa674fd1a58b5605fc04c0ab4ef9af42a9d8ab297ae670abc728",
+          "cost": 0.017452,
+          "response_ref": "project/responses/9bbc50308b3398ae2fed706c0dd0c4a5460581b8877df4a1ead2f9bb377f74c1.json",
+          "usage": {
+            "prompt_tokens": 8330,
+            "completion_tokens": 99,
+            "total_tokens": 8429,
+            "prompt_tokens_details": {
+              "cached_tokens": 8064
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "prompt_cache_hit_tokens": 8064,
+            "prompt_cache_miss_tokens": 266
+          }
+        },
+        "turn-9": {
+          "status": "completed",
+          "input_hash": "11dc2bfe419763f0534a8a443a1acf10bd2e50b8c700793926bd9ed256b12321",
+          "cost": 0.036632,
+          "response_ref": "project/responses/a5d9387b490a4ae240c4888e33f65dc70720a65537406d66b910c864b0557e4d.json",
+          "usage": {
+            "prompt_tokens": 14400,
+            "completion_tokens": 979,
+            "total_tokens": 15379,
+            "prompt_tokens_details": {
+              "cached_tokens": 8320
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 688
+            },
+            "prompt_cache_hit_tokens": 8320,
+            "prompt_cache_miss_tokens": 6080
+          }
+        }
+      },
+      "operations": {
+        "run-1:turn-0:call_00_ET_BqmNHV3XJeWf4vNyjV4l7509": {
+          "status": "completed",
+          "input_hash": "0d27cffeefc04c1cea1347dd4971ee7b678fd0bc6353ead08d59f8043ca3dcaf",
+          "result": {
+            "project": {
+              "version": 1,
+              "deck_id": "deck-2595d847",
+              "revision_id": "",
+              "brief": "生成6页中文演示，直接生成预览，不联网。主题：虚构青岚市周末慢游。受众：喜欢步行与摄影的普通游客。覆盖以下部分：行程原则、第一天、第二天、准备清单。以上部分名称须原样出现在某页可见标题中。以附件或正文资料为唯一事实来源，准确呈现其中关键数据，保留计划、未确定与已完成的区别；不编造日期、预算或业务成果。资料为虚构测评材料，不要补充外部事实。",
+              "title": "新演示",
+              "outline": {
+                "title": "新演示",
+                "draft_revision": 0,
+                "pages": []
+              },
+              "constraints_revision": 1,
+              "constraints": [
+                {
+                  "text": "生成6页中文演示，直接生成预览，不联网。主题：虚构青岚市周末慢游。受众：喜欢步行与摄影的普通游客。覆盖以下部分：行程原则、第一天、第二天、准备清单。以上部分名称须原样出现在某页可见标题中。以附件或正文资料为唯一事实来源，准确呈现其中关键数据，保留计划、未确定与已完成的区别；不编造日期、预算或业务成果。资料为虚构测评材料，不要补充外部事实。",
+                  "source": "user",
+                  "confirmed_at": "2026-11-12T11:29:52.306Z"
+                }
+              ],
+              "scenario": {
+                "category": "待明确",
+                "subtype": "",
+                "reason": "尚未识别"
+              },
+              "sources": [
+                {
+                  "source_id": "6d3d8529-1414-4518-86f8-78d5694efe41",
+                  "name": "用户资料",
+                  "kind": "user",
+                  "chars": 135
+                }
+              ],
+              "pages": [],
+              "missing": [],
+              "history": {
+                "instruction": "创建项目",
+                "at": "2026-11-12T11:29:52.306Z",
+                "changed_page_ids": []
+              },
+              "visual": {
+                "template_id": "134-Adaptive Systems Editorial Cover",
+                "visual_spec": "以参考页视觉风格为准，内容不得照抄"
+              }
+            },
+            "options": {
+              "version": 1,
+              "generation_mode": "direct",
+              "page_policy": {
+                "mode": "fixed",
+                "count": 6
+              },
+              "research_allowed": false,
+              "budget": {
+                "active_seconds": 600,
+                "estimated_cost_cny": 2
+              }
+            }
+          }
+        },
+        "run-1:turn-10:call_00_ET_Kjl5Y2CQcoJPawvDEKas9648": {
+          "status": "completed",
+          "input_hash": "6e7e57a617473ce5ec543e7b035648c2db97dcd502c99298b41a1a786dcc7af1",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "p-prep",
+                "text": " \n \n \n \n 准备清单：步行、摄影与信息核对 \n\n \n \n \n    \n    \n    \n\n    \n    \n    \n    \n    \n    \n   青岚市周末慢游 · 2天步行与摄影行程 · 虚构测评 \n   PREPARATION · 准备清单 \n\n   \n      \n      \n      \n   \n\n   \n      05    准备清单  \n     准备清单： 步行、摄影与信息核对 \n     围绕两天步行上限与三处主要拍摄点准备鞋具、负重与器材；时间上保留机动，未确定信息须出行前自行确认。 \n\n     \n       \n         行程天数 \n         2 天  \n       \n       \n         同行人数 \n         5 人  \n       \n       \n         步行上限 \n         4.6/3.2 公里  \n       \n     \n\n       状态：计划 · 资料未记录已完成事项 \n   \n\n   \n     \n       01 \n       \n         步行 \n         按  4.6公里 与  3.2公里 上限安排鞋具与负重，5人同行统一节奏。 \n       \n       计划 \n     \n\n     \n       02 \n       \n         摄影 \n         芦汀园、旧街、星港步道三处为主要拍摄点；备用电池与存储自行准备。 \n       \n       计划 \n     \n\n     \n       03 \n       \n         时间 \n         两天都保留机动时间，不按分钟排满。 \n       \n       计划 \n     \n\n     \n       04 \n       \n         信息核对 \n         票价、交通班次、真实营业时间均未确定，需出行前自行确认。 \n       \n       未确定 \n     \n\n     \n       05 \n       \n         资料边界 \n         不提供门票价格、交通班次、真实营业时间或商务推广目标。 \n       \n       边界 \n     \n   \n\n    \n   虚构测评材料 · 青岚市及全部景点均为虚构 \n   5 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "p-status",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n    \n    \n\n   青岚市周末慢游 · 关键数据与状态说明 \n   虚构测评材料 \n\n   关键数据与状态说明 \n   两天行程全部为计划内容；未确定项与已完成项分开标注 \n\n   关 键 数 据 \n   \n     \n       行程天数 \n       2 天  \n       两天均为计划，未记录已完成事项 \n     \n     \n       同行人数 \n       5 人  \n       统一节奏，不设硬指标 \n     \n     \n       第一天步行上限 \n       4.6 公里  \n       芦汀园 · 旧街 \n     \n     \n       第二天步行上限 \n       3.2 公里  \n       星港步道 · 书店休息 \n     \n   \n\n   状 态 区 分 \n\n   \n     \n       计划 \n       全 部 待 执 行 \n     \n     \n        01 第一天：芦汀园 → 旧街 以园内步行与街拍为主  \n        02 第二天：星港步道 → 书店休息 步道慢走，书店作为缓冲  \n        03 两天均保留机动时间 留出拍照与临时停留余量  \n     \n   \n\n   \n     \n       未确定 \n       资 料 未 提 供 \n     \n     \n        01 票价 不提供门票价格  \n        02 交通班次 需出行前自行确认  \n        03 真实开放与营业时间 芦汀园、旧街、星港步道、书店均未确定  \n     \n   \n\n   \n     \n       已完成 \n       0 项 \n     \n     \n       资料未记录已完成事项 \n       本稿不作任何完成性表述，不把计划说成已完成。 \n     \n   \n\n   青岚市及全部景点均为虚构 · 不编造日期、预算或业务成果 \n   6 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              }
+            ],
+            "has_images": true,
+            "evidence_id": "c00ba1e3db34ffabefe7e8611ee9ab2e427b7c43341b213a6144bf1d2deeab9e",
+            "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7"
+          }
+        },
+        "run-1:turn-11:call_00_rnQJd7edA19UViEGtTlr9024": {
+          "status": "completed",
+          "input_hash": "f25a2107a1793b4bf9c81d899f255079882ced8f37b79c3a34c85964f92d1135",
+          "result": {
+            "check_id": "visual-ec5e0d7b10260b1ebe525252091d40e33c6b0599b52fd31602b2f6a8cdb1ec2b",
+            "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+            "issues": [
+              {
+                "severity": "improvement",
+                "code": "decorative_label_overlap",
+                "detail": "p-prep 左侧竖排装饰标签中“准备清单”四字相互叠压，属装饰排版拥挤；标题、三条数据与五条清单均清晰、层级清楚，不影响阅读。",
+                "page_ids": [
+                  "p-prep"
+                ],
+                "evidence_refs": [
+                  "c00ba1e3db34ffabefe7e8611ee9ab2e427b7c43341b213a6144bf1d2deeab9e"
+                ]
+              }
+            ]
+          }
+        },
+        "run-1:turn-12:call_00_yRlwh7H61CRKSLk4YCIu6810": {
+          "status": "completed",
+          "input_hash": "4286693872720eb1e22465920216db2e36f4e7908904d47403535037e5cda8ef",
+          "result": {
+            "check_id": "content-d17330bcbc7d82550386a45c7577e019bfef5b3a7dfbae41b4fb4792e88e3d3b",
+            "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+            "issues": [
+              {
+                "severity": "improvement",
+                "code": "unsupported_sequence",
+                "detail": "p-day1 将芦汀园与旧街写成“上午/下午”的先后顺序，并出现“集合时限以外的硬指标”表述；资料仅说明首日安排这两处摄影，未给出时段顺序或集合时限，属未标明为安排的额外细节。",
+                "page_ids": [
+                  "p-day1"
+                ],
+                "evidence_refs": [
+                  "4fc9e8b80847beb67d21c9bffe8ec3d1b0071ccdd0d9206be95449381ba9a009"
+                ]
+              }
+            ]
+          }
+        },
+        "run-1:turn-13:call_00_c1xwKtPdE5Ygg5ovh4AD6552": {
+          "status": "completed",
+          "input_hash": "1abd498d690de9dfd8fcb29d046300533badf3974b965c14a1f11e0b08749176",
+          "result": {
+            "completed": true,
+            "assessment": "6页中文预览已完成：封面、行程原则、第一天、第二天、准备清单、关键数据与状态说明；四个必需部分名称均原样出现在可见标题中。关键数据（2天、5人、首日4.6公里、次日3.2公里、芦汀园/旧街/星港步道/书店休息）与资料一致；出行日期标为待定，票价、交通班次、开放与营业时间统一标注为未确定，已完成项明确为“资料未记录、0项”，未编造日期、预算或业务成果。版面程序报告全部通过，内容与视觉检查覆盖6页，无阻断项；仅两处轻微改进项保留。",
+            "remaining_issues": [
+              {
+                "severity": "improvement",
+                "code": "unsupported_sequence",
+                "detail": "p-day1 将芦汀园与旧街写成“上午/下午”的先后顺序，并出现“集合时限以外的硬指标”表述；资料仅说明首日安排这两处摄影，未给出时段顺序或集合时限，属未标明为安排的额外细节。",
+                "page_ids": [
+                  "p-day1"
+                ],
+                "evidence_refs": [
+                  "4fc9e8b80847beb67d21c9bffe8ec3d1b0071ccdd0d9206be95449381ba9a009"
+                ]
+              },
+              {
+                "severity": "improvement",
+                "code": "decorative_label_overlap",
+                "detail": "p-day1 左侧竖排装饰标签字符互相堆叠且上端接近画布边缘，观感拥挤；正文标题、4.6公里数据与两张卡片均清晰可读，不影响信息传达。",
+                "page_ids": [
+                  "p-day1"
+                ],
+                "evidence_refs": [
+                  "4fc9e8b80847beb67d21c9bffe8ec3d1b0071ccdd0d9206be95449381ba9a009"
+                ]
+              },
+              {
+                "severity": "improvement",
+                "code": "decorative_label_overlap",
+                "detail": "p-prep 左侧竖排装饰标签中“准备清单”四字相互叠压，属装饰排版拥挤；标题、三条数据与五条清单均清晰、层级清楚，不影响阅读。",
+                "page_ids": [
+                  "p-prep"
+                ],
+                "evidence_refs": [
+                  "c00ba1e3db34ffabefe7e8611ee9ab2e427b7c43341b213a6144bf1d2deeab9e"
+                ]
+              }
+            ],
+            "project_ref": {
+              "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+              "artifact_ref": "project/revisions/542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-1:call_00_lpyyn0JBMpS0illGl1nf8327": {
+          "status": "completed",
+          "input_hash": "f1e469cb706fe14d1b679b3613977ccbcd94185cde209f0202052d3ccebfe904",
+          "result": {
+            "source_id": "6d3d8529-1414-4518-86f8-78d5694efe41",
+            "start": 0,
+            "end": 135,
+            "total": 135,
+            "text": "青岚市及以下景点全部为虚构，不对应真实票价和开放时间。旅行天数2天，同行人数5人。首日步行上限4.6公里，安排芦汀园与旧街摄影；次日步行上限3.2公里，安排星港步道与书店休息。偏好慢行、拍照、保留机动时间。不提供门票价格、交通班次、真实营业时间或商务项目的市场推广目标。"
+          }
+        },
+        "run-1:turn-2:call_00_WxBgTmj1TNvMFYNELdwj3883": {
+          "status": "completed",
+          "input_hash": "eb1b0ae18f4d8d2648908d0d9023be6d4c460cd4813529495fd726489c53a08b",
+          "result": {
+            "outline": {
+              "draft_revision": 1,
+              "title": "青岚市周末慢游：2天步行与摄影行程（虚构测评）",
+              "pages": [
+                {
+                  "page_id": "p-cover",
+                  "title": "青岚市周末慢游",
+                  "bullets": [
+                    "虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间",
+                    "行程规模：2天，同行5人",
+                    "偏好：慢行、拍照、保留机动时间",
+                    "步行上限：首日4.6公里，次日3.2公里"
+                  ]
+                },
+                {
+                  "page_id": "p-principles",
+                  "title": "行程原则：慢行、拍照、留机动",
+                  "bullets": [
+                    "慢行优先：两天步行分别控制在4.6公里与3.2公里以内",
+                    "摄影优先：首日安排芦汀园与旧街，次日安排星港步道",
+                    "保留机动时间：不把两天排满，留出拍照与临时停留余量",
+                    "状态标注：计划 / 未确定 / 已完成三类分开写，不把计划说成已完成",
+                    "资料未记录任何已完成事项，本稿全部为计划内容"
+                  ]
+                },
+                {
+                  "page_id": "p-day1",
+                  "title": "第一天：芦汀园与旧街摄影（步行上限4.6公里）",
+                  "bullets": [
+                    "步行上限4.6公里，按慢行节奏安排，不额外加景点",
+                    "上午：芦汀园，以园内步行为主，配合拍照",
+                    "下午：旧街，街拍与慢走，保留机动时间",
+                    "同行5人，统一节奏，不设置集合时限以外的硬指标",
+                    "状态：计划；开放时间与票价未确定，资料未提供"
+                  ]
+                },
+                {
+                  "page_id": "p-day2",
+                  "title": "第二天：星港步道与书店休息（步行上限3.2公里）",
+                  "bullets": [
+                    "步行上限3.2公里，比首日更轻",
+                    "星港步道：沿步道慢走，安排拍照停留",
+                    "书店休息：作为行程中的缓冲与休息点",
+                    "状态：计划；具体营业信息未确定，资料未提供",
+                    "资料未记录已完成事项，两天均为计划"
+                  ]
+                },
+                {
+                  "page_id": "p-prep",
+                  "title": "准备清单：步行、摄影与信息核对",
+                  "bullets": [
+                    "步行：按4.6公里与3.2公里上限安排鞋具与负重，5人同行统一节奏",
+                    "摄影：芦汀园、旧街、星港步道三处为主要拍摄点，备用电池与存储自行准备",
+                    "时间：两天都保留机动时间，不按分钟排满",
+                    "信息核对：票价、交通班次、真实营业时间均未确定，需出行前自行确认",
+                    "资料边界：不提供门票价格、交通班次、真实营业时间或商务推广目标"
+                  ]
+                },
+                {
+                  "page_id": "p-status",
+                  "title": "关键数据与状态说明",
+                  "bullets": [
+                    "行程天数：2天；同行人数：5人",
+                    "步行上限：第一天4.6公里，第二天3.2公里",
+                    "计划：芦汀园、旧街、星港步道、书店休息的先后安排",
+                    "未确定：票价、交通班次、真实开放与营业时间",
+                    "已完成：资料未记录，本稿不作任何完成性表述"
+                  ]
+                }
+              ]
+            },
+            "draft_ref": "project/drafts/bf911c78bcaa5aa977ebf2fe42ffa43ed7394b9db846284540aeffe452f2d5b2.json",
+            "project_ref": {
+              "revision_id": "b94e0c12-16bf-4037-b54e-9533129bcba5",
+              "artifact_ref": "project/revisions/b94e0c12-16bf-4037-b54e-9533129bcba5",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865": {
+          "status": "completed",
+          "input_hash": "420619674569669d6dcf06ad529c981dee936349c7cc7bf4e04725c0302e4d8f",
+          "result": {
+            "pages": [
+              {
+                "page_id": "p-principles",
+                "candidate_id": "157822607d05cd175de25346c82fee599ef1b6b2cf645fb698f0410ea185ff6c",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "p-cover",
+                "candidate_id": "e22073c96d1ff8c818888ce7383b81eba3202d716e4c527dc99aa86c4abd752a",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "p-day1",
+                "candidate_id": "5a7b25ecc9eb946bc8c69d42fadb7c1d88e3e159ce915dd5daaa2fafd77e4af4",
+                "issues": [
+                  {
+                    "kind": "overflow-y",
+                    "detail": "div.note 溢出 207px"
+                  },
+                  {
+                    "kind": "overflow-y",
+                    "detail": "div.note 溢出 349px"
+                  },
+                  {
+                    "kind": "overflow-y",
+                    "detail": "div.note 溢出 925px"
+                  }
+                ],
+                "repair": false
+              },
+              {
+                "page_id": "p-prep",
+                "candidate_id": "161669af4a78d6325fa5c31e76808850224a08c9864bd7a913e30c723bdac930",
+                "issues": [],
+                "repair": false
+              },
+              {
+                "page_id": "p-status",
+                "candidate_id": "88ab992afe6a5f3240efcb045f6981cf7c02d3b89e23f8a2094733fd35438d78",
+                "issues": [],
+                "repair": false
+              }
+            ],
+            "failures": [
+              {
+                "page_id": "p-day2",
+                "error": "No complete HTML document found (preview: <!doctype html>\n<html lang=\"zh-CN\">\n<head>\n<meta charset=\"utf-8\"/>\n<style>\n  html,body{margin:0;padding:0;width:1920px;h)"
+              }
+            ],
+            "project_ref": {
+              "revision_id": "6f5bc5d4-fb56-42f3-bd62-d7d2f6162b34",
+              "artifact_ref": "project/revisions/6f5bc5d4-fb56-42f3-bd62-d7d2f6162b34",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-cover": {
+          "status": "completed",
+          "input_hash": "339f15777ec9d0bb05adc42c990dd1ac511ead2fd09e5799ccf417b13d5b41a2",
+          "result": {
+            "page_id": "p-cover",
+            "candidate_id": "e22073c96d1ff8c818888ce7383b81eba3202d716e4c527dc99aa86c4abd752a",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "d87e5c3f-ddc2-47ce-acf5-9f9c425b972e",
+              "artifact_ref": "project/revisions/d87e5c3f-ddc2-47ce-acf5-9f9c425b972e",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-day1": {
+          "status": "completed",
+          "input_hash": "070a066ac3670a1e1d3269f95a78ed8d6a9b2df54ef1bae9407b92e9eda8e9a4",
+          "result": {
+            "page_id": "p-day1",
+            "candidate_id": "5a7b25ecc9eb946bc8c69d42fadb7c1d88e3e159ce915dd5daaa2fafd77e4af4",
+            "issues": [
+              {
+                "kind": "overflow-y",
+                "detail": "div.note 溢出 207px"
+              },
+              {
+                "kind": "overflow-y",
+                "detail": "div.note 溢出 349px"
+              },
+              {
+                "kind": "overflow-y",
+                "detail": "div.note 溢出 925px"
+              }
+            ],
+            "repair": false
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-day2": {
+          "status": "pending",
+          "input_hash": "b989f0c82b3c79bdbf0e7aad4f7ac5eea52759ef6551ab4b389177a31b9669d5"
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-prep": {
+          "status": "completed",
+          "input_hash": "d8aa4835df0a873d0a83f6efa684304dafbe6db14fb931d3a375bc2a758b2509",
+          "result": {
+            "page_id": "p-prep",
+            "candidate_id": "161669af4a78d6325fa5c31e76808850224a08c9864bd7a913e30c723bdac930",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "1aaaaba4-cab7-4aae-95b9-3344486554dc",
+              "artifact_ref": "project/revisions/1aaaaba4-cab7-4aae-95b9-3344486554dc",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-principles": {
+          "status": "completed",
+          "input_hash": "11beb94d377541e6c76b79161ac31c243fdc8fb010c8aa9d4e20efd9829ea131",
+          "result": {
+            "page_id": "p-principles",
+            "candidate_id": "157822607d05cd175de25346c82fee599ef1b6b2cf645fb698f0410ea185ff6c",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "3f19d519-5019-40af-b384-6d13a4809522",
+              "artifact_ref": "project/revisions/3f19d519-5019-40af-b384-6d13a4809522",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-3:call_00_ET_t9AtS458ZeUEgVSKE5yy3865:page:p-status": {
+          "status": "completed",
+          "input_hash": "4e34538e11360027f561407d9f07945dcc2118b7f1b00b2cbc2238a2e95dcb9a",
+          "result": {
+            "page_id": "p-status",
+            "candidate_id": "88ab992afe6a5f3240efcb045f6981cf7c02d3b89e23f8a2094733fd35438d78",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "6f5bc5d4-fb56-42f3-bd62-d7d2f6162b34",
+              "artifact_ref": "project/revisions/6f5bc5d4-fb56-42f3-bd62-d7d2f6162b34",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-4:call_00_6q6D1hfkg81ETQ3OR6mn7710": {
+          "status": "completed",
+          "input_hash": "4a55fd9f44048bd6bf332fb669efe15826194c41bf7f1fa516401e17756b93ba",
+          "result": {
+            "pages": [
+              {
+                "page_id": "p-day1",
+                "candidate_id": "f8919d0add2b68c808fdbe850fb70ee9aa18a51e5c1356d363a7548ccfe83bd2",
+                "issues": [
+                  {
+                    "kind": "overflow-y",
+                    "detail": "div.note 溢出 213px"
+                  },
+                  {
+                    "kind": "overflow-y",
+                    "detail": "div.note 溢出 349px"
+                  },
+                  {
+                    "kind": "overflow-y",
+                    "detail": "div.note 溢出 925px"
+                  }
+                ],
+                "repair": true
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "6f5bc5d4-fb56-42f3-bd62-d7d2f6162b34",
+              "artifact_ref": "project/revisions/6f5bc5d4-fb56-42f3-bd62-d7d2f6162b34",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-4:call_00_6q6D1hfkg81ETQ3OR6mn7710:page:p-day1": {
+          "status": "completed",
+          "input_hash": "597bd065ff9f94c2c7d084312d06229d8ff0250428d2b4562347598e7cb8a1e9",
+          "result": {
+            "page_id": "p-day1",
+            "candidate_id": "f8919d0add2b68c808fdbe850fb70ee9aa18a51e5c1356d363a7548ccfe83bd2",
+            "issues": [
+              {
+                "kind": "overflow-y",
+                "detail": "div.note 溢出 213px"
+              },
+              {
+                "kind": "overflow-y",
+                "detail": "div.note 溢出 349px"
+              },
+              {
+                "kind": "overflow-y",
+                "detail": "div.note 溢出 925px"
+              }
+            ],
+            "repair": true
+          }
+        },
+        "run-1:turn-5:call_00_yzA2JHTtlAPhiVa3Oag63267": {
+          "status": "completed",
+          "input_hash": "2b298afd703d159c175e07c81b7e39290c60681fceb7ff3a4735e62eb1467959",
+          "result": {
+            "pages": []
+          }
+        },
+        "run-1:turn-6:call_00_38SzJpwAbtl7osWMzOpo5486": {
+          "status": "completed",
+          "input_hash": "66e4d4c5c4a5c5573c30cb3f2b210c50477b42170182404601c6e06c73034e9e",
+          "result": {
+            "pages": [
+              {
+                "page_id": "p-day1",
+                "candidate_id": "6fbc4e852ab928e1273c85b989e5c8cc47dd4f0c4b84c1f47bf293bcd2264404",
+                "issues": [],
+                "repair": true
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "9bea7473-bc41-475b-b146-c04509324e26",
+              "artifact_ref": "project/revisions/9bea7473-bc41-475b-b146-c04509324e26",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-6:call_00_38SzJpwAbtl7osWMzOpo5486:page:p-day1": {
+          "status": "completed",
+          "input_hash": "afe3c7b960880d5be09b000f6d7464dbcd37f20ea1af6b67b99638dbd591ab48",
+          "result": {
+            "page_id": "p-day1",
+            "candidate_id": "6fbc4e852ab928e1273c85b989e5c8cc47dd4f0c4b84c1f47bf293bcd2264404",
+            "issues": [],
+            "repair": true,
+            "project_ref": {
+              "revision_id": "9bea7473-bc41-475b-b146-c04509324e26",
+              "artifact_ref": "project/revisions/9bea7473-bc41-475b-b146-c04509324e26",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-7:call_00_ET_GG9yIvtAltU0VaJzayAN9353": {
+          "status": "completed",
+          "input_hash": "8174f513f87f3854990a68b16966ff77736f5693f5f365cb6c0948cc2994cc62",
+          "result": {
+            "pages": [
+              {
+                "page_id": "p-day2",
+                "candidate_id": "d8b63ceece7a8d92e48862f1079e3fe59657ce59d4e7e6b3baaeea3757e503fa",
+                "issues": [],
+                "repair": false
+              }
+            ],
+            "failures": [],
+            "project_ref": {
+              "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+              "artifact_ref": "project/revisions/542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-7:call_00_ET_GG9yIvtAltU0VaJzayAN9353:page:p-day2": {
+          "status": "completed",
+          "input_hash": "41a69278302f8724438acaf08190b788babd072d8bf22df67f7c686c6632c0aa",
+          "result": {
+            "page_id": "p-day2",
+            "candidate_id": "d8b63ceece7a8d92e48862f1079e3fe59657ce59d4e7e6b3baaeea3757e503fa",
+            "issues": [],
+            "repair": false,
+            "project_ref": {
+              "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+              "artifact_ref": "project/revisions/542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+              "outline_revision": 1,
+              "constraints_revision": 1
+            }
+          }
+        },
+        "run-1:turn-8:call_00_ET_tXLyEZYwH4pCobzFH6TF5973": {
+          "status": "completed",
+          "input_hash": "63bfcaadda7689c64d4bce5cdd9954474058afb33dcd9e8b542eb88ecb56624e",
+          "result": {
+            "evidence": [
+              {
+                "page_id": "p-cover",
+                "text": " \n \n \n \n 青岚市周末慢游 — 封面 \n\n \n \n \n    \n    \n    \n    \n\n    \n    \n\n   青岚市 · 城市步行与摄影 · 两天 \n   虚构测评 · 非真实行程 \n   WEEKEND SLOW WALK · 2 DAYS \n\n   \n      \n      \n      \n      \n      \n   \n\n   \n       虚构测评行程 \n     青岚市周末慢游 \n      \n     2 天步行与摄影行程 / 慢行 · 拍照 · 留机动 \n     \n       出行日期 待定\n       资料未记录具体日期，出行前自行确认 \n     \n   \n\n   \n     \n        2  天  \n       行程规模 \n     \n     \n        5  人  \n       同行人数 \n     \n     \n        4.6  公里  \n       首日步行上限 \n     \n     \n        3.2  公里  \n       次日步行上限 \n     \n   \n\n     虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。 \n\n   1 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "p-principles",
+                "text": "     \n \n \n    \n        \n    \n    \n      \n   QINGLAN SLOW WALK · PRINCIPLES · 02 \n   青岚市周末慢游 / 行程原则 \n\n            \n\n   \n     02 \n      \n     行 程 原 则 \n   \n\n   行程原则： 慢行、拍照、留机动  \n\n   两天行程以 慢行与摄影 为优先，不把时间排满；状态分开标注， 计划内容不等同于已完成 。 \n    \n\n   \n     \n       01 \n       \n         慢行优先 步行上限  \n         两天步行分别控制在  4.6 公里  与  3.2 公里  以内，按慢行节奏安排，不为凑景点加量。 \n       \n     \n     \n       02 \n       \n         摄影优先 \n         首日安排芦汀园与旧街，次日安排星港步道；拍摄停留计入行程节奏，而非额外加项。 \n       \n     \n     \n       03 \n       \n         保留机动时间 \n         不把两天排满，留出拍照与临时停留的余量。 \n       \n     \n     \n       04 \n       \n         状态标注：计划 / 未确定 / 已完成 三类分开写 \n         不把计划说成已完成。资料未记录任何已完成事项，本稿全部为计划内容。 \n       \n     \n   \n\n    \n\n   \n     \n       步 行 上 限 \n       两天分别计量 \n     \n     \n       \n         第 一 天 \n         芦汀园 · 旧街 \n       \n        4.6  公里  \n     \n     \n       \n         第 二 天 \n         星港步道 · 书店休息 \n       \n        3.2  公里  \n     \n\n     \n       状 态 三 分 \n       \n         计划 \n          芦汀园、旧街、星港步道、书店休息 的先后安排 \n       \n       \n         未确定 \n         票价、交通班次、开放与营业时间，资料未提供 \n       \n       \n         已完成 \n         资料未记录，不作任何完成性表述 \n       \n     \n   \n\n    \n   虚构测评材料 · 青岚市及全部景点均为虚构 \n\n   \n      \n     2 \n     / 6 \n   \n \n  ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "p-day1",
+                "text": " \n \n \n \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n   第一天 · 芦汀园与旧街摄影 \n\n    \n   青岚市周末慢游 · 2 天步行与摄影行程 \n   虚构测评材料 \n\n     行程 · 第一天 \n   第一天：芦汀园与旧街摄影 （步行上限4.6公里）  \n\n   \n     按慢行节奏安排，不额外加景点；下午旧街一段保留机动时间。 \n     状态： 计划 ；开放时间与票价未确定，资料未提供。 \n   \n\n    \n\n   \n     \n       步行上限 \n       4.6 公里  \n       慢行节奏，不加景点 \n     \n     \n       同行人数 \n       5 人  \n       统一节奏，不设集合时限以外的硬指标 \n     \n     \n       行程状态 \n       计划 \n       开放时间与票价未确定 \n     \n   \n\n     当日的两段安排 \n\n   \n      \n     01 \n     上午 \n     芦汀园 \n     以园内步行为主，配合拍照。 \n     \n       园内步行 \n       拍照 \n     \n   \n\n   \n      \n     02 \n     下午 \n     旧街 \n     街拍与慢走，保留机动时间。 \n     \n       街拍 \n       慢走 \n       机动时间 \n     \n   \n\n     本页为 计划 内容；资料未记录任何已完成事项，开放时间与票价仍未确定。 \n\n    \n   青岚市及全部景点均为虚构 · 不对应真实票价与开放时间 \n   3 / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              },
+              {
+                "page_id": "p-day2",
+                "text": " \n \n \n \n 第二天：星港步道与书店休息（步行上限3.2公里） \n\n \n \n \n    \n    \n    \n    \n    \n    \n\n    \n    \n    \n    \n   DAY 02 · 星港步道 · 步行上限 3.2 KM \n   青岚市周末慢游  ／  第二天 \n\n   \n            \n   \n\n   \n   \n       第二天 · 步行上限 3.2 公里 \n     第二天：星港步道与书店休息 （步行上限3.2公里）  \n     步行上限  3.2 公里 ，比首日更轻。全程以慢走与拍照停留为主，书店休息作为行程中的缓冲与休息点。 \n      \n     两天步行上限对比 \n     \n       第一天 \n          \n       4.6 公里 \n     \n     \n       第二天 \n          \n       3.2 公里 \n     \n     资料来源：本次虚构测评材料，未补充外部信息。 \n   \n\n   \n   \n     01 \n     \n       星港步道 \n       计划 \n     \n     沿步道慢走，安排拍照停留。 \n     节奏：慢行 · 拍照停留为行程内的既定安排 \n   \n\n   \n     02 \n     \n       书店休息 \n       计划 \n     \n     作为行程中的缓冲与休息点。 \n     具体营业信息  未确定 ，资料未提供 \n   \n\n   \n   \n     \n         计划 \n       星港步道慢走、拍照停留、书店休息，均为本页的计划安排。 \n     \n     \n         未确定 \n       具体营业信息未确定，资料未提供，需出行前自行确认。 \n     \n     \n         已完成 \n       资料未记录已完成事项，两天均为计划。 \n     \n   \n\n    \n   虚构测评材料 · 青岚市及景点均为虚构，不对应真实票价与开放时间 \n    4  / 6 \n \n \n ",
+                "report": {
+                  "ok": true,
+                  "issues": []
+                }
+              }
+            ],
+            "has_images": true,
+            "evidence_id": "4fc9e8b80847beb67d21c9bffe8ec3d1b0071ccdd0d9206be95449381ba9a009",
+            "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7"
+          }
+        },
+        "run-1:turn-9:call_00_yqXRH0TcarwxkEaSQBdA5685": {
+          "status": "completed",
+          "input_hash": "0220f43a23b6b3452be2c6f37c06ff8ae420fcec89d8886ef6c68a3860bbc8fe",
+          "result": {
+            "check_id": "visual-3e9b685f0ba96081a09e1756710a4fef22edb960c0054e9052ca254075e9b12b",
+            "revision_id": "542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+            "issues": [
+              {
+                "severity": "improvement",
+                "code": "decorative_label_overlap",
+                "detail": "p-day1 左侧竖排装饰标签字符互相堆叠且上端接近画布边缘，观感拥挤；正文标题、4.6公里数据与两张卡片均清晰可读，不影响信息传达。",
+                "page_ids": [
+                  "p-day1"
+                ],
+                "evidence_refs": [
+                  "4fc9e8b80847beb67d21c9bffe8ec3d1b0071ccdd0d9206be95449381ba9a009"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "instance_id": "d71827a0-f4a9-4492-844e-5db463b50c98"
+    },
+    "id": "deck-2595d847",
+    "runDir": "D:\\SlideForge\\artifacts\\decks\\deck-2595d847\\project\\revisions\\542f3255-5fb1-4f0d-bfc2-9973096a9da7",
+    "title": "青岚市周末慢游：2天步行与摄影行程（虚构测评）",
+    "status": "ready",
+    "events": [],
+    "overflowPages": [],
+    "ownerKeyHash": "1d4406d916d7d670c58dd5786dea22a122362e8d454f8e835c81a1436c6374b2",
+    "createdAt": "2026-11-12T11:29:52.318Z",
+    "updatedAt": "2026-11-12T11:34:08.5260144Z"
+  },
+  "scene": {
+    "category": "旅游",
+    "subtype": "城市步行摄影周末行程（虚构测评材料）",
+    "reason": "主题为虚构城市青岚市的2天周末慢游行程，受众是喜欢步行与摄影的普通游客，按行程原则/两天安排/准备清单组织，属于旅游行程类而非企业叙事。"
+  },
+  "delivery_success": true,
+  "score": {
+    "page_count": 6,
+    "page_count_ok": true,
+    "facts": [
+      {
+        "subject": "旅行天数",
+        "value": "2",
+        "unit": "天",
+        "matched": false,
+        "value_present": true
+      },
+      {
+        "subject": "首日步行上限",
+        "value": "4.6",
+        "unit": "公里",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 1,
+          "text": "青岚市 · 城市步行与摄影 · 两天 虚构测评 · 非真实行程 WEEKEND SLOW WALK · 2 DAYS 虚构测评行程 青岚市周末慢游 2 天步行与摄影行程 / 慢行 · 拍照 · 留机动 出行日期 待定 资料未记录具体日期，出行前自行确认 2 天 行程规模 5 人 同行人数 4.6 公里 首日步行上限 3.2 公里 次日步行上限 虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。 1 / 6"
+        }
+      },
+      {
+        "subject": "次日步行上限",
+        "value": "3.2",
+        "unit": "公里",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 1,
+          "text": "青岚市 · 城市步行与摄影 · 两天 虚构测评 · 非真实行程 WEEKEND SLOW WALK · 2 DAYS 虚构测评行程 青岚市周末慢游 2 天步行与摄影行程 / 慢行 · 拍照 · 留机动 出行日期 待定 资料未记录具体日期，出行前自行确认 2 天 行程规模 5 人 同行人数 4.6 公里 首日步行上限 3.2 公里 次日步行上限 虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。 1 / 6"
+        }
+      },
+      {
+        "subject": "同行人数",
+        "value": "5",
+        "unit": "人",
+        "matched": true,
+        "value_present": true,
+        "evidence": {
+          "page": 1,
+          "text": "青岚市 · 城市步行与摄影 · 两天 虚构测评 · 非真实行程 WEEKEND SLOW WALK · 2 DAYS 虚构测评行程 青岚市周末慢游 2 天步行与摄影行程 / 慢行 · 拍照 · 留机动 出行日期 待定 资料未记录具体日期，出行前自行确认 2 天 行程规模 5 人 同行人数 4.6 公里 首日步行上限 3.2 公里 次日步行上限 虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。 1 / 6"
+        }
+      }
+    ],
+    "facts_hit": 3,
+    "facts_total": 4,
+    "sections": [
+      {
+        "title": "行程原则",
+        "matched": true
+      },
+      {
+        "title": "第一天",
+        "matched": true
+      },
+      {
+        "title": "第二天",
+        "matched": true
+      },
+      {
+        "title": "准备清单",
+        "matched": true
+      }
+    ],
+    "section_hits": 4,
+    "overflow_pages": [],
+    "layout_ok": true,
+    "reports": [
+      {
+        "page": 1,
+        "page_id": "p-cover",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 2,
+        "page_id": "p-principles",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 3,
+        "page_id": "p-day1",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 4,
+        "page_id": "p-day2",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 5,
+        "page_id": "p-prep",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 6,
+        "page_id": "p-status",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      }
+    ],
+    "scoring_ms": 2733.1546000000017,
+    "rules_pass": false
+  },
+  "export": {
+    "elapsed_ms": 44204.50139999995,
+    "file": "D:\\SlideForge\\.scratch\\harness-real-eval\\20261112-real-1\\travel-harness\\deck.pptx",
+    "zip_ok": true,
+    "slide_count": 6,
+    "presentation_slide_count": 6,
+    "all_slides_have_text": true,
+    "slides": [
+      {
+        "file": "ppt/slides/slide1.xml",
+        "text": "虚构测评行程\n青岚市周末慢游\n2 天步行与摄影行程\n/\n慢行 · 拍照 · 留机动\n待定\n出行日期\n资料未记录具体日期，出行前自行确认\n2\n天\n行程规模\n5\n人\n同行人数\n4.6\n公里\n首日步行上限\n3.2\n公里\n次日步行上限\n虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。\n青岚市 · 城市步行与摄影 · 两天\n虚构测评 · 非真实行程\nWEEKEND SLOW WALK · 2 DAYS\n1 / 6"
+      },
+      {
+        "file": "ppt/slides/slide2.xml",
+        "text": "QINGLAN SLOW WALK · PRINCIPLES · 02\n青岚市周末慢游 / 行程原则\n02\n行 程 原 则\n行程原则：\n慢行、拍照、留机动\n两天行程以\n慢行与摄影\n为优先，不把时间排满；状态分开标注，\n计划内容不等同于已完成\n。\n01\n慢行优先\n步行上限\n两天步行分别控制在 \n4.6 公里\n 与 \n3.2 公里\n 以内，按慢行节奏安排，不为凑景点加量。\n02\n摄影优先\n首日安排芦汀园与旧街，次日安排星港步道；拍摄停留计入行程节奏，而非额外加项。\n03\n保留机动时间\n不把两天排满，留出拍照与临时停留的余量。\n04\n状态标注：计划 / 未确定 / 已完成 三类分开写\n不把计划说成已完成。资料未记录任何已完成事项，本稿全部为计划内容。\n步 行 上 限\n两天分别计量\n第 一 天\n芦汀园 · 旧街\n4.6\n公里\n第 二 天\n星港步道 · 书店休息\n3.2\n公里\n状 态 三 分\n计划\n芦汀园、旧街、星港步道、书店休息\n的先后安排\n未确定\n票价、交通班次、开放与营业时间，资料未提供\n已完成\n资料未记录，不作任何完成性表述\n虚构测评材料 · 青岚市及全部景点均为虚构\n2\n/ 6"
+      },
+      {
+        "file": "ppt/slides/slide3.xml",
+        "text": "步行上限\n4.6\n公里\n慢行节奏，不加景点\n同行人数\n5\n人\n统一节奏，不设集合时限以外的硬指标\n行程状态\n计划\n开放时间与票价未确定\n01\n上午\n芦汀园\n以园内步行为主，配合拍照。\n园内步行\n拍照\n02\n下午\n旧街\n街拍与慢走，保留机动时间。\n街拍\n慢走\n机动时间\n行程 · 第一天\n第一天：芦汀园与旧街摄影\n（步行上限4.6公里）\n按慢行节奏安排，不额外加景点；下午旧街一段保留机动时间。\n状态：\n计划\n；开放时间与票价未确定，资料未提供。\n当日的两段安排\n本页为\n内容；资料未记录任何已完成事项，开放时间与票价仍未确定。\n计划\n青岚市及全部景点均为虚构 · 不对应真实票价与开放时间\n第一天 · 芦汀园与旧街摄影\n青岚市周末慢游 · 2 天步行与摄影行程\n虚构测评材料\n3 / 6"
+      },
+      {
+        "file": "ppt/slides/slide4.xml",
+        "text": "第二天 · 步行上限 3.2 公里\n第二天：星港步道与书店休息\n（步行上限3.2公里）\n步行上限 \n3.2 公里\n，比首日更轻。全程以慢走与拍照停留为主，书店休息作为行程中的缓冲与休息点。\n两天步行上限对比\n第一天\n4.6 公里\n第二天\n3.2 公里\n资料来源：本次虚构测评材料，未补充外部信息。\n01\n星港步道\n计划\n沿步道慢走，安排拍照停留。\n节奏：慢行 · 拍照停留为行程内的既定安排\n02\n书店休息\n计划\n作为行程中的缓冲与休息点。\n具体营业信息 \n未确定\n，资料未提供\n计划\n星港步道慢走、拍照停留、书店休息，均为本页的计划安排。\n未确定\n具体营业信息未确定，资料未提供，需出行前自行确认。\n已完成\n资料未记录已完成事项，两天均为计划。\nDAY 02 · 星港步道 · 步行上限 3.2 KM\n青岚市周末慢游 \n／\n 第二天\n虚构测评材料 · 青岚市及景点均为虚构，不对应真实票价与开放时间\n4\n / 6"
+      },
+      {
+        "file": "ppt/slides/slide5.xml",
+        "text": "05\n准备清单\n准备清单：\n步行、摄影与信息核对\n围绕两天步行上限与三处主要拍摄点准备鞋具、负重与器材；时间上保留机动，未确定信息须出行前自行确认。\n行程天数\n2\n天\n同行人数\n5\n人\n步行上限\n4.6/3.2\n公里\n状态：计划 · 资料未记录已完成事项\n01\n步行\n按 \n4.6公里\n与 \n3.2公里\n上限安排鞋具与负重，5人同行统一节奏。\n计划\n02\n摄影\n芦汀园、旧街、星港步道三处为主要拍摄点；备用电池与存储自行准备。\n计划\n03\n时间\n两天都保留机动时间，不按分钟排满。\n计划\n04\n信息核对\n票价、交通班次、真实营业时间均未确定，需出行前自行确认。\n未确定\n05\n资料边界\n不提供门票价格、交通班次、真实营业时间或商务推广目标。\n边界\n青岚市周末慢游 · 2天步行与摄影行程 · 虚构测评\nPREPARATION · 准备清单\n虚构测评材料 · 青岚市及全部景点均为虚构\n5 / 6"
+      },
+      {
+        "file": "ppt/slides/slide6.xml",
+        "text": "关键数据与状态说明\n两天行程全部为计划内容；未确定项与已完成项分开标注\n关 键 数 据\n行程天数\n2\n天\n两天均为计划，未记录已完成事项\n同行人数\n5\n人\n统一节奏，不设硬指标\n第一天步行上限\n4.6\n公里\n芦汀园 · 旧街\n第二天步行上限\n3.2\n公里\n星港步道 · 书店休息\n状 态 区 分\n计划\n全 部 待 执 行\n01\n第一天：芦汀园 → 旧街\n以园内步行与街拍为主\n02\n第二天：星港步道 → 书店休息\n步道慢走，书店作为缓冲\n03\n两天均保留机动时间\n留出拍照与临时停留余量\n未确定\n资 料 未 提 供\n01\n票价\n不提供门票价格\n02\n交通班次\n需出行前自行确认\n03\n真实开放与营业时间\n芦汀园、旧街、星港步道、书店均未确定\n已完成\n0 项\n资料未记录已完成事项\n本稿不作任何完成性表述，不把计划说成已完成。\n青岚市周末慢游 · 关键数据与状态说明\n虚构测评材料\n青岚市及全部景点均为虚构 · 不编造日期、预算或业务成果\n6 / 6"
+      }
+    ],
+    "bytes": 919245,
+    "pass": true
+  },
+  "total_ms": 306587.85990000004,
+  "finished_at": "2026-11-12T11:34:58.886Z",
+  "model_calls": 23,
+  "cost_peak_cny": 0.9693700000000001,
+  "initial_score": {
+    "page_count": 6,
+    "page_count_ok": true,
+    "facts": [
+      {
+        "subject": "旅行天数",
+        "value": "2",
+        "unit": "天",
+        "matched": false
+      },
+      {
+        "subject": "首日步行上限",
+        "value": "4.6",
+        "unit": "公里",
+        "matched": true,
+        "evidence": {
+          "page": 1,
+          "text": "青岚市 · 城市步行与摄影 · 两天\n虚构测评 · 非真实行程\nWEEKEND SLOW WALK · 2 DAYS\n虚构测评行程\n青岚市周末慢游\n\n2 天步行与摄影行程/慢行 · 拍照 · 留机动\n\n出行日期\n待定\n资料未记录具体日期，出行前自行确认\n\n2\n天\n行程规模\n5\n人\n同行人数\n4.6\n公里\n首日步行上限\n3.2\n公里\n次日步行上限\n\n虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。\n\n1 / 6"
+        }
+      },
+      {
+        "subject": "次日步行上限",
+        "value": "3.2",
+        "unit": "公里",
+        "matched": true,
+        "evidence": {
+          "page": 1,
+          "text": "青岚市 · 城市步行与摄影 · 两天\n虚构测评 · 非真实行程\nWEEKEND SLOW WALK · 2 DAYS\n虚构测评行程\n青岚市周末慢游\n\n2 天步行与摄影行程/慢行 · 拍照 · 留机动\n\n出行日期\n待定\n资料未记录具体日期，出行前自行确认\n\n2\n天\n行程规模\n5\n人\n同行人数\n4.6\n公里\n首日步行上限\n3.2\n公里\n次日步行上限\n\n虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。\n\n1 / 6"
+        }
+      },
+      {
+        "subject": "同行人数",
+        "value": "5",
+        "unit": "人",
+        "matched": true,
+        "evidence": {
+          "page": 1,
+          "text": "青岚市 · 城市步行与摄影 · 两天\n虚构测评 · 非真实行程\nWEEKEND SLOW WALK · 2 DAYS\n虚构测评行程\n青岚市周末慢游\n\n2 天步行与摄影行程/慢行 · 拍照 · 留机动\n\n出行日期\n待定\n资料未记录具体日期，出行前自行确认\n\n2\n天\n行程规模\n5\n人\n同行人数\n4.6\n公里\n首日步行上限\n3.2\n公里\n次日步行上限\n\n虚构测评材料：青岚市及全部景点均为虚构，不对应真实票价与开放时间。\n\n1 / 6"
+        }
+      }
+    ],
+    "facts_hit": 3,
+    "facts_total": 4,
+    "sections": [
+      {
+        "title": "行程原则",
+        "matched": true
+      },
+      {
+        "title": "第一天",
+        "matched": true
+      },
+      {
+        "title": "第二天",
+        "matched": true
+      },
+      {
+        "title": "准备清单",
+        "matched": true
+      }
+    ],
+    "section_hits": 4,
+    "overflow_pages": [],
+    "layout_ok": true,
+    "reports": [
+      {
+        "page": 1,
+        "page_id": "p-cover",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 2,
+        "page_id": "p-principles",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 3,
+        "page_id": "p-day1",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 4,
+        "page_id": "p-day2",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 5,
+        "page_id": "p-prep",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      },
+      {
+        "page": 6,
+        "page_id": "p-status",
+        "report": {
+          "ok": true,
+          "issues": []
+        }
+      }
+    ],
+    "scoring_ms": 5820.998700000346,
+    "rules_pass": false
+  }
+}

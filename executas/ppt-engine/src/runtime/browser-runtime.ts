@@ -1,4 +1,5 @@
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { access } from "node:fs/promises";
 
 import { resolveBundledBrowserExecutable } from "./bundled-browser-runtime.js";
@@ -295,6 +296,25 @@ export async function launchManagedBrowser(
   puppeteer: any,
   input: LaunchManagedBrowserInput,
 ): Promise<BrowserRuntimeBrowserLike> {
+  const root=process.env.SLIDEFORGE_EMBEDDED_EXPORT_ROOT;
+  const launch=async(options:any)=>{
+    const browser=await puppeteer.launch({...options,...(root?{detached:false}:{})});
+    if(root) {
+      const createPage=browser.newPage.bind(browser);
+      browser.newPage=async()=>{
+        const page=await createPage();await page.setRequestInterception(true);let blocked=false;
+        page.on("request",(request:any)=>{
+          const url=request.url();let allowed=/^(?:data:|about:blank)/i.test(url);
+          if(url.startsWith("file:")){const target=path.resolve(fileURLToPath(url));allowed=target.startsWith(path.resolve(root)+path.sep)}
+          if(!allowed)blocked=true;
+          void (allowed?request.continue():request.abort());
+        });
+        const navigate=page.goto.bind(page);page.goto=async(...args:any[])=>{const result=await navigate(...args);if(blocked)throw new Error("Snapshot attempted to load a resource outside its workspace");return result};
+        return page;
+      };
+    }
+    return browser;
+  };
   const explicitExecutablePath = getNonEmptyString(input.launchOptions?.executablePath);
   const explicitChannel = getNonEmptyString(input.launchOptions?.channel);
   const normalizedLaunchOptions = {
@@ -306,7 +326,7 @@ export async function launchManagedBrowser(
 
   if (explicitExecutablePath || explicitChannel) {
     try {
-      return (await puppeteer.launch(normalizedLaunchOptions)) as BrowserRuntimeBrowserLike;
+      return (await launch(normalizedLaunchOptions)) as BrowserRuntimeBrowserLike;
     } catch (error) {
       const targetLabel = explicitExecutablePath
         ? `executablePath "${explicitExecutablePath}"`
@@ -321,7 +341,7 @@ export async function launchManagedBrowser(
   const configuredExecutable = getConfiguredChromeExecutable();
   if (configuredExecutable) {
     try {
-      return (await puppeteer.launch({
+      return (await launch({
         ...normalizedLaunchOptions,
         executablePath: configuredExecutable.value,
       })) as BrowserRuntimeBrowserLike;
@@ -347,7 +367,7 @@ export async function launchManagedBrowser(
 
   if (bundledExecutablePath) {
     try {
-      return (await puppeteer.launch({
+      return (await launch({
         ...normalizedLaunchOptions,
         executablePath: bundledExecutablePath,
       })) as BrowserRuntimeBrowserLike;
@@ -365,7 +385,7 @@ export async function launchManagedBrowser(
 
   if (systemExecutablePath) {
     try {
-      return (await puppeteer.launch({
+      return (await launch({
         ...normalizedLaunchOptions,
         executablePath: systemExecutablePath,
       })) as BrowserRuntimeBrowserLike;
@@ -381,7 +401,7 @@ export async function launchManagedBrowser(
   }
 
   try {
-    return (await puppeteer.launch(normalizedLaunchOptions)) as BrowserRuntimeBrowserLike;
+    return (await launch(normalizedLaunchOptions)) as BrowserRuntimeBrowserLike;
   } catch (error) {
     throw createBrowserLaunchError(input.purpose, attempts, error);
   }

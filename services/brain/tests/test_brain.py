@@ -1,3 +1,4 @@
+import base64
 import json
 import threading
 import unittest
@@ -103,6 +104,16 @@ class BrainHTTPTests(unittest.TestCase):
         })
         self.assertEqual(result["summary"], {"total": 1, "passed": 1, "failed": 0})
         self.assertTrue(result["results"][0]["passed"])
+
+    def test_document_extract_accepts_attachment_larger_than_two_mib(self):
+        text = "A" * (2 * 1024 * 1024)
+        result = self._post("/internal/brain/document-extract", {
+            "filename": "report.txt",
+            "content_base64": base64.b64encode(text.encode("utf-8")).decode("ascii"),
+        })
+        self.assertEqual(result["kind"], "txt")
+        self.assertEqual(result["chars"], len(text))
+        self.assertEqual(result["text"], text)
 
     def _post(self, path, body, token="brain-secret"):
         headers = {"Content-Type": "application/json"}

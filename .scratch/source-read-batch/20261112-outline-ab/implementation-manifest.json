@@ -1,0 +1,26 @@
+[
+  {
+    "file": "services/brain/brain/harness.py",
+    "sha256": "0df8efde9da8d9f2f48ae98ec90acdd2cef5718f058d865979ef9f971710126d"
+  },
+  {
+    "file": "services/brain/brain/agent_tools.py",
+    "sha256": "b62eb038bc14d13bbdc3f99b528753bdf40709dfc7eb1d165cf7f9e43f351529"
+  },
+  {
+    "file": "src/capabilities/agent.ts",
+    "sha256": "89215afe565f080a0a2ff24eebb88cb2c005bdb73cf16e0476fb5ae08a1ab9b2"
+  },
+  {
+    "file": "services/brain/tests/test_harness.py",
+    "sha256": "1d730089c947af364ec9b90d0960d242dee3023b32a5e965a832332dac0b4dfa"
+  },
+  {
+    "file": "tests/capabilities/agentRecoveryBoundaries.test.ts",
+    "sha256": "b326b3acaac514ca0cede75fd603b3b7bccde35e0ffdd7b249ffb12d78ae07e6"
+  },
+  {
+    "file": "CHANGELOG.md",
+    "sha256": "9c67c86f292b0cd60f0b2d90cd551551d8ba008bc38b778218a96b94404f2783"
+  }
+]

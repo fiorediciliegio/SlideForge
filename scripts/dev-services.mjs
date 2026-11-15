@@ -23,6 +23,7 @@ const shared = {
   SLIDEFORGE_BILLING_API_URL: process.env.SLIDEFORGE_BILLING_API_URL ?? `http://127.0.0.1:${gatewayPort}/internal`,
   SLIDEFORGE_JOB_API_URL: process.env.SLIDEFORGE_JOB_API_URL ?? `http://127.0.0.1:${gatewayPort}/internal/jobs`,
   SLIDEFORGE_FILE_API_URL: process.env.SLIDEFORGE_FILE_API_URL ?? `http://127.0.0.1:${gatewayPort}/internal/files`,
+  SLIDEFORGE_ENGINE_API_URL: process.env.SLIDEFORGE_ENGINE_API_URL ?? `http://127.0.0.1:${gatewayPort}/internal/engine`,
   SLIDEFORGE_BRAIN_API_URL: process.env.SLIDEFORGE_BRAIN_API_URL ?? `http://127.0.0.1:${brainPort}/internal/brain`,
 };
 const definitions = [

@@ -11,9 +11,16 @@ from .config import BrainConfig
 from .prompts import build_outline_messages
 
 
+def _saved_message(result):
+    message = copy.deepcopy(result["choices"][0]["message"])
+    message["_read_revision_id"] = result.get("_project_revision_id")
+    return message
+
+
 def agent_complete(config: BrainConfig, state, call_id: str, messages: list, tools: list) -> dict:
     """One provider request; calls and usage share the durable execution budget."""
     run = state.snapshot()["agent"]
+    decision_revision = (run.get("project_ref") or {}).get("revision_id", "")
     if any(call["status"]=="unknown" for call in run.get("calls",{}).values()):
         raise RuntimeError("存在结果未知的模型调用，需要用户明确处理后继续")
     pricing = run.get("pricing")
@@ -23,7 +30,7 @@ def agent_complete(config: BrainConfig, state, call_id: str, messages: list, too
         raise ValueError("恢复任务的模型或端点与原报价不一致，请恢复原配置或开始新的执行")
     if not config.openai_api_key:
         raise ValueError("Python 大脑层未配置 OPENAI_API_KEY")
-    payload = {"model": config.openai_model, "messages": messages, "tools": tools, "temperature": 0.4, "max_tokens": 4096}
+    payload = {"model": config.openai_model, "messages": messages, "tools": tools, "temperature": 0.4, "max_tokens": 8192}
     encoded = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     input_hash = hashlib.sha256(encoded).hexdigest()
     calls = run.get("calls", {})
@@ -36,7 +43,7 @@ def agent_complete(config: BrainConfig, state, call_id: str, messages: list, too
         call_id = base_id + ":retry:" + str(len(related))
         existing = None
     if existing and existing["status"] == "completed":
-        return state.read_response(existing["response_ref"])["choices"][0]["message"]
+        return _saved_message(state.read_response(existing["response_ref"]))
     if existing and existing["status"] not in ("reserved", "rejected"):
         raise RuntimeError(f"调用 {call_id} 结果未知，禁止自动重发")
     estimated_input_tokens = len(encoded)
@@ -52,7 +59,7 @@ def agent_complete(config: BrainConfig, state, call_id: str, messages: list, too
                         image_tokens += 1024
                         part["image_url"] = {}
         estimated_input_tokens = len(json.dumps(estimate, ensure_ascii=False).encode("utf-8")) + image_tokens
-    cost = (estimated_input_tokens * pricing["input_cny_per_million"] + 4096 * pricing["output_cny_per_million"]) / 1_000_000
+    cost = (estimated_input_tokens * pricing["input_cny_per_million"] + payload["max_tokens"] * pricing["output_cny_per_million"]) / 1_000_000
     state.mutate("reserve_call", call_id=call_id, input_hash=input_hash, cost=cost)
     state.mutate("send_call", call_id=call_id)
     request = urllib.request.Request(f"{config.openai_base_url}/chat/completions", data=encoded,
@@ -61,11 +68,12 @@ def agent_complete(config: BrainConfig, state, call_id: str, messages: list, too
         timeout = max(1, min(240, run["budget"]["limit_seconds"] - run["budget"]["active_seconds"]))
         with urllib.request.urlopen(request, timeout=timeout) as response:
             result = json.loads(response.read().decode("utf-8"))
+        result["_project_revision_id"] = decision_revision
         response_ref = state.save_response(call_id, result)
         usage = result["usage"]
         actual = (usage["prompt_tokens"] * pricing["input_cny_per_million"] + usage["completion_tokens"] * pricing["output_cny_per_million"]) / 1_000_000
         state.mutate("settle_call", call_id=call_id, cost=actual, response_ref=response_ref, usage=usage)
-        return result["choices"][0]["message"]
+        return _saved_message(result)
     except urllib.error.HTTPError as error:
         state.mutate("reject_call" if 400 <= error.code < 500 else "mark_unknown", call_id=call_id)
         raise

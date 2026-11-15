@@ -652,7 +652,7 @@
       state.deckId = created.deck_id;
       if (!state.deckId) {
         $("status").textContent = `创建失败：${created.error ?? "未知错误"}`;
-        addMessage("assistant", `创建失败：${created.error ?? "未知错误"}（请检查 API Key 与点数）`);
+        addMessage("assistant", `创建失败：${created.error ?? "未知错误"}`);
         $("generate").disabled = false;
         return;
       }
@@ -717,18 +717,32 @@
         target.textContent = result.outPath ? `已导出：${result.outPath}` : JSON.stringify(result);
       }
     }
-    $("exportBtn").addEventListener("click", async () => {
-      $("exportResult").textContent = "导出中…";
-      const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: "{}" });
-      showExportResult(result, "PPTX");
-      if (result.outPath || result.download_url) toast("PPTX 已导出", "success");
-    });
-    $("exportPdfBtn").addEventListener("click", async () => {
-      $("exportResult").textContent = "导出 PDF 中…";
-      const result = await api(`/decks/${state.deckId}/export`, { method: "POST", body: JSON.stringify({ format: "pdf" }) });
-      showExportResult(result, "PDF");
-      if (result.outPath || result.download_url) toast("PDF 已导出", "success");
-    });
+    async function requestExport(deckId,format="pptx") {
+      const started=await api(`/decks/${deckId}/export`,{method:"POST",body:JSON.stringify({format,idempotency_key:crypto.getRandomValues(new Uint32Array(4)).join("-")})});
+      if(!started.status_url)return started;
+      const target=$("exportResult");
+      const cancel=document.createElement("button");cancel.type="button";cancel.className="btn sm";cancel.textContent="取消导出";
+      cancel.title="同一版本的导出任务会被复用；取消会同步影响其他窗口。";
+      cancel.addEventListener("click",async()=>{cancel.disabled=true;await api(`/decks/${deckId}/export`,{method:"POST",body:JSON.stringify({engine_job_id:started.engine_job_id,cancel:true})})});
+      while(true) {
+        const status=await api(started.status_url);
+        if(status.state==="completed")return status.result;
+        if(status.error||status.state==="failed"||status.state==="cancelled")throw new Error(status.error??"导出已取消");
+        target.textContent=status.state==="queued"?"导出排队中…":"引擎正在导出…";target.appendChild(cancel);
+        await new Promise(resolve=>setTimeout(resolve,1000));
+      }
+    }
+    async function presentExport(deckId,format) {
+      $("exportResult").textContent="导出中…";
+      try {
+        const result=await requestExport(deckId,format);
+        if(result.error)throw new Error(result.error);
+        showExportResult(result,format.toUpperCase());
+        if(result.outPath||result.download_url)toast(`${format.toUpperCase()} 已导出`,"success");
+      }catch(error){$("exportResult").textContent=`导出失败：${error.message}`;toast(`导出失败：${error.message}`,"error")}
+    }
+    $("exportBtn").addEventListener("click",()=>presentExport(state.deckId,"pptx"));
+    $("exportPdfBtn").addEventListener("click",()=>presentExport(state.deckId,"pdf"));
     $("themeSelect").addEventListener("change", async () => {
       const templateId = $("themeSelect").value;
       if (!templateId) return;
@@ -998,8 +1012,7 @@
       }
     }
     async function exportDeckById(deckId) {
-      const result = await api(`/decks/${deckId}/export`, { method: "POST", body: "{}" });
-      if (result.outPath) toast(`已导出：${result.outPath}`, "success");
+      await presentExport(deckId,"pptx");
     }
     $("doResearch").addEventListener("click", async () => {
       const query = $("researchQuery").value.trim();

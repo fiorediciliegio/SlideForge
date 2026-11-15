@@ -1,0 +1,2 @@
+# 固定协议按字节校验；Windows checkout 不得转换换行。
+* -text

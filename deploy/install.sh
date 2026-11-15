@@ -53,4 +53,4 @@ cp deploy/gateway-8082.env /etc/slideforge/gateway-8082.env
 systemctl daemon-reload
 systemctl enable slideforge slideforge-engine slideforge-brain slideforge-gateway
 echo "完成。启动：systemctl start slideforge-gateway；日志：journalctl -u slideforge-gateway -f"
-echo "小内存主机（≤2GB）建议 .env 中 DECK_CONCURRENCY=2，并配置 2GB swap。"
+echo "引擎默认 ENGINE_CONCURRENCY=1；请按实际峰值内存配置服务器，容量数据见 .scratch/engine-job-service/验收记录.md。"

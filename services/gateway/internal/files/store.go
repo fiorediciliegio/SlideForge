@@ -2,6 +2,7 @@ package files
 
 import (
 	"crypto/rand"
+	"crypto/sha256"
 	"encoding/base64"
 	"encoding/hex"
 	"encoding/json"
@@ -29,6 +30,7 @@ type Record struct {
 
 type StoreAPI interface {
 	Publish(deckID, name, mediaType, ownerKeyHash string, content []byte) (Record, error)
+	PublishOnce(operationID, deckID, name, mediaType, ownerKeyHash string, content []byte) (Record, error)
 	Get(id string) (Record, bool, error)
 	ListDeck(deckID, ownerKeyHash string) ([]Record, error)
 	Read(record Record) ([]byte, error)
@@ -46,6 +48,16 @@ func NewStore(dataDir string) *Store {
 }
 
 func (s *Store) Publish(deckID, name, mediaType, ownerKeyHash string, content []byte) (Record, error) {
+	return s.publish("", deckID, name, mediaType, ownerKeyHash, content)
+}
+func deliveryFileID(operationID, deckID, owner string) string {
+	sum := sha256.Sum256([]byte(owner + "\x00" + deckID + "\x00" + operationID))
+	return "file-" + hex.EncodeToString(sum[:])
+}
+func (s *Store) PublishOnce(operationID, deckID, name, mediaType, owner string, content []byte) (Record, error) {
+	return s.publish(deliveryFileID(operationID, deckID, owner), deckID, name, mediaType, owner, content)
+}
+func (s *Store) publish(id, deckID, name, mediaType, ownerKeyHash string, content []byte) (Record, error) {
 	if !strings.HasPrefix(deckID, "deck-") || ownerKeyHash == "" {
 		return Record{}, errors.New("deck_id 或文件归属无效")
 	}
@@ -64,9 +76,16 @@ func (s *Store) Publish(deckID, name, mediaType, ownerKeyHash string, content []
 	if err := s.loadLocked(); err != nil {
 		return Record{}, err
 	}
-	id, err := newFileID()
-	if err != nil {
-		return Record{}, err
+	if id != "" {
+		if existing, ok := s.files[id]; ok {
+			return existing, nil
+		}
+	} else {
+		var err error
+		id, err = newFileID()
+		if err != nil {
+			return Record{}, err
+		}
 	}
 	objectDir := filepath.Join(s.dataDir, "file-objects")
 	if err := os.MkdirAll(objectDir, 0o750); err != nil {
@@ -83,6 +102,7 @@ func (s *Store) Publish(deckID, name, mediaType, ownerKeyHash string, content []
 	}
 	s.files[id] = record
 	if err := s.saveLocked(); err != nil {
+		delete(s.files, id)
 		return Record{}, err
 	}
 	return record, nil
