@@ -1,4 +1,5 @@
 import path from "node:path";
+import {buildContextStatus} from "./contextStatus.js";
 import { readFile, writeFile } from "node:fs/promises";
 import { z } from "zod";
 import { agentOptionsSchema, assertPageCount, effectiveGenerationMode, explicitPageConflict, explicitExportFormats, outlineDraftSchema, outlinePageSchema, publicAgent, type AgentRun, type AgentOptions, type OutlineDraft } from "../contracts/agent.js";
@@ -18,6 +19,7 @@ import { validateEngineHTML, inspectEngineWorkspace, runWithEngineOwner } from "
 import { brandVisualSpec, type BrandProfile } from "../brand/profile.js";
 import { BRANDS_DIR } from "../brand/store.js";
 import { getTemplateReference } from "../templates/library.js";
+import {agentWork,awaitAgentOperation} from "../server/agentScheduling.js";
 import { runIdempotentExport } from "../server/exportCoordinator.js";
 
 const decksRoot = () => path.resolve(import.meta.dirname, "../../artifacts/decks");
@@ -130,7 +132,7 @@ async function reviewArtifacts(root:string,kind:string) {
   catch(error){if((error as NodeJS.ErrnoException).code!=="ENOENT")throw error;return []}
   return Promise.all(files.filter(file=>file.endsWith(".json")).map(async file=>({id:path.basename(file,".json"),...await readJSON<any>(projectPath(root,"project/"+kind+"/"+file))})));
 }
-async function nextReviewWork(job:AgentJob) {
+async function nextReviewWork(job:AgentJob):Promise<Record<string,any>> {
   const context=await contextOf(job),project=context.project,root=agentRoot(job.id);
   const step=nextReviewAction(project,await reviewArtifacts(root,"checks"));
   const tool=(name:string,args:Record<string,unknown>)=>({action:"tool",name,args,revision_id:project.revision_id,
@@ -192,7 +194,7 @@ export async function createAgentDeck(input: { brief: string; options: AgentOpti
   if (brand?.logoFile && brand.brand_id) { const logo = await readFile(path.join(BRANDS_DIR, brand.brand_id, brand.logoFile)); const ext = path.extname(brand.logoFile).slice(1); project.visual.logo = { src: `data:image/${ext === "svg" ? "svg+xml" : ext};base64,${logo.toString("base64")}`, position: brand.logoPosition }; }
   const export_authorized = explicitExportFormats(input.brief);
   const contextRef = await writeArtifact(root, "contexts", { project, export_authorized } satisfies Context);
-  const run: AgentRun = { version: 1, run_seq: 1, runner_epoch: 0, checkpoint_seq: 0, phase: "queued", options, context_ref: contextRef,
+  const run: AgentRun = { version: 1, context_version: 2, run_seq: 1, runner_epoch: 0, checkpoint_seq: 0, phase: "queued", options, context_ref: contextRef,
     draft_revision: 0, calls: {}, operations: {}, budget: { active_seconds: 0, limit_seconds: options.budget.active_seconds, spent_cny: 0, reserved_cny: 0, limit_cny: options.budget.estimated_cost_cny } };
   await createDeckJob({ id, title: "新演示", status: "creating", events: [], overflowPages: [], ownerKeyHash: input.ownerKeyHash, createdAt: new Date().toISOString(), agent: run });
   try { await enqueueAgent(id, 1); } catch (error) { await mutateAgent({ action: "interrupt", deck_id: id, run_seq: 1, runner_epoch: 0 }); throw error; }
@@ -203,7 +205,12 @@ export async function executeAgentTool(input: ToolInput, queue: AsyncJobQueue): 
   input={...input,operation_id:`run-${input.run_seq}:${input.operation_id}`};
   let job = await executionJob(input);
   if (input.name === "_describe") return { tools: agentToolDefinitions(job.agent.options.research_allowed), context: await contextOf(job),page_count_conflict:explicitPageConflict((await contextOf(job)).project.brief,job.agent.options.page_policy) };
-  if (input.name === "_review_next") return nextReviewWork(job);
+  if (input.name === "_review_next") {
+    const work=await nextReviewWork(job);
+    if(job.agent.context_version!==2||work.action==="tool")return work;
+    const context=await contextOf(job);
+    return {...work,context_status:buildContextStatus(job.agent,context.project,context,work)};
+  }
   if (input.name === "_observation") return readJSON(projectPath(agentRoot(job.id), `project/observations/${safeId(String(input.args.evidence_id))}.json`));
   const schema = toolSchemas[input.name as keyof typeof toolSchemas]; if (!schema) throw new HttpRequestError(400, "未知 Agent 工具");
   const sourceRead = input.name === "read_project" && input.args.section === "sources" && typeof input.args.source_id === "string" && input.args.source_id.length > 0;
@@ -268,7 +275,7 @@ export async function executeAgentTool(input: ToolInput, queue: AsyncJobQueue): 
     const value = await prepareRevision(root, project, { instruction: `联网研究：${args.query}`, operation_id: input.operation_id, context: { sources: [...project.sources, source] } });
     await publish(await executionJob(input), input.operation_id, hash, value, { research, source_id: source.source_id }); return { research, source_id: source.source_id, project_ref: value.ref };
   } else if (input.name === "generate_pages" || input.name === "revise_page" || input.name === "revise_pages") {
-    return generateAgentPages(input, args, job, context, hash);
+    return awaitAgentOperation({...commandFor(job),operation_id:input.operation_id},generateAgentPages(input, args, job, context, hash));
   } else if (input.name === "inspect_deck") {
     const ids: string[] = args.page_ids ?? project.pages.map(page => page.page_id);
     if (ids.some(id => !project.pages.some(page => page.page_id === id))) throw new HttpRequestError(409, "待检查页面尚未生成");
@@ -353,6 +360,8 @@ async function generateAgentPages(input: ToolInput, args: Record<string, any>, i
   let cursor = 0;
   const failures: Array<{ page_id: string; error: string;status?:number }> = [];
   let stopped=false;
+  const concurrency=Number(process.env.AGENT_PAGE_CONCURRENCY??3);
+  if(!Number.isInteger(concurrency)||concurrency<1)throw new HttpRequestError(500,"AGENT_PAGE_CONCURRENCY 必须为正整数");
   const revisionArgs=(id:string)=>batch?args.revisions.find((item:any)=>item.page_id===id):args;
   let commitTail:Promise<void>=Promise.resolve();
   const commitCandidate=(candidate:{id:string;operation:string;hash:string;candidate_id:string;html:string;issues:unknown[];repair:boolean})=>{
@@ -378,13 +387,16 @@ async function generateAgentPages(input: ToolInput, args: Record<string, any>, i
   const worker = async () => { while (cursor < ids.length && !stopped) {
     const id = ids[cursor++], operation = `${input.operation_id}:page:${id}`, hash = inputHash({ name: input.name, args, page_id: id });
     const pageArgs=revisionArgs(id);
+    const work={...commandFor(initial),operation_id:operation};
+    let working=false;
     try {
       const latest = await executionJob(input), prior = latest.agent.operations[operation];
       if (prior?.status === "completed") { pages.push(prior.result as Record<string,unknown>); continue; }
-      if(batch&&(stopped||Object.values(latest.agent.calls).some(call=>call.status==="unknown"))){stopped=true;break}
+      if(stopped||Object.values(latest.agent.calls).some(call=>call.status==="unknown")){stopped=true;break}
       if (!repair && (project.pages.some(page => page.page_id === id) || Object.values(latest.agent.operations).some(op => op.status === "completed" && (op.result as any)?.page_id === id && (op.result as any)?.candidate_id))) throw new HttpRequestError(409, "此页已有页面或候选，请使用 revise_page 定向修订");
       const repairs = Object.values(latest.agent.operations).filter(op => op.status === "completed" && (op.result as any)?.repair && (op.result as any)?.page_id === id).length;
       if (repair && repairs >= 2) throw new HttpRequestError(409, "本页已达到两次返工上限，请请求用户处理");
+      await agentWork(work,"local");working=true;
       await mutateAgent({ action: "begin_tool", ...commandFor(latest), operation_id: operation, input_hash: hash });
       let oldHtml = project.pages.some(page => page.page_id === id) ? await pageHTML(root, project, id) : "";
       if (pageArgs.candidate_id) { const candidate = await readJSON<any>(projectPath(root, `project/candidates/${safeId(pageArgs.candidate_id)}.json`)); if (candidate.page_id !== id) throw new HttpRequestError(400, "候选不属于该页"); oldHtml = candidate.html; }
@@ -392,24 +404,31 @@ async function generateAgentPages(input: ToolInput, args: Record<string, any>, i
       const messages = await buildPageMessagesViaBrain({ deckTitle: project.title, brief: project.brief, outlineJson: JSON.stringify(project.outline), pageIndex: index, pageCount: project.outline.pages.length, pageTitle: page.title, bullets: page.bullets, visualSpec: project.visual?.visual_spec, referenceHtml: project.visual?.reference_html });
       messages.push({ role: "user", content: `【已确认约束】${JSON.stringify(project.constraints)}\n【本页确认的修改要求】${JSON.stringify(project.page_constraints?.[id]??[])}\n【有关修改记录】${JSON.stringify((await projectHistory(root,project,id)).slice(0,6))}\n【场景】${JSON.stringify(project.scenario)}\n${oldHtml ? `【当前版本，以此为基础修改】\n${oldHtml}\n` : ""}【指令】${pageArgs.instruction ?? "按已保存大纲生成，不改动事实和结构"}` });
       if(stopped)break;
-      const response = await runWithAgent({ ...commandFor(initial), operation_id: operation, counter: 0 }, () => llmComplete(messages));
+      const response = await runWithAgent({ ...commandFor(initial), operation_id: operation, counter: 0 }, () => llmComplete(messages,{pageModel:{owner:initial.ownerKeyHash??"local",project:initial.id}}));
       await executionJob(input);
       const html = extractHtmlDocument(response.text), candidateId = inputHash([operation,input.runner_epoch]);
       await writeArtifact(root, "candidates", { page_id: id, html, base_revision: project.revision_id, input_hash: hash }, candidateId);
       const dialect = validateHtmlDialect(html);
       let issues: unknown[] = dialect.errors;
-      if (dialect.ok) { const file = projectPath(root, `project/candidates/${candidateId}.html`); await writeFile(file, html); issues = (await validateEngineHTML(html,{ownerKeyHash:initial.ownerKeyHash,deckId:initial.id,agent:commandFor(initial),operationId:operation})).issues; }
+      if (dialect.ok) {
+        const file = projectPath(root, `project/candidates/${candidateId}.html`); await writeFile(file, html);
+        await agentWork(work,"engine");
+        try{issues=(await validateEngineHTML(html,{ownerKeyHash:initial.ownerKeyHash,deckId:initial.id,agent:commandFor(initial),operationId:operation})).issues}
+        finally{await agentWork(work,"local")}
+      }
       await commitCandidate({ id, operation, hash, candidate_id: candidateId, html, issues, repair });
     } catch (error) {
       failures.push({ page_id: id, error: error instanceof Error ? error.message : String(error),status:error instanceof HttpRequestError?error.status:undefined });
-      if(batch){
+      {
         if(error instanceof HttpRequestError&&error.status===402)stopped=true;
         const current=await agentJob(input.deck_id);
         if(current.agent.runner_epoch!==input.runner_epoch||current.agent.run_seq!==input.run_seq||!["planning","generating","checking","revising"].includes(current.agent.phase)||Object.values(current.agent.calls).some(call=>call.status==="unknown"))stopped=true;
       }
+    } finally {
+      if(working)await agentWork(work,"done");
     }
   }};
-  await Promise.all(Array.from({ length: Math.min(ids.length, Number(process.env.DECK_CONCURRENCY ?? 2)) }, worker));
+  await Promise.all(Array.from({ length: Math.min(ids.length, concurrency) }, worker));
   const job = await executionJob(input), result = { pages, failures, project_ref: job.agent.project_ref };
   if(Object.values(job.agent.calls).some(call=>call.status==="unknown"))throw new HttpRequestError(503,"模型调用结果未知，已停止新调用，需要用户确认后继续");
   if(failures.some(failure=>failure.status===402))throw new HttpRequestError(402,"任务预算不足，请明确追加预算后继续");
@@ -606,7 +625,10 @@ export async function versionedDeckEdit<T>(runDir: string, instruction: string, 
     await writeFile(path.join(staging,"agent-context.json"),JSON.stringify({visualSpec:original.visual?.visual_spec,referenceHtml:original.visual?.reference_html}));
     if(original.visual?.logo)await writeFile(path.join(staging,"brand.json"),JSON.stringify({logo:original.visual.logo}));
     for(let index=0;index<original.outline.pages.length;index++)await writeFile(path.join(staging,`page-${index+1}.html`),await pageHTML(root,original,original.outline.pages[index].page_id));
-    const result=await runWithAgent({...commandFor(job),operation_id:operation,counter:0},()=>action(staging));
+    const modelWork={...commandFor(job),operation_id:operation,counter:0};
+    await agentWork(modelWork,"local");
+    let result:T;
+    try{result=await runWithAgent(modelWork,()=>action(staging))}finally{await agentWork(modelWork,"done")}
     const changed:Record<string,string>={};
     for(let index=0;index<original.outline.pages.length;index++) {
       const id=original.outline.pages[index].page_id, html=await readFile(path.join(staging,`page-${index+1}.html`),"utf8");

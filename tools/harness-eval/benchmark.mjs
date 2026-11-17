@@ -20,8 +20,8 @@ export async function validateSuite(profileName='v1'){
   const {getTemplateReference}=await import('../../src/templates/library.ts');
   if(hash(Buffer.from(await getTemplateReference(protocol.template_id)))!==protocol.template_reference_sha256)throw new Error('当前PPT模板与固定基准不一致，请恢复模板或新建基准版本');
   const fixtures=await json(path.join(here,'fixtures/v1/fixtures.json'));
-  if(profileName==='v1')return {protocol,protocol_hash:hash(bytes),fixtures};
-  if(!['revision-batch-8192','repair-scope-16000'].includes(profileName))throw new Error('未知测评配置：'+profileName);
+  if(profileName==='v1')return {protocol:{...protocol,page_concurrency:2},protocol_hash:hash(bytes),fixtures};
+  if(!['revision-batch-8192','repair-scope-16000','page-concurrency-3','context-status-v1'].includes(profileName))throw new Error('未知测评配置：'+profileName);
   const profileBytes=await readFile(path.join(here,'profiles',profileName+'.json')),profile=JSON.parse(profileBytes);
   if(profile.parent_protocol_hash!==hash(bytes))throw new Error('8192配置引用的v1协议已变化');
   if(hash(await readFile(path.join(here,profile.proxy_file)))!==profile.proxy_sha256)throw new Error('8192代理与已登记配置不一致');
@@ -31,7 +31,7 @@ export async function validateSuite(profileName='v1'){
     if(hash(metrics)!==profile.metrics_sha256||hash(await readFile(path.join(here,'page-metrics.mjs')))!==profile.metrics_collector_sha256)throw new Error('页面指标口径或历史指标已变化');
     metric_baselines=JSON.parse(metrics);
   }
-  return {protocol:{...protocol,id:profile.id,controller_max_tokens:profile.controller_max_tokens,page_max_tokens:profile.page_max_tokens??protocol.page_max_tokens,primary_baseline:profile.primary_baseline,
+  return {protocol:{...protocol,id:profile.id,context_version:profile.context_version,page_concurrency:profile.page_concurrency??2,controller_max_tokens:profile.controller_max_tokens,page_max_tokens:profile.page_max_tokens??protocol.page_max_tokens,primary_baseline:profile.primary_baseline,
     baseline_ids:[profile.primary_baseline,...(profile.additional_baselines??[]).map(b=>b.id),...protocol.baseline_ids]},protocol_hash:hash(profileBytes),reference_protocol_hash:hash(bytes),profile,fixtures,metric_baselines};
 }
 
@@ -44,10 +44,33 @@ export async function loadBaselines(suite){
     const expected=extra?.sha256??(id===suite.profile?.primary_baseline?suite.profile.baseline_sha256:index.baselines[id].sha256);
     if(hash(bytes)!==expected)throw new Error('冻结历史基线已变化：'+id);
     const baseline=JSON.parse(bytes);
-    if(baseline.protocol_hash!==(extra?.protocol_hash??suite.reference_protocol_hash??suite.protocol_hash))throw new Error('历史基线与测评协议不一致：'+id);
+    if(baseline.protocol_hash!==(extra?.protocol_hash??(id===suite.profile?.primary_baseline?suite.profile.baseline_protocol_hash:undefined)??suite.reference_protocol_hash??suite.protocol_hash))throw new Error('历史基线与测评协议不一致：'+id);
     baselines.push(baseline);
   }
   return baselines;
+}
+
+function callCache(calls){
+  return Object.fromEntries(['total','controller','page','outline'].map(kind=>{
+    const rows=kind==='total'?calls:calls.filter(c=>c.kind===kind);
+    const known=c=>c.status==='completed'&&Number.isFinite(c.usage?.prompt_tokens)&&Number.isFinite(c.usage?.prompt_cache_hit_tokens)&&c.usage.prompt_cache_hit_tokens>=0&&c.usage.prompt_cache_hit_tokens<=c.usage.prompt_tokens;
+    const unknown_calls=rows.filter(c=>!known(c)).length;
+    const input_tokens=rows.reduce((s,c)=>s+(Number.isFinite(c.usage?.prompt_tokens)?c.usage.prompt_tokens:0),0);
+    const hit_tokens=unknown_calls?null:rows.reduce((s,c)=>s+c.usage.prompt_cache_hit_tokens,0);
+    return [kind,{input_tokens,hit_tokens,miss_tokens:hit_tokens==null?null:input_tokens-hit_tokens,
+      hit_ratio:hit_tokens!=null&&input_tokens>0?hit_tokens/input_tokens:null,unknown_calls,uncollected_cases:0}];
+  }));
+}
+
+function summarizeCache(cases){
+  return Object.fromEntries(['total','controller','page','outline'].map(kind=>{
+    const parts=cases.map(c=>c.cache?.[kind]),uncollected_cases=parts.filter(p=>!p).length;
+    if(uncollected_cases)return [kind,{input_tokens:kind==='total'?sum(cases,'prompt_tokens'):null,hit_tokens:null,miss_tokens:null,hit_ratio:null,unknown_calls:null,uncollected_cases}];
+    const input_tokens=sum(parts,'input_tokens'),unknown_calls=sum(parts,'unknown_calls');
+    const hit_tokens=unknown_calls?null:sum(parts,'hit_tokens');
+    return [kind,{input_tokens,hit_tokens,miss_tokens:hit_tokens==null?null:input_tokens-hit_tokens,
+      hit_ratio:hit_tokens!=null&&input_tokens>0?hit_tokens/input_tokens:null,unknown_calls,uncollected_cases:0}];
+  }));
 }
 
 export function normalizeRun(meta,calls,arm,id,protocolHash){
@@ -58,7 +81,7 @@ export function normalizeRun(meta,calls,arm,id,protocolHash){
       return {case_id:r.case_id,phase:r.phase??'error',delivered:!!r.delivery_success,generation_ms:r.generation_ms??null,
         export_ms:r.export?.elapsed_ms??null,pptx_pass:!!r.export?.pass,score:r.score,scene:r.scene,page_metrics:r.page_metrics,
         error:r.error??r.raw_job?.agent?.error,request:r.raw_job?.agent?.request,
-        calls:model.length,calls_by_kind:Object.fromEntries(['controller','page','outline'].map(k=>[k,model.filter(c=>c.kind===k).length])),
+        calls:model.length,calls_by_kind:Object.fromEntries(['controller','page','outline'].map(k=>[k,model.filter(c=>c.kind===k).length])),cache:callCache(model),
         prompt_tokens:settled.reduce((s,c)=>s+c.usage.prompt_tokens,0),
         completion_tokens:settled.reduce((s,c)=>s+c.usage.completion_tokens,0),
         reasoning_tokens:settled.reduce((s,c)=>s+(c.usage.completion_tokens_details?.reasoning_tokens??0),0),
@@ -80,7 +103,7 @@ export function summarizeCases(cases){
   return {attempted:cases.length,delivered:success.length,pptx_passes:cases.filter(c=>c.pptx_pass).length,
     generation_mean_s:mean(success.filter(c=>c.generation_ms!=null).map(c=>c.generation_ms/1000)),
     generation_median_s:median(success.filter(c=>c.generation_ms!=null).map(c=>c.generation_ms/1000)),
-    calls:sum(cases,'calls'),prompt_tokens:prompt,completion_tokens:completion,reasoning_tokens:sum(cases,'reasoning_tokens'),
+    calls:sum(cases,'calls'),prompt_tokens:prompt,completion_tokens:completion,reasoning_tokens:sum(cases,'reasoning_tokens'),cache:summarizeCache(cases),
     cost_peak_cny:(prompt*2+completion*8)/1e6,
     cost_cache_peak_cny:((prompt-hit)*2+hit*.04+completion*8)/1e6,
     cost_time_cache_cny:sum(cases,'cost_time_cache_cny'),
@@ -125,6 +148,16 @@ export async function writeComparison(out,suite){
     ['统一高峰无缓存费用（元）','cost_peak_cny',4],['统一高峰含缓存费用（元）','cost_cache_peak_cny',4]]){
     lines.push('| '+label+' | '+fmt(a[key],digits)+' | '+fmt(b[key],digits)+' | '+change(a[key],b[key])+' |');
   }
+  const primaryRun=baselines.find(c=>c.id===suite.protocol.primary_baseline);
+  const cacheRate=c=>c.hit_ratio!=null?(c.hit_ratio*100).toFixed(2)+'%':c.uncollected_cases||c.unknown_calls?'未采集完整':c.input_tokens===0?'无请求':'未采集';
+  for(const [label,before,after]of [['全部尝试',summarizeCases(primaryRun.cases),summary.stats],['共同成功案例',a,b]]){
+    lines.push('','## 缓存命中率：'+label,'','| 用途 | 历史输入/命中/未命中token | 当前输入/命中/未命中token | 历史命中率 | 当前命中率 | 变化（百分点） | 历史/当前未知调用 | 历史/当前未采集案例 |','|---|---:|---:|---:|---:|---:|---:|---:|');
+    for(const [kind,name]of [['controller','总控'],['page','页面生成'],['total','整体']]){
+      const x=before.cache[kind],y=after.cache[kind],tokens=c=>[c.input_tokens,c.hit_tokens,c.miss_tokens].map(n=>n??'未知').join('/');
+      lines.push(`| ${name} | ${tokens(x)} | ${tokens(y)} | ${cacheRate(x)} | ${cacheRate(y)} | ${x.hit_ratio==null||y.hit_ratio==null?'不适用':((y.hit_ratio-x.hit_ratio)*100).toFixed(2)} | ${x.unknown_calls??'未知'}/${y.unknown_calls??'未知'} | ${x.uncollected_cases}/${y.uncollected_cases} |`);
+    }
+  }
+  lines.push('','命中率按供应商返回的命中token总和÷输入token总和计算，不平均单次百分比。缺失usage、缺失缓存字段或未结算调用会使对应命中率标为未知；表中已采集输入可能只是小计。未修改历史记录或重新请求模型。缓存受供应商前缀复用及运行时段影响，差值不等于上下文优化的因果效果。');
   if(currentPageMetrics){
     const goal=suite.protocol.page_count*suite.fixtures.cases.length;
     lines.push('','## 首次生成与截断（同口径补算）','','| 版本 | 页面截断/有响应调用 | 首次程序通过/目标页 | 初稿无需必要返工/目标页 | 程序/评审未知 | 未执行 |','|---|---:|---:|---:|---:|---:|');

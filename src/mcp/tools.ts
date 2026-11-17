@@ -94,7 +94,7 @@ export function createSlideForgeMcpServer(context: McpSecurityContext = {}): Mcp
   server.tool("regenerate_page", "只重新生成当前用户 deck 的某一页，其余页面保持不变。", regeneratePageMcpShape, async ({ deck_id, page, instruction }) => {
     const job = await getDeckJob(deck_id);
     if (!owns(job) || !job.runDir) return text({ error: "deck 不存在或尚未 ready" });
-    const result = await queue.submit(() => regeneratePage({ runDir: job.runDir!, page, instruction }));
+    const result = await queue.submit(() => runWithEngineOwner(ownerKeyHash,()=>regeneratePage({ runDir: job.runDir!, page, instruction })));
     return text({ deck_id, page, status: "regenerated", overflow_warnings: result.overflowWarnings, drift_report: result.drift, hint: "调用 export_deck 导出最新版本" });
   });
 

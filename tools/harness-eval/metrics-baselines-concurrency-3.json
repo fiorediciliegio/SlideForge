@@ -1,0 +1,888 @@
+{
+  "20261114-review": {
+    "run": ".eval-results/harness/v1/20261114T064241409Z",
+    "metadata_sha256": "19db82e3a043b41b3e281d35ad43f93dd9d8c76c925684733b164410cdb2aeb9",
+    "ledger_sha256": "800357e580409f80356a555cb1af4e8415d6520c0210823b056386e36b844a89",
+    "cases": [
+      {
+        "case_id": "product",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1-cover",
+            "first_call_id": "run-1:turn-2:call_00_ET_GaPrQqrTyeUuAbYYSe8x3238:page:p1-cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2-problem",
+            "first_call_id": "run-1:turn-2:call_00_ET_GaPrQqrTyeUuAbYYSe8x3238:page:p2-problem:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3-capability",
+            "first_call_id": "run-1:turn-2:call_00_ET_GaPrQqrTyeUuAbYYSe8x3238:page:p3-capability:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p4-pilot",
+            "first_call_id": "run-1:turn-2:call_00_ET_GaPrQqrTyeUuAbYYSe8x3238:page:p4-pilot:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p5-rollout",
+            "first_call_id": "run-1:turn-2:call_00_ET_GaPrQqrTyeUuAbYYSe8x3238:page:p5-rollout:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p6-boundary",
+            "first_call_id": "run-1:turn-2:call_00_ET_GaPrQqrTyeUuAbYYSe8x3238:page:p6-boundary:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "brand",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_LflNdcVLrcwf1l10cZDl8944:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "brand-positioning",
+            "first_call_id": "run-1:turn-3:call_00_ET_LflNdcVLrcwf1l10cZDl8944:page:brand-positioning:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "expression-principles",
+            "first_call_id": "run-1:turn-3:call_00_ET_LflNdcVLrcwf1l10cZDl8944:page:expression-principles:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "touchpoint-plan",
+            "first_call_id": "run-1:turn-3:call_00_ET_LflNdcVLrcwf1l10cZDl8944:page:touchpoint-plan:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "execution-boundaries",
+            "first_call_id": "run-1:turn-3:call_00_ET_LflNdcVLrcwf1l10cZDl8944:page:execution-boundaries:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "rhythm-status",
+            "first_call_id": "run-1:turn-3:call_00_ET_LflNdcVLrcwf1l10cZDl8944:page:rhythm-status:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "campaign",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1",
+            "first_call_id": "run-1:turn-2:call_00_ET_XrfLxHlwe1me3E0f5Rh10196:page:p1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2",
+            "first_call_id": "run-1:turn-2:call_00_ET_XrfLxHlwe1me3E0f5Rh10196:page:p2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3",
+            "first_call_id": "run-1:turn-2:call_00_ET_XrfLxHlwe1me3E0f5Rh10196:page:p3:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p4",
+            "first_call_id": "run-1:turn-2:call_00_ET_XrfLxHlwe1me3E0f5Rh10196:page:p4:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "p5",
+            "first_call_id": "run-1:turn-2:call_00_ET_XrfLxHlwe1me3E0f5Rh10196:page:p5:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "p6",
+            "first_call_id": "run-1:turn-2:call_00_ET_XrfLxHlwe1me3E0f5Rh10196:page:p6:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 8,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "academic",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_Vd0KlLtnxbNX4LrhbHH27037:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "background",
+            "first_call_id": "run-1:turn-3:call_00_ET_Vd0KlLtnxbNX4LrhbHH27037:page:background:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "content-route",
+            "first_call_id": "run-1:turn-3:call_00_ET_Vd0KlLtnxbNX4LrhbHH27037:page:content-route:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "incomplete_html"
+          },
+          {
+            "page_id": "feasibility-schedule",
+            "first_call_id": "run-1:turn-3:call_00_ET_Vd0KlLtnxbNX4LrhbHH27037:page:feasibility-schedule:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "innovation",
+            "first_call_id": "run-1:turn-3:call_00_ET_Vd0KlLtnxbNX4LrhbHH27037:page:innovation:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "scope-status",
+            "first_call_id": "run-1:turn-3:call_00_ET_Vd0KlLtnxbNX4LrhbHH27037:page:scope-status:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 1,
+        "page_responses": 7,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "travel",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_IgQNtoKQZKb0xvL2rgIK9124:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "principles",
+            "first_call_id": "run-1:turn-3:call_00_ET_IgQNtoKQZKb0xvL2rgIK9124:page:principles:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day1",
+            "first_call_id": "run-1:turn-3:call_00_ET_IgQNtoKQZKb0xvL2rgIK9124:page:day1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day2",
+            "first_call_id": "run-1:turn-3:call_00_ET_IgQNtoKQZKb0xvL2rgIK9124:page:day2:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "layout"
+          },
+          {
+            "page_id": "prepare",
+            "first_call_id": "run-1:turn-3:call_00_ET_IgQNtoKQZKb0xvL2rgIK9124:page:prepare:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "boundary",
+            "first_call_id": "run-1:turn-3:call_00_ET_IgQNtoKQZKb0xvL2rgIK9124:page:boundary:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 7,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "long-document",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-4:call_00_zfFroJqi5ozdqSK3I6WS4083:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "overview",
+            "first_call_id": "run-1:turn-4:call_00_zfFroJqi5ozdqSK3I6WS4083:page:overview:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "process",
+            "first_call_id": "run-1:turn-4:call_00_zfFroJqi5ozdqSK3I6WS4083:page:process:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "data",
+            "first_call_id": "run-1:turn-4:call_00_zfFroJqi5ozdqSK3I6WS4083:page:data:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "caliber",
+            "first_call_id": "run-1:turn-4:call_00_zfFroJqi5ozdqSK3I6WS4083:page:caliber:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "conclusion",
+            "first_call_id": "run-1:turn-4:call_00_zfFroJqi5ozdqSK3I6WS4083:page:conclusion:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 7,
+        "unknown_page_calls": 0
+      }
+    ],
+    "summary": {
+      "planned_pages": 36,
+      "truncated_responses": 1,
+      "page_responses": 41,
+      "unknown_page_calls": 0,
+      "first_program": {
+        "passed": 34,
+        "failed": 2,
+        "unknown": 0,
+        "not_attempted": 0
+      },
+      "first_no_blocker": {
+        "passed": 31,
+        "failed": 5,
+        "unknown": 0,
+        "not_attempted": 0
+      }
+    }
+  },
+  "20261114-revision-batch": {
+    "run": ".eval-results/harness/v2-8192/20261114T112944319Z",
+    "metadata_sha256": "8a56a3177e74f7fcffd809156ca2ace2f3df91bc665a30151873ea65e4884153",
+    "ledger_sha256": "3ee12a3e05c2670e98d8dd9fcab81a44bb872f326adf361e3a81d5e68d70122a",
+    "cases": [
+      {
+        "case_id": "product",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_AG6TJQRy2AHO4ITMWp2j2495:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "problem",
+            "first_call_id": "run-1:turn-3:call_00_ET_AG6TJQRy2AHO4ITMWp2j2495:page:problem:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "capability",
+            "first_call_id": "run-1:turn-3:call_00_ET_AG6TJQRy2AHO4ITMWp2j2495:page:capability:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "pilot",
+            "first_call_id": "run-1:turn-3:call_00_ET_AG6TJQRy2AHO4ITMWp2j2495:page:pilot:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "implementation",
+            "first_call_id": "run-1:turn-3:call_00_ET_AG6TJQRy2AHO4ITMWp2j2495:page:implementation:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "boundary",
+            "first_call_id": "run-1:turn-3:call_00_ET_AG6TJQRy2AHO4ITMWp2j2495:page:boundary:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "brand",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_O1hoHsTJV7WDre8ZNHgN1839:page:cover:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "layout"
+          },
+          {
+            "page_id": "positioning",
+            "first_call_id": "run-1:turn-3:call_00_ET_O1hoHsTJV7WDre8ZNHgN1839:page:positioning:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "incomplete_html"
+          },
+          {
+            "page_id": "voice",
+            "first_call_id": "run-1:turn-3:call_00_ET_O1hoHsTJV7WDre8ZNHgN1839:page:voice:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "touchpoints",
+            "first_call_id": "run-1:turn-3:call_00_ET_O1hoHsTJV7WDre8ZNHgN1839:page:touchpoints:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "boundaries",
+            "first_call_id": "run-1:turn-3:call_00_ET_O1hoHsTJV7WDre8ZNHgN1839:page:boundaries:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "cadence",
+            "first_call_id": "run-1:turn-3:call_00_ET_O1hoHsTJV7WDre8ZNHgN1839:page:cadence:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 2,
+        "page_responses": 9,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "campaign",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_ZFCd9Icbw5eIZ16mac7c8055:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "goals",
+            "first_call_id": "run-1:turn-3:call_00_ET_ZFCd9Icbw5eIZ16mac7c8055:page:goals:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "incomplete_html"
+          },
+          {
+            "page_id": "flow",
+            "first_call_id": "run-1:turn-3:call_00_ET_ZFCd9Icbw5eIZ16mac7c8055:page:flow:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "resourcing",
+            "first_call_id": "run-1:turn-3:call_00_ET_ZFCd9Icbw5eIZ16mac7c8055:page:resourcing:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "feedback",
+            "first_call_id": "run-1:turn-3:call_00_ET_ZFCd9Icbw5eIZ16mac7c8055:page:feedback:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "incomplete_html"
+          },
+          {
+            "page_id": "appendix",
+            "first_call_id": "run-1:turn-3:call_00_ET_ZFCd9Icbw5eIZ16mac7c8055:page:appendix:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 2,
+        "page_responses": 11,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "academic",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_iICSJYFrSUc8WXVWzHE63755:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "background",
+            "first_call_id": "run-1:turn-3:call_00_ET_iICSJYFrSUc8WXVWzHE63755:page:background:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "content-route",
+            "first_call_id": "run-1:turn-3:call_00_ET_iICSJYFrSUc8WXVWzHE63755:page:content-route:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "feasibility",
+            "first_call_id": "run-1:turn-3:call_00_ET_iICSJYFrSUc8WXVWzHE63755:page:feasibility:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "innovation",
+            "first_call_id": "run-1:turn-3:call_00_ET_iICSJYFrSUc8WXVWzHE63755:page:innovation:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "boundary",
+            "first_call_id": "run-1:turn-3:call_00_ET_iICSJYFrSUc8WXVWzHE63755:page:boundary:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 7,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "travel",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_AkHCs1uqrYbNcnBPyO0A5861:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "principles",
+            "first_call_id": "run-1:turn-3:call_00_AkHCs1uqrYbNcnBPyO0A5861:page:principles:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day1",
+            "first_call_id": "run-1:turn-3:call_00_AkHCs1uqrYbNcnBPyO0A5861:page:day1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day2",
+            "first_call_id": "run-1:turn-3:call_00_AkHCs1uqrYbNcnBPyO0A5861:page:day2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "packing",
+            "first_call_id": "run-1:turn-3:call_00_AkHCs1uqrYbNcnBPyO0A5861:page:packing:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "status",
+            "first_call_id": "run-1:turn-3:call_00_AkHCs1uqrYbNcnBPyO0A5861:page:status:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 8,
+        "unknown_page_calls": 0
+      },
+      {
+        "case_id": "long-document",
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1-cover",
+            "first_call_id": "run-1:turn-2:call_00_ET_dLfX6BVPHg1eFrqAiHz85270:page:p1-cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2-overview",
+            "first_call_id": "run-1:turn-2:call_00_ET_dLfX6BVPHg1eFrqAiHz85270:page:p2-overview:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3-process",
+            "first_call_id": "run-1:turn-2:call_00_ET_dLfX6BVPHg1eFrqAiHz85270:page:p3-process:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p4-data",
+            "first_call_id": "run-1:turn-2:call_00_ET_dLfX6BVPHg1eFrqAiHz85270:page:p4-data:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p5-scope",
+            "first_call_id": "run-1:turn-2:call_00_ET_dLfX6BVPHg1eFrqAiHz85270:page:p5-scope:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p6-conclusion",
+            "first_call_id": "run-1:turn-2:call_00_ET_dLfX6BVPHg1eFrqAiHz85270:page:p6-conclusion:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      }
+    ],
+    "summary": {
+      "planned_pages": 36,
+      "truncated_responses": 4,
+      "page_responses": 47,
+      "unknown_page_calls": 0,
+      "first_program": {
+        "passed": 32,
+        "failed": 4,
+        "unknown": 0,
+        "not_attempted": 0
+      },
+      "first_no_blocker": {
+        "passed": 28,
+        "failed": 8,
+        "unknown": 0,
+        "not_attempted": 0
+      }
+    }
+  },
+  "20261114-scope-16000": {
+    "run": ".eval-results/harness/v3-16000/20261114T171535058Z",
+    "metadata_sha256": "304d7dfab21f26c8fa350175db03052bf7595f6c7194e9d1c6b40432b61057cb",
+    "ledger_sha256": "3dba2c55bc099661cc0bdb3ad6f3a51d18bf0ae005fd3cb7cc0311114cd75887",
+    "cases": [
+      {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-2:call_00_ET_3L6aUYpKoDtFLdHneuuv9041:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "problem",
+            "first_call_id": "run-1:turn-2:call_00_ET_3L6aUYpKoDtFLdHneuuv9041:page:problem:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "capability",
+            "first_call_id": "run-1:turn-2:call_00_ET_3L6aUYpKoDtFLdHneuuv9041:page:capability:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "pilot",
+            "first_call_id": "run-1:turn-2:call_00_ET_3L6aUYpKoDtFLdHneuuv9041:page:pilot:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "steps",
+            "first_call_id": "run-1:turn-2:call_00_ET_3L6aUYpKoDtFLdHneuuv9041:page:steps:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "boundaries",
+            "first_call_id": "run-1:turn-2:call_00_ET_3L6aUYpKoDtFLdHneuuv9041:page:boundaries:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1",
+            "first_call_id": "run-1:turn-3:call_00_ET_OH8C7LSyJHcoDrng2nIC6486:page:p1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2",
+            "first_call_id": "run-1:turn-3:call_00_ET_OH8C7LSyJHcoDrng2nIC6486:page:p2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3",
+            "first_call_id": "run-1:turn-3:call_00_ET_OH8C7LSyJHcoDrng2nIC6486:page:p3:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "p4",
+            "first_call_id": "run-1:turn-3:call_00_ET_OH8C7LSyJHcoDrng2nIC6486:page:p4:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "invalid_html"
+          },
+          {
+            "page_id": "p5",
+            "first_call_id": "run-1:turn-3:call_00_ET_OH8C7LSyJHcoDrng2nIC6486:page:p5:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p6",
+            "first_call_id": "run-1:turn-3:call_00_ET_OH8C7LSyJHcoDrng2nIC6486:page:p6:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 9,
+        "unknown_page_calls": 0
+      },
+      {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1",
+            "first_call_id": "run-1:turn-3:call_00_ET_68YDvZLeBoYu5utRdPxg7757:page:p1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2",
+            "first_call_id": "run-1:turn-3:call_00_ET_68YDvZLeBoYu5utRdPxg7757:page:p2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3",
+            "first_call_id": "run-1:turn-3:call_00_ET_68YDvZLeBoYu5utRdPxg7757:page:p3:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p4",
+            "first_call_id": "run-1:turn-3:call_00_ET_68YDvZLeBoYu5utRdPxg7757:page:p4:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p5",
+            "first_call_id": "run-1:turn-3:call_00_ET_68YDvZLeBoYu5utRdPxg7757:page:p5:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p6",
+            "first_call_id": "run-1:turn-3:call_00_ET_68YDvZLeBoYu5utRdPxg7757:page:p6:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1",
+            "first_call_id": "run-1:turn-2:call_00_ET_PCIzD1Nemz1R1yMqXJe89028:page:p1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2",
+            "first_call_id": "run-1:turn-2:call_00_ET_PCIzD1Nemz1R1yMqXJe89028:page:p2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3",
+            "first_call_id": "run-1:turn-2:call_00_ET_PCIzD1Nemz1R1yMqXJe89028:page:p3:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p4",
+            "first_call_id": "run-1:turn-2:call_00_ET_PCIzD1Nemz1R1yMqXJe89028:page:p4:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p5",
+            "first_call_id": "run-1:turn-2:call_00_ET_PCIzD1Nemz1R1yMqXJe89028:page:p5:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p6",
+            "first_call_id": "run-1:turn-2:call_00_ET_PCIzD1Nemz1R1yMqXJe89028:page:p6:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_1vgpBRgrR9oQ0fodmmf96419:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "status",
+            "first_call_id": "run-1:turn-3:call_00_ET_1vgpBRgrR9oQ0fodmmf96419:page:status:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "principles",
+            "first_call_id": "run-1:turn-3:call_00_ET_1vgpBRgrR9oQ0fodmmf96419:page:principles:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day1",
+            "first_call_id": "run-1:turn-3:call_00_ET_1vgpBRgrR9oQ0fodmmf96419:page:day1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day2",
+            "first_call_id": "run-1:turn-3:call_00_ET_1vgpBRgrR9oQ0fodmmf96419:page:day2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "prep",
+            "first_call_id": "run-1:turn-3:call_00_ET_1vgpBRgrR9oQ0fodmmf96419:page:prep:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 7,
+        "unknown_page_calls": 0
+      },
+      {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-4:call_00_ET_8cRxF3hBvN9hXPkpAm4S4933:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "overview",
+            "first_call_id": "run-1:turn-4:call_00_ET_8cRxF3hBvN9hXPkpAm4S4933:page:overview:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "process",
+            "first_call_id": "run-1:turn-4:call_00_ET_8cRxF3hBvN9hXPkpAm4S4933:page:process:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "data",
+            "first_call_id": "run-1:turn-4:call_00_ET_8cRxF3hBvN9hXPkpAm4S4933:page:data:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "conclusion",
+            "first_call_id": "run-1:turn-4:call_00_ET_8cRxF3hBvN9hXPkpAm4S4933:page:conclusion:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "notes",
+            "first_call_id": "run-1:turn-4:call_00_ET_8cRxF3hBvN9hXPkpAm4S4933:page:notes:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      }
+    ],
+    "summary": {
+      "planned_pages": 36,
+      "truncated_responses": 0,
+      "page_responses": 40,
+      "unknown_page_calls": 0,
+      "first_program": {
+        "passed": 35,
+        "failed": 1,
+        "unknown": 0,
+        "not_attempted": 0
+      },
+      "first_no_blocker": {
+        "passed": 33,
+        "failed": 3,
+        "unknown": 0,
+        "not_attempted": 0
+      }
+    }
+  }
+}

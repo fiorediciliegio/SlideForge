@@ -55,7 +55,7 @@ test("outline editing autosaves, restores after reload and confirms the saved re
   await fixture.page.reload();
   await fixture.page.waitForFunction(()=>(document.getElementById("outlineTitle") as HTMLInputElement)?.value==="用户编辑的大纲");
   await fixture.page.click("#outlineConfirm");
-  await fixture.page.waitForFunction(()=>document.getElementById("agentProgress")?.textContent?.includes("排队中"));
+  await fixture.page.waitForFunction(()=>document.getElementById("agentProgress")?.textContent?.includes("等待项目执行名额"));
   assert.equal(fixture.confirms,1);assert.deepEqual(fixture.errors,[]);
  } finally {await fixture.page.close();await closeValidatorBrowser();}
 });

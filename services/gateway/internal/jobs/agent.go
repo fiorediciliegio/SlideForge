@@ -11,6 +11,8 @@ import (
 
 var ErrAgentConflict = errors.New("任务状态或修订已改变，请刷新后重试")
 var ErrBudgetExhausted = errors.New("任务预算不足，请明确追加预算后继续")
+var ErrBudgetInFlight = errors.New("预算暂被在途调用预留，等待结算后继续")
+var ErrUnknownCall = errors.New("存在结果未知的模型调用，需要用户明确处理后继续")
 
 type AgentBudget struct {
 	ActiveSeconds float64 `json:"active_seconds"`
@@ -33,6 +35,7 @@ type AgentOperation struct {
 }
 type AgentRun struct {
 	Version         int                       `json:"version"`
+	ContextVersion  int                       `json:"context_version,omitempty"`
 	RunSeq          int64                     `json:"run_seq"`
 	Epoch           int64                     `json:"runner_epoch"`
 	Checkpoint      int64                     `json:"checkpoint_seq"`
@@ -55,6 +58,7 @@ type AgentRun struct {
 	LastActiveAt    string                    `json:"last_active_at,omitempty"`
 	Error           string                    `json:"error,omitempty"`
 	EngineWaits     map[string]string         `json:"engine_waits,omitempty"`
+	WorkStates      map[string]string         `json:"work_states,omitempty"`
 }
 type AgentCommand struct {
 	Title              string          `json:"title"`
@@ -91,10 +95,11 @@ type AgentCommand struct {
 	RunDir             string          `json:"run_dir"`
 	Error              string          `json:"error"`
 	EngineState        string          `json:"engine_state"`
+	WorkState          string          `json:"work_state"`
 }
 
 func NewAgentRun(options json.RawMessage, seconds, cny float64) *AgentRun {
-	return &AgentRun{Version: 1, RunSeq: 1, Phase: "queued", Options: options, Budget: AgentBudget{LimitSeconds: seconds, LimitCNY: cny}, Calls: map[string]AgentCall{}, Operations: map[string]AgentOperation{}}
+	return &AgentRun{Version: 1, ContextVersion: 2, RunSeq: 1, Phase: "queued", Options: options, Budget: AgentBudget{LimitSeconds: seconds, LimitCNY: cny}, Calls: map[string]AgentCall{}, Operations: map[string]AgentOperation{}}
 }
 func cloneJob(job Job) Job {
 	data, _ := json.Marshal(job)
@@ -109,7 +114,12 @@ func terminalPhase(phase string) bool {
 	return phase == "completed" || phase == "failed" || phase == "cancelled"
 }
 func accrue(run *AgentRun, now time.Time) {
-	active := len(run.EngineWaits) == 0
+	active := len(run.EngineWaits) == 0 && len(run.WorkStates) == 0
+	for _, state := range run.WorkStates {
+		if state == "local" {
+			active = true
+		}
+	}
 	for _, status := range run.EngineWaits {
 		if status == "running" {
 			active = true
@@ -233,11 +243,25 @@ func mutateAgentJob(job *Job, c AgentCommand, now time.Time) error {
 		}
 		run.Epoch++
 		run.EngineWaits = nil
+		run.WorkStates = nil
 		run.Checkpoint++
 		run.Phase = "planning"
 		run.InstanceID = c.InstanceID
 		run.LastActiveAt = now.UTC().Format(time.RFC3339Nano)
 		run.LeaseUntil = now.Add(30 * time.Second).UTC().Format(time.RFC3339Nano)
+	case "work_state":
+		if c.OperationID == "" || (c.WorkState != "local" && c.WorkState != "capacity" && c.WorkState != "budget" && c.WorkState != "engine" && c.WorkState != "done") {
+			return errors.New("无效工作等待状态")
+		}
+		accrue(run, now)
+		if run.WorkStates == nil {
+			run.WorkStates = map[string]string{}
+		}
+		if c.WorkState == "done" {
+			delete(run.WorkStates, c.OperationID)
+		} else {
+			run.WorkStates[c.OperationID] = c.WorkState
+		}
 	case "engine_wait":
 		if c.OperationID == "" || (c.EngineState != "queued" && c.EngineState != "running" && c.EngineState != "done") {
 			return errors.New("无效引擎等待状态")
@@ -429,6 +453,8 @@ func mutateAgentJob(job *Job, c AgentCommand, now time.Time) error {
 		job.Title = c.Title
 	}
 	if !activePhase(run.Phase) {
+		run.WorkStates = nil
+		run.EngineWaits = nil
 		run.LastActiveAt = ""
 		run.LeaseUntil = ""
 	}

@@ -9,10 +9,12 @@ import { HttpRequestError } from "./httpSecurity.js";
 import { currentBillingOwner } from "../billing/index.js";
 import { getDeckJob } from "./jobs.js";
 import { mutateAgent,currentAgentCall } from "./agentClient.js";
+import {agentWork} from "./agentScheduling.js";
 
 export interface EngineContext {ownerKeyHash?:string;operationId?:string;agent?:{deck_id:string;run_seq:number;runner_epoch:number}}
 const ownerContext=new AsyncLocalStorage<string|undefined>();
 export const runWithEngineOwner=<T>(owner:string|undefined,action:()=>T)=>ownerContext.run(owner,action);
+export const currentEngineOwner=()=>ownerContext.getStore()??currentBillingOwner()??"local";
 const ownerOf=(context:EngineContext)=>context.ownerKeyHash??ownerContext.getStore()??currentBillingOwner()??"local";
 
 async function embedAssets(html:string,root:string):Promise<string> {
@@ -62,6 +64,8 @@ export async function submitEngineSnapshot(snapshot:EngineSnapshot,kind:EngineJo
 }
 export async function waitEngineJob(initial:EngineJob,context:EngineContext={}):Promise<EngineResult> {
   let job=initial;
+  const work=currentAgentCall();
+  if(work)await agentWork(work,"engine");
   let registered=false,lastState="";
   const assertCurrent=async()=>{
     if(context.agent) {
@@ -85,6 +89,7 @@ export async function waitEngineJob(initial:EngineJob,context:EngineContext={}):
   return JSON.parse((await engineTransport.read(job.result_ref!,job.owner_key_hash)).toString("utf8"));
   } finally {
     if(registered&&context.agent)try{await mutateAgent({action:"engine_wait",...context.agent,operation_id:job.job_id,engine_state:"done"})}catch(error){if(!(error instanceof HttpRequestError&&error.status===409))throw error}
+    if(work)await agentWork(work,"local");
   }
 }
 export async function validateEngineHTML(html:string,context:EngineContext & {deckId?:string;runDir?:string}={}) {

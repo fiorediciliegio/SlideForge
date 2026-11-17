@@ -1,0 +1,42 @@
+[
+  {
+    "file": "services/brain/brain/agent_tools.py",
+    "sha256": "fdf8faec4afade3e2c6180f7a2ad72b4d47df716674114fb390b1cd2be3c9f6f"
+  },
+  {
+    "file": "services/brain/brain/harness.py",
+    "sha256": "b82578ea1de387dfd568fa7f2ec24f5a5b9ef10f913083bf1ccb5191147a179f"
+  },
+  {
+    "file": "services/gateway/internal/jobs/agent.go",
+    "sha256": "c5fc06fd526227970c1a1b0a41726d9912c935f7230b0760ca29a910be6b990f"
+  },
+  {
+    "file": "src/contracts/agent.ts",
+    "sha256": "9f26f7912c0bd4f01b80a02464d8ed392428ee1aa00ede6bd35e7ffad9fc3b9f"
+  },
+  {
+    "file": "src/capabilities/agent.ts",
+    "sha256": "dbd2f5a868224081872182a0a4ae5424e42cd15415ef993db8696a7d3a7eb67f"
+  },
+  {
+    "file": "tools/harness-eval/benchmark.mjs",
+    "sha256": "8b53b9b43c7907451c0f90b89142367692aa329ebfe40d6bd6f8cc9b6f102398"
+  },
+  {
+    "file": "tools/harness-eval/run.mjs",
+    "sha256": "e07e68fa3900c933d12964625cdfdf1b17b8481ca6bfd43f000ab77e65ca8c38"
+  },
+  {
+    "file": "tests/evals/harnessBenchmark.test.ts",
+    "sha256": "250d0ba3ae6144be89f64b74a56a4ccffc64bf7d529661f62676f14e9fb3c00a"
+  },
+  {
+    "file": "CHANGELOG.md",
+    "sha256": "57e31b5097e1458e246a682ac2b6f4b4fd65f376895d206b0eb5f5449ad3deaa"
+  },
+  {
+    "file": "docs/current-state.md",
+    "sha256": "15b0b02912a76958e12bba53b4c8bf0d1410d8c5d18f17003c939b7551e39aca"
+  }
+]

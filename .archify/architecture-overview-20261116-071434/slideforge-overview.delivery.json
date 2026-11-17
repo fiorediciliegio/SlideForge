@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "3e586a09-8690-4895-96ab-1b7f7f8e85b1",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "D:\\SlideForge\\.archify\\architecture-overview-20261116-071434\\candidate.json",
+  "output": "D:\\SlideForge\\.archify\\architecture-overview-20261116-071434\\slideforge-overview.html",
+  "specification": {
+    "sha256": "fd132df0ed155a6486d123ffebdc3fe4448d8f827cf89f6f49177ee0214bd374",
+    "bytes": 9665
+  },
+  "artifact": {
+    "sha256": "d8b81b3fff000c721aea1596c140cf6fa6056dd8d7dad255200a4a2a0ae0a5a4",
+    "bytes": 858184
+  }
+}

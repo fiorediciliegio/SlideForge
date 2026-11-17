@@ -34,13 +34,16 @@ def initial_messages(description, options):
 def model_messages(saved, state, review_key=None):
     """Persist references, materialize only the most recent unassessed image batch."""
     messages = copy.deepcopy(saved)
-    chosen=len(messages)-1
-    if review_key and not (messages[-1].get("_image_evidence_id") and messages[-1].get("_review_key")!=review_key):
+    chosen=next(index for index in range(len(messages)-1,-1,-1) if not (messages[index].get("_harness_context_hash") or messages[index].get("_harness_status_hash")))
+    if review_key and not (messages[chosen].get("_image_evidence_id") and messages[chosen].get("_review_key")!=review_key):
         chosen=next(index for index in range(len(messages)-1,-1,-1) if messages[index].get("_review_key")==review_key)
     for index, message in enumerate(messages):
         message.pop("_read_revision_id", None)
         message.pop("_review_phase", None)
         message.pop("_review_key", None)
+        message.pop("_harness_context_hash", None)
+        message.pop("_harness_status_hash", None)
+        message.pop("_harness_decision", None)
         evidence_id = message.pop("_image_evidence_id", None)
         if evidence_id and index == chosen:
             result = state.tool("_observation", {"evidence_id": evidence_id}, "observation-read")

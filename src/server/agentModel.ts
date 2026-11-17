@@ -4,8 +4,10 @@ import { getDeckJob } from "./jobs.js";
 import { mutateAgent, currentAgentCall, inputHash } from "./agentClient.js";
 import { writeArtifact, projectPath } from "../capabilities/project.js";
 import { resolveDeckRunDir } from "../capabilities/workspace.js";
+import {acquireAgentPageSlot,currentExecution,waitAgentBudget} from "./agentScheduling.js";
+import type {PageModelIdentity} from "./pageModelQueue.js";
 
-export async function agentModelComplete(messages: unknown[]) {
+export async function agentModelComplete(messages: unknown[], page?:PageModelIdentity) {
   const context = currentAgentCall()!;
   const job = await getDeckJob(context.deck_id); if (!job?.agent) throw new Error("Agent 执行不存在");
   const run = job.agent, pricing = run.pricing;
@@ -28,12 +30,23 @@ export async function agentModelComplete(messages: unknown[]) {
   }
   if (existing && existing.status !== "reserved" && existing.status !== "rejected") throw new Error(`模型调用 ${callId} 结果未知，禁止自动重发`);
   const key = process.env.OPENAI_API_KEY; if (!key) throw new Error("缺少 OPENAI_API_KEY");
-  await mutateAgent({ action: "reserve_call", ...command, cost });
-  await mutateAgent({ action: "send_call", ...command });
+  while(true) {
+  const release=page?await acquireAgentPageSlot(context,page):undefined;
+  try {
+  const current=await currentExecution(context);
+  const saved=current.agent.calls[callId];
+  if(saved?.status==="completed"&&saved.response_ref){const result=JSON.parse(await readFile(projectPath(root,saved.response_ref),"utf8"));return {text:result.choices[0].message.content as string,usage:result.usage}}
+  try {await mutateAgent({ action: "reserve_call", ...command, cost });}
+  catch(error){
+    if(!(error instanceof Error&&"code" in error&&error.code==="budget_inflight"))throw error;
+    release?.();await waitAgentBudget(context,cost);continue;
+  }
+  try {await mutateAgent({ action: "send_call", ...command });}
+  catch(error){await mutateAgent({action:"reject_call",...command});throw error}
   try {
     const response = await fetch(`${(process.env.OPENAI_BASE_URL ?? "https://api.deepseek.com").replace(/\/$/, "")}/chat/completions`, {
       method: "POST", headers: { "content-type": "application/json", authorization: `Bearer ${key}` }, body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(Math.max(1, Math.min(240_000, (run.budget.limit_seconds - run.budget.active_seconds) * 1000))),
+      signal: AbortSignal.timeout(Math.max(1, Math.min(240_000, (current.agent.budget.limit_seconds - current.agent.budget.active_seconds) * 1000))),
     });
     if (!response.ok) {
       if (response.status >= 400 && response.status < 500) await mutateAgent({ action: "reject_call", ...command });
@@ -49,5 +62,7 @@ export async function agentModelComplete(messages: unknown[]) {
   } catch (error) {
     await mutateAgent({ action: "mark_unknown", ...command });
     throw error;
+  }
+  } finally {release?.()}
   }
 }

@@ -50,6 +50,12 @@ func (h *HTTPHandler) handleAgent(writer http.ResponseWriter, request *http.Requ
 			code = "budget_exhausted"
 			status = 402
 		}
+		if errors.Is(err, ErrBudgetInFlight) {
+			code = "budget_inflight"
+		}
+		if errors.Is(err, ErrUnknownCall) {
+			code = "unknown_calls"
+		}
 		writeJobError(writer, status, err.Error(), code)
 		return
 	}
@@ -240,6 +246,13 @@ func publicJob(job Job, eventLimit int) map[string]any {
 			}
 		}
 		result["agent"] = map[string]any{"version": run.Version, "run_seq": run.RunSeq, "checkpoint_seq": run.Checkpoint, "phase": run.Phase, "options": run.Options, "draft_revision": run.DraftRevision, "preview_revision": revisionOf(run.ProjectRef), "budget": run.Budget, "request": run.Request, "unknown_calls": unknown, "error": run.Error, "quality_state": qualityState}
+		waits := map[string]int{}
+		for _, state := range run.WorkStates {
+			if state != "local" {
+				waits[state]++
+			}
+		}
+		result["agent"].(map[string]any)["resource_waits"] = waits
 	}
 	return result
 }

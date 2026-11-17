@@ -160,7 +160,7 @@ node --import tsx/esm scripts/keys.ts list
 - **启动前置条件**：`NODE_ENV=production` 时必须配置 `SLIDEFORGE_ADMIN_TOKEN`，并在启动前执行 `node --import tsx/esm scripts/keys.ts issue --name "首位用户" --points 200` 创建至少一个 API key；否则服务拒绝以无鉴权模式启动。
 - **管理员鉴权**：`/admin/*` 使用 `X-Admin-Token`。管理员 token 与客户端 key 分开管理，不要使用同一个值。
 - **用户隔离**：开启计费后，deck、品牌模板和远程 MCP 都校验 API key 归属。旧的未归属数据不会自动对公开用户开放。
-- **容量保护**：Brain 默认 `AGENT_PROJECT_CONCURRENCY=5`，每作品 `DECK_CONCURRENCY=2`；引擎默认 `ENGINE_CONCURRENCY=1`。检查/预览/导出使用独立持久队列，等待引擎不占整份生成的共享槽位。服务器并发按压测和内存调整。
+- **容量保护**：Brain默认`AGENT_PROJECT_CONCURRENCY=5`、每业务Key`AGENT_OWNER_PROJECT_CONCURRENCY=2`；Harness整页工作位`AGENT_PAGE_CONCURRENCY=3`，固定流程保留`DECK_CONCURRENCY=2`。同一业务Node内页面模型请求共享`PAGE_MODEL_CONCURRENCY=12`，按客户/项目轮转；Python总控、独立CLI/stdio MCP及其他业务Node不计入该单进程池。引擎默认`ENGINE_CONCURRENCY=1`，检查/预览/导出仍走独立队列；引擎等待不占页面模型请求槽，但仍占该项目的整页工作位。纯等待不计有效时间，有其他实际工作时按墙钟计一次。部署容量须压测，12不是已验证的生产吞吐承诺。
 - **密钥存储**：API key 仅保存 SHA-256 哈希，原始 key 只在签发时显示一次；旧明文文件会在读取时自动迁移。
 - **导出幂等**：相同内容重复导出复用回执且不重复扣费；客户端重试可额外携带 `Idempotency-Key`。
 - **请求保护**：默认请求体上限 32 MiB、每身份 120 请求/分钟、20 次创建/小时，可通过 `deploy/env.example` 中参数调整。

@@ -4,19 +4,15 @@ AI 驱动的演示文稿交付服务：HTML 原生幻灯片、确定性版面校
 
 > 产品形态与目标架构以 `docs/product-tech-charter.md` 为唯一事实源：能力层唯一，Web 薄壳与 AI 客户端平等。
 
-## 当前主链路
+## 总体架构
 
-```text
-Web 薄壳 / CLI / MCP
-        ↓
-HTTP / MCP / CLI 薄适配层
-        ↓
-src/contracts（统一 DTO、错误与标识）
-        ↓
-src/capabilities/deck.ts
-        ↓
-模型生成 / 项目版本 → Go 固定快照与任务 → 独立引擎检查、预览与导出
-```
+[![SlideForge 总体架构：Web Harness、业务 Node、Go 网关与独立引擎](docs/images/architecture.svg)](docs/images/architecture.svg)
+
+[PNG 图片](docs/images/architecture.png) · [Archify 交互版（下载 HTML 后用浏览器打开）](.archify/architecture-overview-20261116-071434/slideforge-overview.html)
+
+Python Brain 负责规划、工具决策与评审，业务 Node 执行页面生成和项目版本工具，Go 管理鉴权、状态、预算与引擎任务，独立 Node 引擎执行检查、预览和导出。Web 默认进入 Harness；CLI、MCP、WPS 当前仍使用固定流程，各入口共用统一契约和 Capability 能力。
+
+引擎通过固定输入快照和任务 ID 与业务协作，不依赖共享业务目录。Go 本地使用 JSON 和私有文件，可配置 PostgreSQL/S3；业务项目目录仍由单个逻辑 Node 持有。图中端口为本地开发默认值。
 
 - 现役 Web 入口：`src/http/app.html`，由 `npm run dev` 在 `http://localhost:8080/app` 提供。
 - 现役服务端：`src/http/capabilityServer.ts`、`src/mcp/**`、`src/capabilities/**`。

@@ -25,6 +25,7 @@
 | `BRAIN_HOST` | `127.0.0.1` | 监听地址 |
 | `BRAIN_PORT` | `3212` | 监听端口 |
 | `AGENT_PROJECT_CONCURRENCY` | `5` | 并发项目数（1–20）；不是浏览器并发 |
+| `AGENT_OWNER_PROJECT_CONCURRENCY` | `2` | 每个业务Key的活跃Harness项目上限，其余按客户轮转排队；不限制每日/月度次数 |
 | `GATEWAY_INTERNAL_TOKEN` | 空 | 内部服务令牌，生产必填 |
 | `OPENAI_BASE_URL` | `https://api.deepseek.com` | 大纲模型端点 |
 | `OPENAI_API_KEY` | 空 | 大纲模型凭证，调用 `/outline` 时必填 |

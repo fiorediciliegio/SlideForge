@@ -2,12 +2,15 @@ import json
 import copy
 import hashlib
 import math
+import queue
+import threading
 import time
 import urllib.error
 import urllib.request
 from urllib.parse import urlparse
 
 from .config import BrainConfig
+from .agent_state import AgentAPIError
 from .prompts import build_outline_messages
 
 
@@ -60,26 +63,73 @@ def agent_complete(config: BrainConfig, state, call_id: str, messages: list, too
                         part["image_url"] = {}
         estimated_input_tokens = len(json.dumps(estimate, ensure_ascii=False).encode("utf-8")) + image_tokens
     cost = (estimated_input_tokens * pricing["input_cny_per_million"] + payload["max_tokens"] * pricing["output_cny_per_million"]) / 1_000_000
-    state.mutate("reserve_call", call_id=call_id, input_hash=input_hash, cost=cost)
-    state.mutate("send_call", call_id=call_id)
+    waiting = False
+    try:
+        while True:
+            try:
+                state.mutate("reserve_call", call_id=call_id, input_hash=input_hash, cost=cost)
+                break
+            except AgentAPIError as error:
+                if error.code != "budget_inflight":
+                    raise
+                if not waiting:
+                    state.mutate("work_state", operation_id="model:"+call_id, work_state="budget")
+                    waiting = True
+                run = state.snapshot(include_messages=False)["agent"]
+                budget = run["budget"]
+                if budget["spent_cny"] + budget["reserved_cny"] + cost <= budget["limit_cny"] + 0.0000001:
+                    continue
+                if not any(call["status"] in ("sent","reserved") for call in run.get("calls",{}).values()):
+                    raise AgentAPIError(409,{"error":"费用预留没有可推进的调用，请恢复执行状态","error_code":"conflict"})
+                time.sleep(0.25)
+    finally:
+        if waiting:
+            try:
+                state.mutate("work_state", operation_id="model:"+call_id, work_state="done")
+            except AgentAPIError as error:
+                if error.status != 409:
+                    raise
+    try:
+        state.mutate("send_call", call_id=call_id)
+    except Exception:
+        # Provider I/O has not started, so this reservation is known to be unsent.
+        state.mutate("reject_call", call_id=call_id)
+        raise
     request = urllib.request.Request(f"{config.openai_base_url}/chat/completions", data=encoded,
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {config.openai_api_key}"}, method="POST")
-    try:
-        timeout = max(1, min(240, run["budget"]["limit_seconds"] - run["budget"]["active_seconds"]))
-        with urllib.request.urlopen(request, timeout=timeout) as response:
-            result = json.loads(response.read().decode("utf-8"))
-        result["_project_revision_id"] = decision_revision
-        response_ref = state.save_response(call_id, result)
-        usage = result["usage"]
-        actual = (usage["prompt_tokens"] * pricing["input_cny_per_million"] + usage["completion_tokens"] * pricing["output_cny_per_million"]) / 1_000_000
-        state.mutate("settle_call", call_id=call_id, cost=actual, response_ref=response_ref, usage=usage)
-        return _saved_message(result)
-    except urllib.error.HTTPError as error:
-        state.mutate("reject_call" if 400 <= error.code < 500 else "mark_unknown", call_id=call_id)
-        raise
-    except Exception:
-        state.mutate("mark_unknown", call_id=call_id)
-        raise
+    replies = queue.Queue(maxsize=1)
+    def request_and_settle():
+        try:
+            try:
+                timeout = max(1, min(240, run["budget"]["limit_seconds"] - run["budget"]["active_seconds"]))
+                with urllib.request.urlopen(request, timeout=timeout) as response:
+                    result = json.loads(response.read().decode("utf-8"))
+                result["_project_revision_id"] = decision_revision
+                response_ref = state.save_response(call_id, result)
+                usage = result["usage"]
+                actual = (usage["prompt_tokens"] * pricing["input_cny_per_million"] + usage["completion_tokens"] * pricing["output_cny_per_million"]) / 1_000_000
+                state.mutate("settle_call", call_id=call_id, cost=actual, response_ref=response_ref, usage=usage)
+                replies.put((True,_saved_message(result)))
+            except urllib.error.HTTPError as error:
+                state.mutate("reject_call" if 400 <= error.code < 500 else "mark_unknown", call_id=call_id)
+                raise
+            except Exception:
+                state.mutate("mark_unknown", call_id=call_id)
+                raise
+        except Exception as error:
+            replies.put((False,error))
+    threading.Thread(target=request_and_settle,daemon=True).start()
+    while True:
+        try:
+            ok, result = replies.get(timeout=0.25)
+            if ok: return result
+            raise result
+        except queue.Empty:
+            current = state.snapshot(include_messages=False)["agent"]
+            if (current["run_seq"],current["runner_epoch"]) != (run["run_seq"],run["runner_epoch"]) or current["phase"] not in ("planning","generating","checking","revising"):
+                raise AgentAPIError(409,{"error":"执行已取消或改变，等待中的总控请求仅保留结算","error_code":"conflict"})
+            if any(call["status"]=="unknown" for call in current.get("calls",{}).values()):
+                raise AgentAPIError(409,{"error":"存在结果未知的模型调用，需要用户明确处理后继续","error_code":"unknown_calls"})
 
 
 def generate_outline(

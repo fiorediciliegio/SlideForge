@@ -12,10 +12,12 @@ export interface LlmResult {
 export interface LlmClientOptions {
   timeoutMs?: number;
   maxRetries?: number;
+  pageModel?: {owner:string;project:string;onWait?:()=>void};
 }
 
 import { reportUsage } from "../../src/billing/index.js";
 import { currentAgentCall } from "../../src/server/agentClient.js";
+import {pageModelQueue} from "../../src/server/pageModelQueue.js";
 
 const DEFAULT_TIMEOUT_MS = 240_000;
 const DEFAULT_RETRIES = 2;
@@ -69,7 +71,7 @@ export async function llmComplete(
 ): Promise<LlmResult> {
   if (currentAgentCall()) {
     const { agentModelComplete } = await import("../../src/server/agentModel.js");
-    return agentModelComplete(messages);
+    return agentModelComplete(messages,options.pageModel);
   }
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const maxRetries = options.maxRetries ?? DEFAULT_RETRIES;
@@ -82,6 +84,9 @@ export async function llmComplete(
         await new Promise((r) => setTimeout(r, 2000 * attempt));
       }
       try {
+        if(options.pageModel&&pageModelQueue().stats.active>=pageModelQueue().capacity)options.pageModel.onWait?.();
+        const release=options.pageModel?await pageModelQueue().acquire(options.pageModel):undefined;
+        try {
         const controller = new AbortController();
         const timer = setTimeout(() => controller.abort(), timeoutMs);
         try {
@@ -112,6 +117,7 @@ export async function llmComplete(
         } finally {
           clearTimeout(timer);
         }
+        } finally {release?.()}
       } catch (error) {
         lastError = error;
         const message = error instanceof Error ? error.message : String(error);

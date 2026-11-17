@@ -2,6 +2,12 @@
 
 后续性能测评使用本工具：每轮只运行当前工作区的6个案例，直接读取已保存的历史成绩，不再启动或重跑旧版代码。当前业务代码的未提交修改也会参与运行，并保存源码哈希。
 
+## 页面并发3配置
+
+`--profile page-concurrency-3`采用Harness整页3、页面请求池12、Brain项目5/每Key2、引擎1，总控8192和单页16000保持。主参考`20261114-scope-16000`，显式校验该历史结果的v3协议hash，原材料、模板和评分器不变。旧配置继续显式注入整页2，不随产品新默认值变化。
+
+`npm.cmd run eval:harness -- --profile page-concurrency-3 --check`只校验协议，不产生费用。`--preflight`启动并关闭隔离服务，不发出模型请求；真实`--run`仍须新的明确预算授权。结果目录为`.eval-results/harness/v4-concurrency-3/`。这轮串行6例不能代替多人容量验收；并发策略及预算等待共同变更，报告按综合版本解释。
+
 ## 修订范围与单页16000配置
 
 使用`--profile repair-scope-16000`：总控8192、单页16000、页面并发2，其余6类案例/6页/模板/评分规则与每例预算不变。主参考为第二项修改前的`20261114-review`；辅助参考为上一轮`20261114-revision-batch`。历史协议和结果均不覆盖。
@@ -45,6 +51,20 @@ npm.cmd run eval:harness -- --profile revision-batch-8192 --run --budget-cny 15
 ```
 
 新结果保存在`.eval-results/harness/v2-8192/<UTC时间ID>/`，metadata与protocol.json记录实际输出上限、协议哈希和比较口径。`--compare`会从metadata恢复该运行的配置，不发起模型请求。
+
+## 当前状态上下文与缓存对比
+
+`--profile context-status-v1` 使用新执行的 `context_version=2`，总控8192/单页16000/整页并发3/共享请求12/引擎1保持。首轮仅增加权威状态编排，不删除资料、HTML、推理协议或历史消息，不预先承诺费用或耗时下降。
+
+主基线 `20261115-page-concurrency-3` 只读补算自 `.eval-results/harness/v4-concurrency-3/20261115T140047040Z`；新建基线、指标和配置单独保存哈希，不改旧配置。其总控缓存命中率68.11%、页面21.09%、整体54.16%。报告按输入token加权，显示命中/未命中token及百分点变化，同时比较全部尝试和共同成功案例；缺少供应商缓存字段或未知调用标为未采集完整，不当零。
+
+```powershell
+npm.cmd run eval:harness -- --profile context-status-v1 --check
+# 本轮真实测评需另行明确授权预算；15元仅为示例
+npm.cmd run eval:harness -- --profile context-status-v1 --run --budget-cny 15
+```
+
+新运行保存在 `.eval-results/harness/v5-context-status/<UTC时间ID>/`。缓存受供应商与调用前缀影响，历史比较不能单独证明因果。
 
 ## 已保存的历史结果
 
@@ -109,4 +129,4 @@ node --import tsx/esm --test tests/evals/*.test.ts
 npm.cmd run eval:harness -- --check
 ```
 
-本次工具固化没有新增真实模型调用，也没有修改生成业务逻辑。
+`--check`和`--compare`均不发起真实模型请求；真实运行必须另行提供本轮预算。

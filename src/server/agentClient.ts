@@ -7,8 +7,8 @@ import { HttpRequestError } from "./httpSecurity.js";
 export const inputHash = (value: unknown) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 export async function internalPost<T>(url: string, body: unknown, timeoutMs = 300_000): Promise<T> {
   const response = await fetch(url, { method: "POST", headers: { "content-type": "application/json", "x-internal-token": process.env.GATEWAY_INTERNAL_TOKEN ?? "" }, body: JSON.stringify(body), signal: AbortSignal.timeout(timeoutMs) });
-  const payload = await response.json() as T & { error?: string };
-  if (!response.ok) throw new HttpRequestError(response.status, payload.error ?? `内部服务错误 ${response.status}`);
+  const payload = await response.json() as T & { error?: string; error_code?: string };
+  if (!response.ok) throw new HttpRequestError(response.status, payload.error ?? `内部服务错误 ${response.status}`, payload.error_code);
   return payload;
 }
 export function agentJobsURL() {

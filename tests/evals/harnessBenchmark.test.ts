@@ -2,8 +2,68 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
+import {mkdtemp,readFile,writeFile,rm} from 'node:fs/promises';
+import os from 'node:os';
 
 const root = path.resolve(import.meta.dirname, '../..');
+
+test('缓存按输入token加权，缺字段不当零，区分模型用途',async()=>{
+ const {normalizeRun,summarizeCases}=await import('../../tools/harness-eval/benchmark.mjs');
+ const meta={records:[{id:'a',case_id:'product',arm:'current',delivery_success:true}]};
+ const call=(kind:string,usage:any)=>({trial:'a',kind,status:'completed',usage});
+ const run=normalizeRun(meta,[call('controller',{prompt_tokens:100,completion_tokens:1,prompt_cache_hit_tokens:100}),call('controller',{prompt_tokens:900,completion_tokens:1,prompt_cache_hit_tokens:0}),call('page',{prompt_tokens:1000,completion_tokens:1,prompt_cache_hit_tokens:500})],'current','test','h');
+ const cache=summarizeCases(run.cases).cache;
+ assert.equal(cache.controller.hit_ratio,.1);assert.equal(cache.page.hit_ratio,.5);assert.equal(cache.total.hit_ratio,.3);
+ assert.equal(cache.total.input_tokens,2000);assert.equal(cache.total.hit_tokens,600);assert.equal(cache.total.miss_tokens,1400);
+ const missing=normalizeRun(meta,[call('controller',{prompt_tokens:100,completion_tokens:1})],'current','test','h');
+ assert.equal(summarizeCases(missing.cases).cache.controller.hit_ratio,null);assert.equal(summarizeCases(missing.cases).cache.controller.unknown_calls,1);
+ const historical=summarizeCases([{calls:2,prompt_tokens:1000}]);assert.equal(historical.cache.total.hit_ratio,null);
+ const unknown=normalizeRun(meta,[{trial:'a',kind:'controller',status:'unknown'}],'current','test','h');
+ assert.equal(summarizeCases(unknown.cases).cache.total.hit_ratio,null);assert.equal(summarizeCases(unknown.cases).cache.total.unknown_calls,1);
+});
+
+test('状态上下文配置固定上轮并发3结果和缓存基线',async()=>{
+ const {validateSuite,loadBaselines}=await import('../../tools/harness-eval/benchmark.mjs');
+ const suite=await validateSuite('context-status-v1'),baseline=(await loadBaselines(suite)).find(b=>b.id===suite.protocol.primary_baseline);
+ assert.equal(suite.protocol.primary_baseline,'20261115-page-concurrency-3');assert.equal(suite.protocol.page_concurrency,3);
+ assert.equal(suite.protocol.context_version,2);assert.equal(baseline.cases.length,6);
+ const controller=baseline.cases.reduce((n,c)=>n+c.cache.controller.input_tokens,0),hit=baseline.cases.reduce((n,c)=>n+c.cache.controller.hit_tokens,0);
+ assert.equal(controller,722366);assert.equal(hit,492032);
+});
+
+test('状态配置免费计划显示格式版本且不调用供应商',()=>{
+ const result=spawnSync(process.execPath,['--import','tsx/esm','tools/harness-eval/run.mjs','--profile','context-status-v1','--check'],{cwd:root,encoding:'utf8',env:{...process.env,OPENAI_API_KEY:''}});
+ assert.equal(result.status,0,result.stderr);const plan=JSON.parse(result.stdout);
+ assert.equal(plan.context_version,2);assert.equal(plan.provider_requests,0);assert.equal(plan.primary_baseline,'20261115-page-concurrency-3');
+});
+
+test('缓存报告同时保留全部尝试和成功配对，失败调用仍计入全量',async()=>{
+ const {validateSuite,writeComparison}=await import('../../tools/harness-eval/benchmark.mjs');
+ const suite=await validateSuite('context-status-v1'),out=await mkdtemp(path.join(os.tmpdir(),'sf-cache-report-'));
+ try{
+  await writeFile(path.join(out,'metadata.json'),JSON.stringify({protocol_hash:suite.protocol_hash,status:'test',records:[
+   {id:'ok',case_id:'product',arm:'current',phase:'completed',delivery_success:true},
+   {id:'failed',case_id:'brand',arm:'current',phase:'interrupted',delivery_success:false}]}));
+  await writeFile(path.join(out,'model-ledger.json'),JSON.stringify({calls:[
+   {trial:'ok',kind:'controller',status:'completed',usage:{prompt_tokens:100,completion_tokens:1,prompt_cache_hit_tokens:50}},
+   {trial:'failed',kind:'page',status:'unknown'}]}));
+  const report=await writeComparison(out,suite),comparison=report.comparisons.find(c=>c.baseline_id===suite.protocol.primary_baseline);
+  assert.equal(report.stats.cache.total.unknown_calls,1);assert.equal(report.stats.cache.total.hit_ratio,null);
+  assert.deepEqual(comparison.paired_case_ids,['product']);assert.equal(comparison.after.cache.total.hit_ratio,.5);
+  const md=await readFile(path.join(out,'报告.md'),'utf8');assert.match(md,/缓存命中率：全部尝试/);assert.match(md,/缓存命中率：共同成功案例/);assert.match(md,/未采集完整/);
+ }finally{await rm(out,{recursive:true,force:true})}
+});
+
+test('并发3配置显式引用16000历史协议而不覆盖旧配置',async()=>{
+  const {validateSuite,loadBaselines}=await import('../../tools/harness-eval/benchmark.mjs');
+  const suite=await validateSuite('page-concurrency-3');
+  assert.equal(suite.protocol.page_concurrency,3);assert.equal(suite.protocol.page_max_tokens,16000);
+  assert.equal(suite.protocol.primary_baseline,'20261114-scope-16000');
+  const baseline=(await loadBaselines(suite)).find(b=>b.id===suite.protocol.primary_baseline);
+  assert.equal(baseline.cases.length,6);assert.equal(baseline.page_concurrency,2);
+  assert.equal(suite.metric_baselines['20261114-scope-16000'].summary.first_program.passed,35);
+  const old=await validateSuite('repair-scope-16000');assert.equal(old.protocol.page_concurrency,2);
+});
 
 test('16000配置保留两轮历史基线和可复核的首次生成指标',async()=>{
   const {validateSuite,loadBaselines}=await import('../../tools/harness-eval/benchmark.mjs');

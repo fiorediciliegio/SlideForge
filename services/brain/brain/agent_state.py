@@ -31,11 +31,11 @@ class AgentState:
         except urllib.error.HTTPError as error:
             raise AgentAPIError(error.code, json.loads(error.read())) from error
 
-    def snapshot(self):
+    def snapshot(self, include_messages=True):
         result = self.post(self.jobs_url, {"action": "get", "deck_id": self.deck_id}, 15)["job"]
         if not result or not result.get("agent"):
             raise ValueError("Agent 执行不存在")
-        if result["agent"].get("messages_ref"):
+        if include_messages and result["agent"].get("messages_ref"):
             result["agent"]["messages"] = self.post(self.capability_url + "/internal/agent/model-results", {"deck_id":self.deck_id,"run_seq":self.run_seq,"checkpoint_ref":result["agent"]["messages_ref"]})["messages"]
         return result
 

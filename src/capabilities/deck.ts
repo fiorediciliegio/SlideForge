@@ -9,7 +9,7 @@ import { llmComplete } from "../../scripts/m0/llmClient.js";
 import { buildOutlineMessagesViaBrain, buildPageMessagesViaBrain, generateOutlineViaBrain, remoteBrainEnabled } from "../server/brainClient.js";
 import { extractHtmlDocument, splitSlideDocument, buildDeckHtml } from "../../scripts/m0/deck.js";
 import type { SlideIssue } from "../../scripts/m0/validatePage.js";
-import { validateEngineHTML, inspectEngineWorkspace, startWorkspaceExport, waitEngineJob } from "../server/engineClient.js";
+import { validateEngineHTML, inspectEngineWorkspace, startWorkspaceExport, waitEngineJob, currentEngineOwner } from "../server/engineClient.js";
 import { engineTransport } from "../server/engineTransport.js";
 import { computePageDrift } from "./drift.js";
 import { validateHtmlDialect } from "../../scripts/m0/dialect.js";
@@ -106,7 +106,7 @@ async function generatePage(
           content: `上一次输出存在以下问题：${lastIssues.map((i) => i.detail).join("；")}。请修复后重新输出完整 HTML 文档（所有元素在 1920×1080 画布内，且遵守方言契约：无 script/外链/远程资源/fixed/filter/blend/动画）。`,
         });
       }
-      const result = await llmComplete(messages);
+      const result = await llmComplete(messages,{pageModel:{owner:currentEngineOwner(),project:currentAgentCall()?.deck_id??path.basename(ctx.runDir),onWait:()=>ctx.onEvent?.({stage:"page",page:index+1,message:"等待页面生成容量"})}});
       const html = extractHtmlDocument(result.text);
       const parts = splitSlideDocument(html);
 
@@ -126,7 +126,7 @@ async function generatePage(
       await writeFile(pageFile, html, "utf8");
 
       checkingEngine=true;
-      const validation = await validateEngineHTML(await readFile(pageFile,"utf8"),{runDir:ctx.runDir});
+      const validation=await validateEngineHTML(await readFile(pageFile,"utf8"),{runDir:ctx.runDir});
       checkingEngine=false;
       if (!validation.ok) {
         if (currentAgentCall()) throw new Error(validation.issues.map(item=>item.detail).join("；"));

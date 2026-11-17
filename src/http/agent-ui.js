@@ -4,7 +4,16 @@ globalThis.agentUI = (() => {
   let activeId, renderedRevision, renderedDraft, dragIndex;
   const text = (tag, value, className) => { const node=document.createElement(tag);node.textContent=value;if(className)node.className=className;return node; };
   const terminal = run => ["completed","failed","cancelled"].includes(run.phase);
-  const label = {queued:"排队中",planning:"识别需求与规划",waiting_outline:"等待确认大纲",generating:"生成页面",checking:"质量检查",revising:"定向修订",waiting_user:"等待补充信息",paused_budget:"预算不足，已暂停",interrupted:"任务已中断，可继续",completed:"预览已交付",failed:"执行失败",cancelled:"本次执行已取消"};
+  const label = {queued:"等待项目执行名额",planning:"识别需求与规划",waiting_outline:"等待确认大纲",generating:"生成页面",checking:"质量检查",revising:"定向修订",waiting_user:"等待补充信息",paused_budget:"预算不足，已暂停",interrupted:"任务已中断，可继续",completed:"预览已交付",failed:"执行失败",cancelled:"本次执行已取消"};
+  function renderProgress() {
+    const waits=current.resource_waits??{}, parts=[];
+    if(waits.capacity)parts.push(`等待页面生成容量（${waits.capacity}页）`);
+    if(waits.budget)parts.push(`等待在途调用结算（${waits.budget}页）`);
+    if(waits.engine)parts.push(`等待引擎检查（${waits.engine}页）`);
+    if(project&&project.revision_id===current.preview_revision)parts.push(`已生成 ${project.pages.length} / ${project.outline.pages.length} 页`);
+    $("agentProgress").textContent=[label[current.phase]??current.phase,...parts,current.error,current.quality_state==="draft"?"草稿/检查未完成":""].filter(Boolean).join(" · ");
+    $("status").textContent=$("agentProgress").textContent;
+  }
   function options() {
     const mode=$("pagePolicy").value, count=Number($("pages").value);
     return {version:1,generation_mode:$("generationMode").value,research_allowed:$("researchToggle").checked,
@@ -36,7 +45,7 @@ globalThis.agentUI = (() => {
     if(current&&current.run_seq===job.agent.run_seq&&job.agent.checkpoint_seq<current.checkpoint_seq)return;
     const previousPhase=current?.phase;current=job.agent;
     $("generationMode").value=current.options.generation_mode;
-    $("agentProgress").textContent=`${label[current.phase]??current.phase}${current.error?" · "+current.error:""}${current.quality_state==="draft"?" · 草稿/检查未完成":""}`;
+    renderProgress();
     const budget=current.budget;
     $("agentBudget").textContent=`有效执行 ${Math.round(budget.active_seconds)} / ${budget.limit_seconds} 秒 · 模型费用估算 ¥${budget.spent_cny.toFixed(4)} / ¥${budget.limit_cny} · 在途预留 ¥${budget.reserved_cny.toFixed(4)}（非导出点数）`;
     $("status").textContent=$("agentProgress").textContent;
@@ -53,8 +62,9 @@ globalThis.agentUI = (() => {
     $("unknownConsentLabel").style.display=unknown.length?"block":"none";
     if(current.preview_revision!==renderedRevision||current.draft_revision!==renderedDraft||!project) {
       const loaded=await api(`/decks/${id}/project`);if(loaded.error)return;
-      if(id!==activeId||id!==state.deckId)return;
+      if(id!==activeId||id!==state.deckId||!current)return;
       project=loaded.project;
+      renderProgress();
       renderContext();
       if(!dirty&&!saving){draft=loaded.draft;renderDraft();renderedDraft=current.draft_revision;}
       if(project.pages.length&&project.revision_id!==renderedRevision) {

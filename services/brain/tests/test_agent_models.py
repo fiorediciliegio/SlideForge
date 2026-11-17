@@ -1,14 +1,16 @@
 import unittest
 from unittest.mock import patch
 import json
+import threading
 from brain.config import BrainConfig
 from brain.models import agent_complete
+from brain.agent_state import AgentAPIError
 
 class FakeState:
     def __init__(self):
         self.actions = []
-        self.run = {"calls": {}, "pricing": {"input_cny_per_million": 1, "output_cny_per_million": 2, "version": "test"}, "budget": {"limit_seconds": 600, "active_seconds": 0}}
-    def snapshot(self): return {"agent": self.run}
+        self.run = {"run_seq":1,"runner_epoch":1,"phase":"planning","calls": {}, "pricing": {"input_cny_per_million": 1, "output_cny_per_million": 2, "version": "test"}, "budget": {"limit_seconds": 600, "active_seconds": 0,"limit_cny":2,"spent_cny":0,"reserved_cny":0}}
+    def snapshot(self,include_messages=True): return {"agent": self.run}
     def mutate(self, action, **kwargs):
         self.actions.append(action)
         return {"agent": self.run}
@@ -16,6 +18,109 @@ class FakeState:
     def read_response(self, ref): return self.response
 
 class AgentModelTests(unittest.TestCase):
+    def test_settlement_before_budget_snapshot_retries_admission_instead_of_interrupting(self):
+        state=FakeState();original=state.mutate;attempts=[]
+        state.run["calls"]["old"]={"status":"completed"}
+        def mutate(action,**kwargs):
+            if action=="reserve_call":
+                attempts.append(kwargs["call_id"])
+                if len(attempts)==1:raise AgentAPIError(409,{"error":"inflight","error_code":"budget_inflight"})
+            return original(action,**kwargs)
+        state.mutate=mutate
+        payload={"choices":[{"message":{"role":"assistant","content":"done"}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+        class Response:
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+            def read(self):return json.dumps(payload).encode()
+        with patch("urllib.request.urlopen",return_value=Response()) as request:
+            agent_complete(BrainConfig("127.0.0.1",3212,"token",openai_api_key="test"),state,"turn-0",[],[])
+        self.assertEqual(attempts,["turn-0","turn-0"])
+        self.assertEqual(request.call_count,1)
+
+    def test_cancel_returns_before_provider_and_late_response_only_settles(self):
+        state=FakeState();started=threading.Event();release=threading.Event();settled=threading.Event();errors=[];results=[]
+        original=state.mutate
+        def mutate(action,**kwargs):
+            result=original(action,**kwargs)
+            if action=="settle_call":settled.set()
+            return result
+        state.mutate=mutate
+        payload={"choices":[{"message":{"role":"assistant","content":"late"}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+        class Response:
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+            def read(self):
+                started.set();release.wait(5)
+                return json.dumps(payload).encode()
+        def execute():
+            try:results.append(agent_complete(BrainConfig("127.0.0.1",3212,"token",openai_api_key="test"),state,"turn-0",[],[]))
+            except Exception as error:errors.append(error)
+        with patch("urllib.request.urlopen",return_value=Response()) as request:
+            thread=threading.Thread(target=execute);thread.start()
+            try:
+                self.assertTrue(started.wait(1))
+                state.run["phase"]="cancelled"
+                thread.join(1.5)
+                self.assertFalse(thread.is_alive(),"cancelled controller still occupies project worker")
+                self.assertEqual(len(errors),1)
+                self.assertIsInstance(errors[0],AgentAPIError)
+                self.assertFalse(settled.is_set())
+            finally:
+                release.set();thread.join(2)
+                self.assertTrue(settled.wait(2))
+            self.assertEqual(request.call_count,1)
+            self.assertEqual(results,[])
+            self.assertNotIn("mark_unknown",state.actions)
+
+    def test_inflight_budget_wait_reuses_admission_identity_and_sends_once(self):
+        state=FakeState();original=state.mutate;reservations=[]
+        state.run["calls"]["page"]={"status":"sent"}
+        def mutate(action,**kwargs):
+            if action=="reserve_call":
+                reservations.append(kwargs["call_id"])
+                if len(reservations)==1:
+                    raise AgentAPIError(409,{"error":"inflight","error_code":"budget_inflight"})
+            return original(action,**kwargs)
+        state.mutate=mutate
+        payload={"choices":[{"message":{"role":"assistant","content":"done"}}],"usage":{"prompt_tokens":10,"completion_tokens":5}}
+        class Response:
+            def __enter__(self):return self
+            def __exit__(self,*args):pass
+            def read(self):return json.dumps(payload).encode()
+        with patch("urllib.request.urlopen",return_value=Response()) as request,patch("brain.models.time.sleep"):
+            agent_complete(BrainConfig("127.0.0.1",3212,"token",openai_api_key="test"),state,"turn-0",[],[])
+        self.assertEqual(reservations,["turn-0","turn-0"])
+        self.assertEqual(request.call_count,1)
+        self.assertEqual(state.actions.count("send_call"),1)
+        self.assertIn("work_state",state.actions)
+
+    def test_cancel_during_budget_wait_does_not_send_provider_request(self):
+        state=FakeState();original=state.mutate;attempts=[]
+        state.run["calls"]["page"]={"status":"sent"}
+        def mutate(action,**kwargs):
+            if action=="reserve_call":
+                attempts.append(action)
+                raise AgentAPIError(409,{"error":"inflight" if len(attempts)==1 else "cancelled","error_code":"budget_inflight" if len(attempts)==1 else "conflict"})
+            return original(action,**kwargs)
+        state.mutate=mutate
+        with patch("urllib.request.urlopen",side_effect=AssertionError("no provider request")) as request,patch("brain.models.time.sleep"):
+            with self.assertRaisesRegex(AgentAPIError,"cancelled"):
+                agent_complete(BrainConfig("127.0.0.1",3212,"token",openai_api_key="test"),state,"turn-0",[],[])
+        self.assertEqual(request.call_count,0)
+        self.assertNotIn("send_call",state.actions)
+
+    def test_failed_send_admission_releases_known_unsent_reservation(self):
+        state=FakeState();original=state.mutate
+        def mutate(action,**kwargs):
+            if action=="send_call":raise AgentAPIError(402,{"error":"expired","error_code":"budget_exhausted"})
+            return original(action,**kwargs)
+        state.mutate=mutate
+        with patch("urllib.request.urlopen",side_effect=AssertionError("no provider request")) as request:
+            with self.assertRaises(AgentAPIError):
+                agent_complete(BrainConfig("127.0.0.1",3212,"token",openai_api_key="test"),state,"turn-0",[],[])
+        self.assertEqual(request.call_count,0)
+        self.assertEqual(state.actions[-1],"reject_call")
+
     def test_controller_output_limit_and_reservation_use_the_same_8192_budget(self):
         state=FakeState();original=state.mutate;reservations=[]
         def mutate(action,**kwargs):

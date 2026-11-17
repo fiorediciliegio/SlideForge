@@ -1,6 +1,7 @@
 import base64
 import hmac
 import json
+import queue
 import signal
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -94,6 +95,8 @@ def create_server(config: BrainConfig) -> ThreadingHTTPServer:
                     self._json(404, self._error("not found", "not_found"))
                     return
                 self._json(200, result)
+            except queue.Full as error:
+                self._json(503, self._error(str(error), "queue_full", True))
             except (ValueError, TypeError, json.JSONDecodeError) as error:
                 self._json(400, self._error(str(error), "bad_request"))
             except Exception as error:  # pragma: no cover - final process boundary

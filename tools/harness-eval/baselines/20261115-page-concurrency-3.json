@@ -1,0 +1,1440 @@
+{
+  "id": "20261115-page-concurrency-3",
+  "protocol_hash": "37883227144511cf229faf223f8cbb04ef6d5904e738100c15318527a5bb050b",
+  "started_at": "2026-11-15T14:00:47.154Z",
+  "finished_at": "2026-11-15T14:21:08.928Z",
+  "model": "deepseek-flash",
+  "git_head": "0b84b72c309f7ea191d488f0c9fcad5bdf6aa177",
+  "hardware": {
+    "cpu": "AMD Ryzen 9 7940HX with Radeon Graphics        ",
+    "cpus": 32,
+    "memory_bytes": 16331579392,
+    "node": "v24.14.0"
+  },
+  "service_lifecycle": "isolated-cluster-per-case",
+  "cases": [
+    {
+      "case_id": "product",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 151605.37099999998,
+      "export_ms": 46246.44880000001,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "试点团队",
+            "value": "17",
+            "unit": "支",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "04 澄图工单云 · 产品介绍 虚构测评材料 PILOT · 试点评估 试点数据 试点阶段的构造口径数据，用于测评演示。 数据仅反映测评设定，不作真实经营效果解读。 01 试点团队 17 支 02 试点工单 426 张 03 平均响应时长 19 分钟 04 培训时长 3 小时 口径说明 以上均为 测评构造值 ，不代表真实经营效果。 未经证实 营收、市场份额、认证信息，均无，本页不作表述。 澄图工单云 · 本资料为虚构测评材料 4 / 6"
+            }
+          },
+          {
+            "subject": "试点工单",
+            "value": "426",
+            "unit": "张",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "04 澄图工单云 · 产品介绍 虚构测评材料 PILOT · 试点评估 试点数据 试点阶段的构造口径数据，用于测评演示。 数据仅反映测评设定，不作真实经营效果解读。 01 试点团队 17 支 02 试点工单 426 张 03 平均响应时长 19 分钟 04 培训时长 3 小时 口径说明 以上均为 测评构造值 ，不代表真实经营效果。 未经证实 营收、市场份额、认证信息，均无，本页不作表述。 澄图工单云 · 本资料为虚构测评材料 4 / 6"
+            }
+          },
+          {
+            "subject": "平均响应时长",
+            "value": "19",
+            "unit": "分钟",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "04 澄图工单云 · 产品介绍 虚构测评材料 PILOT · 试点评估 试点数据 试点阶段的构造口径数据，用于测评演示。 数据仅反映测评设定，不作真实经营效果解读。 01 试点团队 17 支 02 试点工单 426 张 03 平均响应时长 19 分钟 04 培训时长 3 小时 口径说明 以上均为 测评构造值 ，不代表真实经营效果。 未经证实 营收、市场份额、认证信息，均无，本页不作表述。 澄图工单云 · 本资料为虚构测评材料 4 / 6"
+            }
+          },
+          {
+            "subject": "培训时长",
+            "value": "3",
+            "unit": "小时",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "04 澄图工单云 · 产品介绍 虚构测评材料 PILOT · 试点评估 试点数据 试点阶段的构造口径数据，用于测评演示。 数据仅反映测评设定，不作真实经营效果解读。 01 试点团队 17 支 02 试点工单 426 张 03 平均响应时长 19 分钟 04 培训时长 3 小时 口径说明 以上均为 测评构造值 ，不代表真实经营效果。 未经证实 营收、市场份额、认证信息，均无，本页不作表述。 澄图工单云 · 本资料为虚构测评材料 4 / 6"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "客户问题",
+            "matched": true
+          },
+          {
+            "title": "产品能力",
+            "matched": true
+          },
+          {
+            "title": "试点数据",
+            "matched": true
+          },
+          {
+            "title": "实施步骤",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "p1-cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "p2-problem",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "p3-capability",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "p4-pilot",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "p5-steps",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "p6-notes",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 6012.448399999994,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "产品介绍（B2B SaaS 产品发布/市场传播）",
+        "reason": "面向企业市场与客户成功团队的虚构 B2B 工单协作产品介绍，需覆盖问题、能力、试点数据与实施步骤"
+      },
+      "page_metrics": {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "p1-cover",
+            "first_call_id": "run-1:turn-3:call_00_RpFmzGjRvX8vuVmeCJMR3766:page:p1-cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p2-problem",
+            "first_call_id": "run-1:turn-3:call_00_RpFmzGjRvX8vuVmeCJMR3766:page:p2-problem:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p3-capability",
+            "first_call_id": "run-1:turn-3:call_00_RpFmzGjRvX8vuVmeCJMR3766:page:p3-capability:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p4-pilot",
+            "first_call_id": "run-1:turn-3:call_00_RpFmzGjRvX8vuVmeCJMR3766:page:p4-pilot:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "p5-steps",
+            "first_call_id": "run-1:turn-3:call_00_RpFmzGjRvX8vuVmeCJMR3766:page:p5-steps:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "p6-notes",
+            "first_call_id": "run-1:turn-3:call_00_RpFmzGjRvX8vuVmeCJMR3766:page:p6-notes:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 8,
+        "unknown_page_calls": 0
+      },
+      "calls": 20,
+      "calls_by_kind": {
+        "controller": 12,
+        "page": 8,
+        "outline": 0
+      },
+      "cache": {
+        "total": {
+          "input_tokens": 202577,
+          "hit_tokens": 119680,
+          "miss_tokens": 82897,
+          "hit_ratio": 0.5907877004793239,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "controller": {
+          "input_tokens": 146039,
+          "hit_tokens": 105216,
+          "miss_tokens": 40823,
+          "hit_ratio": 0.7204650812454207,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "page": {
+          "input_tokens": 56538,
+          "hit_tokens": 14464,
+          "miss_tokens": 42074,
+          "hit_ratio": 0.25582793873147264,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "outline": {
+          "input_tokens": 0,
+          "hit_tokens": 0,
+          "miss_tokens": 0,
+          "hit_ratio": null,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        }
+      },
+      "prompt_tokens": 202577,
+      "completion_tokens": 51014,
+      "reasoning_tokens": 21398,
+      "cache_hit_tokens": 119680,
+      "cost_time_cache_cny": 0.28934660000000006,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 2,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "brand",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 104306.7685,
+      "export_ms": 43523.066300000006,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "试点门店",
+            "value": "11",
+            "unit": "家",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 1,
+              "text": "内部对齐材料 · 品牌传播 封面 品牌传播 溪木咖啡 品牌传播 品牌与门店运营团队 · 对齐材料 日期： 待补充 11 家 试点门店 5 周 传播周期 3 类 触点类型 14 套 素材版本 溪木咖啡为虚构社区咖啡品牌，全部数字仅供测评 1 / 6"
+            }
+          },
+          {
+            "subject": "传播周期",
+            "value": "5",
+            "unit": "周",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 1,
+              "text": "内部对齐材料 · 品牌传播 封面 品牌传播 溪木咖啡 品牌传播 品牌与门店运营团队 · 对齐材料 日期： 待补充 11 家 试点门店 5 周 传播周期 3 类 触点类型 14 套 素材版本 溪木咖啡为虚构社区咖啡品牌，全部数字仅供测评 1 / 6"
+            }
+          },
+          {
+            "subject": "触点类型",
+            "value": "3",
+            "unit": "类",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 1,
+              "text": "内部对齐材料 · 品牌传播 封面 品牌传播 溪木咖啡 品牌传播 品牌与门店运营团队 · 对齐材料 日期： 待补充 11 家 试点门店 5 周 传播周期 3 类 触点类型 14 套 素材版本 溪木咖啡为虚构社区咖啡品牌，全部数字仅供测评 1 / 6"
+            }
+          },
+          {
+            "subject": "素材版本",
+            "value": "14",
+            "unit": "套",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 1,
+              "text": "内部对齐材料 · 品牌传播 封面 品牌传播 溪木咖啡 品牌传播 品牌与门店运营团队 · 对齐材料 日期： 待补充 11 家 试点门店 5 周 传播周期 3 类 触点类型 14 套 素材版本 溪木咖啡为虚构社区咖啡品牌，全部数字仅供测评 1 / 6"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "品牌定位",
+            "matched": true
+          },
+          {
+            "title": "表达原则",
+            "matched": true
+          },
+          {
+            "title": "触点安排",
+            "matched": true
+          },
+          {
+            "title": "执行边界",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "positioning",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "expression",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "touchpoints",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "boundaries",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "status",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5595.506300000008,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "品牌传播计划对齐",
+        "reason": "内部品牌传播材料，受众为品牌与门店运营团队，用于传播要点对齐而非对外发布"
+      },
+      "page_metrics": {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_SpR5eOV4HA7cCvTBYyjA6072:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "positioning",
+            "first_call_id": "run-1:turn-3:call_00_SpR5eOV4HA7cCvTBYyjA6072:page:positioning:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "expression",
+            "first_call_id": "run-1:turn-3:call_00_SpR5eOV4HA7cCvTBYyjA6072:page:expression:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "touchpoints",
+            "first_call_id": "run-1:turn-3:call_00_SpR5eOV4HA7cCvTBYyjA6072:page:touchpoints:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "boundaries",
+            "first_call_id": "run-1:turn-3:call_00_SpR5eOV4HA7cCvTBYyjA6072:page:boundaries:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "status",
+            "first_call_id": "run-1:turn-3:call_00_SpR5eOV4HA7cCvTBYyjA6072:page:status:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      "calls": 13,
+      "calls_by_kind": {
+        "controller": 7,
+        "page": 6,
+        "outline": 0
+      },
+      "cache": {
+        "total": {
+          "input_tokens": 92702,
+          "hit_tokens": 40064,
+          "miss_tokens": 52638,
+          "hit_ratio": 0.4321805354792777,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "controller": {
+          "input_tokens": 55677,
+          "hit_tokens": 37376,
+          "miss_tokens": 18301,
+          "hit_ratio": 0.6713005370260611,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "page": {
+          "input_tokens": 37025,
+          "hit_tokens": 2688,
+          "miss_tokens": 34337,
+          "hit_ratio": 0.0725995948683322,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "outline": {
+          "input_tokens": 0,
+          "hit_tokens": 0,
+          "miss_tokens": 0,
+          "hit_ratio": null,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        }
+      },
+      "prompt_tokens": 92702,
+      "completion_tokens": 41296,
+      "reasoning_tokens": 19565,
+      "cache_hit_tokens": 40064,
+      "cost_time_cache_cny": 0.21862328,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 0,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "campaign",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 142222.44069999998,
+      "export_ms": 45181.646699999925,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "邀请名额",
+            "value": "84",
+            "unit": "人",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "体验侧资源与参与规模 已列出 7 组 体验分组 26 分钟 每组体验时长 84 人 邀请名额"
+            }
+          },
+          {
+            "subject": "体验分组",
+            "value": "7",
+            "unit": "组",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "体验侧资源与参与规模 已列出 7 组 体验分组 26 分钟 每组体验时长 84 人 邀请名额"
+            }
+          },
+          {
+            "subject": "每组体验时长",
+            "value": "26",
+            "unit": "分钟",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "7 个分组，每组体验时长 26 分钟"
+            }
+          },
+          {
+            "subject": "反馈问题",
+            "value": "9",
+            "unit": "项",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "反馈问题 9 项，流程末尾汇总复盘"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "活动目标",
+            "matched": true
+          },
+          {
+            "title": "体验流程",
+            "matched": true
+          },
+          {
+            "title": "资源安排",
+            "matched": true
+          },
+          {
+            "title": "反馈机制",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "goal",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "flow",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "resource",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "feedback",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "open",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5428.003700000001,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "市场活动方案（产品体验日）",
+        "reason": "主题为企业产品体验日执行方案，受众为市场活动执行团队，属于企业市场活动策划类，非学术或旅游。"
+      },
+      "page_metrics": {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_vqncE1C90mECJHb4OyxP7826:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "goal",
+            "first_call_id": "run-1:turn-3:call_00_ET_vqncE1C90mECJHb4OyxP7826:page:goal:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "flow",
+            "first_call_id": "run-1:turn-3:call_00_ET_vqncE1C90mECJHb4OyxP7826:page:flow:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "resource",
+            "first_call_id": "run-1:turn-3:call_00_ET_vqncE1C90mECJHb4OyxP7826:page:resource:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "feedback",
+            "first_call_id": "run-1:turn-3:call_00_ET_vqncE1C90mECJHb4OyxP7826:page:feedback:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "open",
+            "first_call_id": "run-1:turn-3:call_00_ET_vqncE1C90mECJHb4OyxP7826:page:open:llm:0",
+            "first_program": "failed",
+            "first_no_blocker": "failed",
+            "reason": "invalid_html"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 8,
+        "unknown_page_calls": 0
+      },
+      "calls": 19,
+      "calls_by_kind": {
+        "controller": 11,
+        "page": 8,
+        "outline": 0
+      },
+      "cache": {
+        "total": {
+          "input_tokens": 172265,
+          "hit_tokens": 97024,
+          "miss_tokens": 75241,
+          "hit_ratio": 0.5632252634023162,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "controller": {
+          "input_tokens": 116062,
+          "hit_tokens": 82048,
+          "miss_tokens": 34014,
+          "hit_ratio": 0.7069325015939756,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "page": {
+          "input_tokens": 56203,
+          "hit_tokens": 14976,
+          "miss_tokens": 41227,
+          "hit_ratio": 0.2664626443428287,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "outline": {
+          "input_tokens": 0,
+          "hit_tokens": 0,
+          "miss_tokens": 0,
+          "hit_ratio": null,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        }
+      },
+      "prompt_tokens": 172265,
+      "completion_tokens": 48637,
+      "reasoning_tokens": 19680,
+      "cache_hit_tokens": 97024,
+      "cost_time_cache_cny": 0.27172947999999997,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 2,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "academic",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 119474.54469999997,
+      "export_ms": 42089.536300000036,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "拟设试件",
+            "value": "18",
+            "unit": "件",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "拟设试件 18 件 拟设值"
+            }
+          },
+          {
+            "subject": "设计工况",
+            "value": "6",
+            "unit": "类",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "拟设试件 18 件 拟设值 设计工况 6 类 拟设值 拟设测点 24 个 拟设值"
+            }
+          },
+          {
+            "subject": "拟设测点",
+            "value": "24",
+            "unit": "个",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 3,
+              "text": "拟设试件 18 件 拟设值 设计工况 6 类 拟设值 拟设测点 24 个 拟设值"
+            }
+          },
+          {
+            "subject": "计划周期",
+            "value": "8",
+            "unit": "个月",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "计划周期 8 个月　·　分三段推进　·　以下内容均为计划安排"
+            }
+          }
+        ],
+        "facts_hit": 4,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "研究背景",
+            "matched": true
+          },
+          {
+            "title": "研究内容与技术路线",
+            "matched": true
+          },
+          {
+            "title": "可行性与进度",
+            "matched": true
+          },
+          {
+            "title": "拟议创新点",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "background",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "content-route",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "feasibility",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "innovation",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "closing",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 4420.5472999999765,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "学术/教育",
+        "subtype": "研究开题汇报",
+        "reason": "面向研究开题评审的研究方案汇报，需按背景、内容与技术路线、可行性与进度、拟议创新点组织，且强调计划与未证实结论的边界"
+      },
+      "page_metrics": {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_57yhr0SalG33u43o8jev3095:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "background",
+            "first_call_id": "run-1:turn-3:call_00_ET_57yhr0SalG33u43o8jev3095:page:background:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "content-route",
+            "first_call_id": "run-1:turn-3:call_00_ET_57yhr0SalG33u43o8jev3095:page:content-route:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "feasibility",
+            "first_call_id": "run-1:turn-3:call_00_ET_57yhr0SalG33u43o8jev3095:page:feasibility:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "innovation",
+            "first_call_id": "run-1:turn-3:call_00_ET_57yhr0SalG33u43o8jev3095:page:innovation:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "closing",
+            "first_call_id": "run-1:turn-3:call_00_ET_57yhr0SalG33u43o8jev3095:page:closing:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 6,
+        "unknown_page_calls": 0
+      },
+      "calls": 13,
+      "calls_by_kind": {
+        "controller": 7,
+        "page": 6,
+        "outline": 0
+      },
+      "cache": {
+        "total": {
+          "input_tokens": 95783,
+          "hit_tokens": 41600,
+          "miss_tokens": 54183,
+          "hit_ratio": 0.4343150663478905,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "controller": {
+          "input_tokens": 58182,
+          "hit_tokens": 38912,
+          "miss_tokens": 19270,
+          "hit_ratio": 0.6687979100065312,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "page": {
+          "input_tokens": 37601,
+          "hit_tokens": 2688,
+          "miss_tokens": 34913,
+          "hit_ratio": 0.07148746043988191,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "outline": {
+          "input_tokens": 0,
+          "hit_tokens": 0,
+          "miss_tokens": 0,
+          "hit_ratio": null,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        }
+      },
+      "prompt_tokens": 95783,
+      "completion_tokens": 52323,
+      "reasoning_tokens": 28847,
+      "cache_hit_tokens": 41600,
+      "cost_time_cache_cny": 0.26430699999999996,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 0,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "travel",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 230278.98710000003,
+      "export_ms": 41088.46730000002,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "旅行天数",
+            "value": "2",
+            "unit": "天",
+            "matched": false,
+            "value_present": false
+          },
+          {
+            "subject": "首日步行上限",
+            "value": "4.6",
+            "unit": "公里",
+            "matched": false,
+            "value_present": true
+          },
+          {
+            "subject": "次日步行上限",
+            "value": "3.2",
+            "unit": "公里",
+            "matched": false,
+            "value_present": true
+          },
+          {
+            "subject": "同行人数",
+            "value": "5",
+            "unit": "人",
+            "matched": false,
+            "value_present": true
+          }
+        ],
+        "facts_hit": 0,
+        "facts_total": 4,
+        "sections": [
+          {
+            "title": "行程原则",
+            "matched": true
+          },
+          {
+            "title": "第一天",
+            "matched": true
+          },
+          {
+            "title": "第二天",
+            "matched": true
+          },
+          {
+            "title": "准备清单",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "principles",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "day1",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "day2",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "checklist",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "status",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 4536.71649999998,
+        "rules_pass": false
+      },
+      "scene": {
+        "category": "旅游",
+        "subtype": "城市慢游行程",
+        "reason": "主题为虚构城市青岚市的周末两日慢游行程，受众为步行与摄影爱好者，内容为行程原则、逐日安排与准备清单，属旅游行程类而非企业或学术材料。"
+      },
+      "page_metrics": {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-3:call_00_ET_z4LZzMGXoo4xP7ZoXczk7583:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "principles",
+            "first_call_id": "run-1:turn-3:call_00_ET_z4LZzMGXoo4xP7ZoXczk7583:page:principles:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "day1",
+            "first_call_id": "run-1:turn-3:call_00_ET_z4LZzMGXoo4xP7ZoXczk7583:page:day1:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "day2",
+            "first_call_id": "run-1:turn-3:call_00_ET_z4LZzMGXoo4xP7ZoXczk7583:page:day2:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "checklist",
+            "first_call_id": "run-1:turn-3:call_00_ET_z4LZzMGXoo4xP7ZoXczk7583:page:checklist:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "status",
+            "first_call_id": "run-1:turn-3:call_00_ET_z4LZzMGXoo4xP7ZoXczk7583:page:status:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 9,
+        "unknown_page_calls": 0
+      },
+      "calls": 21,
+      "calls_by_kind": {
+        "controller": 12,
+        "page": 9,
+        "outline": 0
+      },
+      "cache": {
+        "total": {
+          "input_tokens": 224594,
+          "hit_tokens": 121088,
+          "miss_tokens": 103506,
+          "hit_ratio": 0.5391417402067731,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "controller": {
+          "input_tokens": 156221,
+          "hit_tokens": 101504,
+          "miss_tokens": 54717,
+          "hit_ratio": 0.649746192893401,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "page": {
+          "input_tokens": 68373,
+          "hit_tokens": 19584,
+          "miss_tokens": 48789,
+          "hit_ratio": 0.2864288534948006,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "outline": {
+          "input_tokens": 0,
+          "hit_tokens": 0,
+          "miss_tokens": 0,
+          "hit_ratio": null,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        }
+      },
+      "prompt_tokens": 224594,
+      "completion_tokens": 75089,
+      "reasoning_tokens": 38157,
+      "cache_hit_tokens": 121088,
+      "cost_time_cache_cny": 0.40628376,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 3,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    },
+    {
+      "case_id": "long-document",
+      "phase": "completed",
+      "delivered": true,
+      "generation_ms": 143598.05209999997,
+      "export_ms": 47332.22989999992,
+      "pptx_pass": true,
+      "score": {
+        "page_count": 6,
+        "page_count_ok": true,
+        "facts": [
+          {
+            "subject": "试点部门",
+            "value": "9",
+            "unit": "个",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "01 前部核验信息 9 个 试点部门 来源：long-document.txt 前部核验段落"
+            }
+          },
+          {
+            "subject": "原始样本",
+            "value": "284",
+            "unit": "份",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "01 前部核验信息 9 个 试点部门 来源：long-document.txt 前部核验段落 02 前部核验信息 284 份 原始样本 来源：long-document.txt 前部核验段落 03 中部核验信息 13 个 流程节点 来源：long-document.txt 中部核验段落 04 中部核验信息 7 次 复盘会议 来源：long-document.txt 中部核验段落"
+            }
+          },
+          {
+            "subject": "流程节点",
+            "value": "13",
+            "unit": "个",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "01 前部核验信息 9 个 试点部门 来源：long-document.txt 前部核验段落 02 前部核验信息 284 份 原始样本 来源：long-document.txt 前部核验段落 03 中部核验信息 13 个 流程节点 来源：long-document.txt 中部核验段落 04 中部核验信息 7 次 复盘会议 来源：long-document.txt 中部核验段落"
+            }
+          },
+          {
+            "subject": "复盘会议",
+            "value": "7",
+            "unit": "次",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 4,
+              "text": "01 前部核验信息 9 个 试点部门 来源：long-document.txt 前部核验段落 02 前部核验信息 284 份 原始样本 来源：long-document.txt 前部核验段落 03 中部核验信息 13 个 流程节点 来源：long-document.txt 中部核验段落 04 中部核验信息 7 次 复盘会议 来源：long-document.txt 中部核验段落"
+            }
+          },
+          {
+            "subject": "资料复用率",
+            "value": "42.7",
+            "unit": "%",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 6,
+              "text": "06 · 核验收束 结论与边界 6 项核验字段全部取自 long-document.txt 原文，可逐项回溯；资料未给出状态标注、日期、预算与业务成效依据，相关部分按原文原样保留。 回溯分工 前部 范围与样本 · 试点部门 9 个 / 原始样本 284 份 中部 流程与复盘 · 流程节点 13 个 / 复盘会议 7 次 末部 复用与模板 · 资料复用率 42.7% / 已确认模板 17 套 本页数字与用词按资料原文照录，未作推算与外部补充。"
+            }
+          },
+          {
+            "subject": "已确认模板",
+            "value": "17",
+            "unit": "套",
+            "matched": true,
+            "value_present": true,
+            "evidence": {
+              "page": 6,
+              "text": "06 · 核验收束 结论与边界 6 项核验字段全部取自 long-document.txt 原文，可逐项回溯；资料未给出状态标注、日期、预算与业务成效依据，相关部分按原文原样保留。 回溯分工 前部 范围与样本 · 试点部门 9 个 / 原始样本 284 份 中部 流程与复盘 · 流程节点 13 个 / 复盘会议 7 次 末部 复用与模板 · 资料复用率 42.7% / 已确认模板 17 套 本页数字与用词按资料原文照录，未作推算与外部补充。"
+            }
+          }
+        ],
+        "facts_hit": 6,
+        "facts_total": 6,
+        "sections": [
+          {
+            "title": "项目概况",
+            "matched": true
+          },
+          {
+            "title": "整理流程",
+            "matched": true
+          },
+          {
+            "title": "前中后部核验数据",
+            "matched": true
+          },
+          {
+            "title": "结论与边界",
+            "matched": true
+          }
+        ],
+        "section_hits": 4,
+        "overflow_pages": [],
+        "layout_ok": true,
+        "reports": [
+          {
+            "page": 1,
+            "page_id": "cover",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 2,
+            "page_id": "overview",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 3,
+            "page_id": "process",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 4,
+            "page_id": "data-a",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 5,
+            "page_id": "data-b",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          },
+          {
+            "page": 6,
+            "page_id": "conclusion",
+            "report": {
+              "ok": true,
+              "issues": []
+            }
+          }
+        ],
+        "scoring_ms": 5787.6107000000775,
+        "rules_pass": true
+      },
+      "scene": {
+        "category": "企业",
+        "subtype": "资料治理项目核验汇报",
+        "reason": "受众为企业资料治理项目组，内容为内部核验数据汇报，属企业汇报场景"
+      },
+      "page_metrics": {
+        "planned_pages": 6,
+        "pages": [
+          {
+            "page_id": "cover",
+            "first_call_id": "run-1:turn-2:call_00_ET_wJS4tesm09bnCsZpmPUz0865:page:cover:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "failed"
+          },
+          {
+            "page_id": "overview",
+            "first_call_id": "run-1:turn-2:call_00_ET_wJS4tesm09bnCsZpmPUz0865:page:overview:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "process",
+            "first_call_id": "run-1:turn-2:call_00_ET_wJS4tesm09bnCsZpmPUz0865:page:process:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "data-a",
+            "first_call_id": "run-1:turn-2:call_00_ET_wJS4tesm09bnCsZpmPUz0865:page:data-a:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "data-b",
+            "first_call_id": "run-1:turn-2:call_00_ET_wJS4tesm09bnCsZpmPUz0865:page:data-b:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          },
+          {
+            "page_id": "conclusion",
+            "first_call_id": "run-1:turn-2:call_00_ET_wJS4tesm09bnCsZpmPUz0865:page:conclusion:llm:0",
+            "first_program": "passed",
+            "first_no_blocker": "passed"
+          }
+        ],
+        "truncated_responses": 0,
+        "page_responses": 7,
+        "unknown_page_calls": 0
+      },
+      "calls": 16,
+      "calls_by_kind": {
+        "controller": 9,
+        "page": 7,
+        "outline": 0
+      },
+      "cache": {
+        "total": {
+          "input_tokens": 239118,
+          "hit_tokens": 136832,
+          "miss_tokens": 102286,
+          "hit_ratio": 0.572236301742236,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "controller": {
+          "input_tokens": 190185,
+          "hit_tokens": 126976,
+          "miss_tokens": 63209,
+          "hit_ratio": 0.6676446617766911,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "page": {
+          "input_tokens": 48933,
+          "hit_tokens": 9856,
+          "miss_tokens": 39077,
+          "hit_ratio": 0.2014182657920013,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        },
+        "outline": {
+          "input_tokens": 0,
+          "hit_tokens": 0,
+          "miss_tokens": 0,
+          "hit_ratio": null,
+          "unknown_calls": 0,
+          "uncollected_cases": 0
+        }
+      },
+      "prompt_tokens": 239118,
+      "completion_tokens": 57386,
+      "reasoning_tokens": 28303,
+      "cache_hit_tokens": 136832,
+      "cost_time_cache_cny": 0.33456664,
+      "supplier_unknown": 0,
+      "supplier_unsettled_reserve_cny": 0,
+      "native_unknown": 0,
+      "native_reserved_cny": 0,
+      "completed_repairs": 1,
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ]
+    }
+  ],
+  "page_concurrency": 3,
+  "source": {
+    "run": ".eval-results/harness/v4-concurrency-3/20261115T140047040Z",
+    "metadata_sha256": "86d0c938469fb14953ad3fed9dca11c8fbff3117224ffb05ce09d0ca0d10d29e",
+    "ledger_sha256": "bc45db94fc28571cf287db4948f14f6b4f830e777dca969d6b427312c4df443b"
+  }
+}

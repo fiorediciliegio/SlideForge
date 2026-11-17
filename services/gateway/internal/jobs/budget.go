@@ -12,6 +12,13 @@ func mutateBudget(run *AgentRun, c AgentCommand) error {
 		return errors.New("无效模型调用或成本")
 	}
 	call, exists := run.Calls[c.CallID]
+	if c.Action == "reserve_call" || c.Action == "send_call" {
+		for _, other := range run.Calls {
+			if other.Status == "unknown" {
+				return ErrUnknownCall
+			}
+		}
+	}
 	switch c.Action {
 	case "reserve_call":
 		if exists {
@@ -24,6 +31,13 @@ func mutateBudget(run *AgentRun, c AgentCommand) error {
 			return fmt.Errorf("%w：有效执行时间 %.0f / %.0f 秒", ErrBudgetExhausted, run.Budget.ActiveSeconds, run.Budget.LimitSeconds)
 		}
 		if money(run.Budget.SpentCNY+run.Budget.ReservedCNY+c.Cost) > run.Budget.LimitCNY {
+			if money(run.Budget.SpentCNY+c.Cost) <= run.Budget.LimitCNY {
+				for _, other := range run.Calls {
+					if other.Status == "sent" || other.Status == "reserved" {
+						return ErrBudgetInFlight
+					}
+				}
+			}
 			return fmt.Errorf("%w：剩余可用 ¥%.4f，本次需预留 ¥%.4f（已用 ¥%.4f / ¥%.4f，在途预留 ¥%.4f）", ErrBudgetExhausted, money(run.Budget.LimitCNY-run.Budget.SpentCNY-run.Budget.ReservedCNY), c.Cost, run.Budget.SpentCNY, run.Budget.LimitCNY, run.Budget.ReservedCNY)
 		}
 		run.Budget.ReservedCNY = money(run.Budget.ReservedCNY + c.Cost)
@@ -31,6 +45,9 @@ func mutateBudget(run *AgentRun, c AgentCommand) error {
 	case "send_call":
 		if !exists || call.Status != "reserved" {
 			return ErrAgentConflict
+		}
+		if run.Budget.ActiveSeconds >= run.Budget.LimitSeconds {
+			return fmt.Errorf("%w：有效执行时间 %.0f / %.0f 秒", ErrBudgetExhausted, run.Budget.ActiveSeconds, run.Budget.LimitSeconds)
 		}
 		call.Status = "sent"
 		run.Calls[c.CallID] = call

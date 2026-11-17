@@ -24,7 +24,7 @@ if(args.includes('--compare')){
 const preflight=args.includes('--preflight'),run=args.includes('--run');
 if(!run&&!preflight){
   console.log(JSON.stringify({protocol:suite.protocol.id,planned_trials:6,arms:['current'],primary_baseline:suite.protocol.primary_baseline,
-    baseline_ids:suite.protocol.baseline_ids,template_id:suite.protocol.template_id,controller_max_tokens:suite.protocol.controller_max_tokens,page_max_tokens:suite.protocol.page_max_tokens,provider_requests:0,
+    baseline_ids:suite.protocol.baseline_ids,template_id:suite.protocol.template_id,context_version:suite.protocol.context_version,controller_max_tokens:suite.protocol.controller_max_tokens,page_max_tokens:suite.protocol.page_max_tokens,page_concurrency:suite.protocol.page_concurrency,provider_requests:0,
     run_command:'npm.cmd run eval:harness -- --profile '+profileName+' --run --budget-cny 15'},null,2));process.exit(0);
 }
 const limit=preflight?0:Number(args.includes('--budget-cny')?args[args.indexOf('--budget-cny')+1]:NaN);
@@ -37,7 +37,7 @@ if(run&&!projectEnv.OPENAI_API_KEY)throw new Error('项目.env缺少模型凭据
 const port=48420,base='http://127.0.0.1:'+port,token='harness-eval-internal',admin='harness-eval-admin';
 const {startProxy}=await import(pathToFileURL(path.join(here,suite.profile?.proxy_file??'proxy.mjs')).href);
 const proxy=await startProxy({out,key:preflight?'no-provider-key':projectEnv.OPENAI_API_KEY,port:port+4,limitCny:limit});
-const metadata={status:'running',preflight,started_at:new Date().toISOString(),profile:profileName,controller_max_tokens:suite.protocol.controller_max_tokens,page_max_tokens:suite.protocol.page_max_tokens,protocol_id:suite.protocol.id,protocol_hash:suite.protocol_hash,
+const metadata={status:'running',preflight,started_at:new Date().toISOString(),profile:profileName,context_version:suite.protocol.context_version,page_concurrency:suite.protocol.page_concurrency,controller_max_tokens:suite.protocol.controller_max_tokens,page_max_tokens:suite.protocol.page_max_tokens,protocol_id:suite.protocol.id,protocol_hash:suite.protocol_hash,
   model:suite.protocol.model,planned_trials:preflight?0:6,limit_cny:limit,comparison_type:'historical-reference',
   service_lifecycle:'isolated-cluster-per-case',git_head:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),
   hardware:{cpu:os.cpus()[0].model,cpus:os.cpus().length,memory_bytes:os.totalmem(),node:process.version},records:[]};
@@ -80,6 +80,8 @@ async function launch(dir){
     GATEWAY_PORT:String(port),PORT:String(port+1),ENGINE_PORT:String(port+2),BRAIN_PORT:String(port+3),
     SLIDEFORGE_DATA_DIR:path.join(dir,'data'),GATEWAY_INTERNAL_TOKEN:token,SLIDEFORGE_ADMIN_TOKEN:admin,
     AGENT_INPUT_CNY_PER_MILLION:'2',AGENT_OUTPUT_CNY_PER_MILLION:'8',AGENT_PRICING_VERSION:'harness-eval-v1-fixed-2-8',DECK_CONCURRENCY:'2',
+    AGENT_PAGE_CONCURRENCY:String(suite.protocol.page_concurrency),PAGE_MODEL_CONCURRENCY:String(suite.profile?.page_model_concurrency??12),
+    AGENT_PROJECT_CONCURRENCY:String(suite.profile?.project_concurrency??5),AGENT_OWNER_PROJECT_CONCURRENCY:String(suite.profile?.owner_project_concurrency??2),ENGINE_CONCURRENCY:String(suite.profile?.engine_concurrency??1),
     ENGINE_UPSTREAM_URL:'http://127.0.0.1:'+(port+1),NODE_ENGINE_URL:'http://127.0.0.1:'+(port+2),BRAIN_URL:'http://127.0.0.1:'+(port+3),
     SLIDEFORGE_BILLING_API_URL:base+'/internal',SLIDEFORGE_JOB_API_URL:base+'/internal/jobs',SLIDEFORGE_FILE_API_URL:base+'/internal/files',
     SLIDEFORGE_ENGINE_API_URL:base+'/internal/engine',SLIDEFORGE_BRAIN_API_URL:'http://127.0.0.1:'+(port+3)+'/internal/brain',
@@ -142,7 +144,8 @@ async function trial(fixture){
     record.generation_ms=performance.now()-started;proxy.block();
     if(!record.phase){record.phase='wall_timeout';await api('/decks/'+record.deck_id+'/cancel',{})}
     await drain();
-    const raw=(await api('/internal/jobs',{action:'get',deck_id:record.deck_id},'internal')).job;record.raw_job=raw;
+    const raw=(await api('/internal/jobs',{action:'get',deck_id:record.deck_id},'internal')).job;record.raw_job=raw;record.context_version=raw.agent?.context_version??0;
+    if(suite.protocol.context_version&&record.context_version!==suite.protocol.context_version)throw new Error('执行上下文版本与测评配置不一致');
     const project=await api('/decks/'+record.deck_id+'/project');record.scene=project.project.scenario;
     await writeFile(path.join(dir,'project.json'),JSON.stringify(project,null,2));await writeFile(path.join(dir,'raw-job.json'),JSON.stringify(raw,null,2));
     if(suite.metric_baselines){record.page_metrics=await collectPageMetrics(record,project.project,proxy.calls);await writeFile(path.join(dir,'page-metrics.json'),JSON.stringify(record.page_metrics,null,2))}

@@ -4,11 +4,13 @@ import os
 import queue
 import threading
 import uuid
+from collections import deque
 
 from .agent_state import AgentState, AgentAPIError
 from .agent_tools import initial_messages, model_messages
 from .models import agent_complete
 from .review import advance_review
+from .context_status import append_context_status, pin_decision, frozen_decision
 
 logger = logging.getLogger(__name__)
 
@@ -88,8 +90,9 @@ def run_harness(config, state, instance_id, model=agent_complete, heartbeat=True
             state.mutate("transition",expected_checkpoint=current["checkpoint_seq"],phase="waiting_user",messages=messages,
                 request={"request_id":str(uuid.uuid4()),"reason_code":"page_policy","question":f"需求明确要求{conflict['requested']}页，与当前页数规则冲突。请选择需求页数，或说明以当前控件规则为准。全部页面须在2–20页内。","proposal":conflict})
             return
-        # A resumed task needs the current user confirmation/answer, without inventing a tool call.
-        if run.get("messages") and _pending_turn(messages) is None:
+        # V2 refreshes current confirmations through the versioned snapshot below.
+        # Keep the original resume protocol only for existing legacy executions.
+        if run.get("messages") and run.get("context_version")!=2 and _pending_turn(messages) is None:
             context = description["context"]
             resumed={"role":"user","content":json.dumps({"当前修订":revision,"读取依据":"先前读取按其revision_id区分，若与当前修订不同须重新读取，不得作为现版依据", "恢复后的当前大纲":context["project"]["outline"],"已确认大纲":context["project"].get("confirmed_outline_revision"),"场景":context["project"].get("scenario"),"约束":context["project"].get("constraints"),"本次修改":context.get("instruction"),"用户补充":context.get("user_response")},ensure_ascii=False)}
             if messages[-1].get("_image_evidence_id"): messages=messages[:-1]+[resumed,messages[-1]]
@@ -112,15 +115,24 @@ def run_harness(config, state, instance_id, model=agent_complete, heartbeat=True
             if pending is not None:
                 turn -= 1
             if pending is None:
-                review=advance_review(state,messages)
+                pinned=frozen_decision(messages,run,turn)
+                review=pinned["review"] if pinned else advance_review(state,messages)
                 if review["action"]=="stop":
                     return
-                tools=description["tools"]
-                if review["action"]=="assess":
-                    tools=[tool for tool in tools if tool["function"]["name"] not in ("save_plan","generate_pages","revise_page","revise_pages","finish_deck","export_deck")]
-                repair_pages={page_id for issue in review.get("issues",[]) for page_id in issue.get("page_ids",[])}
-                if review["action"]!="repair" or len(repair_pages)<2 or description["context"].get("instruction"):
-                    tools=[tool for tool in tools if tool["function"]["name"]!="revise_pages"]
+                if pinned:
+                    tools=pinned["tools"]
+                else:
+                    tools=description["tools"]
+                    if review["action"]=="assess":
+                        tools=[tool for tool in tools if tool["function"]["name"] not in ("save_plan","generate_pages","revise_page","revise_pages","finish_deck","export_deck")]
+                    repair_pages={page_id for issue in review.get("issues",[]) for page_id in issue.get("page_ids",[])}
+                    if review["action"]!="repair" or len(repair_pages)<2 or description["context"].get("instruction"):
+                        tools=[tool for tool in tools if tool["function"]["name"]!="revise_pages"]
+                    if run.get("context_version")==2:
+                        append_context_status(messages,run,review)
+                        pin_decision(messages,turn,tools,review)
+                        current=state.snapshot()["agent"]
+                        state.mutate("transition",expected_checkpoint=current["checkpoint_seq"],phase=current["phase"],messages=messages)
                 assistant = model(config, state, f"turn-{turn}", model_messages(messages,state,review_key=review.get("key") if review["action"]=="assess" else None), tools)
                 if review["action"] in ("assess","repair"):
                     assistant["_review_phase"]=review["action"]
@@ -220,21 +232,29 @@ class AgentRunner:
     def __init__(self,config):
         self.config = config
         self.instance_id = str(uuid.uuid4())
-        self.queue = queue.Queue(maxsize=50)
+        self.queue = {}
+        self.owners = deque()
+        self.waiting = 0
+        self.active = {}
         self.pending = set()
         self.lock = threading.Lock()
+        self.ready = threading.Condition(self.lock)
         self.stopping = threading.Event()
         concurrency = int(os.environ.get("AGENT_PROJECT_CONCURRENCY", "5"))
         if not 1 <= concurrency <= 20:
             raise ValueError("AGENT_PROJECT_CONCURRENCY 必须为1–20的整数")
+        self.owner_concurrency = int(os.environ.get("AGENT_OWNER_PROJECT_CONCURRENCY", "2"))
+        if self.owner_concurrency < 1:
+            raise ValueError("AGENT_OWNER_PROJECT_CONCURRENCY 必须为正整数")
         for _ in range(concurrency):
             threading.Thread(target=self._worker,daemon=True).start()
         threading.Thread(target=self._heartbeat,daemon=True).start()
 
     def enqueue(self,deck_id,run_seq):
-        with self.lock:
+        with self.ready:
             state=AgentState(self.config,deck_id,run_seq)
-            run=state.snapshot()["agent"]
+            snapshot=state.snapshot()
+            run=snapshot["agent"]
             if run["run_seq"]!=run_seq: raise ValueError("执行版本已改变")
             if run["phase"]!="queued":
                 if run["phase"] in ("planning","generating","checking","revising","waiting_outline","waiting_user","completed"):
@@ -242,23 +262,50 @@ class AgentRunner:
                 raise ValueError("任务未排队，请先由用户确认继续")
             key=(deck_id,run_seq,run["runner_epoch"])
             if key in self.pending: return {"accepted":True,"duplicate":True}
+            if self.waiting >= 50:
+                raise queue.Full("项目等待队列已满，请稍后重试")
             state.runner_epoch=run["runner_epoch"]
             state.mutate("schedule",instance_id=self.instance_id)
-            self.queue.put_nowait(key)
+            owner=snapshot.get("ownerKeyHash") or "local"
+            if owner not in self.queue:
+                self.queue[owner]=deque()
+                self.owners.append(owner)
+            self.queue[owner].append(key)
+            self.waiting += 1
             self.pending.add(key)
+            self.ready.notify_all()
         return {"accepted":True}
 
     def _worker(self):
         while not self.stopping.is_set():
-            try: key=self.queue.get(timeout=1)
-            except queue.Empty: continue
+            with self.ready:
+                selected=None
+                for _ in range(len(self.owners)):
+                    owner=self.owners.popleft()
+                    if self.active.get(owner,0)>=self.owner_concurrency:
+                        self.owners.append(owner)
+                        continue
+                    key=self.queue[owner].popleft()
+                    self.waiting -= 1
+                    if self.queue[owner]: self.owners.append(owner)
+                    else: del self.queue[owner]
+                    self.active[owner]=self.active.get(owner,0)+1
+                    selected=(owner,key)
+                    break
+                if selected is None:
+                    self.ready.wait(timeout=1)
+                    continue
+            owner,key=selected
             try:
                 run_harness(self.config,AgentState(self.config,*key),self.instance_id,heartbeat=False)
             except Exception as error:
                 logger.error("Agent worker failed: %s",type(error).__name__)
             finally:
-                with self.lock: self.pending.discard(key)
-                self.queue.task_done()
+                with self.ready:
+                    self.pending.discard(key)
+                    self.active[owner]-=1
+                    if not self.active[owner]: del self.active[owner]
+                    self.ready.notify_all()
 
     def _heartbeat(self):
         while not self.stopping.wait(10):
@@ -266,10 +313,25 @@ class AgentRunner:
             for key in keys:
                 try:
                     state=AgentState(self.config,*key);run=state.snapshot()["agent"]
-                    owns_epoch=(run["phase"]=="queued" and run["runner_epoch"]==key[2]) or (run["phase"] in ("planning","generating","checking","revising") and run["runner_epoch"]==key[2]+1)
+                    owns_epoch=run["run_seq"]==key[1] and ((run["phase"]=="queued" and run["runner_epoch"]==key[2]) or (run["phase"] in ("planning","generating","checking","revising") and run["runner_epoch"]==key[2]+1))
                     if run.get("instance_id")==self.instance_id and owns_epoch:
                         state.runner_epoch=run["runner_epoch"];state.mutate("heartbeat")
+                    else:
+                        with self.ready:
+                            for owner,items in list(self.queue.items()):
+                                if key not in items: continue
+                                items.remove(key)
+                                self.waiting-=1
+                                self.pending.discard(key)
+                                if not items:
+                                    del self.queue[owner]
+                                    self.owners.remove(owner)
+                                self.ready.notify_all()
+                                break
                 except Exception as error:
                     logger.error("Agent scheduling heartbeat failed: %s",type(error).__name__)
 
-    def close(self): self.stopping.set()
+    def close(self):
+        with self.ready:
+            self.stopping.set()
+            self.ready.notify_all()

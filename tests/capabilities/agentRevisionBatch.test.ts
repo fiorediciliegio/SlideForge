@@ -11,7 +11,7 @@ import {AsyncJobQueue} from "../../src/server/jobQueue.ts";
 import {inputHash} from "../../src/server/agentClient.ts";
 
 const html=(text:string)=>`<!doctype html><html><head><style>.slide{width:1920px;height:1080px;overflow:hidden}</style></head><body><main class="slide"><h1>${text}</h1></main></body></html>`;
-async function fixture(){
+async function fixture(concurrency=2){
  const id=`deck-batch-${randomUUID()}`,root=agentRoot(id),ids=Array.from({length:6},(_,i)=>`p${i+1}`);
  const outline={title:"test",draft_revision:1,pages:ids.map(page_id=>({page_id,title:page_id,bullets:[]}))};
  const base=emptyProject(id,"test",outline),prepared=await prepareRevision(root,base,{instruction:"initial",page_html:Object.fromEntries(ids.map(id=>[id,html("old-"+id)]))});
@@ -22,11 +22,11 @@ async function fixture(){
   page_revisions:Object.fromEntries(prepared.project.pages.map(p=>[p.page_id,inputHash([p.page_revision,[]])])),constraints_hash:inputHash([prepared.project.constraints,prepared.project.outline.pages,prepared.project.sources]),template_hash:inputHash(prepared.project.visual??{}),
   issues:allowed.map(page_id=>({severity:"blocker",code:"overlap",detail:"test overlap",page_ids:[page_id]}))},"scope-layout");
  await setScope();
- const values={SLIDEFORGE_JOB_API_URL:"http://batch.test/jobs",SLIDEFORGE_BRAIN_API_URL:"http://batch.test/brain",GATEWAY_INTERNAL_TOKEN:"batch-test",OPENAI_API_KEY:"test-only",OPENAI_BASE_URL:"http://batch.test/model",DECK_CONCURRENCY:"2"};
+ const values={SLIDEFORGE_JOB_API_URL:"http://batch.test/jobs",SLIDEFORGE_BRAIN_API_URL:"http://batch.test/brain",GATEWAY_INTERNAL_TOKEN:"batch-test",OPENAI_API_KEY:"test-only",OPENAI_BASE_URL:"http://batch.test/model",DECK_CONCURRENCY:"2",AGENT_PAGE_CONCURRENCY:String(concurrency)};
  const previous=Object.fromEntries(Object.keys(values).map(k=>[k,process.env[k]]));Object.assign(process.env,values);
  const originalFetch=globalThis.fetch,originalEngine={...engineTransport},requests:any[]=[],commands:any[]=[];
  let active=0,peak=0;
- const controls:{beforeModel?:(id:string)=>Promise<void>;beforeReserve?:()=>boolean;beforeGet?:()=>Promise<void>;afterModel?:(id:string)=>Promise<void>;invalid?:string}={};
+ const controls:{beforeModel?:(id:string)=>Promise<void>;beforeReserve?:()=>boolean|"pending";beforeGet?:()=>Promise<void>;afterModel?:(id:string)=>Promise<void>;invalid?:string}={};
  const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers:{"content-type":"application/json"}});
  globalThis.fetch=async(url,init)=>{
   const address=String(url),body=JSON.parse(String(init?.body));
@@ -50,7 +50,9 @@ async function fixture(){
    run.operations[body.operation_id]={status:"completed",input_hash:body.input_hash,result:body.result};if(body.project_ref)run.project_ref=body.project_ref;run.checkpoint_seq++;
   }
   if(body.action==="reserve_call"){
-   if(controls.beforeReserve?.()===false)return json({error:"budget exhausted"},402);
+   const admission=controls.beforeReserve?.();
+   if(admission===false)return json({error:"budget exhausted"},402);
+   if(admission==="pending")return json({error:"inflight reserve",error_code:"budget_inflight"},409);
    run.calls[body.call_id]={status:"reserved",cost:body.cost,input_hash:body.input_hash};
   }
   if(body.action==="send_call")run.calls[body.call_id].status="sent";
@@ -67,11 +69,44 @@ async function fixture(){
  return {id,root,ids,job,prepared,requests,commands,controls,run,execute,single,setScope,get peak(){return peak},current:()=>readProjectRevision(root,job.agent.project_ref),async close(){globalThis.fetch=originalFetch;Object.assign(engineTransport,originalEngine);for(const[k,v]of Object.entries(previous)){if(v===undefined)delete process.env[k];else process.env[k]=v}if(path.dirname(root)!==path.resolve("artifacts/decks"))throw new Error("unsafe fixture cleanup");await rm(root,{recursive:true,force:true});}};
 }
 
+test("decision state follows authoritative project and user context; legacy runs keep the old protocol",async()=>{
+ const f=await fixture();try{
+  const review=()=>executeAgentTool({deck_id:f.id,run_seq:1,runner_epoch:1,operation_id:"review",name:"_review_next",args:{}},new AsyncJobQueue(1,5));
+  assert.equal((await review()).context_status,undefined);
+  f.job.agent.context_version=2;
+  const first:any=await review();assert.equal(first.action,"repair");assert.deepEqual(first.context_status.state.pending_issues.flatMap((issue:any)=>issue.page_ids),f.ids);
+  const current=await f.current(),newer=await prepareRevision(f.root,current,{instruction:"user correction",outline:{...current.outline,title:"用户新标题",draft_revision:2},
+   context:{constraints:[{text:"73%是计划目标",source:"user",confirmed_at:"saved"}],constraints_revision:2}});
+  f.job.agent.project_ref=newer.ref;
+  f.job.agent.context_ref=await writeArtifact(f.root,"contexts",{project:f.prepared.project,export_authorized:[],user_response:"采用新标题"});
+  // Incomplete pages return a controller decision without triggering a browser job.
+  const incomplete=await prepareRevision(f.root,newer.project,{instruction:"new outline",outline:{...newer.project.outline,pages:[...newer.project.outline.pages,{page_id:"p7",title:"new",bullets:[]}]}});
+  f.job.agent.project_ref=incomplete.ref;
+  const next:any=await review();assert.equal(next.action,"agent");assert.equal(next.context_status.state.project_revision,incomplete.ref.revision_id);
+  assert.equal(next.context_status.snapshot.outline.title,"用户新标题");assert.equal(next.context_status.snapshot.constraints[0].text,"73%是计划目标");
+  assert.equal(next.context_status.snapshot.user_response,"采用新标题");assert.deepEqual(next.context_status.state.pending_page_ids,["p7"]);
+  assert.equal(f.requests.length,0);assert.equal(f.commands.filter(c=>c.action==="begin_tool").length,0);
+ }finally{await f.close()}
+});
+
 test("six independent repairs keep per-page instructions, concurrency two and replay without extra calls",async()=>{
  const f=await fixture();try{
   const result:any=await f.run();assert.equal(result.pages.length,6);assert.deepEqual(result.failures,[]);assert.equal(f.peak,2);
   for(const id of f.ids){assert.match(await pageHTML(f.root,await f.current(),id),new RegExp("new-"+id));const request=f.requests.find(r=>r.messages[0].content===id);assert.ok(request.messages.at(-1).content.endsWith("fix-"+id));assert.match(request.messages.at(-1).content,new RegExp("old-"+id))}
   assert.deepEqual(await f.run(),result);assert.equal(f.requests.length,6);
+ }finally{await f.close()}
+});
+
+test("Harness can overlap three pages independently of fixed-flow concurrency two",async()=>{
+ const f=await fixture(3);try{const result:any=await f.run();assert.equal(result.pages.length,6);assert.equal(f.peak,3);assert.equal(f.requests.length,6)}finally{await f.close()}
+});
+
+test("inflight budget waits for settlement without new model attempts or call IDs",async()=>{
+ const f=await fixture();try{
+  let reserves=0;f.controls.beforeReserve=()=>{if(++reserves===2){f.job.agent.budget.reserved_cny=1.99;return "pending"}return true};
+  f.controls.afterModel=async()=>{f.job.agent.budget.reserved_cny=0};
+  const result:any=await f.run(["p1","p2","p3"]);assert.equal(result.pages.length,3);assert.equal(f.requests.length,3);
+  const calls=f.commands.filter(c=>c.action==="reserve_call");assert.equal(calls.length,4);assert.equal(new Set(calls.map(c=>c.call_id)).size,3);
  }finally{await f.close()}
 });
 test("an invalid candidate preserves that page while independent pages commit",async()=>{

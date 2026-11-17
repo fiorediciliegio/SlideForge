@@ -1,0 +1,38 @@
+{
+  "id": "harness-six-scenes-v5-context-status",
+  "parent_protocol_hash": "92c95816448de51dd5035288e0e6f44f71e5d6f5082c6f08a249e12f73d7de5c",
+  "controller_max_tokens": 8192,
+  "proxy_file": "proxy-16000.mjs",
+  "proxy_sha256": "f838ff0f72fc645036eef40e23aa097514d9359e845c5df1e4b1c04e61a166cc",
+  "primary_baseline": "20261115-page-concurrency-3",
+  "baseline_sha256": "925ca6c536c3112f591dc3efd3a4e48eaababe540e24adcd3eb07b50fbfbfc0e",
+  "page_max_tokens": 16000,
+  "result_family": "v5-context-status",
+  "additional_baselines": [
+    {
+      "id": "20261114-scope-16000",
+      "sha256": "1ec6c8676851e422a18882a82994780916eefd8deea3cde9b879f95e13b5a9e6",
+      "protocol_hash": "4833b0750683d4b506ce2636443087e59cafb5e565b75c7e301b76cdf5c73a06"
+    },
+    {
+      "id": "20261114-review",
+      "sha256": "8bae75fff467214e6428986dfe486d01c20a935d475077dc2c6b2c9da0a10c8f",
+      "protocol_hash": "92c95816448de51dd5035288e0e6f44f71e5d6f5082c6f08a249e12f73d7de5c"
+    },
+    {
+      "id": "20261114-revision-batch",
+      "sha256": "44fa4fa76a0a35c44803c177b3bd82b0e0cb3ed06b983b5a9c4f4dfb94b6a5de",
+      "protocol_hash": "3868aa57ec0d1c729d0566827f2cca4fd7412966d097fd29b068daa48be46b6f"
+    }
+  ],
+  "metrics_file": "metrics-baselines-context-status.json",
+  "metrics_sha256": "dd0973b9bed66cd99d8ce96c12fd2c8d2b0e1fff39a661dd75b703dfff4ebd86",
+  "metrics_collector_sha256": "e60d180e01c748049adef3906ef867e8dbf743c44805a2f6297705f2f9c76226",
+  "page_concurrency": 3,
+  "page_model_concurrency": 12,
+  "owner_project_concurrency": 2,
+  "project_concurrency": 5,
+  "engine_concurrency": 1,
+  "baseline_protocol_hash": "37883227144511cf229faf223f8cbb04ef6d5904e738100c15318527a5bb050b",
+  "context_version": 2
+}

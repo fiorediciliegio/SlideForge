@@ -28,6 +28,7 @@ export type OutlineDraft = z.infer<typeof outlineDraftSchema>;
 export type PagePolicy = z.infer<typeof pagePolicySchema>;
 export interface ProjectRef { revision_id: string; artifact_ref: string; outline_revision: number; constraints_revision: number }
 export interface AgentRun {
+  context_version?: number;
   version: 1; run_seq: number; runner_epoch: number; checkpoint_seq: number; phase: typeof agentPhases[number];
   options: AgentOptions; project_ref?: ProjectRef; draft_ref?: string; draft_revision: number;
   context_ref?: string; messages?: unknown[]; request?: { request_id: string; question: string; reason_code: string; proposal?: unknown };
@@ -38,6 +39,8 @@ export interface AgentRun {
   instance_id?: string; lease_until?: string; last_active_at?: string; error?: string;
   pricing?: { input_cny_per_million: number; output_cny_per_million: number; version: string;model?:string;base_url?:string;currency?:string };
   quality_revision?: string;
+  work_states?: Record<string, "local" | "capacity" | "budget" | "engine">;
+  engine_waits?: Record<string, string>;
 }
 export interface AgentCommand {
   action: string; deck_id: string; run_seq?: number; runner_epoch?: number; expected_checkpoint?: number;
@@ -69,6 +72,7 @@ export function publicAgent(run: AgentRun) {
   return { version: run.version, run_seq: run.run_seq, checkpoint_seq: run.checkpoint_seq, phase: run.phase,
     options: run.options, preview_revision: run.project_ref?.revision_id, draft_revision: run.draft_revision,
     budget: run.budget, request: run.request, error: run.error,
+    resource_waits: Object.values(run.work_states??{}).reduce<Record<string,number>>((counts,state)=>{if(state!=="local")counts[state]=(counts[state]??0)+1;return counts},{}),
     quality_state: run.quality_revision && run.quality_revision === run.project_ref?.revision_id ? "checked" : "draft",
     unknown_calls: Object.entries(run.calls ?? {}).filter(([, call]) => call.status === "unknown").map(([id, call]) => ({ call_id: id, reserved_cny: call.cost })),
   };
