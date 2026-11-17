@@ -17,6 +17,9 @@ data/
 .env
 .env.local
 
+# 本地演示文稿测试样本与导出产物
+*.[pP][pP][tT][xX]
+
 # Python caches
 __pycache__/
 *.py[cod]
