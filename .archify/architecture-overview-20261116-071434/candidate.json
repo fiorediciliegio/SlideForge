@@ -8,7 +8,7 @@
     "locale": "zh-CN",
     "repository": {
       "url": "https://github.com/fiorediciliegio/SlideForge.git",
-      "revision": "0b84b72c309f7ea191d488f0c9fcad5bdf6aa177",
+      "revision": "8a491635507947c2815e860098275ac75aed0a9f",
       "link_mode": "web"
     }
   },
@@ -412,7 +412,7 @@
         "WPS、MCP、CLI仍使用固定流程，尚未统一迁移到Harness。",
         "本机Go使用JSON与私有文件；PostgreSQL/S3为可配置后端，业务项目目录仍由单个逻辑Node持有。",
         "图聚焦稳定服务边界；模板、品牌、联网研究与评测工具归入相应服务，未逐模块展开。",
-        "源码证据固定到0b84b72；本地上下文与并发优化尚未提交，图中不展开这些实现细节。"
+        "源码证据固定到8a49163；本地上下文与并发优化尚未提交，图中不展开这些实现细节。"
       ]
     }
   ]
