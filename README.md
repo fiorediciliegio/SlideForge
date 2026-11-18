@@ -2,13 +2,13 @@
 
 AI 驱动的演示文稿交付服务：HTML 原生幻灯片、确定性版面校验、可审计的 AI 改动和可编辑的 PPTX 导出。
 
-> 产品形态与目标架构以 `docs/product-tech-charter.md` 为唯一事实源：能力层唯一，Web 薄壳与 AI 客户端平等。
+能力层唯一，Web 薄壳与 AI 客户端共用同一套业务能力。
 
 ## 总体架构
 
 [![SlideForge 总体架构：Web Harness、业务 Node、Go 网关与独立引擎](docs/images/architecture.svg)](docs/images/architecture.svg)
 
-[PNG 图片](docs/images/architecture.png) · [Archify 交互版（下载 HTML 后用浏览器打开）](.archify/architecture-overview-20261116-071434/slideforge-overview.html)
+[PNG 图片](docs/images/architecture.png)
 
 Python Brain 负责规划、工具决策与评审，业务 Node 执行页面生成和项目版本工具，Go 管理鉴权、状态、预算与引擎任务，独立 Node 引擎执行检查、预览和导出。Web 默认进入 Harness；CLI、MCP、WPS 当前仍使用固定流程，各入口共用统一契约和 Capability 能力。
 
@@ -17,12 +17,12 @@ Python Brain 负责规划、工具决策与评审，业务 Node 执行页面生�
 - 现役 Web 入口：`src/http/app.html`，由 `npm run dev` 在 `http://localhost:8080/app` 提供。
 - 现役服务端：`src/http/capabilityServer.ts`、`src/mcp/**`、`src/capabilities/**`。
 - 统一契约：`src/contracts/**`；新任务的 `deck_id` 同时作为任务、计费和 `artifacts/decks/<deck_id>` 工作区标识。
-- 引擎：`src/engine/**` 驱动独立任务，`executas/ppt-engine/**` 执行 HTML 渲染与 PPTX／PDF 导出；不共享业务目录，见 [ADR-0081](docs/adr/0081-independent-engine-jobs.md)。
-- Web 默认使用 Python Brain 单总控 Harness，经 Node 业务工具和 Go 状态/预算完成闭环；接口与迁移说明见 [部署手册](docs/deployment.md)和 [ADR-0080](docs/adr/0080-python-brain-agent-harness.md)。CLI/MCP 现有契约保留。
+- 引擎：`src/engine/**` 驱动独立任务，`executas/ppt-engine/**` 执行 HTML 渲染与 PPTX／PDF 导出，不共享业务目录。
+- Web 默认使用 Python Brain 单总控 Harness，经 Node 业务工具和 Go 状态/预算完成闭环。CLI/MCP 现有契约保留。
 
 ## Harness 性能测评
 
-后续测评沿用[固定测评基准](tools/harness-eval/README.md)：固定6类虚拟案例、6页、PPT模板和评分器，每轮只运行当前代码，自动对比已保存的历史结果，不重跑旧版。`npm run eval:harness -- --check` 免费校验；真实模型运行必须明确提供预算。
+测评工具位于 `tools/harness-eval/`：固定6类虚拟案例、6页、PPT模板和评分器，每轮只运行当前代码，自动对比已保存的历史结果，不重跑旧版。`npm run eval:harness -- --check` 免费校验；真实模型运行必须明确提供预算。
 
 ## Legacy 退役结果
 
@@ -33,6 +33,8 @@ React／Host 旧入口、旧业务功能和对应测试已通过依赖可达性�
 - 后续删除仍须独立进行引用与运行时资产审计，不按目录名直接处理。
 
 ## 开发与验证
+
+需要 Node.js ≥ 22、Go ≥ 1.22、Python ≥ 3.11，以及用于渲染和导出的 Chrome 或 Edge。模型凭据配置在本机根目录 `.env` 中，使用 `OPENAI_API_KEY`、`OPENAI_BASE_URL` 和 `OPENAI_MODEL`；`npm run dev` 自动加载该文件，已有进程环境变量优先。
 
 ```bash
 npm install

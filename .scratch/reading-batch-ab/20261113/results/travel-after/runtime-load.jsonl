@@ -1,4 +1,0 @@
-{"language": "Python", "pid": 12028, "arm": "after", "file": "services/brain/brain/models.py", "sha256": "a838000349d93e1f92890d0e935bd4c2f6a937fb521bb36349d680acde29cd21"}
-{"language": "Python", "pid": 12028, "arm": "after", "file": "services/brain/brain/harness.py", "sha256": "1ae0a4d48008f1cc2e3537375312b5058b638bf87d18d99a96aa024132f300de"}
-{"language": "Python", "pid": 12028, "arm": "after", "file": "services/brain/brain/agent_tools.py", "sha256": "62ae890efe7b23ceeaea7d448a4c3167172c6c6204ef210124bfe892640ae59f"}
-{"language":"Node","pid":38772,"arm":"after","file":"src/capabilities/agent.ts","sha256":"a9184ad8bfd7041992e5b41e36137fb0189bbffb14df34e45cdf285d62b87824"}

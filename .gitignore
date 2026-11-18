@@ -26,3 +26,23 @@ __pycache__/
 .pytest_cache/
 .superpowers/
 .archify/**/evidence/
+
+# 内部文档、评审与测评过程文件仅保留在本地
+/.scratch/
+/.archify/
+/docs/*
+!/docs/images/
+/docs/images/*
+!/docs/images/architecture.svg
+!/docs/images/architecture.png
+*.md
+!/README.md
+
+# Markdown 格式的测试输入、运行时模板、工具指令及上游归属信息
+!evals/attachment/datasets/**/*.md
+!executas/ppt-engine/src/app/authoring-kit/**/*.md
+/executas/ppt-engine/src/app/authoring-kit/DEVELOPMENT.md
+!executas/ppt-engine/src/app/presentation-templates/**/*.md
+!third_party/dom-to-pptx/skills/**/*.md
+!third_party/dom-to-pptx/CONTRIBUTORS.md
+!third_party/dom-to-pptx/UPSTREAM.md
